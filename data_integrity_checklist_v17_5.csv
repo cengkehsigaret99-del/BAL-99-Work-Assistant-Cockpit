@@ -1,0 +1,8 @@
+cek,area,aturan,status_default,catatan
+Verpack ke Barang Jadi,Produksi/Gudang,Setiap verpack harus menambah barang jadi,PERLU CEK,"Cek tanggal, merek, pack"
+Verpack ke CK4,Cukai,Setiap verpack harus mengurangi pita CK4,PERLU CEK,Giling tidak mengurangi pita
+DO ke Stock,Gudang/Pasar,DO/SJ aktif harus mengurangi stock barang jadi,PERLU CEK,DO pending tidak mengurangi stock
+DO ke Piutang,Pasar,DO bernilai harus menambah piutang sesuai customer/team,PERLU CEK,Pisahkan PSP/PMS/Banten/Aji/Jambi/TSM
+Pembayaran ke Piutang,Pasar/Keuangan,Pembayaran masuk mengurangi piutang setelah sumber jelas,PERLU CEK,Pembayaran global perlu alokasi
+Koreksi Opname,Gudang,Koreksi opname bukan barang keluar biasa,LOCKED,Harus diberi label koreksi
+Arsip Valid,Arsip,Bukti final masuk folder 06,LOCKED,Bukan data mentah sembarang

@@ -1,0 +1,8 @@
+kode_folder,nama_folder,fungsi_utama,contoh_pekerjaan,status_kunci
+00,PENGARAH PROMPT & CURHAT KERJA,"Arah kerja, curhat, strategi, kalibrasi kesadaran, pengambilan sikap, prompt kerja, dan penentuan folder yang tepat","Menentukan folder, membaca sikap, menyusun arah, membuat prompt awal",LOCKED
+01,DATA PABRIK PRODUKSI STOK PITA CUKAI,"Data internal pabrik: produksi, giling, verpack, stock barang jadi, bahan baku, pita cukai, CK4, P3C, CK1",Validasi giling/verpack/CK4/stock/pita/cukai,LOCKED
+02,DATA PASAR DO PEMBAYARAN PIUTANG STOK,"Data pasar: DO/SJ, pembayaran, piutang, stock pasar, PO, retur, komplain, repeat order, saldo kerja customer/team","Validasi DO/SJ, piutang, pembayaran, stock pasar PSP/PMS/Banten/Aji/Jambi/TSM",LOCKED
+03,LAPORAN OWNER,"Laporan ringkas, besar, jelas, siap dibaca owner, berbasis keputusan","Executive summary, risiko, dasar data, keputusan praktis, rekomendasi",LOCKED
+04,KOMUNIKASI TEAM WA DAN KEPUTUSAN KERJA,"Draft WA, komunikasi team, keputusan kerja, follow-up, instruksi halus, dan koordinasi lapangan","WA ke Rijal, Bu Evi, Pak Mamat, customer, admin, team pasar",LOCKED
+05,BAL TOWER APP EXCEL CSV TEMPLATE,"Aplikasi GitHub, Excel, CSV, template upload, update app, menu, dashboard, ZIP, struktur data","Update BAL-99, buat CSV/Excel template, perbaiki menu, export ZIP",LOCKED
+06,ARSIP FINAL VALID DOKUMEN DAN BUKTI,"Penyimpanan final: dokumen valid, bukti transfer, bukti DO/SJ, bukti pembayaran, arsip keputusan, dokumen terkunci","Arsip valid final, bukti pembayaran, bukti transfer, dokumen final owner",LOCKED

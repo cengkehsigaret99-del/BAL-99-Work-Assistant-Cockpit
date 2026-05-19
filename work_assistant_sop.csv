@@ -1,0 +1,8 @@
+urutan,tahap,aksi,output,status
+1,Data masuk,Terima file/screenshot/WA dari bagian pabrik atau pasar,Data diberi sumber dan tanggal,WAJIB
+2,Validasi awal,"Cek kelengkapan, potensi dobel, tanggal, customer, produk, qty, nominal",Status VALID AWAL / CEK DOBEL / DATA BELUM VALID,WAJIB
+3,Arahkan folder,Masukkan konteks ke folder 00-06 yang tepat,Prompt kerja tidak salah tempat,WAJIB
+4,Minta GPT analisa,Gunakan Prompt Center dan upload CSV jika perlu,"Analisa, WA, laporan, atau update app",WAJIB
+5,Update aplikasi,"Jika valid, update CSV/app dan keluarkan ZIP tanpa folder",BAL-99 terbaru siap upload,JIKA PERLU
+6,Catat keputusan,Masukkan keputusan ke Catatan Keputusan,Audit kerja pribadi tetap rapi,WAJIB
+7,Arsip final,Dokumen/bukti valid dimasukkan ke folder 06,Arsip final valid,WAJIB

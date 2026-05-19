@@ -1,0 +1,6 @@
+customer,kode_sku,nama_sku,harga_pack,status_harga,catatan
+Padang PSP,SKU-001,GCC 99 isi 12 - TSG Lama,6400,KHUSUS PSP/PMS,Harga khusus PSP/PMS
+Padang PMS,SKU-001,GCC 99 isi 12 - TSG Lama,6400,KHUSUS PSP/PMS,Harga khusus PSP/PMS
+Padang PSP,SKU-004,New GCC 99 isi 16 - Ambree Biru,8400,KHUSUS PSP/PMS,Harga khusus PSP/PMS
+Padang PMS,SKU-004,New GCC 99 isi 16 - Ambree Biru,8400,KHUSUS PSP/PMS,Harga khusus PSP/PMS
+Customer selain PSP/PMS,,,,WAJIB CEK HARGA,Jangan otomatis pakai 6400/8400

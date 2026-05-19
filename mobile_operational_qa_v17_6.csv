@@ -1,0 +1,7 @@
+area,status,catatan
+Viewport,VALID,Meta viewport sudah aktif
+Menu HP,VALID,Dropdown Pilih Menu Kerja ditambahkan
+Search dan Filter,VALID,Tetap aktif per menu
+Download CSV,VALID,Tombol download per menu tetap aktif
+Tabel Detail,VALID,Tabel bisa digeser horizontal di HP
+Core Data,LOCKED,Data v17.5 tidak diubah

@@ -1,0 +1,29 @@
+CATATAN VALIDASI UPDATE VERPACK BAL-77 MEI 2026
+
+Sumber utama:
+- 05. LAPORAN PACING MEI 2026 (2).xlsx
+
+Sumber pembanding:
+- 04. LAPORAN PACING APRIL 2026.xlsx (terbaca berisi periode 01-07 Mei dan cocok dengan data awal Mei)
+- 14-21 MEI 2026.xlsm.xlsx terbaca sebagai file laporan giling terenkripsi. bukan sumber verpack.
+
+Status:
+- Data verpack yang terbaca jelas sampai tanggal 15 Mei 2026.
+- Tanggal 01 Mei tidak ada baris produksi verpack terisi.
+- Tanggal 14. 16. 17. 18 Mei belum terbaca sebagai data verpack di file pacing Mei.
+- Semua status yang terbaca adalah NORMAL.
+- Tidak ada lembur verpack.
+
+Prinsip aplikasi:
+- Verpack = Barang Jadi Masuk = Pemakaian Pita = Dasar CK-4C.
+- Giling tidak mengurangi pita.
+- DO/SJ mengurangi stok barang jadi.
+
+Total dari file utama:
+- Total pack verpack: 418.350 pack
+- Total upah verpack: Rp76.802.500
+
+Catatan koreksi:
+- Pada tanggal 13 Mei 2026. file Excel terbaca GCC 99 = 50.000 pack dan GCC 16 = 4.600 pack.
+- Total upah tanggal 13 Mei dari file Excel = Rp9.466.000.
+- Ini berbeda dari catatan manual sebelumnya yang terbaca 4.200 pack GCC 16 / Rp9.382.000.

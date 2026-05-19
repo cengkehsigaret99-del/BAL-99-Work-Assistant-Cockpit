@@ -1,0 +1,9 @@
+area,perbaikan,status,catatan
+Format invoice,Kolom no_invoice/tanggal_invoice/status_invoice tidak diformat rupiah,VALID,Invoice diperlakukan sebagai teks/tanggal/status sesuai jenis kolom
+Filter tanggal,Sortir dan filter tanggal memakai parser tanggal khusus,VALID,Mendukung YYYY-MM-DD dan DD/MM/YYYY
+UX HP,Tombol detail dipindah ke kiri dan dibuat sticky,VALID,Lebih mudah dibuka dari HP
+Menu HP,Menu favorit cepat ditambahkan,VALID,Dashboard/Cockpit/Giling/Verpack/CK4/Barang Jadi/DO/Piutang
+Download CSV,CSV hasil filter memakai UTF-8 BOM,VALID,Lebih aman dibuka Excel Windows
+Cache busting,style.css dan app.js memakai ?v=17_7,VALID,Mengurangi risiko GitHub Pages menampilkan versi lama
+CK4,Saldo sebelum CK1 dan setelah CK1 ditegaskan di dashboard,PERLU CEK OPERASIONAL,Pastikan apakah saldo setelah CK1 sudah menjadi saldo aktif final
+Verpack,Giling sampai 18 Mei dan verpack sampai tanggal terakhir di CSV diberi warning,PERLU DATA,Jika ada laporan verpack 16-18 Mei perlu update

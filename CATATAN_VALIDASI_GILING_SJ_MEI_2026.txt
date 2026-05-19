@@ -1,0 +1,16 @@
+UPDATE DATA GILING + SURAT JALAN MEI 2026
+
+Sumber giling: 01-07 MEI 2026, 08-14 MEI 2026, 14-21 MEI 2026.
+Password file: 1987. Sheet protection/password edit: 030306.
+Data giling yang dimasukkan dibatasi sampai 18 Mei 2026.
+Catatan: ada angka non-zero pada tanggal 21 Mei 2026 ([('2026-05-21', 'KAMIS', 463200, 18528000, '14-21_MEI_2026.xlsm_decrypted_runtime.xlsx'), ('2026-05-21', 'KAMIS', 463200, 18528000, '14-21_MEI_2026.xlsm_1_decrypted_runtime.xlsx')]), belum dimasukkan karena melewati tanggal hari ini dan perlu konfirmasi apakah itu data nyata atau template.
+
+Sumber surat jalan: Data_Final_Valid_Transaksi_Mei_2026_BAL_Tambah_Saldo_Piutang.xlsx.
+Detail_Valid_Final masuk ke browse_surat_jalan.csv.
+Sample_TUD ikut dicatat sebagai NON PIUTANG/SAMPLE agar tetap bisa terbaca sebagai pengurang stock barang jadi.
+
+Prinsip aplikasi:
+- Giling = Produksi Batangan/WIP, tidak mengurangi pita.
+- Verpack = Barang Jadi Masuk + Pemakaian Pita + dasar CK-4C.
+- DO/SJ = mengurangi stock barang jadi.
+- Pembayaran = mengurangi piutang.

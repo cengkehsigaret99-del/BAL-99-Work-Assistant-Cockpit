@@ -1,0 +1,16 @@
+CATATAN VALIDASI EMAIL DIVISI VERPACK / PITA - UPDATE v17.3
+
+File diterima:
+1. 05.PEMAKAIAN PITA MEI 2026 -.xlsx
+2. 05. LAPORAN PACING MEI 2026.xlsx
+
+Keputusan data:
+- Saldo CK4 aktif menggunakan saldo pita sebelum tambahan CK1 dimasukkan.
+- Tambahan CK1 tetap tampil sebagai proyeksi/arsip, bukan sebagai saldo CK4 aktif.
+- File Laporan Pacing yang dikirim berisi detail operator sampai 08 Mei; tidak menambah data verpack setelah baseline v17.2.
+- Baseline verpack v17.2 tetap dipertahankan sampai 15 Mei karena tidak ada detail verpack baru 16-18 Mei pada file yang dikirim.
+
+Saldo CK4 aktif sebelum CK1:
+- PITA 99 & 77: 74.700 keping
+- PITA REFILL: 9.970 keping
+- PITA 16: 118.200 keping

@@ -1,0 +1,5 @@
+﻿tanggal,sumber,jenis_pita,hje,isi,stock_sebelum_ck1,masuk_ck1,stock_setelah_ck1,pemakaian_ck4c_berjalan,sisa_stock_ck4c,status_ck4c,validasi
+2026-05-18,CK-1 900716,PITA 99 & 77 / GCC 99 isi 12,10.325,12,74700,180000,254700,0,74700,SALDO CK4 AKTIF SEBELUM CK1,Sesuai arahan terbaru: saldo pita/CK4 yang dipakai adalah saldo sebelum CK1 ditambahkan; stock setelah CK1 hanya proyeksi.
+2026-05-18,Tidak ada tambahan CK-1 refill,PITA REFILL,10.500,12,9970,0,9970,0,9970,SALDO CK4 AKTIF SEBELUM CK1,Sesuai arahan terbaru: saldo pita/CK4 yang dipakai adalah saldo sebelum CK1 ditambahkan; stock setelah CK1 hanya proyeksi.
+2026-05-18,CK-1 900716,PITA 16 / New GCC 99 isi 16,13.775,16,118200,60000,178200,0,118200,SALDO CK4 AKTIF SEBELUM CK1,Sesuai arahan terbaru: saldo pita/CK4 yang dipakai adalah saldo sebelum CK1 ditambahkan; stock setelah CK1 hanya proyeksi.
+2026-05-18,CK-1 900724 / perlu master TIS,TIS - D'CLOVE,55.000,1000,0,2800,2800,0,0,PROYEKSI TIS - BELUM MASUK SALDO CK4 AKTIF,Sesuai arahan terbaru: saldo pita/CK4 yang dipakai adalah saldo sebelum CK1 ditambahkan; stock setelah CK1 hanya proyeksi.

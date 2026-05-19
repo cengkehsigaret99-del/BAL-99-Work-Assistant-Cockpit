@@ -1,0 +1,28 @@
+﻿file,rows,status
+BAL99_BAL77_DATA_MANIFEST.csv,23,copied from v17.2 baseline
+CATATAN_VALIDASI_CK1_STOCK_PITA_CK4_18_MEI_2026.txt,catatan,v17.3 updated
+CATATAN_VALIDASI_EMAIL_VERPACK_CK4_18_MEI_2026.txt,catatan,v17.3 updated
+CATATAN_VALIDASI_GILING_SJ_MEI_2026.txt,catatan,copied
+CATATAN_VALIDASI_PITA_CUKAI_18_MEI_2026.txt,catatan,copied
+CATATAN_VALIDASI_VERPACK_MEI_2026.txt,catatan,copied
+README.txt,catatan,copied
+browse_barang_jadi.csv,2,copied from v17.2 baseline
+browse_billing_cukai.csv,5,v17.3 saldo CK4 sebelum CK1
+browse_ck4c.csv,4,v17.3 saldo CK4 sebelum CK1
+browse_giling.csv,19,copied from v17.2 baseline
+browse_pembayaran_piutang.csv,7,copied from v17.2 baseline
+browse_pita_cukai.csv,13,v17.3 saldo CK4 sebelum CK1
+browse_po.csv,3,copied from v17.2 baseline
+browse_retur_komplain.csv,1,copied from v17.2 baseline
+browse_stok_pasar.csv,2,copied from v17.2 baseline
+browse_surat_jalan.csv,19,copied from v17.2 baseline
+browse_verpack.csv,22,copied from v17.2 baseline
+master_harga_customer.csv,5,copied from v17.2 baseline
+master_status.csv,12,copied from v17.2 baseline
+rekap_giling_harian_mei_2026.csv,11,copied from v17.2 baseline
+rekap_giling_per_merek_mei_2026.csv,5,copied from v17.2 baseline
+rekap_verpack_harian_mei_2026.csv,11,copied from v17.2 baseline
+rekap_verpack_per_merek_mei_2026.csv,5,copied from v17.2 baseline
+saldo_ck4_sebelum_ck1_18_mei_2026.csv,4,v17.3 saldo CK4 sebelum CK1
+saldo_pita_18_mei_2026_update.csv,4,v17.3 saldo CK4 sebelum CK1
+saldo_pita_setelah_ck1_18_mei_2026.csv,4,v17.3 saldo CK4 sebelum CK1

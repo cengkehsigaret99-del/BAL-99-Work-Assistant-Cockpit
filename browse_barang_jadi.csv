@@ -1,0 +1,3 @@
+tanggal_stok,merek,stok_awal,masuk_verpack,keluar_sj,retur_masuk,koreksi_plus,koreksi_minus,stok_akhir,po_belum_terkirim,selisih_stok_vs_po,status_stok,validasi
+2026-05-13,GCC 99 isi 12,120000,112500,126000,0,0,0,106500,100000,6500,STOK PAS,Cek jadwal Banten
+2026-05-13,New GCC 99 isi 16 Ambree Biru,65000,69100,21000,0,0,0,113100,185000,-71900,STOK KURANG,Prioritas PSP/PMS

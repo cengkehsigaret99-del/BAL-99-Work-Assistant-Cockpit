@@ -1,0 +1,5 @@
+prioritas,tanggal_target,folder,tugas,pic_sumber_data,status,catatan
+1,2026-05-18,01,Pastikan data verpack sampai 18 Mei tersedia,Divisi Verpack / Gudang,PERLU CEK,v17.2 giling sampai 18 Mei; verpack sebelumnya belum semua sampai 18 Mei
+2,2026-05-18,01,Kunci saldo CK4 setelah CK1 bila CK1 sudah resmi masuk,Admin Cukai,VALID AWAL,Saldo sebelum CK1 dan setelah CK1 harus dipisah
+3,2026-05-18,05,Upload v17.5 ke GitHub root tanpa folder,Bapak / GitHub,PENDING,"Upload semua file, bukan ZIP langsung"
+4,2026-05-18,00,Pakai cockpit untuk arah kerja harian,Bapak,BERJALAN,"Mulai dari dashboard, data integrity, prompt center"

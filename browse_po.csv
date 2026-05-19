@@ -1,0 +1,4 @@
+tanggal_po,no_po,customer,pasar,merek,qty_po,satuan,harga_pack,total_nilai_po,target_kirim,status,validasi
+2026-05-20,PO-PMS-200526,Padang PMS,PMS,GCC 99 isi 16 Ambree Kuning,150,karton,8400,756000000,2026-05-20,PENDING,CEK PIUTANG/STOK
+2026-05-21,PO-BANTEN-210526,CV Mitra Saestu Group,Banten,GCC 99 isi 12,100,karton,,,2026-05-21,CEK HARGA,Harga 6400/8400 hanya PSP/PMS
+2026-05-15,PO-AJI-150526,Tri Sukma Aji,Team Aji,New GCC 99 isi 16,35,karton,,,2026-05-15,ACC KIRIM,Alokasi gudang area

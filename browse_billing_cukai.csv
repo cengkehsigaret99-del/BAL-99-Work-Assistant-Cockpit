@@ -1,0 +1,6 @@
+﻿tanggal_billing,jenis_billing,no_ck1_sppr,nomor_billing,hje,isi,jumlah_lembar,jumlah_keping,nominal_cukai,nominal_pajak_rokok,total_bayar,status_billing,status_efektif_saldo,validasi
+2026-05-11,CK-1,900436,540260504996391,13.775 / 10.325,16 / 12,2000,240000,380640000,0,380640000,SUDAH BAYAR,EFEKTIF KE SALDO,BPN sudah ada
+2026-05-11,SPPR,900418,540260504996392,Pajak Rokok,-,0,0,0,38064000,38064000,SUDAH BAYAR,EFEKTIF KE SALDO,BPN sudah ada
+2026-05-18,CK-1,900716,540260505055275,13.775 / 10.325,16 / 12,2000,240000,380640000,0,380640000,SUDAH BAYAR,SUDAH BAYAR / PROYEKSI - BELUM DITAMBAH KE SALDO CK4 AKTIF,"Billing CK-1 tercatat, tetapi saldo CK4 aktif mengikuti saldo sebelum CK1 sesuai arahan user."
+2026-05-18,SPPR,900685,540260505055276,Pajak Rokok,-,0,0,0,38064000,38064000,SUDAH BAYAR,TIDAK MENAMBAH PITA,BPN ada; pajak rokok tidak menambah saldo pita
+2026-05-18,CK-1,900724,540260505055740,55.000,1000,50,2800,28000000,0,28000000,SUDAH BAYAR,SUDAH BAYAR / PROYEKSI - BELUM DITAMBAH KE SALDO CK4 AKTIF,"Billing CK-1 tercatat, tetapi saldo CK4 aktif mengikuti saldo sebelum CK1 sesuai arahan user."

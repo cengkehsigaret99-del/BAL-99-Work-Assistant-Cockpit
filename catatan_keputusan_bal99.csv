@@ -1,0 +1,5 @@
+tanggal,folder,topik,keputusan,status,catatan
+2026-05-18,01,Saldo CK4 sebelum CK1,Saldo CK4 aktif sebelum CK1: 74.700 / 9.970 / 118.200 keping,VALID AWAL,Tambahan CK1 ditampilkan sebagai proyeksi/penambahan saldo jika sudah resmi masuk
+2026-05-18,05,BAL-99 Work Assistant Cockpit,"Cockpit menjadi menu tambahan, bukan pengganti sistem utama",LOCKED,Core menu produksi/gudang/cukai/pasar/HPP/keuangan tetap ada
+2026-05-18,00,Model kerja pribadi,Bapak sebagai operator utama/pengendali data; bagian pabrik sebagai sumber data; GPT sebagai asisten analisa,LOCKED,Tidak perlu multi-user dulu
+2026-05-18,06,Status arsip final,Dokumen valid final masuk folder 06,LOCKED,"Bukti transfer, DO/SJ, dokumen final, laporan owner final"

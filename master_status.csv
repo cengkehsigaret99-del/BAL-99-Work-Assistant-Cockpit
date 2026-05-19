@@ -1,0 +1,13 @@
+status,warna,arti
+DRAFT,biru,data baru/draft
+PO MASUK,biru,PO baru
+PROSES,kuning,sedang diproses
+MENUNGGU ACC,emas,menunggu keputusan
+TERKIRIM,hijau,barang sudah dikirim
+LUNAS,hijau,piutang lunas
+SUDAH BAYAR,hijau,billing sudah dibayar
+EFEKTIF KE SALDO,hijau,sudah masuk saldo efektif
+CEK HARGA,merah,harga perlu validasi
+CEK STOK,merah,stok perlu validasi
+CEK DATA PASAR,kuning,data pasar belum lengkap
+BATAL,abu,batal/arsip

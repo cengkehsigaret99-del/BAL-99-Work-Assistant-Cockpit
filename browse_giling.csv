@@ -1,0 +1,20 @@
+﻿tanggal_giling,hari,periode_upah,merek,jumlah_batang,estimasi_pack,estimasi_karton,isi_batang,pack_per_karton,tarif_giling_per_batang,total_upah,status_giling,validasi,sumber
+2026-05-02,Sabtu,2026-05-01 s/d 2026-05-07,Cengkeh Biru 77 isi 16,3300,206.25,0.344,16,600,42,138600,NORMAL,VALID AWAL - Laporan giling Mei 2026,01-07_MEI_2026.xlsm_decrypted_runtime.xlsx
+2026-05-02,Sabtu,2026-05-01 s/d 2026-05-07,GCC 99 isi 12,256500,21375.0,21.375,12,1000,40,10260000,NORMAL,VALID AWAL - Laporan giling Mei 2026,01-07_MEI_2026.xlsm_decrypted_runtime.xlsx
+2026-05-02,Sabtu,2026-05-01 s/d 2026-05-07,GCC 99 isi 16,245000,15312.5,25.521,16,600,42,10290000,NORMAL,VALID AWAL - Laporan giling Mei 2026,01-07_MEI_2026.xlsm_decrypted_runtime.xlsx
+2026-05-04,Senin,2026-05-01 s/d 2026-05-07,GCC 99 isi 12,508100,42341.67,42.342,12,1000,40,20324000,NORMAL,VALID AWAL - Laporan giling Mei 2026,01-07_MEI_2026.xlsm_decrypted_runtime.xlsx
+2026-05-05,Selasa,2026-05-01 s/d 2026-05-07,Cengkeh Refill isi 12,300,25.0,0.042,12,600,46,13800,NORMAL,VALID AWAL - Laporan giling Mei 2026,01-07_MEI_2026.xlsm_decrypted_runtime.xlsx
+2026-05-05,Selasa,2026-05-01 s/d 2026-05-07,GCC 99 isi 12,504500,42041.67,42.042,12,1000,40,20180000,NORMAL,VALID AWAL - Laporan giling Mei 2026,01-07_MEI_2026.xlsm_decrypted_runtime.xlsx
+2026-05-06,Rabu,2026-05-01 s/d 2026-05-07,Cengkeh Biru 77 isi 16,29500,1843.75,3.073,16,600,42,1239000,NORMAL,VALID AWAL - Laporan giling Mei 2026,01-07_MEI_2026.xlsm_decrypted_runtime.xlsx
+2026-05-06,Rabu,2026-05-01 s/d 2026-05-07,GCC 99 isi 12,471200,39266.67,39.267,12,1000,40,18848000,NORMAL,VALID AWAL - Laporan giling Mei 2026,01-07_MEI_2026.xlsm_decrypted_runtime.xlsx
+2026-05-07,Kamis,2026-05-01 s/d 2026-05-07,GCC 99 isi 12,437600,36466.67,36.467,12,1000,40,17504000,NORMAL,VALID AWAL - Laporan giling Mei 2026,01-07_MEI_2026.xlsm_decrypted_runtime.xlsx
+2026-05-08,Jumat,2026-05-08 s/d 2026-05-14,Cengkeh Biru 77 isi 12,24000,2000.0,2.0,12,1000,40,960000,NORMAL,VALID AWAL - Laporan giling Mei 2026,08-14_MEI_2026.xlsm_decrypted_runtime.xlsx
+2026-05-08,Jumat,2026-05-08 s/d 2026-05-14,Cengkeh Biru 77 isi 16,19800,1237.5,2.062,16,600,42,831600,NORMAL,VALID AWAL - Laporan giling Mei 2026,08-14_MEI_2026.xlsm_decrypted_runtime.xlsx
+2026-05-08,Jumat,2026-05-08 s/d 2026-05-14,GCC 99 isi 12,386500,32208.33,32.208,12,1000,40,15460000,NORMAL,VALID AWAL - Laporan giling Mei 2026,08-14_MEI_2026.xlsm_decrypted_runtime.xlsx
+2026-05-09,Sabtu,2026-05-08 s/d 2026-05-14,GCC 99 isi 12,461700,38475.0,38.475,12,1000,40,18468000,NORMAL,VALID AWAL - Laporan giling Mei 2026,08-14_MEI_2026.xlsm_decrypted_runtime.xlsx
+2026-05-11,Senin,2026-05-08 s/d 2026-05-14,GCC 99 isi 12,490000,40833.33,40.833,12,1000,40,19600000,NORMAL,VALID AWAL - Laporan giling Mei 2026,08-14_MEI_2026.xlsm_decrypted_runtime.xlsx
+2026-05-12,Selasa,2026-05-08 s/d 2026-05-14,GCC 99 isi 12,322100,26841.67,26.842,12,1000,40,12884000,NORMAL,VALID AWAL - Laporan giling Mei 2026,08-14_MEI_2026.xlsm_decrypted_runtime.xlsx
+2026-05-12,Selasa,2026-05-08 s/d 2026-05-14,GCC 99 isi 16,171500,10718.75,17.865,16,600,42,7203000,NORMAL,VALID AWAL - Laporan giling Mei 2026,08-14_MEI_2026.xlsm_decrypted_runtime.xlsx
+2026-05-13,Rabu,2026-05-08 s/d 2026-05-14,GCC 99 isi 12,482300,40191.67,40.192,12,1000,40,19292000,NORMAL,VALID AWAL - Laporan giling Mei 2026,08-14_MEI_2026.xlsm_decrypted_runtime.xlsx
+2026-05-18,Senin,2026-05-15 s/d 2026-05-21,GCC 99 isi 12,497800,41483.33,41.483,12,1000,40,19912000,NORMAL,VALID AWAL - Laporan giling Mei 2026,14-21_MEI_2026.xlsm_decrypted_runtime.xlsx
+2026-05-18,Senin,2026-05-15 s/d 2026-05-21,GCC 99 isi 16,10000,625.0,1.042,16,600,42,420000,NORMAL,VALID AWAL - Laporan giling Mei 2026,14-21_MEI_2026.xlsm_decrypted_runtime.xlsx

@@ -1,0 +1,10 @@
+VALIDASI CK4 / STOCK PITA 18 MEI 2026 - UPDATE v17.3
+
+Arahan user: saldo pita yang dipakai adalah saldo sebelum CK1 ditambahkan, yaitu saldo CK4 aktif.
+
+Saldo CK4 aktif sebelum CK1:
+- PITA 99 & 77 / HJE 10.325 / isi 12: 74.700 keping
+- PITA REFILL / HJE 10.500 / isi 12: 9.970 keping
+- PITA 16 / HJE 13.775 / isi 16: 118.200 keping
+
+Tambahan CK1 18 Mei tidak ditambahkan ke saldo CK4 aktif; hanya ditampilkan sebagai proyeksi/arsip setelah CK1.
