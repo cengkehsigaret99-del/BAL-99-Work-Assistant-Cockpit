@@ -1,5 +1,6 @@
 file,rows,status
-BAL99_BAL77_DATA_MANIFEST.csv,27,updated after Mei incremental update; giling dikoreksi: tidak ada produksi 21 Mei
+BAL99_BAL77_DATA_MANIFEST.csv,28,updated after Mei incremental update; cutoff stock barang jadi dikunci 20 Mei 2026
+CATATAN_CUTOFF_STOCK_BARANG_JADI_20_MEI_2026.txt,catatan,LOCKED - stock akhir aktif posisi 20 Mei; 21 Mei belum ada verpack official
 CATATAN_VALIDASI_CK1_STOCK_PITA_CK4_18_MEI_2026.txt,catatan,v17.3 baseline / CK1 reference
 CATATAN_VALIDASI_EMAIL_VERPACK_CK4_18_MEI_2026.txt,catatan,v17.3 baseline
 CATATAN_VALIDASI_GILING_SJ_MEI_2026.txt,catatan,copied baseline / perlu update catatan narasi bila diperlukan
