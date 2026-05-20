@@ -1,6 +1,7 @@
-﻿merek_sku,jumlah_pack,total_upah_verpack,tanggal_aktif,status_validasi
+merek_sku,jumlah_pack,total_upah_verpack,tanggal_aktif,status_validasi
 Cengkeh Biru 77 isi 12,2000,340000,1,VALID AWAL
 Cengkeh Biru 77 isi 16,3200,672000,3,VALID AWAL
 Cengkeh Refill isi 12,9450,2173500,2,VALID AWAL
 GCC 99 isi 12,279000,47430000,9,VALID AWAL
 GCC 99 isi 16,124700,26187000,7,VALID AWAL
+New GCC 99 isi 16 Ambree Kuning,90600,19026000,3,VALID AWAL - UPDATE 18-20 MEI
