@@ -1,0 +1,33 @@
+CATATAN VALIDASI PIUTANG 3 CUSTOMER - 19 MEI 2026
+
+Sumber: 3 JPG update piutang customer per 19 Mei 2026.
+
+Ringkasan update:
+1. USUP KARMIN
+   - Piutang awal/pengiriman: Rp65.000.000
+   - Total pembayaran masuk: Rp48.800.000
+   - Sisa piutang terbaru: Rp16.200.000
+   - Status: VALID AWAL
+
+2. BANTEN / CV. MITRA SAESTU GROUP / MAS TOMI
+   - Sisa sebelum pembayaran: Rp1.507.000.000
+   - Pembayaran masuk 19 Mei: Rp142.000.000
+   - Sisa terbaru: Rp1.365.000.000
+   - Status: VALID AWAL
+
+3. KHOIRUL SOLEH / PADANG PSP-PMS
+   - Sisa PSP: Rp90.720.000
+   - Sisa PMS: Rp2.747.829.800
+   - Sisa total: Rp2.838.549.800
+   - Koreksi/retur/kredit yang diperhitungkan: Rp72.330.200
+   - Status: VALID SEMENTARA / PERLU MAPPING PSP-PMS
+
+Batas update:
+- Hanya untuk modul Piutang / Pembayaran.
+- Tidak mengubah DO/SJ.
+- Tidak mengubah Stock Barang Jadi.
+- Tidak mengubah Giling/Verpack.
+- Tidak mengubah CK4C/Pita.
+
+Keputusan praktis:
+Update 3 customer ini layak masuk BAL-99 sebagai saldo kerja piutang terbaru per 19 Mei 2026.
