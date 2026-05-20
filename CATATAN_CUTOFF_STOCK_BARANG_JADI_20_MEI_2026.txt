@@ -1,0 +1,20 @@
+CATATAN CUTOFF STOCK BARANG JADI — 20 MEI 2026
+
+Status teknis BAL-99:
+- Stock akhir Barang Jadi aktif dikunci pada posisi akhir 20 Mei 2026.
+- Tanggal 21 Mei 2026 belum ada hasil verpack official.
+- Karena belum ada verpack official 21 Mei, maka belum boleh ada tambahan barang jadi tanggal 21 Mei.
+- CK4C dan pemakaian pita juga tidak boleh bertambah untuk tanggal 21 Mei.
+- Giling tidak otomatis menjadi barang jadi dan tidak mengurangi pita.
+- Pacing/upah tidak otomatis menjadi dasar CK4C jika berbeda dari barang jadi official.
+- TUD tetap non-pita dan tidak masuk barang jadi regular.
+
+Aturan update berikutnya:
+1. Jika laporan verpack official 21 Mei diterima, masukkan sebagai VALID AWAL - LAPORAN VERPACK OFFICIAL.
+2. Cek potensi dobel berdasarkan tanggal + merek + jumlah pack + sumber.
+3. Barang jadi masuk mengikuti verpack official.
+4. CK4C/pita mengikuti barang jadi official.
+5. TUD dipisah dan tidak mengurangi pita.
+
+Keputusan praktis:
+Cutoff aktif aplikasi sampai saat ini adalah STOCK AKHIR 20 MEI 2026.
