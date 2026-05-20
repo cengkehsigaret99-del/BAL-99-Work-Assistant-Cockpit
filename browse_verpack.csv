@@ -1,4 +1,4 @@
-﻿tanggal_verpack,hari,periode_upah,merek,jumlah_pack,karton_equiv,isi_batang,jumlah_batang_equiv,status_verpack,tarif_pack,total_upah,masuk_stok_bj,pemakaian_pita,status_ck4c,validasi
+tanggal_verpack,hari,periode_upah,merek,jumlah_pack,karton_equiv,isi_batang,jumlah_batang_equiv,status_verpack,tarif_pack,total_upah,masuk_stok_bj,pemakaian_pita,status_ck4c,validasi
 2026-05-02,Sabtu,2026-05-01 s/d 2026-05-15,Cengkeh Biru 77 isi 16,200,0.333,16,3200,NORMAL,210,42000,YA,YA,DASAR CK-4C,VALID AWAL - Laporan Packing Mei 2026
 2026-05-02,Sabtu,2026-05-01 s/d 2026-05-15,GCC 99 isi 16,3000,5.0,16,48000,NORMAL,210,630000,YA,YA,DASAR CK-4C,VALID AWAL - Laporan Packing Mei 2026
 2026-05-02,Sabtu,2026-05-01 s/d 2026-05-15,GCC 99 isi 12,12500,12.5,12,150000,NORMAL,170,2125000,YA,YA,DASAR CK-4C,VALID AWAL - Laporan Packing Mei 2026
@@ -20,4 +20,7 @@
 2026-05-12,Selasa,2026-05-01 s/d 2026-05-15,GCC 99 isi 16,39000,65.0,16,624000,NORMAL,210,8190000,YA,YA,DASAR CK-4C,VALID AWAL - Laporan Packing Mei 2026
 2026-05-13,Rabu,2026-05-01 s/d 2026-05-15,GCC 99 isi 16,4600,7.667,16,73600,NORMAL,210,966000,YA,YA,DASAR CK-4C,VALID AWAL - Laporan Packing Mei 2026
 2026-05-13,Rabu,2026-05-01 s/d 2026-05-15,GCC 99 isi 12,50000,50.0,12,600000,NORMAL,170,8500000,YA,YA,DASAR CK-4C,VALID AWAL - Laporan Packing Mei 2026
-2026-05-15,Jumat,2026-05-01 s/d 2026-05-15,GCC 99 isi 12,56000,56.0,12,672000,NORMAL,170,9520000,YA,YA,DASAR CK-4C,VALID AWAL - Laporan Packing Mei 2026
+2026-05-14,Kamis,2026-05-08 s/d 2026-05-14,GCC 99 isi 12,56000,56.0,12,672000,NORMAL,170,9520000,YA,YA,DASAR CK-4C,VALID AWAL - Koreksi tanggal dari sheet 14 Mei
+2026-05-18,Senin,2026-05-15 s/d 2026-05-21,New GCC 99 isi 16 Ambree Kuning,21000,35.0,16,336000,NORMAL,210,4410000,YA,YA,DASAR CK-4C,VALID AWAL - TUD 600 pack terpisah; barang jadi official 21.000 pack
+2026-05-19,Selasa,2026-05-15 s/d 2026-05-21,New GCC 99 isi 16 Ambree Kuning,36000,60.0,16,576000,NORMAL,210,7560000,YA,YA,DASAR CK-4C,VALID AWAL - Laporan Packing Mei 2026
+2026-05-20,Rabu,2026-05-15 s/d 2026-05-21,New GCC 99 isi 16 Ambree Kuning,33600,56.0,16,537600,NORMAL,210,7056000,YA,YA,DASAR CK-4C,VALID AWAL - Sinkron pacing/pita; barang jadi official non-TUD
