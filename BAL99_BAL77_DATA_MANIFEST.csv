@@ -1,6 +1,7 @@
 file,rows,status
-BAL99_BAL77_DATA_MANIFEST.csv,28,updated after Mei incremental update; cutoff stock barang jadi dikunci 20 Mei 2026
+BAL99_BAL77_DATA_MANIFEST.csv,29,updated after piutang 3 customer 19 Mei; cutoff stock barang jadi tetap 20 Mei
 CATATAN_CUTOFF_STOCK_BARANG_JADI_20_MEI_2026.txt,catatan,LOCKED - stock akhir aktif posisi 20 Mei; 21 Mei belum ada verpack official
+CATATAN_VALIDASI_PIUTANG_3_CUSTOMER_19_MEI_2026.txt,catatan,VALID AWAL / VALID SEMENTARA - update piutang Usup Karmin Banten Khoirul per JPG 19 Mei
 CATATAN_VALIDASI_CK1_STOCK_PITA_CK4_18_MEI_2026.txt,catatan,v17.3 baseline / CK1 reference
 CATATAN_VALIDASI_EMAIL_VERPACK_CK4_18_MEI_2026.txt,catatan,v17.3 baseline
 CATATAN_VALIDASI_GILING_SJ_MEI_2026.txt,catatan,copied baseline / perlu update catatan narasi bila diperlukan
@@ -11,7 +12,7 @@ browse_barang_jadi.csv,12,updated posisi stok fisik 20 Mei 2026 VALID AWAL
 browse_billing_cukai.csv,5,v17.3 saldo CK4 sebelum CK1
 browse_ck4c.csv,4,updated CK4C berjalan sampai 20 Mei; PITA 16 terpakai 90.600; TUD non-pita
 browse_giling.csv,23,updated giling Mei sampai 20 Mei; 463.200 batang dikoreksi dari 21 Mei ke 14 Mei
-browse_pembayaran_piutang.csv,7,updated saldo kerja dampak SJ123/SJ124; Khoirul perlu mapping PSP/PMS
+browse_pembayaran_piutang.csv,8,updated piutang 3 customer JPG 19 Mei; Usup Rp16.200.000 Banten Rp1.365.000.000 Khoirul Rp2.838.549.800
 browse_pita_cukai.csv,14,updated pemakaian CK4C berjalan 18-20 Mei; TUD tidak mengurangi pita
 browse_po.csv,3,copied from v17.2 baseline
 browse_retur_komplain.csv,1,copied from v17.2 baseline
