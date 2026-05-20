@@ -1,5 +1,5 @@
 file,rows,status
-BAL99_BAL77_DATA_MANIFEST.csv,27,updated after Mei incremental update 21 Mei 2026
+BAL99_BAL77_DATA_MANIFEST.csv,27,updated after Mei incremental update; giling dikoreksi: tidak ada produksi 21 Mei
 CATATAN_VALIDASI_CK1_STOCK_PITA_CK4_18_MEI_2026.txt,catatan,v17.3 baseline / CK1 reference
 CATATAN_VALIDASI_EMAIL_VERPACK_CK4_18_MEI_2026.txt,catatan,v17.3 baseline
 CATATAN_VALIDASI_GILING_SJ_MEI_2026.txt,catatan,copied baseline / perlu update catatan narasi bila diperlukan
@@ -9,7 +9,7 @@ README.txt,catatan,copied
 browse_barang_jadi.csv,12,updated posisi stok fisik 20 Mei 2026 VALID AWAL
 browse_billing_cukai.csv,5,v17.3 saldo CK4 sebelum CK1
 browse_ck4c.csv,4,updated CK4C berjalan sampai 20 Mei; PITA 16 terpakai 90.600; TUD non-pita
-browse_giling.csv,23,updated giling Mei sampai 21 Mei 2026
+browse_giling.csv,23,updated giling Mei sampai 20 Mei; 463.200 batang dikoreksi dari 21 Mei ke 14 Mei
 browse_pembayaran_piutang.csv,7,updated saldo kerja dampak SJ123/SJ124; Khoirul perlu mapping PSP/PMS
 browse_pita_cukai.csv,14,updated pemakaian CK4C berjalan 18-20 Mei; TUD tidak mengurangi pita
 browse_po.csv,3,copied from v17.2 baseline
@@ -19,8 +19,8 @@ browse_surat_jalan.csv,21,updated DO/SJ Mei sampai SJ124
 browse_verpack.csv,25,updated verpack Mei sampai 20 Mei; TUD 600 pack terpisah
 master_harga_customer.csv,5,copied from v17.2 baseline
 master_status.csv,12,copied from v17.2 baseline
-rekap_giling_harian_mei_2026.csv,14,updated giling harian sampai 21 Mei
-rekap_giling_per_merek_mei_2026.csv,5,updated giling per merek sampai 21 Mei
+rekap_giling_harian_mei_2026.csv,14,updated giling harian sampai 20 Mei; 14 Mei ditambahkan hasil koreksi 463.200 batang
+rekap_giling_per_merek_mei_2026.csv,5,updated giling per merek sampai 20 Mei; termasuk koreksi tanggal 14 Mei
 rekap_verpack_harian_mei_2026.csv,14,updated verpack harian sampai 20 Mei
 rekap_verpack_per_merek_mei_2026.csv,6,updated verpack per merek sampai 20 Mei
 saldo_ck4_sebelum_ck1_18_mei_2026.csv,4,v17.3 saldo CK4 sebelum CK1
