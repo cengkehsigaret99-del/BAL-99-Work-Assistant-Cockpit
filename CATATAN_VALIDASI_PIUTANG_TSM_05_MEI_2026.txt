@@ -1,0 +1,19 @@
+CATATAN VALIDASI PIUTANG TSM - 05 MEI 2026
+
+Sumber: JPG saldo akhir piutang TSM per Mei 2026.
+
+Update aplikasi:
+- TSM Makasar: sisa piutang Rp112.200.000.
+- TSM Malang: sisa piutang Rp25.500.000.
+- Total gabungan TSM: Rp137.700.000.
+
+Aturan:
+- Input aplikasi dibuat per subjek: TSM Makasar dan TSM Malang.
+- Total gabungan tidak dibuat sebagai baris tambahan agar tidak dobel.
+- Saldo TSM Malang menggantikan saldo lama aplikasi Rp45.900.000.
+
+Batas update:
+- Hanya modul Piutang / Pembayaran.
+- Tidak mengubah DO/SJ, Stock Barang Jadi, Giling/Verpack, CK4C/Pita.
+
+Status: VALID AWAL.
