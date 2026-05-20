@@ -1,4 +1,4 @@
-﻿tanggal,jenis_transaksi,sumber,hje,isi,jenis_pita,masuk_lembar,masuk_keping,keluar_lembar,keluar_keping,saldo_lembar,saldo_keping,status_saldo,validasi
+tanggal,jenis_transaksi,sumber,hje,isi,jenis_pita,masuk_lembar,masuk_keping,keluar_lembar,keluar_keping,saldo_lembar,saldo_keping,status_saldo,validasi
 2026-05-11,CK-1 Efektif,CK-1 900436,13.775,16,SKT,0,0,500,60000,3820,458400,SALDO AMAN,Sudah bayar efektif
 2026-05-11,CK-1 Efektif,CK-1 900436,10.325,12,SKT,0,0,1500,180000,9000,1080000,SALDO AMAN,Sudah bayar efektif
 2026-05-11,P3C Tambahan,P3C 900249,13.775,16,SKT,1250,150000,0,0,,,MENUNGGU P3C,Periode Juni
@@ -12,3 +12,4 @@
 2026-05-18,Saldo Final Setelah CK-1,Saldo Pita Pabrik + CK-1 900716,13.775,16,SKT - PITA 16 / New GCC 99 isi 16,500,60000,0,0,,178200,STOCK PITA PABRIK SIAP CK-4C,Saldo sebelum CK-1 118.200 + CK-1 60.000 = 178.200 keping
 2026-05-18,Saldo Final Setelah CK-1,Saldo Pita Pabrik Refill,10.500,12,SKT - PITA REFILL,0,0,0,0,,9970,STOCK TETAP / TANPA CK-1 BARU,Saldo refill tidak berubah karena CK-1 18 Mei tidak berisi refill
 2026-05-18,Saldo Final Setelah CK-1,CK-1 900724,55.000,1000,TIS - D'CLOVE,50,2800,0,0,,2800,STOCK CK-4C TIS / PERLU SHEET TIS,Tambahan CK-1 TIS 50 lembar / 2.800 keping; saldo awal TIS belum ada di file pita
+2026-05-20,Pemakaian CK4C Berjalan 18-20 Mei,Verpack official New GCC 16 Ambree Kuning 18-20 Mei,13.775,16,SKT - PITA 16 / New GCC 99 isi 16,0,0,,90600,,87600,SALDO SETELAH PEMAKAIAN BERJALAN,VALID AWAL - Keluar pita mengikuti barang jadi official 90.600 pack/keping. TUD 600 pack tidak memakai pita dan tidak mengurangi saldo.
