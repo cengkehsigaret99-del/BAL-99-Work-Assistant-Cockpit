@@ -1,6 +1,6 @@
 merek_sku,jumlah_batang,estimasi_pack,estimasi_karton,total_upah_giling,tanggal_aktif,status_validasi
 Cengkeh Biru 77 isi 16,52600,3287.5,5.479,2209200,3,VALID AWAL
-GCC 99 isi 12,6579700,548308.35,548.46,263188000,14,VALID AWAL - UPDATE SAMPAI 21 MEI
+GCC 99 isi 12,6579700,548308.35,548.46,263188000,14,VALID AWAL - UPDATE SAMPAI 20 MEI; termasuk koreksi 463.200 batang ke tanggal 14 Mei
 GCC 99 isi 16,731900,45743.75,76.24,30739800,4,VALID AWAL - UPDATE SAMPAI 20 MEI
 Cengkeh Refill isi 12,300,25.0,0.042,13800,1,VALID AWAL
 Cengkeh Biru 77 isi 12,24000,2000.0,2.0,960000,1,VALID AWAL
