@@ -1,5 +1,6 @@
 /* BAL-99 v17.8 Mei 21 patch
    Tujuan: sinkronisasi label dashboard/cache tanpa mengubah desain utama aplikasi.
+   Catatan: patch ini sengaja terpisah dari app.js agar mudah dilepas bila perlu.
 */
 (function(){
   try{
@@ -18,7 +19,7 @@ async function load(key){
   const file=CSV_FILES[key];
   if(!file){return []}
   try{
-    const res=await fetch(file+'?v=17_8_mei21_csv_refresh');
+    const res=await fetch(file+'?v=17_8_mei21_csv_refresh_force3');
     if(!res.ok) throw new Error(res.status);
     const text=await res.text();
     state.raw[key]=parseCSV(text);
@@ -76,6 +77,7 @@ setTimeout(()=>{
   try{
     const app=document.getElementById('app');
     if(app){
+      if(typeof state !== 'undefined' && state.raw){ state.raw={}; }
       new MutationObserver(refreshVersionLabels).observe(app,{childList:true,subtree:true});
       refreshVersionLabels();
       if(typeof show==='function') show(state.page||'dashboard');
