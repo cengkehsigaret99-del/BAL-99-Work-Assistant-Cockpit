@@ -1,4 +1,4 @@
-﻿tanggal_giling,hari,periode_upah,merek,jumlah_batang,estimasi_pack,estimasi_karton,isi_batang,pack_per_karton,tarif_giling_per_batang,total_upah,status_giling,validasi,sumber
+tanggal_giling,hari,periode_upah,merek,jumlah_batang,estimasi_pack,estimasi_karton,isi_batang,pack_per_karton,tarif_giling_per_batang,total_upah,status_giling,validasi,sumber
 2026-05-02,Sabtu,2026-05-01 s/d 2026-05-07,Cengkeh Biru 77 isi 16,3300,206.25,0.344,16,600,42,138600,NORMAL,VALID AWAL - Laporan giling Mei 2026,01-07_MEI_2026.xlsm_decrypted_runtime.xlsx
 2026-05-02,Sabtu,2026-05-01 s/d 2026-05-07,GCC 99 isi 12,256500,21375.0,21.375,12,1000,40,10260000,NORMAL,VALID AWAL - Laporan giling Mei 2026,01-07_MEI_2026.xlsm_decrypted_runtime.xlsx
 2026-05-02,Sabtu,2026-05-01 s/d 2026-05-07,GCC 99 isi 16,245000,15312.5,25.521,16,600,42,10290000,NORMAL,VALID AWAL - Laporan giling Mei 2026,01-07_MEI_2026.xlsm_decrypted_runtime.xlsx
@@ -18,3 +18,7 @@
 2026-05-13,Rabu,2026-05-08 s/d 2026-05-14,GCC 99 isi 12,482300,40191.67,40.192,12,1000,40,19292000,NORMAL,VALID AWAL - Laporan giling Mei 2026,08-14_MEI_2026.xlsm_decrypted_runtime.xlsx
 2026-05-18,Senin,2026-05-15 s/d 2026-05-21,GCC 99 isi 12,497800,41483.33,41.483,12,1000,40,19912000,NORMAL,VALID AWAL - Laporan giling Mei 2026,14-21_MEI_2026.xlsm_decrypted_runtime.xlsx
 2026-05-18,Senin,2026-05-15 s/d 2026-05-21,GCC 99 isi 16,10000,625.0,1.042,16,600,42,420000,NORMAL,VALID AWAL - Laporan giling Mei 2026,14-21_MEI_2026.xlsm_decrypted_runtime.xlsx
+2026-05-19,Selasa,2026-05-15 s/d 2026-05-21,GCC 99 isi 12,556700,46391.67,46.392,12,1000,40,22268000,NORMAL,VALID AWAL - Laporan giling Mei 2026,14-21_MEI_2026.xlsm_decrypted_runtime.xlsx
+2026-05-20,Rabu,2026-05-15 s/d 2026-05-21,GCC 99 isi 12,258500,21541.67,21.542,12,1000,40,10340000,NORMAL,VALID AWAL - Laporan giling Mei 2026,14-21_MEI_2026.xlsm_decrypted_runtime.xlsx
+2026-05-20,Rabu,2026-05-15 s/d 2026-05-21,GCC 99 isi 16,305400,19087.5,31.812,16,600,42,12826800,NORMAL,VALID AWAL - Laporan giling Mei 2026,14-21_MEI_2026.xlsm_decrypted_runtime.xlsx
+2026-05-21,Kamis,2026-05-15 s/d 2026-05-21,GCC 99 isi 12,463200,38600.0,38.6,12,1000,40,18528000,NORMAL,VALID AWAL - Laporan giling Mei 2026,14-21_MEI_2026.xlsm_decrypted_runtime.xlsx
