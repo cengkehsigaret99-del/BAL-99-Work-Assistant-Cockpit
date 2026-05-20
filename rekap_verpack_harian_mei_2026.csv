@@ -1,4 +1,4 @@
-﻿tanggal_verpack,hari,jumlah_pack,total_upah_verpack,jumlah_merek_aktif,merek_aktif,status_validasi
+tanggal_verpack,hari,jumlah_pack,total_upah_verpack,jumlah_merek_aktif,merek_aktif,status_validasi
 2026-05-02,Sabtu,23100,4499000,4,"Cengkeh Biru 77 isi 16, Cengkeh Refill isi 12, GCC 99 isi 12, GCC 99 isi 16",VALID AWAL
 2026-05-04,Senin,42100,7641000,2,"GCC 99 isi 12, GCC 99 isi 16",VALID AWAL
 2026-05-05,Selasa,37000,7370000,2,"GCC 99 isi 12, GCC 99 isi 16",VALID AWAL
@@ -9,4 +9,7 @@
 2026-05-11,Senin,26000,4660000,2,"GCC 99 isi 12, GCC 99 isi 16",VALID AWAL
 2026-05-12,Selasa,39000,8190000,1,GCC 99 isi 16,VALID AWAL
 2026-05-13,Rabu,54600,9466000,2,"GCC 99 isi 12, GCC 99 isi 16",VALID AWAL
-2026-05-15,Jumat,56000,9520000,1,GCC 99 isi 12,VALID AWAL
+2026-05-14,Kamis,56000,9520000,1,GCC 99 isi 12,VALID AWAL
+2026-05-18,Senin,21000,4410000,1,New GCC 99 isi 16 Ambree Kuning,VALID AWAL - TUD TERPISAH
+2026-05-19,Selasa,36000,7560000,1,New GCC 99 isi 16 Ambree Kuning,VALID AWAL
+2026-05-20,Rabu,33600,7056000,1,New GCC 99 isi 16 Ambree Kuning,VALID AWAL - SINKRON PACING/PITA
