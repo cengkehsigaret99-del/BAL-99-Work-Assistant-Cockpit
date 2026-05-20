@@ -1,3 +1,13 @@
 tanggal_stok,merek,stok_awal,masuk_verpack,keluar_sj,retur_masuk,koreksi_plus,koreksi_minus,stok_akhir,po_belum_terkirim,selisih_stok_vs_po,status_stok,validasi
-2026-05-13,GCC 99 isi 12,120000,112500,126000,0,0,0,106500,100000,6500,STOK PAS,Cek jadwal Banten
-2026-05-13,New GCC 99 isi 16 Ambree Biru,65000,69100,21000,0,0,0,113100,185000,-71900,STOK KURANG,Prioritas PSP/PMS
+2026-05-20,Gedung Cengkeh Coklat 99 Polos,0,0,0,0,0,0,0,0,0,PERLU CEK SATUAN,VALID AWAL - Posisi stok fisik sheet 20 Mei; sumber 05. MEI COPY.xlsx sheet 20; perlu rekonsiliasi saldo awal+verpack-DO sebelum VALID FINAL.
+2026-05-20,Gedung Cengkeh Coklat 99 Merah,500,0,0,0,0,0,500,0,500,STOK TIPIS,VALID AWAL - Posisi stok fisik sheet 20 Mei; sumber 05. MEI COPY.xlsx sheet 20; perlu rekonsiliasi saldo awal+verpack-DO sebelum VALID FINAL.
+2026-05-20,Gedung Cengkeh Coklat 99 Kuning,0,0,0,0,0,0,0,0,0,STOK 0,VALID AWAL - Posisi stok fisik sheet 20 Mei; sumber 05. MEI COPY.xlsx sheet 20; perlu rekonsiliasi saldo awal+verpack-DO sebelum VALID FINAL.
+2026-05-20,Cengkeh Biru 77 isi 12,0,0,0,0,0,0,0,0,0,STOK 0,VALID AWAL - Posisi stok fisik sheet 20 Mei; sumber 05. MEI COPY.xlsx sheet 20; perlu rekonsiliasi saldo awal+verpack-DO sebelum VALID FINAL.
+2026-05-20,Gedung Cengkeh Coklat 99 isi 16 Biru,0,0,0,0,0,0,0,0,0,STOK 0,VALID AWAL - Posisi stok fisik sheet 20 Mei; sumber 05. MEI COPY.xlsx sheet 20; perlu rekonsiliasi saldo awal+verpack-DO sebelum VALID FINAL.
+2026-05-20,Gedung Cengkeh Coklat 99 isi 16 Kuning,0,0,0,0,0,0,0,0,0,STOK 0,VALID AWAL - Posisi stok fisik sheet 20 Mei; sumber 05. MEI COPY.xlsx sheet 20; perlu rekonsiliasi saldo awal+verpack-DO sebelum VALID FINAL.
+2026-05-20,Cengkeh Biru 77 isi 16,0,0,0,0,0,0,0,0,0,STOK 0,VALID AWAL - Posisi stok fisik sheet 20 Mei; sumber 05. MEI COPY.xlsx sheet 20; perlu rekonsiliasi saldo awal+verpack-DO sebelum VALID FINAL.
+2026-05-20,Cengkeh Refill,1930,0,0,0,0,0,1930,0,1930,STOK ADA,VALID AWAL - Posisi stok fisik sheet 20 Mei; sumber 05. MEI COPY.xlsx sheet 20; perlu rekonsiliasi saldo awal+verpack-DO sebelum VALID FINAL.
+2026-05-20,New Gedung Cengkeh Coklat 99 isi 16 Ambree Kuning,57730,0,57000,0,0,0,830,0,830,STOK ADA,VALID AWAL - Posisi stok fisik sheet 20 Mei; sumber 05. MEI COPY.xlsx sheet 20; perlu rekonsiliasi saldo awal+verpack-DO sebelum VALID FINAL.
+2026-05-20,Cengkeh Refill Original,0,0,0,0,0,0,0,0,0,STOK 0,VALID AWAL - Posisi stok fisik sheet 20 Mei; sumber 05. MEI COPY.xlsx sheet 20; perlu rekonsiliasi saldo awal+verpack-DO sebelum VALID FINAL.
+2026-05-20,New Gedung Cengkeh Coklat 99 isi 16 Ambree Biru,450,0,0,0,0,0,1450,0,1450,PERLU CEK SATUAN,VALID AWAL - Posisi stok fisik sheet 20 Mei; sumber 05. MEI COPY.xlsx sheet 20; perlu rekonsiliasi saldo awal+verpack-DO sebelum VALID FINAL.
+2026-05-20,BAL 9,0,0,0,0,0,0,0,0,0,STOK 0,VALID AWAL - Posisi stok fisik sheet 20 Mei; sumber 05. MEI COPY.xlsx sheet 20; perlu rekonsiliasi saldo awal+verpack-DO sebelum VALID FINAL.
