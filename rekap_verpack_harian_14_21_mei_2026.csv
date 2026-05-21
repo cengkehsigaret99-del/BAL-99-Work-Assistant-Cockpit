@@ -1,7 +1,7 @@
 tanggal,hari,gcc99_pack,cb77_pack,gcc16_pack,cb16_pack,refill_h_pack,total_pack,estimasi_karton_setara,total_gaji_input,total_gaji_standar,selisih_gaji,status_validasi,catatan
 2026-05-14,KAMIS,56000,0,0,0,0,56000,56.0,9520000,9520000,0,VALID AWAL,"Pacing/verpack; tanggal perlu dicocokkan dengan pemakaian pita Excel/CK4C."
-2026-05-18,SENIN,0,0,21600,0,0,21600,36.0,4536000,4536000,0,VALID AWAL DENGAN PENYESUAIAN,"600 pack TUD tidak memakai pita; official barang jadi/CK4C terkunci 21.000 pack."
-2026-05-19,SELASA,0,0,36000,0,0,36000,60.0,7591500,7560000,31500,PERLU CEK GAJI,"Gaji input lebih tinggi Rp31.500 dari standar; ditemukan pada karyawan VERA GCC16 550 pack."
-2026-05-20,RABU,0,0,33800,0,0,33800,56.3333,7098000,7098000,0,PERLU KONFIRMASI PACK,"Pacing 33.800 pack, sedangkan CSCK-3/Excel pita memakai 33.600 pack. Selisih 200 pack perlu cek."
-2026-05-21,KAMIS,0,0,33200,0,0,33200,55.3333,6972000,6972000,0,VALID AWAL / BELUM CK4C,"Verpack 21 Mei terbaca 33.200 pack; belum otomatis masuk CK4C/stok barang jadi."
-TOTAL,,56000,0,124600,0,0,180600,263.6666,35717500,35686000,31500,VALID AWAL DENGAN CATATAN,"Total periode 14-21 Mei sesuai workbook: 180.600 pack; gaji input Rp35.717.500 vs standar Rp35.686.000 selisih Rp31.500."
+2026-05-18,SENIN,0,0,21600,0,0,21600,36.0,4536000,4536000,0,VALID AWAL DENGAN PENYESUAIAN,"600 pack TUD tidak memakai pita; official pita/CK4C terkunci 21.000 pack."
+2026-05-19,SELASA,0,0,36000,0,0,36000,60.0,7591500,7560000,31500,VALID AWAL / OFFICIAL PITA / PERLU CEK GAJI,"Pita official 36.000 pack. Gaji input lebih tinggi Rp31.500 dari standar; ditemukan pada karyawan VERA GCC16 550 pack."
+2026-05-20,RABU,0,0,33800,0,0,33800,56.3333,7098000,7098000,0,VALID AWAL / OFFICIAL PITA,"Sudah cocok dengan file Pemakaian Pita terbaru: PITA16 produksi/pemakaian 20 Mei = 33.800 pack."
+2026-05-21,KAMIS,0,0,33200,0,0,33200,55.3333,6972000,6972000,0,VALID AWAL / OFFICIAL PITA,"Sudah cocok dengan file Pemakaian Pita terbaru: PITA16 produksi/pemakaian 21 Mei = 33.200 pack."
+TOTAL,,56000,0,124600,0,0,180600,263.6666,35717500,35686000,31500,VALID AWAL DENGAN CATATAN,"Total periode 14-21 Mei sesuai workbook: 180.600 pack; official pita sudah sinkron untuk 19-21 Mei; gaji input Rp35.717.500 vs standar Rp35.686.000 selisih Rp31.500."
