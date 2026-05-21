@@ -1,0 +1,2 @@
+tanggal,customer,no_sj,jenis_mutasi,produk,karton,total_pack,harga_pack,debet,kredit,perubahan_stok_pack,status_piutang,status_validasi,sumber,catatan
+2026-05-21,TRI SUKMA AJI,126/SJ/BAL/V/2026,DEBET DO/SJ,New Gedung Cengkeh Coklat 99 isi 16,15,9000,8500,76500000,0,-9000,PIUTANG BERTAMBAH,VALID AWAL / CEK DOBEL,PDF 126 - TRI SUKMA AJI,"Tambahan piutang dari SJ 126: 9.000 pack x Rp8.500 = Rp76.500.000. Mengurangi stok barang jadi New GCC 16 sebesar 9.000 pack jika belum pernah terinput."
