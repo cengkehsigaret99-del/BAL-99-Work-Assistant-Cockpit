@@ -1,0 +1,17 @@
+tanggal_kegiatan,uraian_kegiatan,merek,jenis,isi,hje,tarif,no_dokumen_cukai,tgl_dokumen_cukai,keping,keterangan,sumber_data,validasi
+2026-05-18,Saldo Awal,PITA 99 & 77 / GCC 99 isi 12,SKT,12,10325,122,SALDO-AWAL-CK4,2026-05-18,74700,Saldo awal/sisa kegiatan sebelumnya sebelum tambahan CK1,saldo_ck4_sebelum_ck1_18_mei_2026.csv,VALID AWAL
+2026-05-18,Penerimaan (+),PITA 99 & 77 / GCC 99 isi 12,SKT,12,10325,122,CK1-TAMBAHAN,2026-05-18,180000,Penerimaan pita dari tambahan CK1; masuk proyeksi setelah CK1,saldo_ck4_sebelum_ck1_18_mei_2026.csv,VALID AWAL / CEK DOKUMEN CK1
+2026-05-20,Pemakaian (-),PITA 99 & 77 / GCC 99 isi 12,SKT,12,10325,122,CK4C-PEMAKAIAN,2026-05-20,0,Tidak ada verpack official GCC 12 setelah saldo 18 Mei dalam update ini,browse_ck4c.csv,VALID AWAL
+2026-05-20,Pengembalian (-),PITA 99 & 77 / GCC 99 isi 12,SKT,12,10325,122,-,,0,Tidak ada pengembalian pita tercatat,browse_ck4c.csv,VALID AWAL
+2026-05-18,Saldo Awal,PITA REFILL,SKT,12,10500,122,SALDO-AWAL-CK4,2026-05-18,9970,Saldo awal/sisa kegiatan sebelumnya,saldo_ck4_sebelum_ck1_18_mei_2026.csv,VALID AWAL
+2026-05-18,Penerimaan (+),PITA REFILL,SKT,12,10500,122,CK1-TAMBAHAN,2026-05-18,0,Tidak ada penerimaan CK1 refill dalam data ini,saldo_ck4_sebelum_ck1_18_mei_2026.csv,VALID AWAL
+2026-05-20,Pemakaian (-),PITA REFILL,SKT,12,10500,122,CK4C-PEMAKAIAN,2026-05-20,0,Tidak ada verpack official refill baru dalam update ini,browse_ck4c.csv,VALID AWAL
+2026-05-20,Pengembalian (-),PITA REFILL,SKT,12,10500,122,-,,0,Tidak ada pengembalian pita tercatat,browse_ck4c.csv,VALID AWAL
+2026-05-18,Saldo Awal,PITA 16 / New GCC 99 isi 16,SKT,16,13775,122,SALDO-AWAL-CK4,2026-05-18,118200,Saldo awal/sisa kegiatan sebelumnya sebelum tambahan CK1,saldo_ck4_sebelum_ck1_18_mei_2026.csv,VALID AWAL
+2026-05-18,Penerimaan (+),PITA 16 / New GCC 99 isi 16,SKT,16,13775,122,CK1-TAMBAHAN,2026-05-18,60000,Penerimaan pita dari tambahan CK1; masuk proyeksi setelah CK1,saldo_ck4_sebelum_ck1_18_mei_2026.csv,VALID AWAL / CEK DOKUMEN CK1
+2026-05-20,Pemakaian (-),PITA 16 / New GCC 99 isi 16,SKT,16,13775,122,CK4C-PEMAKAIAN-18-20,2026-05-20,90600,Pemakaian mengikuti barang jadi official 18 Mei 21000 + 19 Mei 36000 + 20 Mei 33600. TUD 600 pack tidak memakai pita,browse_ck4c.csv,VALID AWAL
+2026-05-20,Pengembalian (-),PITA 16 / New GCC 99 isi 16,SKT,16,13775,122,-,,0,Tidak ada pengembalian pita tercatat,browse_ck4c.csv,VALID AWAL
+2026-05-18,Saldo Awal,TIS - D'CLOVE,TIS,1000,55000,,SALDO-AWAL-CK4,2026-05-18,0,Saldo awal TIS belum ada; masih perlu master TIS,saldo_ck4_sebelum_ck1_18_mei_2026.csv,VALID AWAL / PERLU MASTER TIS
+2026-05-18,Penerimaan (+),TIS - D'CLOVE,TIS,1000,55000,,CK1-TAMBAHAN-TIS,2026-05-18,2800,Proyeksi/tambahan TIS; belum ada pemakaian,browse_ck4c.csv,VALID AWAL / PERLU MASTER TIS
+2026-05-20,Pemakaian (-),TIS - D'CLOVE,TIS,1000,55000,,CK4C-PEMAKAIAN,2026-05-20,0,Belum ada pemakaian TIS dalam CK4C berjalan,browse_ck4c.csv,VALID AWAL / PERLU MASTER TIS
+2026-05-20,Pengembalian (-),TIS - D'CLOVE,TIS,1000,55000,,-,,0,Tidak ada pengembalian pita/TIS tercatat,browse_ck4c.csv,VALID AWAL / PERLU MASTER TIS
