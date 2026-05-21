@@ -1,5 +1,5 @@
 file,rows,status
-BAL99_BAL77_DATA_MANIFEST.csv,38,updated after CK4C detail PDF-like page; cutoff stock barang jadi tetap 20 Mei
+BAL99_BAL77_DATA_MANIFEST.csv,40,updated after CSCK-3 detail page and menu route; cutoff stock barang jadi tetap 20 Mei
 CATATAN_CUTOFF_STOCK_BARANG_JADI_20_MEI_2026.txt,catatan,LOCKED - stock akhir aktif posisi 20 Mei; 21 Mei belum ada verpack official
 CATATAN_VALIDASI_PIUTANG_3_CUSTOMER_19_MEI_2026.txt,catatan,VALID AWAL / VALID SEMENTARA - update piutang Usup Karmin Banten Khoirul per JPG 19 Mei
 CATATAN_VALIDASI_PIUTANG_TSM_05_MEI_2026.txt,catatan,VALID AWAL - update TSM Makasar Rp112.200.000 dan TSM Malang Rp25.500.000
@@ -22,12 +22,14 @@ browse_retur_komplain.csv,1,copied from v17.2 baseline
 browse_stok_pasar.csv,2,copied from v17.2 baseline
 browse_surat_jalan.csv,21,updated DO/SJ Mei sampai SJ124
 browse_verpack.csv,25,updated verpack Mei sampai 20 Mei; TUD 600 pack terpisah
-ck4c-detail-produksi.html,halaman,NEW - tampilan CK4C Detail Produksi mengikuti pola PDF CK-4C; tidak mengubah app.js
+ck4c-detail-produksi.html,halaman,NEW - tampilan CK4C Detail Produksi mengikuti pola PDF CK-4C; menu CK4C diarahkan ke halaman ini
 ck4c_hold_mapping_cukai.csv,4,NEW - baris verpack yang ditahan dari CSV upload karena master merek/HJE belum valid
 ck4c_upload_cukai.csv,21,NEW - CSV upload cukai 22 kolom sesuai template CK4; hanya baris valid mapping dari verpack official
 ck4c_upload_cukai_validation.csv,15,NEW - validasi PASS/PENDING CK4C upload cukai sebelum upload sistem cukai
 ck4c-upload-cukai.html,halaman,UPDATED - halaman download/cek CK4C upload cukai + tombol validasi; link aman sudah ditambahkan di index.html
-index.html,halaman,UPDATED - stable4 ck4c detail; tambah link CK4C Detail Produksi dan CK4C Upload tanpa mengubah app.js
+csck3_detail.csv,16,NEW - CSCK-3 Detail Catatan Sediaan Pita Cukai sesuai Lampiran D PMK 94/2018
+csck3-detail.html,halaman,NEW - tampilan CSCK-3 Detail; menu Saldo CK4 Sebelum CK1 diarahkan ke halaman ini
+index.html,halaman,UPDATED - stable6; CK4C menuju CK4C Detail Produksi dan Saldo CK4 Sebelum CK1 menuju CSCK-3 Detail tanpa mengubah app.js
 master_ck4c_merek_hje.csv,6,NEW - mapping merek aplikasi ke format cukai; Cengkeh Biru masih DATA BELUM VALID
 master_harga_customer.csv,5,copied from v17.2 baseline
 master_status.csv,12,copied from v17.2 baseline
@@ -35,6 +37,6 @@ rekap_giling_harian_mei_2026.csv,14,updated giling harian sampai 20 Mei; 14 Mei 
 rekap_giling_per_merek_mei_2026.csv,5,updated giling per merek sampai 20 Mei; termasuk koreksi tanggal 14 Mei
 rekap_verpack_harian_mei_2026.csv,14,updated verpack harian sampai 20 Mei
 rekap_verpack_per_merek_mei_2026.csv,6,updated verpack per merek sampai 20 Mei
-saldo_ck4_sebelum_ck1_18_mei_2026.csv,4,v17.3 saldo CK4 sebelum CK1
+saldo_ck4_sebelum_ck1_18_mei_2026.csv,4,v17.3 saldo CK4 sebelum CK1 / sumber CSCK-3
 saldo_pita_18_mei_2026_update.csv,4,v17.3 saldo CK4 sebelum CK1
 saldo_pita_setelah_ck1_18_mei_2026.csv,4,v17.3 saldo CK4 sebelum CK1
