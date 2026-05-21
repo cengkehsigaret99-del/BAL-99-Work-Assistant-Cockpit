@@ -12,7 +12,6 @@
 <link rel="stylesheet" href="style.css?v=17_8_mei20_stable8_awam_cukai">
 </head>
 <body>
-<!-- BAL-99 stable marker: v17.8_mei20_stable8_awam_cukai | cukai awam links added | Cengkeh Biru mapping locked | P3C mapping refined -->
 <header class="topbar">
   <div class="brand">
     <img src="logo.png?v=17_8_mei20_stable8_awam_cukai" alt="PR Banyu Anyar Lestari" class="logo">
@@ -25,6 +24,7 @@
   <div class="top-meta">
     <b>v17.8 Stable 8</b>
     <small>Cukai menu ramah pengguna awam</small><br>
+    <a href="kontrol-upah-produksi.html?v=prod_upah_1" target="_blank" style="display:inline-block;margin-top:6px;color:#f1d89a;font-weight:700;text-decoration:none">↗ Upah Borongan Gabungan</a><br>
     <a href="panduan-awam-cukai.html?v=17_8_mei20_stable8_awam_cukai" target="_blank" style="display:inline-block;margin-top:6px;color:#f1d89a;font-weight:700;text-decoration:none">↗ Panduan Awam Cukai</a><br>
     <a href="p3c-kppbc-control.html?v=17_8_mei20_stable8_awam_cukai" target="_blank" style="display:inline-block;margin-top:6px;color:#f1d89a;font-weight:700;text-decoration:none">↗ P3C / KPPBC / CK-1</a><br>
     <a href="csck3-detail-full.html?v=17_8_mei20_stable8_awam_cukai" target="_blank" style="display:inline-block;margin-top:6px;color:#f1d89a;font-weight:700;text-decoration:none">↗ CSCK-3 Full</a><br>
@@ -33,12 +33,13 @@
     <a href="ck4c-upload-cukai.html?v=17_8_mei20_stable8_awam_cukai" target="_blank" style="display:inline-block;margin-top:6px;color:#f1d89a;font-weight:700;text-decoration:none">↗ CK4C Upload Cukai</a>
   </div>
 </header>
-<div class="mobile-quick"><label for="mobilePage">Pilih Menu Kerja</label><select id="mobilePage" onchange="show(this.value)"></select><small>Mode HP: gunakan tombol favorit untuk menu utama, atau pilih menu lengkap dari dropdown.</small><div class="mobile-favs"><button onclick="show('dashboard')">Dashboard</button><button onclick="show('work_cockpit')">Cockpit</button><button onclick="location.href='panduan-awam-cukai.html?v=17_8_mei20_stable8_awam_cukai'">Panduan Cukai</button><button onclick="location.href='p3c-kppbc-control.html?v=17_8_mei20_stable8_awam_cukai'">P3C/KPPBC/CK-1</button><button onclick="location.href='csck3-detail-full.html?v=17_8_mei20_stable8_awam_cukai'">CSCK-3</button><button onclick="location.href='csck3-koreksi-data.html?v=17_8_mei20_stable8_awam_cukai'">Koreksi</button><button onclick="location.href='ck4c-detail-produksi.html?v=17_8_mei20_stable8_awam_cukai'">CK4C</button><button onclick="location.href='ck4c-upload-cukai.html?v=17_8_mei20_stable8_awam_cukai'">Upload</button><button onclick="show('barang_jadi')">Barang Jadi</button><button onclick="show('sj')">DO/SJ</button><button onclick="show('piutang')">Piutang</button></div></div>
+<div class="mobile-quick"><label for="mobilePage">Pilih Menu Kerja</label><select id="mobilePage" onchange="show(this.value)"></select><small>Mode HP: gunakan tombol favorit untuk menu utama, atau pilih menu lengkap dari dropdown.</small><div class="mobile-favs"><button onclick="show('dashboard')">Dashboard</button><button onclick="show('work_cockpit')">Cockpit</button><button onclick="location.href='kontrol-upah-produksi.html?v=prod_upah_1'">Upah Borongan</button><button onclick="location.href='panduan-awam-cukai.html?v=17_8_mei20_stable8_awam_cukai'">Panduan Cukai</button><button onclick="location.href='p3c-kppbc-control.html?v=17_8_mei20_stable8_awam_cukai'">P3C/KPPBC/CK-1</button><button onclick="location.href='csck3-detail-full.html?v=17_8_mei20_stable8_awam_cukai'">CSCK-3</button><button onclick="location.href='csck3-koreksi-data.html?v=17_8_mei20_stable8_awam_cukai'">Koreksi</button><button onclick="location.href='ck4c-detail-produksi.html?v=17_8_mei20_stable8_awam_cukai'">CK4C</button><button onclick="location.href='ck4c-upload-cukai.html?v=17_8_mei20_stable8_awam_cukai'">Upload</button><button onclick="show('barang_jadi')">Barang Jadi</button><button onclick="show('sj')">DO/SJ</button><button onclick="show('piutang')">Piutang</button></div></div>
 <div class="layout">
   <aside id="nav" class="sidebar"></aside>
   <main id="app" class="app"></main>
 </div>
 <script src="app.js?v=17_8_mei20_stable2"></script>
+<script src="production-shortcuts.js?v=prod_upah_1"></script>
 <script>
 (function(){
   function setupCukaiLinks(){
