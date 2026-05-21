@@ -1,0 +1,6 @@
+sumber,jenis_ht,isi_volume,hje,tarif,seri_pita,warna,personalisasi,tahun_pita,saldo_lembar,status_data,catatan
+screenshot_stock_1,SKT,12,10325,122,I,MERAH,BANYLEST00,2026,770,VALID AWAL,Saldo terbaca dari screenshot; perlu export resmi KPPBC untuk final
+screenshot_stock_2,SKT,16,13775,122,I,MERAH,BANYLEST00,2026,11730,VALID AWAL,Saldo terbaca dari screenshot; perlu export resmi KPPBC untuk final
+screenshot_stock_3,SKT,16,13775,122,I,MERAH,BANYLEST00,2026,840,VALID AWAL,Saldo terbaca dari screenshot halaman 3
+screenshot_stock_3,SKT,12,10500,122,I,MERAH,BANYLEST00,2026,0,VALID AWAL,Saldo terbaca dari screenshot halaman 3
+screenshot_stock_3,SKT,16,13775,122,I,MERAH,BANYLEST00,2026,2500,VALID AWAL,Saldo terbaca dari screenshot halaman 3; kemungkinan kelompok/personalisasi sama tapi baris berbeda di sistem
