@@ -1,0 +1,6 @@
+tanggal,customer,jenis_mutasi,keterangan,debet,kredit,saldo_berjalan,status_validasi,sumber,catatan
+2026-04-19,USUP / KARMIN,SALDO_AWAL,Saldo awal keseluruhan valid,69830000,0,69830000,VALID AWAL,JPG Update Piutang Pelanggan 19/05/2026,"Saldo awal dibawa sebagai saldo gabungan/running balance; cek apakah sudah pernah masuk aplikasi agar tidak dobel."
+2026-04-20,USUP / KARMIN,DEBET,Pengiriman baru Cengkeh Biru 77 isi 12 batang - 10 karton x 1000 pack x Rp6500,65000000,0,134830000,VALID AWAL,JPG Update Piutang Pelanggan 19/05/2026,"Masuk sebagai debet baru jika pengiriman 20 April belum tercatat di histori aplikasi."
+2026-05-02,USUP / KARMIN,KREDIT,Pembayaran masuk BCA 17:55:09 - Berita 77,0,19500000,115330000,VALID AWAL,JPG Update Piutang Pelanggan 19/05/2026,"Pembayaran pertama dari 3 pembayaran terakhir; perlu bukti/mutasi untuk VALID FINAL."
+2026-05-07,USUP / KARMIN,KREDIT,Pembayaran masuk BCA 18:45:52 - Berita 77,0,17000000,98330000,VALID AWAL,JPG Update Piutang Pelanggan 19/05/2026,"Pembayaran kedua dari 3 pembayaran terakhir; perlu bukti/mutasi untuk VALID FINAL."
+2026-05-19,USUP / KARMIN,KREDIT,Pembayaran masuk BCA 18:43:51 - Berita 77,0,12300000,86030000,VALID AWAL,JPG Update Piutang Pelanggan 19/05/2026,"Pembayaran ketiga dari 3 pembayaran terakhir; saldo akhir kerja Rp86.030.000."
