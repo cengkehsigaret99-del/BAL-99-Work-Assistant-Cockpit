@@ -1,0 +1,2 @@
+ranking,nama_tenaga_kerja,total_batang_giling,total_pack_verpack,total_unit_gabungan,total_upah,bagian_dominan,status_validasi,catatan
+1,BELUM ADA DATA DETAIL NAMA,0,0,0,0,-,MENUNGGU DATA DETAIL,"Data upah yang tersedia saat ini masih rekap per tanggal/bagian/produk. Untuk menghitung 10 besar nama tenaga kerja, perlu file detail yang berisi nama karyawan dan hasil per orang."
