@@ -1,0 +1,7 @@
+tanggal,hari,gcc99_batang,cb77_batang,gcc16_batang,cb16_batang,total_batang,estimasi_pack_total,estimasi_karton_setara,total_upah,status,catatan
+2026-05-15,JUMAT,0,0,0,0,0,0.0,0.0,0,NOL / TIDAK ADA PRODUKSI,"Giling/WIP saja, bukan barang jadi dan tidak mengurangi pita."
+2026-05-16,SABTU,509000,12200,0,29200,550400,45258.33,46.475,22074400,VALID AWAL,"Giling/WIP saja, bukan barang jadi dan tidak mengurangi pita."
+2026-05-18,SENIN,500500,0,10000,0,510500,42333.33,42.75,20440000,VALID AWAL,"Giling/WIP saja, bukan barang jadi dan tidak mengurangi pita."
+2026-05-19,SELASA,554000,0,0,0,554000,46166.67,46.1667,22160000,VALID AWAL,"Giling/WIP saja, bukan barang jadi dan tidak mengurangi pita."
+2026-05-20,RABU,255500,0,308400,0,563900,40566.67,53.4167,23172800,VALID AWAL,"Giling/WIP saja, bukan barang jadi dan tidak mengurangi pita."
+2026-05-21,KAMIS,465700,0,0,0,465700,38808.33,38.8083,18628000,VALID AWAL,"Giling/WIP saja, bukan barang jadi dan tidak mengurangi pita. Data 21 Mei terbaca dari workbook; cek lapangan jika sebelumnya dianggap belum ada giling."
