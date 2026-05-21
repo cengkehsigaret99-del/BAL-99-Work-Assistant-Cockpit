@@ -1,0 +1,3 @@
+tanggal,nama_tenaga_kerja,bagian,produk,jumlah_batang_giling,jumlah_pack_verpack,tarif,total_upah,status_validasi,catatan
+2026-05-21,CONTOH NAMA,GILING,Gedung Cengkeh Coklat 99 isi 12,0,0,40,0,TEMPLATE,"Isi data detail per orang dari laporan giling/verpack agar sistem bisa menghitung top 10."
+2026-05-21,CONTOH NAMA,VERPACK,New Gedung Cengkeh Coklat 99 isi 16,0,0,210,0,TEMPLATE,"Isi jumlah pack verpack per orang."
