@@ -1,0 +1,25 @@
+parameter,status,nilai,catatan
+format_acuan,PASS,Lampiran D PMK 94/2018,CSCK-3 adalah Catatan Sediaan Pita Cukai
+identitas_perusahaan,PASS,PR BANYUANYAR LESTARI,Sesuai NPPBKC yang dipakai aplikasi
+nppbkc,PASS,3573030508740001-070613,Sesuai dokumen NPPBKC upload
+npwp,PASS,3573030508740001,Sesuai dokumen NPPBKC upload
+alamat,PASS,Jalan Karang Nongko RT 027 RW 012 Tajinan Kabupaten Malang,Sesuai dokumen NPPBKC upload
+jumlah_kelompok_pita,PASS,4,PITA 99/77; PITA REFILL; PITA 16; TIS D'CLOVE
+jumlah_baris_detail,PASS,16,4 kegiatan x 4 kelompok pita
+kegiatan_saldo_awal,PASS,4,Sesuai format CSCK-3
+kegiatan_penerimaan,PASS,4,Sesuai format CSCK-3
+kegiatan_pemakaian,PASS,4,Sesuai format CSCK-3
+kegiatan_pengembalian,PASS,4,Sesuai format CSCK-3
+total_saldo_awal_keping,PASS,202870,74700 + 9970 + 118200 + 0
+total_penerimaan_keping,PASS,242800,180000 + 0 + 60000 + 2800
+total_pemakaian_keping,PASS,90600,Hanya PITA 16 dari verpack official 18-20 Mei
+total_pengembalian_keping,PASS,0,Belum ada pengembalian tercatat
+saldo_akhir_hitung,PASS,355070,Saldo awal + penerimaan - pemakaian - pengembalian
+saldo_akhir_gcc12,PASS,254700,74700 + 180000 - 0
+saldo_akhir_refill,PASS,9970,9970 + 0 - 0
+saldo_akhir_pita16,PASS,87600,118200 + 60000 - 90600
+saldo_akhir_tis,PASS,2800,0 + 2800 - 0
+sumber_data,PASS,saldo_ck4_sebelum_ck1_18_mei_2026.csv dan browse_ck4c.csv,Tidak mengambil dari DO/SJ piutang giling atau stock pasar
+nomor_dokumen_ck1,CEK DOKUMEN,placeholder kerja,Perlu diganti nomor CK1 resmi jika akan dipakai final
+nama_merek_resmi,CEK LANJUT,sebagian masih nama kelompok pita,PITA 99/77 adalah kelompok kerja; jika diminta format resmi penuh perlu pecah per merek cukai
+status_final,VALID AWAL,belum VALID FINAL,Final setelah nomor dokumen CK1 tanggal dokumen CK1 dan pemecahan merek resmi dikunci
