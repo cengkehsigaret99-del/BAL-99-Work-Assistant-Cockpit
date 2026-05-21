@@ -1,0 +1,16 @@
+parameter,status,nilai,catatan
+jumlah_kolom_upload,PASS,22,Sesuai template CK4: No sampai JUMLAH KEMASAN BERPITA
+jumlah_baris_upload_valid,PASS,21,Hanya baris valid mapping yang masuk CSV upload cukai
+jumlah_baris_hold_mapping,PENDING,4,Cengkeh Biru 77 isi 12/16 ditahan karena master cukai belum valid
+total_jumlah_kemasan_upload,PASS,503750,Total dari 21 baris ck4c_upload_cukai.csv
+total_jumlah_kemasan_berpita_upload,PASS,503750,Sama dengan jumlah kemasan karena semua baris upload adalah regular berpita
+total_jumlah_isi_upload,PASS,6906200,Total batang ekuivalen dari baris upload valid
+total_jumlah_kemasan_hold,PENDING,5200,Tidak masuk CSV upload agar tidak gagal upload cukai
+total_jumlah_isi_hold,PENDING,75200,Ditahan sampai master Cengkeh Biru valid
+sumber_data,PASS,browse_verpack.csv,Hanya dari verpack official harian
+relasi_giling,PASS,TIDAK ADA,Giling tidak menjadi sumber CK4C upload
+relasi_do_sj,PASS,TIDAK ADA,DO/SJ tidak menjadi sumber CK4C upload
+relasi_piutang,PASS,TIDAK ADA,Piutang tidak menjadi sumber CK4C upload
+relasi_stock_pasar,PASS,TIDAK ADA,Stock pasar tidak menjadi sumber CK4C upload
+aturan_tud,PASS,NON PITA,TUD tidak menambah JUMLAH KEMASAN BERPITA
+status_upload_awal,VALID AWAL,CEK SEBELUM UPLOAD,Perlu cek ulang SEQ MEREK NO KEP TGL KEP ID MEREK DETAIL sebelum upload sistem cukai
