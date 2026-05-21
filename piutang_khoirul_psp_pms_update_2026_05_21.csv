@@ -1,0 +1,4 @@
+tanggal,customer,sub_akun,keterangan,debet,kredit,saldo,status_validasi,sumber,catatan
+2026-05-18,KHOIRUL SOLEH,PSP,Tambahan pengeluaran CKT16 18 karton x 600 pack x Rp8.400,90720000,0,44247000,VALID AWAL,JPG Saldo piutang PMS + PSP,"Saldo PSP terbaru setelah transaksi 18 Mei tetap Rp44.247.000."
+2026-05-21,KHOIRUL SOLEH,PMS,Pembayaran masuk / setor tunai BRI PMS,0,1100000000,1694302800,VALID AWAL,Bukti setor BRI 21/05/2026 14:31:59,"Pembayaran PMS Rp1.100.000.000 masuk sebagai kredit PMS; perlu cocok mutasi rekening untuk VALID FINAL."
+2026-05-21,KHOIRUL SOLEH,TOTAL,Saldo gabungan PSP + PMS per 21 Mei 2026,0,0,1738549800,VALID AWAL,JPG Saldo piutang PMS + PSP,"Rumus kontrol: PSP Rp44.247.000 + PMS Rp1.694.302.800 = Rp1.738.549.800."
