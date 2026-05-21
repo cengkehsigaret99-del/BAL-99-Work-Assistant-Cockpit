@@ -1,2 +1,11 @@
-ranking,nama_tenaga_kerja,total_batang_giling,total_pack_verpack,total_unit_gabungan,total_upah,bagian_dominan,status_validasi,catatan
-1,BELUM ADA DATA DETAIL NAMA,0,0,0,0,-,MENUNGGU DATA DETAIL,"Data upah yang tersedia saat ini masih rekap per tanggal/bagian/produk. Untuk menghitung 10 besar nama tenaga kerja, perlu file detail yang berisi nama karyawan dan hasil per orang."
+ranking,nama_tenaga_kerja,id_giling,id_verpack,total_batang_giling,total_pack_verpack,total_upah_giling,total_upah_verpack,total_upah_gabungan,dasar_ranking,status_validasi,catatan
+1,MAIMUNAH,G10158,,33600,0,1358400,0,1358400,TOTAL UPAH GABUNGAN,VALID AWAL / PERLU CEK DUPLIKASI NAMA,"Urutan berdasarkan total upah gabungan karena satuan giling=batang dan verpack=pack berbeda. Catatan: nama MAIMUNAH muncul lebih dari satu ID di data giling; cek ID sebelum valid final."
+2,IFA,G10708,,32900,0,1334800,0,1334800,TOTAL UPAH GABUNGAN,VALID AWAL / PERLU CEK DUPLIKASI NAMA,"Urutan berdasarkan total upah gabungan karena satuan giling=batang dan verpack=pack berbeda. Catatan: nama IFA muncul lebih dari satu ID di data giling; cek ID sebelum valid final."
+3,NUR HASANAH,G10078,P10023,16700,2800,672000,552000,1224000,TOTAL UPAH GABUNGAN,VALID AWAL,"Nama muncul di giling dan verpack sehingga total batang dan pack ditampilkan bersama."
+4,SITI AMINAH,G10539,,29300,0,1178000,0,1178000,TOTAL UPAH GABUNGAN,VALID AWAL / PERLU CEK DUPLIKASI NAMA,"Catatan: nama SITI AMINAH muncul lebih dari satu ID di data giling; cek ID sebelum valid final."
+5,ATUL,,P10074,0,5250,0,1036500,1036500,TOTAL UPAH GABUNGAN,VALID AWAL / PERLU CEK DUPLIKASI NAMA,"Catatan: nama ATUL muncul lebih dari satu ID di data verpack; cek ID sebelum valid final."
+6,WIWIN,G10830,,25500,0,1026000,0,1026000,TOTAL UPAH GABUNGAN,VALID AWAL / PERLU CEK DUPLIKASI NAMA,"Catatan: nama WIWIN muncul lebih dari satu ID di data giling; cek ID sebelum valid final."
+7,ROMLAH,G10457,P10056,11100,2850,449000,560500,1009500,TOTAL UPAH GABUNGAN,VALID AWAL,"Nama muncul di giling dan verpack sehingga total batang dan pack ditampilkan bersama."
+8,HALIMAH,G10175,,25100,0,1005000,0,1005000,TOTAL UPAH GABUNGAN,VALID AWAL / PERLU CEK DUPLIKASI NAMA,"Catatan: nama HALIMAH muncul lebih dari satu ID di data giling; cek ID sebelum valid final."
+9,YULIATI,G10721,,24700,0,993600,0,993600,TOTAL UPAH GABUNGAN,VALID AWAL / PERLU CEK DUPLIKASI NAMA,"Catatan: nama YULIATI muncul lebih dari satu ID di data giling; cek ID sebelum valid final."
+10,TUTIK,G10723,P10137,11700,2500,473000,495000,968000,TOTAL UPAH GABUNGAN,VALID AWAL,"Nama muncul di giling dan verpack sehingga total batang dan pack ditampilkan bersama."
