@@ -1,0 +1,4 @@
+tanggal,customer,sub_akun,keterangan,debet,kredit,saldo,status_validasi,sumber,catatan
+2026-05-21,KHOIRUL SOLEH,PSP,Saldo PSP terbaru setelah alokasi retur UD Sarifah ke PSP,0,25857200,18389800,VALID AWAL / SINKRON CATATAN,JPG Update Piutang Khoirul 21/05/2026,"Retur UD Sarifah Rp25.857.200 dialokasikan ke PSP. Saldo PSP terbaru Rp18.389.800."
+2026-05-21,KHOIRUL SOLEH,PMS,Pembayaran PMS Rp1.100.000.000 dan koreksi alokasi retur,0,1100000000,1720160000,VALID AWAL / SINKRON CATATAN,Bukti setor BRI + JPG Update Piutang Khoirul,"Pembayaran PMS tetap Rp1.100.000.000. Saldo PMS terbaru Rp1.720.160.000."
+2026-05-21,KHOIRUL SOLEH,TOTAL,Saldo gabungan PSP + PMS terbaru,0,0,1738549800,VALID AWAL / SINKRON CATATAN,JPG Update Piutang Khoirul 21/05/2026,"Rumus kontrol: PSP Rp18.389.800 + PMS Rp1.720.160.000 = Rp1.738.549.800."
