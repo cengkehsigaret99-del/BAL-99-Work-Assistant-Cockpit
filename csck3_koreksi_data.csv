@@ -1,5 +1,5 @@
 kelompok_pita,saldo_awal_excel,masuk_excel,kredit_pemakaian_excel,keluar_bal2_excel,saldo_akhir_excel,ck4c_valid_mapping,ck4c_hold_mapping,ck4c_total_control,selisih_excel_vs_ck4c_control,status_koreksi,catatan
 PITA 99 & 77 / GCC 99 isi 12,55700,480000,281000,0,254700,281000,0,281000,0,SESUAI - MAPPING TERKUNCI,"Saldo awal/akhir mengikuti Excel. Kredit mengikuti Excel. Cengkeh Biru 77 isi 12 sudah dikunci masuk HJE 10.325 sehingga tidak lagi hold mapping."
 PITA REFILL,7420,12000,9450,0,9970,9450,0,9450,0,SESUAI,"Saldo awal/akhir mengikuti Excel. Kredit Excel sama dengan CK4C valid."
-PITA 16 / New GCC 99 isi 16,27100,300000,218500,0,108600,218500,0,218500,0,SESUAI - MAPPING TERKUNCI,"Saldo awal/akhir mengikuti Excel. Kredit mengikuti Excel. Cengkeh Biru 77 isi 16 sudah dikunci masuk HJE 13.775 sehingga tidak lagi hold mapping."
+PITA 16 / New GCC 99 isi 16,27100,300000,251900,0,75200,251900,0,251900,0,SESUAI - MAPPING TERKUNCI / UPDATE 21 MEI,"Saldo akhir mengikuti file Pemakaian Pita terbaru. PITA16 produksi/pemakaian 20 Mei = 33.800 dan 21 Mei = 33.200. Saldo akhir 21 Mei = 75.200. Cengkeh Biru 77 isi 16 sudah dikunci masuk HJE 13.775."
 TIS - D'CLOVE,0,2800,0,0,2800,0,0,0,0,DATA TERPISAH,"TIS tidak ada di Excel Pita 99/Refill/16 utama. Sementara mengikuti CK-1 TIS 2.800 keping dan belum ada kredit CK4C."
