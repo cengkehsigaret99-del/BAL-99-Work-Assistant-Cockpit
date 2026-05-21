@@ -1,5 +1,5 @@
 file,rows,status
-BAL99_BAL77_DATA_MANIFEST.csv,36,updated after CK4C upload validation; cutoff stock barang jadi tetap 20 Mei
+BAL99_BAL77_DATA_MANIFEST.csv,37,updated after CK4C upload README and data integrity rules; cutoff stock barang jadi tetap 20 Mei
 CATATAN_CUTOFF_STOCK_BARANG_JADI_20_MEI_2026.txt,catatan,LOCKED - stock akhir aktif posisi 20 Mei; 21 Mei belum ada verpack official
 CATATAN_VALIDASI_PIUTANG_3_CUSTOMER_19_MEI_2026.txt,catatan,VALID AWAL / VALID SEMENTARA - update piutang Usup Karmin Banten Khoirul per JPG 19 Mei
 CATATAN_VALIDASI_PIUTANG_TSM_05_MEI_2026.txt,catatan,VALID AWAL - update TSM Makasar Rp112.200.000 dan TSM Malang Rp25.500.000
@@ -9,6 +9,7 @@ CATATAN_VALIDASI_GILING_SJ_MEI_2026.txt,catatan,copied baseline / perlu update c
 CATATAN_VALIDASI_PITA_CUKAI_18_MEI_2026.txt,catatan,copied baseline / CK4 reference
 CATATAN_VALIDASI_VERPACK_MEI_2026.txt,catatan,copied baseline / perlu update catatan narasi bila diperlukan
 README.txt,catatan,copied
+README_CK4C_UPLOAD_CUKAI.txt,catatan,NEW - panduan paket CK4C upload cukai dan batas validasi sebelum upload
 browse_barang_jadi.csv,12,updated posisi stok fisik 20 Mei 2026 VALID AWAL
 browse_billing_cukai.csv,5,v17.3 saldo CK4 sebelum CK1
 browse_ck4c.csv,4,updated CK4C berjalan sampai 20 Mei; PITA 16 terpakai 90.600; TUD non-pita
@@ -25,6 +26,7 @@ ck4c_hold_mapping_cukai.csv,4,NEW - baris verpack yang ditahan dari CSV upload k
 ck4c_upload_cukai.csv,21,NEW - CSV upload cukai 22 kolom sesuai template CK4; hanya baris valid mapping dari verpack official
 ck4c_upload_cukai_validation.csv,15,NEW - validasi PASS/PENDING CK4C upload cukai sebelum upload sistem cukai
 ck4c-upload-cukai.html,halaman,UPDATED - halaman download/cek CK4C upload cukai + tombol validasi tanpa mengubah menu utama aplikasi
+data_integrity_checklist_v17_5.csv,13,UPDATED - aturan CK4C upload cukai dan hold mapping dikunci
 master_ck4c_merek_hje.csv,6,NEW - mapping merek aplikasi ke format cukai; Cengkeh Biru masih DATA BELUM VALID
 master_harga_customer.csv,5,copied from v17.2 baseline
 master_status.csv,12,copied from v17.2 baseline
