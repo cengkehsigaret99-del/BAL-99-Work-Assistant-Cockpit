@@ -1,0 +1,5 @@
+tanggal_produksi,merek_app,jumlah_kemasan,isi,jumlah_isi,alasan_hold,validasi,catatan
+2026-05-02,Cengkeh Biru 77 isi 16,200,16,3200,Master merek/HJE belum ada di template CK4 aktif,DATA BELUM VALID,Tidak masuk ck4c_upload_cukai.csv agar tidak gagal upload
+2026-05-06,Cengkeh Biru 77 isi 16,1800,16,28800,Master merek/HJE belum ada di template CK4 aktif,DATA BELUM VALID,Tidak masuk ck4c_upload_cukai.csv agar tidak gagal upload
+2026-05-09,Cengkeh Biru 77 isi 16,1200,16,19200,Master merek/HJE belum ada di template CK4 aktif,DATA BELUM VALID,Tidak masuk ck4c_upload_cukai.csv agar tidak gagal upload
+2026-05-09,Cengkeh Biru 77 isi 12,2000,12,24000,Master merek/HJE belum ada di template CK4 aktif,DATA BELUM VALID,Tidak masuk ck4c_upload_cukai.csv agar tidak gagal upload
