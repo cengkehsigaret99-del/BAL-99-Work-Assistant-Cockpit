@@ -1,0 +1,7 @@
+nama_merek_app,nama_merek_cukai,seq_merek,jns_prod,kd_asal,isi,satuan,hje,tarif_spesifik,no_kep,tgl_kep,bahan_kemasan,id_merek_detail,id_jenis_kemasan,id_jenis_produksi_bkc,seri_pita,keterangan,jenis_produksi_ht,status_mapping,catatan
+GCC 99 isi 12,GEDUNG CENGKEH COKLAT 99,06135564-bc06-0706-0101-001907278160,SKT,D,12,btg,10325,122,KEP-1059/KBC.1201/TRF/2024,2024-12-13,Kertas dan Sejenisnya,41de451b-0279-b66f-e064-90e2ba3fefe8,,7,1,-,44,VALID,Sumber template CK4 Ht(26).xlsx
+GCC 99 isi 16,NEW GEDUNG CENGKEH COKLAT,06135564-bc06-0706-0101-001907285704,SKT,D,16,btg,13775,122,KEP-2745/KBC.1201/TRF/2024,2024-12-20,Kertas dan Sejenisnya,41de451a-e061-b66f-e064-90e2ba3fefe8,,7,1,-,44,VALID,Sumber template CK4 Ht(26).xlsx
+New GCC 99 isi 16 Ambree Kuning,NEW GEDUNG CENGKEH COKLAT,06135564-bc06-0706-0101-001907285704,SKT,D,16,btg,13775,122,KEP-2745/KBC.1201/TRF/2024,2024-12-20,Kertas dan Sejenisnya,41de451a-e061-b66f-e064-90e2ba3fefe8,,7,1,-,44,VALID,Sumber template CK4 Ht(26).xlsx
+Cengkeh Refill isi 12,CENGKEH REFILL,06135564-bc06-0706-0101-001907278159,SKT,D,12,btg,10500,122,KEP-1058/KBC.1201/TRF/2024,2024-12-13,Kertas dan Sejenisnya,41de451a-edd3-b66f-e064-90e2ba3fefe8,,7,1,-,44,VALID,Sumber template CK4 Ht(26).xlsx
+Cengkeh Biru 77 isi 16,,,SKT,D,16,btg,,,,,Kertas dan Sejenisnya,,,7,1,-,44,DATA BELUM VALID,Master merek/HJE belum tersedia di template CK4 aktif
+Cengkeh Biru 77 isi 12,,,SKT,D,12,btg,,,,,Kertas dan Sejenisnya,,,7,1,-,44,DATA BELUM VALID,Master merek/HJE belum tersedia di template CK4 aktif
