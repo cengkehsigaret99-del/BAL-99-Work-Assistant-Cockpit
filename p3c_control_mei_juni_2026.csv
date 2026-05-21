@@ -1,0 +1,9 @@
+nomor_p3c,tanggal_p3c,periode_persediaan,status_pengajuan,lokasi_penyediaan,jenis_ht,personalisasi,seri,warna,tarif,hje,isi_bks,jumlah_pesanan_lembar,status_mapping_ck1,nomor_ck1_potensial,catatan
+900074,2026-05-04,JUNI 2026,AWAL,KPPBC/KPU,SKT,BANYLEST00,I,MERAH,122,10500,12,200,BELUM DIKUNCI,,P3C awal Juni; jangan dianggap stok pabrik sebelum CK-1/realisasi
+900074,2026-05-04,JUNI 2026,AWAL,KPPBC/KPU,SKT,BANYLEST00,I,MERAH,122,13775,16,2500,BELUM DIKUNCI,,P3C awal Juni; jangan dianggap stok pabrik sebelum CK-1/realisasi
+900074,2026-05-04,JUNI 2026,AWAL,KPPBC/KPU,SKT,BANYLEST00,I,MERAH,122,10325,12,3500,BELUM DIKUNCI,,P3C awal Juni; jangan dianggap stok pabrik sebelum CK-1/realisasi
+900074,2026-05-04,JUNI 2026,AWAL,KPPBC/KPU,TIS,BANYLEST00,II,COKELAT,10,55000,1000,100,BELUM DIKUNCI,,P3C awal Juni; jangan dianggap stok pabrik sebelum CK-1/realisasi
+900248,2026-05-11,MEI 2026,TAMBAHAN,KPPBC/KPU,SKT,BANYLEST00,I,MERAH,122,10325,12,1000,BELUM DIKUNCI,,P3C tambahan Mei; perlu dipasangkan dengan CK-1 jika sudah realisasi
+900248,2026-05-11,MEI 2026,TAMBAHAN,KPPBC/KPU,SKT,BANYLEST00,I,MERAH,122,13775,16,420,BELUM DIKUNCI,,P3C tambahan Mei; perlu dipasangkan dengan CK-1 jika sudah realisasi
+900249,2026-05-11,JUNI 2026,TAMBAHAN,KPPBC/KPU,SKT,BANYLEST00,I,MERAH,122,13775,16,1250,BELUM DIKUNCI,,P3C tambahan Juni; untuk planning penyediaan bulan Juni
+900249,2026-05-11,JUNI 2026,TAMBAHAN,KPPBC/KPU,SKT,BANYLEST00,I,MERAH,122,10325,12,1750,BELUM DIKUNCI,,P3C tambahan Juni; untuk planning penyediaan bulan Juni
