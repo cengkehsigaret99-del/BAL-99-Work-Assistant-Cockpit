@@ -1,0 +1,9 @@
+tanggal,uraian_kegiatan,merek_1,jenis_1,isi_1,hje_1,tarif_1,no_dok_1,tgl_dok_1,keping_1,merek_2,jenis_2,isi_2,hje_2,tarif_2,no_dok_2,tgl_dok_2,keping_2,merek_3,jenis_3,isi_3,hje_3,tarif_3,no_dok_3,tgl_dok_3,keping_3,keterangan
+2026-05-18,Saldo Awal,PITA 99 & 77 / GCC 99 isi 12,SKT,12,10325,122,SALDO-AWAL-CK4,2026-05-18,74700,PITA REFILL,SKT,12,10500,122,SALDO-AWAL-CK4,2026-05-18,9970,PITA 16 / New GCC 99 isi 16,SKT,16,13775,122,SALDO-AWAL-CK4,2026-05-18,118200,Saldo awal/sisa kegiatan sebelumnya
+2026-05-18,Penerimaan (+),PITA 99 & 77 / GCC 99 isi 12,SKT,12,10325,122,CK1-TAMBAHAN,2026-05-18,180000,PITA REFILL,SKT,12,10500,122,CK1-TAMBAHAN,2026-05-18,0,PITA 16 / New GCC 99 isi 16,SKT,16,13775,122,CK1-TAMBAHAN,2026-05-18,60000,DEBET dari pembelian/penerimaan CK-1
+2026-05-20,Pemakaian (-),PITA 99 & 77 / GCC 99 isi 12,SKT,12,10325,122,CK4C-PEMAKAIAN,2026-05-20,0,PITA REFILL,SKT,12,10500,122,CK4C-PEMAKAIAN,2026-05-20,0,PITA 16 / New GCC 99 isi 16,SKT,16,13775,122,CK4C-PEMAKAIAN-18-20,2026-05-20,90600,KREDIT dari CK4C/verpack official berpita; TUD tidak memakai pita
+2026-05-20,Pengembalian (-),PITA 99 & 77 / GCC 99 isi 12,SKT,12,10325,122,-,,0,PITA REFILL,SKT,12,10500,122,-,,0,PITA 16 / New GCC 99 isi 16,SKT,16,13775,122,-,,0,Tidak ada pengembalian pita tercatat
+2026-05-18,Saldo Awal,TIS - D'CLOVE,TIS,1000,55000,,SALDO-AWAL-CK4,2026-05-18,0,,,,,,,,,,,,,,,,Saldo awal TIS belum ada; perlu master TIS
+2026-05-18,Penerimaan (+),TIS - D'CLOVE,TIS,1000,55000,,CK1-TAMBAHAN-TIS,2026-05-18,2800,,,,,,,,,,,,,,,,DEBET dari pembelian/penerimaan CK-1 TIS; perlu master TIS
+2026-05-20,Pemakaian (-),TIS - D'CLOVE,TIS,1000,55000,,CK4C-PEMAKAIAN,2026-05-20,0,,,,,,,,,,,,,,,,Belum ada pemakaian TIS dari CK4C berjalan
+2026-05-20,Pengembalian (-),TIS - D'CLOVE,TIS,1000,55000,,-,,0,,,,,,,,,,,,,,,,Tidak ada pengembalian pita/TIS tercatat
