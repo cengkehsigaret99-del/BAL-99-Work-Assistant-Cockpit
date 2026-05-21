@@ -1,0 +1,4 @@
+tanggal,no_sj,customer,produk,jenis_dampak,angka_dampak,satuan,nilai_rupiah,status_eksekusi,status_validasi,catatan
+2026-05-21,126/SJ/BAL/V/2026,TRI SUKMA AJI,New Gedung Cengkeh Coklat 99 isi 16,PIUTANG_BERTAMBAH,76500000,rupiah,76500000,SIAP UPDATE SETELAH CEK DOBEL,VALID AWAL / CEK DOBEL,"Tambahan piutang dari 9.000 pack x Rp8.500. Jangan input ulang jika SJ 126 sudah pernah masuk."
+2026-05-21,126/SJ/BAL/V/2026,TRI SUKMA AJI,New Gedung Cengkeh Coklat 99 isi 16,STOK_BARANG_JADI_BERKURANG,-9000,pack,0,SIAP UPDATE SETELAH CEK DOBEL,VALID AWAL / CEK DOBEL,"Mengurangi stok New GCC 16 sebesar 9.000 pack jika SJ 126 belum pernah terinput."
+2026-05-21,126/SJ/BAL/V/2026,TRI SUKMA AJI,New Gedung Cengkeh Coklat 99 isi 16,DO_SJ_KELUAR,9000,pack,76500000,TERCATAT SEBAGAI FILE TEKNIS,VALID AWAL / CEK DOBEL,"Surat Jalan sudah punya file teknis dan halaman ringkas. Tahap berikutnya: cek dobel dan konfirmasi penerimaan barang."
