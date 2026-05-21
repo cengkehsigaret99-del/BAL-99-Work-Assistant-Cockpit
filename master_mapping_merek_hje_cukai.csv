@@ -1,0 +1,10 @@
+merek_alias,kelompok_pita,jenis_ht,isi_bks,hje,tarif,seri,warna,status_mapping,catatan
+Gedung Cengkeh Coklat 99 isi 12,PITA 99 & 77 / HJE 10.325,SKT,12,10325,122,I,MERAH,TERKUNCI,"Masuk kelompok HJE 10.325 isi 12"
+Gedung Cengkeh Coklat 99 SKT12,PITA 99 & 77 / HJE 10.325,SKT,12,10325,122,I,MERAH,TERKUNCI,"Masuk kelompok HJE 10.325 isi 12"
+Cengkeh Biru 77 isi 12,PITA 99 & 77 / HJE 10.325,SKT,12,10325,122,I,MERAH,TERKUNCI,"Info user: Cengkeh Biru 12 masuk HJE 10.325; menutup hold mapping Cengkeh Biru isi 12"
+New Gedung Cengkeh Coklat 99 isi 16,PITA 16 / HJE 13.775,SKT,16,13775,122,I,MERAH,TERKUNCI,"Masuk kelompok HJE 13.775 isi 16"
+New Gedung Cengkeh Coklat 99 isi 16 Ambree Biru,PITA 16 / HJE 13.775,SKT,16,13775,122,I,MERAH,TERKUNCI,"Masuk kelompok HJE 13.775 isi 16"
+Cengkeh Biru 77 isi 16,PITA 16 / HJE 13.775,SKT,16,13775,122,I,MERAH,TERKUNCI,"Info user: Cengkeh Biru 16 masuk HJE 13.775; menutup hold mapping Cengkeh Biru isi 16"
+Cengkeh Refill,PITA REFILL / HJE 10.500,SKT,12,10500,122,I,MERAH,TERKUNCI,"Masuk kelompok HJE 10.500 isi 12"
+Cengkeh Refill isi 12,PITA REFILL / HJE 10.500,SKT,12,10500,122,I,MERAH,TERKUNCI,"Masuk kelompok HJE 10.500 isi 12"
+D'CLOVE,TIS / HJE 55.000,TIS,1000,55000,10,II,COKELAT,TERKUNCI,"Masuk kelompok TIS HJE 55.000"
