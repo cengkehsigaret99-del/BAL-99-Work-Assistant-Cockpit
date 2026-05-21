@@ -1,5 +1,5 @@
-﻿kategori,hje,isi,saldo_sebelum_ck1_keping,tambahan_ck1_lembar,tambahan_ck1_keping,saldo_proyeksi_setelah_ck1_keping,estimasi_karton_saldo_aktif,status,catatan
-PITA 99 & 77 / GCC 99 isi 12,10.325,12,74700,1500.0,180000,254700,74.7,SALDO CK4 AKTIF SEBELUM CK1,Angka saldo yang dipakai aplikasi adalah saldo sebelum CK1; tambahan CK1 tidak ditambahkan ke saldo CK4 aktif sampai dikunci.
-PITA REFILL,10.500,12,9970,0,0,9970,16.62,SALDO CK4 AKTIF SEBELUM CK1,Angka saldo yang dipakai aplikasi adalah saldo sebelum CK1; tambahan CK1 tidak ditambahkan ke saldo CK4 aktif sampai dikunci.
-PITA 16 / New GCC 99 isi 16,13.775,16,118200,500.0,60000,178200,197.0,SALDO CK4 AKTIF SEBELUM CK1,Angka saldo yang dipakai aplikasi adalah saldo sebelum CK1; tambahan CK1 tidak ditambahkan ke saldo CK4 aktif sampai dikunci.
-TIS - D'CLOVE,55.000,1000,0,50,2800,2800,,PROYEKSI / PERLU MASTER TIS,Angka saldo yang dipakai aplikasi adalah saldo sebelum CK1; tambahan CK1 tidak ditambahkan ke saldo CK4 aktif sampai dikunci.
+kategori,hje,isi,saldo_awal_excel_keping,debet_ck1_penerimaan_keping,kredit_ck4c_pemakaian_keping,saldo_akhir_excel_keping,pack_per_karton,estimasi_karton_saldo_akhir,status,catatan
+PITA 99 & 77 / GCC 99 isi 12,10.325,12,55700,480000,281000,254700,1000,254.7,SALDO SINKRON CSCK-3 21 MEI,"Format baru: saldo awal + debet CK-1/penerimaan - kredit CK4C/pemakaian = saldo akhir Excel. Cengkeh Biru 77 isi 12 masuk HJE 10.325."
+PITA REFILL,10.500,12,7420,12000,9450,9970,600,16.62,SALDO SINKRON CSCK-3 21 MEI,"Format baru: saldo awal + debet CK-1/penerimaan - kredit CK4C/pemakaian = saldo akhir Excel."
+PITA 16 / New GCC 99 isi 16,13.775,16,27100,300000,251900,75200,600,125.33,SALDO SINKRON CSCK-3 21 MEI,"Format baru: saldo awal + debet CK-1/penerimaan - kredit CK4C/pemakaian = saldo akhir Excel. Cengkeh Biru 77 isi 16 masuk HJE 13.775."
+TIS - D'CLOVE,55.000,1000,0,2800,0,2800,0,,DATA TERPISAH / BELUM ADA PEMAKAIAN,"TIS punya CK-1 2.800 keping tetapi belum ada kredit/pemakaian CK4C."
