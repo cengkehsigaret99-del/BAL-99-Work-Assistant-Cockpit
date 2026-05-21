@@ -1,5 +1,5 @@
 file,rows,status
-BAL99_BAL77_DATA_MANIFEST.csv,30,updated after piutang TSM 05 Mei; cutoff stock barang jadi tetap 20 Mei
+BAL99_BAL77_DATA_MANIFEST.csv,34,updated after CK4C upload cukai CSV; cutoff stock barang jadi tetap 20 Mei
 CATATAN_CUTOFF_STOCK_BARANG_JADI_20_MEI_2026.txt,catatan,LOCKED - stock akhir aktif posisi 20 Mei; 21 Mei belum ada verpack official
 CATATAN_VALIDASI_PIUTANG_3_CUSTOMER_19_MEI_2026.txt,catatan,VALID AWAL / VALID SEMENTARA - update piutang Usup Karmin Banten Khoirul per JPG 19 Mei
 CATATAN_VALIDASI_PIUTANG_TSM_05_MEI_2026.txt,catatan,VALID AWAL - update TSM Makasar Rp112.200.000 dan TSM Malang Rp25.500.000
@@ -12,6 +12,7 @@ README.txt,catatan,copied
 browse_barang_jadi.csv,12,updated posisi stok fisik 20 Mei 2026 VALID AWAL
 browse_billing_cukai.csv,5,v17.3 saldo CK4 sebelum CK1
 browse_ck4c.csv,4,updated CK4C berjalan sampai 20 Mei; PITA 16 terpakai 90.600; TUD non-pita
+browse_ck4c_detail.csv,25,NEW - CK4C detail per tanggal per merek per HJE dari verpack official; 4 baris hold mapping Cengkeh Biru
 browse_giling.csv,23,updated giling Mei sampai 20 Mei; 463.200 batang dikoreksi dari 21 Mei ke 14 Mei
 browse_pembayaran_piutang.csv,9,updated piutang TSM + 3 customer; TSM total Rp137.700.000 tidak dibuat baris tambahan agar tidak dobel
 browse_pita_cukai.csv,14,updated pemakaian CK4C berjalan 18-20 Mei; TUD tidak mengurangi pita
@@ -20,6 +21,9 @@ browse_retur_komplain.csv,1,copied from v17.2 baseline
 browse_stok_pasar.csv,2,copied from v17.2 baseline
 browse_surat_jalan.csv,21,updated DO/SJ Mei sampai SJ124
 browse_verpack.csv,25,updated verpack Mei sampai 20 Mei; TUD 600 pack terpisah
+ck4c_hold_mapping_cukai.csv,4,NEW - baris verpack yang ditahan dari CSV upload karena master merek/HJE belum valid
+ck4c_upload_cukai.csv,21,NEW - CSV upload cukai 22 kolom sesuai template CK4; hanya baris valid mapping dari verpack official
+master_ck4c_merek_hje.csv,6,NEW - mapping merek aplikasi ke format cukai; Cengkeh Biru masih DATA BELUM VALID
 master_harga_customer.csv,5,copied from v17.2 baseline
 master_status.csv,12,copied from v17.2 baseline
 rekap_giling_harian_mei_2026.csv,14,updated giling harian sampai 20 Mei; 14 Mei ditambahkan hasil koreksi 463.200 batang
