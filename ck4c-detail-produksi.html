@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CK4C Detail Produksi - BAL-99</title>
+<style>
+:root{--navy:#071b35;--gold:#b8872e;--gold2:#d6a84f;--line:#222;--soft:#f8fafc;--red:#b42318;--green:#167c3a;--yellow:#946200}*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#e8edf4;color:#111827}.wrap{max-width:1180px;margin:0 auto;padding:20px}.top{background:#fff;border:1px solid #cbd5e1;border-radius:14px;padding:18px;text-align:center;margin-bottom:14px}.kicker{font-weight:700;letter-spacing:3px;color:var(--gold)}h1{margin:8px 0 4px;font-size:28px;color:var(--navy)}.sub{color:#334155;font-size:14px}.warn{margin-top:10px;background:#fff7ed;border-left:5px solid var(--gold);padding:10px;border-radius:10px;text-align:left}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin:12px 0}.card{background:#fff;border:1px solid #cbd5e1;border-radius:12px;padding:12px}.card small{display:block;color:#64748b}.card b{font-size:22px;color:var(--navy)}.actions{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.btn{display:inline-block;background:var(--navy);color:#fff;text-decoration:none;border:0;border-radius:10px;padding:10px 13px;font-weight:700;cursor:pointer}.btn.gold{background:var(--gold)}.btn.gray{background:#475569}.scroll{overflow:auto;background:#fff;border:1px solid #111;border-radius:8px}.cktable{border-collapse:collapse;width:100%;min-width:1180px;font-size:12px}.cktable th,.cktable td{border:1px solid #111;padding:6px;vertical-align:top}.cktable th{background:#f8fafc;text-align:center}.cktable .group{background:#e2e8f0;font-weight:700}.cktable td.num{text-align:right;white-space:nowrap}.cktable td.center{text-align:center}.status{display:inline-block;border-radius:999px;padding:4px 8px;font-size:11px;font-weight:700}.ok{background:#dcfce7;color:#166534}.pending{background:#fef3c7;color:#92400e}.bad{background:#fee2e2;color:#991b1b}.footer{background:#fff;border:1px solid #cbd5e1;border-radius:12px;margin-top:12px;padding:12px;line-height:1.5}.print-only{display:none}@media print{body{background:#fff}.actions,.warn,.footer .screen{display:none}.wrap{max-width:none;padding:8px}.top,.card,.scroll{border-color:#000;border-radius:0}.cktable{font-size:9px;min-width:auto}.print-only{display:block}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <section class="top">
+    <div class="kicker">CK - 4C</div>
+    <h1>RINCIAN PEMBERITAHUAN PRODUKSI HASIL TEMBAKAU</h1>
+    <div class="sub">PR. Banyu Anyar Lestari • Draft internal BAL-99 • Sumber: hasil verpack official harian</div>
+    <div class="warn"><b>Catatan:</b> Tampilan ini dibuat mengikuti pola PDF CK-4C: Dokumen Produksi, Jenis, Merek, HJE, Kemasan, Jumlah Isi, dan Kemasan Dilekati Pita. Baris pending mapping tidak masuk file upload cukai.</div>
+  </section>
+
+  <section class="cards" id="cards"></section>
+
+  <div class="actions">
+    <a class="btn" href="index.html?v=17_8_ck4c_detail_1">← Kembali ke Aplikasi</a>
+    <a class="btn gold" href="ck4c-upload-cukai.html?v=17_8_ck4c_detail_1">CK4C Upload Cukai</a>
+    <a class="btn" href="browse_ck4c_detail.csv?v=17_8_ck4c_detail_1" download>Download Detail CSV</a>
+    <a class="btn gray" href="ck4c_upload_cukai.csv?v=17_8_ck4c_detail_1" download>Download CSV Upload</a>
+    <button class="btn" onclick="window.print()">Cetak / PDF</button>
+  </div>
+
+  <div class="scroll">
+    <table class="cktable" id="tbl">
+      <thead>
+        <tr>
+          <th rowspan="2">No</th>
+          <th colspan="2">Dokumen Produksi</th>
+          <th rowspan="2">Jenis</th>
+          <th rowspan="2">Merek</th>
+          <th rowspan="2">HJE (Rp)</th>
+          <th colspan="4">Kemasan</th>
+          <th rowspan="2">Jumlah Isi</th>
+          <th rowspan="2">Kemasan Dilekati Pita</th>
+          <th rowspan="2">Status</th>
+        </tr>
+        <tr>
+          <th>Nomor</th>
+          <th>Tanggal</th>
+          <th>Bahan</th>
+          <th>Isi</th>
+          <th>Satuan</th>
+          <th>Jumlah</th>
+        </tr>
+      </thead>
+      <tbody id="body"><tr><td colspan="13">Memuat data...</td></tr></tbody>
+    </table>
+  </div>
+
+  <section class="footer">
+    <b>Batas pemakaian:</b> halaman ini untuk kontrol internal dan pengecekan bentuk CK4C. File upload tetap memakai <b>ck4c_upload_cukai.csv</b>. Jangan upload sebelum mapping merek/HJE resmi dikunci, terutama Cengkeh Biru 77 isi 12 dan isi 16.
+  </section>
+</div>
+<script>
+const CSV='browse_ck4c_detail.csv?v=17_8_ck4c_detail_1';
+const fmt=n=>Number(n||0).toLocaleString('id-ID');
+const fmtHje=v=>v?Number(v).toLocaleString('id-ID'):'';
+const dateID=s=>{if(!s)return'';const m=String(s).match(/^(\d{4})-(\d{2})-(\d{2})/);return m?`${m[3]}-${m[2]}-${m[1]}`:s};
+function parseCSV(text){let rows=[],row=[],cur='',q=false;for(let i=0;i<text.length;i++){const ch=text[i],nx=text[i+1];if(q){if(ch==='"'&&nx==='"'){cur+='"';i++}else if(ch==='"')q=false;else cur+=ch}else{if(ch==='"')q=true;else if(ch===','){row.push(cur);cur=''}else if(ch==='\n'){row.push(cur);rows.push(row);row=[];cur=''}else if(ch!=='\r')cur+=ch}}if(cur!==''||row.length){row.push(cur);rows.push(row)}const head=(rows.shift()||[]).map(h=>h.trim());return rows.filter(r=>r.some(x=>String(x).trim()!=='')).map(r=>Object.fromEntries(head.map((h,i)=>[h,r[i]||''])))}
+function statusHtml(r){const s=(r.status_mapping||r.validasi||'').toUpperCase();if(s.includes('VALID MAPPING'))return '<span class="status ok">VALID MAPPING</span>';if(s.includes('DATA BELUM VALID'))return '<span class="status pending">HOLD MAPPING</span>';return '<span class="status bad">CEK</span>'}
+function rowHtml(r,i){const merek=r.merek_cukai||r.merek_app||'';return `<tr><td class="center">${i+1}</td><td class="center">${r.no_dokumen_produksi||''}</td><td class="center">${dateID(r.tanggal_produksi)}</td><td class="center">${r.jenis||''}</td><td>${merek}</td><td class="num">${fmtHje(r.hje)}</td><td>${r.bahan_kemasan||''}</td><td class="num">${r.isi||''}</td><td class="center">${r.satuan||''}</td><td class="num">${fmt(r.jumlah_kemasan)}</td><td class="num">${fmt(r.jumlah_isi)}</td><td class="num">${r.kemasan_dilekati_pita?fmt(r.kemasan_dilekati_pita):''}</td><td>${statusHtml(r)}</td></tr>`}
+function cards(rows){const valid=rows.filter(r=>(r.status_mapping||'').includes('VALID'));const hold=rows.filter(r=>(r.status_mapping||'').includes('DATA BELUM VALID'));const sum=(arr,k)=>arr.reduce((a,r)=>a+Number(r[k]||0),0);document.getElementById('cards').innerHTML=[['Total Baris',rows.length],['Valid Mapping',valid.length],['Hold Mapping',hold.length],['Jumlah Kemasan',fmt(sum(rows,'jumlah_kemasan'))],['Jumlah Isi',fmt(sum(rows,'jumlah_isi'))],['Dilekati Pita',fmt(sum(valid,'kemasan_dilekati_pita'))]].map(c=>`<div class="card"><small>${c[0]}</small><b>${c[1]}</b></div>`).join('')}
+fetch(CSV).then(r=>r.text()).then(t=>{const rows=parseCSV(t);document.getElementById('body').innerHTML=rows.map(rowHtml).join('');cards(rows)}).catch(e=>{document.getElementById('body').innerHTML='<tr><td colspan="13">Gagal memuat data CK4C detail.</td></tr>'});
+</script>
+</body>
+</html>
