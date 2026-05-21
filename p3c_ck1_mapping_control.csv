@@ -1,6 +1,6 @@
 periode,jenis_ht,hje,isi_bks,p3c_nomor,p3c_tanggal,p3c_pesanan_lembar,ck1_terkait,ck1_tanggal,ck1_realisasi_lembar,sisa_p3c_lembar,status_mapping,catatan
-MEI 2026,SKT,10325,12,900248,2026-05-11,1000,900436;900716,2026-05-11;2026-05-18,3000,-2000,PERLU CEK,"CK-1 Mei teridentifikasi 2x masing-masing 1.500 lembar. Jumlah CK-1 lebih besar dari P3C tambahan Mei 900248; kemungkinan ada saldo KPPBC/P3C lain. Jangan otomatis dikunci."
-MEI 2026,SKT,13775,16,900248,2026-05-11,420,900436;900716;900144,2026-05-11;2026-05-18;2026-05-04,1500,-1080,PERLU CEK,"CK-1 teridentifikasi 3x masing-masing 500 lembar. Lebih besar dari P3C tambahan Mei 420; perlu cek saldo KPPBC/P3C awal atau stok tersedia."
+MEI 2026,SKT,10325,12,900248,2026-05-11,1000,900436;900716,2026-05-11;2026-05-18,3000,-2000,PERLU CEK,"CK-1 Mei teridentifikasi 2x masing-masing 1.500 lembar. Jumlah CK-1 lebih besar dari P3C tambahan Mei 900248; kemungkinan memakai saldo KPPBC/P3C lain. Jangan otomatis dikunci."
+MEI 2026,SKT,13775,16,900248,2026-05-11,420,900436;900716,2026-05-11;2026-05-18,1000,-580,PERLU CEK,"CK-1 900144 tanggal 04 Mei tidak dipasangkan ke P3C 900248 tanggal 11 Mei karena tanggal CK-1 lebih dulu. Mapping hanya menampilkan CK-1 setelah/sama tanggal P3C."
 JUNI 2026,SKT,10500,12,900074,2026-05-04,200,,,-,200,BELUM REALISASI,"P3C Juni; belum ada CK-1 Juni terkait dalam dokumen yang diunggah."
 JUNI 2026,SKT,13775,16,900074;900249,2026-05-04;2026-05-11,3750,,,-,3750,BELUM REALISASI,"Total P3C Juni HJE 13.775 isi 16 = 2.500 + 1.250 lembar; belum direalisasikan CK-1 Juni."
 JUNI 2026,SKT,10325,12,900074;900249,2026-05-04;2026-05-11,5250,,,-,5250,BELUM REALISASI,"Total P3C Juni HJE 10.325 isi 12 = 3.500 + 1.750 lembar; belum direalisasikan CK-1 Juni."
