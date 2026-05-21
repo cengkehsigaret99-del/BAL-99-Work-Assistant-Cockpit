@@ -1,5 +1,5 @@
 kelompok_pita,saldo_awal_excel,masuk_excel,kredit_pemakaian_excel,keluar_bal2_excel,saldo_akhir_excel,ck4c_valid_mapping,ck4c_hold_mapping,ck4c_total_control,selisih_excel_vs_ck4c_control,status_koreksi,catatan
-PITA 99 & 77 / GCC 99 isi 12,55700,480000,281000,0,254700,279000,2000,281000,0,SESUAI DENGAN CATATAN,"Saldo awal/akhir mengikuti Excel. Kredit mengikuti Excel. CK4C valid mapping kurang 2.000 karena Cengkeh Biru 77 isi 12 masih hold mapping; jika hold ikut kontrol, selisih 0."
+PITA 99 & 77 / GCC 99 isi 12,55700,480000,281000,0,254700,281000,0,281000,0,SESUAI - MAPPING TERKUNCI,"Saldo awal/akhir mengikuti Excel. Kredit mengikuti Excel. Cengkeh Biru 77 isi 12 sudah dikunci masuk HJE 10.325 sehingga tidak lagi hold mapping."
 PITA REFILL,7420,12000,9450,0,9970,9450,0,9450,0,SESUAI,"Saldo awal/akhir mengikuti Excel. Kredit Excel sama dengan CK4C valid."
-PITA 16 / New GCC 99 isi 16,27100,300000,218500,0,108600,215300,3200,218500,0,SESUAI DENGAN CATATAN,"Saldo awal/akhir mengikuti Excel. Kredit mengikuti Excel. CK4C valid mapping kurang 3.200 karena Cengkeh Biru 77 isi 16 masih hold mapping; jika hold ikut kontrol, selisih 0."
-TIS - D'CLOVE,,,0,,2800,0,0,0,0,DATA TERPISAH,"TIS tidak ada di Excel Pita 99/Refill/16 ini. Sementara mengikuti catatan CK-1 TIS 2.800 keping dan belum ada kredit CK4C."
+PITA 16 / New GCC 99 isi 16,27100,300000,218500,0,108600,218500,0,218500,0,SESUAI - MAPPING TERKUNCI,"Saldo awal/akhir mengikuti Excel. Kredit mengikuti Excel. Cengkeh Biru 77 isi 16 sudah dikunci masuk HJE 13.775 sehingga tidak lagi hold mapping."
+TIS - D'CLOVE,0,2800,0,0,2800,0,0,0,0,DATA TERPISAH,"TIS tidak ada di Excel Pita 99/Refill/16 utama. Sementara mengikuti CK-1 TIS 2.800 keping dan belum ada kredit CK4C."
