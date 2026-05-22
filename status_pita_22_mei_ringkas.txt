@@ -1,0 +1,1 @@
+Status pita 22 Mei: data pita cocok dengan verpack. Total pemakaian pita 33300 sama dengan total verpack 33300. Tambahan masuk 22 Mei terlihat pada kelompok 99/77 sebesar 60000 dan kelompok 16 sebesar 180000. Saldo akhir: 99/77 313700, refill 9970, 16 222900. Status valid awal, belum merge final.
