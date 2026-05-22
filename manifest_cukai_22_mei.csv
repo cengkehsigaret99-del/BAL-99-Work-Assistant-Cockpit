@@ -1,0 +1,13 @@
+file,status,catatan
+cukai-22-mei.html,AKTIF,"Pusat shortcut semua modul cukai 22 Mei."
+dashboard-cukai-22-mei.html,AKTIF,"Shortcut ke dashboard-cukai-ringkas.html versi dashboard_cukai_22mei_1."
+dashboard-cukai-ringkas.html,UPDATED,"Membaca saldo akhir terbaru otomatis dari csck3_matrix_full_part2.csv."
+csck3-full-22-mei.html,AKTIF,"Shortcut ke csck3-detail-full.html versi csck3_full_22mei_1."
+csck3-detail-full.html,UPDATED,"Cache 22 Mei dan catatan CK-1 900935 sudah masuk matrix."
+csck3_matrix_full_part2.csv,MERGE TERBATAS SELESAI,"Baris 22 Mei: saldo awal, penerimaan CK-1 900935, pemakaian 0, saldo akhir kontrol."
+csck3_koreksi_data.csv,MERGE TERBATAS SELESAI,"PITA99 314.700; PITA16 255.200; Refill 9.970; TIS 2.800."
+browse_pita_cukai.csv,MERGE TERBATAS SELESAI,"PITA99 +60.000 dan PITA16 +180.000 dari CK-1 900935."
+browse_ck4c.csv,TIDAK DIUBAH,"CK4C untuk pemakaian produksi, bukan penerimaan CK-1."
+audit-link-cukai-22-mei.html,AKTIF,"Halaman kontrol link cukai 22 Mei."
+audit_link_cukai_22_mei.csv,UPDATED,"Pusat Cukai 22 Mei sudah tercatat."
+menu-admin-ringkas.html,UPDATED,"Pusat Cukai 22 Mei sudah masuk menu admin."
