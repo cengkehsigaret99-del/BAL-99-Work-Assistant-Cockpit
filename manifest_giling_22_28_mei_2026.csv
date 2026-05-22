@@ -1,0 +1,4 @@
+file,status,catatan
+staging_giling_22_28_mei_2026.csv,STAGING / VALID AWAL,"Data giling dari file 22-28 MEI 2026. Terisi real baru 22 Mei: GCC 99 567.800 batang, total upah Rp22.712.000. Tanggal 23,25,26,27,28 Mei masih 0/kosong."
+pusat-giling-22-28-mei.html,AKTIF,"Pusat baca giling 22-28 Mei. Viewer/read-only, tidak mengubah PO, stok, piutang, DO/SJ, pita, atau CK4C."
+source_upload_22_28_mei_2026_xlsm_xlsx,REFERENSI SUMBER,"File upload 22-28 MEI 2026.xlsm.xlsx; password file 1987; sheet harian JUMAT sampai KAMIS."
