@@ -1,0 +1,17 @@
+area_menu,file_sumber,status_21_mei,tingkat_sensitif,risiko_utama,aturan_admin,aksi_aman,status_final
+Dashboard,app.js + admin500-status-patch.js,PERLU CEK TAMPILAN,SEDANG,Teks lama cutoff 20 Mei bisa masih muncul jika cache browser belum bersih,Baca lewat Admin Profesional 500 atau refresh cache dengan parameter versi,Buka ulang link dengan ?v=admin500_status_1,BELUM FINAL TEKS
+Admin Profesional 500,admin-profesional-500.html,AKTIF,TINGGI,Pintu baca utama harus tetap netral dan tidak memaksa final,Admin membaca status dulu sebelum detail,Pakai sebagai halaman pertama admin,AKTIF
+Giling Detail,browse_giling.csv,SINKRON 21 MEI,TINGGI,Giling bisa disalahartikan sebagai barang jadi,Giling adalah WIP dan tidak mengurangi pita,Jangan pakai giling untuk CK4C/pita,VALID AWAL
+Rekap Giling,rekap_giling_harian_mei_2026.csv,SINKRON 21 MEI,SEDANG,Rekap bisa berubah jika ada koreksi mandor,Gunakan sebagai valid awal sampai sumber payroll dikunci,Cek jika ada koreksi nama/tanggal,VALID AWAL
+Verpack Detail,browse_verpack.csv,SINKRON 21 MEI,TINGGI,Verpack menjadi dasar barang jadi dan CK4C sehingga harus official,Pakai hanya verpack official bukan pacing mentah,TUD 600 pack tetap non-pita,VALID AWAL
+Rekap Verpack,rekap_verpack_harian_mei_2026.csv,SINKRON 21 MEI,TINGGI,Total upah dan pemakaian pita mengikuti verpack official,Jangan ubah tanpa bukti official,Cek total 21 Mei 33.200 pack,VALID AWAL
+Barang Jadi,browse_barang_jadi.csv,ADA 21 MEI / CEK DOBEL,SANGAT TINGGI,SJ126 bisa dobel atau salah mengurangi C-023/C-031,Jangan valid final sebelum SJ126 dikonfirmasi,Tanyakan ke Rijal: SJ126 mengurangi C-023 atau C-031,BELUM FINAL
+DO Surat Jalan,browse_surat_jalan.csv,SJ126 MASUK / CEK DOBEL,SANGAT TINGGI,SJ126 9.000 pack bisa sudah pernah tercatat,Jangan masukkan ulang sebelum cek nomor SJ dan stok,Cek arsip SJ126 dan input sebelumnya,BELUM FINAL
+Piutang,browse_pembayaran_piutang.csv,BELUM MERGE PENUH,TINGGI,File khusus Aji/Khoirul/Usup belum sepenuhnya menyatu,Piutang bawaan hanya valid sementara sebelum merge,Buat merge setelah SJ126 aman,BELUM FINAL
+Pita Cukai,browse_pita_cukai.csv,SINKRON 21 MEI,SANGAT TINGGI,Salah pita berdampak CK4C dan cukai,Pemakaian pita mengikuti verpack official dan CSCK-3,Cocokkan fisik pita sebelum valid final,VALID AWAL
+CK4C,browse_ck4c.csv,SINKRON 21 MEI,SANGAT TINGGI,CK4C tidak boleh mengikuti giling/pacing,Pakai barang jadi official; TUD non-pita,Cocokkan dengan CSCK-3 21 Mei,VALID AWAL
+Billing Cukai,browse_billing_cukai.csv,SINKRON 21 MEI,TINGGI,SPPR bisa keliru dibaca sebagai pita,CK-1 menambah pita; SPPR pajak rokok tidak menambah pita,Cek BPN dan arsip SPPR,VALID AWAL
+Retur Komplain,browse_retur_komplain.csv,BELUM SINKRON PENUH,SEDANG,Retur/koreksi pasar bisa mempengaruhi piutang,Jangan kurangi piutang tanpa dasar retur valid,Masukkan retur yang punya sumber jelas,BELUM FINAL
+Stock Pasar,browse_stok_pasar.csv,BELUM UPDATE 21 MEI,SEDANG,Stok gudang area bisa disalahartikan sebagai stok toko,Jangan sebut repeat order kuat tanpa data toko,Minta stok lapangan/toko terbaru,BELUM FINAL
+PO,browse_po.csv,PERLU REVIEW,SEDANG,PO bisa sudah berubah menjadi SJ sebagian,Jangan hitung PO sebagai piutang sebelum SJ terbit,Cocokkan PO Aji 35 karton dengan SJ126,BELUM FINAL
+Master Harga,master_harga_customer.csv,PERLU REVIEW,SEDANG,Harga customer bisa berbeda per pasar,Jangan pakai harga default jika customer khusus,Cek harga Aji Rp8.500/pack dan pasar lain,BELUM FINAL
