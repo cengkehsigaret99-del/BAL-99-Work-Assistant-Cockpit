@@ -1,0 +1,9 @@
+Scorecard Giling 22 Mei
+
+Data yang tersedia:
+- top10_giling_22_mei_2026.csv
+- staging_karyawan_giling_22_mei_2026.csv
+- staging_giling_22_28_mei_2026.csv
+
+Status: viewer / staging / valid awal.
+Catatan: detail karyawan dipakai sebagai bahan baca produktivitas awal, bukan final HR.
