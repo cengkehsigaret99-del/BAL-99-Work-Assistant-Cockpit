@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="bal-version" content="v17.13_audit_harian_gate">
+<meta name="bal-version" content="v17.14_audit_menu_ready">
 <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="expires" content="0">
-<title>BAL-99 • Audit Harian Gate</title>
+<title>BAL-99 • Audit Harian Menu Ready</title>
 <link rel="icon" type="image/png" href="logo.png?v=admin500_gate">
 <link rel="stylesheet" href="style.css?v=17_8_mei21_cukai_auto">
 </head>
@@ -22,20 +22,20 @@
     </div>
   </div>
   <div class="top-meta">
-    <b>v17.13 • Audit Harian Gate</b>
-    <small>Data staging divalidasi dulu di Audit Harian sebelum mengubah stok, pita, CK4C, DO/SJ, atau piutang.</small><br>
+    <b>v17.14 • Audit Harian Menu Ready</b>
+    <small>Audit Harian tersedia di header, sidebar, dan pilihan HP.</small><br>
     <div style="display:grid;grid-template-columns:1fr;gap:8px;margin-top:10px">
-      <a href="audit-harian.html?v=audit_harian_v1" target="_blank" style="display:block;padding:10px 12px;border:1px solid #e4c86a;border-radius:12px;color:#111827;background:#fffdf3;font-weight:900;text-decoration:none;font-size:15px">★ Audit Harian</a>
-      <a href="status-update-22-mei-terkunci.html?v=audit_harian_v1" target="_blank" style="display:block;padding:10px 12px;border:1px solid #e4c86a;border-radius:12px;color:#111827;background:#fffdf3;font-weight:850;text-decoration:none;font-size:15px">Update Terbaru</a>
+      <a href="audit-harian.html?v=audit_menu_v1" target="_blank" style="display:block;padding:10px 12px;border:1px solid #e4c86a;border-radius:12px;color:#111827;background:#fffdf3;font-weight:900;text-decoration:none;font-size:15px">★ Audit Harian</a>
+      <a href="status-update-22-mei-terkunci.html?v=audit_menu_v1" target="_blank" style="display:block;padding:10px 12px;border:1px solid #e4c86a;border-radius:12px;color:#111827;background:#fffdf3;font-weight:850;text-decoration:none;font-size:15px">Update Terbaru</a>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
-        <a href="report-produksi-22-mei.html?v=audit_harian_v1" target="_blank" style="display:block;padding:9px 10px;border:1px solid #e4c86a;border-radius:10px;color:#111827;background:#fffdf3;font-weight:800;text-decoration:none">Produksi Terbaru</a>
-        <a href="dashboard-po-22-mei.html?v=audit_harian_v1" target="_blank" style="display:block;padding:9px 10px;border:1px solid #e4c86a;border-radius:10px;color:#111827;background:#fffdf3;font-weight:800;text-decoration:none">PO Terbaru</a>
+        <a href="report-produksi-22-mei.html?v=audit_menu_v1" target="_blank" style="display:block;padding:9px 10px;border:1px solid #e4c86a;border-radius:10px;color:#111827;background:#fffdf3;font-weight:800;text-decoration:none">Produksi Terbaru</a>
+        <a href="dashboard-po-22-mei.html?v=audit_menu_v1" target="_blank" style="display:block;padding:9px 10px;border:1px solid #e4c86a;border-radius:10px;color:#111827;background:#fffdf3;font-weight:800;text-decoration:none">PO Terbaru</a>
       </div>
     </div>
     <details style="margin-top:10px;background:rgba(255,255,255,.06);border:1px solid rgba(246,202,96,.45);border-radius:12px;padding:9px 10px">
       <summary style="cursor:pointer;color:#f6ca60;font-weight:900">Buka menu lama / detail lain</summary>
       <div style="display:grid;grid-template-columns:1fr;gap:7px;margin-top:10px">
-        <a href="audit_harian_template.csv?v=audit_harian_v1" target="_blank" style="color:#f1d89a;font-weight:800;text-decoration:none">↗ Template CSV Audit Harian</a>
+        <a href="audit_harian_template.csv?v=audit_menu_v1" target="_blank" style="color:#f1d89a;font-weight:800;text-decoration:none">↗ Template CSV Audit Harian</a>
         <a href="admin-profesional-500.html?v=admin500_gate" target="_blank" style="color:#f1d89a;font-weight:800;text-decoration:none">★ Admin Profesional 500</a>
         <a href="menu-admin-ringkas.html?v=admin500_gate" target="_blank" style="color:#f1d89a;font-weight:700;text-decoration:none">↗ Menu Admin Ringkas</a>
         <a href="dashboard-cukai-ringkas.html?v=cukai_auto_21mei_1" target="_blank" style="color:#f1d89a;font-weight:700;text-decoration:none">↗ Dashboard Cukai Ringkas</a>
@@ -49,7 +49,7 @@
     </details>
   </div>
 </header>
-<div class="mobile-quick"><label for="mobilePage">Pilih Menu Kerja</label><select id="mobilePage" onchange="show(this.value)"></select><small>Mode HP: mulai dari Audit Harian sebelum merge data final.</small><div class="mobile-favs"><button onclick="location.href='audit-harian.html?v=audit_harian_v1'">Audit</button><button onclick="location.href='status-update-22-mei-terkunci.html?v=mei22_dashboard_range_v1'">Update</button><button onclick="location.href='admin-profesional-500.html?v=admin500_gate'">Admin 500</button><button onclick="show('dashboard')">Dashboard</button><button onclick="show('work_cockpit')">Cockpit</button><button onclick="location.href='dashboard-cukai-ringkas.html?v=cukai_auto_21mei_1'">Cukai</button><button onclick="location.href='kontrol-upah-produksi.html?v=prod_upah_1'">Upah</button><button onclick="location.href='csck3-detail-full.html?v=cukai_auto_21mei_1'">CSCK-3</button><button onclick="location.href='ck4c-detail-produksi.html?v=cukai_auto_21mei_1'">CK4C</button><button onclick="show('barang_jadi')">Barang Jadi</button><button onclick="show('sj')">DO/SJ</button><button onclick="show('piutang')">Piutang</button></div></div>
+<div class="mobile-quick"><label for="mobilePage">Pilih Menu Kerja</label><select id="mobilePage" onchange="show(this.value)"></select><small>Mode HP: Audit Harian tersedia di tombol cepat dan pilihan menu.</small><div class="mobile-favs"><button onclick="location.href='audit-harian.html?v=audit_menu_v1'">Audit</button><button onclick="location.href='status-update-22-mei-terkunci.html?v=mei22_dashboard_range_v1'">Update</button><button onclick="location.href='admin-profesional-500.html?v=admin500_gate'">Admin 500</button><button onclick="show('dashboard')">Dashboard</button><button onclick="show('work_cockpit')">Cockpit</button><button onclick="location.href='dashboard-cukai-ringkas.html?v=cukai_auto_21mei_1'">Cukai</button><button onclick="location.href='kontrol-upah-produksi.html?v=prod_upah_1'">Upah</button><button onclick="location.href='csck3-detail-full.html?v=cukai_auto_21mei_1'">CSCK-3</button><button onclick="location.href='ck4c-detail-produksi.html?v=cukai_auto_21mei_1'">CK4C</button><button onclick="show('barang_jadi')">Barang Jadi</button><button onclick="show('sj')">DO/SJ</button><button onclick="show('piutang')">Piutang</button></div></div>
 <div class="layout">
   <aside id="nav" class="sidebar"></aside>
   <main id="app" class="app"></main>
@@ -59,6 +59,7 @@
 <script src="cukai-menu-automation.js?v=cukai_auto_21mei_1"></script>
 <script src="admin500-status-patch.js?v=admin500_status_1"></script>
 <script src="mei22-dashboard-patch.js?v=mei22_dashboard_range_v1"></script>
+<script src="audit-menu-patch.js?v=audit_menu_v1"></script>
 <script>
 (function(){
   function setupCukaiLinks(){
