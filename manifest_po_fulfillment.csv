@@ -2,6 +2,8 @@ file,status,catatan
 template_po_fulfillment.csv,AKTIF,"Template struktur PO masuk, realisasi DO/SJ, sisa PO, status fulfillment, catatan manajer, dan catatan kesadaran."
 staging_po_fulfillment_18_mei.csv,STAGING / VALID AWAL,"Baseline PO minggu ini mulai Senin 18 Mei 2026. Tidak mengubah DO/SJ, stok, piutang, atau cukai."
 pusat-po-fulfillment.html,AKTIF,"Pusat akses PO & Fulfillment v1."
+po-report-center-18-mei.html,AKTIF,"Pusat report PO untuk report gabungan dan report per PO detail."
+po-gabungan-18-mei.html,AKTIF / SIAP CETAK,"Report PO gabungan baseline 18-23 Mei; siap cetak PDF dari browser."
 manager-decision-po-18-mei.html,AKTIF,"Panel keputusan manajer: prioritas, risiko, dan arahan tenang untuk PO minggu ini."
 risk-calmness-po-18-mei.html,AKTIF,"Indikator risiko dan ketenangan: hijau, kuning, merah, dan gold mode kesadaran."
 jangan-finalkan-po-18-mei.html,AKTIF,"Panel rem keputusan: data PO yang belum boleh dianggap final."
