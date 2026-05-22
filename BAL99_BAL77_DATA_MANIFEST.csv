@@ -1,5 +1,5 @@
 file,rows,status
-BAL99_BAL77_DATA_MANIFEST.csv,updated,UPDATED 21 MEI - manifest disinkronkan setelah update cukai produksi dan barang jadi
+BAL99_BAL77_DATA_MANIFEST.csv,updated,UPDATED 21 MEI - manifest disinkronkan setelah update cukai produksi barang jadi dan Admin Profesional 500
 CATATAN_CUTOFF_STOCK_BARANG_JADI_20_MEI_2026.txt,catatan,ARSIP - stock 20 Mei sudah dilanjutkan ke browse_barang_jadi.csv posisi kerja 21 Mei VALID AWAL
 CATATAN_VALIDASI_PIUTANG_3_CUSTOMER_19_MEI_2026.txt,catatan,ARSIP - sudah ada update lanjutan Aji/Khoirul/Usup per 21 Mei di file khusus
 CATATAN_VALIDASI_PIUTANG_TSM_05_MEI_2026.txt,catatan,ARSIP VALID AWAL - update TSM Makasar Rp112.200.000 dan TSM Malang Rp25.500.000
@@ -10,17 +10,22 @@ CATATAN_VALIDASI_PITA_CUKAI_18_MEI_2026.txt,catatan,ARSIP - sudah digantikan ole
 CATATAN_VALIDASI_VERPACK_MEI_2026.txt,catatan,ARSIP - verpack bawaan sudah disinkronkan sampai 21 Mei
 README.txt,catatan,copied
 README_CK4C_UPLOAD_CUKAI.txt,catatan,NEW - panduan paket CK4C upload cukai dan batas validasi sebelum upload
+admin-profesional-500.html,halaman,AKTIF - pintu baca utama admin; ringkasan 21 Mei + status aman/cek dobel/belum sinkron + mode kerja tenang
+admin500-status-patch.js,script,AKTIF - patch narasi status 21 Mei agar teks lama cutoff 20 Mei tidak menyesatkan admin
+kontrol_sensitif_21_mei.csv,audit,AKTIF - daftar area sensitif tinggi; menjaga SJ126 C-023/C-031 barang jadi DO/SJ piutang pita CK4C agar tidak difinalkan prematur
+kontrol-sensitif-21-mei.html,halaman,AKTIF - meja audit kecil untuk membaca kontrol_sensitif_21_mei.csv dengan filter sensitif dan status final
+menu-admin-ringkas.html,halaman,UPDATED - Admin Profesional 500 dan Kontrol Sensitif 21 Mei menjadi pintu kerja utama
 browse_barang_jadi.csv,13,SINKRON 21 MEI VALID AWAL - C-031 saldo 19.950 pack; C-023 saldo 39.330 pack setelah hasil verpack 21 Mei dan SJ126; tetap CEK DOBEL SJ126
 browse_billing_cukai.csv,5,SINKRON 21 MEI - CK-1 menjadi DEBET/PENERIMAAN CSCK-3; SPPR pajak rokok tidak menambah pita
 browse_ck4c.csv,4,SINKRON 21 MEI - CK4C/pemakaian mengikuti CSCK-3; PITA16 kredit 251.900 saldo akhir 75.200
 browse_ck4c_detail.csv,25,ARSIP DETAIL - halaman CK4C Detail Produksi tetap dipakai; perlu cek bila belum membaca data terbaru 21 Mei
 browse_giling.csv,31,SINKRON 21 MEI - menu bawaan Giling Detail sudah memuat 15-21 Mei; 21 Mei GCC 99 isi 12 = 465.700 batang
-browse_pembayaran_piutang.csv,9,BELUM SINKRON 21 MEI - piutang terbaru ada di file khusus Aji/Khoirul/Usup; menu bawaan perlu merge
+browse_pembayaran_piutang.csv,9,BELUM SINKRON 21 MEI - piutang terbaru ada di file khusus Aji/Khoirul/Usup; menu bawaan perlu merge setelah SJ126 aman
 browse_pita_cukai.csv,16,SINKRON 21 MEI - PITA16 detail 18 Mei 21.000; 19 Mei 36.000; 20 Mei 33.800; 21 Mei 33.200; saldo akhir 75.200
 browse_po.csv,3,BELUM DICEK 21 MEI - perlu cek relasi PO dengan SJ126
-browse_retur_komplain.csv,1,BELUM SINKRON 21 MEI - Retur UD Sarifah Rp25.857.200 perlu masuk data retur/alokasi
-browse_stok_pasar.csv,2,BELUM DICEK 21 MEI - perlu cek dengan update PSP/PMS terbaru
-browse_surat_jalan.csv,21,BELUM SINKRON 21 MEI - SJ126 sudah ada file teknis tetapi belum merge ke menu bawaan
+browse_retur_komplain.csv,1,BELUM SINKRON 21 MEI - Retur UD Sarifah Rp25.857.200 perlu masuk data retur/alokasi bila sumber valid
+browse_stok_pasar.csv,2,BELUM DICEK 21 MEI - perlu cek dengan update PSP/PMS terbaru dan stok lapangan
+browse_surat_jalan.csv,21,SJ126 ADA / CEK DOBEL - SJ126 sudah masuk menu bawaan namun belum boleh final sampai dobel dan mapping stok dikunci
 browse_verpack.csv,26,SINKRON 21 MEI - menu bawaan Verpack Detail sudah memuat 21 Mei New GCC 16 = 33.200 pack official pita
 ck4c-detail-produksi.html,halaman,AKTIF - tampilan CK4C Detail Produksi; menu otomatis diarahkan ke halaman terbaru
 ck4c_hold_mapping_cukai.csv,4,ARSIP - mapping lama; Cengkeh Biru 12 sudah dikunci HJE 10.325 dan Cengkeh Biru 16 HJE 13.775
@@ -39,7 +44,7 @@ rekap_verpack_harian_mei_2026.csv,16,SINKRON 21 MEI - total 542.350 pack; upah v
 rekap_verpack_per_merek_mei_2026.csv,7,SINKRON 21 MEI - New GCC 16 Ambree Kuning 124.000 pack sampai 21 Mei
 dashboard-cukai-ringkas.html,halaman,AKTIF - pintu ringkas cukai/pita/CK-1/CSCK-3
 p3c-kppbc-control.html,halaman,AKTIF - kontrol P3C/KPPBC/CK-1 dan SPPR
-index.html,halaman,UPDATED - cukai auto menu aktif; pita/CK4C/CSCK-3 diarahkan ke halaman terbaru
+index.html,halaman,UPDATED - Admin Profesional 500 menjadi pintu baca utama; patch status 21 Mei aktif
 audit_status_menu_sampai_21_mei_2026.csv,audit,UPDATED - audit menu sampai 21 Mei; produksi cukai dan barang jadi valid awal sudah sinkron
 audit_checker_sistem_21_mei_2026.csv,audit,UPDATED - checker sinkronisasi sistem 21 Mei
 kontrol_finalisasi_update_21_mei_2026.csv,audit,UPDATED - daftar closing 21 Mei
