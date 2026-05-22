@@ -1,0 +1,7 @@
+tanggal,hari,sumber_sheet,status_hari,gcc_99,cb_77,gcc_16,cb_16,refill_h,refill_original,bal9,total_pack,total_upah,jumlah_karyawan_input,jumlah_karyawan_aktif,status_validasi,catatan
+2026-05-22,JUMAT,INPUT DATA,ADA DATA,0,1000,30500,1800,0,0,0,33300,6953000,92,62,VALID AWAL,"Data verpack/pacing dari file 05. LAPORAN PACING MEI 2026 (3).xlsx. Total pack 33.300; brand: CB77 1.000, GCC16 30.500, CB16 1.800. Ini verpack/pacing, perlu sinkron ke barang jadi dan pita official sebelum closing."
+2026-05-23,SABTU,INPUT DATA,KOSONG / BELUM ADA DATA,0,0,0,0,0,0,0,0,0,0,0,BELUM ADA DATA,"Belum ada data verpack 23 Mei pada file ini."
+2026-05-25,SENIN,INPUT DATA,KOSONG / BELUM ADA DATA,0,0,0,0,0,0,0,0,0,0,0,BELUM ADA DATA,"Belum ada data verpack 25 Mei pada file ini."
+2026-05-26,SELASA,INPUT DATA,KOSONG / BELUM ADA DATA,0,0,0,0,0,0,0,0,0,0,0,BELUM ADA DATA,"Belum ada data verpack 26 Mei pada file ini."
+2026-05-27,RABU,INPUT DATA,KOSONG / BELUM ADA DATA,0,0,0,0,0,0,0,0,0,0,0,BELUM ADA DATA,"Belum ada data verpack 27 Mei pada file ini."
+2026-05-28,KAMIS,INPUT DATA,KOSONG / BELUM ADA DATA,0,0,0,0,0,0,0,0,0,0,0,BELUM ADA DATA,"Belum ada data verpack 28 Mei pada file ini."
