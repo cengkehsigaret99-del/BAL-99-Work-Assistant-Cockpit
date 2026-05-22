@@ -1,0 +1,2 @@
+id_po,tanggal_po,periode_po,customer,pasar_team,produk,qty_po,unit_po,qty_po_pack,konversi,prioritas,target_kirim,nomor_sj_terkait,tanggal_sj_terkait,qty_terkirim_pack,qty_terkirim_unit,sisa_po_pack,sisa_po_unit,status_fulfillment,status_validasi,catatan_manajer,catatan_kesadaran
+PO-YYYYMMDD-001,2026-05-18,18-23 Mei 2026,NAMA CUSTOMER,NAMA PASAR/TEAM,NAMA PRODUK,0,karton,0,"isi konversi pack/karton",PRIORITAS 1,YYYY-MM-DD,,YYYY-MM-DD,0,0,0,0,PO MASUK,VALID AWAL,"Catatan teknis tindak lanjut.","Baca data dengan tenang. Jangan menyalahkan sebelum sumber jelas."
