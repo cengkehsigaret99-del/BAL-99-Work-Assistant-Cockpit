@@ -1,0 +1,8 @@
+file,status,catatan
+pusat-ranking-karyawan.html,AKTIF,"Pusat akses ranking karyawan produksi."
+top10_giling_batang_14_21_mei_2026.csv,AKTIF / STATIS,"Top 10 Giling periode 14-21 Mei 2026 berdasarkan total batang."
+top10_verpack_pack_14_21_mei_2026.csv,AKTIF / STATIS,"Top 10 Verpack periode 14-21 Mei 2026 berdasarkan total pack."
+top_tenaga_kerja_borongan_14_21_mei_2026.csv,AKTIF / STATIS,"Top 10 gabungan giling dan verpack periode 14-21 Mei 2026 berdasarkan total upah gabungan."
+top10-dinamis-karyawan.html,AKTIF / MENUNGGU DATA REAL,"Halaman Top 10 dinamis berdasarkan filter tanggal dan bagian; valid jika template input harian sudah diisi data asli."
+template_input_top10_karyawan_harian.csv,TEMPLATE,"Template input detail karyawan harian: tanggal, bagian, id, nama, produk, jumlah unit, tarif, total upah."
+kontrol-upah-produksi.html,AKTIF,"Modul rekap upah produksi gabungan Giling + Verpack; filter tanggal sudah tersedia, ranking dinamis memakai halaman terpisah."
