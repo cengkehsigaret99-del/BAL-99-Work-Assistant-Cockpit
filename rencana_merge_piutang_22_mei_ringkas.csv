@@ -1,0 +1,5 @@
+no,item,customer,pasar,nominal,saldo_sebelum,saldo_usulan,status,catatan
+1,Pembayaran Banten 22 Mei,CV. MITRA SAESTU GROUP / SANDY / MAS TOMI,Banten / Mas Tomi,100000000,1365000000,1265000000,STAGING / BELUM MERGE,"Bukti BCA 22/05/2026 12:27:40. Cek mutasi sebelum merge agar tidak dobel."
+2,Pembayaran PSP 22 Mei,KHOIRUL SOLEH,Padang PSP,18389800,18389800,0,STAGING / BELUM MERGE,"Bukti BRI 22/05/2026 13:37:16. Jika valid, PSP lunas dan sisa Khoirul tinggal PMS Rp1.720.160.000."
+3,Backup Piutang Utama,browse_pembayaran_piutang.csv,Piutang Global,0,0,0,BACKUP TERSEDIA,"backup_browse_pembayaran_piutang_before_banten_22_mei.csv sudah tersedia sebelum merge."
+4,Catatan Aji,AJI - P LUKMAN,Team Aji,76500000,1595200000,1671700000,CEK DOBEL SJ126,"Jangan merge Aji sebelum SJ126 dipastikan belum pernah masuk piutang."
