@@ -1,0 +1,7 @@
+file,status_terbaru,catatan
+browse_pita_cukai.csv,MERGE TERBATAS SELESAI,"PITA16 +180.000 keping menjadi 255.200; PITA99 +60.000 keping menjadi 314.700. Backup tersedia."
+csck3_koreksi_data.csv,MERGE TERBATAS SELESAI,"PITA16 saldo akhir menjadi 255.200; PITA99 saldo akhir menjadi 314.700. Backup tersedia."
+csck3_matrix_full_part2.csv,BELUM MERGE,"Tahap berikutnya. Harus backup dulu sebelum disentuh."
+browse_ck4c.csv,TIDAK PERLU DIUBAH UNTUK PENERIMAAN CK1,"CK4C adalah pemakaian/pengeluaran produksi, bukan penerimaan pita CK-1."
+SPPR 900894,ARSIP PAJAK ROKOK,"SPPR tidak menambah saldo pita."
+PPN HT,PERLU BUKTI BAYAR TERPISAH,"Belum dianggap lunas dalam aplikasi karena bukti bayar terpisah belum masuk staging."
