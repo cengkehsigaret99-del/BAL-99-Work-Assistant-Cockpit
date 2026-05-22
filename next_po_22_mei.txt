@@ -1,0 +1,1 @@
+Next step PO 22 Mei: tunggu PO aktual. Data minimal: customer, produk, jumlah, rencana. Cek dashboard dan prioritas sebelum eksekusi. Status awal PO_MASUK. Stok resmi berubah setelah SJ atau DO keluar.
