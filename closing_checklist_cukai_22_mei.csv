@@ -1,0 +1,11 @@
+item,status,catatan
+CK-1 900935,SELESAI MERGE TERBATAS,"Masuk ke browse_pita_cukai.csv, csck3_koreksi_data.csv, dan csck3_matrix_full_part2.csv."
+SPPR 900894,ARSIP PAJAK ROKOK,"Tidak menambah saldo pita."
+PITA99 / HJE 10.325,VALID AWAL SETELAH CK-1,"Saldo kontrol setelah CK-1 900935 = 314.700 keping."
+PITA16 / HJE 13.775,VALID AWAL SETELAH CK-1,"Saldo kontrol setelah CK-1 900935 = 255.200 keping."
+PITA REFILL,TETAP,"Tidak ada penerimaan dari CK-1 900935. Saldo tetap 9.970 keping."
+TIS D'CLOVE,TETAP TERPISAH,"Tidak ada penerimaan dari CK-1 900935. Saldo tetap 2.800 keping."
+CK4C,TIDAK DIUBAH,"CK4C hanya untuk pemakaian produksi, bukan penerimaan CK-1."
+Backup,TERSEDIA,"Backup browse_pita_cukai, csck3_koreksi_data, dan csck3_matrix_full_part2 sudah tersedia."
+Pusat Cukai 22 Mei,AKTIF,"Pintu shortcut admin sudah tersedia."
+Manifest Cukai 22 Mei,AKTIF,"Daftar file update cukai sudah tersedia."
