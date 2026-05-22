@@ -1,0 +1,5 @@
+tanggal_po,customer,produk,kode_produk,jumlah_po_pack,stok_regular_tersedia_pack,jumlah_dikerjakan_pack,kekurangan_pack,status_po,nomor_do_sj,tanggal_kirim,catatan
+2026-05-22,CONTOH CUSTOMER,Gedung Cengkeh 16 New,C-023,0,30450,0,0,PO_MASUK,,,"PO masuk belum mengurangi stok."
+2026-05-22,CONTOH CUSTOMER,New Ambri Biru,C-031,0,48,0,0,PO_MASUK,,,"TUD tidak dipakai untuk PO."
+2026-05-22,CONTOH CUSTOMER,Cengkeh Biru 77/16,C-015,0,1800,0,0,PO_MASUK,,,"Stok berkurang jika DO/SJ terbit."
+2026-05-22,CONTOH CUSTOMER,Cengkeh Biru 77/12,C-012,0,1000,0,0,PO_MASUK,,,"Isi jumlah PO sesuai order masuk."
