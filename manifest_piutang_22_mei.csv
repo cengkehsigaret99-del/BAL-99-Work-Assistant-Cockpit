@@ -1,5 +1,8 @@
 file,status,catatan
-piutang-22-mei.html,AKTIF,"Pusat shortcut piutang 22 Mei untuk staging Banten, staging PSP, rencana merge, backup, dan piutang utama."
+piutang-22-mei.html,AKTIF,"Pusat shortcut piutang 22 Mei versi awal."
+piutang-22-mei-v2.html,AKTIF / DISARANKAN,"Pusat Piutang 22 Mei versi ringkas aman; sudah memuat link manifest."
+manifest_piutang_22_mei.csv,AKTIF,"CSV manifest khusus Piutang 22 Mei."
+manifest-piutang-22-mei.html,AKTIF,"Halaman baca manifest khusus Piutang 22 Mei."
 staging_pembayaran_banten_22_mei.csv,STAGING,"Pembayaran Banten Rp100.000.000 tanggal 22/05/2026; saldo usulan Rp1.265.000.000. Belum merge utama."
 staging-pembayaran-banten-22-mei.html,AKTIF,"Halaman baca staging pembayaran Banten 22 Mei."
 staging_pembayaran_psp_22_mei.csv,STAGING,"Pembayaran PSP Rp18.389.800 tanggal 22/05/2026; PSP usulan lunas dan sisa Khoirul tinggal PMS Rp1.720.160.000. Belum merge utama."
@@ -8,4 +11,4 @@ rencana_merge_piutang_22_mei_ringkas.csv,CHECKLIST,"Checklist merge ringkas Bant
 backup_browse_pembayaran_piutang_before_banten_22_mei.csv,BACKUP,"Backup piutang utama sebelum pembayaran Banten/PSP 22 Mei di-merge."
 browse_pembayaran_piutang.csv,BELUM MERGE 22 MEI,"Piutang utama belum menampung pembayaran Banten Rp100.000.000 dan PSP Rp18.389.800."
 staging_piutang_sinkron_21_mei.csv,STAGING 21 MEI,"Staging sinkronisasi piutang Khoirul, Aji, Banten, TSM, dan lainnya; Aji/SJ126 tetap CEK DOBEL."
-menu-admin-ringkas.html,UPDATED,"Pusat Piutang 22 Mei sudah masuk Menu Admin Ringkas."
+menu-admin-ringkas.html,UPDATED,"Pusat Piutang 22 Mei sudah masuk Menu Admin Ringkas. Untuk kerja aman gunakan piutang-22-mei-v2.html."
