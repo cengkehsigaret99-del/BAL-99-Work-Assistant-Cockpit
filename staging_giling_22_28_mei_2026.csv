@@ -1,0 +1,7 @@
+tanggal,hari,sumber_sheet,status_hari,gcc_99,cb_77,gcc_16,cb_16,refill_h,refill_k,refill_original,bal_9,total_giling,total_upah,status_validasi,catatan
+2026-05-22,JUMAT,JUMAT,ADA DATA,567800,0,0,0,0,0,0,0,567800,22712000,VALID AWAL,"Data giling dari file 22-28 MEI 2026; sheet JUMAT tanggal 22/05/2026. Semua total terisi pada GCC 99. Giling/WIP, bukan barang jadi dan tidak mengurangi pita/CK4C."
+2026-05-23,SABTU,SABTU,KOSONG / 0,0,0,0,0,0,0,0,0,0,0,BELUM ADA DATA,"Sheet SABTU tanggal 23/05/2026 masih 0. Jangan dianggap tidak produksi final sebelum konfirmasi."
+2026-05-25,SENIN,SENIN,KOSONG / 0,0,0,0,0,0,0,0,0,0,0,BELUM ADA DATA,"Sheet SENIN tanggal 25/05/2026 masih 0."
+2026-05-26,SELASA,SELASA,KOSONG / 0,0,0,0,0,0,0,0,0,0,0,BELUM ADA DATA,"Sheet SELASA tanggal 26/05/2026 masih 0."
+2026-05-27,RABU,RABU,KOSONG / 0,0,0,0,0,0,0,0,0,0,0,BELUM ADA DATA,"Sheet RABU tanggal 27/05/2026 masih 0."
+2026-05-28,KAMIS,KAMIS,KOSONG / 0,0,0,0,0,0,0,0,0,0,0,BELUM ADA DATA,"Sheet KAMIS tanggal 28/05/2026 masih 0."
