@@ -1,5 +1,5 @@
 file,rows,status
-BAL99_BAL77_DATA_MANIFEST.csv,updated,UPDATED 22 MEI - manifest disinkronkan setelah update staging usulan saldo pita utama 22 Mei
+BAL99_BAL77_DATA_MANIFEST.csv,updated,UPDATED 22 MEI - manifest disinkronkan setelah backup dan rencana merge saldo pita CK-1 900935
 CATATAN_CUTOFF_STOCK_BARANG_JADI_20_MEI_2026.txt,catatan,ARSIP - stock 20 Mei sudah dilanjutkan ke browse_barang_jadi.csv posisi kerja 21 Mei VALID AWAL
 CATATAN_VALIDASI_PIUTANG_3_CUSTOMER_19_MEI_2026.txt,catatan,ARSIP - sudah ada update lanjutan Aji/Khoirul/Usup per 21 Mei di file khusus
 CATATAN_VALIDASI_PIUTANG_TSM_05_MEI_2026.txt,catatan,ARSIP VALID AWAL - update TSM Makasar Rp112.200.000 dan TSM Malang Rp25.500.000
@@ -28,14 +28,17 @@ staging_csck3_setelah_ck1_22_mei.csv,5,STAGING - usulan CSCK-3 setelah CK-1 9009
 staging-csck3-setelah-ck1-22-mei.html,halaman,AKTIF - halaman baca staging CSCK-3 setelah CK-1; dipakai sebelum update saldo utama
 staging_usulan_update_saldo_pita_22_mei.csv,8,STAGING - format usulan kompatibel browse_pita_cukai.csv; PITA16 usulan 255.200 keping dan PITA99 usulan 314.700 keping; belum merge saldo utama
 staging-usulan-update-saldo-pita-22-mei.html,halaman,AKTIF - halaman baca staging usulan update saldo pita utama 22 Mei sebelum merge
-menu-admin-ringkas.html,halaman,UPDATED - Admin Profesional 500 Kontrol Sensitif Staging DJBC Penerimaan Pita CSCK3 Usulan Saldo Pita Piutang Barang Jadi dan DO/SJ menjadi pintu kerja utama
+backup_browse_pita_cukai_before_ck1_22_mei.csv,16,BACKUP - salinan browse_pita_cukai.csv sebelum merge CK-1 900935; dipakai untuk rollback bila terjadi salah input
+rencana_merge_saldo_pita_22_mei.csv,5,CHECKLIST - rencana merge saldo pita 22 Mei; belum mengeksekusi merge ke file utama
+rencana-merge-saldo-pita-22-mei.html,halaman,AKTIF - halaman baca checklist rencana merge saldo pita 22 Mei dan rollback
+menu-admin-ringkas.html,halaman,UPDATED - Admin Profesional 500 Kontrol Sensitif Rencana Merge Staging DJBC Penerimaan Pita CSCK3 Usulan Saldo Pita Piutang Barang Jadi dan DO/SJ menjadi pintu kerja utama
 browse_barang_jadi.csv,13,SINKRON 21 MEI VALID AWAL - C-031 saldo 19.950 pack; C-023 saldo 39.330 pack setelah hasil verpack 21 Mei dan SJ126; tetap CEK DOBEL SJ126
 browse_billing_cukai.csv,5,SINKRON 21 MEI - CK-1 menjadi DEBET/PENERIMAAN CSCK-3; SPPR pajak rokok tidak menambah pita
 browse_ck4c.csv,4,SINKRON 21 MEI - CK4C/pemakaian mengikuti CSCK-3; PITA16 kredit 251.900 saldo akhir 75.200
 browse_ck4c_detail.csv,25,ARSIP DETAIL - halaman CK4C Detail Produksi tetap dipakai; perlu cek bila belum membaca data terbaru 21 Mei
 browse_giling.csv,31,SINKRON 21 MEI - menu bawaan Giling Detail sudah memuat 15-21 Mei; 21 Mei GCC 99 isi 12 = 465.700 batang
 browse_pembayaran_piutang.csv,9,BELUM SINKRON 21 MEI - piutang utama belum diubah; staging piutang 21 Mei tersedia untuk review sebelum merge
-browse_pita_cukai.csv,16,SINKRON 21 MEI - PITA16 detail 18 Mei 21.000; 19 Mei 36.000; 20 Mei 33.800; 21 Mei 33.200; saldo akhir 75.200
+browse_pita_cukai.csv,16,SINKRON 21 MEI - BELUM MERGE CK-1 900935; backup sudah tersedia; staging usulan saldo pita 22 Mei tersedia untuk review
 browse_po.csv,3,BELUM DICEK 21 MEI - perlu cek relasi PO dengan SJ126
 browse_retur_komplain.csv,1,BELUM SINKRON 21 MEI - Retur UD Sarifah Rp25.857.200 perlu masuk data retur/alokasi bila sumber valid
 browse_stok_pasar.csv,2,BELUM DICEK 21 MEI - perlu cek dengan update PSP/PMS terbaru dan stok lapangan
