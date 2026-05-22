@@ -1,0 +1,1 @@
+Koreksi pembacaan gudang 22 Mei: laporan gudang adalah hasil produksi hari ini, bukan saldo fisik akhir. Total hasil gudang 33298 pack. Total verpack 33300 pack. Selisih 2 pack perlu dicek sebagai TUD atau koreksi pencatatan. Jangan merge stok utama sebelum status selisih dikunci.
