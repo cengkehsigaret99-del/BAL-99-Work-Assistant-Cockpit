@@ -1,0 +1,3 @@
+tanggal,bagian,id_karyawan,nama_karyawan,produk,jumlah_unit,satuan_unit,tarif,total_upah,status_validasi,catatan
+2026-05-22,GILING,G00001,NAMA CONTOH,Gedung Cengkeh Coklat 99 isi 12,0,batang,40,0,CONTOH,"Isi data real per karyawan per tanggal. Hapus baris contoh jika sudah input data asli."
+2026-05-22,VERPACK,P00001,NAMA CONTOH,New Gedung Cengkeh Coklat 99 isi 16,0,pack,210,0,CONTOH,"Isi data real per karyawan per tanggal. Hapus baris contoh jika sudah input data asli."
