@@ -1,4 +1,5 @@
 nama_link,file_target,status_link,catatan
+Pusat Cukai 22 Mei,cukai-22-mei.html,AKTIF,"Pintu khusus semua link cukai setelah update CK-1 900935."
 Menu Admin Ringkas,menu-admin-ringkas.html?v=admin500_update_12,AKTIF,"Pintu utama admin sudah mengarah ke CSCK-3 Full 22 Mei dan Dashboard Cukai versi 22 Mei."
 CSCK-3 Full 22 Mei,csck3-full-22-mei.html,AKTIF,"Shortcut mengarah ke csck3-detail-full.html?v=csck3_full_22mei_1."
 Dashboard Cukai 22 Mei,dashboard-cukai-22-mei.html,AKTIF,"Shortcut mengarah ke dashboard-cukai-ringkas.html?v=dashboard_cukai_22mei_1."
