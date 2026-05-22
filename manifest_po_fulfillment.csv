@@ -1,0 +1,5 @@
+file,status,catatan
+template_po_fulfillment.csv,AKTIF,"Template struktur PO masuk, realisasi DO/SJ, sisa PO, status fulfillment, catatan manajer, dan catatan kesadaran."
+staging_po_fulfillment_18_mei.csv,STAGING / VALID AWAL,"Baseline PO minggu ini mulai Senin 18 Mei 2026. Tidak mengubah DO/SJ, stok, piutang, atau cukai."
+pusat-po-fulfillment.html,AKTIF,"Pusat akses awal PO & Fulfillment v1."
+browse_surat_jalan.csv,REFERENSI BACA,"Data DO/SJ utama hanya dibaca sebagai pembanding realisasi. Tidak diubah oleh modul PO."
