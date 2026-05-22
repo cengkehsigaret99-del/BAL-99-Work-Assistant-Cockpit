@@ -1,0 +1,1 @@
+Siklus PO 22 Mei: PO masuk belum mengurangi stok. PO dikerjakan belum final mengurangi stok. Kekurangan PO menjadi kebutuhan produksi. PO selesai siap menjadi DO/SJ. DO/SJ terbit baru mengurangi stok regular. Basis stok siap PO dari produksi 22 Mei adalah 33298 pack regular. TUD 2 pack tidak dipakai untuk PO.
