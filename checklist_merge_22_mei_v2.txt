@@ -1,0 +1,1 @@
+Checklist merge produksi 22 Mei v2: verpack 33300 pack, pita 33300 keping, barang jadi regular 33298 pack, TUD 2 pack. Syarat sebelum merge: backup data utama, cek tidak ada input dobel, merge stok regular terpisah dari TUD, lalu siapkan CK4C official.
