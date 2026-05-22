@@ -1,0 +1,11 @@
+ranking,tanggal,hari,id_karyawan,nama_karyawan,meja,total_giling_batang,total_upah,kehadiran_jumat,status_validasi,catatan
+1,2026-05-22,JUMAT,G10291,LIATI,U,4500,180000,1,VALID AWAL,Top 10 berdasarkan total batang giling 22 Mei; semua dari GCC 99.
+2,2026-05-22,JUMAT,G10329,MUNA A,O,4500,180000,1,VALID AWAL,Top 10 berdasarkan total batang giling 22 Mei; semua dari GCC 99.
+3,2026-05-22,JUMAT,G10055,MAIMUNAH,D,4200,168000,1,VALID AWAL,Top 10 berdasarkan total batang giling 22 Mei; semua dari GCC 99.
+4,2026-05-22,JUMAT,G10076,WIWIK A,D,4200,168000,1,VALID AWAL,Top 10 berdasarkan total batang giling 22 Mei; semua dari GCC 99.
+5,2026-05-22,JUMAT,G10256,SAUDAH B,J,4200,168000,1,VALID AWAL,Top 10 berdasarkan total batang giling 22 Mei; semua dari GCC 99.
+6,2026-05-22,JUMAT,G10263,KOM,S,4200,168000,1,VALID AWAL,Top 10 berdasarkan total batang giling 22 Mei; semua dari GCC 99.
+7,2026-05-22,JUMAT,G10002,MUSRIKA,D,4000,160000,1,VALID AWAL,Top 10 berdasarkan total batang giling 22 Mei; semua dari GCC 99.
+8,2026-05-22,JUMAT,G10017,SHOLIHA A,B,4000,160000,1,VALID AWAL,Top 10 berdasarkan total batang giling 22 Mei; semua dari GCC 99.
+9,2026-05-22,JUMAT,G10029,MUSDALIFA,H,4000,160000,1,VALID AWAL,Top 10 berdasarkan total batang giling 22 Mei; semua dari GCC 99.
+10,2026-05-22,JUMAT,G10499,MIANAH GM,O,4000,160000,1,VALID AWAL,Top 10 berdasarkan total batang giling 22 Mei; semua dari GCC 99.
