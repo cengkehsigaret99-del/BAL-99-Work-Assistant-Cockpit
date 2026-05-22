@@ -1,0 +1,5 @@
+item,customer,pasar,status_merge,saldo_setelah_merge,catatan
+Pembayaran Banten 22 Mei,CV. MITRA SAESTU GROUP / SANDY / MAS TOMI,Banten / Mas Tomi,MERGE TERBATAS SELESAI,1265000000,"Bukti BCA Rp100.000.000 sudah masuk browse_pembayaran_piutang.csv. Total pembayaran Banten menjadi Rp242.000.000."
+Pembayaran PSP 22 Mei,KHOIRUL SOLEH,Padang PSP/PMS,MERGE TERBATAS SELESAI,1720160000,"Bukti BRI Rp18.389.800 menutup PSP. Sisa Khoirul tinggal PMS Rp1.720.160.000."
+Aji SJ126,AJI - P LUKMAN,Team Aji,BELUM MERGE / CEK DOBEL,1595200000,"SJ126 Rp76.500.000 belum ditambahkan ke piutang utama karena masih perlu konfirmasi belum pernah tercatat."
+Backup Piutang Utama,browse_pembayaran_piutang.csv,Piutang Global,BACKUP TERSEDIA,0,"backup_browse_pembayaran_piutang_before_banten_22_mei.csv tersedia untuk rollback."
