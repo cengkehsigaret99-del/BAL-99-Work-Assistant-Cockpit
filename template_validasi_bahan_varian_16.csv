@@ -1,0 +1,5 @@
+kode_varian,nama_varian,jenis_bahan,nama_bahan_final,vendor,sumber_harga,tanggal_sumber,harga_sebelum_ppn,ppn_persen,nilai_ppn,harga_setelah_ppn,satuan,pemakaian_per_pack,pemakaian_per_karton,nilai_per_pack,nilai_per_karton,status_validasi,catatan
+C-023,Gedung Cengkeh 16 New,Ambree,,,,,,,,,Lembar,16,9600,,,PERLU VALIDASI,Jangan masuk HPP final sebelum nama bahan dan harga terkunci
+C-023,Gedung Cengkeh 16 New,Etiket,,,,,,,,,Lembar,1,600,,,PERLU VALIDASI,Jangan otomatis samakan dengan C-031
+C-031,New Ambree Biru,Ambree,,,,,,,,,Lembar,16,9600,,,PERLU VALIDASI,Validasi bahan Ambree Biru
+C-031,New Ambree Biru,Etiket,,,,,,,,,Lembar,1,600,,,PERLU VALIDASI,Cocokkan dengan etiket New GCC 16 Ambree Biru
