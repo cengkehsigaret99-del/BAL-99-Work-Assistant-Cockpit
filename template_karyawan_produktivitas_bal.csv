@@ -1,0 +1,3 @@
+tanggal,mandor,bagian,nama_karyawan,status_hadir,merek,kode_sku,total_pack_team,jumlah_orang_aktif,rata_pack_per_orang,tarif_pack,total_upah_team,upah_estimasi_per_orang,status_verpack,catatan
+2026-05-22,Mandor A,Verpack,Nama Karyawan,HADIR,Produk Contoh,SKU-001,0,0,0,0,0,0,NORMAL,Isi data aktual
+2026-05-22,Mandor A,Verpack,Nama Karyawan,OFF,,,,0,0,0,0,0,OFF,Jangan dihitung sebagai orang aktif
