@@ -30,3 +30,4 @@ tanggal_giling,hari,periode_upah,merek,jumlah_batang,estimasi_pack,estimasi_kart
 2026-05-20,Rabu,2026-05-15 s/d 2026-05-21,GCC 99 isi 12,255500,21291.67,21.2917,12,1000,40,10220000,NORMAL,VALID AWAL - Sinkron file 14-21 Mei,14-21_MEI_2026.xlsm
 2026-05-20,Rabu,2026-05-15 s/d 2026-05-21,New GCC 99 isi 16,308400,19275.00,32.1250,16,600,42,12952800,NORMAL,VALID AWAL - Sinkron file 14-21 Mei,14-21_MEI_2026.xlsm
 2026-05-21,Kamis,2026-05-15 s/d 2026-05-21,GCC 99 isi 12,465700,38808.33,38.8083,12,1000,40,18628000,NORMAL,VALID AWAL - Data KAMIS 21 Mei terbaca dari workbook; giling hanya WIP bukan barang jadi/CK4C,14-21_MEI_2026.xlsm
+2026-05-22,Jumat,2026-05-22 s/d 2026-05-28,GCC 99 isi 12,567800,47316.67,47.3167,12,1000,40,22712000,NORMAL,VALID AWAL / MERGE 22 MEI - Sumber workbook 22-28 MEI 2026.xlsm.xlsx; rekapitulasi produksi Jumat 22 Mei GCC 99 = 567.800 batang,22-28 MEI 2026.xlsm.xlsx
