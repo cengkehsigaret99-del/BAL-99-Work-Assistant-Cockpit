@@ -1,0 +1,23 @@
+<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SOP Validasi Bahan Varian 16</title><style>body{font-family:Arial,sans-serif;background:#eef2f7;margin:0;color:#111827}.wrap{max-width:1040px;margin:auto;padding:18px}.head{background:#071b35;color:white;border-radius:18px;padding:20px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin:12px 0}.card{background:white;border:1px solid #cbd5e1;border-left:7px solid #2563eb;border-radius:14px;padding:12px}.green{border-left-color:#16a34a}.warn{border-left-color:#f59e0b}.gold{border-left-color:#c99a2e}.red{border-left-color:#dc2626}table{width:100%;border-collapse:collapse;background:white;margin-top:12px}th,td{border:1px solid #cbd5e1;padding:8px;vertical-align:top}th{background:#071b35;color:white}.note{background:#fff7ed;border-left:7px solid #c99a2e;border-radius:12px;padding:12px;margin:12px 0}.btns a,.btns button{display:inline-block;background:#071b35;color:white;text-decoration:none;border:0;border-radius:10px;padding:10px 12px;margin:4px;font-weight:bold}.wa{white-space:pre-wrap;background:#fff;border:1px solid #cbd5e1;border-radius:12px;padding:12px;margin-top:12px}@media print{.btns{display:none}body{background:white}.head{border-radius:0}}</style></head><body><div class="wrap"><div class="head"><h1>SOP Validasi Bahan Varian 16</h1><p>Pedoman admin sebelum ambree dan etiket C-023/C-031 dimasukkan ke HPP final.</p></div><div class="btns"><button onclick="window.print()">Cetak / PDF</button><a href="template_validasi_bahan_varian_16.csv?v=sop_bahan16_v1">Download Template CSV</a><a href="validasi-ambree-etiket-varian-16.html?v=sop_bahan16_v1">Validasi Bahan</a><a href="mapping-varian-16.html?v=sop_bahan16_v1">Mapping Varian</a><a href="index.html?v=sop_bahan16_v1">Halaman Utama</a></div><div class="grid"><div class="card green"><b>Status</b><br>Siap dijalankan admin</div><div class="card warn"><b>Data</b><br>Ambree & Etiket C-023/C-031</div><div class="card gold"><b>Tujuan</b><br>HPP tidak salah varian</div><div class="card"><b>Hasil</b><br>Naik ke HPP mendekati final</div></div><div class="note"><b>Keputusan manajerial:</b> admin tidak boleh mengisi HPP langsung. Admin hanya mengisi data sumber bahan. HPP baru dihitung setelah data bahan berstatus valid.</div><table><thead><tr><th>Urutan</th><th>Aksi Admin</th><th>Kolom Wajib</th><th>Status Setelah Diisi</th></tr></thead><tbody><tr><td>1</td><td>Download template CSV validasi bahan varian 16</td><td>Semua baris C-023 dan C-031</td><td>SIAP ISI</td></tr><tr><td>2</td><td>Isi nama bahan final sesuai master/invoice</td><td>nama_bahan_final</td><td>PERLU CEK</td></tr><tr><td>3</td><td>Isi vendor dan sumber harga</td><td>vendor, sumber_harga, tanggal_sumber</td><td>PERLU CEK</td></tr><tr><td>4</td><td>Isi harga sebelum PPN, PPN, dan harga setelah PPN</td><td>harga_sebelum_ppn, ppn_persen, nilai_ppn, harga_setelah_ppn</td><td>VALID AWAL jika sesuai bukti</td></tr><tr><td>5</td><td>Isi pemakaian per pack dan per karton</td><td>pemakaian_per_pack, pemakaian_per_karton</td><td>VALID AWAL jika sesuai konversi</td></tr><tr><td>6</td><td>Hitung nilai per pack dan per karton</td><td>nilai_per_pack, nilai_per_karton</td><td>SIAP MASUK HPP</td></tr></tbody></table><table><thead><tr><th>Aturan Kunci</th><th>Keputusan</th><th>Alasan</th></tr></thead><tbody><tr><td>C-023 dan C-031</td><td>Wajib dipisah</td><td>Nama sama-sama jalur 16, tetapi bahan visual bisa berbeda.</td></tr><tr><td>Harga HPP</td><td>Pakai harga setelah PPN</td><td>Agar HPP sesuai biaya riil yang dibayar.</td></tr><tr><td>Data tanpa bukti harga</td><td>Jangan final</td><td>Masih VALID AWAL atau PERLU KONFIRMASI.</td></tr><tr><td>Nama bahan mirip</td><td>Jangan digabung otomatis</td><td>Mencegah dobel master dan salah material.</td></tr></tbody></table><div class="wa"><b>Template WA minta data:</b>
+
+Pak/Bu, minta bantu lengkapi data bahan untuk varian 16:
+
+1. C-023 / New Gedung Cengkeh Coklat 99 - 16
+- Ambree final:
+- Etiket final:
+- Vendor:
+- Harga sebelum PPN:
+- PPN:
+- Harga setelah PPN:
+- Sumber invoice/master harga:
+
+2. C-031 / New Ambre Biru
+- Ambree final:
+- Etiket final:
+- Vendor:
+- Harga sebelum PPN:
+- PPN:
+- Harga setelah PPN:
+- Sumber invoice/master harga:
+
+Data ini untuk mengunci HPP per varian supaya C-023 dan C-031 tidak tercampur.</div><div class="note"><b>Aksi berikutnya:</b> setelah template diisi, cek ulang data harga dan pemakaian. Jika valid, update HPP New/Gedung 16 dari HPP minimum menjadi HPP mendekati final.</div></div></body></html>
