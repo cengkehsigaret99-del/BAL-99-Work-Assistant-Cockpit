@@ -1,0 +1,7 @@
+kode_sku,nama_merek,isi_batang,pack_per_karton,komponen,kelompok_biaya,satuan,pemakaian_per_pack,pemakaian_per_karton,harga_satuan,nilai_per_pack,nilai_per_karton,sumber_harga,status_validasi,catatan
+GCC12,GCC 99 isi 12,12,1000,TSG 99 Lama,Bahan Utama,kg,0.021,21,95000,1995,1995000,Master TSG,VALID AWAL,Contoh: 1.75 gram x 12 batang
+GCC12,GCC 99 isi 12,12,1000,Upah Giling,Upah,batang,12,12000,40,480,480000,Master upah,VALID AWAL,
+GCC12,GCC 99 isi 12,12,1000,Upah Verpack,Upah,pack,1,1000,170,170,170000,Master upah,VALID AWAL,Normal
+NEW16,New/Gedung Cengkeh 16,16,600,TSG 99 Lama/Biru,Bahan Utama,kg,0.028,16.8,95000,2660,1596000,Master TSG,VALID AWAL,Contoh: 1.75 gram x 16 batang
+NEW16,New/Gedung Cengkeh 16,16,600,Upah Giling,Upah,batang,16,9600,42,672,403200,Master upah,VALID AWAL,
+NEW16,New/Gedung Cengkeh 16,16,600,Upah Verpack,Upah,pack,1,600,210,210,126000,Master upah,VALID AWAL,Normal
