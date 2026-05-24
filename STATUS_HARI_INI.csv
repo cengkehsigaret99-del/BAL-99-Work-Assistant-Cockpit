@@ -6,6 +6,6 @@ Barang Jadi,browse_barang_jadi.csv,2026-05-24,VALID AWAL / SETELAH SJ128,TINGGI,
 Pita Cukai,browse_pita_cukai.csv,2026-05-23,VALID AWAL / MERGE 23 MEI,SANGAT TINGGI,PITA99 303.700; PITA16 201.900; Refill 9.970.,Final cukai perlu cek format.,Pakai saldo kerja.,Belum upload final.,BELUM
 CK4C,browse_ck4c.csv,2026-05-23,VALID AWAL / MERGE 23 MEI,SANGAT TINGGI,CK4C mengikuti verpack dan CSCK-3.,Jangan ikut giling.,Cek template upload.,Kontrol internal.,BELUM
 DO Surat Jalan,browse_surat_jalan.csv,2026-05-24,VALID AWAL / MERGE SJ125 SJ127 SJ128,SANGAT TINGGI,SJ baru masuk; SJ125 catch-up; SJ127 dan SJ128 pengurang stok.,SJ125 rawan dobel piutang.,Jangan tambah SJ125 lagi ke piutang kerja.,Kontrol DO kerja.,BELUM
-Piutang,browse_pembayaran_piutang.csv,2026-05-23,VALID AWAL / KOREKSI GAMBAR,TINGGI,Khoirul dikunci: PSP 0; PMS 2.540.160.000; total 2.540.160.000. Ferry 49.000.000. Aji 1.671.700.000.,Risiko dobel SJ125.,Pakai saldo gambar koreksi.,Kontrol tagihan.,BELUM
+Piutang,browse_pembayaran_piutang.csv,2026-05-23,VALID AWAL / KOREKSI GAMBAR,TINGGI,Khoirul total 2.540.160.000; Banten turun jadi 1.150.000.000 setelah bayar 115.000.000; Ferry 49.000.000; Aji 1.671.700.000.,Risiko dobel SJ125 dan perlu cek mutasi pembayaran Banten.,Pakai saldo gambar koreksi.,Kontrol tagihan.,BELUM
 PO,browse_po.csv,2026-05-21,PERLU REVIEW,SEDANG,PO belum final.,PO bukan piutang.,Cek dengan stok terbaru.,Prioritas produksi.,BELUM
 Performa,index.html,2026-05-24,PERLU OPTIMASI,SEDANG,Dashboard perlu tetap ringan.,Loading berat.,Baca STATUS dulu.,Optimasi bertahap.,BELUM
