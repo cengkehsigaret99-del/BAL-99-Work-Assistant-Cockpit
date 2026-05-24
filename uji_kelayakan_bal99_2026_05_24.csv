@@ -1,0 +1,12 @@
+area,hasil_uji,status_kelayakan,risiko,keputusan_praktis,aksi_lanjut
+Alur Manufaktur,Giling WIP Verpack Barang Jadi Pita CK4C terpisah,PASS,RENDAH,Layak sebagai alur kerja produksi internal,Pertahankan aturan jangan lompat tahap
+Giling Lembur,24 Mei GCC 99 isi 12 488500 batang tarif 60 per batang,PASS,SEDANG,Layak untuk kontrol WIP dan upah lembur,Jangan masuk barang jadi sebelum verpack
+Verpack Lembur,24 Mei GCC 99 isi 12 55000 pack tarif 255 per pack,PASS,SEDANG,Layak menjadi dasar barang jadi dan CK4C,Cocokkan fisik jika akan final owner
+Kontrol WIP,Harian 24 Mei minus 171500 batang tetapi kumulatif positif 416300 batang,PASS,SEDANG,WIP masih layak dan tidak error,Pantau agar WIP kumulatif tidak negatif
+Barang Jadi,GCC99 isi 12 55500 pack C023 780 pack C031 19998 pack,WARNING,TINGGI,Layak untuk keputusan supply terbatas,Tahan supply C023 besar dan gunakan GCC99 isi 12 sesuai SJ resmi
+Pita Cukai,PITA99 248700 PITA16 201900 Refill 9970,WARNING,SANGAT_TINGGI,Layak sebagai saldo kerja pita,Finalkan CSCK3 dan CK4C sebelum upload resmi
+CK4C,PITA99 303700 dikurangi 55000 menjadi 248700,WARNING,SANGAT_TINGGI,Layak kontrol internal CK4C,Cek format upload cukai sebelum final
+DO SJ,SJ125 catchup SJ127 dan SJ128 pengurang stok SJ126 terkunci C023,WARNING,SANGAT_TINGGI,Layak kontrol DO kerja,Kunci status SJ125 agar tidak dobel piutang
+Piutang,Khoirul 2540160000 Banten 1150000000 Aji 1671700000 Ferry 49000000,WARNING,TINGGI,Layak kontrol tagihan kerja,Cocokkan mutasi bank sebelum final owner
+HPP BOM SJ,HPP tahap 1 aktif untuk margin kotor belum FIFO overhead BDP,PASS,SEDANG,Layak estimasi margin kotor per SJ,Jangan pakai untuk laba rugi final
+Performa Aplikasi,Dashboard ringkas dan status harian sudah menjadi pintu baca,PASS,SEDANG,Layak dipakai untuk audit harian ringan,Lanjut optimasi owner view dan decision engine
