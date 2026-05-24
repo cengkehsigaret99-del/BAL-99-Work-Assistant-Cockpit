@@ -1,0 +1,6 @@
+area,status,catatan
+Ringkasan Hari Ini,WARNING,Judul halaman perlu diselaraskan dari Dashboard Ringkas menjadi Ringkasan Hari Ini
+Status Operasional,WARNING,Judul halaman perlu diselaraskan dari Status Hari Ini menjadi Status Operasional
+Penilaian Kesehatan Pabrik,PASS,Halaman penilaian sudah siap sebagai ruang manajerial
+Data Sumber,PASS,Data CSV sumber tidak diubah dalam tahap perapian UI
+Menu Kosong,PASS,Pesan belum ada data aktif sudah disiapkan
