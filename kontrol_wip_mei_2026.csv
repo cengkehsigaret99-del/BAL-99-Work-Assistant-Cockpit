@@ -1,0 +1,3 @@
+tanggal,jenis,merek,giling_batang,verpack_batang,selisih_batang,selisih_pack,status,catatan
+2026-05-24,HARIAN,GCC 99 isi 12,488500,660000,-171500,-14291.67,WIP DIPAKAI,Verpack lebih besar dari giling hari yang sama karena memakai WIP hari sebelumnya.
+2026-05-24,KUMULATIF,SEMUA MEREK,9576900,9160600,416300,34691.67,WIP POSITIF,Kumulatif giling masih lebih besar dari verpack.
