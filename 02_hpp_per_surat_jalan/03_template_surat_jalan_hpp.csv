@@ -1,0 +1,4 @@
+tanggal_sj,nomor_sj,nomor_invoice,customer,pasar_team,alias_sj,brand_code,status_verpack,jumlah_karton,jumlah_bal,jumlah_slop,jumlah_pack_manual,isi_karton_pack,pack_per_bal,pack_per_slop,qty_pack_total,harga_jual_per_pack,hpp_per_pack,nilai_penjualan,nilai_hpp,margin_kotor,margin_per_pack,margin_pct,status_validasi,catatan
+2026-05-24,CONTOH/SJ/001,CONTOH/INV/001,Contoh Customer,Contoh Pasar,Gedung Cengkeh Coklat 99 isi 12,GCC99_12_LAMA,NORMAL,10,0,0,0,1000,200,10,10000,6400,5999.2711,64000000,59992711,4007289,400.7289,0.062613890625,VALID_HITUNG,Contoh: 10 karton GCC99 isi 12
+2026-05-24,CONTOH/SJ/002,CONTOH/INV/002,Contoh Customer,Contoh Pasar,Cengkeh Refill,REFILL,NORMAL,5,0,0,0,600,200,10,3000,10500,9927.924121212121,31500000,29783772.363636363,1716227.6363636367,572.075878787879,0.05448341702741704,VALID_HITUNG,Contoh: 5 karton Refill
+,,,,,,,,0,0,0,0,,200,10,,,,,,,,,CEK_INPUT,Isi baris baru di bawah ini
