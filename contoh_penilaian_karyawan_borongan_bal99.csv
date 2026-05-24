@@ -1,0 +1,10 @@
+tanggal,minggu,mandor,bagian,nama_karyawan,status_hadir,merek,kode_sku,jam_mulai,jam_selesai,jam_kerja_efektif,total_output_team,jumlah_orang_aktif,rata_output_per_orang,target_output_per_orang,persen_target,rijek_pack,rijek_persen,ulang_kerja_pack,disiplin_skor,kerapian_skor,kerjasama_skor,kualitas_skor,produktivitas_skor,skor_akhir,kategori,tarif_dasar,insentif,catatan_tindak_lanjut
+2026-05-24,Minggu 4,Mandor Riwayati,VERPACK,Siti,HADIR,GCC 99 isi 12,SKU-001,07:00,15:00,7,9200,8,1150,1000,115,12,1.30,0,95,92,90,95,100,95,A - UNGGUL,170,15000,Menjadi contoh ritme kerja
+2026-05-24,Minggu 4,Mandor Riwayati,VERPACK,Aminah,HADIR,GCC 99 isi 12,SKU-001,07:00,15:00,7,9200,8,1080,1000,108,18,1.95,0,90,88,86,90,90,89,B - BAIK,170,10000,Stabil dan rapi
+2026-05-24,Minggu 4,Mandor Riwayati,VERPACK,Rina,HADIR,GCC 99 isi 12,SKU-001,07:00,15:00,7,9200,8,950,1000,95,35,3.68,4,82,78,80,75,80,79,C - CUKUP,170,0,Perlu bina kualitas
+2026-05-24,Minggu 4,Mandor Wiwik,VERPACK,Nur,HADIR,New GCC 16,SKU-003,07:00,15:00,7,5600,7,800,780,102.56,9,1.13,0,92,90,92,94,90,91,A - UNGGUL,210,15000,Kuat untuk target stabil
+2026-05-24,Minggu 4,Mandor Wiwik,VERPACK,Lastri,HADIR,New GCC 16,SKU-003,07:00,15:00,7,5600,7,720,780,92.31,20,2.78,0,85,82,84,88,80,83,B - BAIK,210,8000,Cukup stabil
+2026-05-24,Minggu 4,Mandor Wiwik,VERPACK,Eka,HADIR,New GCC 16,SKU-003,07:00,15:00,7,5600,7,610,780,78.21,44,7.21,8,70,68,72,60,60,66,D - PENDAMPINGAN,210,0,Perlu pendampingan mandor
+2026-05-24,Minggu 4,Mandor Desi,GILING,Titin,HADIR,Cengkeh Refill,SKU-005,07:00,15:00,7,72000,6,12000,11000,109.09,0,0,0,90,88,86,92,90,89,B - BAIK,46,10000,Produktivitas baik
+2026-05-24,Minggu 4,Mandor Desi,GILING,Yani,HADIR,Cengkeh Refill,SKU-005,07:00,15:00,7,72000,6,9700,11000,88.18,0,0,0,75,72,74,85,70,76,C - CUKUP,46,0,Perlu stabilkan tempo
+2026-05-24,Minggu 4,Mandor Desi,GILING,Maya,OFF,Cengkeh Refill,SKU-005,,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,TIDAK DIHITUNG,0,0,OFF tidak dihitung
