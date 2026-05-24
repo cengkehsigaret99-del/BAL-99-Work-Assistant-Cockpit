@@ -1,3 +1,1 @@
 tanggal,distributor,wilayah,area,outlet,merek,no_do_sj,pack_do,nilai_do,barang_masuk,barang_keluar_laku,stok_akhir,outlet_aktif,outlet_potensi,status_ro,validasi,catatan
-2026-05-24,KHOIRUL SOLEH,Padang PSP/PMS,Padang,,NEW GEDUNG CENGKEH COKLAT 99 - 16,128/SJ/BAL/V/2026,90000,756000000,90000,0,90000,0,0,BELUM TERBUKTI,VALID AWAL,Contoh isi; ganti dengan data lapangan distributor.
-2026-05-16,Team Aji,Team Aji,Mojokerto,,Cengkeh Coklat 16,,0,0,6000,0,7253,0,0,BELUM TERBUKTI,CEK DATA PASAR,Contoh stock gudang area; perlu data toko aktif dan laku.
