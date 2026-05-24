@@ -1,5 +1,12 @@
 (function(){
   function go(path){ window.location.assign(path); }
+  function loadCleanup(){
+    if(document.getElementById('uiLanguageCleanup')) return;
+    var s=document.createElement('script');
+    s.id='uiLanguageCleanup';
+    s.src='ui-language-cleanup.js?v=cleanup_v1';
+    document.body.appendChild(s);
+  }
   function addMenu(){
     var nav = document.getElementById('nav');
     if(nav && !document.getElementById('btnPenilaianKondisiPabrik')){
@@ -72,6 +79,7 @@
       mobile.insertBefore(opt, mobile.firstChild);
       mobile.addEventListener('change', function(){ if(mobile.value === 'hpp3sku') go('hpp-mini-eksekusi-3sku.html?v=hpp_3sku_v1'); });
     }
+    loadCleanup();
   }
   if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', function(){ setTimeout(addMenu, 900); });
   else setTimeout(addMenu, 900);
