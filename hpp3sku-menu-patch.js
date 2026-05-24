@@ -2,6 +2,13 @@
   function go(path){ window.location.assign(path); }
   function addMenu(){
     var nav = document.getElementById('nav');
+    if(nav && !document.getElementById('btnPenilaianKondisiPabrik')){
+      var boxAssess = document.createElement('div');
+      boxAssess.className = 'group';
+      boxAssess.innerHTML = '<div class="group-title">Penilaian Manajerial</div><button id="btnPenilaianKondisiPabrik" class="nav-btn"><span class="dot"></span>Penilaian Kondisi Pabrik</button>';
+      nav.insertBefore(boxAssess, nav.firstChild);
+      document.getElementById('btnPenilaianKondisiPabrik').onclick = function(){ go('penilaian-kondisi-pabrik.html?v=penilaian_pabrik_v1'); };
+    }
     if(nav && !document.getElementById('btnUjiKelayakanBal99')){
       var boxAudit = document.createElement('div');
       boxAudit.className = 'group';
@@ -25,6 +32,14 @@
       document.getElementById('btnHpp3Sku').onclick = function(){ go('hpp-mini-eksekusi-3sku.html?v=hpp_3sku_v1'); };
     }
     var mobile = document.getElementById('mobilePage');
+    if(mobile && !document.getElementById('optPenilaianKondisiPabrik')){
+      var optAssess = document.createElement('option');
+      optAssess.id = 'optPenilaianKondisiPabrik';
+      optAssess.value = 'penilaian_kondisi_pabrik';
+      optAssess.textContent = 'Penilaian Kondisi Pabrik';
+      mobile.insertBefore(optAssess, mobile.firstChild);
+      mobile.addEventListener('change', function(){ if(mobile.value === 'penilaian_kondisi_pabrik') go('penilaian-kondisi-pabrik.html?v=penilaian_pabrik_v1'); });
+    }
     if(mobile && !document.getElementById('optUjiKelayakanBal99')){
       var optAudit = document.createElement('option');
       optAudit.id = 'optUjiKelayakanBal99';
