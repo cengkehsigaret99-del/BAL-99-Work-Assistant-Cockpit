@@ -1,0 +1,8 @@
+aturan_kode,aturan_nama,nilai,status,catatan
+BOF_ISI12,BOF/MBOF untuk merek isi 12,25%,VALID SEMENTARA,Dihitung dari nilai TSG bersih + Ambree; tidak ada susut TSG terpisah
+BOF_ISI16,BOF/MBOF untuk merek isi 16,"22,5%",VALID SEMENTARA,Dihitung dari nilai TSG bersih + Ambree; tidak ada susut TSG terpisah
+TSG_SUSUT,TSG susut terpisah,Dihilangkan,FINAL SEMENTARA,Susut/risiko proses masuk BOF/MBOF
+UPAH_LEMBUR,Upah lembur,+50% dari upah normal,VALID SEMENTARA,Berlaku untuk upah giling dan upah verpack kecuali ada tarif terkunci lain
+STATUS_HITUNG,Normal dan lembur,Tidak dihitung bersamaan,FINAL SEMENTARA,HPP DO harus memilih NORMAL atau LEMBUR
+OVERHEAD,Overhead,PENDING,PENDING,Belum masuk HPP utama
+BDP,Barang Dalam Proses,PENDING,PENDING,Belum masuk HPP utama
