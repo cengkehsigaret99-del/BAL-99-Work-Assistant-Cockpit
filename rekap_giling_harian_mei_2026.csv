@@ -18,4 +18,5 @@ tanggal_giling,hari,jumlah_batang,estimasi_pack,estimasi_karton,total_upah_gilin
 2026-05-21,Kamis,465700,38808.33,38.8083,18628000,1,GCC 99 isi 12,VALID AWAL - UPDATE 21 MEI
 2026-05-22,Jumat,567800,47316.67,47.3167,22712000,1,GCC 99 isi 12,VALID AWAL / MERGE 22 MEI - sumber workbook 22-28 MEI 2026
 2026-05-23,Sabtu,599000,49916.67,49.9167,23960000,1,GCC 99 isi 12,VALID AWAL / MERGE 23 MEI - sumber workbook 22-28 MEI 2026
-TOTAL,,9088400,740352.09,774.3980,365171200,6,Semua merek aktif,VALID AWAL - TOTAL SAMPAI 23 MEI
+2026-05-24,Minggu,488500,40708.33,40.7083,29310000,1,GCC 99 isi 12,VALID AWAL / LEMBUR 24 MEI - file sumber terbaca sheet SENIN 25 Mei status NORMAL; dikoreksi mengikuti instruksi user menjadi 24 Mei LEMBUR; tarif lembur Rp60 per batang
+TOTAL,,9576900,781060.42,815.1063,394481200,6,Semua merek aktif,VALID AWAL - TOTAL SAMPAI 24 MEI LEMBUR
