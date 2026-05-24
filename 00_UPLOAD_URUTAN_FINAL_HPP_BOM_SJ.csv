@@ -1,0 +1,10 @@
+urutan,folder,nama_file,fungsi,status
+1,01_master_hpp_bom,01_hpp_config_merek_final.csv,"Konfigurasi merek isi karton rate BOF status validasi",WAJIB
+2,01_master_hpp_bom,02_hpp_master_bahan_final.csv,"Master bahan HPP satuan vendor harga PPN non PPN",WAJIB
+3,01_master_hpp_bom,03_hpp_assembly_bom_final.csv,Rincian BOM per merek brand_code dan nilai komponen,WAJIB
+4,01_master_hpp_bom,04_hpp_ringkasan_final.csv,HPP normal lembur final per pack dan per karton,WAJIB
+5,01_master_hpp_bom,06_pending_overhead_bdp.csv,"Data pending overhead BDP FIFO kode barang jadi Accurate",KONTROL
+6,02_hpp_per_surat_jalan,02_mapping_sj_brand_code.csv,Mapping nama merek di SJ ke brand_code HPP,WAJIB
+7,02_hpp_per_surat_jalan,03_template_surat_jalan_hpp.csv,Template input SJ DO untuk hitung nilai HPP dan margin,WAJIB
+8,02_hpp_per_surat_jalan,04_rule_engine_hpp_sj.csv,Rule engine perhitungan HPP per Surat Jalan,WAJIB
+9,02_hpp_per_surat_jalan,05_validasi_admin_hpp_sj.csv,Checklist validasi admin sebelum nilai SJ dianggap aman,KONTROL
