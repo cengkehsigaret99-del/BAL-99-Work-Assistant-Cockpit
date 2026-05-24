@@ -1,0 +1,11 @@
+aspek,bobot,skor,status,ringkasan,risiko,saran,keputusan
+Giling,8,78,KUNING RINGAN,Giling berjalan dan lembur tercatat,WIP tetap dikontrol,Pakai untuk kontrol upah,Lanjut produksi terkontrol
+Verpack,10,80,KUNING RINGAN,Verpack lembur masuk barang jadi,Bukan dasar piutang,Tunggu SJ resmi,Lanjut verpack terkontrol
+WIP,10,85,HIJAU,WIP kumulatif positif,Selisih harian bisa salah baca,Baca kumulatif,Aman dipantau
+Barang Jadi,12,58,KUNING TEBAL,C023 sangat tipis dan GCC99 isi 12 tersedia,Stok varian utama rendah,Tahan PO besar C023,Supply terbatas
+Pita Cukai,12,52,MERAH,Saldo kerja pita tersedia,Final cukai belum terkunci,Cek CSCK3,Tahan final cukai
+CK4C,10,55,KUNING TEBAL,CK4C kerja sinkron,Belum upload final,Cek format cukai,Kontrol internal
+DO SJ,10,50,MERAH,Ada catchup SJ125 dan SJ baru,Risiko dobel,Kunci status SJ,Tahan final owner
+Piutang,12,52,MERAH,Piutang top 3 tinggi,Risiko cashflow,Tagih top 3,Tahan supply besar
+Cashflow,12,72,KUNING RINGAN,Uang masuk mendekati DO berjalan,Piutang akumulatif tinggi,Supply terbatas,Kuning tebal
+HPP Margin,4,70,KUNING RINGAN,HPP tahap 1 aktif,Belum FIFO overhead BDP,Pakai margin kotor,Jangan laba final
