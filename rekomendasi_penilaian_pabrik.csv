@@ -1,0 +1,9 @@
+kode,kondisi,rekomendasi,peringatan,prioritas
+REC001,Piutang top 3 sangat tinggi,Tagih Khoirul Aji dan Banten sebelum supply besar,Jangan menambah DO besar tanpa pembayaran baru,1
+REC002,C023 sangat tipis,Tahan PO besar untuk C023 sampai ada verpack baru,Stok C023 rawan habis dan mengganggu supply,1
+REC003,Pita dan CK4C risiko tinggi,Finalkan CSCK3 dan CK4C sebelum laporan cukai,Jangan upload final tanpa cocok fisik,1
+REC004,SJ125 catchup,Kunci SJ125 sebagai catchup historis agar tidak dobel,Salah baca SJ125 bisa menaikkan piutang palsu,1
+REC005,WIP positif,Pertahankan kontrol WIP harian dan kumulatif,Jangan baca selisih harian sebagai error sendiri,2
+REC006,Cashflow masih bergerak,Supply boleh terbatas dengan jadwal pembayaran,Tahan ekspansi besar sampai cash masuk lagi,2
+REC007,HPP tahap 1,Pakai untuk margin kotor per SJ,HPP belum laba final karena belum FIFO overhead BDP,3
+REC008,Owner view,Buat laporan ringkas owner dengan bahasa keputusan,Jangan tampilkan semua CSV ke owner,3
