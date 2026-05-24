@@ -16,4 +16,5 @@ tanggal_verpack,hari,jumlah_pack,estimasi_karton,jumlah_batang_equiv,total_upah_
 2026-05-21,Kamis,33200,55.3333,531200,6972000,1,New GCC 99 isi 16 Ambree Kuning,VALID AWAL / OFFICIAL PITA - UPDATE 21 MEI
 2026-05-22,Jumat,33300,54.8330,528800,6953000,5,"New GCC 99 isi 16 Ambree Biru, Gedung Cengkeh 16 New, Cengkeh Biru 77 isi 16, Cengkeh Biru 77 isi 12, TUD New GCC 99 isi 16",VALID AWAL / MERGE 22 MEI - regular 33.298 pack + TUD 2 pack memakai pita
 2026-05-23,Sabtu,31000,45.0000,456000,6110000,2,"GCC 99 isi 12, Gedung Cengkeh 16 New",VALID AWAL / MERGE 23 MEI - sumber 05. LAPORAN PACING MEI 2026
-TOTAL,,606650,816.4163,8500600,115905500,9,"Semua merek aktif",VALID AWAL - TOTAL SAMPAI 23 MEI
+2026-05-24,Minggu,55000,55.0000,660000,14025000,1,GCC 99 isi 12,VALID AWAL / LEMBUR 24 MEI - tarif lembur Rp255/pack
+TOTAL,,661650,871.4163,9160600,129930500,9,"Semua merek aktif",VALID AWAL - TOTAL SAMPAI 24 MEI LEMBUR
