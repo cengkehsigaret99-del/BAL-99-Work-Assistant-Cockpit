@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Penilaian Karyawan Borongan BAL-99</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="bal99-executive-theme.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <img src="logo.png" alt="BAL" class="logo">
+    <div>
+      <div class="eyebrow">SDM & Produktivitas Manufaktur</div>
+      <h1>Penilaian Karyawan Borongan BAL-99</h1>
+      <p>Performance & Quality Scorecard • Produktivitas tanpa mengorbankan kualitas</p>
+    </div>
+  </div>
+  <div class="top-meta">
+    <b>FINAL KONSEP AWAL</b>
+    <small>Modul aman: tidak mengubah data produksi, CSV lama, rumus, atau localStorage.</small>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="group"><div class="group-title">Navigasi</div>
+      <a class="nav-btn active" href="penilaian-karyawan-borongan.html"><span class="dot"></span>Penilaian Borongan</a>
+      <a class="nav-btn" href="template_penilaian_karyawan_borongan_bal99.csv"><span class="dot"></span>Template CSV</a>
+      <a class="nav-btn" href="kontrol-upah-produksi.html"><span class="dot"></span>Kontrol Upah Produksi</a>
+      <a class="nav-btn" href="executive-control-tower.html"><span class="dot"></span>Executive Control Tower</a>
+      <a class="nav-btn" href="index.html"><span class="dot"></span>Index Lama</a>
+    </div>
+  </aside>
+  <main class="app">
+    <section class="page-head">
+      <div class="screen-title">
+        <h2>BAL-99 Borongan Performance & Quality Scorecard</h2>
+        <p>Konsep penilaian kerja borongan yang adil: mengukur output, kualitas, disiplin, kerapian, dan kerja sama.</p>
+        <div class="datatype-note"><span class="version-lock">SAFE</span> Tujuan: menaikkan produktivitas pabrik tanpa membuat tim panik, saling menyalahkan, atau mengejar kuantitas yang merusak kualitas.</div>
+      </div>
+      <div class="head-actions">
+        <a class="btn primary" href="template_penilaian_karyawan_borongan_bal99.csv">Download Template</a>
+        <a class="btn gold" href="kontrol-upah-produksi.html">Kontrol Upah</a>
+      </div>
+    </section>
+    <section class="cards">
+      <div class="card green"><small>Bobot</small><strong>40%</strong><p>Produktivitas output.</p></div>
+      <div class="card warn"><small>Bobot</small><strong>25%</strong><p>Kualitas dan rijek.</p></div>
+      <div class="card"><small>Bobot</small><strong>15%</strong><p>Disiplin hadir dan waktu.</p></div>
+      <div class="card"><small>Bobot</small><strong>20%</strong><p>Kerapian dan kerja sama.</p></div>
+    </section>
+    <section class="table-wrap">
+      <div class="table-toolbar"><h3>Formula Skor Akhir</h3><span>Skor akhir = produktivitas, kualitas, disiplin, kerapian, dan kerja sama.</span></div>
+      <div class="scroll"><table><thead><tr><th>Unsur</th><th>Bobot</th><th>Yang Dinilai</th><th>Catatan Manajerial</th></tr></thead><tbody>
+        <tr><td>Produktivitas</td><td>40%</td><td>Output per orang dibanding target bagian</td><td>Jangan hitung karyawan OFF sebagai orang aktif.</td></tr>
+        <tr><td>Kualitas</td><td>25%</td><td>Rijek, ulang kerja, kerapian hasil, salah hitung, komplain</td><td>Output tinggi tidak boleh diberi bonus jika kualitas buruk.</td></tr>
+        <tr><td>Disiplin</td><td>15%</td><td>Hadir, tepat waktu, jam kerja efektif</td><td>Gunakan data, bukan emosi.</td></tr>
+        <tr><td>Kerapian</td><td>10%</td><td>Area kerja, susunan hasil, bahan tidak tercecer</td><td>Menjaga ritme gudang dan mandor.</td></tr>
+        <tr><td>Kerja Sama</td><td>10%</td><td>Bisa diarahkan, tidak memicu konflik, mendukung tim</td><td>Budaya kerja sehat menaikkan output stabil.</td></tr>
+      </tbody></table></div>
+    </section>
+    <section class="table-wrap" style="margin-top:16px">
+      <div class="table-toolbar"><h3>Kategori Penilaian</h3><span>Dipakai untuk pembinaan, insentif, dan keputusan penempatan kerja.</span></div>
+      <div class="scroll"><table><thead><tr><th>Skor</th><th>Kategori</th><th>Keputusan</th><th>Bahasa Evaluasi</th></tr></thead><tbody>
+        <tr><td>90–100</td><td><span class="badge b-green">A Unggul</span></td><td>Kandidat contoh tim / leader kecil</td><td>Menjadi penguat ritme produksi.</td></tr>
+        <tr><td>80–89</td><td><span class="badge b-blue">B Baik</span></td><td>Dipertahankan dan diberi target stabil</td><td>Produktif dan cukup konsisten.</td></tr>
+        <tr><td>70–79</td><td><span class="badge b-yellow">C Cukup</span></td><td>Dibina oleh mandor</td><td>Perlu distabilkan.</td></tr>
+        <tr><td>60–69</td><td><span class="badge b-yellow">D Pendampingan</span></td><td>Evaluasi mingguan</td><td>Perlu arahan lebih dekat.</td></tr>
+        <tr><td>&lt;60</td><td><span class="badge b-red">E Risiko</span></td><td>Jangan ditempatkan di bagian kritis dulu</td><td>Perlu pembinaan dan cek kecocokan bagian.</td></tr>
+      </tbody></table></div>
+    </section>
+    <section class="cockpit-grid" style="margin-top:16px">
+      <div class="cockpit-panel"><h3>Prinsip Kalibrasi Tinggi</h3><p>Penilaian tidak digunakan untuk menyalahkan. Penilaian digunakan untuk melihat keadaan dengan jernih, memperbaiki ritme kerja, menjaga kualitas, dan membuat insentif lebih adil.</p><div class="note"><b>Bahasa yang dipakai:</b> perlu dicek, perlu pendampingan, perlu distabilkan, perlu arahan, belum cocok di bagian kritis.</div></div>
+      <div class="cockpit-panel"><h3>Alur Tindak Lanjut</h3><p>1. Cek target realistis. 2. Cek bahan/alat. 3. Cek instruksi mandor. 4. Cek kualitas hasil. 5. Tentukan pembinaan, insentif, atau penempatan ulang.</p></div>
+    </section>
+  </main>
+</div>
+</body>
+</html>
