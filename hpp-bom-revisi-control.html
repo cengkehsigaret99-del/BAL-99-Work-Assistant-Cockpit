@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HPP & BOM Revisi • BAL</title>
+<link rel="stylesheet" href="style.css?v=17_8_mei21_cukai_auto">
+<style>
+  body{background:#f7f3e8;color:#111827;font-family:Arial,sans-serif;margin:0}.wrap{max-width:1180px;margin:auto;padding:18px}.hero{background:#10233f;color:white;border-radius:18px;padding:18px;box-shadow:0 10px 24px rgba(0,0,0,.14)}.hero h1{margin:0 0 8px;font-size:26px}.hero p{margin:0;color:#f1d89a}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin:16px 0}.card{background:white;border:1px solid #eadca9;border-radius:16px;padding:14px;box-shadow:0 8px 18px rgba(0,0,0,.07)}.card b{display:block;color:#0f2747;margin-bottom:5px}.badge{display:inline-block;border-radius:999px;padding:5px 9px;background:#fff4cf;border:1px solid #e4c86a;font-weight:800;margin:2px}.ok{background:#dcfce7;border-color:#86efac}.warn{background:#fef3c7;border-color:#facc15}.pend{background:#fee2e2;border-color:#fca5a5}.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.toolbar a,.toolbar button{border:1px solid #d5b94e;background:white;border-radius:12px;padding:10px 12px;color:#0f2747;font-weight:900;text-decoration:none;cursor:pointer}table{width:100%;border-collapse:collapse;background:white;border-radius:14px;overflow:hidden}th,td{border-bottom:1px solid #eadca9;padding:10px;text-align:left;font-size:13px}th{background:#0f2747;color:white}td.num{text-align:right;font-variant-numeric:tabular-nums}.note{background:#fffdf3;border:1px dashed #e4c86a;border-radius:14px;padding:12px;margin:14px 0}.small{font-size:12px;color:#6b7280}.section-title{margin-top:20px;color:#0f2747} @media print{.toolbar{display:none}.wrap{max-width:none}.hero{box-shadow:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <section class="hero">
+    <h1>HPP & BOM Revisi — PR. Banyu Anyar Lestari</h1>
+    <p>Audit manufaktur: TSG tanpa susut terpisah, BOF/MBOF masuk sebagai risiko proses, upah lembur +50%.</p>
+  </section>
+  <div class="toolbar">
+    <a href="index.html">← Kembali ke Dashboard</a>
+    <a href="hpp_bom_rules_revisi.csv">Download Rules CSV</a>
+    <a href="hpp_bom_ringkasan_revisi.csv">Download HPP Ringkasan CSV</a>
+    <button onclick="window.print()">Cetak / PDF</button>
+  </div>
+  <div class="grid">
+    <div class="card"><b>Aturan Isi 12</b><span class="badge ok">BOF/MBOF 25%</span><p class="small">Basis: nilai TSG bersih + Ambree.</p></div>
+    <div class="card"><b>Aturan Isi 16</b><span class="badge ok">BOF/MBOF 22,5%</span><p class="small">Basis: nilai TSG bersih + Ambree.</p></div>
+    <div class="card"><b>TSG</b><span class="badge ok">Tanpa susut terpisah</span><p class="small">Susut/risiko proses masuk BOF/MBOF.</p></div>
+    <div class="card"><b>Upah Lembur</b><span class="badge ok">Normal +50%</span><p class="small">Normal dan lembur tidak dihitung bersamaan.</p></div>
+  </div>
+  <div class="note"><b>Status:</b> VALID AWAL TERKOREKSI untuk pondasi menu HPP & BOM. Overhead, BDP, FIFO, dan kode barang jadi Accurate masih pending.</div>
+  <h2 class="section-title">Ringkasan HPP Revisi</h2>
+  <table id="tbl"><thead><tr><th>Brand Code</th><th>Merek</th><th>Isi</th><th>Status</th><th>BOF</th><th>HPP/Pack</th><th>HPP/Karton</th><th>Validasi</th><th>Catatan</th></tr></thead><tbody></tbody></table>
+</div>
+<script>
+function rupiah(n){ if(n===''||n==null||isNaN(Number(n))) return '-'; return 'Rp'+Number(n).toLocaleString('id-ID',{maximumFractionDigits:2}); }
+function parseCSV(text){const rows=[];let row=[],cur='',q=false;for(let i=0;i<text.length;i++){const ch=text[i],nx=text[i+1];if(q){if(ch==='"'&&nx==='"'){cur+='"';i++;}else if(ch==='"')q=false;else cur+=ch;}else{if(ch==='"')q=true;else if(ch===','){row.push(cur);cur='';}else if(ch==='\n'){row.push(cur);rows.push(row);row=[];cur='';}else if(ch!=='\r')cur+=ch;}}if(cur!==''||row.length){row.push(cur);rows.push(row);}const head=(rows.shift()||[]).map(h=>h.trim().replace(/^\uFEFF/,''));return rows.filter(r=>r.some(x=>String(x).trim()!=='')).map(r=>Object.fromEntries(head.map((h,i)=>[h,r[i]??''])))}
+fetch('hpp_bom_ringkasan_revisi.csv?v=bom_rev_20260524').then(r=>r.text()).then(t=>{const rows=parseCSV(t);document.querySelector('#tbl tbody').innerHTML=rows.map(r=>`<tr><td>${r.brand_code}</td><td>${r.merek}</td><td>${r.isi_pack_batang}/${r.pack_per_karton}</td><td><span class="badge ${r.status_produksi==='PENDING'?'pend':'ok'}">${r.status_produksi}</span></td><td>${r.bof_rate}</td><td class="num">${rupiah(r.hpp_per_pack)}</td><td class="num">${rupiah(r.hpp_per_karton)}</td><td><span class="badge ${r.status_validasi==='PENDING'?'pend':'ok'}">${r.status_validasi}</span></td><td>${r.catatan}</td></tr>`).join('')})
+</script>
+</body>
+</html>
