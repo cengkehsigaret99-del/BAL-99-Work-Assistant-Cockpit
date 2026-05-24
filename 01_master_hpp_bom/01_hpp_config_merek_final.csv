@@ -1,0 +1,8 @@
+brand_code,merek,varian,segmentasi,jenis,isi_pack_batang,isi_karton_pack,gram_tsg_per_batang,bof_rate,status
+GCC99_12_LAMA,Gedung Cengkeh Coklat 99 isi 12,TSG 99 Lama,Pasar Lama / Reguler,ISI_12,12,1000,1.75,0.25,VALID_FINAL_KOREKSI_BOF25
+GCC99_12_BARU,Gedung Cengkeh Coklat 99 isi 12,TSG 99 Baru,Pasar Baru,ISI_12,12,1000,1.75,0.25,VALID_FINAL_KOREKSI_BOF25
+NEWGCC99_16_BIRU_LAMA,New Gedung Cengkeh Coklat 99 isi 16 Ambree Biru,TSG 99 Lama,Pasar Lama / Reguler,ISI_16,16,600,1.75,0.225,VALID_FINAL_KOREKSI_BOF22_5
+NEWGCC99_16_BIRU_BARU,New Gedung Cengkeh Coklat 99 isi 16 Ambree Biru,TSG 99 Baru,Pasar Baru,ISI_16,16,600,1.75,0.225,VALID_FINAL_KOREKSI_BOF22_5
+CB77_12,Cengkeh Biru 77 isi 12,1 Varian,Umum,ISI_12,12,1000,1.75,0.25,VALID_FINAL_KOREKSI_BOF25
+CB77_16,Cengkeh Biru 77 isi 16,1 Varian,Umum,ISI_16,16,600,1.75,0.225,VALID_FINAL_KOREKSI_BOF22_5
+REFILL,Cengkeh Refill,1 Varian,Umum,REFILL,12,600,2.0,0.25,VALID_FINAL_KOREKSI_BOF25
