@@ -1,0 +1,10 @@
+area,hasil_uji,status_kelayakan,risiko,keputusan_praktis,aksi_lanjut
+Judul Utama,BAL-99 Control Tower sudah disiapkan sebagai bahasa utama,PASS,RENDAH,Layak dipakai sebagai identitas aplikasi,Lanjut konsistensi ke halaman detail
+Subjudul,Pusat Kendali Pabrik dan Pasar lebih jelas untuk owner admin,PASS,RENDAH,Layak menggantikan istilah teknis lama,Periksa tampilan HP
+Shortcut Header,Shortcut diringkas menjadi Ringkasan Hari Ini Penilaian Kesehatan Pabrik Uji Kelayakan Operasional,PASS,RENDAH,Layak sebagai pintu awal aplikasi,Jangan tampilkan terlalu banyak link teknis
+Menu Teknis,Menu lama diarahkan menjadi Arsip Teknis Menu Lama,PASS,SEDANG,Layak agar admin tidak bingung,Pindahkan bertahap bukan hapus permanen
+Label Menu,Label DO Piutang HPP Cukai Produksi sudah dibuat lebih manusiawi,PASS,SEDANG,Layak untuk admin lapangan,Lanjut rapikan halaman detail
+Menu Kosong,Menu kosong diberi pesan Belum ada data aktif,PASS,RENDAH,Layak mencegah salah baca data kosong,Tetap cek menu stok pasar retur master jika belum ada data
+Data Transaksi,Tidak ada perubahan angka produksi stok pita CK4C DO piutang HPP,PASS,RENDAH,Aman karena hanya UI yang diubah,Jangan update angka lewat modul UI
+Risiko Loading,Script perapian berjalan berkala ringan,WARNING,SEDANG,Layak sementara tetapi perlu pantau performa HP,Jika lemot kurangi interval setelah stabil
+Owner Readability,Bahasa lebih tenang tetapi belum semua halaman detail ikut rapi,WARNING,SEDANG,Layak tahap 1,Lanjut tahap 2 ke Ringkasan Hari Ini Status Operasional dan Owner Mode
