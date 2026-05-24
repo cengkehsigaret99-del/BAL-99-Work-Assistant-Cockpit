@@ -1,0 +1,13 @@
+brand_code,merek,isi_pack_batang,pack_per_karton,bof_rate,status_produksi,hpp_per_pack,hpp_per_karton,status_validasi,catatan
+GCC99_12,Gedung Cengkeh Coklat 99 isi 12,12,1000,25%,NORMAL,5999.2711,5999271.10,VALID SEMENTARA,TSG bersih tanpa susut terpisah; BOF dari TSG+Ambree; overhead/BDP pending
+GCC99_12,Gedung Cengkeh Coklat 99 isi 12,12,1000,25%,LEMBUR,6324.2711,6324271.10,VALID SEMENTARA,Upah giling dan verpack lembur +50%
+NEW_GCC99_16_BIRU,New Gedung Cengkeh Coklat 99 isi 16 Ambree Biru,16,600,"22,5%",NORMAL,8057.5174,4834510.46,VALID SEMENTARA,Isi 16 pakai BOF 22,5%; overhead/BDP pending
+NEW_GCC99_16_BIRU,New Gedung Cengkeh Coklat 99 isi 16 Ambree Biru,16,600,"22,5%",LEMBUR,8498.5174,5099110.46,VALID SEMENTARA,Upah giling dan verpack lembur +50%
+CB77_12,Cengkeh Biru 77 isi 12,12,1000,25%,NORMAL,5999.2711,5999271.10,VALID SEMENTARA,Mengikuti pola GCC99 isi 12; beda nama ambree/etiket/pita
+CB77_12,Cengkeh Biru 77 isi 12,12,1000,25%,LEMBUR,6324.2711,6324271.10,VALID SEMENTARA,Upah giling dan verpack lembur +50%
+CB77_16,Cengkeh Biru 77 isi 16,16,600,"22,5%",NORMAL,8041.4815,4824888.92,VALID SEMENTARA,Mengikuti pola New GCC99 isi 16; beda ambree/etiket/pita
+CB77_16,Cengkeh Biru 77 isi 16,16,600,"22,5%",LEMBUR,8482.4815,5089488.92,VALID SEMENTARA,Upah giling dan verpack lembur +50%
+REFILL,Cengkeh Refill,12,600,25%,NORMAL,9927.9241,5956754.47,VALID SEMENTARA,TSG Refill Rp185.000/kg; BOF 25%; overhead/BDP pending
+REFILL,Cengkeh Refill,12,600,25%,LEMBUR,10318.9241,6191354.47,VALID SEMENTARA,Upah giling dan verpack lembur +50%
+BAL9_12,BAL 9 isi 12,12,800,25%,PENDING,,,PENDING,Terkunci sebagian; belum kertas bal dan upah
+BAL9_16,BAL 9 isi 16,16,600,"22,5%",PENDING,,,PENDING,Terkunci sebagian; belum kertas bal dan upah
