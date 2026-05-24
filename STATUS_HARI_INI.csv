@@ -1,6 +1,6 @@
 module,file_sumber,tanggal_data,status_validasi,tingkat_risiko,ringkasan,risiko_utama,aksi_aman,keputusan_praktis,boleh_final
 Status Harian,STATUS_HARI_INI.csv,2026-05-24,AKTIF,RENDAH,Pintu audit ringkas BAL-99.,Status lama bila tidak diperbarui.,Baca file ini dulu.,Index kontrol.,YA
-Giling,browse_giling.csv,2026-05-23,VALID AWAL / MERGE 23 MEI,TINGGI,Total giling 9.088.400 batang.,Giling bukan barang jadi.,Pakai untuk WIP/upah.,Belum final barang jadi.,BELUM
+Giling,browse_giling.csv,2026-05-24,VALID AWAL / LEMBUR 24 MEI,TINGGI,Total giling sampai 24 Mei = 9.576.900 batang; tambahan lembur GCC 99 isi 12 = 488.500 batang dengan tarif Rp60 per batang; total upah giling = Rp394.481.200.,Giling lembur adalah WIP dan tidak boleh langsung masuk barang jadi/pita/CK4C.,Pakai untuk kontrol WIP dan upah lembur; tunggu verpack resmi.,Belum final barang jadi.,BELUM
 Verpack,browse_verpack.csv,2026-05-23,VALID AWAL / MERGE 23 MEI,TINGGI,Total verpack 606.650 pack.,Verpack bukan DO/piutang.,Pakai untuk stok dan CK4C.,Belum final owner.,BELUM
 Barang Jadi,browse_barang_jadi.csv,2026-05-24,VALID AWAL / SETELAH SJ128,TINGGI,C-023 sisa 780 pack; GCC 99 isi 12 sisa 500 pack; C-031 tetap 19.998 pack.,Stok tipis.,Tahan supply tanpa produksi baru.,Saldo kerja harian.,BELUM
 Pita Cukai,browse_pita_cukai.csv,2026-05-23,VALID AWAL / MERGE 23 MEI,SANGAT TINGGI,PITA99 303.700; PITA16 201.900; Refill 9.970.,Final cukai perlu cek format.,Pakai saldo kerja.,Belum upload final.,BELUM
