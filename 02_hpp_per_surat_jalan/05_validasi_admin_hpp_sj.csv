@@ -1,0 +1,8 @@
+check_id,area,cek,hasil_default,aksi_admin
+C-001,Master HPP,Semua brand_code ada di HPP_Ringkasan,OK,Brand code baru harus ditambah sebelum SJ dihitung.
+C-002,SJ Input,Setiap baris SJ wajib punya brand_code,WAJIB,Jika kosong status CEK_INPUT.
+C-003,Status Verpack,Harus NORMAL atau LEMBUR,WAJIB,Kalau tidak jelas gunakan NORMAL sementara dengan catatan.
+C-004,Qty,Qty pack total harus lebih dari 0,WAJIB,Cek karton bal slop pack manual.
+C-005,Harga Jual,Harga jual per pack harus lebih dari 0,WAJIB,Tanpa harga jual margin tidak valid.
+C-006,Margin,Margin negatif wajib review,PERLU_CEK,Tidak otomatis salah tapi harus diberi catatan.
+C-007,FIFO,Belum aktif,PENDING,Tahap 2 HPP FIFO per batch barang jadi.
