@@ -1,0 +1,3 @@
+tanggal,minggu,mandor,bagian,nama_karyawan,status_hadir,merek,kode_sku,jam_mulai,jam_selesai,jam_kerja_efektif,total_output_team,jumlah_orang_aktif,rata_output_per_orang,target_output_per_orang,persen_target,rijek_pack,rijek_persen,ulang_kerja_pack,disiplin_skor,kerapian_skor,kerjasama_skor,kualitas_skor,produktivitas_skor,skor_akhir,kategori,tarif_dasar,insentif,catatan_tindak_lanjut
+2026-05-24,Minggu 4,Mandor A,VERPACK,Nama Karyawan,HADIR,GCC 99 isi 12,SKU-001,07:00,15:00,7,0,0,0,0,0,0,0,0,80,80,80,80,80,80,B - BAIK,0,0,Isi data aktual
+2026-05-24,Minggu 4,Mandor A,VERPACK,Nama Karyawan,OFF,GCC 99 isi 12,SKU-001,,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,TIDAK DIHITUNG,0,0,OFF jangan dihitung orang aktif
