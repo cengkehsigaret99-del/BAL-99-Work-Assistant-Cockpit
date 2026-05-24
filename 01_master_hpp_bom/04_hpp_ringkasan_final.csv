@@ -1,0 +1,8 @@
+brand_code,merek,varian,segmentasi,isi_karton_pack,bof_rate,hpp_normal_per_pack,hpp_normal_per_karton,hpp_lembur_per_pack,hpp_lembur_per_karton,status_validasi,catatan
+GCC99_12_LAMA,Gedung Cengkeh Coklat 99 isi 12,TSG 99 Lama,Pasar Lama / Reguler,1000,25.0,5999.2711,5999271.1,6324.2711,6324271.1,VALID_FINAL_KOREKSI_BOF25,Overhead dan BDP pending; tidak masuk HPP utama.
+GCC99_12_BARU,Gedung Cengkeh Coklat 99 isi 12,TSG 99 Baru,Pasar Baru,1000,25.0,5999.2711,5999271.1,6324.2711,6324271.1,VALID_FINAL_KOREKSI_BOF25,Overhead dan BDP pending; tidak masuk HPP utama.
+NEWGCC99_16_BIRU_LAMA,New Gedung Cengkeh Coklat 99 isi 16 Ambree Biru,TSG 99 Lama,Pasar Lama / Reguler,600,22.5,8057.517436666667,4834510.462,8498.517436666667,5099110.462,VALID_FINAL_KOREKSI_BOF22_5,Overhead dan BDP pending; tidak masuk HPP utama.
+NEWGCC99_16_BIRU_BARU,New Gedung Cengkeh Coklat 99 isi 16 Ambree Biru,TSG 99 Baru,Pasar Baru,600,22.5,8057.517436666667,4834510.462,8498.517436666667,5099110.462,VALID_FINAL_KOREKSI_BOF22_5,Overhead dan BDP pending; tidak masuk HPP utama.
+CB77_12,Cengkeh Biru 77 isi 12,1 Varian,Umum,1000,25.0,5999.2711,5999271.1,6324.2711,6324271.1,VALID_FINAL_KOREKSI_BOF25,Overhead dan BDP pending; tidak masuk HPP utama.
+CB77_16,Cengkeh Biru 77 isi 16,1 Varian,Umum,600,22.5,8041.480444444444,4824888.266666667,8482.480444444443,5089488.266666667,VALID_FINAL_KOREKSI_BOF22_5,Overhead dan BDP pending; tidak masuk HPP utama.
+REFILL,Cengkeh Refill,1 Varian,Umum,600,25.0,9927.924121212121,5956754.472727273,9974.924121212121,5984954.472727273,VALID_FINAL_KOREKSI_BOF25,Overhead dan BDP pending; tidak masuk HPP utama.
