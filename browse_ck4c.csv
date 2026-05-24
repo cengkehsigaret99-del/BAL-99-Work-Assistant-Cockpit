@@ -1,11 +1,14 @@
 tanggal,sumber,jenis_pita,hje,isi,stock_awal_periode,masuk_ck1,pemakaian_ck4c_berjalan,sisa_stock_ck4c,status_ck4c,validasi
-2026-05-21,CSCK-3 / Pemakaian Pita sampai 21 Mei,PITA 99 & 77 / GCC 99 isi 12,10.325,12,55700,480000,281000,254700,SALDO SINKRON CSCK-3,VALID AWAL - Mengikuti CSCK-3 koreksi: saldo akhir PITA 99 & 77 = 254.700 keping. Cengkeh Biru 77 isi 12 masuk HJE 10.325.
-2026-05-21,CSCK-3 / Pemakaian Pita sampai 21 Mei,PITA REFILL,10.500,12,7420,12000,9450,9970,SALDO SINKRON CSCK-3,VALID AWAL - Saldo akhir PITA REFILL = 9.970 keping.
-2026-05-21,CSCK-3 / Pemakaian Pita sampai 21 Mei,PITA 16 / New GCC 99 isi 16,13.775,16,27100,300000,251900,75200,PEMAKAIAN CK4C SINKRON 21 MEI,VALID AWAL / OFFICIAL PITA - Pemakaian PITA16 mengikuti CSCK-3: total kredit 251.900; saldo akhir 75.200. Periode 18-21 Mei: 21.000 + 36.000 + 33.800 + 33.200 = 124.000. TUD 600 pack 18 Mei tidak memakai pita.
-2026-05-20,CK-1 900724 / TIS,TIS - D'CLOVE,55.000,1000,0,2800,0,2800,PROYEKSI TIS - BELUM ADA PEMAKAIAN,VALID AWAL - Tambahan TIS 2.800 keping dari CK-1 900724; belum ada kredit/pemakaian TIS dari CK4C berjalan.
-2026-05-22,CK-1 900935 + CK4C 22 Mei,PITA 99 & 77 / GCC 99 isi 12,10.325,12,254700,60000,1000,313700,SALDO SETELAH CK4C 22 MEI,VALID AWAL / MERGE 22 MEI - Saldo 21 Mei 254.700 + CK-1 60.000 - pemakaian 22 Mei C-012 1.000 = 313.700 keping.
-2026-05-22,CSCK-3 / Pemakaian Pita sampai 22 Mei,PITA REFILL,10.500,12,9970,0,0,9970,SALDO TETAP 22 MEI,VALID AWAL / MERGE 22 MEI - Tidak ada pemakaian/refill masuk baru pada update 22 Mei.
-2026-05-22,CK-1 900935 + CK4C 22 Mei,PITA 16 / New GCC 99 isi 16,13.775,16,75200,180000,32300,222900,SALDO SETELAH CK4C 22 MEI,VALID AWAL / MERGE 22 MEI - Saldo 21 Mei 75.200 + CK-1 180.000 - pemakaian 22 Mei 32.300 = 222.900 keping. Rinci pemakaian: C-031 48 + C-023 30.450 + C-015 1.800 + TUD 2.
-2026-05-23,CK4C 23 Mei / Pemakaian Pita cocok fisik,PITA 99 & 77 / GCC 99 isi 12,10.325,12,313700,0,10000,303700,SALDO SETELAH CK4C 23 MEI,VALID AWAL / MERGE 23 MEI - Pemakaian 23 Mei GCC 99 isi 12 = 10.000 keping. Barang jadi fisik cocok; CSCK-3/pita cocok; tidak ada TUD/sample tambahan.
-2026-05-23,CSCK-3 / Pemakaian Pita sampai 23 Mei,PITA REFILL,10.500,12,9970,0,0,9970,SALDO TETAP 23 MEI,VALID AWAL / MERGE 23 MEI - Tidak ada pemakaian/refill masuk baru pada update 23 Mei.
-2026-05-23,CK4C 23 Mei / Pemakaian Pita cocok fisik,PITA 16 / New GCC 99 isi 16,13.775,16,222900,0,21000,201900,SALDO SETELAH CK4C 23 MEI,VALID AWAL / MERGE 23 MEI - Pemakaian 23 Mei C-023/Gedung Cengkeh 16 New = 21.000 keping. C-023/C-031 sudah terkunci hanya beda ambree kuning/biru; tidak ada TUD/sample tambahan.
+2026-05-21,CSCK-3 / Pemakaian Pita sampai 21 Mei,PITA 99 & 77 / GCC 99 isi 12,10.325,12,55700,480000,281000,254700,SALDO SINKRON CSCK-3,VALID AWAL - Saldo akhir 21 Mei = 254.700 keping
+2026-05-21,CSCK-3 / Pemakaian Pita sampai 21 Mei,PITA REFILL,10.500,12,7420,12000,9450,9970,SALDO SINKRON CSCK-3,VALID AWAL - Saldo akhir PITA REFILL = 9.970 keping
+2026-05-21,CSCK-3 / Pemakaian Pita sampai 21 Mei,PITA 16 / New GCC 99 isi 16,13.775,16,27100,300000,251900,75200,PEMAKAIAN CK4C SINKRON 21 MEI,VALID AWAL - Saldo akhir PITA16 = 75.200 keping
+2026-05-20,CK-1 900724 / TIS,TIS - D'CLOVE,55.000,1000,0,2800,0,2800,PROYEKSI TIS,VALID AWAL - belum ada pemakaian TIS
+2026-05-22,CK-1 900935 + CK4C 22 Mei,PITA 99 & 77 / GCC 99 isi 12,10.325,12,254700,60000,1000,313700,SALDO SETELAH CK4C 22 MEI,VALID AWAL - 254.700 + 60.000 - 1.000 = 313.700
+2026-05-22,CSCK-3 / Pemakaian Pita sampai 22 Mei,PITA REFILL,10.500,12,9970,0,0,9970,SALDO TETAP 22 MEI,VALID AWAL - tidak ada pemakaian/refill 22 Mei
+2026-05-22,CK-1 900935 + CK4C 22 Mei,PITA 16 / New GCC 99 isi 16,13.775,16,75200,180000,32300,222900,SALDO SETELAH CK4C 22 MEI,VALID AWAL - 75.200 + 180.000 - 32.300 = 222.900
+2026-05-23,CK4C 23 Mei / Pemakaian Pita cocok fisik,PITA 99 & 77 / GCC 99 isi 12,10.325,12,313700,0,10000,303700,SALDO SETELAH CK4C 23 MEI,VALID AWAL - pemakaian GCC 99 isi 12 = 10.000 keping
+2026-05-23,CSCK-3 / Pemakaian Pita sampai 23 Mei,PITA REFILL,10.500,12,9970,0,0,9970,SALDO TETAP 23 MEI,VALID AWAL - tidak ada pemakaian/refill 23 Mei
+2026-05-23,CK4C 23 Mei / Pemakaian Pita cocok fisik,PITA 16 / New GCC 99 isi 16,13.775,16,222900,0,21000,201900,SALDO SETELAH CK4C 23 MEI,VALID AWAL - pemakaian C-023/Gedung Cengkeh 16 New = 21.000 keping
+2026-05-24,CK4C 24 Mei / Verpack lembur GCC 99 isi 12,PITA 99 & 77 / GCC 99 isi 12,10.325,12,303700,0,55000,248700,SALDO SETELAH CK4C 24 MEI,VALID AWAL / LEMBUR 24 MEI - pemakaian 55.000 keping dari verpack lembur GCC 99 isi 12
+2026-05-24,CSCK-3 / Pemakaian Pita sampai 24 Mei,PITA REFILL,10.500,12,9970,0,0,9970,SALDO TETAP 24 MEI,VALID AWAL - tidak ada pemakaian/refill 24 Mei
+2026-05-24,CSCK-3 / Pemakaian Pita sampai 24 Mei,PITA 16 / New GCC 99 isi 16,13.775,16,201900,0,0,201900,SALDO TETAP 24 MEI,VALID AWAL - tidak ada pemakaian PITA16 pada update lembur 24 Mei
