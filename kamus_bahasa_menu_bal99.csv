@@ -1,0 +1,22 @@
+kategori,nama_lama,nama_baru,catatan
+Judul,BAL-99 Work Assistant Cockpit,BAL-99 Control Tower,Pakai judul yang lebih tenang dan profesional
+Subjudul,Dashboard ringkas plus status harian ringan,Pusat kendali pabrik dan pasar,Hindari bahasa terlalu teknis di depan
+Menu,Dashboard Ringkas,Ringkasan Hari Ini,Bahasa lebih mudah untuk admin
+Menu,Status Hari Ini,Status Operasional,Pintu baca ringan sebelum audit detail
+Menu,Penilaian Kondisi Pabrik,Penilaian Kesehatan Pabrik,Dipakai sebagai ruang manajerial
+Menu,Uji Kelayakan BAL-99,Uji Kelayakan Operasional,PASS/WARNING untuk keputusan kerja
+Menu,HPP BOM + HPP per SJ,HPP dan Margin per Surat Jalan,Bahasa lebih jelas untuk owner/admin
+Menu,HPP & BOM Revisi,Master BOM dan HPP Produk,Bukan menu eksekusi harian
+Menu,Eksekusi HPP 3 SKU,Simulasi HPP Produk,Dipahami sebagai simulasi bukan angka final
+Menu,DO / Surat Jalan,Surat Jalan dan DO,Urutan bahasa kerja gudang
+Menu,Pembayaran / Piutang,Piutang dan Pembayaran,Piutang sebagai fokus kontrol
+Menu,Stock Pasar,Stok Pasar,Konsisten bahasa Indonesia
+Menu,CK4C Detail Produksi,CK4C Produksi,Lebih ringkas
+Menu,CSCK-3 Koreksi,Koreksi CSCK-3,Lebih natural
+Status,VALID AWAL,Data Kerja,Bahasa lebih manusiawi di tampilan
+Status,PERLU REVIEW,Perlu Cek,Lebih mudah dipahami admin
+Status,SANGAT TINGGI,Risiko Tinggi,Tidak terlalu menakutkan tapi jelas
+Status,CATCH-UP,Data Susulan,Mudah dipahami
+Status,MERGE,Sudah Digabung,Hindari istilah teknis
+Arsip,Template CSV,Arsip Teknis,Disembunyikan dari menu utama
+Arsip,Menu lama,Arsip Teknis,Tidak dihapus hanya dipindah mental model
