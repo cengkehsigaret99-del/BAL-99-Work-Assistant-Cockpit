@@ -33,23 +33,23 @@
   function addStrip(){
     var app = document.getElementById('app'); if (!app || app.querySelector('.admin500-calm-strip')) return;
     var div = document.createElement('div'); div.className = 'admin500-calm-strip';
-    div.innerHTML = '<b>Admin Profesional 500 aktif:</b> baca status dulu, cek dobel dipisahkan, angka final hanya setelah sumber dikunci. Produksi/cukai sudah membaca 21 Mei; pasar/piutang dibaca sesuai status validasi. <br><b>Pemasaran BAL-99:</b> menu baru tersedia untuk kontrol distributor, DO, peredaran barang, RO, dan potensi area.';
+    div.innerHTML = '<b>Admin Profesional 500 aktif:</b> baca status dulu, cek dobel dipisahkan, angka final hanya setelah sumber dikunci. Produksi/cukai sudah membaca 21 Mei; pasar/piutang dibaca sesuai status validasi. <br><b>Kontrol Distribusi BAL-99:</b> menu koreksi v2 tersedia untuk membaca distributor, DO, stok pasar, RO, piutang, dan keputusan supply bertahap.';
     app.prepend(div);
   }
 
   function addPemasaranShortcut(){
     if (document.querySelector('a[href^="pemasaran-bal99-control.html"]')) return;
-    var url = 'pemasaran-bal99-control.html?v=pemasaran_1';
+    var url = 'pemasaran-bal99-control.html?v=pemasaran_2';
     var topGrid = document.querySelector('.top-meta div[style*="display:grid"]');
-    if (topGrid) { var a = document.createElement('a'); a.href = url; a.target = '_blank'; a.className = 'pemasaran-bal99-shortcut'; a.textContent = '★ Pemasaran BAL-99 — Distributor / RO / Potensi Area'; topGrid.insertBefore(a, topGrid.children[2] || null); }
+    if (topGrid) { var a = document.createElement('a'); a.href = url; a.target = '_blank'; a.className = 'pemasaran-bal99-shortcut'; a.textContent = '★ Kontrol Distribusi BAL-99 — Distributor / RO / Potensi Area'; topGrid.insertBefore(a, topGrid.children[2] || null); }
     var nav = document.getElementById('nav');
     if (nav && !nav.querySelector('.pemasaran-bal99-extra')) {
       var g = Array.from(nav.querySelectorAll('.group')).find(function(x){ return /Distribusi|Pasar/i.test(x.textContent); }) || nav;
-      var b = document.createElement('button'); b.className = 'nav-btn pemasaran-bal99-extra'; b.innerHTML = '<span class="dot"></span>Pemasaran BAL-99'; b.onclick = function(){ location.href = url; };
+      var b = document.createElement('button'); b.className = 'nav-btn pemasaran-bal99-extra'; b.innerHTML = '<span class="dot"></span>Kontrol Distribusi BAL-99'; b.onclick = function(){ location.href = url; };
       g.appendChild(b);
     }
     var fav = document.querySelector('.mobile-favs');
-    if (fav && !fav.querySelector('.pemasaran-bal99-extra')) { var mb = document.createElement('button'); mb.className = 'pemasaran-bal99-extra'; mb.textContent = 'Pemasaran BAL-99'; mb.onclick = function(){ location.href = url; }; fav.insertBefore(mb, fav.children[2] || null); }
+    if (fav && !fav.querySelector('.pemasaran-bal99-extra')) { var mb = document.createElement('button'); mb.className = 'pemasaran-bal99-extra'; mb.textContent = 'Kontrol Distribusi BAL-99'; mb.onclick = function(){ location.href = url; }; fav.insertBefore(mb, fav.children[2] || null); }
   }
 
   function run(){ patchTitles(); addStyle(); replaceText(document.body); addStrip(); addPemasaranShortcut(); }
