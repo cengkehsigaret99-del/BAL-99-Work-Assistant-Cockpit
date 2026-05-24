@@ -6,7 +6,7 @@
     setText('.brand h1','BAL-99 Control Tower');
     setText('.brand p','Produksi • Stok • Cukai • Piutang • HPP • Keputusan Supply');
     setText('.top-meta b','Mode Operasional Terarah');
-    setText('.top-meta small','Mulai dari Ringkasan Hari Ini atau Penilaian Kesehatan Pabrik. Menu teknis lama disimpan sebagai arsip.');
+    setText('.top-meta small','Mulai dari Ringkasan Hari Ini, Status Operasional, lalu Penilaian Kesehatan Pabrik. Menu teknis lama disimpan sebagai arsip.');
   }
   function mapLabel(t){
     var map={
@@ -33,7 +33,7 @@
     var box=document.querySelector('.top-meta > div');
     if(!box||box.getAttribute('data-cleaned')==='1')return;
     box.setAttribute('data-cleaned','1');
-    box.innerHTML='<a href="dashboard-ringkas.html?v=dashboard_ringkas_wip_v1" target="_blank" style="display:block;padding:11px 12px;border:1px solid #e4c86a;border-radius:12px;color:#111827;background:#ffeeb8;font-weight:1000;text-decoration:none;font-size:15px">Ringkasan Hari Ini</a><a href="penilaian-kondisi-pabrik.html?v=penilaian_pabrik_v1" target="_blank" style="display:block;padding:11px 12px;border:1px solid #e4c86a;border-radius:12px;color:#111827;background:#fff4cf;font-weight:1000;text-decoration:none;font-size:15px">Penilaian Kesehatan Pabrik</a><a href="uji-kelayakan-bal99.html?v=uji_kelayakan_v1" target="_blank" style="display:block;padding:10px 12px;border:1px solid #e4c86a;border-radius:12px;color:#111827;background:#fffdf3;font-weight:900;text-decoration:none;font-size:15px">Uji Kelayakan Operasional</a>';
+    box.innerHTML='<a href="ringkasan-hari-ini.html?v=pintu_ringkas_v1" target="_blank" style="display:block;padding:11px 12px;border:1px solid #e4c86a;border-radius:12px;color:#111827;background:#ffeeb8;font-weight:1000;text-decoration:none;font-size:15px">Ringkasan Hari Ini</a><a href="status-operasional.html?v=pintu_status_v1" target="_blank" style="display:block;padding:11px 12px;border:1px solid #e4c86a;border-radius:12px;color:#111827;background:#fff4cf;font-weight:1000;text-decoration:none;font-size:15px">Status Operasional</a><a href="penilaian-kondisi-pabrik.html?v=penilaian_pabrik_v1" target="_blank" style="display:block;padding:10px 12px;border:1px solid #e4c86a;border-radius:12px;color:#111827;background:#fffdf3;font-weight:900;text-decoration:none;font-size:15px">Penilaian Kesehatan Pabrik</a>';
   }
   function emptyDataMessage(){
     var rc=document.getElementById('rowCount');
