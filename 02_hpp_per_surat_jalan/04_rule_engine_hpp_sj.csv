@@ -1,0 +1,7 @@
+rule_id,rule_name,formula_logic,status,catatan
+R-001,Lookup HPP Normal/Lembur,"hpp_per_pack = HPP_Ringkasan[brand_code,status_verpack]",AKTIF,NORMAL mengambil hpp_normal_per_pack; LEMBUR mengambil hpp_lembur_per_pack.
+R-002,Qty Pack Total,qty_pack_total = karton*pack_per_karton + bal*pack_per_bal + slop*pack_per_slop + pack_manual,AKTIF,Pack per bal default 200; pack per slop default 10.
+R-003,Nilai Penjualan SJ,nilai_penjualan = qty_pack_total * harga_jual_per_pack,AKTIF,Harga jual wajib ada dari DO/SJ.
+R-004,Nilai HPP SJ,nilai_hpp = qty_pack_total * hpp_per_pack,AKTIF,HPP tahap 1 belum FIFO.
+R-005,Margin Kotor,margin_kotor = nilai_penjualan - nilai_hpp,AKTIF,Margin negatif perlu review harga jual atau HPP.
+R-006,Batasan Akuntansi,"overhead, BDP, FIFO belum aktif",PENDING,Jangan klaim laba-rugi final.
