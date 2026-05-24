@@ -1,0 +1,10 @@
+alias_sj,brand_code,merek,default_status_verpack,default_harga_jual_per_pack,pack_per_karton,pack_per_bal,pack_per_slop,status_mapping,catatan
+Gedung Cengkeh Coklat 99 isi 12 TSG Lama,GCC99_12_LAMA,Gedung Cengkeh Coklat 99 isi 12,NORMAL,6400,1000,200,10,VALID,Untuk pasar lama/reguler.
+Gedung Cengkeh Coklat 99 isi 12 TSG Baru,GCC99_12_BARU,Gedung Cengkeh Coklat 99 isi 12,NORMAL,6400,1000,200,10,VALID,Untuk pasar baru.
+Gedung Cengkeh Coklat 99 isi 12,GCC99_12_LAMA,Gedung Cengkeh Coklat 99 isi 12,NORMAL,6400,1000,200,10,DEFAULT_ALIAS,"Jika SJ tidak menyebut TSG Baru, default ke TSG Lama."
+New Gedung Cengkeh Coklat 99 isi 16 Ambree Biru TSG Lama,NEWGCC99_16_BIRU_LAMA,New Gedung Cengkeh Coklat 99 isi 16 Ambree Biru,NORMAL,8400,600,200,10,VALID,Untuk pasar lama/reguler.
+New Gedung Cengkeh Coklat 99 isi 16 Ambree Biru TSG Baru,NEWGCC99_16_BIRU_BARU,New Gedung Cengkeh Coklat 99 isi 16 Ambree Biru,NORMAL,8400,600,200,10,VALID,Untuk pasar baru.
+New Gedung Cengkeh Coklat 99 isi 16 Ambree Biru,NEWGCC99_16_BIRU_LAMA,New Gedung Cengkeh Coklat 99 isi 16 Ambree Biru,NORMAL,8400,600,200,10,DEFAULT_ALIAS,"Jika SJ tidak menyebut TSG Baru, default ke TSG Lama."
+Cengkeh Biru 77 isi 12,CB77_12,Cengkeh Biru 77 isi 12,NORMAL,6500,1000,200,10,VALID,1 varian.
+Cengkeh Biru 77 isi 16,CB77_16,Cengkeh Biru 77 isi 16,NORMAL,8500,600,200,10,VALID,1 varian.
+Cengkeh Refill,REFILL,Cengkeh Refill,NORMAL,10500,600,200,10,VALID,1 varian.
