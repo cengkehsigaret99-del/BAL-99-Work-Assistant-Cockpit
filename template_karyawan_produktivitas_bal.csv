@@ -1,3 +1,5 @@
-tanggal,mandor,bagian,nama_karyawan,status_hadir,merek,kode_sku,total_pack_team,jumlah_orang_aktif,rata_pack_per_orang,tarif_pack,total_upah_team,upah_estimasi_per_orang,status_verpack,catatan
-2026-05-22,Mandor A,Verpack,Nama Karyawan,HADIR,Produk Contoh,SKU-001,0,0,0,0,0,0,NORMAL,Isi data aktual
-2026-05-22,Mandor A,Verpack,Nama Karyawan,OFF,,,,0,0,0,0,0,OFF,Jangan dihitung sebagai orang aktif
+tanggal,mandor,bagian,nama_karyawan,status_hadir,merek,varian,kode_sku,status_verpack,output_bruto,rijek_pack,rework_pack,output_valid,target_pack,capaian_persen,rasio_rijek,skor_output,skor_kualitas,skor_kehadiran,skor_sop,skor_sikap,total_skor,kategori,kendala_produksi,rekomendasi,total_pack_team,jumlah_orang_aktif,rata_pack_per_orang,tarif_pack,total_upah_team,upah_estimasi_per_orang,catatan
+2026-05-24,Bu Evi,Verpack,Siti,HADIR,GCC 99,Isi 12,SKU-001,NORMAL,10000,180,50,,9500,,,,14,9,,,,,0,0,0,0,0,0,Rapi stabil - output_valid dan skor bisa dihitung otomatis oleh modul
+2026-05-24,Bu Evi,Verpack,Aminah,HADIR,New GCC 99,Isi 16,SKU-004,NORMAL,7200,300,100,,7000,,,,12,8,,OPP kurang stabil,,,0,0,0,0,0,0,Perlu pantau kerapian OPP 3 hari
+2026-05-24,Rijal,Packing,Yanti,HADIR,Cengkeh Biru 77,Isi 16,SKU-010,NORMAL,6000,90,60,,6000,,,,12,8,,Karton terlambat,,,0,0,0,0,0,0,Kendala sistem - jangan langsung nilai personal
+2026-05-24,Mandor A,Verpack,Nama Karyawan,OFF,,,,0,0,0,,0,,,,0,0,,,,,0,0,0,0,0,0,Jangan dihitung sebagai orang aktif
