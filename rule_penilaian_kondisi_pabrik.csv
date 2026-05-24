@@ -1,0 +1,11 @@
+rule_id,area,aturan,status_output,keputusan
+R001,Skor Total,85 sampai 100,HIJAU,Operasi sehat dan supply boleh terukur
+R002,Skor Total,70 sampai 84,KUNING RINGAN,Operasi cukup sehat dan supply terbatas
+R003,Skor Total,55 sampai 69,KUNING TEBAL,Operasi waspada dan tahan ekspansi besar
+R004,Skor Total,40 sampai 54,MERAH,Tahan keputusan besar dan fokus recovery
+R005,Skor Total,di bawah 40,BLOCKER,Stop supply besar dan perlu keputusan owner
+R006,Piutang,Top 3 piutang di atas 75 persen,WARNING,Tahan ekspansi besar pada pelanggan besar
+R007,Pita CK4C,Risiko sangat tinggi,WARNING,Jangan final cukai sebelum CSCK3 dan CK4C cocok
+R008,Stok,C023 di bawah batas aman,WARNING,Tahan PO besar C023
+R009,HPP,HPP belum FIFO overhead BDP,WARNING,Pakai hanya untuk margin kotor tahap 1
+R010,WIP,WIP kumulatif positif,PASS,Produksi masih aman dipantau
