@@ -2,6 +2,13 @@
   function go(path){ window.location.assign(path); }
   function addMenu(){
     var nav = document.getElementById('nav');
+    if(nav && !document.getElementById('btnUjiKelayakanBal99')){
+      var boxAudit = document.createElement('div');
+      boxAudit.className = 'group';
+      boxAudit.innerHTML = '<div class="group-title">Audit & Keputusan</div><button id="btnUjiKelayakanBal99" class="nav-btn"><span class="dot"></span>Uji Kelayakan BAL-99</button>';
+      nav.insertBefore(boxAudit, nav.firstChild);
+      document.getElementById('btnUjiKelayakanBal99').onclick = function(){ go('uji-kelayakan-bal99.html?v=uji_kelayakan_v1'); };
+    }
     if(nav && !document.getElementById('btnHppBomSj')){
       var boxHppSj = document.createElement('div');
       boxHppSj.className = 'group';
@@ -18,6 +25,14 @@
       document.getElementById('btnHpp3Sku').onclick = function(){ go('hpp-mini-eksekusi-3sku.html?v=hpp_3sku_v1'); };
     }
     var mobile = document.getElementById('mobilePage');
+    if(mobile && !document.getElementById('optUjiKelayakanBal99')){
+      var optAudit = document.createElement('option');
+      optAudit.id = 'optUjiKelayakanBal99';
+      optAudit.value = 'uji_kelayakan_bal99';
+      optAudit.textContent = 'Uji Kelayakan BAL-99';
+      mobile.insertBefore(optAudit, mobile.firstChild);
+      mobile.addEventListener('change', function(){ if(mobile.value === 'uji_kelayakan_bal99') go('uji-kelayakan-bal99.html?v=uji_kelayakan_v1'); });
+    }
     if(mobile && !document.getElementById('optHppBomSj')){
       var optSj = document.createElement('option');
       optSj.id = 'optHppBomSj';
