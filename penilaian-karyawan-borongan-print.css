@@ -1,0 +1,42 @@
+/* BAL-99 Borongan Scorecard Premium Print CSS
+   Safe print layer only. Does not change data or formulas. */
+@media print{
+  @page{size:A4 landscape;margin:8mm}
+  body{background:#fff!important;color:#111!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;font-size:10px!important;padding:0!important}
+  .topbar{position:static!important;background:#061A31!important;color:#fff!important;border-bottom:4px solid #D6A642!important;box-shadow:none!important;padding:8px 12px!important;display:flex!important}
+  .logo{width:62px!important;height:62px!important;border-radius:8px!important;background:#fff!important;padding:4px!important}
+  .eyebrow{font-size:9px!important;color:#F4D07D!important;letter-spacing:.12em!important}
+  .brand h1{font-size:19px!important;color:#fff!important;margin:2px 0!important;line-height:1.1!important}
+  .brand p{font-size:10px!important;color:#E6EEF8!important;margin:0!important}
+  .top-meta{background:rgba(255,255,255,.10)!important;border:1px solid rgba(214,166,66,.55)!important;color:#fff!important;border-radius:8px!important;padding:7px 9px!important;box-shadow:none!important}
+  .top-meta b,.top-meta small{color:#fff!important;font-size:9px!important}
+  .sidebar,.filters,.head-actions,.no-print,.mobile-quick,.bal99-bottom-nav{display:none!important}
+  .layout{display:block!important;min-height:0!important}
+  .app{padding:6px 0 0!important;background:#fff!important}
+  .page-head{display:block!important;border:1px solid #AEB8C5!important;border-top:4px solid #D6A642!important;border-radius:8px!important;box-shadow:none!important;padding:8px 10px!important;margin:6px 0 7px!important;background:#fff!important}
+  .page-head h2{font-size:20px!important;margin:0 0 3px!important;color:#061A31!important}
+  .page-head p,.datatype-note{font-size:9.5px!important;color:#334155!important;margin:2px 0!important;line-height:1.35!important}
+  .version-lock{font-size:8px!important;padding:3px 6px!important;border-radius:99px!important}
+  .cards{display:grid!important;grid-template-columns:repeat(6,1fr)!important;gap:4px!important;margin:6px 0!important}
+  .card{break-inside:avoid!important;box-shadow:none!important;border:1px solid #CBD3DF!important;border-radius:7px!important;padding:6px!important;background:#fff!important}
+  .card:before{height:2px!important}
+  .card small{font-size:7.5px!important;letter-spacing:.05em!important;color:#64748B!important}
+  .card strong{font-size:14px!important;margin:3px 0!important;color:#061A31!important}
+  .card p{font-size:8px!important;line-height:1.2!important;margin:2px 0 0!important;color:#334155!important}
+  .table-wrap{break-inside:avoid!important;box-shadow:none!important;border:1px solid #AEB8C5!important;border-radius:7px!important;overflow:visible!important;margin-top:6px!important;background:#fff!important}
+  .table-toolbar{padding:5px 7px!important;background:#061A31!important;color:#fff!important;border-bottom:3px solid #D6A642!important;display:flex!important;align-items:center!important;justify-content:space-between!important}
+  .table-toolbar h3{font-size:12px!important;color:#fff!important;margin:0!important}
+  .table-toolbar span{font-size:8px!important;color:#E6EEF8!important}
+  .scroll{max-height:none!important;overflow:visible!important}
+  table{width:100%!important;min-width:0!important;border-collapse:collapse!important;border-spacing:0!important;font-size:7.7px!important}
+  th{position:static!important;background:#061A31!important;color:#fff!important;border:1px solid #9AA7B8!important;padding:3px 3px!important;font-size:7px!important;letter-spacing:.02em!important;white-space:normal!important}
+  td{border:1px solid #CBD3DF!important;padding:3px 3px!important;white-space:normal!important;vertical-align:top!important;line-height:1.2!important}
+  tr:hover td{background:#fff!important}
+  .badge{font-size:6.6px!important;padding:2px 4px!important;border-radius:99px!important;white-space:nowrap!important}
+  .cockpit-grid{display:grid!important;grid-template-columns:1fr 1fr!important;gap:6px!important;margin-top:6px!important}
+  .cockpit-panel{break-inside:avoid!important;box-shadow:none!important;border:1px solid #CBD3DF!important;border-radius:7px!important;padding:7px!important;background:#fff!important}
+  .cockpit-panel h3{font-size:12px!important;margin:0 0 4px!important;color:#061A31!important}
+  .cockpit-panel p,.note{font-size:8.3px!important;line-height:1.35!important;margin:0!important;color:#111!important}
+  .note{background:#FFF5D6!important;border-left:4px solid #D6A642!important;border-radius:6px!important;padding:6px!important}
+  .print-footer-line{display:flex!important;justify-content:space-between!important;align-items:center!important;margin-top:6px!important;background:#061A31!important;color:#F4D07D!important;border-radius:6px!important;padding:5px 8px!important;font-weight:900!important;font-size:8px!important}
+}
