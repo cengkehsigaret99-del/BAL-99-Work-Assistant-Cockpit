@@ -1,0 +1,6 @@
+level_kesehatan,rasio_uang_masuk_vs_do_berjalan,batas_piutang_terkonsentrasi,batas_piutang_total,status_supply,keputusan_praktis,catatan
+SEHAT,90-100 persen,di bawah 60 persen dari total piutang,terkendali sesuai limit pasar,BOLEH SUPPLY TERUKUR,Uang masuk hampir menutup DO berjalan dan piutang tidak terlalu terkonsentrasi,Tetap cek stok pasar dan repeat order
+CUKUP SEHAT,75-89 persen,60-75 persen dari total piutang,masih dapat dikendalikan,SUPPLY TERBATAS,Diperbolehkan kirim tetapi harus dibarengi jadwal pembayaran,Tidak cocok untuk ekspansi besar
+KUNING TEBAL,60-74 persen,di atas 75 persen dari total piutang,besar tapi masih bergerak,TAHAN EKSPANSI BESAR,Fokus tagih dan kontrol kirim pelanggan besar,Status saat ini masuk kategori ini bila piutang akumulatif masih tinggi
+MERAH,di bawah 60 persen,di atas 85 persen dari total piutang,sangat berat,TAHAN KIRIM BESAR,Uang masuk tidak cukup mengejar DO dan piutang terkonsentrasi,Perlu pembayaran besar sebelum supply baru
+BLOCKER,tidak ada pembayaran baru,lebih dari 90 persen dari total piutang,kritis,STOP SUPPLY,Kirim hanya jika ada pembayaran masuk atau jaminan kuat,Perlu keputusan owner
