@@ -2,11 +2,12 @@
   function go(path){ window.location.assign(path); }
   function addMenu(){
     var nav = document.getElementById('nav');
-    if(nav && !document.getElementById('btnHppBomRevisi')){
-      var boxBom = document.createElement('div');
-      boxBom.className = 'group';
-      boxBom.innerHTML = '<div class="group-title">HPP & BOM</div><button id="btnHppBomRevisi" class="nav-btn"><span class="dot"></span>HPP & BOM Revisi</button>';
-      nav.insertBefore(boxBom, nav.firstChild);
+    if(nav && !document.getElementById('btnHppBomSj')){
+      var boxHppSj = document.createElement('div');
+      boxHppSj.className = 'group';
+      boxHppSj.innerHTML = '<div class="group-title">HPP Profesional</div><button id="btnHppBomSj" class="nav-btn"><span class="dot"></span>HPP BOM + HPP per SJ</button><button id="btnHppBomRevisi" class="nav-btn"><span class="dot"></span>HPP & BOM Revisi</button>';
+      nav.insertBefore(boxHppSj, nav.firstChild);
+      document.getElementById('btnHppBomSj').onclick = function(){ go('hpp-bom-sj.html?v=hpp_bom_sj_v1'); };
       document.getElementById('btnHppBomRevisi').onclick = function(){ go('hpp-bom-revisi-control.html?v=bom_rev_20260524'); };
     }
     if(nav && !document.getElementById('btnHpp3Sku')){
@@ -17,6 +18,14 @@
       document.getElementById('btnHpp3Sku').onclick = function(){ go('hpp-mini-eksekusi-3sku.html?v=hpp_3sku_v1'); };
     }
     var mobile = document.getElementById('mobilePage');
+    if(mobile && !document.getElementById('optHppBomSj')){
+      var optSj = document.createElement('option');
+      optSj.id = 'optHppBomSj';
+      optSj.value = 'hpp_bom_sj';
+      optSj.textContent = 'HPP BOM + HPP per SJ';
+      mobile.insertBefore(optSj, mobile.firstChild);
+      mobile.addEventListener('change', function(){ if(mobile.value === 'hpp_bom_sj') go('hpp-bom-sj.html?v=hpp_bom_sj_v1'); });
+    }
     if(mobile && !document.getElementById('optHppBomRevisi')){
       var optBom = document.createElement('option');
       optBom.id = 'optHppBomRevisi';
