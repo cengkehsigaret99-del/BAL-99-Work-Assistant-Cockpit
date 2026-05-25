@@ -1,0 +1,11 @@
+area_review,pertanyaan_review,pilihan_keputusan,catatan
+Nama Karyawan,Apakah nama sudah standar dan tidak dobel,OK / KOREKSI,
+Bagian,Apakah giling dan verpack sudah terpisah,OK / KOREKSI,
+Status Kerja,Apakah normal dan lembur sudah terpisah,OK / KOREKSI,
+Output,Apakah batang atau pack sesuai laporan sumber,OK / KOREKSI,
+Tarif,Apakah tarif normal dan lembur sesuai aturan,OK / KOREKSI,
+Upah,Apakah total upah sesuai output dikali tarif,OK / KOREKSI,
+Ranking,Apakah ranking terasa wajar dan tidak bias,OK / KOREKSI,
+Kategori,Apakah kategori bahasa pembinaan sudah aman,OK / KOREKSI,
+Rekomendasi,Apakah saran pembinaan sesuai kondisi lapangan,OK / KOREKSI,
+Keputusan Publish,Apakah pilot boleh dilanjutkan ke full Mei,LANJUT / TAHAN,
