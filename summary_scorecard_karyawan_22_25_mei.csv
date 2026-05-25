@@ -1,0 +1,5 @@
+bagian,status_kerja,jumlah_karyawan,total_output,total_upah,rata_skor,kategori_dominan,status_validasi
+GILING,LEMBUR,195,488500,29310000,87.53,Produktif Hari Ini,PILOT / BELUM FINAL
+GILING,NORMAL,226,1747200,69888000,92.66,Unggul Stabil,PILOT / BELUM FINAL
+VERPACK,LEMBUR,59,55000,14025000,88.55,Produktif Hari Ini,PILOT / BELUM FINAL
+VERPACK,NORMAL,65,115400,22014000,88.3,Unggul Stabil,PILOT / BELUM FINAL
