@@ -1,6 +1,6 @@
 modul,status,catatan
 Giling,UPDATED,Data 25 Mei masuk browse_giling
-Packing,PARTIAL,Data 25 Mei ada di update_packing_25_mei_2026 belum merge penuh ke browse_verpack
+Packing,PARTIAL TERKONTROL,Data 25 Mei ada di update_packing_25_mei_2026 dan rekap_besar_finalisasi_25_mei_2026
 WIP,UPDATED,Kumulatif sudah sampai 25 Mei
 Barang Jadi,UPDATED,Stok akhir sudah setelah packing 25 Mei
 Pita Cukai,UPDATED,Saldo sudah cocok 25 Mei
@@ -8,5 +8,5 @@ CK4C,UPDATED,Saldo sudah cocok 25 Mei
 DO SJ,TIDAK BERUBAH,Tidak ada SJ baru 25 Mei
 Piutang,TIDAK BERUBAH,Tidak ada pembayaran atau SJ baru setelah update terakhir
 Ringkasan Hari Ini,UPDATED,Halaman ringkas sudah posisi kerja 25 Mei
-Rekap Besar,PARTIAL,Rekap harian besar giling dan verpack masih perlu dirapikan bila ingin final penuh
-Keputusan,VALID AWAL TERBATAS,Data operasional utama dan front page sudah masuk; verpack detail dan rekap besar masih perlu dirapikan
+Rekap Besar,PARTIAL TERKONTROL,Rekap besar asli masih sampai 24 Mei tetapi sudah ada file finalisasi tambahan 25 Mei
+Keputusan,VALID AWAL TERKONTROL,Data operasional utama front page dan rekap finalisasi tambahan sudah sampai 25 Mei; rekap asli masih perlu merge penuh bila ingin final sistem
