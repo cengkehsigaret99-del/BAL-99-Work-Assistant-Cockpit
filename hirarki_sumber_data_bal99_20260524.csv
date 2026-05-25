@@ -1,0 +1,9 @@
+level,jenis_file,fungsi,keputusan
+1,Sumber Data CSV,Menjadi dasar angka produksi stok pita CK4C DO piutang HPP,SUMBER_ANGKA
+2,STATUS_HARI_INI.csv,Menjadi pintu status dan validasi risiko,SUMBER_STATUS
+3,beranda-control-tower.html,Menjadi pintu awal baca ringan,NAVIGASI
+4,ringkasan-hari-ini.html,Menampilkan ringkasan angka inti posisi 24 Mei,RINGKASAN_STATIS
+5,status-operasional.html,Menampilkan status operasional ringkas posisi 24 Mei,RINGKASAN_STATIS
+6,penilaian-kondisi-pabrik.html,Menampilkan skor saran peringatan dan cetak PDF,PENILAIAN
+7,index.html,Menjadi aplikasi detail lama,DETAIL
+8,Halaman arsip lama,Menjadi pembanding dan arsip teknis,ARSIP
