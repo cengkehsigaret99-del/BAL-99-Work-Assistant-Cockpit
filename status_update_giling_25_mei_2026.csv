@@ -1,0 +1,7 @@
+tanggal,area,status,angka,keputusan
+2026-05-25,Giling 25 Mei,VALID AWAL,580400 batang GCC 99 isi 12 normal,Masuk WIP bukan barang jadi
+2026-05-25,Upah Giling 25 Mei,VALID AWAL,Rp23216000,Tarif normal Rp40 per batang
+2026-05-25,WIP Kumulatif,VALID AWAL,996700 batang positif,Giling kumulatif 10157300 dikurangi verpack 9160600
+2026-05-25,Barang Jadi,TIDAK BERUBAH,0,Tidak berubah karena belum ada verpack 25 Mei
+2026-05-25,Pita CK4C,TIDAK BERUBAH,0,Tidak berubah karena giling belum memakai pita
+2026-05-25,DO Piutang,TIDAK BERUBAH,0,Tidak berubah karena belum ada SJ
