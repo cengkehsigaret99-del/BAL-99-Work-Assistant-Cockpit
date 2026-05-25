@@ -1,0 +1,11 @@
+cek,status_jika_aman,status_jika_tidak_aman,aksi
+Nama karyawan standar,AMAN,NAMA DOBEL,Rapikan master karyawan dan alias
+Tanggal kerja jelas,AMAN,TANGGAL KOSONG,Tahan scoring sampai tanggal jelas
+Bagian kerja jelas,AMAN,BAGIAN KOSONG,Pisahkan giling dan verpack
+Status normal lembur jelas,AMAN,STATUS KOSONG,Jangan campur normal dan lembur
+Merek jelas,AMAN,MEREK KOSONG,Tahan perbandingan produktivitas merek
+Output angka jelas,AMAN,OUTPUT KOSONG,Cek laporan sumber
+Tarif sesuai,AMAN,TARIF ANOMALI,Cek tarif normal lembur
+Total upah sesuai rumus,AMAN,UPAH SELISIH,Cek rumus output dikali tarif
+Mandor grup jelas,OPSIONAL,MANDOR KOSONG,Boleh lanjut tetapi rekomendasi kurang kuat
+Data kualitas tersedia,OPSIONAL,KUALITAS KOSONG,Score awal hanya produktivitas
