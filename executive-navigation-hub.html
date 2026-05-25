@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BAL-99 Executive Navigation Hub</title>
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="bal99-executive-theme.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <img src="logo.png" alt="PR Banyu Anyar Lestari" class="logo">
+    <div>
+      <div class="eyebrow">BAL-99 Executive Control Tower</div>
+      <h1>Executive Navigation Hub</h1>
+      <p>Pintu kerja ringkas untuk produksi, cukai, DO, piutang, pasar, dan SDM borongan.</p>
+    </div>
+  </div>
+  <div class="top-meta">
+    <b>Safe Navigation Hub</b>
+    <small>Tahap bertahap: tidak mengubah index, app.js, CSV, rumus, atau localStorage.</small>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="group"><div class="group-title">Ringkasan</div>
+      <a class="nav-btn active" href="executive-navigation-hub.html"><span class="dot"></span>Executive Hub</a>
+      <a class="nav-btn" href="dashboard-ringkas.html"><span class="dot"></span>Dashboard Ringkas</a>
+      <a class="nav-btn" href="status-hari-ini.html"><span class="dot"></span>Status Hari Ini</a>
+      <a class="nav-btn" href="index.html"><span class="dot"></span>Index Lama</a>
+    </div>
+    <div class="group"><div class="group-title">Kontrol Inti</div>
+      <a class="nav-btn" href="dashboard-cukai-ringkas.html"><span class="dot"></span>Dashboard Cukai</a>
+      <a class="nav-btn" href="ck4c-detail-produksi.html"><span class="dot"></span>CK4C Detail</a>
+      <a class="nav-btn" href="kontrol-upah-produksi.html"><span class="dot"></span>Kontrol Upah</a>
+      <a class="nav-btn" href="scorecard-borongan-premium-print.html"><span class="dot"></span>Scorecard Borongan</a>
+    </div>
+  </aside>
+  <main class="app">
+    <section class="page-head">
+      <div class="screen-title">
+        <h2>BAL-99 Executive Navigation Hub</h2>
+        <p>Hub ini dibuat sebagai tahap aman sebelum mengubah halaman utama. Semua modul inti tetap dibuka dari file aslinya.</p>
+        <div class="datatype-note"><span class="version-lock">AMAN</span> Update navigasi saja. Tidak menyentuh data, rumus, CSV, localStorage, atau app.js.</div>
+      </div>
+      <div class="head-actions">
+        <a class="btn primary" href="dashboard-ringkas.html">Dashboard</a>
+        <a class="btn gold" href="status-hari-ini.html">Status Hari Ini</a>
+        <a class="btn" href="index.html">Index Lama</a>
+      </div>
+    </section>
+    <section class="cards">
+      <div class="card green"><small>Ringkasan</small><strong>Dashboard</strong><p>Mulai dari kondisi utama produksi, stok, DO, pembayaran, dan piutang.</p></div>
+      <div class="card"><small>Produksi</small><strong>Giling-Verpack</strong><p>Baca alur giling, verpack, barang jadi, dan WIP.</p></div>
+      <div class="card warn"><small>Cukai</small><strong>CK4C</strong><p>Kontrol pita berdasarkan verpack/barang jadi official.</p></div>
+      <div class="card"><small>SDM</small><strong>Borongan</strong><p>Scorecard produktivitas, kualitas, ranking, dan pembinaan.</p></div>
+    </section>
+    <section class="table-wrap">
+      <div class="table-toolbar"><h3>Peta Navigasi Executive</h3><span>Urutan baca yang disarankan untuk admin, mandor, dan owner.</span></div>
+      <div class="scroll"><table><thead><tr><th>Area</th><th>Tujuan</th><th>Halaman</th><th>Status</th></tr></thead><tbody>
+        <tr><td>Ringkasan</td><td>Baca kondisi utama</td><td><a href="dashboard-ringkas.html">Dashboard Ringkas</a></td><td><span class="badge b-green">Prioritas</span></td></tr>
+        <tr><td>Harian</td><td>Pintu baca cepat</td><td><a href="status-hari-ini.html">Status Hari Ini</a></td><td><span class="badge b-green">Prioritas</span></td></tr>
+        <tr><td>Cukai</td><td>Kontrol pita dan CK4C</td><td><a href="dashboard-cukai-ringkas.html">Dashboard Cukai</a></td><td><span class="badge b-blue">Aktif</span></td></tr>
+        <tr><td>CK4C</td><td>Detail produksi cukai</td><td><a href="ck4c-detail-produksi.html">CK4C Detail Produksi</a></td><td><span class="badge b-blue">Aktif</span></td></tr>
+        <tr><td>Upah</td><td>Kontrol upah giling dan verpack</td><td><a href="kontrol-upah-produksi.html">Kontrol Upah Produksi</a></td><td><span class="badge b-blue">Aktif</span></td></tr>
+        <tr><td>SDM Borongan</td><td>Produktivitas dan pembinaan</td><td><a href="scorecard-borongan-premium-print.html">Scorecard Borongan Premium</a></td><td><span class="badge b-green">Baru</span></td></tr>
+        <tr><td>Semua Modul</td><td>Fallback operasional</td><td><a href="index.html">Index Lama</a></td><td><span class="badge b-gray">Backup</span></td></tr>
+      </tbody></table></div>
+    </section>
+    <section class="cockpit-grid" style="margin-top:16px">
+      <div class="cockpit-panel"><h3>Evaluasi Desain</h3><div class="note">Index utama sudah layak operasional, tetapi masih terasa teknis. Hub ini menjadi jembatan menuju Executive Control Tower yang lebih tenang, rapi, dan berbasis keputusan.</div></div>
+      <div class="cockpit-panel"><h3>Keputusan Bertahap</h3><p>Uji hub ini di HP dan laptop. Jika stabil, tahap berikutnya adalah menautkan tema executive ke index utama dan menambahkan link hub ke header utama.</p></div>
+    </section>
+  </main>
+</div>
+</body>
+</html>
