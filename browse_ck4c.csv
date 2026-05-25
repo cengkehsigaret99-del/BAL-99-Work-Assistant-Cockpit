@@ -12,3 +12,6 @@ tanggal,sumber,jenis_pita,hje,isi,stock_awal_periode,masuk_ck1,pemakaian_ck4c_be
 2026-05-24,CK4C 24 Mei / Verpack lembur GCC 99 isi 12,PITA 99 & 77 / GCC 99 isi 12,10.325,12,303700,0,55000,248700,SALDO SETELAH CK4C 24 MEI,VALID AWAL / LEMBUR 24 MEI - pemakaian 55.000 keping dari verpack lembur GCC 99 isi 12
 2026-05-24,CSCK-3 / Pemakaian Pita sampai 24 Mei,PITA REFILL,10.500,12,9970,0,0,9970,SALDO TETAP 24 MEI,VALID AWAL - tidak ada pemakaian/refill 24 Mei
 2026-05-24,CSCK-3 / Pemakaian Pita sampai 24 Mei,PITA 16 / New GCC 99 isi 16,13.775,16,201900,0,0,201900,SALDO TETAP 24 MEI,VALID AWAL - tidak ada pemakaian PITA16 pada update lembur 24 Mei
+2026-05-25,CK4C 25 Mei / Verpack normal GCC 99 isi 12,PITA 99 & 77 / GCC 99 isi 12,10.325,12,248700,0,44500,204200,SALDO SETELAH CK4C 25 MEI,VALID AWAL / PACKING 25 MEI - pemakaian GCC99 isi 12 = 44.500 keping
+2026-05-25,CSCK-3 / Pemakaian Pita sampai 25 Mei,PITA REFILL,10.500,12,9970,0,0,9970,SALDO TETAP 25 MEI,VALID AWAL - tidak ada pemakaian/refill 25 Mei
+2026-05-25,CK4C 25 Mei / Verpack normal C-023 GCC 16,PITA 16 / New GCC 99 isi 16,13.775,16,201900,0,6600,195300,SALDO SETELAH CK4C 25 MEI,VALID AWAL / PACKING 25 MEI - pemakaian PITA16 = 6.600 keping
