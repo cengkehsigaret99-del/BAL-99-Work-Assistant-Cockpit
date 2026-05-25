@@ -15,12 +15,12 @@
     <div>
       <div class="eyebrow">BAL-99 Executive Control Tower</div>
       <h1>Executive Navigation Hub</h1>
-      <p>Pintu kerja ringkas untuk produksi, cukai, DO, piutang, pasar, dan SDM borongan.</p>
+      <p>Pintu kerja ringkas untuk produksi, cukai, DO, piutang, pasar, SDM, dan print report.</p>
     </div>
   </div>
   <div class="top-meta">
     <b>Safe Navigation Hub</b>
-    <small>Tahap bertahap: tidak mengubah index, app.js, CSV, rumus, atau localStorage.</small>
+    <small>Tahap bertahap: tidak mengubah app.js, CSV, rumus, atau localStorage.</small>
   </div>
 </header>
 <div class="layout">
@@ -37,17 +37,22 @@
       <a class="nav-btn" href="kontrol-upah-produksi.html"><span class="dot"></span>Kontrol Upah</a>
       <a class="nav-btn" href="scorecard-borongan-premium-print.html"><span class="dot"></span>Scorecard Borongan</a>
     </div>
+    <div class="group"><div class="group-title">Report & Cetak</div>
+      <a class="nav-btn" href="print-report-qa-checklist.html"><span class="dot"></span>Print QA Checklist</a>
+      <a class="nav-btn" href="bal99-premium-print-standard.css"><span class="dot"></span>Premium Print CSS</a>
+    </div>
   </aside>
   <main class="app">
     <section class="page-head">
       <div class="screen-title">
         <h2>BAL-99 Executive Navigation Hub</h2>
-        <p>Hub ini dibuat sebagai tahap aman sebelum mengubah halaman utama. Semua modul inti tetap dibuka dari file aslinya.</p>
-        <div class="datatype-note"><span class="version-lock">AMAN</span> Update navigasi saja. Tidak menyentuh data, rumus, CSV, localStorage, atau app.js.</div>
+        <p>Hub ini dibuat sebagai pintu kerja aman sebelum perubahan besar. Semua modul inti tetap dibuka dari file aslinya.</p>
+        <div class="datatype-note"><span class="version-lock">AMAN</span> Update navigasi dan akses QA saja. Tidak menyentuh data, rumus, CSV, localStorage, atau app.js.</div>
       </div>
       <div class="head-actions">
         <a class="btn primary" href="dashboard-ringkas.html">Dashboard</a>
         <a class="btn gold" href="status-hari-ini.html">Status Hari Ini</a>
+        <a class="btn" href="print-report-qa-checklist.html">Print QA</a>
         <a class="btn" href="index.html">Index Lama</a>
       </div>
     </section>
@@ -55,7 +60,7 @@
       <div class="card green"><small>Ringkasan</small><strong>Dashboard</strong><p>Mulai dari kondisi utama produksi, stok, DO, pembayaran, dan piutang.</p></div>
       <div class="card"><small>Produksi</small><strong>Giling-Verpack</strong><p>Baca alur giling, verpack, barang jadi, dan WIP.</p></div>
       <div class="card warn"><small>Cukai</small><strong>CK4C</strong><p>Kontrol pita berdasarkan verpack/barang jadi official.</p></div>
-      <div class="card"><small>SDM</small><strong>Borongan</strong><p>Scorecard produktivitas, kualitas, ranking, dan pembinaan.</p></div>
+      <div class="card green"><small>Report</small><strong>Print QA</strong><p>Uji PDF HP/laptop untuk memastikan report rapi dan terbaca.</p></div>
     </section>
     <section class="table-wrap">
       <div class="table-toolbar"><h3>Peta Navigasi Executive</h3><span>Urutan baca yang disarankan untuk admin, mandor, dan owner.</span></div>
@@ -65,13 +70,14 @@
         <tr><td>Cukai</td><td>Kontrol pita dan CK4C</td><td><a href="dashboard-cukai-ringkas.html">Dashboard Cukai</a></td><td><span class="badge b-blue">Aktif</span></td></tr>
         <tr><td>CK4C</td><td>Detail produksi cukai</td><td><a href="ck4c-detail-produksi.html">CK4C Detail Produksi</a></td><td><span class="badge b-blue">Aktif</span></td></tr>
         <tr><td>Upah</td><td>Kontrol upah giling dan verpack</td><td><a href="kontrol-upah-produksi.html">Kontrol Upah Produksi</a></td><td><span class="badge b-blue">Aktif</span></td></tr>
-        <tr><td>SDM Borongan</td><td>Produktivitas dan pembinaan</td><td><a href="scorecard-borongan-premium-print.html">Scorecard Borongan Premium</a></td><td><span class="badge b-green">Baru</span></td></tr>
+        <tr><td>SDM Borongan</td><td>Produktivitas dan pembinaan</td><td><a href="scorecard-borongan-premium-print.html">Scorecard Borongan Premium</a></td><td><span class="badge b-green">Aktif</span></td></tr>
+        <tr><td>Print Report</td><td>Uji PDF HP/laptop</td><td><a href="print-report-qa-checklist.html">Print Report QA Checklist</a></td><td><span class="badge b-green">Baru</span></td></tr>
         <tr><td>Semua Modul</td><td>Fallback operasional</td><td><a href="index.html">Index Lama</a></td><td><span class="badge b-gray">Backup</span></td></tr>
       </tbody></table></div>
     </section>
     <section class="cockpit-grid" style="margin-top:16px">
-      <div class="cockpit-panel"><h3>Evaluasi Desain</h3><div class="note">Index utama sudah layak operasional, tetapi masih terasa teknis. Hub ini menjadi jembatan menuju Executive Control Tower yang lebih tenang, rapi, dan berbasis keputusan.</div></div>
-      <div class="cockpit-panel"><h3>Keputusan Bertahap</h3><p>Uji hub ini di HP dan laptop. Jika stabil, tahap berikutnya adalah menautkan tema executive ke index utama dan menambahkan link hub ke header utama.</p></div>
+      <div class="cockpit-panel"><h3>Evaluasi Desain</h3><div class="note">Index utama sudah layak operasional. Hub ini sekarang juga memuat pintu Print QA agar standar PDF/JPG bisa diuji dengan rapi.</div></div>
+      <div class="cockpit-panel"><h3>Keputusan Bertahap</h3><p>Gunakan Print QA Checklist untuk uji 5 report inti. Jika ada tabel terlalu kecil, revisi dilakukan per halaman, bukan merombak semua sistem.</p></div>
     </section>
   </main>
 </div>
