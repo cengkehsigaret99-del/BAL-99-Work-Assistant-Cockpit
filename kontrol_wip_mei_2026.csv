@@ -1,5 +1,5 @@
 tanggal,jenis,merek,giling_batang,verpack_batang,selisih_batang,selisih_pack,status,catatan
 2026-05-24,HARIAN,GCC 99 isi 12,488500,660000,-171500,-14291.67,WIP DIPAKAI,Verpack lebih besar dari giling hari yang sama karena memakai WIP hari sebelumnya.
 2026-05-24,KUMULATIF,SEMUA MEREK,9576900,9160600,416300,34691.67,WIP POSITIF,Kumulatif giling masih lebih besar dari verpack sampai 24 Mei.
-2026-05-25,HARIAN,GCC 99 isi 12,580400,0,580400,48366.67,WIP MASUK,Data 25 Mei adalah giling normal. Belum ada verpack 25 Mei yang dimasukkan di tahap ini.
-2026-05-25,KUMULATIF,SEMUA MEREK,10157300,9160600,996700,83058.33,WIP POSITIF,Kumulatif giling bertambah setelah update 25 Mei. Giling tetap WIP dan belum mengubah barang jadi pita CK4C DO piutang.
+2026-05-25,HARIAN,SEMUA MEREK,580400,639600,-59200,-4933.33,WIP DIPAKAI,Packing 25 Mei sudah masuk: GCC99 isi 12 44500 pack dan GCC16 6600 pack.
+2026-05-25,KUMULATIF,SEMUA MEREK,10157300,9800200,357100,29758.33,WIP POSITIF,Kumulatif setelah packing 25 Mei tetap positif. Giling 10157300 batang dan verpack 9800200 batang.
