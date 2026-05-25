@@ -1,0 +1,7 @@
+aspek,bobot_awal,bobot_lanjutan,penjelasan,catatan
+Produktivitas,50,40,Output dibanding rata rata grup sejenis,Jangan bandingkan giling dengan verpack
+Konsistensi,30,25,Kestabilan output antar hari dalam periode,Jangan vonis dari satu hari anomali
+Kehadiran Data,15,15,Jumlah hari aktif tercatat,Perlu bedakan tidak masuk dengan data belum diinput
+Kerapian Data,5,10,Minim data kosong salah tarif atau nama dobel,Berguna untuk audit admin
+Kualitas Mandor,0,10,Catatan kualitas sikap rijek atau kerja sama,Aktifkan jika data tersedia
+Status Modul,Scorecard Produktivitas Awal,Scorecard Pembinaan Lanjutan,Tahap awal hanya produktivitas,Keputusan final tetap butuh konteks lapangan
