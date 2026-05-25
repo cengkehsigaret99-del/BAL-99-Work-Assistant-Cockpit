@@ -1,0 +1,11 @@
+urutan,instruksi,hasil_yang_diharapkan,status
+1,Baca file laporan giling 22-25 Mei,Kolom nama tanggal merek output tarif upah dikenali,SIAP
+2,Baca file laporan verpack 22-25 Mei,Kolom nama tanggal merek output tarif upah dikenali,SIAP
+3,Ambil hanya baris yang ada nama karyawan,Data tanpa nama ditahan,SIAP
+4,Standarkan format tanggal menjadi YYYY-MM-DD,Tanggal siap filter dari sampai,SIAP
+5,Standarkan bagian menjadi GILING atau VERPACK,Bagian tidak tercampur,SIAP
+6,Standarkan status kerja NORMAL atau LEMBUR,Normal lembur terpisah,SIAP
+7,Hitung ulang upah dari output dikali tarif,Selisih upah terdeteksi,SIAP
+8,Buat daftar nama unik,Master karyawan awal terbentuk,SIAP
+9,Tandai nama dobel atau alias,Butuh review user,SIAP
+10,Simpan hasil sebagai data pilot,Siap review sebelum publish,SIAP
