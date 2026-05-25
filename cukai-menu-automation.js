@@ -1,7 +1,7 @@
 (function(){
-  const V = 'cukai_auto_25mei_saldo_alur';
+  const V = 'cukai_auto_25mei_saldo_alur_v2';
   const links = [
-    ['saldo_alur_pita','Saldo & Alur Pita','saldo-alur-pita.html'],
+    ['saldo_alur_pita','Saldo & Alur Pita','saldo-alur-pita-v2.html'],
     ['dashboard_cukai_ringkas','Dashboard Cukai Ringkas','dashboard-cukai-ringkas.html'],
     ['csck3_full','CSCK-3 Full','csck3-detail-full.html'],
     ['csck3_koreksi','CSCK-3 Koreksi Data','csck3-koreksi-data.html'],
@@ -34,16 +34,16 @@
     const oldMap = {
       ck4c: ['CK4C Detail Produksi','ck4c-detail-produksi.html'],
       saldo_ck4_before_ck1: ['CSCK-3 Koreksi Data','csck3-koreksi-data.html'],
-      pita: ['Saldo & Alur Pita','saldo-alur-pita.html'],
+      pita: ['Saldo & Alur Pita','saldo-alur-pita-v2.html'],
       billing: ['P3C / KPPBC / CK-1','p3c-kppbc-control.html'],
-      saldo_pita: ['Saldo & Alur Pita','saldo-alur-pita.html'],
+      saldo_pita: ['Saldo & Alur Pita','saldo-alur-pita-v2.html'],
       saldo_pita_ck1: ['P3C / KPPBC / CK-1','p3c-kppbc-control.html']
     };
     Object.entries(oldMap).forEach(([key,val])=>{
       cukai.querySelectorAll('.nav-btn[data-key="'+key+'"]').forEach(btn=>{
         btn.innerHTML = '<span class="dot"></span>' + val[0];
         btn.onclick = function(){ go(val[1]); };
-        btn.title = 'Diarahkan ke halaman saldo dan alur pita yang sudah dipisah menurut status';
+        btn.title = 'Diarahkan ke halaman saldo dan alur pita mode konservatif';
       });
     });
   }
@@ -72,7 +72,7 @@
     const btn = document.createElement('button');
     btn.dataset.cukaiFav = 'saldo-alur';
     btn.textContent = 'Saldo & Alur Pita';
-    btn.onclick = function(){ go('saldo-alur-pita.html'); };
+    btn.onclick = function(){ go('saldo-alur-pita-v2.html'); };
     fav.insertBefore(btn, fav.firstChild);
   }
   function run(){ setupSidebar(); setupMobileSelect(); setupMobileFavs(); }
