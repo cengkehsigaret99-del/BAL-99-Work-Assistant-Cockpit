@@ -1,0 +1,10 @@
+area,status,keputusan,catatan
+Nama Modul,DISETUJUI KONSEP,Kinerja dan Pembinaan Karyawan,Bukan alat menghukum
+Data Asli,BELUM MASUK,Menunggu persetujuan user,Tidak ada nama karyawan asli
+Menu Utama,BELUM DISAMBUNG,Tunggu review konsep,Agar aplikasi utama tidak berubah dulu
+Template Data,SIAP,Master giling verpack scorecard sudah dibuat,Masih contoh struktur
+Aturan Scoring,SIAP,Produktivitas konsistensi kehadiran data kerapian data,Kualitas mandor aktif jika data tersedia
+Kategori,SIAP,Unggul Stabil Baik Stabil Perlu Dipantau Perlu Dibina Evaluasi Khusus,Bahasa pembinaan
+Validasi Data,SIAP,Cek nama tanggal bagian status output tarif upah,Mencegah salah nilai
+Pilot 22-25 Mei,SIAP KONSEP,Uji kecil sebelum full Mei,Belum dieksekusi
+Keputusan Saat Ini,KONSEP SIAP REVIEW,Boleh lanjut ekstraksi data jika user setuju,Belum update aplikasi utama
