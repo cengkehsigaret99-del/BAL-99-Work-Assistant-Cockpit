@@ -1,0 +1,7 @@
+kondisi,status,aksi
+Belum ada data baru,AMAN,Pakai beranda
+Ada produksi baru,UPDATE,Update produksi stok WIP
+Ada SJ baru,UPDATE,Update DO dan piutang
+Ada pembayaran baru,UPDATE,Update uang masuk dan piutang
+Ada pemakaian pita baru,UPDATE,Update pita dan CK4C
+Untuk laporan final,TAHAN,Cek sumber dulu
