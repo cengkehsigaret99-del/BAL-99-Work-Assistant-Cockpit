@@ -1,0 +1,6 @@
+tanggal,area,merek,pack,batang_equiv,upah,status,keputusan
+2026-05-25,PACKING,GCC 99 isi 12,44500,534000,7565000,NORMAL,Masuk barang jadi pita CK4C dan WIP
+2026-05-25,PACKING,Gedung Cengkeh 16 New,6600,105600,1386000,NORMAL,Masuk barang jadi pita CK4C dan WIP
+2026-05-25,TOTAL,SEMUA,51100,639600,8951000,NORMAL,Valid awal dari laporan packing
+2026-05-25,WIP,HARIAN,0,-59200,0,VALID AWAL,Verpack lebih besar dari giling harian
+2026-05-25,WIP,KUMULATIF,0,357100,0,VALID AWAL,WIP kumulatif masih positif
