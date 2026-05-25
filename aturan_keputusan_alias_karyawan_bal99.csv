@@ -1,0 +1,6 @@
+keputusan,arti,dampak_scorecard,catatan
+GABUNG,ID berbeda dianggap orang yang sama,Output dan upah digabung ke satu nama standar,Pakai jika memang orang sama atau alias
+PISAH,ID berbeda dianggap orang berbeda,Scorecard tetap terpisah,Pakai jika nama sama tetapi orang berbeda
+TAHAN,Data belum jelas,Scorecard tidak dipublish untuk nama tersebut,Pakai jika butuh konfirmasi mandor
+LINTAS BAGIAN,Orang sama bekerja di giling dan verpack,Scorecard bagian dipisah tetapi dashboard orang bisa digabung,Jangan campur ranking giling dan verpack
+SALAH INPUT,Nama atau ID salah,Perlu koreksi data sumber sebelum hitung ulang,Pakai jika ada kesalahan admin
