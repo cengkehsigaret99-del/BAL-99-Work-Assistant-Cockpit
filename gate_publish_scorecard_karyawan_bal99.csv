@@ -1,0 +1,10 @@
+gate,syarat,status_sekarang,keputusan
+Gate 1,Data pilot tersedia,LULUS,Pilot 22-25 Mei sudah ada
+Gate 2,Total output dan upah cocok,LULUS,Giling dan verpack cocok
+Gate 3,Alias karyawan selesai,BELUM LULUS,18 nama masih menunggu review
+Gate 4,Master karyawan bersih,BELUM LULUS,Menunggu keputusan alias
+Gate 5,Scorecard pilot dihitung ulang,BELUM LULUS,Menunggu master bersih
+Gate 6,Ranking direview user,BELUM LULUS,Jangan publish ranking mentah
+Gate 7,Full Mei diproses,BELUM LULUS,Menunggu pilot bersih
+Gate 8,Menu utama disambung,BELUM LULUS,Menunggu persetujuan final
+Keputusan,,DITAHAN,Ranking dan menu utama belum boleh dipublish
