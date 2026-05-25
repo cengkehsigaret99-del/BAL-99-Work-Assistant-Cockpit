@@ -1,5 +1,13 @@
 (function(){
-  const VERSION = 'karyawan_borongan_v3_executive_nav';
+  const VERSION = 'karyawan_borongan_v4_executive_theme_active';
+
+  function injectExecutiveTheme(){
+    if (document.querySelector('link[href*="bal99-executive-theme.css"]')) return;
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'bal99-executive-theme.css?v=' + VERSION;
+    document.head.appendChild(link);
+  }
 
   function addExecutiveNavigationMenu(){
     const nav = document.getElementById('nav');
@@ -22,13 +30,13 @@
         '<button class="nav-btn" data-key="template_penilaian_borongan" onclick="location.href=\'template_penilaian_karyawan_borongan_bal99.csv?v=' + VERSION + '\'"><span class="dot"></span>Template Penilaian Borongan</button>' +
         '<button class="nav-btn" data-key="contoh_penilaian_borongan" onclick="location.href=\'contoh_penilaian_karyawan_borongan_bal99.csv?v=' + VERSION + '\'"><span class="dot"></span>CSV Contoh Borongan</button>' +
         '<button class="nav-btn" data-key="kontrol_upah_produksi_exec" onclick="location.href=\'kontrol-upah-produksi.html?v=prod_upah_1\'"><span class="dot"></span>Kontrol Upah Produksi</button>';
-      const first = document.querySelector('.nav-btn[data-key="executive_navigation_hub"]');
-      if (first && first.closest('.group') && first.closest('.group').nextSibling) nav.insertBefore(sdmBox, first.closest('.group').nextSibling);
+      const firstGroup = document.querySelector('.nav-btn[data-key="executive_navigation_hub"]')?.closest('.group');
+      if (firstGroup && firstGroup.nextSibling) nav.insertBefore(sdmBox, firstGroup.nextSibling);
       else nav.insertBefore(sdmBox, nav.firstChild);
     }
   }
 
-  function addHppKaryawanMenu(){
+  function addLegacyProductionCostMenu(){
     const nav = document.getElementById('nav');
     if (nav && !document.querySelector('.nav-btn[data-key="gate_import_dosj_gate"]')) {
       const box = document.createElement('div');
@@ -42,11 +50,15 @@
         '<button class="nav-btn" data-key="status_bahan16_gate" onclick="location.href=\'status-validasi-bahan-16.html?v=' + VERSION + '\'"><span class="dot"></span>Status Bahan 16</button>' +
         '<button class="nav-btn" data-key="mapping16_gate" onclick="location.href=\'mapping-varian-16.html?v=' + VERSION + '\'"><span class="dot"></span>Mapping Varian 16</button>' +
         '<button class="nav-btn" data-key="hpp_mini_gate" onclick="location.href=\'hpp-mini.html?v=' + VERSION + '\'"><span class="dot"></span>HPP Mini</button>';
-      nav.insertBefore(box, nav.firstChild);
+      nav.appendChild(box);
     }
+  }
 
+  function addMobileMenu(){
     const mobile = document.getElementById('mobilePage');
-    if (mobile && !mobile.querySelector('option[value="executive_navigation_hub"]')) {
+    if (!mobile) return;
+
+    if (!mobile.querySelector('option[value="executive_navigation_hub"]')) {
       const execGroup = document.createElement('optgroup');
       execGroup.label = 'Executive Control Tower';
       execGroup.innerHTML = '<option value="executive_navigation_hub">Executive Navigation Hub</option>' +
@@ -56,7 +68,7 @@
       mobile.insertBefore(execGroup, mobile.firstChild);
     }
 
-    if (mobile && !mobile.querySelector('option[value="scorecard_borongan_premium_print"]')) {
+    if (!mobile.querySelector('option[value="scorecard_borongan_premium_print"]')) {
       const sdmGroup = document.createElement('optgroup');
       sdmGroup.label = 'SDM & Produktivitas';
       sdmGroup.innerHTML = '<option value="scorecard_borongan_premium_print">Scorecard Borongan Premium</option>' +
@@ -66,7 +78,7 @@
       mobile.insertBefore(sdmGroup, mobile.firstChild);
     }
 
-    if (mobile && !mobile.querySelector('option[value="gate_import_dosj_gate"]')) {
+    if (!mobile.querySelector('option[value="gate_import_dosj_gate"]')) {
       const group = document.createElement('optgroup');
       group.label = 'Karyawan Borongan & Biaya';
       group.innerHTML = '<option value="karyawan_borongan_report">Karyawan Borongan Report V2</option>' +
@@ -80,7 +92,7 @@
       mobile.insertBefore(group, mobile.firstChild);
     }
 
-    if (mobile && !mobile.dataset.executiveNavBound) {
+    if (!mobile.dataset.executiveNavBound) {
       mobile.dataset.executiveNavBound = '1';
       mobile.addEventListener('change', function(){
         if (mobile.value === 'executive_navigation_hub') location.href = 'executive-navigation-hub.html?v=' + VERSION;
@@ -104,8 +116,10 @@
   }
 
   function runPatch(){
+    injectExecutiveTheme();
     addExecutiveNavigationMenu();
-    addHppKaryawanMenu();
+    addLegacyProductionCostMenu();
+    addMobileMenu();
   }
 
   if (document.readyState === 'loading') {
