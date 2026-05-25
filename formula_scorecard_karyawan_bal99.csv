@@ -1,0 +1,8 @@
+komponen,formula_awal,tujuan,catatan
+Produktivitas,output_karyawan / rata_rata_output_grup_sejenis x 100,Membaca kekuatan output,Bandingkan hanya bagian status dan merek sejenis
+Konsistensi,100 - persentase_deviasi_output_harian,Membaca stabilitas kerja,Jangan nilai dari satu hari saja
+Kehadiran Data,hari_aktif / hari_kerja_periode x 100,Membaca keterlibatan kerja,Bedakan tidak hadir dengan data belum input
+Kerapian Data,100 - skor_anomali_data,Membaca kualitas data,Nama dobel tarif salah output kosong mengurangi skor
+Skor Total Awal,Produktivitas 50 + Konsistensi 30 + Kehadiran 15 + Kerapian 5,Scorecard produktivitas awal,Belum memasukkan kualitas mandor
+Skor Lanjutan,Produktivitas 40 + Konsistensi 25 + Kehadiran 15 + Kerapian 10 + Kualitas 10,Scorecard pembinaan lanjutan,Aktif jika data kualitas mandor tersedia
+Kategori,Ikuti kategori_kinerja_karyawan_bal99.csv,Membaca hasil dengan bahasa aman,Jangan gunakan istilah malas atau jelek
