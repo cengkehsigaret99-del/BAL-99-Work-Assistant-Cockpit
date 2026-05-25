@@ -1,0 +1,8 @@
+urutan,hal_yang_dicek,cara_memutuskan,keputusan_yang_dipakai,catatan
+1,Nama sama dengan ID berbeda,Cek apakah orang yang sama atau orang berbeda,GABUNG atau PISAH,Jangan menebak dari nama saja
+2,Nama sama lintas G dan P,Cek apakah satu orang bekerja di giling dan packing,LINTAS BAGIAN atau PISAH,Ranking bagian tetap dipisah
+3,Nama sama 3 ID atau lebih,Cek ke admin atau mandor lebih dulu,TAHAN atau GABUNG,Jangan publish sebelum jelas
+4,Nama terasa umum,Cek alamat/grup/mandor jika ada,PISAH atau TAHAN,Nama umum rawan orang berbeda
+5,ID salah input,Cek sumber laporan,SALAH INPUT,Koreksi sebelum hitung ulang
+6,Belum yakin,Tahan dulu dari publish,TAHAN,Lebih aman daripada salah nilai orang
+7,Setelah semua jelas,Hitung ulang scorecard pilot,LANJUT,Baru review ranking bersih
