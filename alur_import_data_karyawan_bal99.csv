@@ -1,0 +1,11 @@
+langkah,nama_langkah,tujuan,output,status
+1,Terima file sumber,Menerima laporan giling dan verpack asli,File sumber siap baca,KONSEP
+2,Baca struktur sheet,Mengenali kolom nama tanggal output tarif dan upah,Peta kolom,KONSEP
+3,Ekstrak nama karyawan,Mengambil nama per baris kerja,Daftar nama mentah,KONSEP
+4,Standarisasi nama,Menggabungkan alias ke nama standar,Master karyawan awal,KONSEP
+5,Validasi tanggal dan bagian,Memastikan tanggal bagian dan status kerja jelas,Data valid awal,KONSEP
+6,Validasi output dan upah,Cek output tarif dan total upah,Data aman hitung,KONSEP
+7,Pisah giling verpack,Mencegah perbandingan tidak adil,CSV produktivitas terpisah,KONSEP
+8,Buat scorecard awal,Menghitung produktivitas konsistensi dan kehadiran,Scorecard awal,KONSEP
+9,Review owner,User melihat hasil sebelum publish,Persetujuan atau koreksi,KONSEP
+10,Update aplikasi,Menyambungkan menu setelah disetujui,Modul aktif,KONSEP
