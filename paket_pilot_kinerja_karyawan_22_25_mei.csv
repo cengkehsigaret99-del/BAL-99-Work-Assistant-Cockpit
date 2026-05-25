@@ -1,0 +1,8 @@
+komponen,file_tujuan,fungsi,status
+Master Karyawan,master_karyawan.csv,Standarisasi nama alias bagian dan mandor,SIAP DIISI
+Giling Karyawan,produktivitas_giling_karyawan_22_25_mei.csv,Data batang upah dan status kerja per nama,SIAP DIISI
+Verpack Karyawan,produktivitas_verpack_karyawan_22_25_mei.csv,Data pack upah barang jadi dan CK4C per nama,SIAP DIISI
+Scorecard Pilot,scorecard_karyawan_22_25_mei.csv,Skor produktivitas awal dan rekomendasi pembinaan,SIAP DIHITUNG
+Audit Pilot,audit_data_karyawan_22_25_mei.csv,Cek nama dobel tanggal kosong tarif salah dan output anomali,WAJIB
+Review Owner,review_pilot_karyawan_22_25_mei.csv,Tempat koreksi sebelum publish aplikasi,WAJIB
+Menu Aplikasi,Kinerja dan Pembinaan Karyawan,Belum disambungkan sebelum hasil pilot disetujui,DITAHAN
