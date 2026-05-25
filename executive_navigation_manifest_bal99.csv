@@ -1,0 +1,16 @@
+kelompok,urutan,nama_menu,tujuan,halaman,status,prioritas,catatan
+Ringkasan,1,Dashboard Ringkas,Baca kondisi utama produksi stok DO pembayaran piutang,dashboard-ringkas.html,PRIORITAS,1,Pintu baca utama
+Ringkasan,2,Status Hari Ini,Pintu baca cepat harian,status-hari-ini.html,PRIORITAS,1,Untuk admin dan owner
+Ringkasan,3,Executive Navigation Hub,Pintu navigasi executive,executive-navigation-hub.html,AKTIF,1,Jembatan sebelum index utama diubah
+Produksi Gudang,1,WIP Giling vs Verpack,Baca gap produksi,wip-giling-vs-verpack-22-mei.html,AKTIF,2,Kontrol alur giling ke verpack
+Produksi Gudang,2,Kontrol Upah Produksi,Upah giling dan verpack,kontrol-upah-produksi.html,AKTIF,2,Pendukung SDM borongan
+Pita Cukai,1,Dashboard Cukai Ringkas,Kontrol pita cukai dan CK4C,dashboard-cukai-ringkas.html,AKTIF,1,Prioritas cukai
+Pita Cukai,2,CK4C Detail Produksi,Detail CK4C produksi,ck4c-detail-produksi.html,AKTIF,1,CK4C berbasis verpack/barang jadi official
+Pita Cukai,3,P3C KPPBC CK1,Kontrol proyeksi dan saldo cukai,p3c-kppbc-control.html,AKTIF,2,Untuk cukai
+Pasar Distribusi,1,DO Surat Jalan,Barang keluar dan dasar piutang,index.html,AKTIF,2,Akses lewat index lama modul sj
+Keuangan Pasar,1,Pembayaran Piutang,Kontrol pembayaran dan sisa piutang,index.html,AKTIF,2,Akses lewat index lama modul piutang
+SDM Produktivitas,1,Scorecard Borongan Premium,Produktivitas kualitas ranking pembinaan,scorecard-borongan-premium-print.html,BARU,1,Modul baru SDM borongan
+SDM Produktivitas,2,Template Penilaian Borongan,Template input CSV,template_penilaian_karyawan_borongan_bal99.csv,SIAP,1,Untuk data mandor
+SDM Produktivitas,3,CSV Contoh Uji,Data simulasi scorecard,contoh_penilaian_karyawan_borongan_bal99.csv,SIAP,2,Untuk testing report
+Sistem,1,Index Lama,Fallback semua modul,index.html,BACKUP,3,Jangan dihapus
+Sistem,2,Audit Desain Navigasi,Arsip keputusan desain,BAL99_DESIGN_NAVIGATION_PRINT_AUDIT_2026-05-24.md,ARSIP,3,Dokumen audit
