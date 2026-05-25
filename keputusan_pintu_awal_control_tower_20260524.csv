@@ -1,0 +1,5 @@
+tanggal,topik,status,keputusan,catatan
+2026-05-24,Pintu Awal Control Tower,FINAL SEMENTARA,beranda-control-tower.html dipakai sebagai pintu awal resmi sementara sebelum masuk detail,Data angka tidak berubah
+2026-05-24,Urutan Baca,FINAL SEMENTARA,Beranda Control Tower lalu Ringkasan Hari Ini lalu Status Operasional lalu Penilaian Kesehatan Pabrik lalu Aplikasi Utama,Untuk mengurangi bingung dan loading berat
+2026-05-24,Data Operasional,AMAN,Tidak ada perubahan angka produksi stok pita CK4C DO piutang HPP,Perubahan hanya navigasi dan bahasa
+2026-05-24,Keputusan Supply,AKTIF,Supply terbatas dan tahan ekspansi besar sampai pembayaran pelanggan besar masuk,Risiko utama piutang pita CK4C DO SJ
