@@ -1,0 +1,10 @@
+urutan,menu,fungsi,status_awal,catatan
+1,Dashboard Karyawan,Ringkasan produktivitas upah kategori dan rekomendasi,KONSEP,Belum data asli
+2,Master Karyawan,Standarisasi nama alias bagian mandor dan status aktif,KONSEP,Wajib sebelum import data banyak
+3,Produktivitas Giling,Data output batang upah dan status kerja per nama,KONSEP,Filter tanggal dari sampai
+4,Produktivitas Verpack,Data output pack upah barang jadi dan CK4C per nama,KONSEP,Filter tanggal dari sampai
+5,Scorecard Periode,Skor dan kategori karyawan berdasarkan periode,KONSEP,Jangan dipakai vonis final
+6,Ranking Terarah,Ranking per bagian status kerja dan merek,KONSEP,Tidak boleh ranking global mentah
+7,Kandidat Insentif,Karyawan unggul stabil dalam periode,KONSEP,Basis periode bukan satu hari
+8,Perlu Pembinaan,Karyawan yang perlu pendampingan atau cek sebab,KONSEP,Bahasa pembinaan bukan hukuman
+9,Audit Data Karyawan,Cek nama dobel tarif salah status kosong dan anomali,KONSEP,Wajib sebelum publish score
