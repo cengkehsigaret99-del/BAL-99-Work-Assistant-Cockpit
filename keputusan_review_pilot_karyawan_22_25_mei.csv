@@ -1,0 +1,8 @@
+area,keputusan,alasan,aksi_lanjut
+Pilot 22-25 Mei,LANJUT REVIEW,Total output dan upah sudah cocok,Review alias sebelum publish
+Ranking Karyawan,TAHAN,Masih ada nama sama beda ID,Jangan tampilkan ranking ke menu utama
+Alias Karyawan,WAJIB REVIEW,18 nama muncul dengan lebih dari satu ID,Tentukan sama orang atau orang berbeda
+Full Mei,TAHAN,Tunggu pilot bersih,Tidak lanjut full Mei sebelum alias pilot beres
+Menu Utama,TAHAN,Hindari salah baca dan salah nilai,Belum sambung ke aplikasi utama
+Scorecard,BOLEH INTERNAL,Untuk review struktur saja,Belum untuk pembinaan resmi
+Keputusan Praktis,VALID AWAL PILOT,Pilot berhasil tapi belum final,Lanjut bersihkan master karyawan
