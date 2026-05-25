@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>BAL-99 • Print Report QA Checklist</title>
+<link rel="icon" type="image/png" href="logo.png?v=printqa1">
+<link rel="stylesheet" href="bal99-executive-theme.css?v=printqa1">
+<link rel="stylesheet" href="bal99-premium-print-standard.css?v=printstandard1">
+<style>
+body{margin:0;background:#f4f7fb;font-family:Inter,Arial,Helvetica,sans-serif;color:#111827}.wrap{max-width:1180px;margin:auto;padding:18px}.hero{background:linear-gradient(120deg,#061A31,#0F2742);color:#fff;border-bottom:4px solid #D6A642;border-radius:20px;padding:18px;display:flex;gap:14px;align-items:center;justify-content:space-between}.brand{display:flex;gap:12px;align-items:center}.brand img{width:62px;height:62px;object-fit:contain;background:#fff;border:2px solid #D6A642;border-radius:14px;padding:5px}.brand small{display:block;color:#F4D07D;font-weight:1000;letter-spacing:.12em;text-transform:uppercase}.brand h1{font-size:28px;margin:2px 0}.brand p{margin:0;color:#E6EEF8}.stamp{background:rgba(255,255,255,.1);border:1px solid rgba(214,166,66,.45);border-radius:14px;padding:10px 12px;text-align:right}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:16px 0}.card,.panel{background:#fff;border:1px solid #d9e2ec;border-radius:18px;box-shadow:0 12px 26px rgba(6,26,49,.08)}.card{padding:14px;border-top:4px solid #D6A642}.card small{display:block;color:#64748b;font-weight:1000;text-transform:uppercase;font-size:11px}.card strong{display:block;color:#061A31;font-size:24px;margin:6px 0}.card p{color:#64748b;margin:0;line-height:1.35}.panel{padding:14px;margin:14px 0}.panel h2{margin:0 0 10px;color:#061A31}.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid #d9e2ec;background:#fff;color:#061A31;text-decoration:none;border-radius:12px;padding:10px 12px;font-weight:1000}.btn.primary{background:#061A31;color:#fff}.btn.gold{background:#D6A642;color:#111827;border-color:#C8952D}.table-wrap{overflow:auto;border:1px solid #d9e2ec;border-radius:14px}table{width:100%;border-collapse:collapse;min-width:880px}th{background:#061A31;color:#fff;text-align:left;padding:10px 8px;font-size:12px;text-transform:uppercase}td{border-bottom:1px solid #edf2f7;padding:10px 8px;vertical-align:top;line-height:1.35}.badge{display:inline-flex;border-radius:999px;padding:4px 8px;font-weight:1000;font-size:11px}.ok{background:#dcfce7;color:#15803d}.warn{background:#fef3c7;color:#92400e}.blue{background:#dbeafe;color:#1d4ed8}.note{background:#fff5d6;border:1px solid #d6a642;border-left:6px solid #d6a642;border-radius:14px;padding:12px;line-height:1.5;color:#5f4505}.checklist{display:grid;grid-template-columns:1fr 1fr;gap:10px}.check{background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:10px}.check b{color:#061A31}.footer{text-align:center;color:#64748b;margin:18px 0;font-size:13px}@media(max-width:760px){.wrap{padding:10px}.hero{display:block}.stamp{text-align:left;margin-top:10px}.grid{grid-template-columns:1fr}.checklist{grid-template-columns:1fr}.toolbar{display:grid}.btn{width:100%}table{min-width:920px}}@media print{.toolbar{display:none!important}.hero{border-radius:8px}.wrap{padding:0}.grid{grid-template-columns:repeat(4,1fr)}.panel,.card{box-shadow:none}.footer{display:none}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<section class="hero">
+  <div class="brand"><img src="logo.png?v=printqa1" alt="BAL"><div><small>Premium Print QA</small><h1>BAL-99 Print Report Checklist</h1><p>Uji cetak PDF dari HP dan laptop untuk memastikan semua report rapi, jelas, dan seragam.</p></div></div>
+  <div class="stamp"><b>PRINT QA V1</b><br><small>Standar: Calm Industrial Premium Report</small></div>
+</section>
+<section class="grid">
+  <div class="card"><small>Target</small><strong>5 Report</strong><p>Dashboard, Status, Cukai, Upah, Scorecard.</p></div>
+  <div class="card"><small>Media Uji</small><strong>HP + Laptop</strong><p>Print to PDF dari dua perangkat.</p></div>
+  <div class="card"><small>Standar</small><strong>A4 Landscape</strong><p>Margin 8mm dan tabel repeat header.</p></div>
+  <div class="card"><small>Keputusan</small><strong>Pass / Revisi</strong><p>Revisi per halaman jika tabel kecil atau kepanjangan.</p></div>
+</section>
+<section class="panel">
+<h2>Link Uji Report</h2>
+<div class="toolbar">
+  <a class="btn gold" href="dashboard-ringkas.html?v=printstandard1" target="_blank">Dashboard Ringkas</a>
+  <a class="btn gold" href="status-hari-ini.html?v=printstandard1" target="_blank">Status Hari Ini</a>
+  <a class="btn gold" href="dashboard-cukai-ringkas.html?v=printstandard1" target="_blank">Dashboard Cukai</a>
+  <a class="btn gold" href="kontrol-upah-produksi.html?v=printstandard1" target="_blank">Kontrol Upah</a>
+  <a class="btn gold" href="scorecard-borongan-premium-print.html?v=printstandard1" target="_blank">Scorecard Borongan</a>
+  <button class="btn primary" onclick="window.print()">Cetak Checklist</button>
+</div>
+</section>
+<section class="panel">
+<h2>Kriteria Lulus Cetak</h2>
+<div class="checklist">
+  <div class="check"><b>1. Header</b><br>Logo tidak pecah, judul terlihat, warna navy–emas tetap keluar di PDF.</div>
+  <div class="check"><b>2. Ringkasan</b><br>Card angka utama tidak terpotong dan bisa dibaca cepat.</div>
+  <div class="check"><b>3. Tabel</b><br>Header tabel muncul di halaman berikutnya, kolom tidak terlalu sempit, teks tidak saling menimpa.</div>
+  <div class="check"><b>4. Badge</b><br>Status hijau/kuning/merah/biru tetap jelas saat print.</div>
+  <div class="check"><b>5. Panjang Report</b><br>Report tidak memanjang tanpa arah. Halaman pecah wajar, bukan potong di tengah card penting.</div>
+  <div class="check"><b>6. Owner Readability</b><br>Angka utama cukup besar; detail tetap ada, tapi tidak membuat pembaca tua pusing.</div>
+</div>
+</section>
+<section class="panel">
+<h2>Form Penilaian Cepat</h2>
+<div class="table-wrap"><table><thead><tr><th>Report</th><th>HP PDF</th><th>Laptop PDF</th><th>Masalah yang Dicari</th><th>Keputusan</th></tr></thead><tbody>
+<tr><td><b>Dashboard Ringkas</b></td><td><span class="badge warn">Uji</span></td><td><span class="badge warn">Uji</span></td><td>Card terlalu kecil, tabel status modul terlalu padat.</td><td>Pass / Revisi</td></tr>
+<tr><td><b>Status Hari Ini</b></td><td><span class="badge warn">Uji</span></td><td><span class="badge warn">Uji</span></td><td>Tabel 8 kolom panjang; cek apakah teks risiko/tindakan tetap terbaca.</td><td>Pass / Revisi</td></tr>
+<tr><td><b>Dashboard Cukai</b></td><td><span class="badge warn">Uji</span></td><td><span class="badge warn">Uji</span></td><td>Saldo pita dan risiko cukai harus jelas untuk owner.</td><td>Pass / Revisi</td></tr>
+<tr><td><b>Kontrol Upah</b></td><td><span class="badge warn">Uji</span></td><td><span class="badge warn">Uji</span></td><td>Tabel upah banyak kolom; cek angka rupiah tidak terlalu kecil.</td><td>Pass / Revisi</td></tr>
+<tr><td><b>Scorecard Borongan</b></td><td><span class="badge warn">Uji</span></td><td><span class="badge warn">Uji</span></td><td>Tabel detail 14 kolom; cek apakah perlu mode lampiran detail.</td><td>Pass / Revisi</td></tr>
+</tbody></table></div>
+</section>
+<section class="panel"><h2>Keputusan Praktis</h2><div class="note"><b>Jika tabel terlalu kecil:</b> buat mode ringkas owner dan lampiran detail terpisah. <b>Jika terlalu panjang:</b> pecah per section atau per modul. <b>Jika warna tidak keluar:</b> aktifkan Background Graphics saat print PDF. <b>Jika HP berbeda dari laptop:</b> jadikan laptop sebagai standar final PDF owner, HP untuk preview cepat.</div></section>
+<div class="footer">BAL-99 Print Report QA Checklist • Gunakan sebelum mengunci report owner/admin.</div>
+</main>
+</body>
+</html>
