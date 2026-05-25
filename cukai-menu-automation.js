@@ -1,6 +1,7 @@
 (function(){
-  const V = 'cukai_auto_21mei_1';
+  const V = 'cukai_auto_25mei_saldo_alur';
   const links = [
+    ['saldo_alur_pita','Saldo & Alur Pita','saldo-alur-pita.html'],
     ['dashboard_cukai_ringkas','Dashboard Cukai Ringkas','dashboard-cukai-ringkas.html'],
     ['csck3_full','CSCK-3 Full','csck3-detail-full.html'],
     ['csck3_koreksi','CSCK-3 Koreksi Data','csck3-koreksi-data.html'],
@@ -33,16 +34,16 @@
     const oldMap = {
       ck4c: ['CK4C Detail Produksi','ck4c-detail-produksi.html'],
       saldo_ck4_before_ck1: ['CSCK-3 Koreksi Data','csck3-koreksi-data.html'],
-      pita: ['CSCK-3 Full','csck3-detail-full.html'],
+      pita: ['Saldo & Alur Pita','saldo-alur-pita.html'],
       billing: ['P3C / KPPBC / CK-1','p3c-kppbc-control.html'],
-      saldo_pita: ['Dashboard Cukai Ringkas','dashboard-cukai-ringkas.html'],
+      saldo_pita: ['Saldo & Alur Pita','saldo-alur-pita.html'],
       saldo_pita_ck1: ['P3C / KPPBC / CK-1','p3c-kppbc-control.html']
     };
     Object.entries(oldMap).forEach(([key,val])=>{
       cukai.querySelectorAll('.nav-btn[data-key="'+key+'"]').forEach(btn=>{
         btn.innerHTML = '<span class="dot"></span>' + val[0];
         btn.onclick = function(){ go(val[1]); };
-        btn.title = 'Otomatis diarahkan ke halaman cukai terbaru per 21 Mei';
+        btn.title = 'Diarahkan ke halaman saldo dan alur pita yang sudah dipisah menurut status';
       });
     });
   }
@@ -67,14 +68,12 @@
   function setupMobileFavs(){
     const fav = document.querySelector('.mobile-favs');
     if(!fav) return;
-    if(fav.querySelector('[data-cukai-fav="dashboard"]')) return;
+    if(fav.querySelector('[data-cukai-fav="saldo-alur"]')) return;
     const btn = document.createElement('button');
-    btn.dataset.cukaiFav = 'dashboard';
-    btn.textContent = 'Cukai Ringkas';
-    btn.onclick = function(){ go('dashboard-cukai-ringkas.html'); };
-    const firstCukai = Array.from(fav.querySelectorAll('button')).find(b => (b.textContent || '').toLowerCase().includes('panduan cukai'));
-    if(firstCukai) fav.insertBefore(btn, firstCukai);
-    else fav.appendChild(btn);
+    btn.dataset.cukaiFav = 'saldo-alur';
+    btn.textContent = 'Saldo & Alur Pita';
+    btn.onclick = function(){ go('saldo-alur-pita.html'); };
+    fav.insertBefore(btn, fav.firstChild);
   }
   function run(){ setupSidebar(); setupMobileSelect(); setupMobileFavs(); }
   if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', function(){ setTimeout(run,650); });
