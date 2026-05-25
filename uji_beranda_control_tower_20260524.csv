@@ -1,0 +1,7 @@
+area,status,keputusan
+Beranda Control Tower,PASS,Layak sebagai halaman pembuka
+Ringkasan Hari Ini,PASS,Layak sebagai pintu angka inti
+Status Operasional,PASS,Layak sebagai pintu status risiko
+Penilaian Kesehatan Pabrik,PASS,Layak sebagai pintu skor dan saran
+Aplikasi Utama,DETAIL,Lanjut dipakai sebagai halaman detail
+Data Angka,AMAN,Tidak diubah
