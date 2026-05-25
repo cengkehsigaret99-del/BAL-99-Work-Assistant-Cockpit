@@ -1,0 +1,2 @@
+tanggal,minggu_borongan,id_karyawan,nama_karyawan,mandor_grup,merek,status_kerja,jumlah_batang,tarif_per_batang,total_upah,tingkat_kesulitan_merek,sumber_file,status_validasi,status_anomali,catatan
+2026-05-25,Minggu 4,KAR-0001,CONTOH NAMA,GRUP A,GCC 99 isi 12,NORMAL,0,40,0,NORMAL,CONTOH,CONTOH BELUM DATA ASLI,NORMAL,Contoh struktur saja
