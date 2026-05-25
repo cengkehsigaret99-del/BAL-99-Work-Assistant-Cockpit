@@ -1,13 +1,13 @@
 tanggal_stok,kode_sku,merek,stok_awal,masuk_verpack,keluar_sj,retur_masuk,koreksi_plus,koreksi_minus,stok_akhir,konversi_stok,po_belum_terkirim,selisih_stok_vs_po,status_stok,validasi
-2026-05-24,C-031,New Ambree Biru / New Gedung Cengkeh Coklat 99 isi 16 Ambree Biru,19998,0,0,0,0,0,19998,"33 karton 1 bal 9 slop 8 pack",0,19998,STOK ADA,VALID AWAL - tidak ada perubahan 24 Mei
-2026-05-24,C-023,Gedung Cengkeh 16 New / New Gedung Cengkeh Coklat 99 isi 16,90780,0,90000,0,0,0,780,"1 karton 1 bal 8 slop",0,780,STOK SANGAT TIPIS,VALID AWAL - setelah SJ128
-2026-05-24,C-015,Cengkeh Biru 77 isi 16,1800,0,1800,0,0,0,0,"0",0,0,STOK 0,VALID AWAL - setelah SJ127
-2026-05-24,C-012,Cengkeh Biru 77 isi 12,1000,0,1000,0,0,0,0,"0",0,0,STOK 0,VALID AWAL - setelah SJ127
-2026-05-24,GCC99-12,Gedung Cengkeh Coklat 99 isi 12,10500,55000,10000,0,0,0,55500,"55 karton 5 slop",0,55500,STOK ADA,VALID AWAL / LEMBUR 24 MEI - tambah verpack lembur 55.000 pack tarif Rp255/pack
-2026-05-24,TUD-NEW16,TUD New GCC 99 isi 16,2,0,0,0,0,0,2,"2 pack TUD arsip",0,2,TUD ARSIP,ARSIP 22 MEI
-2026-05-24,,Gedung Cengkeh Coklat 99 Polos,0,0,0,0,0,0,0,"0",0,0,STOK 0,ARSIP
-2026-05-24,,Gedung Cengkeh Coklat 99 Kuning,0,0,0,0,0,0,0,"0",0,0,STOK 0,ARSIP
-2026-05-24,,Cengkeh Refill,1930,0,0,0,0,0,1930,"3 karton 1 bal 3 slop",0,1930,STOK ADA,ARSIP
-2026-05-24,,New Gedung Cengkeh Coklat 99 isi 16 Ambree Kuning,830,0,0,0,0,0,830,"1 karton 1 bal 3 slop",0,830,STOK ADA,ARSIP VARIAN
-2026-05-24,,Cengkeh Refill Original,0,0,0,0,0,0,0,"0",0,0,STOK 0,ARSIP
-2026-05-24,,BAL 9,0,0,0,0,0,0,0,"0",0,0,STOK 0,ARSIP
+2026-05-25,C-031,New Ambree Biru / New Gedung Cengkeh Coklat 99 isi 16 Ambree Biru,19998,0,0,0,0,0,19998,"33 karton 1 bal 9 slop 8 pack",0,19998,STOK ADA,VALID AWAL - tidak ada perubahan 25 Mei
+2026-05-25,C-023,Gedung Cengkeh 16 New / New Gedung Cengkeh Coklat 99 isi 16,780,6600,0,0,0,0,7380,"12 karton 3 slop",0,7380,STOK ADA TERBATAS,VALID AWAL / UPDATE PACKING 25 MEI - tambah verpack 6.600 pack
+2026-05-25,C-015,Cengkeh Biru 77 isi 16,0,0,0,0,0,0,0,"0",0,0,STOK 0,VALID AWAL - tidak ada perubahan 25 Mei
+2026-05-25,C-012,Cengkeh Biru 77 isi 12,0,0,0,0,0,0,0,"0",0,0,STOK 0,VALID AWAL - tidak ada perubahan 25 Mei
+2026-05-25,GCC99-12,Gedung Cengkeh Coklat 99 isi 12,55500,44500,0,0,0,0,100000,"100 karton",0,100000,STOK ADA,VALID AWAL / UPDATE PACKING 25 MEI - tambah verpack normal 44.500 pack
+2026-05-25,TUD-NEW16,TUD New GCC 99 isi 16,2,0,0,0,0,0,2,"2 pack TUD arsip",0,2,TUD ARSIP,ARSIP 22 MEI
+2026-05-25,,Gedung Cengkeh Coklat 99 Polos,0,0,0,0,0,0,0,"0",0,0,STOK 0,ARSIP
+2026-05-25,,Gedung Cengkeh Coklat 99 Kuning,0,0,0,0,0,0,0,"0",0,0,STOK 0,ARSIP
+2026-05-25,,Cengkeh Refill,1930,0,0,0,0,0,1930,"3 karton 1 bal 3 slop",0,1930,STOK ADA,ARSIP
+2026-05-25,,New Gedung Cengkeh Coklat 99 isi 16 Ambree Kuning,830,0,0,0,0,0,830,"1 karton 1 bal 3 slop",0,830,STOK ADA,ARSIP VARIAN
+2026-05-25,,Cengkeh Refill Original,0,0,0,0,0,0,0,"0",0,0,STOK 0,ARSIP
+2026-05-25,,BAL 9,0,0,0,0,0,0,0,"0",0,0,STOK 0,ARSIP
