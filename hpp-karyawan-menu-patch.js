@@ -1,5 +1,5 @@
 (function(){
-  const VERSION = 'karyawan_borongan_v4_executive_theme_active';
+  const VERSION = 'karyawan_borongan_v6_core_mobile_nav';
 
   function injectExecutiveTheme(){
     if (document.querySelector('link[href*="bal99-executive-theme.css"]')) return;
@@ -7,6 +7,32 @@
     link.rel = 'stylesheet';
     link.href = 'bal99-executive-theme.css?v=' + VERSION;
     document.head.appendChild(link);
+  }
+
+  function addCoreMobileBottomNav(){
+    if (document.getElementById('bal99CoreBottomNav')) return;
+    const style = document.createElement('style');
+    style.textContent = '@media(max-width:720px){.mobile-favs{display:none!important}.bal99-core-bottom-nav{position:fixed;left:7px;right:7px;bottom:7px;z-index:120;display:grid;grid-template-columns:repeat(6,1fr);gap:4px;padding:6px;background:rgba(6,26,49,.97);border:1px solid rgba(214,166,66,.42);border-radius:18px;box-shadow:0 14px 34px rgba(0,0,0,.22);backdrop-filter:blur(12px)}.bal99-core-bottom-nav button{border:0;border-radius:12px;background:transparent;color:#DDE8F4;font-weight:900;font-size:9.5px;padding:7px 2px;line-height:1.05}.bal99-core-bottom-nav button:focus,.bal99-core-bottom-nav button:hover{outline:none;background:rgba(214,166,66,.18);color:#F9D77A}.app{padding-bottom:94px!important}}@media(min-width:721px){.bal99-core-bottom-nav{display:none!important}}@media print{.bal99-core-bottom-nav{display:none!important}}';
+    document.head.appendChild(style);
+    const nav = document.createElement('nav');
+    nav.id = 'bal99CoreBottomNav';
+    nav.className = 'bal99-core-bottom-nav';
+    const items = [
+      ['Dashboard', 'dashboard-ringkas.html?v=' + VERSION],
+      ['Status', 'status-hari-ini.html?v=' + VERSION],
+      ['Cukai', 'dashboard-cukai-ringkas.html?v=' + VERSION],
+      ['DO/SJ', 'index.html?v=' + VERSION + '#sj'],
+      ['Piutang', 'index.html?v=' + VERSION + '#piutang'],
+      ['Scorecard', 'scorecard-borongan-premium-print.html?v=' + VERSION]
+    ];
+    items.forEach(function(item){
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.textContent = item[0];
+      btn.addEventListener('click', function(){ location.href = item[1]; });
+      nav.appendChild(btn);
+    });
+    document.body.appendChild(nav);
   }
 
   function addExecutiveNavigationMenu(){
@@ -120,6 +146,7 @@
     addExecutiveNavigationMenu();
     addLegacyProductionCostMenu();
     addMobileMenu();
+    addCoreMobileBottomNav();
   }
 
   if (document.readyState === 'loading') {
