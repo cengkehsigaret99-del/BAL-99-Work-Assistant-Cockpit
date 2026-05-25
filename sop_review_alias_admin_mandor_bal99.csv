@@ -1,0 +1,8 @@
+langkah,aksi,tujuan,keputusan
+1,Buka form_review_alias_karyawan_22_25_mei.csv,Melihat 18 nama yang perlu cek,Review dimulai
+2,Cek ke admin atau mandor,Memastikan orang sama atau berbeda,Jangan menebak
+3,Isi keputusan_user,GABUNG PISAH TAHAN LINTAS BAGIAN atau SALAH INPUT,Keputusan tercatat
+4,Isi nama_standar_final,Menentukan nama yang akan dipakai sistem,Master bersih
+5,Isi catatan,Menjelaskan alasan keputusan,Audit aman
+6,Tahan nama yang ragu,Mencegah salah nilai karyawan,Status TAHAN
+7,Kirim kembali hasil review,Bahan hitung ulang scorecard,Siap proses ulang
