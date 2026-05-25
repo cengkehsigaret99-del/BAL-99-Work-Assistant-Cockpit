@@ -1,0 +1,10 @@
+urutan,proses,output,status
+1,Terima form alias yang sudah diisi,Keputusan GABUNG PISAH TAHAN LINTAS BAGIAN SALAH INPUT,BELUM MULAI
+2,Bersihkan master karyawan,Master karyawan final pilot,BELUM MULAI
+3,Gabung output untuk keputusan GABUNG,Output per nama standar,BELUM MULAI
+4,Pisah output untuk keputusan PISAH,ID tetap berdiri sendiri,BELUM MULAI
+5,Pisah ranking bagian untuk LINTAS BAGIAN,Giling dan verpack tidak tercampur,BELUM MULAI
+6,Keluarkan nama TAHAN dari ranking publik,Ranking lebih aman,BELUM MULAI
+7,Koreksi data SALAH INPUT,Data pilot bersih,BELUM MULAI
+8,Hitung ulang scorecard pilot,Scorecard bersih 22-25 Mei,BELUM MULAI
+9,Review hasil bersih ke user,Keputusan lanjut full Mei atau tahan,BELUM MULAI
