@@ -1,5 +1,32 @@
 (function(){
-  const VERSION = 'karyawan_borongan_v2';
+  const VERSION = 'karyawan_borongan_v3_executive_nav';
+
+  function addExecutiveNavigationMenu(){
+    const nav = document.getElementById('nav');
+    if (nav && !document.querySelector('.nav-btn[data-key="executive_navigation_hub"]')) {
+      const executiveBox = document.createElement('div');
+      executiveBox.className = 'group';
+      executiveBox.innerHTML = '<div class="group-title">Executive Control Tower</div>' +
+        '<button class="nav-btn" data-key="executive_navigation_hub" onclick="location.href=\'executive-navigation-hub.html?v=' + VERSION + '\'"><span class="dot"></span>Executive Navigation Hub</button>' +
+        '<button class="nav-btn" data-key="executive_control_tower" onclick="location.href=\'executive-control-tower.html?v=' + VERSION + '\'"><span class="dot"></span>Executive Control Tower</button>' +
+        '<button class="nav-btn" data-key="dashboard_ringkas_exec" onclick="location.href=\'dashboard-ringkas.html?v=dashboard_ringkas_v1\'"><span class="dot"></span>Dashboard Ringkas</button>' +
+        '<button class="nav-btn" data-key="status_hari_ini_exec" onclick="location.href=\'status-hari-ini.html?v=status_hari_ini_v1\'"><span class="dot"></span>Status Hari Ini</button>';
+      nav.insertBefore(executiveBox, nav.firstChild);
+    }
+
+    if (nav && !document.querySelector('.nav-btn[data-key="scorecard_borongan_premium_print"]')) {
+      const sdmBox = document.createElement('div');
+      sdmBox.className = 'group';
+      sdmBox.innerHTML = '<div class="group-title">SDM & Produktivitas</div>' +
+        '<button class="nav-btn" data-key="scorecard_borongan_premium_print" onclick="location.href=\'scorecard-borongan-premium-print.html?v=' + VERSION + '\'"><span class="dot"></span>Scorecard Borongan Premium</button>' +
+        '<button class="nav-btn" data-key="template_penilaian_borongan" onclick="location.href=\'template_penilaian_karyawan_borongan_bal99.csv?v=' + VERSION + '\'"><span class="dot"></span>Template Penilaian Borongan</button>' +
+        '<button class="nav-btn" data-key="contoh_penilaian_borongan" onclick="location.href=\'contoh_penilaian_karyawan_borongan_bal99.csv?v=' + VERSION + '\'"><span class="dot"></span>CSV Contoh Borongan</button>' +
+        '<button class="nav-btn" data-key="kontrol_upah_produksi_exec" onclick="location.href=\'kontrol-upah-produksi.html?v=prod_upah_1\'"><span class="dot"></span>Kontrol Upah Produksi</button>';
+      const first = document.querySelector('.nav-btn[data-key="executive_navigation_hub"]');
+      if (first && first.closest('.group') && first.closest('.group').nextSibling) nav.insertBefore(sdmBox, first.closest('.group').nextSibling);
+      else nav.insertBefore(sdmBox, nav.firstChild);
+    }
+  }
 
   function addHppKaryawanMenu(){
     const nav = document.getElementById('nav');
@@ -8,7 +35,7 @@
       box.className = 'group';
       box.innerHTML = '<div class="group-title">Import DO/SJ & Biaya</div>' +
         '<button class="nav-btn" data-key="karyawan_borongan_report" onclick="location.href=\'karyawan-borongan-performance-v2.html?v=' + VERSION + '\'"><span class="dot"></span>Karyawan Borongan Report V2</button>' +
-        '<button class="nav-btn" data-key="template_karyawan_borongan_csv" onclick="location.href=\'template_karyawan_produktivitas_bal.csv?v=' + VERSION + '\'"><span class="dot"></span>CSV Karyawan Borongan</button>' +
+        '<button class="nav-btn" data-key="template_karyawan_borongan_csv" onclick="location.href=\'template_karyawan_produktivitas_bal.csv?v=' + VERSION + '\'"><span class="dot"></span>CSV Karyawan Borongan Lama</button>' +
         '<button class="nav-btn" data-key="gate_import_dosj_gate" onclick="location.href=\'gate-import-do-sj-mei-2026.html?v=' + VERSION + '\'"><span class="dot"></span>Gate Import DO/SJ Mei</button>' +
         '<button class="nav-btn" data-key="csv_import_dosj_gate" onclick="location.href=\'import-do-sj-mei-2026-update-terbaru.csv?v=' + VERSION + '\'"><span class="dot"></span>CSV Import DO/SJ Mei</button>' +
         '<button class="nav-btn" data-key="gate_new16_gate" onclick="location.href=\'gate-hpp-new16.html?v=' + VERSION + '\'"><span class="dot"></span>Gate HPP New16 HOLD</button>' +
@@ -19,11 +46,31 @@
     }
 
     const mobile = document.getElementById('mobilePage');
+    if (mobile && !mobile.querySelector('option[value="executive_navigation_hub"]')) {
+      const execGroup = document.createElement('optgroup');
+      execGroup.label = 'Executive Control Tower';
+      execGroup.innerHTML = '<option value="executive_navigation_hub">Executive Navigation Hub</option>' +
+        '<option value="executive_control_tower">Executive Control Tower</option>' +
+        '<option value="dashboard_ringkas_exec">Dashboard Ringkas</option>' +
+        '<option value="status_hari_ini_exec">Status Hari Ini</option>';
+      mobile.insertBefore(execGroup, mobile.firstChild);
+    }
+
+    if (mobile && !mobile.querySelector('option[value="scorecard_borongan_premium_print"]')) {
+      const sdmGroup = document.createElement('optgroup');
+      sdmGroup.label = 'SDM & Produktivitas';
+      sdmGroup.innerHTML = '<option value="scorecard_borongan_premium_print">Scorecard Borongan Premium</option>' +
+        '<option value="template_penilaian_borongan">Template Penilaian Borongan</option>' +
+        '<option value="contoh_penilaian_borongan">CSV Contoh Borongan</option>' +
+        '<option value="kontrol_upah_produksi_exec">Kontrol Upah Produksi</option>';
+      mobile.insertBefore(sdmGroup, mobile.firstChild);
+    }
+
     if (mobile && !mobile.querySelector('option[value="gate_import_dosj_gate"]')) {
       const group = document.createElement('optgroup');
       group.label = 'Karyawan Borongan & Biaya';
       group.innerHTML = '<option value="karyawan_borongan_report">Karyawan Borongan Report V2</option>' +
-        '<option value="template_karyawan_borongan_csv">CSV Karyawan Borongan</option>' +
+        '<option value="template_karyawan_borongan_csv">CSV Karyawan Borongan Lama</option>' +
         '<option value="gate_import_dosj_gate">Gate Import DO/SJ Mei</option>' +
         '<option value="csv_import_dosj_gate">CSV Import DO/SJ Mei</option>' +
         '<option value="gate_new16_gate">Gate HPP New16 HOLD</option>' +
@@ -31,7 +78,19 @@
         '<option value="mapping16_gate">Mapping Varian 16</option>' +
         '<option value="hpp_mini_gate">HPP Mini</option>';
       mobile.insertBefore(group, mobile.firstChild);
+    }
+
+    if (mobile && !mobile.dataset.executiveNavBound) {
+      mobile.dataset.executiveNavBound = '1';
       mobile.addEventListener('change', function(){
+        if (mobile.value === 'executive_navigation_hub') location.href = 'executive-navigation-hub.html?v=' + VERSION;
+        if (mobile.value === 'executive_control_tower') location.href = 'executive-control-tower.html?v=' + VERSION;
+        if (mobile.value === 'dashboard_ringkas_exec') location.href = 'dashboard-ringkas.html?v=dashboard_ringkas_v1';
+        if (mobile.value === 'status_hari_ini_exec') location.href = 'status-hari-ini.html?v=status_hari_ini_v1';
+        if (mobile.value === 'scorecard_borongan_premium_print') location.href = 'scorecard-borongan-premium-print.html?v=' + VERSION;
+        if (mobile.value === 'template_penilaian_borongan') location.href = 'template_penilaian_karyawan_borongan_bal99.csv?v=' + VERSION;
+        if (mobile.value === 'contoh_penilaian_borongan') location.href = 'contoh_penilaian_karyawan_borongan_bal99.csv?v=' + VERSION;
+        if (mobile.value === 'kontrol_upah_produksi_exec') location.href = 'kontrol-upah-produksi.html?v=prod_upah_1';
         if (mobile.value === 'karyawan_borongan_report') location.href = 'karyawan-borongan-performance-v2.html?v=' + VERSION;
         if (mobile.value === 'template_karyawan_borongan_csv') location.href = 'template_karyawan_produktivitas_bal.csv?v=' + VERSION;
         if (mobile.value === 'gate_import_dosj_gate') location.href = 'gate-import-do-sj-mei-2026.html?v=' + VERSION;
@@ -44,9 +103,14 @@
     }
   }
 
+  function runPatch(){
+    addExecutiveNavigationMenu();
+    addHppKaryawanMenu();
+  }
+
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function(){ setTimeout(addHppKaryawanMenu, 800); });
+    document.addEventListener('DOMContentLoaded', function(){ setTimeout(runPatch, 800); });
   } else {
-    setTimeout(addHppKaryawanMenu, 800);
+    setTimeout(runPatch, 800);
   }
 })();
