@@ -1,0 +1,11 @@
+area,status,angka,keputusan
+GCC99 isi 12,VALID AWAL,44500 pack,Masuk BJ pita CK4C WIP
+GCC16 C023,VALID AWAL,6600 pack,Masuk BJ pita CK4C WIP
+Total packing,VALID AWAL,51100 pack,Normal bukan lembur
+Upah verpack,VALID AWAL,Rp8951000,Normal
+Stok GCC99 isi 12,VALID AWAL,100000 pack,Stok akhir
+Stok C023,VALID AWAL,7380 pack,Stok akhir
+PITA99,VALID AWAL,204200 keping,Saldo akhir
+PITA16,VALID AWAL,195300 keping,Saldo akhir
+WIP,VALID AWAL,357100 batang,Masih positif
+DO Piutang,TIDAK BERUBAH,0,Belum ada SJ
