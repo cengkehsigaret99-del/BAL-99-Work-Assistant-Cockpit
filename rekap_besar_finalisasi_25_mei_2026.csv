@@ -1,0 +1,11 @@
+area,tanggal,batang,pack,upah,status,catatan
+Giling 25 Mei,2026-05-25,580400,48366.67,23216000,VALID AWAL,Masuk browse_giling dan WIP
+Packing 25 Mei,2026-05-25,639600,51100,8951000,VALID AWAL,Masuk barang jadi pita CK4C dan WIP
+Giling Kumulatif,2026-05-25,10157300,829427.09,417697200,VALID AWAL,Total sampai 25 Mei
+Packing Kumulatif,2026-05-25,9800200,712750,138881500,VALID AWAL,Total sampai 25 Mei
+WIP Kumulatif,2026-05-25,357100,29758.33,0,VALID AWAL,WIP positif
+Barang Jadi GCC99 12,2026-05-25,0,100000,0,VALID AWAL,Stok akhir
+Barang Jadi C023,2026-05-25,0,7380,0,VALID AWAL,Stok akhir terbatas
+PITA99,2026-05-25,0,204200,0,VALID AWAL,Saldo akhir keping
+PITA16,2026-05-25,0,195300,0,VALID AWAL,Saldo akhir keping
+PITA Refill,2026-05-25,0,9970,0,VALID AWAL,Saldo tetap
