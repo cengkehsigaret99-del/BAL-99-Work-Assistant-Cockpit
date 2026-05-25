@@ -1,0 +1,10 @@
+area,status,jumlah_baris,catatan
+Giling Detail,VALID AWAL,834,Baris nonzero 22-25 Mei berhasil diekstrak
+Verpack Detail,VALID AWAL,410,Baris nonzero 22-25 Mei berhasil diekstrak
+Master Karyawan,VALID AWAL,291,Daftar unik ID karyawan dari pilot
+Scorecard,PILOT,545,Belum final; harus direview user
+Total Giling Batang,COCOK,2235700,22 567800 + 23 599000 + 24 lembur 488500 + 25 580400
+Total Giling Upah,COCOK,99198000,Rp99.198.000
+Total Verpack Pack,COCOK,170400,22 33300 + 23 31000 + 24 55000 + 25 51100
+Total Verpack Upah,COCOK,36039000,Rp36.039.000
+Nama sama beda ID,PERLU REVIEW,18,Nama yang muncul dengan lebih dari satu ID perlu cek alias
