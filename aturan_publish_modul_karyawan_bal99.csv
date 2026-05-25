@@ -1,0 +1,10 @@
+syarat,status_wajib,keputusan
+Data pilot sudah diekstrak,WAJIB,Jangan publish jika belum ada data pilot
+Nama dobel sudah dirapikan,WAJIB,Jangan publish jika masih ada nama pecah
+Giling verpack sudah terpisah,WAJIB,Jangan campur bagian
+Normal lembur sudah terpisah,WAJIB,Jangan campur status kerja
+Output dan upah cocok,WAJIB,Jangan hitung score jika rumus selisih
+Ranking sudah direview user,WAJIB,Jangan publish ranking mentah
+Bahasa rekomendasi aman,WAJIB,Hanya pakai bahasa pembinaan
+User setuju hasil pilot,WAJIB,Baru lanjut full Mei
+Full Mei sudah lolos audit,WAJIB,Baru sambung ke menu utama
