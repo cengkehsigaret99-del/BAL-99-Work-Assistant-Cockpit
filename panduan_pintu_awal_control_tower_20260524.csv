@@ -1,0 +1,9 @@
+urutan,halaman,fungsi,status_pakai,catatan
+1,beranda-control-tower.html,Pintu awal resmi sementara,WAJIB AWAL,Untuk mengurangi bingung dan loading berat
+2,ringkasan-hari-ini.html,Baca angka inti produksi stok pita piutang,RINGKASAN,Data statis posisi kerja 24 Mei 2026
+3,status-operasional.html,Baca status risiko dan keputusan per modul,KONTROL,Data statis posisi kerja 24 Mei 2026
+4,penilaian-kondisi-pabrik.html,Baca skor kesehatan saran dan peringatan,MANAJERIAL,Bisa dipakai untuk cetak PDF
+5,index.html,Masuk detail aplikasi lama,DETAIL,Jangan mulai dari sini jika hanya butuh ringkasan
+6,dashboard-ringkas.html,Dashboard detail lama,ARSIP DETAIL,Dipakai bila perlu cek data lebih rinci
+7,status-hari-ini.html,Status detail lama,ARSIP DETAIL,Dipakai bila perlu cek file status lengkap
+8,Data transaksi,Produksi stok pita CK4C DO piutang HPP,TIDAK DIUBAH,Panduan ini hanya navigasi
