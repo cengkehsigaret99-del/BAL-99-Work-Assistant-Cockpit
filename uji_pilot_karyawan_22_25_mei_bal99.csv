@@ -1,0 +1,6 @@
+area,periode,tujuan,status,catatan
+Pilot Awal,2026-05-22 s/d 2026-05-25,Menguji struktur sebelum seluruh bulan Mei,KONSEP,Tidak untuk keputusan final
+Giling,2026-05-22 s/d 2026-05-25,Menguji output batang per nama,KONSEP,Pisah normal dan lembur
+Verpack,2026-05-22 s/d 2026-05-25,Menguji output pack per nama,KONSEP,Pisah produk dan status kerja
+Scorecard,2026-05-22 s/d 2026-05-25,Menguji skor produktivitas awal,KONSEP,Belum memasukkan kualitas penuh
+Review,Setelah data pilot jadi,User cek kewajaran hasil,KONSEP,Baru lanjut full Mei jika disetujui
