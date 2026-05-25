@@ -1,0 +1,6 @@
+tanggal,area,status,keputusan
+2026-05-24,Hirarki Sumber Data,FINAL SEMENTARA,CSV menjadi sumber angka utama
+2026-05-24,Status Harian,FINAL SEMENTARA,STATUS_HARI_INI menjadi sumber status risiko
+2026-05-24,Beranda dan Ringkasan,FINAL SEMENTARA,Berfungsi sebagai pintu baca bukan sumber angka final
+2026-05-24,Penilaian Pabrik,FINAL SEMENTARA,Berfungsi sebagai ruang keputusan dan saran manajerial
+2026-05-24,Jika Ada Beda Angka,FINAL SEMENTARA,Ikuti CSV sumber dan cek dokumen asal
