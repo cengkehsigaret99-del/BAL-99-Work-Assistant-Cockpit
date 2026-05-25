@@ -1,10 +1,11 @@
 area,status,keputusan,catatan
 Nama Modul,DISETUJUI KONSEP,Kinerja dan Pembinaan Karyawan,Bukan alat menghukum
-Data Asli,BELUM MASUK,Menunggu persetujuan user,Tidak ada nama karyawan asli
-Menu Utama,BELUM DISAMBUNG,Tunggu review konsep,Agar aplikasi utama tidak berubah dulu
-Template Data,SIAP,Master giling verpack scorecard sudah dibuat,Masih contoh struktur
+Data Asli Pilot,SUDAH MASUK PILOT,Data 22-25 Mei sudah diekstrak sebagai pilot,Belum final dan belum publish menu utama
+Menu Utama,BELUM DISAMBUNG,Tunggu review alias dan persetujuan user,Agar aplikasi utama tidak menampilkan ranking sebelum valid
+Template Data,SIAP,Master giling verpack scorecard sudah dibuat,Struktur siap
 Aturan Scoring,SIAP,Produktivitas konsistensi kehadiran data kerapian data,Kualitas mandor aktif jika data tersedia
 Kategori,SIAP,Unggul Stabil Baik Stabil Perlu Dipantau Perlu Dibina Evaluasi Khusus,Bahasa pembinaan
 Validasi Data,SIAP,Cek nama tanggal bagian status output tarif upah,Mencegah salah nilai
-Pilot 22-25 Mei,SIAP KONSEP,Uji kecil sebelum full Mei,Belum dieksekusi
-Keputusan Saat Ini,KONSEP SIAP REVIEW,Boleh lanjut ekstraksi data jika user setuju,Belum update aplikasi utama
+Pilot 22-25 Mei,PILOT VALID AWAL,Total giling verpack dan upah cocok,Masih perlu review alias karyawan
+Review Alias,PERLU REVIEW,18 nama terdeteksi muncul dengan lebih dari satu ID,Jangan publish ranking sebelum alias jelas
+Keputusan Saat Ini,PILOT VALID AWAL / REVIEW ALIAS,Lanjut review alias sebelum full Mei,Belum update menu utama
