@@ -1,0 +1,9 @@
+tahap,nama_tahap,tujuan,status_sekarang,aksi_lanjut
+1,Pondasi Konsep,Menetapkan prinsip pembinaan bukan hukuman,SELESAI,Kunci konsep
+2,Template Data,Menyiapkan master karyawan produktivitas giling verpack dan scorecard,SELESAI,Tunggu data asli
+3,Aturan Scoring,Menetapkan bobot dan kategori,SELESAI,Uji dengan data contoh kecil
+4,Validasi Data,Mencegah nama dobel tarif salah dan status kosong,SELESAI,Pakai sebelum import data asli
+5,Ekstraksi Data Asli,Mengambil nama dan output dari laporan giling verpack,BELUM MULAI,Menunggu persetujuan user
+6,Isi CSV Produktivitas,Mengisi data per nama tanggal bagian merek dan upah,BELUM MULAI,Setelah ekstraksi valid
+7,Hitung Scorecard,Membuat skor periode dan rekomendasi pembinaan,BELUM MULAI,Setelah CSV produktivitas valid
+8,Sambung ke Aplikasi,Menambahkan menu Kinerja dan Pembinaan Karyawan,BELUM MULAI,Setelah user setuju hasil data awal
