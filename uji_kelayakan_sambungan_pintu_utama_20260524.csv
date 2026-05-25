@@ -1,0 +1,8 @@
+area,status,catatan,keputusan
+Ringkasan Hari Ini,PASS,Halaman ringan sudah tersedia dan bisa dibuka langsung,Layak dipakai sebagai pintu baca awal
+Status Operasional,PASS,Halaman ringan sudah tersedia dan bisa dibuka langsung,Layak dipakai sebagai status kerja utama
+Penilaian Kesehatan Pabrik,PASS,Halaman manajerial sudah tersedia,Layak untuk skor risiko dan keputusan
+Header Aplikasi,PARTIAL,Header sudah diarahkan oleh ui-language-cleanup ke halaman ringan,Layak sementara
+Sidebar Aplikasi,BELUM FINAL,Tombol khusus Pintu Utama belum stabil tersambung ke sidebar karena update patch utama ditolak,Jangan paksa overwrite script besar
+Data Angka,PASS,Tidak ada perubahan data produksi stok pita CK4C DO piutang HPP,Data tetap aman
+Keputusan Praktis,LAYAK TERBATAS,Gunakan halaman ringan melalui header atau link langsung sambil menunggu patch sidebar kecil yang aman,Pakai tanpa mengubah data
