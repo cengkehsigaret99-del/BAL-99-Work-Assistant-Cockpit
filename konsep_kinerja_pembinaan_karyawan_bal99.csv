@@ -1,0 +1,14 @@
+area,konsep,keputusan
+Nama Modul,Kinerja dan Pembinaan Karyawan,Modul dibuat untuk membaca produktivitas stabilitas pembinaan dan potensi insentif bukan menghukum
+Status Awal,Scorecard Produktivitas Awal,Belum menjadi vonis final karyawan
+Prinsip Data,Angka membaca gejala manajer membaca sebab,Keputusan harus mempertimbangkan kondisi lapangan
+Pemisahan Wajib,Giling dan Verpack dipisah,Agar penilaian adil
+Pemisahan Status,Normal dan Lembur dipisah,Agar output tidak bias
+Pemisahan Produk,Merek dan isi batang dipisah,Agar tingkat kesulitan tidak disamakan
+Filter Wajib,Tanggal awal dan tanggal akhir,Bisa membaca periode bebas
+Output Aman,Produktivitas Konsistensi Kehadiran Data Kerapian Data Rekomendasi Pembinaan,Skor dipakai untuk pembinaan dan keputusan awal
+Larangan,Jangan memakai istilah malas jelek lambat,Gunakan perlu dibina perlu dipantau evaluasi khusus
+Tahap 1,Data produktivitas per nama karyawan,Giling dan Verpack
+Tahap 2,Scorecard periode,Ranking kategori dan rekomendasi
+Tahap 3,Insentif sehat,Kandidat insentif berbasis periode bukan harian saja
+Tahap 4,Kualitas absensi mandor,Naik ke penilaian lebih matang jika data tersedia
