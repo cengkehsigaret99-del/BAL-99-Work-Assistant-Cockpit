@@ -1,0 +1,33 @@
+AUDIT SWOT OBJEKTIF V4
+
+Status:
+Digunakan sebagai panduan update bertahap untuk bal99-swot-overview.html.
+
+Fokus bahasa:
+- umum
+- objektif
+- berbasis data
+- tidak promosi
+- tidak filosofis
+- mudah dibaca owner, admin, dan manajemen
+
+Aturan utama:
+1. Pakai istilah estimasi, bukan prediksi pasti.
+2. Pakai istilah rujukan awal jika data masih valid awal.
+3. Pakai istilah penilaian personal, bukan ranking personal.
+4. Pakai istilah perlu pemantauan, bukan wajib kontrol.
+5. Pakai istilah produk dengan kontribusi volume utama, bukan produk volume utama.
+6. Hindari kalimat yang memberi kesan vonis final.
+7. Semua angka tetap dipertahankan sesuai data.
+
+Bagian yang harus konsisten:
+- Header
+- Kartu ringkasan
+- Estimasi kapasitas produksi
+- Tabel interpretasi
+- SWOT
+- Prioritas tindak lanjut
+- Kesimpulan manajemen
+
+Catatan desain:
+Desain tetap tenang, formal, terbaca di HP, dan tidak mengubah data transaksi.
