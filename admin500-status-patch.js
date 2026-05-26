@@ -26,14 +26,14 @@
   function addStyle(){
     if (document.getElementById('admin500-status-style')) return;
     var st = document.createElement('style'); st.id = 'admin500-status-style';
-    st.textContent = '.admin500-calm-strip{margin:0 0 14px;border:1px solid #bee8d4;border-left:7px solid #0f7a4d;background:#f0fbf7;color:#0b4d34;border-radius:16px;padding:12px 14px;line-height:1.5;box-shadow:0 10px 24px rgba(7,27,53,.06)}.admin500-calm-strip b{color:#064e3b}.top-meta a:first-of-type{background:#fff8e6;border:1px solid #f6ca60;border-radius:10px;padding:8px 10px;color:#071b35!important}.pemasaran-bal99-shortcut{display:block;padding:11px 12px;border:1px solid #92d6b3;border-radius:12px;color:#052e1a!important;background:#ecfdf5!important;font-weight:1000;text-decoration:none;font-size:15px}.nav-btn.pemasaran-bal99-extra{background:#ecfdf5!important;color:#064e3b!important;border-color:#86efac!important;font-weight:1000!important}.mobile-favs button.pemasaran-bal99-extra{background:#ecfdf5!important;color:#064e3b!important;border-color:#86efac!important}';
+    st.textContent = '.admin500-calm-strip{margin:0 0 14px;border:1px solid #bee8d4;border-left:7px solid #0f7a4d;background:#f0fbf7;color:#0b4d34;border-radius:16px;padding:12px 14px;line-height:1.5;box-shadow:0 10px 24px rgba(7,27,53,.06)}.admin500-calm-strip b{color:#064e3b}.top-meta a:first-of-type{background:#fff8e6;border:1px solid #f6ca60;border-radius:10px;padding:8px 10px;color:#071b35!important}.pemasaran-bal99-shortcut,.karyawan-produktivitas-shortcut{display:block;padding:11px 12px;border:1px solid #92d6b3;border-radius:12px;color:#052e1a!important;background:#ecfdf5!important;font-weight:1000;text-decoration:none;font-size:15px}.karyawan-produktivitas-shortcut{background:#eff6ff!important;border-color:#93c5fd!important;color:#1e3a8a!important}.nav-btn.pemasaran-bal99-extra,.nav-btn.karyawan-produktivitas-extra{background:#ecfdf5!important;color:#064e3b!important;border-color:#86efac!important;font-weight:1000!important}.nav-btn.karyawan-produktivitas-extra{background:#eff6ff!important;color:#1e3a8a!important;border-color:#93c5fd!important}.mobile-favs button.pemasaran-bal99-extra{background:#ecfdf5!important;color:#064e3b!important;border-color:#86efac!important}.mobile-favs button.karyawan-produktivitas-extra{background:#eff6ff!important;color:#1e3a8a!important;border-color:#93c5fd!important}';
     document.head.appendChild(st);
   }
 
   function addStrip(){
     var app = document.getElementById('app'); if (!app || app.querySelector('.admin500-calm-strip')) return;
     var div = document.createElement('div'); div.className = 'admin500-calm-strip';
-    div.innerHTML = '<b>Admin Profesional 500 aktif:</b> baca status dulu, cek dobel dipisahkan, angka final hanya setelah sumber dikunci. Produksi/cukai sudah membaca 21 Mei; pasar/piutang dibaca sesuai status validasi. <br><b>Kontrol Distribusi BAL-99:</b> menu koreksi v2 tersedia untuk membaca distributor, DO, stok pasar, RO, piutang, dan keputusan supply bertahap.';
+    div.innerHTML = '<b>Admin Profesional 500 aktif:</b> baca status dulu, cek dobel dipisahkan, angka final hanya setelah sumber dikunci. Produksi/cukai sudah membaca 21 Mei; pasar/piutang dibaca sesuai status validasi. <br><b>Kontrol Distribusi BAL-99:</b> tersedia untuk distributor, DO, stok pasar, RO, piutang. <br><b>Produktivitas Karyawan:</b> tersedia untuk ranking giling dan verpack dari sumber Excel.';
     app.prepend(div);
   }
 
@@ -52,7 +52,22 @@
     if (fav && !fav.querySelector('.pemasaran-bal99-extra')) { var mb = document.createElement('button'); mb.className = 'pemasaran-bal99-extra'; mb.textContent = 'Kontrol Distribusi BAL-99'; mb.onclick = function(){ location.href = url; }; fav.insertBefore(mb, fav.children[2] || null); }
   }
 
-  function run(){ patchTitles(); addStyle(); replaceText(document.body); addStrip(); addPemasaranShortcut(); }
+  function addKaryawanShortcut(){
+    if (document.querySelector('a[href^="produktivitas-karyawan.html"]')) return;
+    var url = 'produktivitas-karyawan.html?v=pk1';
+    var topGrid = document.querySelector('.top-meta div[style*="display:grid"]');
+    if (topGrid) { var a = document.createElement('a'); a.href = url; a.target = '_blank'; a.className = 'karyawan-produktivitas-shortcut'; a.textContent = '★ Produktivitas Karyawan — Giling / Verpack'; topGrid.insertBefore(a, topGrid.children[3] || null); }
+    var nav = document.getElementById('nav');
+    if (nav && !nav.querySelector('.karyawan-produktivitas-extra')) {
+      var g = Array.from(nav.querySelectorAll('.group')).find(function(x){ return /Produksi|Manufaktur|Pabrik/i.test(x.textContent); }) || nav;
+      var b = document.createElement('button'); b.className = 'nav-btn karyawan-produktivitas-extra'; b.innerHTML = '<span class="dot"></span>Produktivitas Karyawan'; b.onclick = function(){ location.href = url; };
+      g.appendChild(b);
+    }
+    var fav = document.querySelector('.mobile-favs');
+    if (fav && !fav.querySelector('.karyawan-produktivitas-extra')) { var mb = document.createElement('button'); mb.className = 'karyawan-produktivitas-extra'; mb.textContent = 'Produktivitas Karyawan'; mb.onclick = function(){ location.href = url; }; fav.insertBefore(mb, fav.children[3] || null); }
+  }
+
+  function run(){ patchTitles(); addStyle(); replaceText(document.body); addStrip(); addPemasaranShortcut(); addKaryawanShortcut(); }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run); else run();
   var obs = new MutationObserver(function(){ run(); }); if (document.body) obs.observe(document.body,{childList:true,subtree:true});
 })();
