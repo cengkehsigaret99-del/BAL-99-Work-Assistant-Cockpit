@@ -1,0 +1,36 @@
+/* BAL-99 Subtle Motion System
+   Tujuan: aplikasi terasa hidup, premium, dan tetap tenang.
+   Prinsip: ringan, halus, tidak mengganggu, dan aman untuk HP.
+*/
+html{scroll-behavior:smooth;}
+@keyframes balFadeUp{
+  from{opacity:0;transform:translateY(12px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes balSoftGlow{
+  0%,100%{box-shadow:0 8px 18px rgba(214,166,66,.10)}
+  50%{box-shadow:0 10px 26px rgba(214,166,66,.26)}
+}
+@keyframes balPulse{
+  0%,100%{opacity:1}
+  50%{opacity:.72}
+}
+.hero{animation:balFadeUp .55s ease-out both;}
+.panel,.card,.note,.big a,.mini a,.flow a{animation:balFadeUp .62s ease-out both;}
+.panel:nth-of-type(1),.card:nth-child(1),.big a:nth-child(1),.mini a:nth-child(1),.flow a:nth-child(1){animation-delay:.03s;}
+.panel:nth-of-type(2),.card:nth-child(2),.big a:nth-child(2),.mini a:nth-child(2),.flow a:nth-child(2){animation-delay:.07s;}
+.panel:nth-of-type(3),.card:nth-child(3),.big a:nth-child(3),.mini a:nth-child(3),.flow a:nth-child(3){animation-delay:.11s;}
+.big a:nth-child(4),.mini a:nth-child(4),.flow a:nth-child(4){animation-delay:.15s;}
+.mini a:nth-child(5),.flow a:nth-child(5){animation-delay:.19s;}
+.mini a:nth-child(6),.flow a:nth-child(6){animation-delay:.23s;}
+.btn.main,.btn.gold,a.btn.gold{animation:balSoftGlow 3.6s ease-in-out infinite;}
+.status{animation:balPulse 2.2s ease-in-out infinite;}
+.btn,.big a,.mini a,.flow a,.card{transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease,background .18s ease;}
+.btn:hover,.btn:focus,.big a:hover,.big a:focus,.mini a:hover,.mini a:focus,.flow a:hover,.flow a:focus,.card:hover,.card:focus{transform:translateY(-2px);}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{animation:none!important;transition:none!important;}
+}
+@media print{
+  *,*::before,*::after{animation:none!important;transition:none!important;}
+}
