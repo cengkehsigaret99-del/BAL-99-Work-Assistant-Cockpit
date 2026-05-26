@@ -1,6 +1,6 @@
 kelompok,urutan,nama_menu,tujuan,halaman,status,prioritas,catatan
-Ringkasan,0,Dashboard Harian Dinamis V2,Dashboard kerja harian mobile-friendly dengan filter tanggal untuk giling verpack stok DO dan pita,bal99-pusat-kerja-harian-dinamis-v2.html,PRIORITAS,1,Menu kerja harian utama dengan hitungan otomatis dari CSV dan tampilan HP lebih rapi
-Ringkasan,1,Pusat Kerja Harian,Pintu navigasi harian untuk giling verpack stok DO dan pita,bal99-pusat-kerja-harian.html,PRIORITAS,1,Pendamping dashboard dinamis dan akses CSV detail
+Ringkasan,0,Dashboard Harian Dinamis V3,Dashboard kerja harian mode gelap dengan filter tanggal untuk giling verpack stok DO dan pita,bal99-pusat-kerja-harian-dinamis-v3.html,PRIORITAS,1,Menu kerja harian utama dengan hitungan otomatis dari CSV tampilan HP dan mode gelap
+Ringkasan,1,Pusat Kerja Harian,Pintu navigasi harian untuk giling verpack stok DO dan pita,bal99-pusat-kerja-harian.html,PRIORITAS,1,Pendamping dashboard dinamis dan akses tabel detail
 Ringkasan,2,Dashboard Ringkas,Baca kondisi utama produksi stok DO pembayaran piutang,dashboard-ringkas.html,PRIORITAS,1,Pintu baca utama
 Ringkasan,3,Status Hari Ini,Pintu baca cepat harian,status-hari-ini.html,PRIORITAS,1,Untuk admin dan owner
 Ringkasan,4,Executive Navigation Hub,Pintu navigasi executive,executive-navigation-hub.html,AKTIF,1,Jembatan sebelum index utama diubah
@@ -17,9 +17,10 @@ SDM Produktivitas,2,Template Penilaian Borongan,Template input CSV,template_peni
 SDM Produktivitas,3,CSV Contoh Uji,Data simulasi scorecard,contoh_penilaian_karyawan_borongan_bal99.csv,SIAP,2,Untuk testing report
 Report Cetak,1,Print Report QA Checklist,Uji PDF HP dan laptop,print-report-qa-checklist.html,AKTIF,1,Standar uji cetak report
 Report Cetak,2,Kelayakan Pemakaian,Uji alur HP laptop dan navigasi utama,bal99-kelayakan-pemakaian.html,AKTIF,1,Checklist sebelum desain dikunci final
-Report Cetak,3,Dashboard Harian V2 QA,Uji kelayakan HP laptop untuk Dashboard Harian Dinamis V2,bal99-dashboard-harian-v2-qa.html,AKTIF,1,Checklist uji sebelum klaim skor 10
+Report Cetak,3,Dashboard Harian V2 QA,Uji kelayakan HP laptop untuk Dashboard Harian Dinamis,bal99-dashboard-harian-v2-qa.html,AKTIF,1,Checklist uji sebelum klaim skor 10
 Report Cetak,4,Evaluasi Final Desain,Evaluasi final sementara desain navigasi mobile dan print,bal99-evaluasi-final-desain.html,AKTIF,1,Dokumen visual keputusan desain final sementara
 Report Cetak,5,Standar Visual BAL-99,Standar warna tombol card tabel dan navigasi premium BAL-99,bal99-visual-standard.html,AKTIF,1,Acuan desain resmi sebelum menambah atau mengubah halaman
 Sistem,1,Index Lama,Fallback semua modul,index.html,BACKUP,3,Jangan dihapus
-Sistem,2,Dashboard Harian Dinamis V1,Backup dashboard kerja harian versi awal,bal99-pusat-kerja-harian-dinamis.html,BACKUP,3,Backup sebelum V2 mobile polish
-Sistem,3,Audit Desain Navigasi,Arsip keputusan desain,BAL99_DESIGN_NAVIGATION_PRINT_AUDIT_2026-05-24.md,ARSIP,3,Dokumen audit
+Sistem,2,Dashboard Harian Dinamis V2,Backup dashboard kerja harian versi sebelum mode gelap V3,bal99-pusat-kerja-harian-dinamis-v2.html,BACKUP,3,Backup sebelum V3 mode gelap
+Sistem,3,Dashboard Harian Dinamis V1,Backup dashboard kerja harian versi awal,bal99-pusat-kerja-harian-dinamis.html,BACKUP,3,Backup sebelum V2 mobile polish
+Sistem,4,Audit Desain Navigasi,Arsip keputusan desain,BAL99_DESIGN_NAVIGATION_PRINT_AUDIT_2026-05-24.md,ARSIP,3,Dokumen audit
