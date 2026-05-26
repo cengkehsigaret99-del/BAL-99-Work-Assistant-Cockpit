@@ -1,0 +1,36 @@
+SOP MANDOR - INPUT INDIVIDU BORONGAN
+
+Tujuan:
+Mengubah data Tim Verpack Mei menjadi data individu tanpa mengarang angka dan tanpa menurunkan keadilan sistem.
+
+Aturan utama:
+1. Catat hanya hasil yang benar-benar diketahui.
+2. Jangan membagi rata hasil tim jika pembagian per orang tidak jelas.
+3. Jangan membuat ranking individu dari data tim.
+4. Rijek dan rework harus dicatat apa adanya.
+5. Kendala bahan, alat, instruksi, atau lembur harus ditulis sebagai kendala sistem.
+
+Kolom wajib:
+- tanggal kerja
+- mandor
+- bagian
+- nama karyawan
+- status hadir
+- merek
+- status normal atau lembur
+- output per orang
+- rijek per orang
+- rework per orang
+- kendala harian
+- catatan mandor
+
+Cara membaca:
+Output valid = output per orang - rijek per orang - rework per orang.
+
+Keputusan:
+- Data lengkap boleh masuk ranking individu.
+- Data belum lengkap hanya untuk catatan pembinaan.
+- Data tim tetap untuk membaca sistem, bukan menilai orang.
+
+Kalimat mandor:
+Kita catat agar kerja lebih adil. Yang rapi dan stabil terlihat datanya. Kalau ada kendala bahan atau alat, itu juga dicatat supaya tidak semua dianggap salah orang.
