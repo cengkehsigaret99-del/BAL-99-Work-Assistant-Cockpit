@@ -1,0 +1,12 @@
+jenis_sumber,efek_stock,boleh_masuk_barang_jadi,boleh_mengurangi_barang_jadi,boleh_masuk_piutang,catatan
+VERPACK_MASUK,DEBET,YA,TIDAK,TIDAK,Hasil verpack resmi menambah barang jadi dan menjadi dasar CK4C/pemakaian pita
+SJ_KELUAR,KREDIT,TIDAK,YA,YA,Surat jalan terkirim mengurangi barang jadi dan dapat menjadi piutang jika bukan sample/TUD
+DO_TERKIRIM,KREDIT,TIDAK,YA,YA,DO terkirim mengurangi barang jadi jika status kirim valid
+SAMPLE_TUD,KREDIT,TIDAK,YA,TIDAK,Sample/TUD mengurangi stok fisik tetapi tidak menjadi piutang
+GILING,WIP,TIDAK,TIDAK,TIDAK,Giling masih barang dalam proses dan tidak boleh langsung menambah barang jadi
+PO,REFERENSI,TIDAK,TIDAK,TIDAK,PO hanya rencana permintaan; tidak mengubah stock fisik
+PITA_CUKAI,REFERENSI,TIDAK,TIDAK,TIDAK,Pita cukai bukan barang jadi; hanya kontrol pemakaian cukai
+OPNAME_PLUS,ADJUSTMENT_PLUS,YA,TIDAK,TIDAK,Koreksi fisik plus setelah stock opname
+OPNAME_MINUS,ADJUSTMENT_MINUS,TIDAK,YA,TIDAK,Koreksi fisik minus setelah stock opname
+RETUR_BAIK,DEBET,YA,TIDAK,TIDAK,Retur barang baik dapat menambah stock barang jadi
+RETUR_RUSAK,ADJUSTMENT_MINUS,TIDAK,YA,TIDAK,Retur rusak/rijek mengurangi stock layak jual
