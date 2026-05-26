@@ -1,3 +1,5 @@
-merk_sku,pack,karton,status,catatan
-New Ambree Biru / C-031,19950,33.25,VALID AWAL,Basis 600 pack per karton
-Gedung Cengkeh 16 New / C-023,39330,65.55,VALID AWAL,Basis 600 pack per karton
+tanggal_closing,merk_sku,pack,karton,status,catatan
+2026-05-24,GCC 99 isi 12 / Coklat 12,55500,55.50,VALID AWAL,"Produksi Minggu 24 Mei masuk: tambahan verpack lembur 55000 pack; basis 1000 pack per karton"
+2026-05-24,New Ambree Biru / C-031,19998,33.33,VALID AWAL,"Update mengikuti status barang jadi 24 Mei; basis 600 pack per karton"
+2026-05-24,Gedung Cengkeh 16 New / C-023,780,1.30,VALID AWAL,"Update mengikuti status barang jadi 24 Mei; basis 600 pack per karton"
+2026-05-25,Produksi Senin / Belum masuk angka,0,0.00,BELUM TERCATAT,"Data produksi Senin belum ditemukan di repository; perlu update angka verpack resmi"
