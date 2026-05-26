@@ -1,4 +1,5 @@
 kelompok,urutan,nama_menu,tujuan,halaman,status,prioritas,catatan
+Ringkasan,0,Pusat Kerja Harian,Pintu kerja utama untuk giling verpack stok DO dan pita,bal99-pusat-kerja-harian.html,PRIORITAS,1,Menu harian utama agar aplikasi tidak membingungkan
 Ringkasan,1,Dashboard Ringkas,Baca kondisi utama produksi stok DO pembayaran piutang,dashboard-ringkas.html,PRIORITAS,1,Pintu baca utama
 Ringkasan,2,Status Hari Ini,Pintu baca cepat harian,status-hari-ini.html,PRIORITAS,1,Untuk admin dan owner
 Ringkasan,3,Executive Navigation Hub,Pintu navigasi executive,executive-navigation-hub.html,AKTIF,1,Jembatan sebelum index utama diubah
