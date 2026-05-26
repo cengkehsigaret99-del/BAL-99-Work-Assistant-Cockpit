@@ -1,0 +1,29 @@
+NEXT STEP - TIM VERPACK MEI KE INDIVIDU
+
+Status sekarang:
+Data yang tersedia adalah level Tim Verpack Mei.
+Data ini valid untuk membaca sistem, ritme output, status normal/lembur, total pack, dan total upah team.
+
+Belum boleh digunakan untuk ranking personal.
+
+Agar naik ke level individu, mandor perlu menambahkan:
+1. tanggal kerja
+2. nama karyawan aktif
+3. jumlah orang aktif
+4. output per orang
+5. rijek per orang
+6. rework per orang
+7. kendala harian
+8. catatan mandor
+
+Prinsip kalibrasi:
+Data tim untuk membaca sistem.
+Data individu untuk menilai orang.
+Jangan menilai orang dengan data sistem.
+
+Cara kerja:
+1. Import karyawan_borongan_mei_tim_verpack.csv ke Report V2.
+2. Filter 2026-05-02 sampai 2026-05-24.
+3. Baca sebagai Tim Verpack Mei.
+4. Minta mandor melengkapi data orang.
+5. Baru aktifkan ranking individu setelah data orang lengkap.
