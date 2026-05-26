@@ -1,0 +1,17 @@
+AUDIT HALAMAN UTAMA RINGKAS V4
+
+Target: index-rapi-v4.html
+
+Status saat ini:
+- Struktur halaman sudah lebih ringkas.
+- Menu utama sudah lebih objektif.
+- Bahasa sudah berbasis data dan tidak mengubah transaksi.
+- Status pembacaan sudah jelas: Produksi indikatif, Pasar perlu pemantauan, Cukai validasi, SDM bertahap.
+
+Revisi lanjutan yang disarankan:
+- Tambahkan prinsip baca data.
+- Gunakan istilah pemeriksaan data untuk audit.
+- Pertahankan menu lanjutan dalam bagian buka-tutup.
+
+Catatan:
+Index lama tetap aman dan tidak dihapus.
