@@ -1,9 +1,10 @@
 kelompok,urutan,nama_menu,tujuan,halaman,status,prioritas,catatan
-Ringkasan,0,Pusat Kerja Harian,Pintu kerja utama untuk giling verpack stok DO dan pita,bal99-pusat-kerja-harian.html,PRIORITAS,1,Menu harian utama agar aplikasi tidak membingungkan
-Ringkasan,1,Dashboard Ringkas,Baca kondisi utama produksi stok DO pembayaran piutang,dashboard-ringkas.html,PRIORITAS,1,Pintu baca utama
-Ringkasan,2,Status Hari Ini,Pintu baca cepat harian,status-hari-ini.html,PRIORITAS,1,Untuk admin dan owner
-Ringkasan,3,Executive Navigation Hub,Pintu navigasi executive,executive-navigation-hub.html,AKTIF,1,Jembatan sebelum index utama diubah
-Ringkasan,4,Executive SWOT Overview,Analisis SWOT keseluruhan sistem BAL-99,bal99-swot-overview.html,AKTIF,1,Layar strategis utama untuk owner dan admin
+Ringkasan,0,Pusat Kerja Harian Dinamis,Dashboard kerja harian dengan filter tanggal untuk giling verpack stok DO dan pita,bal99-pusat-kerja-harian-dinamis.html,PRIORITAS,1,Menu kerja harian utama dengan hitungan otomatis dari CSV
+Ringkasan,1,Pusat Kerja Harian,Pintu navigasi harian untuk giling verpack stok DO dan pita,bal99-pusat-kerja-harian.html,PRIORITAS,1,Pendamping dashboard dinamis dan akses CSV detail
+Ringkasan,2,Dashboard Ringkas,Baca kondisi utama produksi stok DO pembayaran piutang,dashboard-ringkas.html,PRIORITAS,1,Pintu baca utama
+Ringkasan,3,Status Hari Ini,Pintu baca cepat harian,status-hari-ini.html,PRIORITAS,1,Untuk admin dan owner
+Ringkasan,4,Executive Navigation Hub,Pintu navigasi executive,executive-navigation-hub.html,AKTIF,1,Jembatan sebelum index utama diubah
+Ringkasan,5,Executive SWOT Overview,Analisis SWOT keseluruhan sistem BAL-99,bal99-swot-overview.html,AKTIF,1,Layar strategis utama untuk owner dan admin
 Produksi Gudang,1,WIP Giling vs Verpack,Baca gap produksi,wip-giling-vs-verpack-22-mei.html,AKTIF,2,Kontrol alur giling ke verpack
 Produksi Gudang,2,Kontrol Upah Produksi,Upah giling dan verpack,kontrol-upah-produksi.html,AKTIF,2,Pendukung SDM borongan
 Pita Cukai,1,Dashboard Cukai Ringkas,Kontrol pita cukai dan CK4C,dashboard-cukai-ringkas.html,AKTIF,1,Prioritas cukai
