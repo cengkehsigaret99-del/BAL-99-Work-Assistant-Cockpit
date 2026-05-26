@@ -14,5 +14,6 @@ SDM Produktivitas,2,Template Penilaian Borongan,Template input CSV,template_peni
 SDM Produktivitas,3,CSV Contoh Uji,Data simulasi scorecard,contoh_penilaian_karyawan_borongan_bal99.csv,SIAP,2,Untuk testing report
 Report Cetak,1,Print Report QA Checklist,Uji PDF HP dan laptop,print-report-qa-checklist.html,AKTIF,1,Standar uji cetak report
 Report Cetak,2,Kelayakan Pemakaian,Uji alur HP laptop dan navigasi utama,bal99-kelayakan-pemakaian.html,AKTIF,1,Checklist sebelum desain dikunci final
+Report Cetak,3,Evaluasi Final Desain,Evaluasi final sementara desain navigasi mobile dan print,bal99-evaluasi-final-desain.html,AKTIF,1,Dokumen visual keputusan desain final sementara
 Sistem,1,Index Lama,Fallback semua modul,index.html,BACKUP,3,Jangan dihapus
 Sistem,2,Audit Desain Navigasi,Arsip keputusan desain,BAL99_DESIGN_NAVIGATION_PRINT_AUDIT_2026-05-24.md,ARSIP,3,Dokumen audit
