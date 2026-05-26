@@ -1,0 +1,37 @@
+AUDIT READINESS KARYAWAN BORONGAN MEI
+
+Status kesiapan: SIAP DIBACA LEVEL TIM.
+
+Yang sudah valid:
+- pusat kerja tersedia
+- CSV Tim Verpack Mei tersedia
+- ringkasan keputusan tersedia
+- Report V2 tersedia
+- SOP mandor tersedia
+- naskah WA permintaan data individu tersedia
+
+Yang belum valid:
+- ranking individu
+- skor personal final
+- pembagian output per orang
+- rijek per orang
+- rework per orang
+- kendala per orang
+
+Keputusan yang boleh diambil:
+- evaluasi ritme produktivitas tim
+- evaluasi total output
+- evaluasi total upah team
+- evaluasi normal dan lembur
+- meminta data individu ke mandor
+
+Keputusan yang belum boleh diambil:
+- menilai karyawan per orang
+- memberi label bagus atau buruk per orang
+- menjadikan ranking sebagai hukuman
+
+Prinsip:
+Angka harus tajam.
+Sikap harus adil.
+Pembinaan harus tenang.
+Keputusan harus berbasis sebab.
