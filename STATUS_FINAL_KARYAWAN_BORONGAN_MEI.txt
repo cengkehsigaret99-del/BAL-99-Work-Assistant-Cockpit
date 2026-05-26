@@ -1,0 +1,36 @@
+STATUS FINAL KARYAWAN BORONGAN MEI
+
+Pusat kerja:
+mulai_karyawan_borongan_mei.html
+
+Data utama:
+karyawan_borongan_mei_tim_verpack.csv
+
+Ringkasan:
+ringkasan_tim_verpack_mei.txt
+
+Panduan lanjut:
+next_step_tim_verpack_to_individu.txt
+sop_mandor_input_individu_borongan.txt
+kalibrasi_borongan_next_action.txt
+
+Report:
+karyawan-borongan-performance-v2.html
+
+Status data:
+VALID AWAL - LEVEL TIM.
+Belum data individu.
+
+Keputusan:
+Data Tim Verpack Mei dipakai untuk membaca sistem, ritme produktivitas, status normal atau lembur, total output, dan total upah team.
+Belum dipakai untuk ranking personal.
+
+Arah lanjut:
+Lengkapi nama karyawan aktif, jumlah orang aktif, output per orang, rijek per orang, rework per orang, kendala harian, dan catatan mandor.
+
+Prinsip kalibrasi:
+Data tim membaca sistem.
+Data individu menilai orang.
+Skor untuk cermin.
+Ranking untuk pembinaan.
+Evaluasi untuk menjaga sistem.
