@@ -1,0 +1,30 @@
+GATE KEPUTUSAN BORONGAN MEI
+
+STATUS DATA:
+VALID AWAL - LEVEL TIM.
+
+BOLEH DIPUTUSKAN:
+- membaca ritme produktivitas Tim Verpack Mei
+- membaca total output tim
+- membaca total upah team
+- membedakan hari normal dan lembur
+- meminta data individu ke mandor
+
+BELUM BOLEH DIPUTUSKAN:
+- ranking individu
+- label karyawan bagus atau buruk
+- hukuman personal
+- skor personal final
+
+SYARAT NAIK KE INDIVIDU:
+- nama karyawan aktif tersedia
+- output per orang tersedia
+- rijek per orang tersedia
+- rework per orang tersedia
+- kendala harian tersedia
+- catatan mandor tersedia
+
+PRINSIP:
+Data tim membaca sistem.
+Data individu menilai orang.
+Keputusan harus berbasis sebab.
