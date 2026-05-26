@@ -1,0 +1,59 @@
+HANDOVER KARYAWAN BORONGAN MEI BAL-99
+
+Pusat kerja:
+mulai_karyawan_borongan_mei.html
+
+File kerja utama:
+1. ringkasan_tim_verpack_mei.txt
+2. karyawan_borongan_mei_tim_verpack.csv
+3. karyawan-borongan-performance-v2.html
+4. next_step_tim_verpack_to_individu.txt
+5. sop_mandor_input_individu_borongan.txt
+6. wa_minta_data_individu_borongan.txt
+7. audit_readiness_karyawan_borongan_mei.txt
+8. gate_keputusan_borongan_mei.txt
+
+Status data:
+VALID AWAL - LEVEL TIM.
+Data yang tersedia adalah Tim Verpack Mei.
+Belum ada data individu karyawan.
+
+Boleh digunakan untuk:
+- membaca ritme produktivitas tim
+- membaca total output verpack
+- membaca total upah team
+- membedakan normal dan lembur
+- meminta data individu ke mandor
+
+Belum boleh digunakan untuk:
+- ranking personal
+- label karyawan bagus atau buruk
+- hukuman personal
+- skor personal final
+
+Syarat naik ke level individu:
+- nama karyawan aktif tersedia
+- jumlah orang aktif tersedia
+- output per orang tersedia
+- rijek per orang tersedia
+- rework per orang tersedia
+- kendala harian tersedia
+- catatan mandor tersedia
+
+Prinsip kalibrasi tinggi:
+Data tim membaca sistem.
+Data individu menilai orang.
+Skor untuk cermin.
+Ranking untuk pembinaan.
+Evaluasi untuk menjaga sistem.
+Keputusan harus berbasis sebab.
+
+Langkah praktis:
+1. Buka mulai_karyawan_borongan_mei.html.
+2. Baca ringkasan Tim Verpack Mei.
+3. Buka CSV Tim Verpack Mei.
+4. Import ke Report V2.
+5. Filter 2026-05-02 sampai 2026-05-24.
+6. Baca sebagai level tim.
+7. Kirim WA permintaan data individu ke mandor.
+8. Setelah data individu lengkap, baru aktifkan penilaian personal.
