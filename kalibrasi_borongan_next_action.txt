@@ -1,0 +1,21 @@
+KALIBRASI BORONGAN - NEXT ACTION
+
+Pusat kerja: mulai_karyawan_borongan_mei.html
+
+Urutan kerja:
+1. Baca ringkasan Tim Verpack Mei.
+2. Buka CSV Tim Verpack Mei.
+3. Import ke Report V2.
+4. Baca sebagai level tim.
+5. Gunakan SOP mandor untuk naik ke individu.
+
+Keputusan:
+Data tim membaca sistem.
+Data individu menilai orang.
+Jangan membuat ranking personal sebelum data individu lengkap.
+
+Arah kalibrasi:
+Angka harus tajam.
+Sikap harus adil.
+Pembinaan harus tenang.
+Keputusan harus berbasis sebab.
