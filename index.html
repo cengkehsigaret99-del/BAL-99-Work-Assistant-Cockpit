@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="bal-version" content="v17.28_smart_mobile_nav">
+<meta name="bal-version" content="v17.29_karyawan_borongan_final_shortcut">
 <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="expires" content="0">
@@ -22,11 +22,13 @@
     </div>
   </div>
   <div class="top-meta">
-    <b>v17.28 • Smart Mobile Navigation</b>
-    <small>Mulai dari Dashboard Ringkas atau Status Hari Ini agar admin/GPT tidak perlu membaca semua file saat awal audit.</small><br>
+    <b>v17.29 • Karyawan Borongan Final Shortcut</b>
+    <small>Mulai dari Dashboard Ringkas, Status Hari Ini, atau Karyawan Borongan Report V2 agar admin/GPT tidak perlu membaca semua file saat awal audit.</small><br>
     <div style="display:grid;grid-template-columns:1fr;gap:8px;margin-top:10px">
       <a href="dashboard-ringkas.html?v=dashboard_ringkas_v1" target="_blank" style="display:block;padding:11px 12px;border:1px solid #e4c86a;border-radius:12px;color:#111827;background:#ffeeb8;font-weight:1000;text-decoration:none;font-size:15px">★ Dashboard Ringkas — Modul Inti</a>
       <a href="status-hari-ini.html?v=status_hari_ini_v1" target="_blank" style="display:block;padding:11px 12px;border:1px solid #e4c86a;border-radius:12px;color:#111827;background:#fff4cf;font-weight:1000;text-decoration:none;font-size:15px">★ Status Hari Ini — Pintu Baca Ringan</a>
+      <a href="karyawan-borongan-performance-v2.html?v=karyawan_borongan_v2" target="_blank" style="display:block;padding:11px 12px;border:1px solid #e4c86a;border-radius:12px;color:#111827;background:#e8fff1;font-weight:1000;text-decoration:none;font-size:15px">★ Karyawan Borongan Report V2 — Produktivitas & Skor</a>
+      <a href="template_karyawan_produktivitas_bal.csv?v=karyawan_borongan_v2" target="_blank" style="display:block;padding:10px 12px;border:1px solid #e4c86a;border-radius:12px;color:#111827;background:#f3fff8;font-weight:900;text-decoration:none;font-size:15px">★ CSV Karyawan Borongan — Template Input</a>
       <a href="template_validasi_bahan_varian_16.csv?v=template_bahan16_v1" target="_blank" style="display:block;padding:10px 12px;border:1px solid #e4c86a;border-radius:12px;color:#111827;background:#fffdf3;font-weight:900;text-decoration:none;font-size:15px">★ Template Validasi Bahan 16</a>
       <a href="validasi-ambree-etiket-varian-16.html?v=template_bahan16_v1" target="_blank" style="display:block;padding:10px 12px;border:1px solid #e4c86a;border-radius:12px;color:#111827;background:#fffdf3;font-weight:850;text-decoration:none;font-size:15px">Validasi Ambree & Etiket 16</a>
       <a href="mapping-varian-16.html?v=template_bahan16_v1" target="_blank" style="display:block;padding:10px 12px;border:1px solid #e4c86a;border-radius:12px;color:#111827;background:#fffdf3;font-weight:850;text-decoration:none;font-size:15px">Mapping Varian 16</a>
@@ -40,9 +42,10 @@
       <div style="display:grid;grid-template-columns:1fr;gap:7px;margin-top:10px">
         <a href="dashboard-ringkas.html?v=dashboard_ringkas_v1" target="_blank" style="color:#f6ca60;font-weight:1000;text-decoration:none">★ Dashboard Ringkas / Modul Inti</a>
         <a href="status-hari-ini.html?v=status_hari_ini_v1" target="_blank" style="color:#f6ca60;font-weight:1000;text-decoration:none">★ Status Hari Ini / Dashboard Ringkas</a>
+        <a href="karyawan-borongan-performance-v2.html?v=karyawan_borongan_v2" target="_blank" style="color:#86efac;font-weight:1000;text-decoration:none">★ Karyawan Borongan Report V2</a>
+        <a href="template_karyawan_produktivitas_bal.csv?v=karyawan_borongan_v2" target="_blank" style="color:#bbf7d0;font-weight:900;text-decoration:none">↗ CSV Karyawan Borongan</a>
         <a href="STATUS_HARI_INI.csv?v=status_hari_ini_v1" target="_blank" style="color:#f6ca60;font-weight:900;text-decoration:none">↗ CSV Status Hari Ini</a>
         <a href="hpp_mini_template.csv?v=template_bahan16_v1" target="_blank" style="color:#f1d89a;font-weight:800;text-decoration:none">↗ Template CSV HPP Mini</a>
-        <a href="template_karyawan_produktivitas_bal.csv?v=template_bahan16_v1" target="_blank" style="color:#f1d89a;font-weight:800;text-decoration:none">↗ Template CSV Karyawan</a>
         <a href="audit_harian_template.csv?v=template_bahan16_v1" target="_blank" style="color:#f1d89a;font-weight:800;text-decoration:none">↗ Template CSV Audit Harian</a>
         <a href="admin-profesional-500.html?v=admin500_gate" target="_blank" style="color:#f1d89a;font-weight:800;text-decoration:none">★ Admin Profesional 500</a>
         <a href="menu-admin-ringkas.html?v=admin500_gate" target="_blank" style="color:#f1d89a;font-weight:700;text-decoration:none">↗ Menu Admin Ringkas</a>
@@ -57,7 +60,7 @@
     </details>
   </div>
 </header>
-<div class="mobile-quick"><label for="mobilePage">Pilih Menu Kerja</label><select id="mobilePage" onchange="show(this.value)"></select><small>Mode HP: mulai dari Dashboard Ringkas atau Status Hari Ini agar audit BAL-99 lebih ringan.</small><div class="mobile-favs"><button onclick="location.href='dashboard-ringkas.html?v=dashboard_ringkas_v1'">Dashboard Ringkas</button><button onclick="location.href='status-hari-ini.html?v=status_hari_ini_v1'">Status Hari Ini</button><button onclick="location.href='STATUS_HARI_INI.csv?v=status_hari_ini_v1'">CSV Status</button><button onclick="location.href='template_validasi_bahan_varian_16.csv?v=template_bahan16_v1'">Template Bahan 16</button><button onclick="location.href='validasi-ambree-etiket-varian-16.html?v=validasi_bahan16_v1'">Validasi Bahan 16</button><button onclick="location.href='mapping-varian-16.html?v=mapping16_v1'">Mapping 16</button><button onclick="location.href='hpp-new-gcc16-control.html?v=new16_control_v1'">HPP New16</button><button onclick="location.href='margin-cb77-16.html?v=margin_cb77_v1'">Margin CB77</button><button onclick="location.href='hpp-mini-eksekusi-3sku.html?v=hpp_3sku_cb77_susut_v1'">HPP 3 SKU</button><button onclick="location.href='wip-giling-vs-verpack-22-mei.html?v=wip_22mei_v1'">WIP</button><button onclick="show('dashboard')">Dashboard Lama</button><button onclick="show('giling')">Giling</button><button onclick="show('verpack')">Verpack</button><button onclick="show('barang_jadi')">Barang Jadi</button><button onclick="show('ck4c')">CK4C</button><button onclick="show('pita')">Pita</button><button onclick="location.href='audit-harian.html?v=audit_menu_v1'">Audit</button><button onclick="show('sj')">DO/SJ</button><button onclick="show('piutang')">Piutang</button></div></div>
+<div class="mobile-quick"><label for="mobilePage">Pilih Menu Kerja</label><select id="mobilePage" onchange="show(this.value)"></select><small>Mode HP: mulai dari Dashboard Ringkas, Status Hari Ini, atau Karyawan Borongan Report V2 agar audit BAL-99 lebih ringan.</small><div class="mobile-favs"><button onclick="location.href='dashboard-ringkas.html?v=dashboard_ringkas_v1'">Dashboard Ringkas</button><button onclick="location.href='status-hari-ini.html?v=status_hari_ini_v1'">Status Hari Ini</button><button onclick="location.href='karyawan-borongan-performance-v2.html?v=karyawan_borongan_v2'">Karyawan Borongan V2</button><button onclick="location.href='template_karyawan_produktivitas_bal.csv?v=karyawan_borongan_v2'">CSV Karyawan</button><button onclick="location.href='STATUS_HARI_INI.csv?v=status_hari_ini_v1'">CSV Status</button><button onclick="location.href='template_validasi_bahan_varian_16.csv?v=template_bahan16_v1'">Template Bahan 16</button><button onclick="location.href='validasi-ambree-etiket-varian-16.html?v=validasi_bahan16_v1'">Validasi Bahan 16</button><button onclick="location.href='mapping-varian-16.html?v=mapping16_v1'">Mapping 16</button><button onclick="location.href='hpp-new-gcc16-control.html?v=new16_control_v1'">HPP New16</button><button onclick="location.href='margin-cb77-16.html?v=margin_cb77_v1'">Margin CB77</button><button onclick="location.href='hpp-mini-eksekusi-3sku.html?v=hpp_3sku_cb77_susut_v1'">HPP 3 SKU</button><button onclick="location.href='wip-giling-vs-verpack-22-mei.html?v=wip_22mei_v1'">WIP</button><button onclick="show('dashboard')">Dashboard Lama</button><button onclick="show('giling')">Giling</button><button onclick="show('verpack')">Verpack</button><button onclick="show('barang_jadi')">Barang Jadi</button><button onclick="show('ck4c')">CK4C</button><button onclick="show('pita')">Pita</button><button onclick="location.href='audit-harian.html?v=audit_menu_v1'">Audit</button><button onclick="show('sj')">DO/SJ</button><button onclick="show('piutang')">Piutang</button></div></div>
 <div class="layout">
   <aside id="nav" class="sidebar"></aside>
   <main id="app" class="app"></main>
@@ -68,7 +71,7 @@
 <script src="admin500-status-patch.js?v=admin500_status_1"></script>
 <script src="mei22-dashboard-patch.js?v=mei22_merge_final_v1"></script>
 <script src="audit-menu-patch.js?v=audit_menu_v1"></script>
-<script src="hpp-karyawan-menu-patch.js?v=hpp_karyawan_menu_v1"></script>
+<script src="hpp-karyawan-menu-patch.js?v=hpp_karyawan_menu_v2"></script>
 <script src="bal99-mobile-smart-nav.js?v=smartnav1"></script>
 <script src="hpp3sku-menu-patch.js?v=hpp_3sku_v1"></script>
 <script>
