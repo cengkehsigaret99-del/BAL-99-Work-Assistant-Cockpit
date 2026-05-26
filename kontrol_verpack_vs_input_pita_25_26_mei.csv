@@ -1,0 +1,5 @@
+tanggal,merek,verpack_pack,input_pita_keping,selisih_pack_vs_pita,status_kontrol,keputusan_praktis,catatan
+2026-05-25,GCC 99 isi 12,44500,44500,0,SINKRON,Pita keluar sesuai verpack,Aman sebagai CK4C kerja.
+2026-05-25,Gedung Cengkeh 16 New / New GCC 99 isi 16,6600,6600,0,SINKRON,Pita keluar sesuai verpack,Aman sebagai CK4C kerja.
+2026-05-26,GCC 99 isi 12,10000,10000,0,SINKRON,Pita keluar sesuai verpack,Aman sebagai CK4C kerja.
+2026-05-26,Gedung Cengkeh 16 New / New GCC 99 isi 16,6800,0,6800,VERPACK ADA / INPUT PITA BELUM ADA,Jangan kurangi saldo PITA16 sampai masuk Excel Pemakaian Pita,Barang jadi boleh bertambah dari verpack tetapi CK4C/Pita belum mengurangi PITA16.
