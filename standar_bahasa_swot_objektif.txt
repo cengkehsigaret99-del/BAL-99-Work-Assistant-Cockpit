@@ -1,0 +1,29 @@
+STANDAR BAHASA SWOT OBJEKTIF
+
+Tujuan:
+Menjaga seluruh bahasa SWOT agar umum, netral, berbasis data, dan mudah dibaca oleh owner, admin, maupun manajemen.
+
+Prinsip bahasa:
+1. Gunakan istilah laporan, bukan istilah promosi.
+2. Gunakan istilah estimasi, bukan prediksi yang terdengar pasti.
+3. Gunakan istilah rujukan awal, bukan kesimpulan final jika data masih valid awal.
+4. Gunakan istilah penilaian personal, bukan ranking personal jika konteksnya SDM.
+5. Gunakan istilah perlu pemantauan, bukan wajib kontrol jika ingin lebih netral.
+6. Gunakan istilah produk dengan kontribusi volume utama, bukan produk volume utama jika ingin lebih objektif.
+7. Gunakan istilah estimasi indikatif, bukan proyeksi pasti.
+
+Pengganti istilah:
+- Prediksi Kekuatan Produksi dan Pasar -> Estimasi Kapasitas Produksi dan Indikator Pasar
+- Data Kekuatan -> Data / Indikator
+- Makna Manajerial -> Interpretasi
+- Catatan Penggunaan -> Batasan Pembacaan
+- Pack Tercatat -> Jumlah Pack
+- Batangan Tercatat -> Jumlah Batangan
+- Proyeksi 26 Hari Aktif -> Estimasi 26 Hari Aktif
+- Kekuatan Merek -> Kelompok Produk
+- Perlu kontrol -> Perlu pemantauan
+- Produk volume utama -> Produk dengan kontribusi volume utama
+- Ranking personal -> Penilaian personal
+
+Catatan:
+Angka tetap dipertahankan. Yang disesuaikan hanya gaya bahasa, diksi, dan tingkat kepastian kalimat.
