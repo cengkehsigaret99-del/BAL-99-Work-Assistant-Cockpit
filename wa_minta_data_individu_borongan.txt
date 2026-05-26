@@ -1,0 +1,20 @@
+WA MINTA DATA INDIVIDU BORONGAN
+
+Assalamu'alaikum Bu / Pak.
+
+Untuk merapikan data kerja borongan, mohon dibantu mulai dicatat per tanggal:
+
+1. nama karyawan aktif
+2. bagian kerja
+3. merek yang dikerjakan
+4. hasil per orang
+5. rijek jika ada
+6. rework jika ada
+7. kendala bahan, alat, atau instruksi jika ada
+8. catatan singkat mandor
+
+Tujuannya bukan untuk mencari salah, tapi supaya hasil kerja borongan lebih adil terbaca. Yang stabil dan rapi terlihat datanya. Kalau ada kendala bahan atau alat juga ikut tercatat, supaya tidak semua dianggap salah orang.
+
+Data tim tetap untuk membaca sistem. Data individu baru dipakai untuk membaca kinerja orang.
+
+Matur nuwun.
