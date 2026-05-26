@@ -11,11 +11,11 @@ tanggal,jenis_transaksi,sumber,hje,isi,jenis_pita,masuk_lembar,masuk_keping,kelu
 2026-05-23,Pemakaian CK4C,Verpack official C-023 Gedung Cengkeh 16 New,13.775,16,SKT - PITA 16 / New GCC 99 isi 16,0,0,,21000,,201900,SALDO AKHIR 23 MEI,Pemakaian 23 Mei C-023/GCC 16 = 21.000 keping
 2026-05-23,Saldo Akhir CSCK-3,CSCK-3 Koreksi 23 Mei,10.500,12,SKT - PITA REFILL,0,0,0,0,,9970,SALDO TETAP 23 MEI,Tidak ada pemakaian refill pada 23 Mei
 2026-05-24,Pemakaian CK4C,Verpack lembur GCC 99 isi 12,10.325,12,SKT - PITA 99 & 77 / GCC 99 isi 12,0,0,,55000,,248700,SALDO AKHIR 24 MEI,VALID AWAL / LEMBUR 24 MEI - pemakaian pita GCC 99 isi 12 = 55.000 keping
-2026-05-24,Saldo Akhir CSCK-3,CSCK-3 Koreksi 24 Mei,13.775,16,SKT - PITA 16 / New GCC 99 isi 16,0,0,0,0,,201900,SALDO TETAP 24 MEI,Tidak ada pemakaian PITA16 pada update lembur 24 Mei
-2026-05-24,Saldo Akhir CSCK-3,CSCK-3 Koreksi 24 Mei,10.500,12,SKT - PITA REFILL,0,0,0,0,,9970,SALDO TETAP 24 MEI,Tidak ada pemakaian refill pada update lembur 24 Mei
+2026-05-24,Pemakaian CK4C,Excel Pemakaian Pita Mei 2026 - PITA16,13.775,16,SKT - PITA 16 / New GCC 99 isi 16,0,0,,6600,,195300,SALDO AKHIR 24 MEI,VALID AWAL / KOREKSI EXCEL PITA - pemakaian PITA16 24 Mei = 6.600 keping
+2026-05-24,Saldo Akhir CSCK-3,CSCK-3 Koreksi 24 Mei,10.500,12,SKT - PITA REFILL,0,0,0,0,,9970,SALDO TETAP 24 MEI,Tidak ada pemakaian refill pada update 24 Mei
 2026-05-25,Pemakaian CK4C,Verpack normal GCC 99 isi 12,10.325,12,SKT - PITA 99 & 77 / GCC 99 isi 12,0,0,,44500,,204200,SALDO AKHIR 25 MEI,VALID AWAL / PACKING 25 MEI - pemakaian pita GCC 99 isi 12 = 44.500 keping
-2026-05-25,Pemakaian CK4C,Verpack normal C-023/GCC 16,13.775,16,SKT - PITA 16 / New GCC 99 isi 16,0,0,,6600,,195300,SALDO AKHIR 25 MEI,VALID AWAL / PACKING 25 MEI - pemakaian PITA16 = 6.600 keping
-2026-05-25,Saldo Akhir CSCK-3,CSCK-3 Koreksi 25 Mei,10.500,12,SKT - PITA REFILL,0,0,0,0,,9970,SALDO TETAP 25 MEI,Tidak ada pemakaian refill pada update packing 25 Mei
+2026-05-25,Pemakaian CK4C,Excel Pemakaian Pita Mei 2026 - PITA16,13.775,16,SKT - PITA 16 / New GCC 99 isi 16,0,0,,6600,,188700,SALDO AKHIR 25 MEI,VALID AWAL / KOREKSI EXCEL PITA - pemakaian PITA16 25 Mei = 6.600 keping
+2026-05-25,Saldo Akhir CSCK-3,CSCK-3 Koreksi 25 Mei,10.500,12,SKT - PITA REFILL,0,0,0,0,,9970,SALDO TETAP 25 MEI,Tidak ada pemakaian refill pada update 25 Mei
 2026-05-26,Pemakaian CK4C,Verpack normal GCC 99 isi 12,10.325,12,SKT - PITA 99 & 77 / GCC 99 isi 12,0,0,,10000,,194200,SALDO AKHIR 26 MEI,VALID AWAL / PACKING 26 MEI - pemakaian pita GCC 99 isi 12 = 10.000 keping
-2026-05-26,Pemakaian CK4C,Verpack normal C-023/GCC 16,13.775,16,SKT - PITA 16 / New GCC 99 isi 16,0,0,,6800,,188500,SALDO AKHIR 26 MEI,VALID AWAL / PACKING 26 MEI - pemakaian PITA16 = 6.800 keping
-2026-05-26,Saldo Akhir CSCK-3,CSCK-3 Koreksi 26 Mei,10.500,12,SKT - PITA REFILL,0,0,0,0,,9970,SALDO TETAP 26 MEI,Tidak ada pemakaian refill pada update packing 26 Mei
+2026-05-26,Saldo Akhir CSCK-3,Excel Pemakaian Pita Mei 2026 - PITA16,13.775,16,SKT - PITA 16 / New GCC 99 isi 16,0,0,0,0,,188700,SALDO TETAP 26 MEI,VALID AWAL / KOREKSI EXCEL PITA - tidak ada pengeluaran PITA16 pada 26 Mei menurut Excel pemakaian pita
+2026-05-26,Saldo Akhir CSCK-3,CSCK-3 Koreksi 26 Mei,10.500,12,SKT - PITA REFILL,0,0,0,0,,9970,SALDO TETAP 26 MEI,Tidak ada pemakaian refill pada update 26 Mei
