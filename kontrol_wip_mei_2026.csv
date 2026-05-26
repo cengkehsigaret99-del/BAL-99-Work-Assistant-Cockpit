@@ -3,3 +3,5 @@ tanggal,jenis,merek,giling_batang,verpack_batang,selisih_batang,selisih_pack,sta
 2026-05-24,KUMULATIF,SEMUA MEREK,9576900,9160600,416300,34691.67,WIP POSITIF,Kumulatif giling masih lebih besar dari verpack sampai 24 Mei.
 2026-05-25,HARIAN,SEMUA MEREK,580400,639600,-59200,-4933.33,WIP DIPAKAI,Packing 25 Mei sudah masuk: GCC99 isi 12 44500 pack dan GCC16 6600 pack.
 2026-05-25,KUMULATIF,SEMUA MEREK,10157300,9800200,357100,29758.33,WIP POSITIF,Kumulatif setelah packing 25 Mei tetap positif. Giling 10157300 batang dan verpack 9800200 batang.
+2026-05-26,HARIAN,SEMUA MEREK,0,228800,-228800,-19066.67,WIP DIPAKAI / GILING 26 BELUM MASUK,Packing 26 Mei sudah masuk: GCC99 isi 12 10000 pack dan GCC16 6800 pack. Belum ada data giling 26 Mei di browse_giling.csv.
+2026-05-26,KUMULATIF,SEMUA MEREK,10157300,10029000,128300,10691.67,WIP POSITIF TIPIS,Kumulatif setelah packing 26 Mei masih positif sekitar 128300 batang. Perlu cek giling 26 Mei sebelum final.
