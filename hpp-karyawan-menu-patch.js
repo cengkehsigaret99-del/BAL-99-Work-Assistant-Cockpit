@@ -1,5 +1,5 @@
 (function(){
-  const VERSION = 'karyawan_borongan_v6_core_mobile_nav';
+  const VERSION = 'karyawan_borongan_v7_swot_focus';
 
   function injectExecutiveTheme(){
     if (document.querySelector('link[href*="bal99-executive-theme.css"]')) return;
@@ -18,12 +18,12 @@
     nav.id = 'bal99CoreBottomNav';
     nav.className = 'bal99-core-bottom-nav';
     const items = [
+      ['SWOT', 'bal99-swot-overview.html?v=' + VERSION],
       ['Dashboard', 'dashboard-ringkas.html?v=' + VERSION],
       ['Status', 'status-hari-ini.html?v=' + VERSION],
       ['Cukai', 'dashboard-cukai-ringkas.html?v=' + VERSION],
       ['DO/SJ', 'index.html?v=' + VERSION + '#sj'],
-      ['Piutang', 'index.html?v=' + VERSION + '#piutang'],
-      ['Scorecard', 'scorecard-borongan-premium-print.html?v=' + VERSION]
+      ['Piutang', 'index.html?v=' + VERSION + '#piutang']
     ];
     items.forEach(function(item){
       const btn = document.createElement('button');
@@ -37,10 +37,11 @@
 
   function addExecutiveNavigationMenu(){
     const nav = document.getElementById('nav');
-    if (nav && !document.querySelector('.nav-btn[data-key="executive_navigation_hub"]')) {
+    if (nav && !document.querySelector('.nav-btn[data-key="executive_swot_overview"]')) {
       const executiveBox = document.createElement('div');
       executiveBox.className = 'group';
       executiveBox.innerHTML = '<div class="group-title">Executive Control Tower</div>' +
+        '<button class="nav-btn" data-key="executive_swot_overview" onclick="location.href=\'bal99-swot-overview.html?v=' + VERSION + '\'"><span class="dot"></span>Executive SWOT Overview</button>' +
         '<button class="nav-btn" data-key="executive_navigation_hub" onclick="location.href=\'executive-navigation-hub.html?v=' + VERSION + '\'"><span class="dot"></span>Executive Navigation Hub</button>' +
         '<button class="nav-btn" data-key="executive_control_tower" onclick="location.href=\'executive-control-tower.html?v=' + VERSION + '\'"><span class="dot"></span>Executive Control Tower</button>' +
         '<button class="nav-btn" data-key="dashboard_ringkas_exec" onclick="location.href=\'dashboard-ringkas.html?v=dashboard_ringkas_v1\'"><span class="dot"></span>Dashboard Ringkas</button>' +
@@ -56,7 +57,7 @@
         '<button class="nav-btn" data-key="template_penilaian_borongan" onclick="location.href=\'template_penilaian_karyawan_borongan_bal99.csv?v=' + VERSION + '\'"><span class="dot"></span>Template Penilaian Borongan</button>' +
         '<button class="nav-btn" data-key="contoh_penilaian_borongan" onclick="location.href=\'contoh_penilaian_karyawan_borongan_bal99.csv?v=' + VERSION + '\'"><span class="dot"></span>CSV Contoh Borongan</button>' +
         '<button class="nav-btn" data-key="kontrol_upah_produksi_exec" onclick="location.href=\'kontrol-upah-produksi.html?v=prod_upah_1\'"><span class="dot"></span>Kontrol Upah Produksi</button>';
-      const firstGroup = document.querySelector('.nav-btn[data-key="executive_navigation_hub"]')?.closest('.group');
+      const firstGroup = document.querySelector('.nav-btn[data-key="executive_swot_overview"]')?.closest('.group') || document.querySelector('.nav-btn[data-key="executive_navigation_hub"]')?.closest('.group');
       if (firstGroup && firstGroup.nextSibling) nav.insertBefore(sdmBox, firstGroup.nextSibling);
       else nav.insertBefore(sdmBox, nav.firstChild);
     }
@@ -84,10 +85,11 @@
     const mobile = document.getElementById('mobilePage');
     if (!mobile) return;
 
-    if (!mobile.querySelector('option[value="executive_navigation_hub"]')) {
+    if (!mobile.querySelector('option[value="executive_swot_overview"]')) {
       const execGroup = document.createElement('optgroup');
       execGroup.label = 'Executive Control Tower';
-      execGroup.innerHTML = '<option value="executive_navigation_hub">Executive Navigation Hub</option>' +
+      execGroup.innerHTML = '<option value="executive_swot_overview">Executive SWOT Overview</option>' +
+        '<option value="executive_navigation_hub">Executive Navigation Hub</option>' +
         '<option value="executive_control_tower">Executive Control Tower</option>' +
         '<option value="dashboard_ringkas_exec">Dashboard Ringkas</option>' +
         '<option value="status_hari_ini_exec">Status Hari Ini</option>';
@@ -121,6 +123,7 @@
     if (!mobile.dataset.executiveNavBound) {
       mobile.dataset.executiveNavBound = '1';
       mobile.addEventListener('change', function(){
+        if (mobile.value === 'executive_swot_overview') location.href = 'bal99-swot-overview.html?v=' + VERSION;
         if (mobile.value === 'executive_navigation_hub') location.href = 'executive-navigation-hub.html?v=' + VERSION;
         if (mobile.value === 'executive_control_tower') location.href = 'executive-control-tower.html?v=' + VERSION;
         if (mobile.value === 'dashboard_ringkas_exec') location.href = 'dashboard-ringkas.html?v=dashboard_ringkas_v1';
