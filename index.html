@@ -3,13 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="bal-version" content="v17.29_karyawan_borongan_final_shortcut">
+<meta name="bal-version" content="v17.30_swot_focus_main">
 <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="expires" content="0">
-<title>BAL-99 • Dashboard Ringkas + Status Hari Ini</title>
+<title>BAL-99 • SWOT Overview + Dashboard Ringkas</title>
 <link rel="icon" type="image/png" href="logo.png?v=admin500_gate">
 <link rel="stylesheet" href="style.css?v=17_8_mei21_cukai_auto">
+<style>
+.bal99-swot-focus{margin:12px 18px 0;padding:16px;border-radius:22px;background:linear-gradient(125deg,#061A31,#0F2742 65%,#123B60);color:#fff;border:1px solid rgba(214,166,66,.45);border-bottom:4px solid #D6A642;box-shadow:0 16px 36px rgba(6,26,49,.18)}
+.bal99-swot-focus h2{margin:4px 0 6px;font-size:26px;line-height:1.08;color:#fff}.bal99-swot-focus p{margin:0;color:#E6EEF8;line-height:1.45}.bal99-swot-kicker{color:#F4D07D;font-weight:1000;letter-spacing:.12em;text-transform:uppercase;font-size:11px}.bal99-swot-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.bal99-swot-actions a{padding:9px 11px;border-radius:12px;text-decoration:none;font-weight:1000;border:1px solid rgba(214,166,66,.45)}.bal99-swot-actions .gold{background:#D6A642;color:#111827}.bal99-swot-actions .dark{background:rgba(255,255,255,.08);color:#fff}.bal99-swot-mini{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px}.bal99-swot-mini div{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:13px;padding:9px}.bal99-swot-mini b{display:block;color:#F4D07D;margin-bottom:3px}.bal99-swot-mini span{display:block;color:#E6EEF8;font-size:12px;line-height:1.3}@media(max-width:720px){.bal99-swot-focus{margin:8px 7px 0;padding:12px;border-radius:16px}.bal99-swot-focus h2{font-size:19px}.bal99-swot-focus p{font-size:12px}.bal99-swot-actions{display:grid}.bal99-swot-actions a{text-align:center;font-size:12px;padding:8px}.bal99-swot-mini{grid-template-columns:1fr 1fr;gap:6px}.bal99-swot-mini div{padding:7px}.bal99-swot-mini span{font-size:10.8px}}@media print{.bal99-swot-focus{display:none!important}}
+</style>
 </head>
 <body>
 <header class="topbar">
@@ -18,13 +22,14 @@
     <div>
       <div class="eyebrow">Internal Manufacturing Control System</div>
       <h1>PR. Banyu Anyar Lestari</h1>
-      <p>BAL-99 Work Assistant Cockpit • Dashboard ringkas + status harian ringan</p>
+      <p>BAL-99 Work Assistant Cockpit • SWOT overview + dashboard ringkas</p>
     </div>
   </div>
   <div class="top-meta">
-    <b>v17.29 • Karyawan Borongan Final Shortcut</b>
-    <small>Mulai dari Dashboard Ringkas, Status Hari Ini, atau Karyawan Borongan Report V2 agar admin/GPT tidak perlu membaca semua file saat awal audit.</small><br>
+    <b>v17.30 • SWOT Focus Main</b>
+    <small>Mulai dari Executive SWOT Overview agar owner/admin membaca peta besar sebelum masuk modul detail.</small><br>
     <div style="display:grid;grid-template-columns:1fr;gap:8px;margin-top:10px">
+      <a href="bal99-swot-overview.html?v=swot_focus_main" target="_blank" style="display:block;padding:12px 12px;border:1px solid #e4c86a;border-radius:12px;color:#111827;background:#f6ca60;font-weight:1000;text-decoration:none;font-size:15px">★ Executive SWOT Overview — Peta Besar BAL-99</a>
       <a href="dashboard-ringkas.html?v=dashboard_ringkas_v1" target="_blank" style="display:block;padding:11px 12px;border:1px solid #e4c86a;border-radius:12px;color:#111827;background:#ffeeb8;font-weight:1000;text-decoration:none;font-size:15px">★ Dashboard Ringkas — Modul Inti</a>
       <a href="status-hari-ini.html?v=status_hari_ini_v1" target="_blank" style="display:block;padding:11px 12px;border:1px solid #e4c86a;border-radius:12px;color:#111827;background:#fff4cf;font-weight:1000;text-decoration:none;font-size:15px">★ Status Hari Ini — Pintu Baca Ringan</a>
       <a href="karyawan-borongan-performance-v2.html?v=karyawan_borongan_v2" target="_blank" style="display:block;padding:11px 12px;border:1px solid #e4c86a;border-radius:12px;color:#111827;background:#e8fff1;font-weight:1000;text-decoration:none;font-size:15px">★ Karyawan Borongan Report V2 — Produktivitas & Skor</a>
@@ -40,6 +45,7 @@
     <details style="margin-top:10px;background:rgba(255,255,255,.06);border:1px solid rgba(246,202,96,.45);border-radius:12px;padding:9px 10px">
       <summary style="cursor:pointer;color:#f6ca60;font-weight:900">Buka menu lama / detail lain</summary>
       <div style="display:grid;grid-template-columns:1fr;gap:7px;margin-top:10px">
+        <a href="bal99-swot-overview.html?v=swot_focus_main" target="_blank" style="color:#f6ca60;font-weight:1000;text-decoration:none">★ Executive SWOT Overview</a>
         <a href="dashboard-ringkas.html?v=dashboard_ringkas_v1" target="_blank" style="color:#f6ca60;font-weight:1000;text-decoration:none">★ Dashboard Ringkas / Modul Inti</a>
         <a href="status-hari-ini.html?v=status_hari_ini_v1" target="_blank" style="color:#f6ca60;font-weight:1000;text-decoration:none">★ Status Hari Ini / Dashboard Ringkas</a>
         <a href="karyawan-borongan-performance-v2.html?v=karyawan_borongan_v2" target="_blank" style="color:#86efac;font-weight:1000;text-decoration:none">★ Karyawan Borongan Report V2</a>
@@ -60,7 +66,23 @@
     </details>
   </div>
 </header>
-<div class="mobile-quick"><label for="mobilePage">Pilih Menu Kerja</label><select id="mobilePage" onchange="show(this.value)"></select><small>Mode HP: mulai dari Dashboard Ringkas, Status Hari Ini, atau Karyawan Borongan Report V2 agar audit BAL-99 lebih ringan.</small><div class="mobile-favs"><button onclick="location.href='dashboard-ringkas.html?v=dashboard_ringkas_v1'">Dashboard Ringkas</button><button onclick="location.href='status-hari-ini.html?v=status_hari_ini_v1'">Status Hari Ini</button><button onclick="location.href='karyawan-borongan-performance-v2.html?v=karyawan_borongan_v2'">Karyawan Borongan V2</button><button onclick="location.href='template_karyawan_produktivitas_bal.csv?v=karyawan_borongan_v2'">CSV Karyawan</button><button onclick="location.href='STATUS_HARI_INI.csv?v=status_hari_ini_v1'">CSV Status</button><button onclick="location.href='template_validasi_bahan_varian_16.csv?v=template_bahan16_v1'">Template Bahan 16</button><button onclick="location.href='validasi-ambree-etiket-varian-16.html?v=validasi_bahan16_v1'">Validasi Bahan 16</button><button onclick="location.href='mapping-varian-16.html?v=mapping16_v1'">Mapping 16</button><button onclick="location.href='hpp-new-gcc16-control.html?v=new16_control_v1'">HPP New16</button><button onclick="location.href='margin-cb77-16.html?v=margin_cb77_v1'">Margin CB77</button><button onclick="location.href='hpp-mini-eksekusi-3sku.html?v=hpp_3sku_cb77_susut_v1'">HPP 3 SKU</button><button onclick="location.href='wip-giling-vs-verpack-22-mei.html?v=wip_22mei_v1'">WIP</button><button onclick="show('dashboard')">Dashboard Lama</button><button onclick="show('giling')">Giling</button><button onclick="show('verpack')">Verpack</button><button onclick="show('barang_jadi')">Barang Jadi</button><button onclick="show('ck4c')">CK4C</button><button onclick="show('pita')">Pita</button><button onclick="location.href='audit-harian.html?v=audit_menu_v1'">Audit</button><button onclick="show('sj')">DO/SJ</button><button onclick="show('piutang')">Piutang</button></div></div>
+<section class="bal99-swot-focus">
+  <div class="bal99-swot-kicker">Executive SWOT First</div>
+  <h2>Baca peta besar BAL-99 sebelum masuk modul detail.</h2>
+  <p>SWOT menyatukan produksi, cukai, gudang, DO/SJ, piutang, SDM borongan, mobile, dan report agar keputusan lebih tenang, jelas, dan strategis.</p>
+  <div class="bal99-swot-actions">
+    <a class="gold" href="bal99-swot-overview.html?v=swot_focus_main">Buka SWOT Overview</a>
+    <a class="dark" href="dashboard-ringkas.html?v=swot_focus_main">Dashboard Ringkas</a>
+    <a class="dark" href="status-hari-ini.html?v=swot_focus_main">Status Hari Ini</a>
+  </div>
+  <div class="bal99-swot-mini">
+    <div><b>S — Strength</b><span>Modul kerja makin menyatu.</span></div>
+    <div><b>W — Weakness</b><span>Shortcut lama perlu diringkas.</span></div>
+    <div><b>O — Opportunity</b><span>Owner report bisa distandarkan.</span></div>
+    <div><b>T — Threat</b><span>Data dobel dan validasi cukai harus dijaga.</span></div>
+  </div>
+</section>
+<div class="mobile-quick"><label for="mobilePage">Pilih Menu Kerja</label><select id="mobilePage" onchange="show(this.value)"></select><small>Mode HP: mulai dari SWOT Overview, Dashboard Ringkas, atau Status Hari Ini agar audit BAL-99 lebih strategis.</small><div class="mobile-favs"><button onclick="location.href='bal99-swot-overview.html?v=swot_focus_main'">SWOT Overview</button><button onclick="location.href='dashboard-ringkas.html?v=dashboard_ringkas_v1'">Dashboard Ringkas</button><button onclick="location.href='status-hari-ini.html?v=status_hari_ini_v1'">Status Hari Ini</button><button onclick="location.href='karyawan-borongan-performance-v2.html?v=karyawan_borongan_v2'">Karyawan Borongan V2</button><button onclick="location.href='template_karyawan_produktivitas_bal.csv?v=karyawan_borongan_v2'">CSV Karyawan</button><button onclick="location.href='STATUS_HARI_INI.csv?v=status_hari_ini_v1'">CSV Status</button><button onclick="location.href='template_validasi_bahan_varian_16.csv?v=template_bahan16_v1'">Template Bahan 16</button><button onclick="location.href='validasi-ambree-etiket-varian-16.html?v=validasi_bahan16_v1'">Validasi Bahan 16</button><button onclick="location.href='mapping-varian-16.html?v=mapping16_v1'">Mapping 16</button><button onclick="location.href='hpp-new-gcc16-control.html?v=new16_control_v1'">HPP New16</button><button onclick="location.href='margin-cb77-16.html?v=margin_cb77_v1'">Margin CB77</button><button onclick="location.href='hpp-mini-eksekusi-3sku.html?v=hpp_3sku_cb77_susut_v1'">HPP 3 SKU</button><button onclick="location.href='wip-giling-vs-verpack-22-mei.html?v=wip_22mei_v1'">WIP</button><button onclick="show('dashboard')">Dashboard Lama</button><button onclick="show('giling')">Giling</button><button onclick="show('verpack')">Verpack</button><button onclick="show('barang_jadi')">Barang Jadi</button><button onclick="show('ck4c')">CK4C</button><button onclick="show('pita')">Pita</button><button onclick="location.href='audit-harian.html?v=audit_menu_v1'">Audit</button><button onclick="show('sj')">DO/SJ</button><button onclick="show('piutang')">Piutang</button></div></div>
 <div class="layout">
   <aside id="nav" class="sidebar"></aside>
   <main id="app" class="app"></main>
