@@ -1,0 +1,29 @@
+RINGKASAN TIM VERPACK MEI 2026
+
+Status data: VALID AWAL - LEVEL TIM
+Periode: 2026-05-02 sampai 2026-05-24
+Bagian: Verpack
+Nama data: Tim Verpack Mei
+
+Total output: 661650 pack
+Total upah team: Rp129930500
+Hari aktif tercatat: 18 hari
+Rata-rata output per hari aktif: sekitar 36758 pack
+
+Keputusan kalibrasi:
+Data ini dipakai untuk membaca sistem dan ritme produktivitas tim, bukan untuk ranking personal.
+
+Pagar aman:
+Jangan menilai individu sebelum ada nama karyawan aktif, jumlah orang aktif, hasil per orang, rijek per orang, rework per orang, dan kendala harian.
+
+Arah lanjut:
+1. Import CSV Tim Verpack Mei ke Karyawan Borongan Report V2.
+2. Filter tanggal 2026-05-02 sampai 2026-05-24.
+3. Baca sebagai Tim Verpack Mei.
+4. Minta mandor melengkapi data individu jika ingin ranking personal.
+
+Prinsip:
+Data untuk kejelasan.
+Skor untuk cermin.
+Ranking untuk pembinaan.
+Evaluasi untuk menjaga sistem.
