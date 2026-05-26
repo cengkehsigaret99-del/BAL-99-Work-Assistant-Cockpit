@@ -19,6 +19,7 @@ Report Cetak,1,Print Report QA Checklist,Uji PDF HP dan laptop,print-report-qa-c
 Report Cetak,2,Kelayakan Pemakaian,Uji alur HP laptop dan navigasi utama,bal99-kelayakan-pemakaian.html,AKTIF,1,Checklist sebelum desain dikunci final
 Report Cetak,3,Dashboard Harian V2 QA,Uji kelayakan HP laptop untuk Dashboard Harian Dinamis V2,bal99-dashboard-harian-v2-qa.html,AKTIF,1,Checklist uji sebelum klaim skor 10
 Report Cetak,4,Evaluasi Final Desain,Evaluasi final sementara desain navigasi mobile dan print,bal99-evaluasi-final-desain.html,AKTIF,1,Dokumen visual keputusan desain final sementara
+Report Cetak,5,Standar Visual BAL-99,Standar warna tombol card tabel dan navigasi premium BAL-99,bal99-visual-standard.html,AKTIF,1,Acuan desain resmi sebelum menambah atau mengubah halaman
 Sistem,1,Index Lama,Fallback semua modul,index.html,BACKUP,3,Jangan dihapus
 Sistem,2,Dashboard Harian Dinamis V1,Backup dashboard kerja harian versi awal,bal99-pusat-kerja-harian-dinamis.html,BACKUP,3,Backup sebelum V2 mobile polish
 Sistem,3,Audit Desain Navigasi,Arsip keputusan desain,BAL99_DESIGN_NAVIGATION_PRINT_AUDIT_2026-05-24.md,ARSIP,3,Dokumen audit
