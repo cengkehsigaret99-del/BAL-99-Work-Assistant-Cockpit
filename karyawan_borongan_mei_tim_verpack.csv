@@ -1,0 +1,19 @@
+tanggal,mandor,bagian,nama_karyawan,status_hadir,merek,varian,kode_sku,status_verpack,output_bruto,rijek_pack,rework_pack,output_valid,target_pack,total_pack_team,total_upah_team,catatan
+2026-05-02,Mandor Verpack,Verpack,Tim Verpack Mei,HADIR,Multi Merek,,REKAP-VERPACK,NORMAL,23100,0,0,,23100,23100,4499000,Level tim
+2026-05-04,Mandor Verpack,Verpack,Tim Verpack Mei,HADIR,Multi Merek,,REKAP-VERPACK,NORMAL,42100,0,0,,42100,42100,7641000,Level tim
+2026-05-05,Mandor Verpack,Verpack,Tim Verpack Mei,HADIR,Multi Merek,,REKAP-VERPACK,NORMAL,37000,0,0,,37000,37000,7370000,Level tim
+2026-05-06,Mandor Verpack,Verpack,Tim Verpack Mei,HADIR,Multi Merek,,REKAP-VERPACK,NORMAL,36850,0,0,,36850,36850,7779500,Level tim
+2026-05-07,Mandor Verpack,Verpack,Tim Verpack Mei,HADIR,GCC 99 isi 12,,REKAP-VERPACK,NORMAL,40000,0,0,,40000,40000,6800000,Level tim
+2026-05-08,Mandor Verpack,Verpack,Tim Verpack Mei,HADIR,GCC 99 isi 12,,REKAP-VERPACK,NORMAL,30000,0,0,,30000,30000,5100000,Level tim
+2026-05-09,Mandor Verpack,Verpack,Tim Verpack Mei,HADIR,Multi Merek,,REKAP-VERPACK,NORMAL,33700,0,0,,33700,33700,5777000,Level tim
+2026-05-11,Mandor Verpack,Verpack,Tim Verpack Mei,HADIR,Multi Merek,,REKAP-VERPACK,NORMAL,26000,0,0,,26000,26000,4660000,Level tim
+2026-05-12,Mandor Verpack,Verpack,Tim Verpack Mei,HADIR,GCC 99 isi 16,,REKAP-VERPACK,NORMAL,39000,0,0,,39000,39000,8190000,Level tim
+2026-05-13,Mandor Verpack,Verpack,Tim Verpack Mei,HADIR,Multi Merek,,REKAP-VERPACK,NORMAL,54600,0,0,,54600,54600,9466000,Level tim
+2026-05-14,Mandor Verpack,Verpack,Tim Verpack Mei,HADIR,GCC 99 isi 12,,REKAP-VERPACK,NORMAL,56000,0,0,,56000,56000,9520000,Level tim
+2026-05-18,Mandor Verpack,Verpack,Tim Verpack Mei,HADIR,New GCC 99 isi 16 Ambree Kuning,,REKAP-VERPACK,NORMAL,21000,0,0,,21000,21000,4410000,TUD terpisah
+2026-05-19,Mandor Verpack,Verpack,Tim Verpack Mei,HADIR,New GCC 99 isi 16 Ambree Kuning,,REKAP-VERPACK,NORMAL,36000,0,0,,36000,36000,7560000,Official pita
+2026-05-20,Mandor Verpack,Verpack,Tim Verpack Mei,HADIR,New GCC 99 isi 16 Ambree Kuning,,REKAP-VERPACK,NORMAL,33800,0,0,,33800,33800,7098000,Update 21 Mei
+2026-05-21,Mandor Verpack,Verpack,Tim Verpack Mei,HADIR,New GCC 99 isi 16 Ambree Kuning,,REKAP-VERPACK,NORMAL,33200,0,0,,33200,33200,6972000,Update 21 Mei
+2026-05-22,Mandor Verpack,Verpack,Tim Verpack Mei,HADIR,Multi Merek,,REKAP-VERPACK,NORMAL,33300,0,0,,33300,33300,6953000,Merge 22 Mei
+2026-05-23,Mandor Verpack,Verpack,Tim Verpack Mei,HADIR,Multi Merek,,REKAP-VERPACK,NORMAL,31000,0,0,,31000,31000,6110000,Merge 23 Mei
+2026-05-24,Mandor Verpack,Verpack,Tim Verpack Mei,HADIR,GCC 99 isi 12,,REKAP-VERPACK,LEMBUR,55000,0,0,,55000,55000,14025000,Lembur
