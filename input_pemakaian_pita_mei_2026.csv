@@ -1,0 +1,10 @@
+tanggal,sumber_data,jenis_pita,hje,isi,merek_terkait,pengeluaran_keping,saldo_akhir_keping,status_input,catatan
+2026-05-24,Excel Pemakaian Pita Mei 2026,PITA 99 & 77 / GCC 99 isi 12,10325,12,GCC 99 isi 12,55000,248700,INPUT PITA VALID AWAL,Pengeluaran pita mengikuti Excel pemakaian pita.
+2026-05-24,Excel Pemakaian Pita Mei 2026,PITA 16 / New GCC 99 isi 16,13775,16,New/Gedung Cengkeh 16,6600,195300,INPUT PITA VALID AWAL,Koreksi dari saldo tetap menjadi ada pengeluaran 6600 pada 24 Mei.
+2026-05-24,Excel Pemakaian Pita Mei 2026,PITA REFILL,10500,12,Cengkeh Refill,0,9970,SALDO TETAP,Tidak ada pengeluaran refill.
+2026-05-25,Excel Pemakaian Pita Mei 2026,PITA 99 & 77 / GCC 99 isi 12,10325,12,GCC 99 isi 12,44500,204200,INPUT PITA VALID AWAL,Pengeluaran pita mengikuti Excel pemakaian pita.
+2026-05-25,Excel Pemakaian Pita Mei 2026,PITA 16 / New GCC 99 isi 16,13775,16,New/Gedung Cengkeh 16,6600,188700,INPUT PITA VALID AWAL,Pengeluaran pita mengikuti Excel pemakaian pita.
+2026-05-25,Excel Pemakaian Pita Mei 2026,PITA REFILL,10500,12,Cengkeh Refill,0,9970,SALDO TETAP,Tidak ada pengeluaran refill.
+2026-05-26,Excel Pemakaian Pita Mei 2026,PITA 99 & 77 / GCC 99 isi 12,10325,12,GCC 99 isi 12,10000,194200,INPUT PITA VALID AWAL,Pengeluaran pita mengikuti Excel pemakaian pita.
+2026-05-26,Excel Pemakaian Pita Mei 2026,PITA 16 / New GCC 99 isi 16,13775,16,New/Gedung Cengkeh 16,0,188700,SALDO TETAP / BELUM ADA INPUT PITA,Verpack 26 Mei C-023 6800 pack belum mengurangi pita karena belum ada di Excel pemakaian pita.
+2026-05-26,Excel Pemakaian Pita Mei 2026,PITA REFILL,10500,12,Cengkeh Refill,0,9970,SALDO TETAP,Tidak ada pengeluaran refill.
