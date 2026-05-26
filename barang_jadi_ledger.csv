@@ -1,0 +1,6 @@
+tanggal,sku,merek,jenis_mutasi,sumber,no_bukti,debet_pack,kredit_pack,saldo_pack,status,catatan
+2026-05-24,GCC99-12,GCC 99 isi 12,VERPACK_MASUK,browse_verpack.csv,VP-20260524-GCC99-12,55000,0,,VALID AWAL,"Tambahan verpack lembur 24 Mei; masuk barang jadi dan dasar CK4C"
+2026-05-24,GCC99-12,GCC 99 isi 12,SJ_KELUAR,browse_surat_jalan.csv,128/SJ/BAL/V/2026,0,10000,,VALID AWAL,"SJ128 mengurangi stok GCC 99 isi 12 sebanyak 10.000 pack"
+2026-05-24,C-023,Gedung Cengkeh 16 New / New GCC 99 isi 16,SJ_KELUAR,browse_surat_jalan.csv,128/SJ/BAL/V/2026,0,90000,,VALID AWAL,"SJ128 mengurangi stok C-023 sebanyak 90.000 pack"
+2026-05-25,C-023,Gedung Cengkeh 16 New / New GCC 99 isi 16,VERPACK_MASUK,browse_barang_jadi.csv,VP-20260525-C023,6600,0,,VALID AWAL,"Update packing 25 Mei; tambah verpack 6.600 pack"
+2026-05-25,GCC99-12,Gedung Cengkeh Coklat 99 isi 12,VERPACK_MASUK,browse_barang_jadi.csv,VP-20260525-GCC99-12,44500,0,,VALID AWAL,"Update packing 25 Mei; tambah verpack normal 44.500 pack"
