@@ -2,6 +2,7 @@ kelompok,urutan,nama_menu,tujuan,halaman,status,prioritas,catatan
 Ringkasan,1,Dashboard Ringkas,Baca kondisi utama produksi stok DO pembayaran piutang,dashboard-ringkas.html,PRIORITAS,1,Pintu baca utama
 Ringkasan,2,Status Hari Ini,Pintu baca cepat harian,status-hari-ini.html,PRIORITAS,1,Untuk admin dan owner
 Ringkasan,3,Executive Navigation Hub,Pintu navigasi executive,executive-navigation-hub.html,AKTIF,1,Jembatan sebelum index utama diubah
+Ringkasan,4,Executive SWOT Overview,Analisis SWOT keseluruhan sistem BAL-99,bal99-swot-overview.html,AKTIF,1,Layar strategis utama untuk owner dan admin
 Produksi Gudang,1,WIP Giling vs Verpack,Baca gap produksi,wip-giling-vs-verpack-22-mei.html,AKTIF,2,Kontrol alur giling ke verpack
 Produksi Gudang,2,Kontrol Upah Produksi,Upah giling dan verpack,kontrol-upah-produksi.html,AKTIF,2,Pendukung SDM borongan
 Pita Cukai,1,Dashboard Cukai Ringkas,Kontrol pita cukai dan CK4C,dashboard-cukai-ringkas.html,AKTIF,1,Prioritas cukai
