@@ -1,0 +1,21 @@
+{
+  "purpose": "Aturan penggantian istilah untuk membuat bahasa SWOT lebih umum, objektif, dan berbasis data.",
+  "target_file": "bal99-swot-overview.html",
+  "rules": [
+    {"from": "Angka proyeksi", "to": "Angka estimasi"},
+    {"from": "Proyeksi Kapasitas Produksi dan Indikator Pasar", "to": "Estimasi Kapasitas Produksi dan Indikator Pasar"},
+    {"from": "produk volume utama", "to": "produk dengan kontribusi volume utama"},
+    {"from": "Perlu kontrol", "to": "Perlu pemantauan"},
+    {"from": "proyeksi indikatif", "to": "estimasi indikatif"},
+    {"from": "ranking personal", "to": "penilaian personal"},
+    {"from": "wajib", "to": "perlu"},
+    {"from": "Keputusan Praktis", "to": "Tindak Lanjut"},
+    {"from": "Makna Manajerial", "to": "Interpretasi"},
+    {"from": "Catatan Penggunaan", "to": "Batasan Pembacaan"}
+  ],
+  "style_rules": [
+    "Gunakan kalimat laporan, bukan kalimat promosi.",
+    "Hindari kesan vonis final jika status data masih valid awal.",
+    "Pertahankan angka, ubah hanya diksi dan tingkat kepastian."
+  ]
+}
