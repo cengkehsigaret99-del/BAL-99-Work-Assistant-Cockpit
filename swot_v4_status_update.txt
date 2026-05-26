@@ -1,0 +1,14 @@
+SWOT V4 STATUS UPDATE
+
+File utama diperiksa: bal99-swot-overview.html
+
+Status bahasa saat ini: sudah cukup objektif, namun masih perlu revisi mikro.
+
+Revisi mikro yang disarankan:
+- proyeksi -> estimasi
+- produk volume utama -> produk dengan kontribusi volume utama
+- perlu kontrol -> perlu pemantauan
+- proyeksi indikatif -> estimasi indikatif
+
+Catatan:
+Update HTML penuh sebelumnya diblokir. Lanjutkan perubahan kecil per istilah agar aman.
