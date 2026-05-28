@@ -1,8 +1,9 @@
 tanggal,hari,status_giling,status_verpack,upah_giling,upah_verpack,total_upah,status_validasi,catatan
 2026-05-22,Jumat,NORMAL,NORMAL,22612000,6953000,29565000,VALID AWAL,"Giling normal + verpack normal terbaca"
 2026-05-23,Sabtu,NORMAL,NORMAL,23940000,6110000,30050000,VALID AWAL,"Giling normal + verpack normal terbaca"
-2026-05-24,Minggu,LEMBUR,LEMBUR,19540000,14025000,33565000,VALID AWAL,"Giling lembur terbaca di sheet SENIN file lembur: 488.500 batang GCC 99; verpack lembur 55.000 pack x Rp255"
+2026-05-24,Minggu,LEMBUR,LEMBUR,28806000,14025000,42831000,VALID AWAL,"Update: giling lembur 24/05 memakai tarif Rp60/batang; 480.100 batang GCC 99 x Rp60 = Rp28.806.000; verpack lembur 55.000 pack x Rp255"
 2026-05-25,Senin,NORMAL,NORMAL,23256000,8951000,32207000,VALID AWAL,"Giling normal + verpack normal terbaca"
 2026-05-26,Selasa,NORMAL,NORMAL,15936000,3128000,19064000,VALID AWAL,"Verpack 26 Mei sudah terbaca dari laporan packing terbaru"
 2026-05-27,Rabu,NORMAL,BELUM_TERBACA,0,0,0,VALID AWAL,"Giling 0; data verpack belum terbaca"
 2026-05-28,Kamis,NORMAL,BELUM_TERBACA,16212000,0,16212000,VALID AWAL,"Giling 28 Mei terbaca; verpack 28 Mei belum terbaca"
+2026-05-22_28,Periode,KOREKSI_NORMAL_PERIODE,-,260000,0,260000,VALID AWAL,"Koreksi total giling normal periode mengikuti rekap terbaru: normal giling naik Rp260.000 agar total normal menjadi Rp102.216.000"
