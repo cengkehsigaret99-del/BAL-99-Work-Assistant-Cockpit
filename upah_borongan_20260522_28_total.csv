@@ -1,6 +1,6 @@
-periode,tanggal_awal,tanggal_akhir,komponen,total, status_validasi,catatan
-22-28 Mei 2026,2026-05-22,2026-05-28,UPAH_GILING_NORMAL,101956000,VALID AWAL,"Berdasarkan rekap giling normal 22-28 Mei"
-22-28 Mei 2026,2026-05-22,2026-05-28,UPAH_GILING_LEMBUR_24_MEI,19540000,VALID AWAL,"Lembur Minggu 24/05 dari sheet SENIN file lembur; 488.500 batang GCC 99 x Rp40"
-22-28 Mei 2026,2026-05-22,2026-05-28,TOTAL_UPAH_GILING,121496000,VALID AWAL,"Upah giling normal + giling lembur"
+periode,tanggal_awal,tanggal_akhir,komponen,total,status_validasi,catatan
+22-28 Mei 2026,2026-05-22,2026-05-28,UPAH_GILING_NORMAL,102216000,VALID AWAL,"Berdasarkan rekap terbaru: normal giling Rp102.216.000"
+22-28 Mei 2026,2026-05-22,2026-05-28,UPAH_GILING_LEMBUR_24_MEI,28806000,VALID AWAL,"Update: lembur Minggu 24/05 memakai tarif Rp60/batang; 480.100 batang GCC 99 x Rp60"
+22-28 Mei 2026,2026-05-22,2026-05-28,TOTAL_UPAH_GILING,131022000,VALID AWAL,"Upah giling normal + giling lembur"
 22-28 Mei 2026,2026-05-22,2026-05-28,TOTAL_UPAH_VERPACK,39167000,VALID AWAL,"Verpack 22,23,24,25,26 terbaca; 27-28 belum terbaca"
-22-28 Mei 2026,2026-05-22,2026-05-28,TOTAL_BORONGAN_GILING_VERPACK,160663000,VALID AWAL,"Total gabungan giling + verpack; bukan mutasi stock barang jadi"
+22-28 Mei 2026,2026-05-22,2026-05-28,TOTAL_BORONGAN_GILING_VERPACK,170189000,VALID AWAL,"Total gabungan giling + verpack; bukan mutasi stock barang jadi"
