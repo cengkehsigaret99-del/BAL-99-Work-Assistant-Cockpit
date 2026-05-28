@@ -1,0 +1,5 @@
+no,tanggal,jenis,keterangan,debet,kredit,saldo_berjalan,status
+1,2026-01-01,SALDO AWAL,Saldo akhir 2025 dipakai sebagai saldo awal Januari 2026 versi aplikasi; HA-01 tidak dimasukkan,81600000,0,81600000,VALID SEMENTARA
+2,2026,DO 108,Cengkeh Biru 77 isi 16; 1800 pack; 3 karton; Rp8500 per pack,15300000,0,96900000,VALID SEMENTARA
+3,2026,DO 110,Cengkeh Biru 77 isi 16; 1800 pack; 3 karton; Rp8500 per pack,15300000,0,112200000,VALID SEMENTARA
+4,2026-05-26,PEMBAYARAN,Transfer BRI catatan Mks CB INV 50-51; dipotongkan ke INV 50 dan 51,0,35700000,76500000,VALID SEMENTARA
