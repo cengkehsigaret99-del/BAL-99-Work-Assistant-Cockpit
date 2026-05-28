@@ -1,0 +1,11 @@
+area_data,status,catatan
+GILING_NORMAL,VALID AWAL,"Rekap giling normal 22-28 Mei sudah terbaca"
+GILING_LEMBUR_24_MEI,VALID AWAL,"Lembur Minggu 24/05 sudah dikunci dari file lembur sheet SENIN: 488.500 batang x Rp40 = Rp19.540.000"
+VERPACK_22_MEI,VALID AWAL,"Upah verpack 22 Mei Rp6.953.000 sudah masuk rekap"
+VERPACK_23_MEI,VALID AWAL,"Upah verpack 23 Mei Rp6.110.000 sudah masuk rekap"
+VERPACK_24_MEI,VALID AWAL,"Verpack lembur Minggu 24/05: 55.000 pack x Rp255 = Rp14.025.000"
+VERPACK_25_MEI,VALID AWAL,"Upah verpack 25 Mei Rp8.951.000 sudah masuk rekap"
+VERPACK_26_MEI,VALID AWAL,"Upah verpack 26 Mei Rp3.128.000 sudah masuk rekap packing terbaru"
+VERPACK_27_MEI,BELUM TERBACA,"Belum ada angka verpack 27 Mei pada sumber yang sudah dipakai"
+VERPACK_28_MEI,BELUM TERBACA,"Belum ada angka verpack 28 Mei pada sumber yang sudah dipakai"
+TOTAL_BORONGAN,VALID AWAL,"Total sementara valid awal Rp160.663.000; bukan mutasi stock barang jadi"
