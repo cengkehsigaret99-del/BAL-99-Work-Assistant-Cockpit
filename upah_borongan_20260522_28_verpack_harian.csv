@@ -1,0 +1,8 @@
+tanggal,hari,status_verpack,pack,tarif_pack,upah_verpack,status_validasi,catatan
+2026-05-22,Jumat,NORMAL,, ,6953000,VALID AWAL,"Upah verpack terbaca dari rekap packing; rincian pack belum dikunci di modul ini"
+2026-05-23,Sabtu,NORMAL,, ,6110000,VALID AWAL,"Upah verpack terbaca dari rekap packing; rincian pack belum dikunci di modul ini"
+2026-05-24,Minggu,LEMBUR,55000,255,14025000,VALID AWAL,"Verpack lembur Minggu; 55.000 pack x Rp255"
+2026-05-25,Senin,NORMAL,, ,8951000,VALID AWAL,"Upah verpack terbaca dari rekap packing; rincian pack belum dikunci di modul ini"
+2026-05-26,Selasa,NORMAL,16800,,3128000,VALID AWAL,"Verpack 26 Mei sudah terbaca dari laporan packing terbaru; tarif campuran/detail belum dikunci di modul ini"
+2026-05-27,Rabu,BELUM_TERBACA,0,,0,BELUM TERBACA,"Data verpack belum terbaca di file packing terbaru"
+2026-05-28,Kamis,BELUM_TERBACA,0,,0,BELUM TERBACA,"Data verpack belum terbaca di file packing terbaru"
