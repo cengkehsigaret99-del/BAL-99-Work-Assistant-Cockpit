@@ -1,0 +1,8 @@
+tanggal,customer,pasar,keterangan,debet,kredit,saldo,status_transaksi,catatan
+SEBELUMNYA,USUP / KARMIN,Bogor,Saldo awal keseluruhan valid,69830000,0,69830000,PIUTANG LAMA TERBUKA,Saldo lama sebelum transaksi baru
+2026-04-20,USUP / KARMIN,Bogor,Pengiriman baru Cengkeh Biru 77 isi 12 - 10 karton x 1000 pack x Rp6500,65000000,0,134830000,DEBET BARU,Transaksi baru Rp65 juta
+2026-05-02,USUP / KARMIN,Bogor,Pembayaran masuk BCA 17:55:09 Berita 77,0,19500000,115330000,PEMBAYARAN,Pembayaran untuk transaksi baru/running balance
+2026-05-07,USUP / KARMIN,Bogor,Pembayaran masuk BCA 18:45:52 Berita 77,0,17000000,98330000,PEMBAYARAN,Pembayaran untuk transaksi baru/running balance
+2026-05-19,USUP / KARMIN,Bogor,Pembayaran masuk BCA 18:43:51 Berita 77,0,12300000,86030000,PEMBAYARAN,Pembayaran untuk transaksi baru/running balance
+2026-05-25,USUP / KARMIN,Bogor,Pembayaran masuk BCA 11:41:02 Berita 77,0,11000000,75030000,PEMBAYARAN,Pembayaran untuk transaksi baru/running balance
+2026-05-26,USUP / KARMIN,Bogor,Pembayaran masuk BCA 12:04:36 Berita 77,0,5200000,69830000,PEMBAYARAN TERAKHIR,Transaksi baru Rp65 juta sudah lunas; saldo akhir kembali ke piutang lama
