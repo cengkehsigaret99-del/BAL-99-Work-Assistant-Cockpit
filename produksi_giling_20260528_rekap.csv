@@ -1,0 +1,10 @@
+tanggal,hari,status,brand,batang,tarif_per_batang,upah,pack_equiv,catatan_stock
+2026-05-28,KAMIS,NORMAL,GCC 99,169200,40,6768000,14100.0,GILING/WIP - tidak otomatis menambah barang jadi
+2026-05-28,KAMIS,NORMAL,CB 77,183600,40,7344000,15300.0,GILING/WIP - tidak otomatis menambah barang jadi
+2026-05-28,KAMIS,NORMAL,GCC 16,0,42,0,0,GILING/WIP - tidak otomatis menambah barang jadi
+2026-05-28,KAMIS,NORMAL,CB 16,50000,42,2100000,3125.0,GILING/WIP - tidak otomatis menambah barang jadi
+2026-05-28,KAMIS,NORMAL,REFILL H,0,46,0,0,GILING/WIP - tidak otomatis menambah barang jadi
+2026-05-28,KAMIS,NORMAL,REFILL K,0,46,0,0,GILING/WIP - tidak otomatis menambah barang jadi
+2026-05-28,KAMIS,NORMAL,REFILL ORIGINAL,0,46,0,0,GILING/WIP - tidak otomatis menambah barang jadi
+2026-05-28,KAMIS,NORMAL,BAL 9,0,42,0,0,GILING/WIP - tidak otomatis menambah barang jadi
+2026-05-28,KAMIS,NORMAL,TOTAL,402800,,16212000,,GILING/WIP - tunggu verpack
