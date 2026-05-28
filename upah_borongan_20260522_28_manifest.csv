@@ -1,0 +1,8 @@
+nama_file,jenis_file,fungsi,status,catatan
+upah-borongan-20260522-28.html,HTML,Halaman dashboard modul upah borongan,AKTIF,"Terhubung dari index.html dan bal99-mode-sederhana.html"
+upah_borongan_20260522_28_harian.csv,CSV,Data harian giling dan verpack,VALID AWAL,"Minggu 24/05 dikunci sebagai lembur giling dan lembur verpack"
+upah_borongan_20260522_28_total.csv,CSV,Rekap total komponen upah,VALID AWAL,"Total borongan Rp160.663.000"
+upah_borongan_20260522_28_verpack_harian.csv,CSV,Rincian upah verpack harian,VALID AWAL,"Verpack 27-28 belum terbaca"
+upah_borongan_20260522_28_status_validasi.csv,CSV,Kontrol validasi sumber data,AKTIF,"Memisahkan valid awal dan belum terbaca"
+produksi_giling_20260528_rekap.csv,CSV,Rekap giling tanggal 28 Mei,ARSIP PENDUKUNG,"Giling/WIP; tidak otomatis menambah barang jadi"
+produksi_giling_20260528_top10.csv,CSV,Top produktivitas giling 28 Mei,ARSIP PENDUKUNG,"Untuk evaluasi produktivitas pekerja"
