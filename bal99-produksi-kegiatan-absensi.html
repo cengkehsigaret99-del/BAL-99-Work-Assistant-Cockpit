@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>BAL99 Kegiatan Produksi</title>
+<title>BAL99 Kegiatan Produksi Audit</title>
 <style>
-:root{--navy:#061a31;--gold:#d6a642;--cream:#fff7d6;--bg:#f4f7fa;--line:#d9e2ec;--ink:#111827;--muted:#64748b}
-*{box-sizing:border-box}body{font-family:Arial,sans-serif;margin:0;background:linear-gradient(180deg,#f8fafc,var(--bg));color:var(--ink)}.wrap{max-width:980px;margin:auto;padding:18px}.hero{background:linear-gradient(125deg,var(--navy),#0f2742);color:white;border-radius:22px;padding:22px;border-bottom:6px solid var(--gold);box-shadow:0 14px 30px rgba(6,26,49,.16)}.hero h1{margin:6px 0 8px;font-size:31px}.hero p{margin:0;color:#e6eef8;line-height:1.5}.k{font-size:12px;font-weight:1000;letter-spacing:.12em;text-transform:uppercase;color:#f4d07d}.panel{background:white;border:1px solid var(--line);border-radius:20px;padding:16px;margin-top:12px;box-shadow:0 10px 24px rgba(6,26,49,.07)}.note{background:var(--cream);border-left:6px solid var(--gold);line-height:1.55}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.card{border:1px solid var(--line);border-radius:16px;padding:14px;background:#fff}.card b{display:block;color:var(--navy);font-size:17px;margin-bottom:5px}.small{color:var(--muted);font-size:13px;line-height:1.45}.btn{display:inline-block;background:var(--navy);color:white;text-decoration:none;border-radius:12px;padding:11px 14px;font-weight:1000;margin-top:8px}@media(max-width:760px){.wrap{padding:12px}.grid{grid-template-columns:1fr}.hero h1{font-size:26px}}
+:root{--navy:#061a31;--gold:#d6a642;--cream:#fff7d6;--bg:#f4f7fa;--line:#d9e2ec;--ink:#111827;--muted:#64748b;--red:#b91c1c;--green:#166534;--yellow:#92400e}
+*{box-sizing:border-box}body{font-family:Arial,sans-serif;margin:0;background:linear-gradient(180deg,#f8fafc,var(--bg));color:var(--ink)}.wrap{max-width:1100px;margin:auto;padding:18px}.hero{background:linear-gradient(125deg,var(--navy),#0f2742);color:white;border-radius:22px;padding:22px;border-bottom:6px solid var(--gold);box-shadow:0 14px 30px rgba(6,26,49,.16)}.hero h1{margin:6px 0 8px;font-size:31px}.hero p{margin:0;color:#e6eef8;line-height:1.5}.k{font-size:12px;font-weight:1000;letter-spacing:.12em;text-transform:uppercase;color:#f4d07d}.panel{background:white;border:1px solid var(--line);border-radius:20px;padding:16px;margin-top:12px;box-shadow:0 10px 24px rgba(6,26,49,.07)}.note{background:var(--cream);border-left:6px solid var(--gold);line-height:1.55}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.card{border:1px solid var(--line);border-radius:16px;padding:14px;background:#fff}.card b{display:block;color:var(--navy);font-size:26px;margin-bottom:3px}.small{color:var(--muted);font-size:13px;line-height:1.45}.badge{display:inline-block;border-radius:999px;padding:5px 9px;font-size:12px;font-weight:1000;margin:2px}.red{background:#fee2e2;color:var(--red)}.yellow{background:#fef3c7;color:var(--yellow)}.green{background:#dcfce7;color:var(--green)}.blue{background:#dbeafe;color:#1e3a8a}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}table{width:100%;border-collapse:collapse;background:white}th{background:var(--navy);color:white;text-align:left;padding:9px;font-size:12px}td{border-bottom:1px solid #edf2f7;padding:9px;font-size:13px;vertical-align:top}.btn{display:inline-block;background:var(--navy);color:white;text-decoration:none;border-radius:12px;padding:11px 14px;font-weight:1000;margin-top:8px}@media(max-width:760px){.wrap{padding:12px}.cards,.grid{grid-template-columns:1fr}.hero h1{font-size:26px}}
 </style>
 <link rel="stylesheet" href="bal99-dark-mode.css?v=dark2">
 <link rel="stylesheet" href="bal99-motion.css?v=motion2">
@@ -14,38 +14,49 @@
 <body>
 <main class="wrap">
 <section class="hero">
-<div class="k">Produksi • Kegiatan • Absensi • Upah</div>
+<div class="k">Audit Test-Drive • Produksi • Absensi • Upah</div>
 <h1>BAL-99 Kegiatan & Absensi Produksi</h1>
-<p>Halaman kontrol awal untuk membaca arah kerja GILING, VERPACK, absensi berdasarkan kegiatan, rekap harian, dan upah borongan. Halaman ini bersifat read-only dan tidak mengubah data stok atau piutang.</p>
+<p>Dashboard readiness Fase 2 berbasis audit test-drive. Modul ini untuk kontrol kegiatan produksi, bukan untuk otomatis mengubah Stock BJ, CK-4C, Piutang, atau DO/SJ.</p>
 </section>
 <section class="panel note">
-<b>Aturan anti-benturan:</b><br>
-1. GILING dibaca sebagai WIP, belum otomatis menjadi barang jadi.<br>
-2. Hasil barang jadi hanya mengikuti sumber VERPACK/PACKING resmi yang sudah divalidasi.<br>
-3. Upah borongan adalah biaya tenaga kerja, bukan penambah stok.<br>
-4. Absensi kegiatan dihitung dari data unik tanggal, nomor induk, dan nama karyawan; bukan dari jumlah baris mentah.<br>
-5. Data kegiatan produksi tidak boleh dicampur langsung ke piutang atau pengiriman.
+<b>Status modul:</b> VALID AWAL / AUDIT TEST-DRIVE. Importer CSV penuh belum dipasang karena data produksi general belum terpasang permanen di repo. Tidak ada angka dummy.
+</section>
+<section class="panel cards">
+<div class="card"><span class="small">Jumlah Temuan</span><b>28</b><span class="badge blue">AUDIT</span></div>
+<div class="card"><span class="small">Prioritas Tinggi</span><b>13</b><span class="badge red">TINGGI</span></div>
+<div class="card"><span class="small">Prioritas Sedang</span><b>12</b><span class="badge yellow">SEDANG</span></div>
+<div class="card"><span class="small">Test 22-28 Mei</span><b>Rp170.189.000</b><span class="badge green">COCOK</span></div>
 </section>
 <section class="panel">
-<h2>Struktur modul</h2>
+<h2>Status Kesiapan</h2>
+<table><thead><tr><th>Komponen</th><th>Status</th><th>Catatan</th></tr></thead><tbody>
+<tr><td>Menu utama</td><td><span class="badge green">SELESAI SEBAGIAN</span></td><td>Link Kegiatan Produksi sudah ada di index.html.</td></tr>
+<tr><td>Halaman modul</td><td><span class="badge yellow">VALID AWAL</span></td><td>Sudah ada halaman SOP dan dashboard audit/readiness.</td></tr>
+<tr><td>CSV produksi general</td><td><span class="badge red">BELUM TERPASANG</span></td><td>Data general belum dipasang permanen; jangan tampilkan angka produksi dummy.</td></tr>
+<tr><td>Stock BJ / CK-4C</td><td><span class="badge blue">TERKUNCI</span></td><td>Belum diintegrasikan; GILING tetap WIP.</td></tr>
+<tr><td>Payroll final</td><td><span class="badge yellow">BELUM FINAL</span></td><td>Audit cocok Rp170.189.000, tetapi tetap perlu sumber final sebelum payroll resmi.</td></tr>
+</tbody></table>
+</section>
+<section class="panel note">
+<b>SOP anti-benturan:</b><br>
+1. GILING = WIP, bukan barang jadi.<br>
+2. Upah borongan = biaya tenaga kerja, tidak menambah stock.<br>
+3. VERPACK summary upah tidak boleh masuk Stock BJ atau CK-4C.<br>
+4. Stock BJ hanya dari verpack/packing resmi yang valid.<br>
+5. Absensi dihitung DISTINCT tanggal + nomor induk + nama karyawan.
+</section>
+<section class="panel">
+<h2>Prioritas Update Fase 2</h2>
 <div class="grid">
-<div class="card"><b>Dashboard Kegiatan Produksi</b><span class="small">Ringkasan tanggal, aktivitas produksi, status hari, dan catatan validasi.</span></div>
-<div class="card"><b>Detail Giling</b><span class="small">Kontrol output giling sebagai WIP dan dasar evaluasi kerja, bukan barang jadi.</span></div>
-<div class="card"><b>Detail Verpack</b><span class="small">Kontrol packing/verpack yang menjadi dasar awal barang jadi jika sumbernya resmi.</span></div>
-<div class="card"><b>Absensi Berdasarkan Kegiatan</b><span class="small">Membaca kehadiran dari kegiatan yang benar-benar tercatat.</span></div>
-<div class="card"><b>Rekap Harian</b><span class="small">Membedakan hari aktif, hari kosong, libur, dan data yang perlu konfirmasi.</span></div>
-<div class="card"><b>Rekap Karyawan / Upah</b><span class="small">Membantu membaca produktivitas dan nilai upah borongan per periode.</span></div>
+<div class="card"><b>1. Data audit</b><span class="small">Pasang audit summary dan kekurangan sebagai referensi aplikasi.</span></div>
+<div class="card"><b>2. Viewer CSV</b><span class="small">Pasang setelah CSV general produksi sudah permanen dan aman.</span></div>
+<div class="card"><b>3. Field standar</b><span class="small">level_data, is_hitung_upah, is_hitung_produksi, status_validasi.</span></div>
+<div class="card"><b>4. Validasi aman</b><span class="small">boleh_masuk_stok_bj dan boleh_masuk_ck4c wajib eksplisit.</span></div>
 </div>
 </section>
-<section class="panel note">
-<b>Validasi wajib sebelum dipakai untuk keputusan:</b><br>
-- Tanggal 2026-05-28 harus menghitung karyawan unik, bukan jumlah baris mentah.<br>
-- Tanggal 2026-05-27 dibaca sebagai tidak ada kegiatan produksi jika total output dan upah nol.<br>
-- Data summary upah harian tidak boleh dianggap sebagai hasil stok fisik.
-</section>
 <section class="panel">
-<h2>Catatan pemakaian</h2>
-<p class="small">Untuk sementara halaman ini menjadi pintu SOP dan kontrol konsep. Importer CSV penuh dapat ditambahkan bertahap setelah struktur aman dan tidak menabrak modul Stock BJ, CK-4, Piutang, atau DO/SJ.</p>
+<h2>Keputusan Praktis</h2>
+<p class="small">Modul layak dipakai sebagai dashboard kontrol dan kesiapan. Belum boleh dijadikan sumber final payroll, Stock BJ, CK-4C, Piutang, atau DO/SJ.</p>
 <a class="btn" href="index.html">Kembali ke Halaman Utama</a>
 </section>
 </main>
