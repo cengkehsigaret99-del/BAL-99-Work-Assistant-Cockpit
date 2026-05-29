@@ -51,7 +51,7 @@ tbody tr:hover td{background:#221c12 !important;}
 .swatch.navy,.swatch.navy2{border-color:#334155 !important;}
 @media print{body{background:white !important;color:#111827 !important}.hero,.panel,.card,.note{box-shadow:none !important}}
 
-/* PATCH UI KEGIATAN PRODUKSI BAL - khusus halaman dengan id gBatang */
+/* PATCH UI KEGIATAN PRODUKSI BAL - selector modern */
 body:has(#gBatang) .panel.cards{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:14px!important;align-items:stretch!important}
 body:has(#gBatang) .cards{gap:14px!important}
 body:has(#gBatang) .card{min-width:0!important;max-width:100%!important;overflow:hidden!important;box-sizing:border-box!important;border-radius:22px!important;padding:22px 24px!important;background:linear-gradient(145deg,#101b2d,#0b1423)!important;border:1px solid rgba(255,255,255,.13)!important;box-shadow:0 14px 34px rgba(0,0,0,.29),inset 0 1px 0 rgba(255,255,255,.035)!important}
@@ -71,3 +71,18 @@ body:has(#gBatang) #merekGilingBox,body:has(#gBatang) #merekVerpackBox,body:has(
 @media(max-width:900px){body:has(#gBatang) .panel.cards{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
 @media(max-width:760px){body:has(#gBatang) .panel.cards,body:has(#gBatang) .cards,body:has(#gBatang) .grid,body:has(#gBatang) .filters{grid-template-columns:1fr!important}body:has(#gBatang) .card{padding:19px 20px!important}body:has(#gBatang) .card b,body:has(#gBatang) #gBatang,body:has(#gBatang) #vPack,body:has(#gBatang) #upahTotal,body:has(#gBatang) #gTotalBatang,body:has(#gBatang) #gEstimasiPack,body:has(#gBatang) #gKarton,body:has(#gBatang) #gKaryawan,body:has(#gBatang) #gUpah,body:has(#gBatang) #gStatus,body:has(#gBatang) #vTotalPack,body:has(#gBatang) #vBatangEquiv,body:has(#gBatang) #vKarton,body:has(#gBatang) #vKaryawan,body:has(#gBatang) #vUpah,body:has(#gBatang) #vStatus{font-size:clamp(24px,8.2vw,36px)!important}}
 @media(max-width:420px){body:has(#gBatang) .panel{padding:15px!important}body:has(#gBatang) .card{padding:18px!important}body:has(#gBatang) .card b,body:has(#gBatang) #gBatang,body:has(#gBatang) #vPack,body:has(#gBatang) #upahTotal,body:has(#gBatang) #gTotalBatang,body:has(#gBatang) #gEstimasiPack,body:has(#gBatang) #gKarton,body:has(#gBatang) #gKaryawan,body:has(#gBatang) #gUpah,body:has(#gBatang) #gStatus,body:has(#gBatang) #vTotalPack,body:has(#gBatang) #vBatangEquiv,body:has(#gBatang) #vKarton,body:has(#gBatang) #vKaryawan,body:has(#gBatang) #vUpah,body:has(#gBatang) #vStatus{font-size:clamp(22px,8vw,32px)!important}}
+
+/* FALLBACK UI KEGIATAN PRODUKSI BAL - tanpa :has(), aman untuk browser/HP lama */
+#gBatang,#vPack,#upahTotal,#periodeText,#gTotalBatang,#gEstimasiPack,#gKarton,#gKaryawan,#gUpah,#gStatus,#vTotalPack,#vBatangEquiv,#vKarton,#vKaryawan,#vUpah,#vStatus{color:#f8fbff!important;display:block!important;max-width:100%!important;font-size:clamp(24px,6.6vw,40px)!important;font-weight:900!important;line-height:1.12!important;overflow-wrap:anywhere!important;word-break:break-word!important;text-shadow:0 2px 12px rgba(0,0,0,.28)!important}
+#periodeText{font-size:clamp(20px,5.8vw,34px)!important}
+#gStatus,#vStatus{font-size:clamp(20px,5.6vw,30px)!important}
+#upahTotal,#gUpah,#vUpah{color:#fff7dc!important}
+.panel.cards .card{min-width:0!important;max-width:100%!important;overflow:hidden!important;box-sizing:border-box!important;border-radius:22px!important;padding:22px 24px!important;background:linear-gradient(145deg,#101b2d,#0b1423)!important;border:1px solid rgba(255,255,255,.13)!important}
+.panel.cards .card:nth-child(4){background:linear-gradient(145deg,rgba(37,31,15,.98),rgba(18,19,15,.98))!important;border:1px solid rgba(214,166,66,.76)!important}
+.card .small,.small{color:#aeb9c9!important;line-height:1.5!important;overflow-wrap:anywhere!important}
+.card>.small:first-child{display:block!important;margin-bottom:10px!important;color:#b8c4d3!important;font-size:15px!important;font-weight:750!important}
+.badge{display:inline-flex!important;align-items:center!important;justify-content:center!important;width:fit-content!important;max-width:100%!important;padding:8px 16px!important;border-radius:999px!important;font-size:13px!important;line-height:1!important;font-weight:900!important;white-space:nowrap!important;margin:12px 6px 0 0!important}
+.badge.green,.green{background:#d8f7df!important;color:#155c31!important}.badge.blue,.blue{background:#e6efff!important;color:#143b78!important}.badge.yellow,.yellow{background:#fff2bf!important;color:#77450b!important}
+#merekGilingBox,#merekVerpackBox,#gMerek,#vMerek{overflow-wrap:anywhere!important;word-break:break-word!important;color:#dbe7f5!important}
+@media(max-width:760px){.panel.cards,.cards,.grid,.filters{grid-template-columns:1fr!important}.panel.cards .card{padding:19px 20px!important}#gBatang,#vPack,#upahTotal,#gTotalBatang,#gEstimasiPack,#gKarton,#gKaryawan,#gUpah,#gStatus,#vTotalPack,#vBatangEquiv,#vKarton,#vKaryawan,#vUpah,#vStatus{font-size:clamp(24px,8.2vw,36px)!important}}
+@media(max-width:420px){.panel{padding:15px!important}.panel.cards .card,.card{padding:18px!important}#gBatang,#vPack,#upahTotal,#gTotalBatang,#gEstimasiPack,#gKarton,#gKaryawan,#gUpah,#gStatus,#vTotalPack,#vBatangEquiv,#vKarton,#vKaryawan,#vUpah,#vStatus{font-size:clamp(22px,8vw,32px)!important}}
