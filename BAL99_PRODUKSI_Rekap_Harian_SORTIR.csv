@@ -1,0 +1,29 @@
+tanggal_sort,tanggal,tanggal_display,hari,status_tanggal,giling_batang_total,verpack_pack_total,upah_total,catatan
+20260501,2026-05-01,01/05/2026,Jumat,NIHIL_PRODUKSI,0,0,0,Tanggal nihil agar tetap muncul saat filter.
+20260502,2026-05-02,02/05/2026,Sabtu,ADA_KEGIATAN,504800,23100,25187600,GILING adalah WIP; tidak otomatis menjadi barang jadi.
+20260503,2026-05-03,03/05/2026,Minggu,NIHIL_PRODUKSI,0,0,0,Tanggal nihil agar tetap muncul saat filter.
+20260504,2026-05-04,04/05/2026,Senin,ADA_KEGIATAN,508100,42100,27965000,VERPACK resmi dapat jadi dasar BJ/CK4C bila valid.
+20260505,2026-05-05,05/05/2026,Selasa,ADA_KEGIATAN,504800,37000,27563800,GILING adalah WIP; tidak otomatis menjadi barang jadi.
+20260506,2026-05-06,06/05/2026,Rabu,ADA_KEGIATAN,500700,36850,27866500,GILING adalah WIP; tidak otomatis menjadi barang jadi.
+20260507,2026-05-07,07/05/2026,Kamis,ADA_KEGIATAN,437600,40000,24304000,VERPACK resmi dapat jadi dasar BJ/CK4C bila valid.
+20260508,2026-05-08,08/05/2026,Jumat,ADA_KEGIATAN,430300,30000,22351600,GILING adalah WIP; tidak otomatis menjadi barang jadi.
+20260509,2026-05-09,09/05/2026,Sabtu,ADA_KEGIATAN,461700,33700,24245000,VERPACK resmi dapat jadi dasar BJ/CK4C bila valid.
+20260510,2026-05-10,10/05/2026,Minggu,NIHIL_PRODUKSI,0,0,0,Tanggal nihil agar tetap muncul saat filter.
+20260511,2026-05-11,11/05/2026,Senin,ADA_KEGIATAN,490000,26000,24260000,VERPACK resmi dapat jadi dasar BJ/CK4C bila valid.
+20260512,2026-05-12,12/05/2026,Selasa,ADA_KEGIATAN,493600,39000,28277000,GILING adalah WIP; tidak otomatis menjadi barang jadi.
+20260513,2026-05-13,13/05/2026,Rabu,ADA_KEGIATAN,482300,54600,28758000,VERPACK resmi dapat jadi dasar BJ/CK4C bila valid.
+20260514,2026-05-14,14/05/2026,Kamis,ADA_KEGIATAN,463200,56000,28048000,VERPACK resmi dapat jadi dasar BJ/CK4C bila valid.
+20260515,2026-05-15,15/05/2026,Jumat,NIHIL_PRODUKSI,0,0,0,Tidak ada produksi terbaca; tetap bukan barang jadi.
+20260516,2026-05-16,16/05/2026,Sabtu,NIHIL_PRODUKSI,0,0,0,Tanggal nihil agar tetap muncul saat filter.
+20260517,2026-05-17,17/05/2026,Minggu,NIHIL_PRODUKSI,0,0,0,Tanggal nihil agar tetap muncul saat filter.
+20260518,2026-05-18,18/05/2026,Senin,ADA_KEGIATAN,0,21000,4410000,VERPACK resmi dapat jadi dasar BJ/CK4C bila valid.
+20260519,2026-05-19,19/05/2026,Selasa,ADA_KEGIATAN,0,36000,7560000,VERPACK resmi dapat jadi dasar BJ/CK4C bila valid.
+20260520,2026-05-20,20/05/2026,Rabu,NIHIL_PRODUKSI,0,0,0,Tanggal nihil agar tetap muncul saat filter.
+20260521,2026-05-21,21/05/2026,Kamis,NIHIL_PRODUKSI,0,0,0,Tanggal nihil agar tetap muncul saat filter.
+20260522,2026-05-22,22/05/2026,Jumat,ADA_KEGIATAN,565300,0,29565000,Filter 22-28 Mei bagian dari total Rp170.189.000.
+20260523,2026-05-23,23/05/2026,Sabtu,ADA_KEGIATAN,598500,0,30050000,Filter 22-28 Mei bagian dari total Rp170.189.000.
+20260524,2026-05-24,24/05/2026,Minggu,ADA_KEGIATAN,480100,55000,42831000,Filter 22-28 Mei bagian dari total Rp170.189.000.
+20260525,2026-05-25,25/05/2026,Senin,ADA_KEGIATAN,581400,0,32207000,Filter 22-28 Mei bagian dari total Rp170.189.000.
+20260526,2026-05-26,26/05/2026,Selasa,ADA_KEGIATAN,398400,0,19064000,Filter 22-28 Mei bagian dari total Rp170.189.000.
+20260527,2026-05-27,27/05/2026,Rabu,NIHIL_PRODUKSI,0,0,0,Tetap muncul walau total produksi dan upah nol.
+20260528,2026-05-28,28/05/2026,Kamis,ADA_KEGIATAN,402800,0,16472000,Filter 22-28 Mei bagian dari total Rp170.189.000.
