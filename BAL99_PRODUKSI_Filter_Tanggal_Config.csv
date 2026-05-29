@@ -1,0 +1,8 @@
+nama_filter,field,operator,contoh,catatan
+tanggal_dari,tanggal,>=,2026-05-01,Tanggal memakai ISO YYYY-MM-DD agar sort/filter aplikasi stabil.
+tanggal_sampai,tanggal,<=,2026-05-28,Semua tanggal 1-28 Mei terwakili di CSV detail.
+tanggal_sort,tanggal_sort,ORDER BY ASC,20260501,Gunakan untuk sort kronologis bila aplikasi belum mengenali tipe tanggal.
+kelompok_kegiatan,kelompok_kegiatan,=,GILING / VERPACK / NIHIL_PRODUKSI,NIHIL_PRODUKSI dipakai agar tanggal kosong tetap muncul.
+status_tanggal,status_tanggal,=,ADA_KEGIATAN / NIHIL_PRODUKSI,Memudahkan filter tanggal aktif atau kosong.
+nama_karyawan,nama_karyawan,contains,MUNA A,Untuk detail per karyawan saat tersedia di sumber.
+merek,merek,contains,GCC 99 isi 12,Untuk filter merek/produk.
