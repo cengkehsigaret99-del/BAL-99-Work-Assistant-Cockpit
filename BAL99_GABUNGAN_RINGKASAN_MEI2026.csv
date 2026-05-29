@@ -1,0 +1,16 @@
+metrik,nilai
+periode,2026-05-01 s/d 2026-05-29
+jumlah_baris_detail_gabungan,3669
+jumlah_baris_giling,1592
+jumlah_baris_verpack,2077
+karyawan_giling_terbaca,228
+karyawan_verpack_terbaca,66
+total_batang_giling,8826500
+estimasi_pack_giling,724726.45
+total_pack_verpack,775550
+total_batang_equiv_verpack,10704200
+total_upah_giling,363870000
+total_upah_verpack,151093000
+total_upah_gabungan,514963000
+status_validasi,VALID AWAL
+catatan,GILING adalah WIP; VERPACK belum otomatis Stock BJ; CK4C hanya dari pemakaian pita valid.
