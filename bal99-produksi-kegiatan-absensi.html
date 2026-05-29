@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BAL99 Kegiatan Produksi</title>
+<style>
+:root{--navy:#061a31;--gold:#d6a642;--cream:#fff7d6;--bg:#f4f7fa;--line:#d9e2ec;--ink:#111827;--muted:#64748b}
+*{box-sizing:border-box}body{font-family:Arial,sans-serif;margin:0;background:linear-gradient(180deg,#f8fafc,var(--bg));color:var(--ink)}.wrap{max-width:980px;margin:auto;padding:18px}.hero{background:linear-gradient(125deg,var(--navy),#0f2742);color:white;border-radius:22px;padding:22px;border-bottom:6px solid var(--gold);box-shadow:0 14px 30px rgba(6,26,49,.16)}.hero h1{margin:6px 0 8px;font-size:31px}.hero p{margin:0;color:#e6eef8;line-height:1.5}.k{font-size:12px;font-weight:1000;letter-spacing:.12em;text-transform:uppercase;color:#f4d07d}.panel{background:white;border:1px solid var(--line);border-radius:20px;padding:16px;margin-top:12px;box-shadow:0 10px 24px rgba(6,26,49,.07)}.note{background:var(--cream);border-left:6px solid var(--gold);line-height:1.55}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.card{border:1px solid var(--line);border-radius:16px;padding:14px;background:#fff}.card b{display:block;color:var(--navy);font-size:17px;margin-bottom:5px}.small{color:var(--muted);font-size:13px;line-height:1.45}.btn{display:inline-block;background:var(--navy);color:white;text-decoration:none;border-radius:12px;padding:11px 14px;font-weight:1000;margin-top:8px}@media(max-width:760px){.wrap{padding:12px}.grid{grid-template-columns:1fr}.hero h1{font-size:26px}}
+</style>
+<link rel="stylesheet" href="bal99-dark-mode.css?v=dark2">
+<link rel="stylesheet" href="bal99-motion.css?v=motion2">
+</head>
+<body>
+<main class="wrap">
+<section class="hero">
+<div class="k">Produksi • Kegiatan • Absensi • Upah</div>
+<h1>BAL-99 Kegiatan & Absensi Produksi</h1>
+<p>Halaman kontrol awal untuk membaca arah kerja GILING, VERPACK, absensi berdasarkan kegiatan, rekap harian, dan upah borongan. Halaman ini bersifat read-only dan tidak mengubah data stok atau piutang.</p>
+</section>
+<section class="panel note">
+<b>Aturan anti-benturan:</b><br>
+1. GILING dibaca sebagai WIP, belum otomatis menjadi barang jadi.<br>
+2. Hasil barang jadi hanya mengikuti sumber VERPACK/PACKING resmi yang sudah divalidasi.<br>
+3. Upah borongan adalah biaya tenaga kerja, bukan penambah stok.<br>
+4. Absensi kegiatan dihitung dari data unik tanggal, nomor induk, dan nama karyawan; bukan dari jumlah baris mentah.<br>
+5. Data kegiatan produksi tidak boleh dicampur langsung ke piutang atau pengiriman.
+</section>
+<section class="panel">
+<h2>Struktur modul</h2>
+<div class="grid">
+<div class="card"><b>Dashboard Kegiatan Produksi</b><span class="small">Ringkasan tanggal, aktivitas produksi, status hari, dan catatan validasi.</span></div>
+<div class="card"><b>Detail Giling</b><span class="small">Kontrol output giling sebagai WIP dan dasar evaluasi kerja, bukan barang jadi.</span></div>
+<div class="card"><b>Detail Verpack</b><span class="small">Kontrol packing/verpack yang menjadi dasar awal barang jadi jika sumbernya resmi.</span></div>
+<div class="card"><b>Absensi Berdasarkan Kegiatan</b><span class="small">Membaca kehadiran dari kegiatan yang benar-benar tercatat.</span></div>
+<div class="card"><b>Rekap Harian</b><span class="small">Membedakan hari aktif, hari kosong, libur, dan data yang perlu konfirmasi.</span></div>
+<div class="card"><b>Rekap Karyawan / Upah</b><span class="small">Membantu membaca produktivitas dan nilai upah borongan per periode.</span></div>
+</div>
+</section>
+<section class="panel note">
+<b>Validasi wajib sebelum dipakai untuk keputusan:</b><br>
+- Tanggal 2026-05-28 harus menghitung karyawan unik, bukan jumlah baris mentah.<br>
+- Tanggal 2026-05-27 dibaca sebagai tidak ada kegiatan produksi jika total output dan upah nol.<br>
+- Data summary upah harian tidak boleh dianggap sebagai hasil stok fisik.
+</section>
+<section class="panel">
+<h2>Catatan pemakaian</h2>
+<p class="small">Untuk sementara halaman ini menjadi pintu SOP dan kontrol konsep. Importer CSV penuh dapat ditambahkan bertahap setelah struktur aman dan tidak menabrak modul Stock BJ, CK-4, Piutang, atau DO/SJ.</p>
+<a class="btn" href="index.html">Kembali ke Halaman Utama</a>
+</section>
+</main>
+</body>
+</html>
