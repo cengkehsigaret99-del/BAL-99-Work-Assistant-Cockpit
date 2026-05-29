@@ -1,0 +1,44 @@
+INSTRUKSI UPLOAD DETAIL GABUNGAN BAL99 MEI 2026
+
+Status saat ini:
+- Dashboard gabungan sudah terpasang.
+- Ringkasan gabungan sudah terpasang.
+- Rekap harian sortir sudah terpasang.
+- Manifest pecahan detail sudah terpasang.
+- Detail penuh 3.669 baris belum terpasang.
+
+Urutan upload yang disarankan:
+1. Upload BAL99_DETAIL_GABUNGAN_2026-05-15_sd_2026-05-21.csv
+   Baris: 238
+   Total upah: Rp26.197.500
+
+2. Upload BAL99_DETAIL_GABUNGAN_2026-05-08_sd_2026-05-14.csv
+   Baris: 528
+   Total upah: Rp155.939.600
+
+3. Upload BAL99_DETAIL_GABUNGAN_2026-05-01_sd_2026-05-07.csv
+   Baris: 635
+   Total upah: Rp132.886.900
+
+4. Pecah lagi periode 2026-05-22 sd 2026-05-29 per tanggal sebelum upload:
+   - 2026-05-22
+   - 2026-05-23
+   - 2026-05-24
+   - 2026-05-25
+   - 2026-05-26
+   - 2026-05-28
+   - 2026-05-29
+
+Aturan anti-benturan:
+- GILING = WIP, bukan barang jadi.
+- GILING tidak boleh masuk CK-4C.
+- Upah borongan tidak otomatis menambah stok.
+- VERPACK hanya menjadi dasar barang jadi jika cocok sumber packing resmi.
+- Data ini VALID AWAL, belum VALID FINAL.
+
+File yang tidak boleh diubah saat upload detail:
+- Stock BJ
+- CK-4C
+- Piutang
+- DO/SJ
+- Data customer/pasar
