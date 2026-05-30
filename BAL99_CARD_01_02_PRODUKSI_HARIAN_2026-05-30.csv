@@ -1,0 +1,2 @@
+tanggal,hari,tanggal_sort,giling_batang,giling_estimasi_pack,giling_karton,giling_karyawan,giling_upah,giling_status,verpack_pack,verpack_batang_equiv,verpack_karton,verpack_karyawan,verpack_upah,verpack_status,merek_giling,merek_verpack
+2026-05-30,Sabtu,2026-05-30,0,0,0,0,0,TIDAK_ADA_GILING_TERBACA,52400,674400,60,91,9364000,ADA_VERPACK_VALID_AWAL, ,GCC 99: 41000 pack; GCC 16: 11400 pack
