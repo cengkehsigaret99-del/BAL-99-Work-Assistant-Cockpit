@@ -1,0 +1,8 @@
+bagian,uraian,nilai_pack,nilai_karton,catatan
+POSISI AWAL,Total PO aktif awal,331800,423,Tidak termasuk TUD 400 pack.
+REALISASI KELUAR,Total pengeluaran PO utama,33000,45,SJ 132 sampai 137.
+SISA PO AKTIF,Total sisa PO aktif utama,298800,378,"Padang PMS, Banten, Aji, dan PSP."
+TUD / SAMPLE,Rencana total TUD,400,,Rendra 250 pack + Udho 150 pack.
+TUD / SAMPLE,Realisasi total TUD keluar,400,,Rendra 200 pack + Udho 200 pack.
+TUD / SAMPLE,Selisih Rendra,50,,Masih kurang 50 pack / 5 slop.
+TUD / SAMPLE,Selisih Udho,-50,,Lebih 50 pack / 5 slop.
