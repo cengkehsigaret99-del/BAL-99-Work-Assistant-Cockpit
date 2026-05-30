@@ -1,0 +1,2 @@
+tanggal_rencana,hari_ke,produk,saldo_po_pack,saldo_tud_pack_pos,stok_siap_kirim_pack,buffer_minimal_pack,kebutuhan_produksi_pack,target_produksi_pack,target_karton,sisa_target_setelah_hari_ini_pack,status_target,catatan
+2026-05-31,H+1,GCC 99 isi 12,180000,0,10000,20000,190000,32000,32,158000,PRIORITAS,Sisa PO
