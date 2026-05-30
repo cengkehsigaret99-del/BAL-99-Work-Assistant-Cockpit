@@ -1,0 +1,11 @@
+tanggal_update,po_id,customer,produk,qty_po_pack,qty_sj_pack,selisih_pack,tud_rencana_pack,tud_keluar_pack,selisih_tud_pack,no_sj_terkait,status_validasi,catatan
+2026-05-30,PO-001,Padang PMS,GCC 99 isi 12,80000,0,80000,0,0,0,,BELUM ADA SJ,Belum ada realisasi
+2026-05-30,PO-002,Padang PMS,New GCC 99 isi 16,75000,0,75000,0,0,0,,BELUM ADA SJ,Perlu kunci varian
+2026-05-30,PO-003,Pasar Banten,GCC 99 isi 12,100000,0,100000,0,0,0,,BELUM ADA SJ,Belum ada realisasi
+2026-05-30,PO-004,Tri Sukma Aji,New GCC 99 isi 16,25800,0,25800,0,0,0,,BELUM ADA SJ,Belum ada realisasi
+2026-05-30,PO-005,Udho,New GCC 99 isi 16,3000,3000,0,150,200,-50,137/SJ/BAL/V/2026,PERLU KONFIRMASI,TUD lebih 50 pack
+2026-05-30,PO-006,Jambi / Yonka,GCC 99 isi 16,12000,12000,0,0,0,0,136/SJ/BAL/V/2026,VALID AWAL,Cocok
+2026-05-30,PO-007,Usup Karmin,CB 77 isi 12,10000,10000,0,0,0,0,132/SJ/BAL/V/2026,VALID AWAL,Cocok
+2026-05-30,PO-008,Rendra,CB 77 isi 12,5000,5000,0,250,200,50,135/SJ/BAL/V/2026,PERLU KONFIRMASI,TUD kurang 50 pack
+2026-05-30,PO-009,TSM,CB 77 isi 16,3000,3000,0,0,0,0,133 dan 134,VALID AWAL,Cocok
+2026-05-30,PO-010,PSP,New GCC 99 isi 16 Ambree Biru,18000,0,18000,0,0,0,,BELUM ADA SJ,Belum ada realisasi
