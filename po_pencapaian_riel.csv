@@ -1,0 +1,29 @@
+tanggal,produk,kategori_produk,target_pack,real_verpack_pack,pencapaian_persen,selisih_pack,status_pencapaian,sumber_real,catatan
+2026-05-30,Gedung Cengkeh Coklat 99 isi 12,GCC99-12,32000,,,,MENUNGGU DATA VERPACK,browse_verpack.csv,Real sah dari packing/verpack.
+2026-05-31,Gedung Cengkeh Coklat 99 isi 12,GCC99-12,32000,,,,MENUNGGU DATA VERPACK,browse_verpack.csv,Real sah dari packing/verpack.
+2026-06-01,Gedung Cengkeh Coklat 99 isi 12,GCC99-12,32000,,,,MENUNGGU DATA VERPACK,browse_verpack.csv,Real sah dari packing/verpack.
+2026-06-02,Gedung Cengkeh Coklat 99 isi 12,GCC99-12,32000,,,,MENUNGGU DATA VERPACK,browse_verpack.csv,Real sah dari packing/verpack.
+2026-06-03,Gedung Cengkeh Coklat 99 isi 12,GCC99-12,31000,,,,MENUNGGU DATA VERPACK,browse_verpack.csv,Real sah dari packing/verpack.
+2026-06-04,Gedung Cengkeh Coklat 99 isi 12,GCC99-12,31000,,,,MENUNGGU DATA VERPACK,browse_verpack.csv,Real sah dari packing/verpack.
+2026-05-30,New Gedung Cengkeh Coklat 99 isi 16,NEW-GCC99-16,20000,,,,MENUNGGU DATA VERPACK,browse_verpack.csv,Real sah dari packing/verpack.
+2026-05-31,New Gedung Cengkeh Coklat 99 isi 16,NEW-GCC99-16,20000,,,,MENUNGGU DATA VERPACK,browse_verpack.csv,Real sah dari packing/verpack.
+2026-06-01,New Gedung Cengkeh Coklat 99 isi 16,NEW-GCC99-16,25000,,,,MENUNGGU DATA VERPACK,browse_verpack.csv,Real sah dari packing/verpack.
+2026-06-02,New Gedung Cengkeh Coklat 99 isi 16,NEW-GCC99-16,20000,,,,MENUNGGU DATA VERPACK,browse_verpack.csv,Real sah dari packing/verpack.
+2026-06-03,New Gedung Cengkeh Coklat 99 isi 16,NEW-GCC99-16,18000,,,,MENUNGGU DATA VERPACK,browse_verpack.csv,Real sah dari packing/verpack.
+2026-06-04,New Gedung Cengkeh Coklat 99 isi 16,NEW-GCC99-16,17970,,,,MENUNGGU DATA VERPACK,browse_verpack.csv,Real sah dari packing/verpack.
+2026-05-30,Cengkeh Biru 77 isi 12,CB77-12,4000,,,,MENUNGGU DATA VERPACK,browse_verpack.csv,Real sah dari packing/verpack.
+2026-05-31,Cengkeh Biru 77 isi 12,CB77-12,4000,,,,MENUNGGU DATA VERPACK,browse_verpack.csv,Real sah dari packing/verpack.
+2026-06-01,Cengkeh Biru 77 isi 12,CB77-12,4000,,,,MENUNGGU DATA VERPACK,browse_verpack.csv,Real sah dari packing/verpack.
+2026-06-02,Cengkeh Biru 77 isi 12,CB77-12,3000,,,,MENUNGGU DATA VERPACK,browse_verpack.csv,Real sah dari packing/verpack.
+2026-06-03,Cengkeh Biru 77 isi 12,CB77-12,3000,,,,MENUNGGU DATA VERPACK,browse_verpack.csv,Real sah dari packing/verpack.
+2026-06-04,Cengkeh Biru 77 isi 12,CB77-12,2250,,,,MENUNGGU DATA VERPACK,browse_verpack.csv,Real sah dari packing/verpack.
+2026-05-30,Cengkeh Biru 77 isi 16 / Cengkeh Biru 16 Bungkus,CB16,1000,,,,MENUNGGU DATA VERPACK,browse_verpack.csv,Perlu kunci SKU.
+2026-05-31,Cengkeh Biru 77 isi 16 / Cengkeh Biru 16 Bungkus,CB16,1000,,,,MENUNGGU DATA VERPACK,browse_verpack.csv,Perlu kunci SKU.
+2026-06-01,Cengkeh Biru 77 isi 16 / Cengkeh Biru 16 Bungkus,CB16,1000,,,,MENUNGGU DATA VERPACK,browse_verpack.csv,Perlu kunci SKU.
+2026-06-02,Cengkeh Biru 77 isi 16 / Cengkeh Biru 16 Bungkus,CB16,1000,,,,MENUNGGU DATA VERPACK,browse_verpack.csv,Perlu kunci SKU.
+2026-06-03,Cengkeh Biru 77 isi 16 / Cengkeh Biru 16 Bungkus,CB16,1000,,,,MENUNGGU DATA VERPACK,browse_verpack.csv,Perlu kunci SKU.
+2026-06-04,Cengkeh Biru 77 isi 16 / Cengkeh Biru 16 Bungkus,CB16,1000,,,,MENUNGGU DATA VERPACK,browse_verpack.csv,Perlu kunci SKU.
+2026-06-01,New Gedung Cengkeh Coklat 99 isi 16 TSG Baru Ambree Biru,NEW-GCC99-16-BIRU,1000,,,,MENUNGGU DATA VERPACK,browse_verpack.csv,Real sah dari packing/verpack.
+2026-06-02,New Gedung Cengkeh Coklat 99 isi 16 TSG Baru Ambree Biru,NEW-GCC99-16-BIRU,1000,,,,MENUNGGU DATA VERPACK,browse_verpack.csv,Real sah dari packing/verpack.
+2026-06-03,New Gedung Cengkeh Coklat 99 isi 16 TSG Baru Ambree Biru,NEW-GCC99-16-BIRU,1000,,,,MENUNGGU DATA VERPACK,browse_verpack.csv,Real sah dari packing/verpack.
+2026-06-04,New Gedung Cengkeh Coklat 99 isi 16 TSG Baru Ambree Biru,NEW-GCC99-16-BIRU,1002,,,,MENUNGGU DATA VERPACK,browse_verpack.csv,Real sah dari packing/verpack.
