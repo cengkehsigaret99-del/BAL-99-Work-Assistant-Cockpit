@@ -1,0 +1,7 @@
+produk,kategori_produk,pack_per_karton,buffer_minimal_karton,buffer_minimal_pack,status_buffer,catatan
+Gedung Cengkeh Coklat 99 isi 12,GCC99-12,1000,20,20000,AKTIF,Buffer awal untuk menjaga stok gudang setelah PO.
+New Gedung Cengkeh Coklat 99 isi 16,NEW-GCC99-16,600,20,12000,AKTIF,Buffer awal; varian standar/kuning/biru harus dikunci sebelum produksi.
+New Gedung Cengkeh Coklat 99 isi 16 TSG Baru Ambree Biru,NEW-GCC99-16-BIRU,600,10,6000,AKTIF,Buffer khusus varian PSP Ambree Biru / TSG Baru.
+Cengkeh Biru 77 isi 12,CB77-12,1000,5,5000,AKTIF,Buffer minimal untuk Bogor/Madiun.
+Cengkeh Biru 77 isi 16 / Cengkeh Biru 16 Bungkus,CB16,600,5,3000,AKTIF,Perlu konfirmasi SKU TSM.
+Cengkeh Refill,REFILL-12,600,5,3000,AKTIF,Disediakan untuk pengembangan berikutnya.
