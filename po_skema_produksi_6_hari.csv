@@ -1,0 +1,31 @@
+tanggal_rencana,hari_ke,produk,kategori_produk,saldo_po_pack,stok_siap_kirim_pack,buffer_minimal_pack,kebutuhan_produksi_pack,target_produksi_pack,target_karton,sisa_target_setelah_hari_ini_pack,status_target,sumber_stok,catatan
+2026-05-30,H+1,Gedung Cengkeh Coklat 99 isi 12,GCC99-12,180000,10000,20000,190000,32000,32.0,158000,PRIORITAS PRODUKSI UTAMA,browse_barang_jadi.csv,Real sah Verpack/Packing.
+2026-05-31,H+2,Gedung Cengkeh Coklat 99 isi 12,GCC99-12,180000,10000,20000,190000,32000,32.0,126000,PRIORITAS PRODUKSI UTAMA,browse_barang_jadi.csv,Real sah Verpack/Packing.
+2026-06-01,H+3,Gedung Cengkeh Coklat 99 isi 12,GCC99-12,180000,10000,20000,190000,32000,32.0,94000,PRIORITAS PRODUKSI UTAMA,browse_barang_jadi.csv,Real sah Verpack/Packing.
+2026-06-02,H+4,Gedung Cengkeh Coklat 99 isi 12,GCC99-12,180000,10000,20000,190000,32000,32.0,62000,PRIORITAS PRODUKSI UTAMA,browse_barang_jadi.csv,Real sah Verpack/Packing.
+2026-06-03,H+5,Gedung Cengkeh Coklat 99 isi 12,GCC99-12,180000,10000,20000,190000,31000,31.0,31000,PRIORITAS PRODUKSI UTAMA,browse_barang_jadi.csv,Real sah Verpack/Packing.
+2026-06-04,H+6,Gedung Cengkeh Coklat 99 isi 12,GCC99-12,180000,10000,20000,190000,31000,31.0,0,PRIORITAS PRODUKSI UTAMA,browse_barang_jadi.csv,Real sah Verpack/Packing.
+2026-05-30,H+1,New Gedung Cengkeh Coklat 99 isi 16,NEW-GCC99-16,115950,6980,12000,120970,20000,33.333,100970,PRIORITAS PRODUKSI UTAMA,browse_barang_jadi.csv,Real sah Verpack/Packing.
+2026-05-31,H+2,New Gedung Cengkeh Coklat 99 isi 16,NEW-GCC99-16,115950,6980,12000,120970,20000,33.333,80970,PRIORITAS PRODUKSI UTAMA,browse_barang_jadi.csv,Real sah Verpack/Packing.
+2026-06-01,H+3,New Gedung Cengkeh Coklat 99 isi 16,NEW-GCC99-16,115950,6980,12000,120970,25000,41.667,55970,PRIORITAS PRODUKSI UTAMA,browse_barang_jadi.csv,Real sah Verpack/Packing.
+2026-06-02,H+4,New Gedung Cengkeh Coklat 99 isi 16,NEW-GCC99-16,115950,6980,12000,120970,20000,33.333,35970,PRIORITAS PRODUKSI UTAMA,browse_barang_jadi.csv,Real sah Verpack/Packing.
+2026-06-03,H+5,New Gedung Cengkeh Coklat 99 isi 16,NEW-GCC99-16,115950,6980,12000,120970,18000,30.0,17970,PRIORITAS PRODUKSI UTAMA,browse_barang_jadi.csv,Real sah Verpack/Packing.
+2026-06-04,H+6,New Gedung Cengkeh Coklat 99 isi 16,NEW-GCC99-16,115950,6980,12000,120970,17970,29.95,0,PRIORITAS PRODUKSI UTAMA,browse_barang_jadi.csv,Real sah Verpack/Packing.
+2026-05-30,H+1,Cengkeh Biru 77 isi 12,CB77-12,15250,0,5000,20250,4000,4.0,16250,PRODUKSI PENDUKUNG,browse_barang_jadi.csv,Real sah Verpack/Packing.
+2026-05-31,H+2,Cengkeh Biru 77 isi 12,CB77-12,15250,0,5000,20250,4000,4.0,12250,PRODUKSI PENDUKUNG,browse_barang_jadi.csv,Real sah Verpack/Packing.
+2026-06-01,H+3,Cengkeh Biru 77 isi 12,CB77-12,15250,0,5000,20250,4000,4.0,8250,PRODUKSI PENDUKUNG,browse_barang_jadi.csv,Real sah Verpack/Packing.
+2026-06-02,H+4,Cengkeh Biru 77 isi 12,CB77-12,15250,0,5000,20250,3000,3.0,5250,PRODUKSI PENDUKUNG,browse_barang_jadi.csv,Real sah Verpack/Packing.
+2026-06-03,H+5,Cengkeh Biru 77 isi 12,CB77-12,15250,0,5000,20250,3000,3.0,2250,PRODUKSI PENDUKUNG,browse_barang_jadi.csv,Real sah Verpack/Packing.
+2026-06-04,H+6,Cengkeh Biru 77 isi 12,CB77-12,15250,0,5000,20250,2250,2.25,0,PRODUKSI PENDUKUNG,browse_barang_jadi.csv,Real sah Verpack/Packing.
+2026-05-30,H+1,Cengkeh Biru 77 isi 16 / Cengkeh Biru 16 Bungkus,CB16,3000,0,3000,6000,1000,1.667,5000,PRODUKSI PENDUKUNG,browse_barang_jadi.csv,Perlu kunci SKU TSM.
+2026-05-31,H+2,Cengkeh Biru 77 isi 16 / Cengkeh Biru 16 Bungkus,CB16,3000,0,3000,6000,1000,1.667,4000,PRODUKSI PENDUKUNG,browse_barang_jadi.csv,Perlu kunci SKU TSM.
+2026-06-01,H+3,Cengkeh Biru 77 isi 16 / Cengkeh Biru 16 Bungkus,CB16,3000,0,3000,6000,1000,1.667,3000,PRODUKSI PENDUKUNG,browse_barang_jadi.csv,Perlu kunci SKU TSM.
+2026-06-02,H+4,Cengkeh Biru 77 isi 16 / Cengkeh Biru 16 Bungkus,CB16,3000,0,3000,6000,1000,1.667,2000,PRODUKSI PENDUKUNG,browse_barang_jadi.csv,Perlu kunci SKU TSM.
+2026-06-03,H+5,Cengkeh Biru 77 isi 16 / Cengkeh Biru 16 Bungkus,CB16,3000,0,3000,6000,1000,1.667,1000,PRODUKSI PENDUKUNG,browse_barang_jadi.csv,Perlu kunci SKU TSM.
+2026-06-04,H+6,Cengkeh Biru 77 isi 16 / Cengkeh Biru 16 Bungkus,CB16,3000,0,3000,6000,1000,1.667,0,PRODUKSI PENDUKUNG,browse_barang_jadi.csv,Perlu kunci SKU TSM.
+2026-05-30,H+1,New Gedung Cengkeh Coklat 99 isi 16 TSG Baru Ambree Biru,NEW-GCC99-16-BIRU,18000,19998,6000,4002,0,0.0,4002,STOK CUKUP,browse_barang_jadi.csv,Produksi buffer nanti.
+2026-05-31,H+2,New Gedung Cengkeh Coklat 99 isi 16 TSG Baru Ambree Biru,NEW-GCC99-16-BIRU,18000,19998,6000,4002,0,0.0,4002,STOK CUKUP,browse_barang_jadi.csv,Produksi buffer nanti.
+2026-06-01,H+3,New Gedung Cengkeh Coklat 99 isi 16 TSG Baru Ambree Biru,NEW-GCC99-16-BIRU,18000,19998,6000,4002,1000,1.667,3002,PRODUKSI BUFFER,browse_barang_jadi.csv,Real sah Verpack/Packing.
+2026-06-02,H+4,New Gedung Cengkeh Coklat 99 isi 16 TSG Baru Ambree Biru,NEW-GCC99-16-BIRU,18000,19998,6000,4002,1000,1.667,2002,PRODUKSI BUFFER,browse_barang_jadi.csv,Real sah Verpack/Packing.
+2026-06-03,H+5,New Gedung Cengkeh Coklat 99 isi 16 TSG Baru Ambree Biru,NEW-GCC99-16-BIRU,18000,19998,6000,4002,1000,1.667,1002,PRODUKSI BUFFER,browse_barang_jadi.csv,Real sah Verpack/Packing.
+2026-06-04,H+6,New Gedung Cengkeh Coklat 99 isi 16 TSG Baru Ambree Biru,NEW-GCC99-16-BIRU,18000,19998,6000,4002,1002,1.67,0,PRODUKSI BUFFER,browse_barang_jadi.csv,Real sah Verpack/Packing.
