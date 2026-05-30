@@ -1,13 +1,13 @@
 tanggal_stok,kode_sku,merek,stok_awal,masuk_verpack,keluar_sj,retur_masuk,koreksi_plus,koreksi_minus,stok_akhir,konversi_stok,po_belum_terkirim,selisih_stok_vs_po,status_stok,validasi
-2026-05-29,C-031,New Ambree Biru / New Gedung Cengkeh Coklat 99 isi 16 Ambree Biru,0,0,0,0,0,0,19998,"33 karton 1 bal 9 slop 8 pack",0,19998,STOK ADA,VALID AWAL - update Barang Jadi 29 Mei 2026 dari browse_barang_jadi.csv
-2026-05-29,C-023,Gedung Cengkeh 16 New / New Gedung Cengkeh Coklat 99 isi 16,0,0,0,0,0,0,6980,"11 karton 3 bal 8 slop",0,6980,STOK ADA TERBATAS,VALID AWAL - update Barang Jadi 29 Mei 2026 dari browse_barang_jadi.csv
-2026-05-29,C-015,Cengkeh Biru 77 isi 16,0,0,0,0,0,0,0,"0",0,0,STOK 0,VALID AWAL - update Barang Jadi 29 Mei 2026 dari browse_barang_jadi.csv
-2026-05-29,C-012,Cengkeh Biru 77 isi 12,0,0,0,0,0,0,0,"0",0,0,STOK 0,VALID AWAL - update Barang Jadi 29 Mei 2026 dari browse_barang_jadi.csv
-2026-05-29,GCC99-12,Gedung Cengkeh Coklat 99 isi 12,0,0,0,0,0,0,10000,"10 karton",0,10000,STOK ADA TERBATAS,VALID AWAL - update Barang Jadi 29 Mei 2026 dari browse_barang_jadi.csv
-2026-05-29,TUD-NEW16,TUD New GCC 99 isi 16,0,0,0,0,0,0,2,"2 pack TUD arsip",0,2,TUD ARSIP,VALID AWAL - update Barang Jadi 29 Mei 2026 dari browse_barang_jadi.csv
-2026-05-29,,Gedung Cengkeh Coklat 99 Polos,0,0,0,0,0,0,0,"0",0,0,STOK 0,VALID AWAL - update Barang Jadi 29 Mei 2026 dari browse_barang_jadi.csv
-2026-05-29,,Gedung Cengkeh Coklat 99 Kuning,0,0,0,0,0,0,0,"0",0,0,STOK 0,VALID AWAL - update Barang Jadi 29 Mei 2026 dari browse_barang_jadi.csv
-2026-05-29,,Cengkeh Refill,0,0,0,0,0,0,130,"1 bal 3 slop",0,130,STOK ADA TERBATAS,VALID AWAL - update Barang Jadi 29 Mei 2026 dari browse_barang_jadi.csv
-2026-05-29,,New Gedung cengkeh Coklat 99 isi 16 ambree,0,0,0,0,0,0,830,"1 karton 1 bal 3 slop",0,830,STOK ADA,VALID AWAL - update Barang Jadi 29 Mei 2026 dari browse_barang_jadi.csv
-2026-05-29,,Cengkeh Refill Orijinal,0,0,0,0,0,0,0,"0",0,0,STOK 0,VALID AWAL - update Barang Jadi 29 Mei 2026 dari browse_barang_jadi.csv
-2026-05-29,,BAL 9,0,0,0,0,0,0,0,"0",0,0,STOK 0,VALID AWAL - update Barang Jadi 29 Mei 2026 dari browse_barang_jadi.csv
+2026-05-30,C-031,New Ambree Biru / New Gedung Cengkeh Coklat 99 isi 16 Ambree Biru,19998,0,0,0,0,0,19998,"33 karton 1 bal 9 slop 8 pack",0,19998,BELUM TERUPDATE 30 MEI,BELUM ADA DATA VERPACK 30 MEI - stok dibawa dari 29 Mei; tidak ada DO/SJ 30 yang terbaca untuk varian ini
+2026-05-30,C-023,Gedung Cengkeh 16 New / New Gedung Cengkeh Coklat 99 isi 16,6980,0,3000,0,0,0,3980,"6 karton 3 bal 9 slop 8 pack",0,3980,STOK ADA TERBATAS / PERLU KONFIRMASI,BELUM ADA DATA VERPACK 30 MEI - keluar SJ 137 UDHO 3.000 pack; sample 200 pack dicatat non-reguler/TUD dan tidak dicampur ke stok reguler
+2026-05-30,C-015,Cengkeh Biru 77 isi 16,0,0,3000,0,0,0,-3000,"DEFISIT 3.000 pack / perlu data verpack 30 Mei",0,-3000,PERLU KONFIRMASI,BELUM ADA DATA VERPACK 30 MEI - keluar SJ 133 2.400 pack dan SJ 134 600 pack; stok 29 Mei = 0 sehingga perlu data produksi/verpack 30 Mei
+2026-05-30,C-012,Cengkeh Biru 77 isi 12,0,0,15000,0,0,0,-15000,"DEFISIT 15.000 pack / perlu data verpack 30 Mei",0,-15000,PERLU KONFIRMASI,BELUM ADA DATA VERPACK 30 MEI - keluar SJ 132 10.000 pack dan SJ 135 5.000 pack; sample 200 pack tidak dicampur ke stok reguler
+2026-05-30,GCC99-12,Gedung Cengkeh Coklat 99 isi 12,10000,0,0,0,0,0,10000,"10 karton",0,10000,BELUM TERUPDATE 30 MEI,BELUM ADA DATA VERPACK 30 MEI - stok dibawa dari 29 Mei; tidak ada DO/SJ 30 yang terbaca untuk GCC 99 isi 12 reguler
+2026-05-30,TUD-NEW16,TUD New GCC 99 isi 16,2,0,200,0,0,0,2,"2 pack TUD arsip; ada sample SJ 137 sebanyak 200 pack perlu file TUD",0,2,TUD ARSIP / PERLU KONFIRMASI,BELUM ADA DATA VERPACK/TUD 30 MEI - sample NEW GCC 99 isi 16 sebanyak 200 pack tercatat non-piutang; tidak mengurangi stok barang jadi reguler
+2026-05-30,,Gedung Cengkeh Coklat 99 Polos,0,0,0,0,0,0,0,"0",0,0,BELUM TERUPDATE 30 MEI,BELUM ADA DATA VERPACK 30 MEI - stok dibawa dari 29 Mei; tidak ada DO/SJ 30 yang terbaca untuk varian ini
+2026-05-30,,Gedung Cengkeh Coklat 99 Kuning,0,0,0,0,0,0,0,"0",0,0,BELUM TERUPDATE 30 MEI,BELUM ADA DATA VERPACK 30 MEI - stok dibawa dari 29 Mei; tidak ada DO/SJ 30 yang terbaca untuk varian ini
+2026-05-30,,Cengkeh Refill,130,0,0,0,0,0,130,"1 bal 3 slop",0,130,BELUM TERUPDATE 30 MEI,BELUM ADA DATA VERPACK 30 MEI - stok dibawa dari 29 Mei; tidak ada DO/SJ 30 yang terbaca untuk Cengkeh Refill
+2026-05-30,,New Gedung cengkeh Coklat 99 isi 16 ambree,830,0,12000,0,0,0,-11170,"DEFISIT 11.170 pack / perlu data verpack 30 Mei",0,-11170,PERLU KONFIRMASI,BELUM ADA DATA VERPACK 30 MEI - keluar SJ 136 Jambi 12.000 pack untuk GCC 99 isi 16 Kuning; perlu konfirmasi mapping varian ambree/kuning dan produksi 30 Mei
+2026-05-30,,Cengkeh Refill Orijinal,0,0,0,0,0,0,0,"0",0,0,BELUM TERUPDATE 30 MEI,BELUM ADA DATA VERPACK 30 MEI - stok dibawa dari 29 Mei; tidak ada DO/SJ 30 yang terbaca untuk varian ini
+2026-05-30,,BAL 9,0,0,0,0,0,0,0,"0",0,0,BELUM TERUPDATE 30 MEI,BELUM ADA DATA VERPACK 30 MEI - stok dibawa dari 29 Mei; tidak ada DO/SJ 30 yang terbaca untuk BAL 9
