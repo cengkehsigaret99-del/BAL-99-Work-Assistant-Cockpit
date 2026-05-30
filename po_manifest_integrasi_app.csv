@@ -1,0 +1,8 @@
+nama_file,fungsi,boleh_menambah_piutang,dipakai_di_menu,catatan
+po_debet_kredit_saldo.csv,"Ledger PO masuk, kredit SJ, dan saldo PO dalam pack",TIDAK,PO & Skema Produksi,CSV utama PO aktif.
+po_skema_produksi_6_hari.csv,Target produksi 6 hari berdasarkan saldo PO buffer dan stok,TIDAK,Skema Produksi 6 Hari,Target produksi bukan real barang jadi.
+po_pencapaian_riel.csv,Target vs real Verpack/Packing,TIDAK,Pencapaian Riel,Real sah memakai verpack atau packing bukan giling.
+po_buffer_gudang.csv,Master buffer minimal per produk,TIDAK,Buffer Gudang,Buffer bisa diubah tanpa ubah kode.
+po_prioritas_produksi.csv,Skor prioritas produksi dan pengiriman,TIDAK,Prioritas Produksi,Membantu pilihan kerja harian.
+po_kontrol_bahan.csv,Cek kesiapan bahan pita dan tenaga,TIDAK,Kontrol Bahan & Pita,Semua status awal PERLU CEK.
+po_validasi_sj.csv,Validasi PO vs DO/SJ resmi,TIDAK sampai VALID FINAL,Validasi PO vs DO/SJ,Jika qty beda PERLU KONFIRMASI dan jika SJ dobel CEK DOBEL.
