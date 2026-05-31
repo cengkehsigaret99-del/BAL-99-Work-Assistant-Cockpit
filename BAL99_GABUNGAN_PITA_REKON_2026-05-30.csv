@@ -1,0 +1,7 @@
+tanggal,hari,area_data,kelompok_kegiatan,kategori_pita,peruntukan,pack_verpack,pemakaian_pita,selisih,status_rekonsiliasi,stok_awal,masuk,keluar_bal2,stok_akhir,status_validasi,catatan
+2026-05-30,Sabtu,PITA,PITA,PITA 99 & 77,GCC 99 / CB 77 isi 12,41000,41000,0,,299200,0,0,258200,VALID AWAL,Pemakaian pita untuk GCC 99 30 Mei.
+2026-05-30,Sabtu,PITA,PITA,PITA 16,GCC 16 / CB 16 isi 16,11400,11400,0,,338500,0,0,327100,VALID AWAL,Pemakaian pita untuk GCC 16 30 Mei.
+2026-05-30,Sabtu,PITA,PITA,PITA REFILL,REFILL,0,0,0,,9970,0,0,9970,VALID AWAL,Tidak ada pemakaian pita refill.
+2026-05-30,Sabtu,REKONSILIASI,REKONSILIASI_VERPACK_PITA,PITA 99 & 77,,41000,41000,0,COCOK,,,,,VALID AWAL,Rekonsiliasi GCC 99 cocok.
+2026-05-30,Sabtu,REKONSILIASI,REKONSILIASI_VERPACK_PITA,PITA 16,,11400,11400,0,COCOK,,,,,VALID AWAL,Rekonsiliasi GCC 16 cocok.
+2026-05-30,Sabtu,REKONSILIASI,REKONSILIASI_VERPACK_PITA,PITA REFILL,,0,0,0,COCOK,,,,,VALID AWAL,Rekonsiliasi refill cocok.
