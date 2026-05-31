@@ -1,0 +1,7 @@
+periode,modul,status,catatan
+2026-05-01 s/d 2026-05-30,Produksi Giling,VALID FINAL - KEPUTUSAN OWNER,Data siklus Mei dikunci valid
+2026-05-01 s/d 2026-05-30,Produksi Verpack,VALID FINAL - KEPUTUSAN OWNER,Data siklus Mei dikunci valid
+2026-05-01 s/d 2026-05-30,Barang Jadi,VALID FINAL - KEPUTUSAN OWNER,Saldo akhir mengikuti stock opname 30 Mei
+2026-05-01 s/d 2026-05-30,DO/SJ,VALID FINAL - KEPUTUSAN OWNER,Data pengeluaran barang dikunci valid
+2026-05-01 s/d 2026-05-30,Pita Cukai,VALID FINAL - KEPUTUSAN OWNER,Saldo dan mutasi pita dikunci valid
+2026-05-01 s/d 2026-05-30,Distributor Pasar,VALID FINAL - KEPUTUSAN OWNER,Data pasar mengikuti alur DO dan ledger
