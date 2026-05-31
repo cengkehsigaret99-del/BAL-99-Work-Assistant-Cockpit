@@ -1,7 +1,8 @@
 periode,modul,status,catatan
-2026-05-01 s/d 2026-05-30,Produksi Giling,VALID FINAL - KEPUTUSAN OWNER,Data siklus Mei dikunci valid
-2026-05-01 s/d 2026-05-30,Produksi Verpack,VALID FINAL - KEPUTUSAN OWNER,Data siklus Mei dikunci valid
-2026-05-01 s/d 2026-05-30,Barang Jadi,VALID FINAL - KEPUTUSAN OWNER,Saldo akhir mengikuti stock opname 30 Mei
-2026-05-01 s/d 2026-05-30,DO/SJ,VALID FINAL - KEPUTUSAN OWNER,Data pengeluaran barang dikunci valid
-2026-05-01 s/d 2026-05-30,Pita Cukai,VALID FINAL - KEPUTUSAN OWNER,Saldo dan mutasi pita dikunci valid
-2026-05-01 s/d 2026-05-30,Distributor Pasar,VALID FINAL - KEPUTUSAN OWNER,Data pasar mengikuti alur DO dan ledger
+2026-05-01 s/d 2026-05-30,Produksi Giling,VALID FINAL - TUTUP SIKLUS BULANAN / KEPUTUSAN OWNER,"Final hanya berlaku karena sudah tutup siklus akhir bulan. Proses harian berikutnya tetap memakai VALID AWAL / PERLU KONFIRMASI sampai tutup bulan berikutnya."
+2026-05-01 s/d 2026-05-30,Produksi Verpack,VALID FINAL - TUTUP SIKLUS BULANAN / KEPUTUSAN OWNER,"Final hanya berlaku karena sudah tutup siklus akhir bulan. Giling/verpack harian berikutnya tidak otomatis final."
+2026-05-01 s/d 2026-05-30,Barang Jadi,VALID FINAL - TUTUP SIKLUS BULANAN / KEPUTUSAN OWNER,"Saldo akhir mengikuti stock opname 30 Mei. Untuk bulan berikutnya stok berjalan tetap valid awal sampai ada opname/cut-off akhir bulan."
+2026-05-01 s/d 2026-05-30,DO/SJ,VALID FINAL - TUTUP SIKLUS BULANAN / KEPUTUSAN OWNER,"Data pengeluaran barang dikunci untuk siklus Mei. DO/SJ baru setelah cut-off tetap mengikuti aturan cek sumber tanggal nomor dan potensi dobel."
+2026-05-01 s/d 2026-05-30,Pita Cukai,VALID FINAL - TUTUP SIKLUS BULANAN / KEPUTUSAN OWNER,"Saldo dan mutasi pita dikunci untuk siklus Mei. CK1 CK4C dan P3C berikutnya tetap valid awal sampai dokumen resmi dan tutup bulan."
+2026-05-01 s/d 2026-05-30,Distributor Pasar,VALID FINAL - TUTUP SIKLUS BULANAN / KEPUTUSAN OWNER,"Data pasar mengikuti alur DO dan ledger Mei. Pembayaran/piutang berikutnya tetap divalidasi sesuai bukti sebelum final."
+ATURAN BERLAKU,Semua Modul,ATURAN MAIN VALIDASI,"Keputusan owner untuk VALID FINAL hanya dipakai pada tutup siklus akhir bulan. Di luar cut-off akhir bulan gunakan VALID AWAL PERLU KONFIRMASI CEK DOBEL atau VALID FINAL hanya jika ada sumber resmi lengkap."
