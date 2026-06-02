@@ -1,0 +1,5 @@
+tanggal_update,no_po_order,customer,no,produk,kategori_produk,jenis_item,qty_pack,pack_per_karton,qty_karton,target_kirim,status_item,keterangan
+2026-06-02,DRAFT-PO/PMS/06/2026,Padang PMS,1,CKT16 Ambri Kuning / New GCC 99 isi 16,NEW-GCC99-16-KUNING,PO UTAMA,90000,600,150,2026-06-04,REVISI PO / PRIORITAS 1,PO aktif - prioritas produksi/kirim
+2026-06-02,DRAFT-PO/PMS/06/2026,Padang PMS,2,CKT12 / Gedung Cengkeh Coklat 99 isi 12,GCC99-12,PO UTAMA,80000,1000,80,2026-06-04,REVISI PO / PRIORITAS 1,PO aktif - prioritas produksi/kirim
+2026-06-02,DRAFT-PO/PMS/06/2026,Padang PMS,3,TUD Coklat 16,TUD-CKT16,TUD TAMBAHAN,600,600,1,2026-06-04,TUD TAMBAHAN,TUD / tambahan
+2026-06-02,DRAFT-PO/PMS/06/2026,Padang PMS,4,TUD Coklat 12,TUD-CKT12,TUD TAMBAHAN,1000,1000,1,2026-06-04,TUD TAMBAHAN,TUD / tambahan
