@@ -1,0 +1,9 @@
+bagian,uraian,nilai_pack,nilai_karton,catatan
+PERIODE / UPDATE,Tanggal update,,,02 Juni 2026
+STATUS,Status PO aktif,,,PO aktif / belum otomatis menjadi DO-SJ / belum menjadi piutang
+TOTAL PO UTAMA,Total PO utama aktif,316600,407,Tidak termasuk TUD tambahan.
+TAMBAHAN TUD,Tambahan TUD PMS,1600,2,TUD Coklat 16 = 1 karton; TUD Coklat 12 = 1 karton.
+TOTAL KEBUTUHAN OPERASIONAL,PO utama + TUD tambahan,318200,409,Kebutuhan operasional untuk produksi/gudang/pengiriman.
+PRIORITAS 1,Padang PMS,170000,230,PMS revisi naik dari 205 karton menjadi 230 karton.
+PRIORITAS 2,Pasar Banten,100000,100,Belum terkirim / prioritas 2.
+FOLLOW-UP,Aji | PSP | PMI,44800,77,Aji 43 | PSP 30 | PMI 4.
