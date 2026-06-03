@@ -1,0 +1,11 @@
+item,nilai,status,catatan
+Total line DO Mei,43,CLOSING DO,Harus 43 line.
+No SJ unik Mei,30,CLOSING DO,Harus 30 SJ unik.
+Total pack semua,822870,CLOSING DO,Termasuk sample/TUD.
+Total pack masuk piutang,821870,CLOSING DO,Tidak termasuk sample/TUD.
+Nilai DO/SJ Mei,6025955000,CLOSING DO,"Nilai DO/SJ memakai harga SJ/pabrik, bukan saldo piutang Riung dual price."
+Total pembayaran/credit tercatat,841570000,CLOSING PEMBAYARAN,"Khoirul 520jt + Aji 42jt + Banten 218jt + Wahyu summary 61,57jt."
+Total piutang closing raw,5952220000,CLOSING PIUTANG,"Setelah koreksi Riung, TSM, Wahyu, Usup tagihan lama."
+Total piutang kontrol setelah offset,5887220000,CLOSING PIUTANG,Raw dikurangi potensi offset/lunas Usup Rp65jt.
+Catatan Riung,5100000,DUAL PRICE,Selisih piutang customer vs SJ pabrik untuk SJ129; bukan error.
+Catatan Usup,38450000,TAGIHAN LAMA,"Sisa tagihan lama Pak Winarto masuk VALID AWAL; cek dobel dengan piutang lama Rp69,83jt."
