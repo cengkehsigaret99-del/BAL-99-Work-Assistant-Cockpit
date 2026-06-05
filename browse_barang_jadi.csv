@@ -1,20 +1,21 @@
 tanggal_stok,kode_sku,merek,stok_awal,masuk_verpack,keluar_sj,retur_masuk,koreksi_plus,koreksi_minus,stok_akhir,konversi_stok,po_belum_terkirim,selisih_stok_vs_po,status_stok,validasi
-2026-05-30,GCC99-POLOS,GC Coklat 99 Polos,-261500,398500,96000,0,0,0,41000,41 karton,0,0,COCOK OPNAME / STOK ADA,VALID AWAL - rekonsiliasi Mei 2026; selisih aplikasi vs opname dimasukkan ke saldo awal Mei; konversi karton saja; tipe REGULER
-2026-05-30,GCC99-MERAH,GC Coklat 99 Merah,345000,0,345000,0,0,0,0,0 karton,0,0,COCOK OPNAME / STOK 0,VALID AWAL - rekonsiliasi Mei 2026; selisih aplikasi vs opname dimasukkan ke saldo awal Mei; konversi karton saja; tipe REGULER
-2026-05-30,GCC99-KUNING,GC Coklat 99 Kuning,0,0,0,0,0,0,0,0 karton,0,0,COCOK OPNAME / STOK 0,VALID AWAL - rekonsiliasi Mei 2026; konversi karton saja; tipe REGULER
-2026-05-30,REFILL-HITAM,Cengkeh Refill Hitam,100,9450,9420,0,0,0,130,"0,22 karton",0,0,COCOK OPNAME / STOK ADA TERBATAS,VALID AWAL - rekonsiliasi Mei 2026; sample dipisah; konversi karton saja; tipe REGULER
-2026-05-30,REFILL-SAMPLE,Cengkeh Refill Sample,70,0,50,0,0,0,20,"0,03 karton",0,0,SAMPLE / NON REGULER / COCOK OPNAME,VALID AWAL - rekonsiliasi Mei 2026; sample dipisah dari stok reguler; konversi karton saja; tipe SAMPLE
-2026-05-30,REFILL-ORIGINAL,Cengkeh Refill Original,0,0,0,0,0,0,0,0 karton,0,0,COCOK OPNAME / STOK 0,VALID AWAL - rekonsiliasi Mei 2026; konversi karton saja; tipe REGULER
-2026-05-30,REFILL-ORIGINAL-SAMPLE,Cengkeh Refill Original Sample,0,0,0,0,0,0,0,0 karton,0,0,SAMPLE 0 / COCOK OPNAME,VALID AWAL - rekonsiliasi Mei 2026; sample dipisah; konversi karton saja; tipe SAMPLE
-2026-05-30,GC16-BIRU,Gedung Cengkeh 16 Biru / New Gedung Cengkeh Coklat 99 isi 16 Ambree Biru,45702,48,25800,0,0,0,19950,"33,25 karton",0,0,COCOK OPNAME / STOK ADA,VALID AWAL - rekonsiliasi Mei 2026; selisih aplikasi vs opname dimasukkan ke saldo awal Mei; konversi karton saja; tipe REGULER
-2026-05-30,GC16-SAMPLE,Gedung Cengkeh 16 Sample,850,0,600,0,0,0,250,"0,42 karton",0,0,SAMPLE / NON REGULER / COCOK OPNAME,VALID AWAL - rekonsiliasi Mei 2026; sample dipisah dari stok reguler; konversi karton saja; tipe SAMPLE
-2026-05-30,GC16-KUNING,Gedung Cengkeh 16 Kuning,-100000,124000,24000,0,0,0,0,0 karton,0,0,COCOK OPNAME / STOK 0,VALID AWAL - rekonsiliasi Mei 2026; selisih aplikasi vs opname dimasukkan ke saldo awal Mei; konversi karton saja; tipe REGULER
-2026-05-30,GC16-KUNING-SAMPLE,Gedung Cengkeh 16 Kuning Sample,0,0,0,0,0,0,0,0 karton,0,0,SAMPLE 0 / COCOK OPNAME,VALID AWAL - rekonsiliasi Mei 2026; sample dipisah; konversi karton saja; tipe SAMPLE
-2026-05-30,CB77-12,Cengkeh Biru 77 isi 12,15000,3000,18000,0,0,0,0,0 karton,0,0,COCOK OPNAME / STOK 0,VALID AWAL - rekonsiliasi Mei 2026; selisih aplikasi vs opname dimasukkan ke saldo awal Mei; konversi karton saja; tipe REGULER
-2026-05-30,CB77-12-SAMPLE,Cengkeh Biru 77 isi 12 Sample,200,0,200,0,0,0,0,0 karton,0,0,SAMPLE / NON REGULER / COCOK OPNAME,VALID AWAL - rekonsiliasi Mei 2026; sample dipisah; konversi karton saja; tipe SAMPLE
-2026-05-30,CB77-16,Cengkeh Biru 77 isi 16,6400,5000,11400,0,0,0,0,0 karton,0,0,COCOK OPNAME / STOK 0,VALID AWAL - rekonsiliasi Mei 2026; selisih aplikasi vs opname dimasukkan ke saldo awal Mei; konversi karton saja; tipe REGULER
-2026-05-30,CB77-16-SAMPLE,Cengkeh Biru 77 isi 16 Sample,50,0,0,0,0,0,50,"0,08 karton",0,0,SAMPLE / NON REGULER / COCOK OPNAME,VALID AWAL - rekonsiliasi Mei 2026; sample dipisah; konversi karton saja; tipe SAMPLE
-2026-05-30,GCNEW16-NEW16,GC New 16 / New Gedung Cengkeh Coklat 99 isi 16,129980,189550,292200,0,0,0,27330,"45,55 karton",0,0,COCOK OPNAME / STOK ADA,VALID AWAL - rekonsiliasi Mei 2026; selisih aplikasi vs opname dimasukkan ke saldo awal Mei; konversi karton saja; tipe REGULER
-2026-05-30,GCNEW16-SAMPLE,GC New 16 Sample,200,0,200,0,0,0,0,0 karton,0,0,SAMPLE / NON REGULER / COCOK OPNAME,VALID AWAL - rekonsiliasi Mei 2026; sample dipisah; konversi karton saja; tipe SAMPLE
-2026-05-30,BAL9,BAL 9,0,0,0,0,0,0,0,0 karton,0,0,COCOK OPNAME / STOK 0,VALID AWAL - rekonsiliasi Mei 2026; konversi karton saja; tipe REGULER
-2026-05-30,BAL9-SAMPLE,BAL 9 Sample,0,0,0,0,0,0,0,0 karton,0,0,SAMPLE 0 / COCOK OPNAME,VALID AWAL - rekonsiliasi Mei 2026; sample dipisah; konversi karton saja; tipe SAMPLE
+2026-06-05,GCC99-12,GCC 99 Polos / C-003,0,0,0,0,0,0,0,-,0,0,COCOK STOK FISIK / STOK 0,VALID AWAL - update Juni 2026; stok fisik 05/06/2026; C-003 sudah keluar sehingga saldo 0; tipe REGULER
+2026-06-05,REFILL-HITAM,Cengkeh Refill Hitam,130,0,0,0,0,0,130,1 bal 3 slop,0,0,COCOK STOK FISIK / STOK ADA TERBATAS,VALID AWAL - update Juni 2026; stok fisik 05/06/2026; tipe REGULER
+2026-06-05,REFILL-SAMPLE,Cengkeh Refill Sample,20,0,0,0,0,0,20,2 slop,0,0,SAMPLE / NON REGULER / COCOK STOK FISIK,VALID AWAL - update Juni 2026; sample dipisah dari stok reguler; tipe SAMPLE
+2026-06-05,GCC99-16-NEW-BIRU,GC (16) Biru (New) / C-031 / New Ambree Biru,350,0,0,0,0,0,350,3 bal 5 slop,0,0,COCOK STOK FISIK / STOK ADA TERBATAS,VALID AWAL - update Juni 2026; C-031 dikunci sebagai New Gedung Cengkeh Coklat 99 isi 16 Ambree Biru; tipe REGULER
+2026-06-05,GCC99-16-SAMPLE,GC (16) Sample,250,0,0,0,0,0,250,2 bal 5 slop,0,0,SAMPLE / NON REGULER / COCOK STOK FISIK,VALID AWAL - update Juni 2026; sample dipisah dari stok reguler; tipe SAMPLE
+2026-06-05,CB77-12,C-012 / Cengkeh Biru 77 isi 12,0,1000,0,0,0,0,1000,1 karton,0,0,COCOK STOK FISIK / STOK ADA,VALID AWAL - update Juni 2026; C-012 produksi 05/06/2026; tipe REGULER
+2026-06-05,CB77-16,C-015 / Cengkeh Biru 77 isi 16,0,1800,0,0,0,0,1800,3 karton,0,0,COCOK STOK FISIK / STOK ADA,VALID AWAL - update Juni 2026; C-015 produksi 05/06/2026; tipe REGULER
+2026-06-05,CB77-16-SAMPLE,Cengkeh Biru 77 isi 16 Sample,50,0,0,0,0,0,50,5 slop,0,0,SAMPLE / NON REGULER / COCOK STOK FISIK,VALID AWAL - update Juni 2026; sample dipisah dari stok reguler; tipe SAMPLE
+2026-06-05,GCC99-16-NEW-KUNING,GC New 16 / New 16 / C-023,27730,0,0,0,0,0,27730,46 karton 1 bal 3 slop,0,0,COCOK STOK FISIK / STOK ADA,VALID AWAL - update Juni 2026; C-023 dikunci sebagai New Gedung Cengkeh Coklat 99 isi 16 Ambree Kuning; selisih 5 karton ditarik ke koreksi saldo pembuka/SJ 30-05; hasil verpack Juni aman; tipe REGULER
+2026-06-05,GCC99-12-SAMPLE,C-001 / GCC 99 isi 12 Sample,1000,0,1000,0,0,0,0,-,0,0,SAMPLE / NON REGULER / STOK 0,VALID AWAL - update Juni 2026; sample belum tercatat keluar sudah dikoreksi minus 1.000 pack; tipe SAMPLE
+2026-06-05,GCC99-16-NEW-SAMPLE,C-028 / New 16 Sample,600,0,600,0,0,0,0,-,0,0,SAMPLE / NON REGULER / STOK 0,VALID AWAL - update Juni 2026; sample belum tercatat keluar sudah dikoreksi minus 600 pack; tipe SAMPLE
+2026-06-05,GCC99-12-MERAH,GC Coklat 99 Merah,0,0,0,0,0,0,0,-,0,0,COCOK STOK FISIK / STOK 0,VALID AWAL - update Juni 2026; SJ No.145 PMS membaca C-004 Merah sehingga tidak dibebankan ke C-003; tipe REGULER
+2026-06-05,GCC99-12-KUNING,GC Coklat 99 Kuning,0,0,0,0,0,0,0,-,0,0,COCOK STOK FISIK / STOK 0,VALID AWAL - update Juni 2026; tipe REGULER
+2026-06-05,REFILL-ORIGINAL,Cengkeh Refill Original,0,0,0,0,0,0,0,-,0,0,COCOK STOK FISIK / STOK 0,VALID AWAL - update Juni 2026; tipe REGULER
+2026-06-05,REFILL-ORIGINAL-SAMPLE,Cengkeh Refill Original Sample,0,0,0,0,0,0,0,-,0,0,SAMPLE / NON REGULER / STOK 0,VALID AWAL - update Juni 2026; tipe SAMPLE
+2026-06-05,GCC99-16,GC 16 / Gedung Cengkeh Coklat 99 isi 16,0,0,0,0,0,0,0,-,0,0,COCOK STOK FISIK / STOK 0,VALID AWAL - update Juni 2026; tipe REGULER
+2026-06-05,GCC99-16-KUNING,GC 16 Kuning,0,0,0,0,0,0,0,-,0,0,COCOK STOK FISIK / STOK 0,VALID AWAL - update Juni 2026; tipe REGULER
+2026-06-05,CB77-12-SAMPLE,Cengkeh Biru 77 isi 12 Sample,0,0,0,0,0,0,0,-,0,0,SAMPLE / NON REGULER / STOK 0,VALID AWAL - update Juni 2026; tipe SAMPLE
+2026-06-05,BAL9,BAL 9,0,0,0,0,0,0,0,-,0,0,COCOK STOK FISIK / STOK 0,VALID AWAL - update Juni 2026; tipe REGULER
+2026-06-05,BAL9-SAMPLE,BAL 9 Sample,0,0,0,0,0,0,0,-,0,0,SAMPLE / NON REGULER / STOK 0,VALID AWAL - update Juni 2026; tipe SAMPLE
