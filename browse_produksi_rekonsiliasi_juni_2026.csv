@@ -1,0 +1,12 @@
+tanggal,giling_batang,packing_batang_equiv,selisih_batang_giling_minus_packing,status_kontrol,catatan
+2026-06-02,476200,555600,-79400,PERLU CEK WIP,Packing dapat memakai saldo WIP awal; validasi final perlu saldo WIP awal/akhir.
+2026-06-03,520900,564960,-44060,PERLU CEK WIP,Packing dapat memakai saldo WIP awal; validasi final perlu saldo WIP awal/akhir.
+2026-06-04,497100,600400,-103300,PERLU CEK WIP,Packing dapat memakai saldo WIP awal; validasi final perlu saldo WIP awal/akhir.
+2026-06-05,480300,482400,-2100,PERLU CEK WIP,Packing dapat memakai saldo WIP awal; validasi final perlu saldo WIP awal/akhir.
+2026-06-06,470800,420000,50800,WIP BERTAMBAH,Packing dapat memakai saldo WIP awal; validasi final perlu saldo WIP awal/akhir.
+2026-06-08,448300,420000,28300,WIP BERTAMBAH,Packing dapat memakai saldo WIP awal; validasi final perlu saldo WIP awal/akhir.
+2026-06-09,489100,453600,35500,WIP BERTAMBAH,Packing dapat memakai saldo WIP awal; validasi final perlu saldo WIP awal/akhir.
+2026-06-10,493700,576000,-82300,PERLU CEK WIP,Packing dapat memakai saldo WIP awal; validasi final perlu saldo WIP awal/akhir.
+2026-06-11,525800,468160,57640,WIP BERTAMBAH,Packing dapat memakai saldo WIP awal; validasi final perlu saldo WIP awal/akhir.
+2026-06-12,518600,602400,-83800,PERLU CEK WIP,Packing dapat memakai saldo WIP awal; validasi final perlu saldo WIP awal/akhir.
+2026-06-13,563300,594400,-31100,PERLU CEK WIP,Packing dapat memakai saldo WIP awal; validasi final perlu saldo WIP awal/akhir.
