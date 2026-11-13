@@ -25,18 +25,36 @@ jobs:
           cp index.html dist/index.html
           cp auth.js dist/auth.js
           cp logo.png dist/logo.png
+          cp manifest.webmanifest dist/manifest.webmanifest
+          cp sw.js dist/sw.js
+          cp icon.svg dist/icon.svg
+          python3 -m pip install --quiet cairosvg
+          python3 - <<'PYICONS'
+          import cairosvg
+          for size in (192,512):
+              cairosvg.svg2png(url="icon.svg",write_to=f"dist/icon-{size}.png",output_width=size,output_height=size)
+          PYICONS
           printf '%s\n' 'User-agent: *' 'Disallow: /' > dist/robots.txt
           touch dist/.nojekyll
           python3 - <<'PY'
           from pathlib import Path
           dist=Path("dist")
-          allowed={"index.html","auth.js","logo.png","robots.txt",".nojekyll"}
+          allowed={"index.html","auth.js","logo.png","manifest.webmanifest","sw.js","icon.svg","icon-192.png","icon-512.png","robots.txt",".nojekyll"}
           actual={p.name for p in dist.iterdir()}
           assert actual==allowed,(actual,allowed)
           s=(dist/"index.html").read_text()
           for marker in ('BAL / PPIC Control Tower','data-view="dashboard"','data-view="data"','data-view="reports"','data-view="sources"','Belum terhubung'):
               assert marker in s,marker
           assert 'fetch(' not in s
+          import json
+          manifest=json.loads((dist/'manifest.webmanifest').read_text())
+          assert manifest['display']=='standalone'
+          assert {x['sizes'] for x in manifest['icons']} >= {'192x192','512x512'}
+          assert (dist/'icon-192.png').read_bytes()[:8]==bytes.fromhex('89504e470d0a1a0a')
+          assert (dist/'icon-512.png').read_bytes()[:8]==bytes.fromhex('89504e470d0a1a0a')
+          sw=(dist/'sw.js').read_text()
+          assert 'supabase' not in sw.lower()
+          assert 'cache.addAll(SHELL)' in sw
           print("Public allowlist verified; no operational CSV or internal documents included")
           PY
       - name: Configure Pages
