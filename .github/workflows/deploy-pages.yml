@@ -32,7 +32,7 @@ jobs:
           actual={p.name for p in dist.iterdir()}
           assert actual==allowed,(actual,allowed)
           s=(dist/"index.html").read_text()
-          for marker in ('INTERACTIVE DEMO','data-page="dashboard"','data-page="explorer"','data-page="reports"'):
+          for marker in ('BAL / PPIC Control Tower','data-view="dashboard"','data-view="data"','data-view="reports"','data-view="sources"','Belum terhubung'):
               assert marker in s,marker
           assert 'fetch(' not in s
           print("Public allowlist verified; no operational CSV or internal documents included")
