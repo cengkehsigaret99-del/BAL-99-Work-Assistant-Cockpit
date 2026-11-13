@@ -10,5 +10,5 @@ for(const file of scripts)test(file+" syntax valid",()=>{const s=read(file);new 
 test("Data Bank no transaction input form",()=>{const s=read("data-bank-v02.html");assert.doesNotMatch(s,/<form\b/i);assert.match(s,/read.only/i)});
 test("13 PPIC report definitions",()=>{const s=read("report-explorer-v03.js");const items=s.match(/^\[\d+,"/gm)||[];assert.equal(items.length,13);assert.match(s,/print\(\)/);assert.match(s,/textContent/)});
 test("Print Engine three fixture templates and export",()=>{const s=read("print-engine-v04.js");for(const k of ["stock:","wip:","gap:"])assert.ok(s.includes(k));assert.match(s,/exportCSV/);assert.match(s,/window\.print\(\)/);assert.match(s,/textContent/)});
-test("Print Engine explicit synthetic warning",()=>{const s=read("print-engine-v04.html");assert.match(s,/data sintetis/i);assert.match(s,/DEMO \/ NOT OFFICIAL/);assert.match(s,/A4 portrait/);assert.match(s,/A4 landscape/)});
+test("Print Engine explicit synthetic warning",()=>{const s=read("print-engine-v04.html");assert.match(s,/data sintetis/i);assert.match(s,/DEMO \/ NOT OFFICIAL/);assert.match(s,/A4 portrait/i);assert.match(s,/A4 landscape/i)});
 test("No production workflow edits in prototype",()=>{for(const file of pages.concat(scripts)){const s=read(file);assert.doesNotMatch(s,/api\.github\.com\/repos|supabase\.co|Web SKT API/i)}});
