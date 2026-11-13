@@ -1,0 +1,20 @@
+name: BAL PPIC Private Contract V1.5 QA
+on:
+  push:
+    branches: [feat/ppic-private-databank-contract-v15]
+    paths:
+      - 'schemas/**'
+      - 'tests/ppic-private-contract-v15.cjs'
+      - '.github/workflows/ppic-private-contract-qa.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node tests/ppic-private-contract-v15.cjs
