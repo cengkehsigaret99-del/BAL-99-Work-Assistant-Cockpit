@@ -1,0 +1,21 @@
+name: PPIC Prototype Static QA
+on:
+  push:
+    branches:
+      - plan/ppic-control-tower-rebuild-2026-11
+    paths:
+      - 'prototype/**'
+      - '.github/workflows/ppic-prototype-qa.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  static-qa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Run Node built-in static tests
+        run: node --test prototype/qa-static-v05.cjs

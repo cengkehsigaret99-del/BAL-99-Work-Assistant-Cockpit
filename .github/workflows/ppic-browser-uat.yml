@@ -1,0 +1,39 @@
+name: PPIC V05 Browser and Print UAT
+on:
+  push:
+    branches: [plan/ppic-control-tower-rebuild-2026-11]
+    paths:
+      - 'prototype/BAL_INTERACTIVE_WEBSITE_V05.html'
+      - 'prototype/browser-uat-v05.spec.cjs'
+      - '.github/workflows/ppic-browser-uat.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  browser-uat:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Playwright
+        run: |
+          npm install --no-save @playwright/test
+          npx playwright install --with-deps chromium
+      - name: Serve isolated prototype
+        run: |
+          mkdir -p artifacts
+          python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/ppic-server.log 2>&1 &
+      - name: Run browser tests
+        run: npx playwright test prototype/browser-uat-v05.spec.cjs --browser=chromium --reporter=list --workers=1
+      - name: Upload screenshots and PDF
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ppic-v05-browser-uat
+          path: |
+            artifacts/
+            test-results/
+          if-no-files-found: ignore

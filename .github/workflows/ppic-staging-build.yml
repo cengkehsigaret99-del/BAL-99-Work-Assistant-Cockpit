@@ -1,0 +1,38 @@
+name: BAL PPIC Isolated Staging Build
+on:
+  push:
+    branches: [plan/ppic-control-tower-rebuild-2026-11]
+    paths:
+      - 'prototype/BAL_INTERACTIVE_WEBSITE_V05.html'
+      - '.github/workflows/ppic-staging-build.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  staging-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Package standalone staging preview
+        run: |
+          mkdir -p dist
+          cp prototype/BAL_INTERACTIVE_WEBSITE_V05.html dist/index.html
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('dist/index.html')
+          s=p.read_text()
+          assert 'INTERACTIVE DEMO' in s
+          assert 'data-page="dashboard"' in s
+          assert 'data-page="explorer"' in s
+          assert 'data-page="reports"' in s
+          assert 'const reports=' in s
+          assert 'window.print()' in s
+          assert 'fetch(' not in s
+          print('Isolated demo artifact validated:',len(s),'characters')
+          PY
+      - name: Upload staging preview (not GitHub Pages deployment)
+        uses: actions/upload-artifact@v4
+        with:
+          name: bal-ppic-staging-preview
+          path: dist/
+          retention-days: 30
