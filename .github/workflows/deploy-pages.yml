@@ -23,12 +23,13 @@ jobs:
         run: |
           mkdir -p dist
           cp index.html dist/index.html
+          cp logo.png dist/logo.png
           printf '%s\n' 'User-agent: *' 'Disallow: /' > dist/robots.txt
           touch dist/.nojekyll
           python3 - <<'PY'
           from pathlib import Path
           dist=Path("dist")
-          allowed={"index.html","robots.txt",".nojekyll"}
+          allowed={"index.html","logo.png","robots.txt",".nojekyll"}
           actual={p.name for p in dist.iterdir()}
           assert actual==allowed,(actual,allowed)
           s=(dist/"index.html").read_text()
