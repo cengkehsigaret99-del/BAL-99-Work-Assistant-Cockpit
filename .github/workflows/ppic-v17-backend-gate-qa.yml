@@ -1,0 +1,17 @@
+name: BAL PPIC Private Backend Gate V1.7 QA
+on:
+  push:
+    branches: [feat/ppic-private-api-gates-v17]
+    paths: ['docs/PPIC_PRIVATE_BACKEND_GATE_V17.md','tests/ppic-private-backend-gate-v17.test.cjs','.github/workflows/ppic-v17-backend-gate-qa.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --test tests/ppic-private-backend-gate-v17.test.cjs
