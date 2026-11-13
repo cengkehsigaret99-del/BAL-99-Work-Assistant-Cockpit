@@ -1,0 +1,34 @@
+name: BAL PPIC Production Shell QA
+on:
+  push:
+    branches: [feat/ppic-production-readonly-2026-11]
+    paths: ['index.html','.github/workflows/ppic-production-shell-qa.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate production shell
+        run: |
+          node - <<'JS'
+          const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
+          const html=fs.readFileSync('index.html','utf8');
+          for(const key of ['data-view="dashboard"','data-view="data"','data-view="reports"','data-view="sources"','Belum terhubung','previewFrame.contentWindow.print()','READ ONLY'])assert.ok(html.includes(key),key);
+          assert.ok(!html.includes('INTERACTIVE DEMO'));
+          assert.ok(!html.includes('307.775'));
+          assert.ok(!html.includes('338.555'));
+          assert.ok(!html.includes('fetch('));
+          const script=html.match(/<script>([\s\S]*?)<\/script>/);
+          assert.ok(script);
+          new vm.Script(script[1]);
+          const arr=script[1].match(/const catalog=\[([\s\S]*?)\];/);
+          assert.ok(arr);
+          assert.equal((arr[1].match(/^\["/gm)||[]).length,13);
+          assert.ok(html.includes('id="previewModal"'));assert.ok(html.includes('https://wa.me/?text='));console.log('PASS: production shell, A4 preview, WhatsApp share, 13 report definitions, valid JS');
+          JS
