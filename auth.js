@@ -5,11 +5,17 @@
  const EMAIL="cengkehsigaret99@gmail.com";
  const $=id=>document.getElementById(id);
  const login=$("ownerLogin"),main=$("ppicMain"),status=$("loginStatus"),form=$("loginForm"),logout=$("logoutOwner");
- let accessToken="",expiresAt=0,expiryTimer=null,attempt=0;
+ let accessToken="",expiresAt=0,expiryTimer=null,attempt=0,docsRequest=null;
+ async function loadDocs(token,current){
+  if(docsRequest)docsRequest.abort();docsRequest=new AbortController();
+  const response=await fetch(ROOT+"/rest/v1/ppic_source_catalog?select=document_id,division,period,cutoff,version,reconciliation_status,access_class,ingested_at&order=ingested_at.desc&limit=200",{headers:{"apikey":KEY,"Authorization":"Bearer "+token},cache:"no-store",signal:docsRequest.signal});
+  if(!response.ok)throw Error("Bank Data belum dapat dibaca ("+response.status+").");
+  const rows=await response.json();if(current===attempt&&accessToken===token)window.ppicSetDocs(rows);
+ }
  const MAX_SESSION_MS=30*60*1000;
  function clearExpiry(){if(expiryTimer!==null){clearTimeout(expiryTimer);expiryTimer=null}expiresAt=0}
  function expire(){attempt++;show(false);message("Sesi berakhir. Silakan login kembali.")}
- const show=(authorized)=>{login.hidden=authorized;main.hidden=!authorized;logout.hidden=!authorized;if(!authorized){accessToken="";clearExpiry();$("ownerPassword").value=""}};
+ const show=(authorized)=>{login.hidden=authorized;main.hidden=!authorized;logout.hidden=!authorized;if(!authorized){if(docsRequest)docsRequest.abort();accessToken="";clearExpiry();window.ppicSetDocs([]);$("ownerPassword").value=""}};
  const message=(value)=>{status.textContent=value};
  async function verify(token){
   const response=await fetch(ROOT+"/functions/v1/ppic-owner-check",{method:"GET",headers:{"apikey":KEY,"Authorization":"Bearer "+token},cache:"no-store"});
@@ -36,7 +42,8 @@
    const duration=Math.min(seconds*1000,MAX_SESSION_MS);
    expiresAt=Date.now()+duration;
    expiryTimer=setTimeout(expire,duration);
-   show(true);message("Owner terverifikasi. Bank data aktual belum terhubung.");
+   show(true);message("Owner terverifikasi. Memuat metadata Bank Data…");
+   try{await loadDocs(accessToken,current);if(current===attempt)message("Bank Data tersambung. Data aktual hanya tersedia jika sudah terdaftar dan direkonsiliasi.")}catch(error){if(current===attempt&&error.name!=="AbortError")message(error.message||"Bank Data belum dapat dibaca.")}
   }catch(error){if(current===attempt){show(false);message(error.message||"Gagal masuk.")}}
   finally{$("loginButton").disabled=false}
  });
