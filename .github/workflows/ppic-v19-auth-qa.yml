@@ -1,0 +1,31 @@
+name: BAL PPIC V1.9 Owner Login QA
+on:
+  push:
+    branches: [feat/ppic-owner-login-v19]
+    paths: ['index.html','auth.js','.github/workflows/deploy-pages.yml','.github/workflows/ppic-v19-auth-qa.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify auth boundary and JavaScript syntax
+        run: |
+          node - <<'JS'
+          const fs=require('fs'),vm=require('vm'),assert=require('assert/strict');
+          const html=fs.readFileSync('index.html','utf8'),auth=fs.readFileSync('auth.js','utf8'),workflow=fs.readFileSync('.github/workflows/deploy-pages.yml','utf8');
+          for(const m of ['id="ownerLogin"','id="ppicMain" hidden','id="loginForm"','id="logoutOwner"','src="auth.js"'])assert.ok(html.includes(m),m);
+          for(const m of ['/auth/v1/token?grant_type=password','/functions/v1/ppic-owner-check','session.access_token','show(false)','/auth/v1/logout'])assert.ok(auth.includes(m),m);
+          assert.ok(!auth.includes('localStorage')&&!auth.includes('sessionStorage'));
+          assert.ok(!auth.includes('service_role'));
+          assert.ok(workflow.includes('cp auth.js dist/auth.js'));
+          new vm.Script(auth);
+          const inline=[...html.matchAll(/<script>([\s\S]*?)<\/script>/g)];
+          assert.equal(inline.length,1);new vm.Script(inline[0][1]);
+          console.log('PASS: fail-closed owner login, edge authorization, logout, deploy allowlist');
+          JS
