@@ -17,7 +17,7 @@ test('wrong email never sends login request',async({page})=>{
 });
 test('valid auth but unauthorized edge remains blocked',async({page})=>{
  await page.route(AUTH+'/**',async route=>{
-  if(route.request().url().includes('/auth/v1/token'))return route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({access_token:'test-jwt',refresh_token:'refresh'})});
+  if(route.request().url().includes('/auth/v1/token'))return route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({access_token:'test-jwt',refresh_token:'refresh',expires_in:3600})});
   return route.fulfill({status:403,contentType:'application/json',body:'{"error":"forbidden"}'});
  });
  await page.goto(ROOT);await page.locator('#ownerPassword').fill('example-password');await page.locator('#loginButton').click();
@@ -27,7 +27,7 @@ test('valid auth but unauthorized edge remains blocked',async({page})=>{
 test('authorized edge opens dashboard; logout and reload close it',async({page})=>{
  await page.route(AUTH+'/**',async route=>{
   const url=route.request().url();
-  if(url.includes('/auth/v1/token'))return route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({access_token:'test-jwt',refresh_token:'refresh'})});
+  if(url.includes('/auth/v1/token'))return route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({access_token:'test-jwt',refresh_token:'refresh',expires_in:3600})});
   if(url.includes('/functions/v1/ppic-owner-check'))return route.fulfill({status:200,contentType:'application/json',body:'{"authorized":true,"role":"owner","reports_connected":false}'});
   return route.fulfill({status:204,body:''});
  });
@@ -38,4 +38,26 @@ test('authorized edge opens dashboard; logout and reload close it',async({page})
  await page.locator('#ownerPassword').fill('example-password');await page.locator('#loginButton').click();
  await expect(page.locator('#ppicMain')).toBeVisible();
  await page.locator('#logoutOwner').click();await expect(page.locator('#ppicMain')).toBeHidden();
+});
+
+test('expired owner token closes dashboard automatically',async({page})=>{
+ await page.route(AUTH+'/**',async route=>{
+  const url=route.request().url();
+  if(url.includes('/auth/v1/token'))return route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({access_token:'test-jwt',expires_in:1})});
+  if(url.includes('/functions/v1/ppic-owner-check'))return route.fulfill({status:200,contentType:'application/json',body:'{"authorized":true,"role":"owner"}'});
+  return route.fulfill({status:204,body:''});
+ });
+ await page.goto(ROOT);await page.locator('#ownerPassword').fill('example-password');await page.locator('#loginButton').click();
+ await expect(page.locator('#ppicMain')).toBeVisible();
+ await expect(page.locator('#ppicMain')).toBeHidden({timeout:5000});
+ await expect(page.locator('#loginStatus')).toContainText('Sesi berakhir');
+});
+test('missing session expiration is denied',async({page})=>{
+ await page.route(AUTH+'/**',async route=>{
+  if(route.request().url().includes('/auth/v1/token'))return route.fulfill({status:200,contentType:'application/json',body:'{"access_token":"test-jwt"}'});
+  return route.fulfill({status:200,contentType:'application/json',body:'{"authorized":true,"role":"owner"}'});
+ });
+ await page.goto(ROOT);await page.locator('#ownerPassword').fill('example-password');await page.locator('#loginButton').click();
+ await expect(page.locator('#ppicMain')).toBeHidden();
+ await expect(page.locator('#loginStatus')).toContainText('Masa berlaku sesi tidak valid');
 });
