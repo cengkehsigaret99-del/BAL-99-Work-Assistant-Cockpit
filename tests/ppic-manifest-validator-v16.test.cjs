@@ -1,0 +1,12 @@
+"use strict";
+const assert=require("node:assert/strict"),test=require("node:test");
+const {validateManifest,verifySource,inspectBatch,digest}=require("../lib/ppic-manifest-validator");
+const bytes=Buffer.from("SYNTHETIC FIXTURE - NOT BAL OPERATIONAL DATA");
+const valid=()=>({document_id:"TEST-DOC-0001",division:"Giling",period:"2026-11",cutoff:"2026-11-13T00:00:00+07:00",version:"V001",source_kind:"XLSX",sha256:digest(bytes),reconciliation_status:"OPEN RECON",access_class:"INTERNAL",source_locator:"private://fixture/test-doc-0001",ingested_at:"2026-11-13T00:05:00+07:00"});
+test("valid synthetic manifest and checksum",()=>{assert.equal(validateManifest(valid()).ok,true);assert.equal(verifySource(valid(),bytes).ok,true)});
+test("tampered bytes rejected",()=>assert.deepEqual(verifySource(valid(),Buffer.from("tampered")).errors,["checksum mismatch"]));
+test("missing field rejected",()=>{const r=valid();delete r.cutoff;assert.ok(validateManifest(r).errors.includes("missing cutoff"))});
+test("invalid period, checksum, version, status, access",()=>{for(const [key,value] of [["period","2026-13"],["sha256","bad"],["version","final"],["reconciliation_status","FINAL"],["access_class","PUBLIC"]]){const r=valid();r[key]=value;assert.equal(validateManifest(r).ok,false,key)}});
+test("unexpected property and self supersession rejected",()=>{const r=valid();r.secret="oops";r.supersedes_document_id=r.document_id;assert.equal(validateManifest(r).ok,false)});
+test("duplicate ID and duplicate source hash rejected",()=>{const a=valid(),b={...valid(),document_id:"TEST-DOC-0002"};const result=inspectBatch([{manifest:a,bytes},{manifest:b,bytes}]);assert.equal(result.ok,false);assert.ok(result.results[1].errors.includes("duplicate source hash"));const dup=inspectBatch([{manifest:a,bytes},{manifest:a,bytes}]);assert.ok(dup.results[1].errors.includes("duplicate document_id"))});
+test("no external IO or network in validation module",()=>{const s=require("node:fs").readFileSync(require.resolve("../lib/ppic-manifest-validator"),"utf8");assert.doesNotMatch(s,/fetch\(|https\.request|writeFile|appendFile|unlink|\.query\(/)});
