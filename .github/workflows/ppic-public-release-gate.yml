@@ -1,0 +1,48 @@
+name: BAL PPIC Public Release Gate
+on:
+  push:
+    branches: [plan/ppic-control-tower-rebuild-2026-11]
+    paths:
+      - 'index.html'
+      - '.github/workflows/deploy-pages.yml'
+      - '.github/workflows/ppic-public-release-gate.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify public allowlist and homepage
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          s=Path('index.html').read_text()
+          w=Path('.github/workflows/deploy-pages.yml').read_text()
+          assert '<html lang="id">' in s
+          assert 'INTERACTIVE DEMO' in s
+          assert 'data-page="dashboard"' in s
+          assert 'data-page="explorer"' in s
+          assert 'data-page="reports"' in s
+          assert 'const reports=' in s
+          assert 'window.print()' in s
+          assert 'fetch(' not in s
+          assert "path: 'dist'" in w
+          assert "path: '.'" not in w
+          assert 'cp index.html dist/index.html' in w
+          assert 'assert actual==allowed' in w
+          assert 'robots.txt' in w
+          print('PASS: homepage is demo and deploy uploads only allowlisted dist')
+          PY
+      - name: Validate JavaScript syntax
+        run: |
+          node - <<'JS'
+          const fs=require('node:fs'),vm=require('node:vm');
+          const s=fs.readFileSync('index.html','utf8');
+          const js=[...s.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)].map(m=>m[1]);
+          if(js.length!==1)throw Error('Expected one inline script');
+          new vm.Script(js[0]);
+          console.log('PASS: JS syntax');
+          JS
