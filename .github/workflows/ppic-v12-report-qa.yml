@@ -1,0 +1,28 @@
+name: BAL PPIC Report Explorer V1.2 QA
+on:
+  push:
+    branches: [feat/ppic-report-explorer-v12]
+    paths: ['index.html','.github/workflows/ppic-v12-report-qa.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate report controls and JS
+        run: |
+          node - <<'JS'
+          const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
+          const s=fs.readFileSync('index.html','utf8');
+          for(const marker of ['id="reportSearch"','id="reportGroup"','id="reportPeriod"','id="selectedPeriod"','laporan ditemukan','id="previewModal"','https://wa.me/?text='])assert.ok(s.includes(marker),marker);
+          const scripts=[...s.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)];
+          assert.equal(scripts.length,1);
+          new vm.Script(scripts[0][1]);
+          assert.ok(s.includes('addEventListener(id==="reportSearch"?"input":"change",drawCatalog)'));
+          console.log('PASS: report filters and preview script syntax');
+          JS
