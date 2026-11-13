@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bal.example.invalid/schemas/ppic-source-manifest-v1.json",
+  "title": "BAL PPIC Private Source Manifest",
+  "description": "Private server-side source registry; NEVER publish real instances to GitHub Pages.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["document_id","division","period","cutoff","version","source_kind","sha256","reconciliation_status","access_class","source_locator","ingested_at"],
+  "properties": {
+    "document_id": {"type":"string","pattern":"^[A-Za-z0-9][A-Za-z0-9._:-]{5,127}$"},
+    "division": {"enum":["Giling","Verpack","WIP","Barang Jadi","Cukai","Bahan Baku","TSG","DO & Piutang","Kas Bank"]},
+    "period": {"type":"string","pattern":"^[0-9]{4}-(0[1-9]|1[0-2])$"},
+    "cutoff": {"type":"string","format":"date-time"},
+    "version": {"type":"string","pattern":"^V[0-9]{3,}$"},
+    "source_kind": {"enum":["XLSX","XLSM","CSV","PDF","IMAGE","DOCX","OTHER"]},
+    "sha256": {"type":"string","pattern":"^[a-f0-9]{64}$"},
+    "reconciliation_status": {"enum":["WORKING","OPEN RECON","RECONCILED","LOCKED"]},
+    "access_class": {"enum":["INTERNAL","RESTRICTED","CONFIDENTIAL"]},
+    "source_locator": {"type":"string","minLength":8,"maxLength":2048},
+    "ingested_at": {"type":"string","format":"date-time"},
+    "supersedes_document_id": {"type":["string","null"]},
+    "notes": {"type":"string","maxLength":2000}
+  }
+}
