@@ -1,0 +1,17 @@
+name: BAL PPIC V1.8 Owner-only Security QA
+on:
+  push:
+    branches: [feat/ppic-owner-only-security-v18]
+    paths: ['sql/ppic_owner_only_v18_draft.sql','docs/PPIC_OWNER_ONLY_V18_GATE.md','tests/ppic-owner-only-v18.test.cjs','.github/workflows/ppic-v18-owner-qa.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --test tests/ppic-owner-only-v18.test.cjs
