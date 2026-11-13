@@ -1,0 +1,48 @@
+name: BAL PPIC V2.7 Android Install QA
+on:
+  push:
+    branches: [feat/ppic-android-home-screen-v27]
+    paths: ['index.html','manifest.webmanifest','icon.svg','sw.js','.github/workflows/deploy-pages.yml','.github/workflows/ppic-v27-install-qa.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate PWA install and private data isolation
+        run: |
+          node - <<'JS'
+          const fs=require('fs'),vm=require('vm'),assert=require('assert/strict');
+          const h=fs.readFileSync('index.html','utf8'),sw=fs.readFileSync('sw.js','utf8'),manifest=JSON.parse(fs.readFileSync('manifest.webmanifest','utf8'));
+          assert.equal(manifest.display,'standalone');assert.equal(manifest.short_name,'BAL PPIC');
+          assert.ok(manifest.icons.some(x=>x.sizes==='192x192'));
+          assert.ok(manifest.icons.some(x=>x.sizes==='512x512'));
+          for(const x of ['rel="manifest"','id="installPpic"','beforeinstallprompt','appinstalled','serviceWorker.register'])assert.ok(h.includes(x),x);
+          assert.ok(sw.includes('cache.addAll(SHELL)'));
+          assert.ok(sw.includes('req.method!=="GET"'));
+          assert.ok(sw.includes('url.origin!==self.location.origin'));
+          assert.ok(!sw.includes('supabase.co'));
+          assert.ok(!sw.includes('ppic_reports_owner_view'));
+          assert.ok(!sw.includes('ppic_source_catalog'));
+          assert.ok(!h.includes('2.970.848.428'));
+          const scripts=[...h.matchAll(/<script>([\s\S]*?)<\/script>/g)];assert.equal(scripts.length,2);
+          scripts.forEach(x=>new vm.Script(x[1]));new vm.Script(sw);
+          console.log('PASS: manifest, install UI, JS syntax, SW cache isolation');
+          JS
+      - name: Render branded PNG icons
+        run: |
+          python3 -m pip install --quiet cairosvg pillow
+          python3 - <<'PY'
+          import cairosvg,io
+          from PIL import Image
+          for size in (192,512):
+              raw=cairosvg.svg2png(url='icon.svg',output_width=size,output_height=size)
+              img=Image.open(io.BytesIO(raw))
+              assert img.size==(size,size),img.size
+              print('PASS ICON',size,len(raw))
+          PY
