@@ -12,3 +12,16 @@ test("13 PPIC report definitions",()=>{const s=read("report-explorer-v03.js");co
 test("Print Engine three fixture templates and export",()=>{const s=read("print-engine-v04.js");for(const k of ["stock:","wip:","gap:"])assert.ok(s.includes(k));assert.match(s,/exportCSV/);assert.match(s,/window\.print\(\)/);assert.match(s,/textContent/)});
 test("Print Engine explicit synthetic warning",()=>{const s=read("print-engine-v04.html");assert.match(s,/data sintetis/i);assert.match(s,/DEMO \/ NOT OFFICIAL/);assert.match(s,/A4 portrait/i);assert.match(s,/A4 landscape/i)});
 test("No production workflow edits in prototype",()=>{for(const file of pages.concat(scripts)){const s=read(file);assert.doesNotMatch(s,/api\.github\.com\/repos|supabase\.co|Web SKT API/i)}});
+
+test("Interactive website V05 has three tabs and 13 reports",()=>{
+ const html=read("BAL_INTERACTIVE_WEBSITE_V05.html");
+ for(const name of ["dashboard","explorer","reports"])assert.match(html,new RegExp('data-page="'+name+'"'));
+ assert.match(html,/INTERACTIVE DEMO/);
+ assert.match(html,/window\.print\(\)/);
+ assert.match(html,/textContent/);
+ assert.doesNotMatch(html,/fetch\s*\(|XMLHttpRequest|localStorage|sessionStorage/);
+ const match=html.match(/const reports=\[([^;]+)\];/);
+ assert.ok(match,"Report catalog present");
+ const titles=[...match[1].matchAll(/"([^"]+)"/g)].map(x=>x[1]);
+ assert.equal(titles.length,13);
+});
