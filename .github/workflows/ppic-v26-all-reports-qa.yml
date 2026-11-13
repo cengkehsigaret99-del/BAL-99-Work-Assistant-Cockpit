@@ -1,0 +1,51 @@
+name: BAL PPIC V2.6 All 13 Reports Print QA
+on:
+  push:
+    branches: [feat/ppic-all-13-live-reports-v26]
+    paths:
+      - index.html
+      - tests/ppic-v26-all-reports.spec.cjs
+      - .github/workflows/ppic-v26-all-reports-qa.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check JavaScript syntax and source isolation
+        run: |
+          node - <<'JS'
+          const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
+          const html=fs.readFileSync('index.html','utf8'),auth=fs.readFileSync('auth.js','utf8');
+          const scripts=[...html.matchAll(/<script>([\s\S]*?)<\/script>/g)];
+          assert.equal(scripts.length,1);
+          new vm.Script(scripts[0][1]);new vm.Script(auth);
+          for(const x of ['reportCoverage','nReportSnapshots','reportHasRows','selectedSnapshotFor'])assert.ok(html.includes(x),x);
+          assert.ok(!html.includes('2.970.848.428'));
+          assert.ok(!html.includes('783.000'));
+          assert.ok(!html.includes('338.555'));
+          assert.ok(auth.includes('/rest/v1/ppic_reports_owner_view'));
+          console.log('PASS: public HTML has no private operational snapshot data');
+          JS
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save @playwright/test
+          npx playwright install --with-deps chromium
+      - name: Start local website
+        run: python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/ppic-v26.log 2>&1 &
+      - name: Test 13 PDF previews and security
+        run: npx playwright test tests/ppic-v26-all-reports.spec.cjs tests/ppic-v25-report-pdf.spec.cjs tests/ppic-owner-login-browser.spec.cjs --browser=chromium --workers=1 --reporter=list
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ppic-v26-mobile-qa
+          path: |
+            ppic-v26-mobile-qa.png
+            test-results/
+          if-no-files-found: ignore
