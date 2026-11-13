@@ -51,7 +51,7 @@ for(const d of divisions){const opt=document.createElement("option");opt.value=d
 function drawDocs(){$("docs").replaceChildren();$("doccount").textContent="0 dokumen tersedia";$("docempty").hidden=false}
 for(const id of ["search","division","state"])$(id).addEventListener(id==="search"?"input":"change",drawDocs);drawDocs();
 function drawCatalog(){$("catalog").replaceChildren();catalog.forEach((r,i)=>{const b=document.createElement("button");b.className="report";b.type="button";b.setAttribute("aria-selected",String(i===chosen));b.textContent=String(i+1).padStart(2,"0")+" · "+r[0];b.addEventListener("click",()=>{chosen=i;drawCatalog()});const q=$("reportSearch").value.trim().toLocaleLowerCase("id-ID"),g=$("reportGroup").value;b.hidden=!!((g&&groups[i]!==g)||(q&&!r.join(" ").toLocaleLowerCase("id-ID").includes(q)));$("catalog").append(b)});$("number").textContent="LAPORAN "+String(chosen+1).padStart(2,"0");$("reporttitle").textContent=catalog[chosen][0];$("description").textContent=catalog[chosen][1];$("needed").textContent=catalog[chosen][2];$("selectedPeriod").textContent=$("reportPeriod").value||"Belum dipilih";$("reportCount").textContent=[...$("catalog").children].filter(b=>!b.hidden).length+" laporan ditemukan"}
-drawCatalog();const previewModal=$("previewModal"),previewFrame=$("previewFrame");
+for(const id of ["reportSearch","reportGroup","reportPeriod"])$(id).addEventListener(id==="reportSearch"?"input":"change",drawCatalog);drawCatalog();const previewModal=$("previewModal"),previewFrame=$("previewFrame");
 function buildPreview(){
  const title=catalog[chosen][0],desc=catalog[chosen][1],source=catalog[chosen][2];
  const esc=x=>String(x).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;");
