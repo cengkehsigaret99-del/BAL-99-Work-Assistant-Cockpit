@@ -198,7 +198,7 @@ function renderSJAnalytics(period){
  for(const v of table.headers||[]){const th=document.createElement("th");th.textContent=String(v);tr.append(th)}thead.append(tr);t.append(thead);
  const tbody=document.createElement("tbody");for(const row of table.rows||[]){const tr=document.createElement("tr");for(const v of row){const td=document.createElement("td");td.textContent=String(v);tr.append(td)}tbody.append(tr)}t.append(tbody);wrapper.append(t);target.append(wrapper);
 }
-ai("analyticsDivision").addEventListener("change",()=>{analyticsSelectOptions();renderAnalytics()});
+ai("analyticsDivision").addEventListener("change",()=>{analyticsSelectOptions();ai("analyticsReport").value=String(analyticsMapping[ai("analyticsDivision").value][0]);renderAnalytics()});
 ai("analyticsPeriod").addEventListener("change",renderAnalytics);
 ai("analyticsReport").addEventListener("change",renderAnalytics);
 ai("analyticsOpenReport").addEventListener("click",()=>{
