@@ -33,6 +33,20 @@
   await loadDocs(accessToken,current);
   return data;
  };
+ window.ppicRebuildSDM=async({period="2026-11"}={})=>{
+  if(!accessToken||Date.now()>=expiresAt)throw Error("Sesi Owner berakhir. Login kembali.");
+  const current=attempt,token=accessToken;
+  const response=await fetch(ROOT+"/functions/v1/ppic-sdm-rebuild",{
+   method:"POST",headers:{"apikey":KEY,"Authorization":"Bearer "+token,"Content-Type":"application/json"},
+   body:JSON.stringify({period}),cache:"no-store"
+  });
+  const data=await response.json().catch(()=>({}));
+  if(current!==attempt||accessToken!==token)throw Error("Sesi Owner berubah. Silakan login kembali.");
+  if(!response.ok||data.ok!==true)throw Error(data.error||data.message||"Gagal memproses sumber SDM.");
+  await loadDocs(token,current);
+  await loadSDM(token,current);
+  return data;
+ };
  window.ppicRefreshPrivateDocs=async()=>{
   if(!accessToken||Date.now()>=expiresAt)throw Error("Sesi Owner berakhir.");
   return loadDocs(accessToken,attempt);
