@@ -514,8 +514,8 @@ fgEl("reportFinishedPDF").addEventListener("click",()=>view("finished"));
 fgEl("fgPrint").addEventListener("click",()=>{
  if(!fgData)return;
  const esc=x=>String(x??"").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;");
- const cols=(selector)=>[...document.querySelectorAll(selector+" thead th")].map(x=>x.textContent);
- const body=(selector)=>[...document.querySelectorAll(selector+" tbody tr")].map(tr=>[...tr.cells].map(c=>c.textContent));
+ const cols=(selector)=>[...document.querySelector(selector).closest("table").querySelectorAll("thead th")].map(x=>x.textContent);
+ const body=(selector)=>[...document.querySelector(selector).querySelectorAll("tr")].map(tr=>[...tr.cells].map(c=>c.textContent));
  const tbl=(head,rows)=>'<table><thead><tr>'+head.map(x=>'<th>'+esc(x)+'</th>').join("")+'</tr></thead><tbody>'+rows.map(r=>'<tr>'+r.map(x=>'<td>'+esc(x)+'</td>').join("")+'</tr>').join("")+'</tbody></table>';
  const day=fgEl("fgDate").value,monthly=fgEl("fgPrintMode").value==="month";
  const cartonNote="Karton ekuivalen = pack / isi pack per karton per SKU. Isi 12 = 1.000 pack/karton; isi 16 = 800 pack/karton. Total campuran hanya ekuivalen, bukan karton fisik yang dapat digabungkan. Saldo negatif tetap terlihat.";
