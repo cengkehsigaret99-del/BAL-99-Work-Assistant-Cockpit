@@ -19,6 +19,24 @@
   const rows=await response.json();
   if(current===attempt&&accessToken===token)window.ppicSetReports(rows);
  }
+ window.ppicUploadPrivate=async({file,division,period,cutoff,version})=>{
+  if(!accessToken||Date.now()>=expiresAt)throw Error("Sesi Owner berakhir. Login kembali.");
+  const current=attempt;
+  const response=await fetch(ROOT+"/functions/v1/ppic-owner-upload",{
+   method:"POST",headers:{"apikey":KEY,"Authorization":"Bearer "+accessToken,"Content-Type":"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    "x-ppic-filename":file.name,"x-ppic-division":division,"x-ppic-period":period,"x-ppic-cutoff":cutoff,"x-ppic-version":version},
+   body:file,cache:"no-store"
+  });
+  const data=await response.json().catch(()=>({}));
+  if(current!==attempt||!accessToken)throw Error("Sesi berubah. Periksa daftar sumber sebelum mengulang upload.");
+  if(!response.ok||data.ok!==true)throw Error(data.message||data.error||"Upload gagal ("+response.status+").");
+  await loadDocs(accessToken,current);
+  return data;
+ };
+ window.ppicRefreshPrivateDocs=async()=>{
+  if(!accessToken||Date.now()>=expiresAt)throw Error("Sesi Owner berakhir.");
+  return loadDocs(accessToken,attempt);
+ };
  const MAX_SESSION_MS=30*60*1000;
  function clearExpiry(){if(expiryTimer!==null){clearTimeout(expiryTimer);expiryTimer=null}expiresAt=0}
  function expire(){attempt++;show(false);message("Sesi berakhir. Silakan login kembali.")}
