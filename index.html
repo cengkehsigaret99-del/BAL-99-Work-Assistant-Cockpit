@@ -424,7 +424,7 @@ matEl("matSelect").addEventListener("change",matRender);
 matEl("matSource").addEventListener("click",()=>view("data"));
 matEl("matPrint").addEventListener("click",()=>{
  if(!matData)return;
- const esc=x=>String(x??"").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;');
+ const esc=x=>String(x??"").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;");
  const selected=matEl("matPrintScope").value==="all"?matData.m:matData.m.filter(m=>m[0]===(matEl("matSelect").value||matData.m[0][0]));
  const pages=selected.map((m,i)=>{
   const k=matMetrics(m),rows=matLedger(m),head=["Tgl","Awal qty","Masuk qty","Pakai qty","Akhir qty","Awal Rp","Masuk Rp","Pakai Rp","Akhir Rp","Status"];
