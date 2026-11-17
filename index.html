@@ -395,7 +395,7 @@ function matLedger(m){
  for(let d=1;d<=30;d++){
   if(d>16){rows.push({d,values:[null,null,null,null,null,null,null,null],status:"BELUM ADA DATA"});continue}
   const [qin,qout]=events.get(d)||[0,0],before=qty;qty+=qin-qout;
-  rows.push({d,values:[before,qin,qout,qty,before*price,qin*price,qout*price,qty*price],status:qin||qout?"OPEN RECON":"TIDAK ADA MUTASI"});
+  rows.push({d,values:[before,qin,qout,qty,price===null?null:before*price,price===null?null:qin*price,price===null?null:qout*price,price===null?null:qty*price],status:qin||qout?"OPEN RECON":"TIDAK ADA MUTASI"});
  }
  return rows;
 }
@@ -412,7 +412,7 @@ function matRender(){
  const k=matMetrics(m),rows=matLedger(m);
  matEl("matStatus").textContent=m[0]+" · "+m[1]+" · "+m[2]+" · harga kerja Rp"+matFmt(k.price)+"/unit · V010 · cut-off 16 Nov 2026 · OPEN RECON";
  for(const [label,val] of [["Saldo awal",k.opening],["Pembelian",k.income],["Pemakaian",k.use],["Saldo akhir",k.end]]){
-  const card=document.createElement("article");card.className="panel metric";const l=document.createElement("div");l.className="muted";l.textContent=label;const v=document.createElement("strong");v.textContent=matFmt(val)+" "+m[2];const n=document.createElement("small");n.textContent="Rp "+matFmt(val*k.price)+" (harga kerja)";card.append(l,v,n);summary.append(card)
+  const card=document.createElement("article");card.className="panel metric";const l=document.createElement("div");l.className="muted";l.textContent=label;const v=document.createElement("strong");v.textContent=matFmt(val)+" "+m[2];const n=document.createElement("small");n.textContent="Rp "+matFmt(k.price===null?null:val*k.price)+" (harga kerja)";card.append(l,v,n);summary.append(card)
  }
  const add=(values)=>{const tr=document.createElement("tr");for(const v of values){const td=document.createElement("td");td.textContent=typeof v==="number"?matFmt(v):v===null?"—":String(v);tr.append(td)}table.append(tr)};
  for(const row of rows)add([String(row.d).padStart(2,"0")+"/11/2026",...row.values,row.status]);
@@ -433,7 +433,7 @@ matEl("matPrint").addEventListener("click",()=>{
   const pts=vals.map((v,j)=>(15+j*43)+","+(75-(v-min)/span*54)).join(" ");
   const graph='<svg viewBox="0 0 690 92" style="width:100%;height:58px;background:#eff7f9"><polyline points="'+pts+'" stroke="#0097a8" fill="none" stroke-width="2.5"/><text x="10" y="89" font-size="10" fill="#17465d">Saldo akhir 1–16 November · min '+matFmt(min)+' · maks '+matFmt(max)+'</text></svg>';
   const capacity=m[0]==="A-01"?"KAPASITAS SIMULASI: "+matFmt(Math.floor(k.end/12))+" pack / "+matFmt(Math.floor(k.end/12000))+" karton (asumsi 12 pcs/pack; BOM belum disahkan)":"KAPASITAS KARTON BELUM DAPAT DIHITUNG — koefisien BOM bahan ke SKU belum terverifikasi.";
-  return '<section class="page"><h1>'+esc(m[0])+' — '+esc(m[1])+'</h1><p>Satuan: '+esc(m[2])+' · Harga kerja Rp'+matFmt(k.price)+'/unit · OPEN RECON · cut-off 16 November 2026</p><table class="kpi"><tr><th>SALDO AWAL</th><th>PEMBELIAN / MASUK</th><th>PEMAKAIAN</th><th>SALDO AKHIR</th></tr><tr>'+[k.opening,k.income,k.use,k.end].map(v=>'<td><strong>'+matFmt(v)+' '+esc(m[2])+'</strong><div>Rp '+matFmt(v*k.price)+'</div></td>').join("")+'</tr></table>'+graph+'<table class="ledger"><thead><tr>'+head.map(x=>'<th>'+x+'</th>').join("")+'</tr></thead><tbody>'+body+'</tbody></table><p class="capacity">'+esc(capacity)+'</p><footer>BAL PPIC · NOVEMBER 2026 · WORKING / OPEN RECON · '+(i+1)+' / '+selected.length+'</footer></section>';
+  return '<section class="page"><h1>'+esc(m[0])+' — '+esc(m[1])+'</h1><p>Satuan: '+esc(m[2])+' · Harga kerja Rp'+matFmt(k.price)+'/unit · OPEN RECON · cut-off 16 November 2026</p><table class="kpi"><tr><th>SALDO AWAL</th><th>PEMBELIAN / MASUK</th><th>PEMAKAIAN</th><th>SALDO AKHIR</th></tr><tr>'+[k.opening,k.income,k.use,k.end].map(v=>'<td><strong>'+matFmt(v)+' '+esc(m[2])+'</strong><div>Rp '+matFmt(k.price===null?null:v*k.price)+'</div></td>').join("")+'</tr></table>'+graph+'<table class="ledger"><thead><tr>'+head.map(x=>'<th>'+x+'</th>').join("")+'</tr></thead><tbody>'+body+'</tbody></table><p class="capacity">'+esc(capacity)+'</p><footer>BAL PPIC · NOVEMBER 2026 · WORKING / OPEN RECON · '+(i+1)+' / '+selected.length+'</footer></section>';
  }).join("");
  const html='<!doctype html><html lang="id"><head><meta charset="utf-8"><title>BAL PPIC · Bahan Baku Per Bahan</title><style>@page{size:A4 landscape;margin:10mm}body{font:8px/1.3 Arial;color:#17465d}.page{break-after:page;page-break-after:always}.page:last-child{break-after:auto}h1{font-size:17px;margin:0 0 5px}p{margin:4px 0 8px}.kpi,.ledger{border-collapse:collapse;width:100%;table-layout:fixed}.kpi{margin:7px 0}.kpi th{background:#17465d;color:white;font-size:9px}.kpi td{background:#eff7f9;text-align:center;font-size:10px}.kpi td strong{font-size:12px}.ledger{font-size:7px}.ledger th{background:#17465d;color:white}.ledger th,.ledger td{border:1px solid #d5e3e9;padding:2px 3px;overflow-wrap:anywhere}.ledger tr:nth-child(even){background:#eff7f9}thead{display:table-header-group}tr{break-inside:avoid}.capacity{font-size:9px;font-weight:bold;margin-top:8px}footer{font-size:8px;border-top:1px solid #0097a8;padding-top:5px;margin-top:8px}</style></head><body>'+pages+'</body></html>';
  matEl("previewFrame").srcdoc=html;matEl("previewModal").hidden=false;matEl("closePreview").focus();
