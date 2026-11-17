@@ -57,6 +57,23 @@ jobs:
           assert 'cache.addAll(SHELL)' in sw
           print("Public allowlist verified; no operational CSV or internal documents included")
           PY
+      - name: Validate JavaScript and SDM dashboard controls
+        run: |
+          node - <<'JS'
+          const fs=require('node:fs');
+          const vm=require('node:vm');
+          const html=fs.readFileSync('index.html','utf8');
+          const inline=[...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g)]
+            .filter(m=>!/\bsrc=/.test(m[1])).map(m=>m[2]);
+          if(!inline.length)throw Error('No inline scripts to check');
+          inline.forEach((content,i)=>new vm.Script(content,{filename:'index-inline-'+i+'.js'}));
+          new vm.Script(fs.readFileSync('auth.js','utf8'),{filename:'auth.js'});
+          for(const key of ['id="sdmBuild"','id="sdmDiv"','id="sdmStart"','id="sdmEnd"','id="sdmRows"','id="sdmPeople"','SDM GILING','SDM VERPACK']){
+            if(!html.includes(key))throw Error('SDM control missing: '+key);
+          }
+          if(!fs.readFileSync('auth.js','utf8').includes('ppic-sdm-rebuild'))throw Error('Private SDM processor client missing');
+          console.log('PASS: all PPIC JS syntax and SDM controls');
+          JS
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload only sanitized public dist
