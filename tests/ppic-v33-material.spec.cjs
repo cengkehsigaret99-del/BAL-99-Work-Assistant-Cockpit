@@ -19,7 +19,7 @@ test('material daily report has 30 dates, nominal and explicit cutoff',async({pa
  await expect(page.locator('#matStatus')).toContainText('AMBREE GCC 99');
  await expect(page.locator('#matRows tr').nth(16)).toContainText('BELUM ADA DATA');
  await expect(page.locator('#matRows tr').nth(1)).toContainText('10.940.000');
- await expect(page.locator('#matCapacity')).toContainText('SIMULASI');
+ await expect(page.locator('#matCapacity')).toContainText('simulasi');
 });
 test('print template per material and all materials, no unverified capacity',async({page})=>{
  await login(page);await page.locator('#matPrint').click();await expect(page.locator('#previewModal')).toBeVisible();
