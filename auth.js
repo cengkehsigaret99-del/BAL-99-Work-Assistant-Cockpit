@@ -5,7 +5,7 @@
  const EMAIL="cengkehsigaret99@gmail.com";
  const $=id=>document.getElementById(id);
  const login=$("ownerLogin"),main=$("ppicMain"),status=$("loginStatus"),form=$("loginForm"),logout=$("logoutOwner");
- let accessToken="",expiresAt=0,expiryTimer=null,attempt=0,docsRequest=null,reportsRequest=null;
+ let accessToken="",expiresAt=0,expiryTimer=null,attempt=0,docsRequest=null,reportsRequest=null,dailyRequest=null;
  async function loadDocs(token,current){
   if(docsRequest)docsRequest.abort();docsRequest=new AbortController();
   const response=await fetch(ROOT+"/rest/v1/ppic_source_catalog?select=document_id,division,period,cutoff,version,reconciliation_status,access_class,ingested_at&order=ingested_at.desc&limit=200",{headers:{"apikey":KEY,"Authorization":"Bearer "+token},cache:"no-store",signal:docsRequest.signal});
@@ -37,10 +37,18 @@
   if(!accessToken||Date.now()>=expiresAt)throw Error("Sesi Owner berakhir.");
   return loadDocs(accessToken,attempt);
  };
+ async function loadDaily(token,current){
+  if(dailyRequest)dailyRequest.abort();dailyRequest=new AbortController();
+  const response=await fetch(ROOT+"/rest/v1/ppic_daily_owner_view?select=period,division,cutoff,version,status,unit,valuation_basis,payload,source_document_ids,created_at&order=created_at.desc&limit=100",{
+   headers:{"apikey":KEY,"Authorization":"Bearer "+token},cache:"no-store",signal:dailyRequest.signal
+  });
+  if(!response.ok)throw Error("Ledger harian belum dapat dibaca ("+response.status+").");
+  const rows=await response.json();if(current===attempt&&accessToken===token)window.ppicSetDaily(rows);
+ }
  const MAX_SESSION_MS=30*60*1000;
  function clearExpiry(){if(expiryTimer!==null){clearTimeout(expiryTimer);expiryTimer=null}expiresAt=0}
  function expire(){attempt++;show(false);message("Sesi berakhir. Silakan login kembali.")}
- const show=(authorized)=>{login.hidden=authorized;main.hidden=!authorized;logout.hidden=!authorized;if(!authorized){if(docsRequest)docsRequest.abort();if(reportsRequest)reportsRequest.abort();accessToken="";clearExpiry();window.ppicSetDocs([]);window.ppicSetReports([]);const modal=$("previewModal");if(modal)modal.hidden=true;const frame=$("previewFrame");if(frame)frame.srcdoc="";$("ownerPassword").value=""}};
+ const show=(authorized)=>{login.hidden=authorized;main.hidden=!authorized;logout.hidden=!authorized;if(!authorized){if(docsRequest)docsRequest.abort();if(reportsRequest)reportsRequest.abort();if(dailyRequest)dailyRequest.abort();accessToken="";clearExpiry();window.ppicSetDocs([]);window.ppicSetReports([]);window.ppicSetDaily([]);const modal=$("previewModal");if(modal)modal.hidden=true;const frame=$("previewFrame");if(frame)frame.srcdoc="";$("ownerPassword").value=""}};
  const message=(value)=>{status.textContent=value};
  async function verify(token){
   const response=await fetch(ROOT+"/functions/v1/ppic-owner-check",{method:"GET",headers:{"apikey":KEY,"Authorization":"Bearer "+token},cache:"no-store"});
@@ -68,7 +76,7 @@
    expiresAt=Date.now()+duration;
    expiryTimer=setTimeout(expire,duration);
    show(true);message("Owner terverifikasi. Memuat Bank Data dan laporan privat…");
-   const outcomes=await Promise.allSettled([loadDocs(accessToken,current),loadReports(accessToken,current)]);
+   const outcomes=await Promise.allSettled([loadDocs(accessToken,current),loadReports(accessToken,current),loadDaily(accessToken,current)]);
    if(current===attempt){
     const bad=outcomes.filter(result=>result.status==="rejected"&&result.reason?.name!=="AbortError");
     if(bad.length)message("Login berhasil, tetapi sebagian data belum terbaca: "+bad.map(x=>x.reason?.message||"akses gagal").join("; "));
