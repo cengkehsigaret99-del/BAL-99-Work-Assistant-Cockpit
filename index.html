@@ -95,12 +95,12 @@ const catalog=[
 ["Simulasi Optimasi Produksi","Perbandingan skenario produksi","MPS, demand, WIP, HPP"]
 ];
 const groups=["Persediaan","Produksi","Produksi","Persediaan","Kontrol","Produksi","Keuangan","Keuangan","Keuangan","Produksi","Kontrol","Persediaan","Produksi"];const $=id=>document.getElementById(id);let chosen=0;
-function view(id){for(const name of ["dashboard","data","upload","reports","analytics","daily","customers","materials","finished","excise","sdm","sources"])$(name).classList.toggle("hide",name!==id);document.querySelectorAll("[data-view]").forEach(b=>b.setAttribute("aria-current",b.dataset.view===id?"page":"false"))}
+function view(id){for(const name of ["dashboard","data","upload","reports","analytics","daily","customers","materials","finished","excise","sdm","sources"])$(name).classList.toggle("hide",name!==id);document.querySelectorAll("[data-view]").forEach(b=>b.setAttribute("aria-current",b.dataset.view===id?"page":"false"));if(id==="sdm")queueMicrotask(sdmMaybeAutoBuild)}
 document.querySelectorAll("[data-view]").forEach(b=>b.addEventListener("click",()=>view(b.dataset.view)));
 document.querySelectorAll("[data-go]").forEach(b=>b.addEventListener("click",()=>view(b.dataset.go)));
 for(const d of divisions){const opt=document.createElement("option");opt.value=d;opt.textContent=d;$("division").append(opt);const tr=document.createElement("tr");for(const t of [d,"Belum terhubung","Menunggu bank data privat"]){const td=document.createElement("td");td.textContent=t;tr.append(td)}$("divisions").append(tr)}
 let privateDocs=[];
-window.ppicSetDocs=(rows)=>{privateDocs=Array.isArray(rows)?rows:[];const select=$("division"),current=select.value;select.replaceChildren(new Option("Semua divisi",""));for(const name of [...new Set(privateDocs.map(r=>r.division).filter(Boolean))].sort())select.add(new Option(name,name));select.value=current;drawDocs();$("nSources").textContent=String(privateDocs.length)};
+window.ppicSetDocs=(rows)=>{privateDocs=Array.isArray(rows)?rows:[];const select=$("division"),current=select.value;select.replaceChildren(new Option("Semua divisi",""));for(const name of [...new Set(privateDocs.map(r=>r.division).filter(Boolean))].sort())select.add(new Option(name,name));select.value=current;drawDocs();$("nSources").textContent=String(privateDocs.length);if(!privateDocs.length)sdmAutoAttempted=false;queueMicrotask(sdmMaybeAutoBuild)};
 function drawDocs(){const q=$("search").value.trim().toLocaleLowerCase("id-ID"),div=$("division").value,state=$("state").value;const found=privateDocs.filter(r=>(!q||[r.document_id,r.division,r.period,r.version].join(" ").toLocaleLowerCase("id-ID").includes(q))&&(!div||r.division===div)&&(!state||r.reconciliation_status===state));$("docs").replaceChildren();for(const r of found){const tr=document.createElement("tr");for(const field of ["division","document_id","period","cutoff","reconciliation_status"]){const td=document.createElement("td");td.textContent=String(r[field]??"—");tr.append(td)}$("docs").append(tr)}$("doccount").textContent=found.length+" dari "+privateDocs.length+" dokumen";$("docempty").hidden=found.length>0}
 for(const id of ["search","division","state"])$(id).addEventListener(id==="search"?"input":"change",drawDocs);drawDocs();
 let privateReports=[];
@@ -604,7 +604,17 @@ exRender();
 
 
 const sdmEl=id=>document.getElementById(id),sdmFmt=n=>new Intl.NumberFormat("id-ID",{maximumFractionDigits:2}).format(n);
-let sdmSnapshots=[],sdmData=null,sdmDecodeError="";
+let sdmSnapshots=[],sdmData=null,sdmDecodeError="",sdmAutoAttempted=false;
+function sdmMaybeAutoBuild(){
+ if(sdmAutoAttempted||sdmData||typeof window.ppicRebuildSDM!=="function")return;
+ if(!privateDocs.some(d=>d.division==="SDM GILING"&&d.period==="2026-11")||
+    !privateDocs.some(d=>d.division==="SDM VERPACK"&&d.period==="2026-11"))return;
+ if(!document.querySelector('[data-view="sdm"][aria-current="page"]'))return;
+ const button=sdmEl("sdmBuild");
+ if(!button||button.disabled)return;
+ sdmAutoAttempted=true;
+ button.click();
+}
 async function sdmDecode(s){
  if(!s?.payload||s.payload.codec!=="zlib-base64")return null;
  const binary=atob(s.payload.data),bytes=Uint8Array.from(binary,c=>c.charCodeAt(0));
@@ -615,6 +625,7 @@ window.ppicSetSDM=async snaps=>{
  try{sdmData=await sdmDecode(sdmSnapshots.find(s=>s.period==="2026-11"))}
  catch(e){sdmDecodeError="Sumber SDM tidak dapat dibaca: "+(e?.message||String(e))}
  sdmFill();sdmRender();
+ if(!sdmData)queueMicrotask(sdmMaybeAutoBuild);
 };
 function sdmFill(){
  const sel=sdmEl("sdmBrand"),old=sel.value;sel.replaceChildren(new Option("Semua merek",""));
