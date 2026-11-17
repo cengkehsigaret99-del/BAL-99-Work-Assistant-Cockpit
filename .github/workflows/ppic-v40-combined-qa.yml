@@ -1,7 +1,7 @@
 name: BAL PPIC V4.0 SDM Combined QA
 on:
   push:
-    branches: [feat/ppic-sdm-combined-v40]
+    branches: [feat/ppic-sdm-combined-v40, main]
   workflow_dispatch:
 permissions: {contents: read}
 jobs:
