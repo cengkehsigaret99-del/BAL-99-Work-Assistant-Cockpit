@@ -1,0 +1,31 @@
+name: BAL PPIC V2.9 Analytics QA
+on:
+  push:
+    branches: [feat/ppic-division-integrated-charts-v29]
+    paths: ['index.html','tests/ppic-v29-analytics.spec.cjs','.github/workflows/ppic-v29-analytics-qa.yml']
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - name: Check syntax and private data isolation
+        run: |
+          node - <<'JS'
+          const fs=require('fs'),vm=require('vm'),assert=require('assert/strict');
+          const html=fs.readFileSync('index.html','utf8');
+          [...html.matchAll(/<script>([\s\S]*?)<\/script>/g)].forEach(x=>new vm.Script(x[1]));
+          assert.ok(html.includes('data-view="analytics"'));
+          assert.ok(!html.includes('355.210'));
+          assert.ok(!html.includes('228.800'));
+          console.log('PASS syntax, no hardcoded private operational figures');
+          JS
+      - run: |
+          npm install --no-save @playwright/test
+          npx playwright install --with-deps chromium
+      - run: python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/ppic-v29.log 2>&1 &
+      - run: npx playwright test tests/ppic-v29-analytics.spec.cjs tests/ppic-v28-upload.spec.cjs --browser=chromium --workers=1 --reporter=list
