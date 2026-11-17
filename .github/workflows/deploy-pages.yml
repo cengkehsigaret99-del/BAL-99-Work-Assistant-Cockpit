@@ -43,7 +43,7 @@ jobs:
           actual={p.name for p in dist.iterdir()}
           assert actual==allowed,(actual,allowed)
           s=(dist/"index.html").read_text()
-          for marker in ('BAL / PPIC Control Tower','data-view="dashboard"','data-view="data"','data-view="reports"','data-view="sources"','Belum terhubung'):
+          for marker in ('BAL · PPIC Control Tower','data-view="dashboard"','data-view="data"','data-view="reports"','data-view="sources"','data-view="sdm"','id="sdmBuild"','SDM GILING','SDM VERPACK','Belum terhubung'):
               assert marker in s,marker
           assert 'fetch(' not in s
           import json
