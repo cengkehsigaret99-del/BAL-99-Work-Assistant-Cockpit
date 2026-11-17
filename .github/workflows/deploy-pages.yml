@@ -25,6 +25,7 @@ jobs:
           cp index.html dist/index.html
           cp auth.js dist/auth.js
           cp logo.png dist/logo.png
+          cp bal-logo-user.webp dist/bal-logo-user.webp
           cp manifest.webmanifest dist/manifest.webmanifest
           cp sw.js dist/sw.js
           cp icon.svg dist/icon.svg
@@ -39,7 +40,7 @@ jobs:
           python3 - <<'PY'
           from pathlib import Path
           dist=Path("dist")
-          allowed={"index.html","auth.js","logo.png","manifest.webmanifest","sw.js","icon.svg","icon-192.png","icon-512.png","robots.txt",".nojekyll"}
+          allowed={"index.html","auth.js","logo.png","bal-logo-user.webp","manifest.webmanifest","sw.js","icon.svg","icon-192.png","icon-512.png","robots.txt",".nojekyll"}
           actual={p.name for p in dist.iterdir()}
           assert actual==allowed,(actual,allowed)
           s=(dist/"index.html").read_text()
