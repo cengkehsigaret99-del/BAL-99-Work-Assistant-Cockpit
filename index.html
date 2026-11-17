@@ -280,7 +280,7 @@ function dailyRender(){
   const paragraph=document.createElement("p");paragraph.textContent=String(msg);notes.append(paragraph)
  }
 }
-window.ppicSetDaily=(rows)=>{dailySnapshots=Array.isArray(rows)?rows:[];dailyRender()};
+window.ppicSetDaily=(rows)=>{dailySnapshots=Array.isArray(rows)?rows:[];dailyRender();exRender()};
 document.getElementById("dailyPeriod").addEventListener("change",dailyRender);
 document.getElementById("dailyDivision").addEventListener("change",dailyRender);
 document.getElementById("dailyOpenSources").addEventListener("click",()=>view("data"));
