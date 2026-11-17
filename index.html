@@ -484,8 +484,8 @@ function fgRender(){
  let total=0,totalRp=0,hasUnknown=false;
  if(valid)for(const o of ledger){
   const d=o.days[day-1],m=o.m,price=m[3],cart=m[2],full=cart?Math.trunc(d.closing/cart):null,rest=cart?d.closing-full*cart:null;
-  total+=d.closing;if(price===null)hasUnknown=true;else totalRp+=d.closing*price;
-  add(body,[m[0],m[1],d.opening,d.income,d.out,d.closing,full,rest,price===null?null:d.closing*price,d.closing<0?"SALDO NEGATIF / REKONSILIASI":"OPEN RECON"]);
+  total+=d.closing;if(price===null&&d.closing!==0)hasUnknown=true;else if(price!==null)totalRp+=d.closing*price;
+  add(body,[m[0],m[1],d.opening,d.income,d.out,d.closing,full,rest,price===null?(d.closing===0?0:null):d.closing*price,d.closing<0?"SALDO NEGATIF / REKONSILIASI":"OPEN RECON"]);
  }
  const chosen=fgEl("fgSku").value;
  if(valid)for(const e of fgData.e.filter(e=>e[0]===day&&(!chosen||e[2]===chosen))){
