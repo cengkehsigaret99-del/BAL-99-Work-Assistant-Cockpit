@@ -1,0 +1,23 @@
+name: BAL PPIC V3.9 Cosmic Brand QA
+on:
+  push:
+    branches: [feat/ppic-cosmic-brand-v39]
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - run: |
+          node - <<'JS'
+          const fs=require('fs'),vm=require('vm');const h=fs.readFileSync('index.html','utf8');[...h.matchAll(/<script>([\s\S]*?)<\/script>/g)].forEach(x=>new vm.Script(x[1]));new vm.Script(fs.readFileSync('auth.js','utf8'));
+          JS
+      - run: |
+          npm install --no-save @playwright/test
+          npx playwright install --with-deps chromium
+      - run: python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/ppic-brand.log 2>&1 &
+      - run: npx playwright test tests/ppic-v39-cosmic.spec.cjs tests/ppic-v38-sdm.spec.cjs --browser=chromium --workers=1 --reporter=list
