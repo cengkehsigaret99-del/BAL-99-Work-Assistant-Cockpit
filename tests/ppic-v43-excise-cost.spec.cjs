@@ -41,6 +41,7 @@ async function setup(page,{reports=[fixtureReport()],daily=fixtureDaily()}={}){
   await page.locator('#ownerPassword').fill('fixture-password');
   await page.locator('#loginButton').click();
   await expect(page.locator('#ppicMain')).toBeVisible();
+  if(await page.locator('#ppicDivisionsList').isHidden())await page.locator('#ppicDivisionsToggle').click();
   await page.locator('[data-view="excise"]').click();
   await expect(page.locator('#exCostContent')).toBeVisible();
   await expect(page.locator('#exSummary tr')).toHaveCount(3);
