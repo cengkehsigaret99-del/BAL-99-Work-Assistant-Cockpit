@@ -49,6 +49,140 @@ table th{color:#b9d9ee}table tbody tr:hover{background:#8bc9ff0a}
 .sdm-report-card button{margin-top:10px;width:100%}
 .sdm-report-card button:disabled{opacity:.46}
 #sdmSourceAudit{margin:4px 0 12px}
+</style><style id="ppic-ux-v47">
+/* Information architecture: one clear workflow, distinct monitoring menus, no changes to data. */
+#ppicMain{max-width:1180px;padding:clamp(12px,2.7vw,25px);overflow-x:clip}
+#ppicMain .ppic-app-header{display:flex;align-items:center;justify-content:space-between;gap:18px;margin:0 0 22px;padding:15px 19px;border-radius:18px}
+#ppicMain .ppic-identity{display:flex;align-items:center;gap:15px;min-width:0}
+#ppicMain .ppic-brand-title{font-size:clamp(16px,2vw,22px);font-weight:840;letter-spacing:.055em;line-height:1.15;color:#f3fbff}
+#ppicMain .ppic-brand-subtitle{font-size:12px;color:#b9d2e6;margin-top:5px;letter-spacing:.01em}
+#ppicMain .ppic-identity .bal-brand-mark{width:63px;height:63px}
+#ppicMain .ppic-header-actions{display:flex;align-items:center;gap:10px;flex-shrink:0}
+#ppicMain .ppic-header-actions .owner-logout{margin-left:0;min-height:44px}
+#ppicMain .ppic-work-state{white-space:nowrap;color:#f2d6aa;border-color:#8e795f;background:#342e2940;font-weight:700}
+#ppicMain .ppic-skip-link{position:absolute;top:-100px;left:18px;z-index:100;background:#94e8ff;color:#042538;border-radius:8px;padding:10px 14px}
+#ppicMain .ppic-skip-link:focus{top:8px}
+#ppicMain .ppic-introduction{margin:6px 0 18px}
+#ppicMain .ppic-introduction h1{font-size:clamp(27px,4.25vw,41px);line-height:1.1;margin:8px 0 8px;letter-spacing:-.035em}
+#ppicMain .ppic-introduction h1 span{color:#aee7ff}
+#ppicMain .ppic-introduction p{font-size:14px;line-height:1.55;color:#b9d1e1;margin:0;max-width:680px}
+#ppicMain .ppic-tagline{font-size:10px;font-weight:800;letter-spacing:.17em;color:#ddbf93}
+#ppicMain .ppic-nav{display:flex;flex-direction:column;gap:13px;width:100%;margin:20px 0 13px;padding:14px;border:1px solid #325a78;border-radius:18px;overflow:visible;background:linear-gradient(145deg,#0b2137f0,#07172cfc)}
+#ppicMain .ppic-nav-block{display:grid;grid-template-columns:minmax(110px,152px) minmax(0,1fr);align-items:center;gap:15px;min-width:0}
+#ppicMain .ppic-nav-label{display:flex;flex-direction:column;gap:3px}
+#ppicMain .ppic-nav-label span{color:#dcb784;font-size:11px;letter-spacing:.13em;font-weight:800}
+#ppicMain .ppic-nav-label small{font-size:11px;color:#a9bfce}
+#ppicMain .ppic-nav-items{min-width:0;gap:8px}
+#ppicMain .ppic-nav-primary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+#ppicMain .ppic-nav-items .btn{min-height:46px;font-size:12.5px;line-height:1.35;font-weight:680;border:1px solid #365a74;background:#122d43;color:#e3f1fc;padding:10px 8px;box-shadow:none;text-wrap:balance}
+#ppicMain .ppic-nav-items .btn[aria-current=page]{background:linear-gradient(115deg,#b8efff,#6fd7f4);border-color:#8adff6;color:#0a2637;font-weight:850;box-shadow:0 3px 22px #2286bd35}
+#ppicMain .ppic-nav-items .btn:hover{border-color:#9bdbfa}
+#ppicMain .ppic-nav-secondary{display:flex;flex-wrap:nowrap;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin;scrollbar-color:#597f99 transparent;padding:1px 2px 6px}
+#ppicMain .ppic-nav-secondary .btn{flex:0 0 auto;min-width:128px;white-space:normal}
+#ppicMain .ppic-page-context{display:flex;align-items:center;gap:14px;justify-content:space-between;margin:0 0 20px;padding:13px 16px;background:linear-gradient(125deg,#0d2638,#101f33);border:1px solid #315573;border-left:3px solid #d9af79;border-radius:12px;scroll-margin-top:12px}
+#ppicMain .ppic-context-copy{min-width:0}
+#ppicMain #ppicContextStep{display:block;color:#ddbc8d;font-size:10px;letter-spacing:.12em;font-weight:800}
+#ppicMain #ppicContextTitle{display:block;font-size:16px;line-height:1.4;margin:3px 0;color:#f5fbff}
+#ppicMain #ppicContextHelp{margin:0;color:#adc8d9;font-size:12px;line-height:1.6}
+#ppicMain .ppic-context-next{flex:0 0 auto;min-height:44px;border-color:#5683a3;color:#f1faff;font-size:12px}
+#ppicMain .ppic-walkthrough{padding:clamp(16px,3vw,24px);background:linear-gradient(125deg,#102d4a,#0c1b36);border:1px solid #3f7294;border-radius:20px;box-shadow:0 16px 44px #0004}
+#ppicMain .ppic-walkthrough-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:18px}
+#ppicMain .ppic-walkthrough h2{font-size:clamp(20px,3vw,26px);margin:6px 0 8px;color:#f2fbff;letter-spacing:-.025em}
+#ppicMain .ppic-walkthrough-heading p{margin:0;color:#c8dfea;font-size:13px;line-height:1.6;max-width:740px}
+#ppicMain .ppic-guide-badge{border:1px solid #c3a177;color:#e5caa3;background:#4e422d45;border-radius:30px;padding:8px 11px;white-space:nowrap;font-size:10px;font-weight:800;letter-spacing:.08em}
+#ppicMain .ppic-step-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:18px}
+#ppicMain .ppic-step-card{background:#081e34;border:1px solid #32566f;border-radius:14px;padding:16px;display:flex;flex-direction:column;min-width:0}
+#ppicMain .ppic-step-number{color:#9bdff5;font-size:24px;font-weight:850;line-height:1.1}
+#ppicMain .ppic-step-card h3{font-size:16px;line-height:1.25;margin:10px 0 5px;color:#eafaff}
+#ppicMain .ppic-step-card p{font-size:12px;line-height:1.65;color:#b4cbda;flex:1;margin:4px 0 16px}
+#ppicMain .ppic-step-card .btn{min-height:44px;font-size:12px}
+#ppicMain .ppic-overview-metrics{margin:17px 0 22px}
+#ppicMain .ppic-overview-metrics .panel{margin:0;min-width:0;padding:15px}
+#ppicMain .ppic-overview-metrics .metric strong{font-size:clamp(17px,2.8vw,25px)}
+#ppicMain .ppic-overview-metrics .metric small{color:#aac6d9;line-height:1.45}
+#ppicMain .ppic-shortcuts{margin:20px 0}
+#ppicMain .ppic-section-line{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:13px}
+#ppicMain .ppic-section-line h2{font-size:23px;margin:5px 0 0}
+#ppicMain .ppic-section-line p{font-size:12px;margin:0;max-width:310px}
+#ppicMain .ppic-shortcut-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}
+#ppicMain .ppic-shortcut{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:5px;min-height:104px;text-align:left;border:1px solid #365874;border-radius:14px;background:linear-gradient(143deg,#102f47,#0a2237);padding:15px 37px 14px 14px;color:#e9f8ff;cursor:pointer}
+#ppicMain .ppic-shortcut strong{font-size:14px;line-height:1.4}
+#ppicMain .ppic-shortcut>span:not(.ppic-shortcut-arrow){font-size:12px;color:#b4cbdd;line-height:1.5}
+#ppicMain .ppic-shortcut-arrow{position:absolute;right:14px;top:30px;color:#9ce8ff;font-size:27px}
+#ppicMain .ppic-shortcut:hover,#ppicMain .ppic-shortcut:focus-visible{border-color:#92dfff;background:#163d57}
+#ppicMain .ppic-understanding{border-left:3px solid #bc9a6f;background:#112338;border-radius:12px;padding:15px 18px;margin:20px 0}
+#ppicMain .ppic-understanding h2{font-size:16px;margin:0 0 7px}
+#ppicMain .ppic-understanding p{font-size:12.5px;color:#d0dfeb;line-height:1.6;margin:0}
+#ppicMain .ppic-understanding .actions{margin:12px 0 0}
+#ppicMain .ppic-install-help{border:1px solid #29475d;border-radius:12px;margin:16px 0;padding:12px}
+#ppicMain .ppic-install-help summary{cursor:pointer;color:#afcfdf;font-size:12px;font-weight:750;min-height:24px}
+#ppicMain .ppic-install-help .install-row{margin:14px 0 0}
+#ppicMain .ppic-followup{margin:21px 0 15px;padding:17px;border:1px solid #3b647f;border-radius:14px;background:#11283d}
+#ppicMain .ppic-followup h3{font-size:16px;margin:0 0 7px}
+#ppicMain .ppic-followup p{color:#c1d6e3;font-size:12px;line-height:1.65;margin:0}
+#ppicMain .ppic-followup .actions{margin:12px 0 0}
+#ppicMain .ppic-field-help{font-size:12px;line-height:1.65;color:#d8e8f1;background:#14334b;border-left:3px solid #b7d7e8;border-radius:6px;padding:11px 14px;margin:10px 0 16px}
+#ppicMain .ppic-report-instructions{border:1px solid #335c78;border-radius:15px;background:#10273e;padding:15px 20px;margin:12px 0 18px}
+#ppicMain .ppic-report-instructions h2{font-size:20px;margin:5px 0}
+#ppicMain .ppic-report-instructions p{font-size:12.5px;color:#c2d8e7;margin:0;line-height:1.65}
+#ppicMain .btn:focus-visible,#ppicMain .ppic-shortcut:focus-visible,#ppicMain summary:focus-visible{outline:3px solid #81e0ff;outline-offset:3px}
+#ppicMain .btn{overflow-wrap:anywhere}
+#ppicMain .tablewrap{max-width:100%;overflow-x:auto}
+@media(max-width:900px){
+ #ppicMain .ppic-nav-block{grid-template-columns:1fr;gap:6px}
+ #ppicMain .ppic-nav-label{flex-direction:row;align-items:baseline;justify-content:space-between}
+ #ppicMain .ppic-nav-primary{grid-template-columns:repeat(4,minmax(0,1fr))}
+ #ppicMain .ppic-step-card{padding:13px}
+ #ppicMain .ppic-shortcut-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:650px){
+ #ppicMain{padding:10px 11px}
+ #ppicMain .ppic-app-header{padding:11px 12px;gap:8px;align-items:flex-start;margin-bottom:15px}
+ #ppicMain .ppic-identity{gap:9px}
+ #ppicMain .ppic-identity .bal-brand-mark{width:48px;height:48px;padding:2px;border-radius:10px}
+ #ppicMain .ppic-brand-title{font-size:14px;letter-spacing:.025em}
+ #ppicMain .ppic-brand-subtitle{font-size:10px;max-width:190px}
+ #ppicMain .ppic-header-actions{flex-direction:column;align-items:flex-end;gap:5px}
+ #ppicMain .ppic-header-actions .pill{font-size:9px;padding:4px 6px;max-width:103px;white-space:normal;text-align:center}
+ #ppicMain .ppic-header-actions .owner-logout{font-size:11px;padding:6px 10px;min-height:37px}
+ #ppicMain .ppic-introduction{margin:0 0 9px}
+ #ppicMain .ppic-introduction h1{font-size:28px;line-height:1.13}
+ #ppicMain .ppic-introduction p{font-size:12px}
+ #ppicMain .ppic-nav{margin:13px 0 10px;padding:11px;gap:11px;border-radius:13px;width:100%}
+ #ppicMain .ppic-nav-primary{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+ #ppicMain .ppic-nav-items .btn{font-size:12px;min-height:43px;padding:9px 6px}
+ #ppicMain .ppic-nav-secondary{display:flex;width:100%;flex-wrap:nowrap;gap:7px;overflow-x:auto}
+ #ppicMain .ppic-nav-secondary .btn{min-width:123px;max-width:155px;flex:0 0 auto}
+ #ppicMain .ppic-page-context{padding:11px;gap:9px;flex-direction:column;align-items:stretch;margin-bottom:14px}
+ #ppicMain #ppicContextTitle{font-size:15px}
+ #ppicMain #ppicContextHelp{font-size:11px}
+ #ppicMain .ppic-context-next{align-self:flex-start;font-size:11px;min-height:38px}
+ #ppicMain .ppic-walkthrough{padding:14px;border-radius:13px}
+ #ppicMain .ppic-walkthrough-heading{display:block}
+ #ppicMain .ppic-walkthrough h2{font-size:21px}
+ #ppicMain .ppic-guide-badge{display:inline-block;margin-top:10px;font-size:9px}
+ #ppicMain .ppic-step-grid{grid-template-columns:1fr;gap:9px;margin-top:13px}
+ #ppicMain .ppic-step-card{min-height:0}
+ #ppicMain .ppic-step-card p{margin-bottom:10px}
+ #ppicMain .ppic-step-card .btn{align-self:flex-start}
+ #ppicMain .ppic-overview-metrics{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ #ppicMain .ppic-overview-metrics .panel{padding:11px}
+ #ppicMain .ppic-overview-metrics .metric strong{font-size:21px}
+ #ppicMain .ppic-overview-metrics .metric small{font-size:10px}
+ #ppicMain .ppic-section-line{display:block}
+ #ppicMain .ppic-section-line h2{font-size:20px}
+ #ppicMain .ppic-shortcut-grid{grid-template-columns:1fr;gap:8px}
+ #ppicMain .ppic-shortcut{min-height:74px;padding:12px 35px 12px 13px}
+ #ppicMain .ppic-shortcut-arrow{top:20px}
+ #ppicMain .ppic-understanding{padding:13px}
+ #ppicMain .ppic-followup{padding:12px}
+ #ppicMain .ppic-report-instructions{padding:12px}
+ #ppicMain .actions{gap:7px}
+ #ppicMain .actions .btn{min-height:43px}
+}
+@media print{
+ #ppicMain .ppic-walkthrough,#ppicMain .ppic-overview-metrics,#ppicMain .ppic-shortcuts,#ppicMain .ppic-understanding,#ppicMain .ppic-install-help,#ppicMain .ppic-page-context{display:none!important}
+}
 </style></head><body><section class="owner-login" id="ownerLogin"><div class="owner-card"><div class="bal-login-brand"><img src="bal-logo-user.webp" alt="Logo tiga cengkeh dan gelombang air Banyu Anyar Lestari"><span>PR. Banyu Anyar Lestari<br>Owner Control Tower</span></div><div class="eyebrow">PR. BANYU ANYAR LESTARI</div><h1>PPIC Control Tower</h1><p class="muted">Akses privat khusus Owner. Masuk menggunakan akun Supabase Auth yang terverifikasi.</p><form id="loginForm"><label for="ownerEmail">Email Owner</label><input id="ownerEmail" type="email" autocomplete="username" value="cengkehsigaret99@gmail.com" required><label for="ownerPassword">Kata sandi</label><input id="ownerPassword" type="password" autocomplete="current-password" required><button class="btn primary" id="loginButton" type="submit">Masuk sebagai Owner</button></form><p id="loginStatus" role="status" aria-live="polite"></p><p class="muted">Tidak ada pendaftaran akun baru. Jangan bagikan kata sandi atau kode OTP.</p></div></section><main id="ppicMain" hidden>
 <a class="ppic-skip-link no-print" href="#ppicContext">Lewati menu</a>
 <header class="ppic-app-header">
