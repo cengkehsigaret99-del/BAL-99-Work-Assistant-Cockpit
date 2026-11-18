@@ -649,6 +649,7 @@ function exCartonRender(reports,date,valid){
  [summaries,daily,metrics].forEach(el=>el.replaceChildren());
  exEl("exCartonNote").textContent="1 keping = 1 pack; isi 12 = 1.000 pack/karton, isi 16 = 800 pack/karton. Refill belum memiliki koefisien pack/karton terverifikasi. Ini kapasitas dari SALDO BUKU, bukan stok fisik atau Barang Jadi siap jual.";
  if(!valid){exEl("exCartonState").textContent="Tanggal saldo tidak sesuai periode.";return}
+ if(!reports.length){exEl("exCartonState").textContent="Belum ada saldo pita bersumber untuk periode ini.";return}
  const byDiv=new Map(reports.map(s=>[s.division,s])),matched=new Map();
  for(const [division,rule] of Object.entries(exCartonRules)){
   const snap=byDiv.get(division),r=snap?dailyRowsFor(snap).find(x=>x.date===date):null,qty=r&&r.status!=="BELUM ADA DATA"?r.qty1:null,cap=exCarton(qty,division);
