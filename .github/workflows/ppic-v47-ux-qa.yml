@@ -1,0 +1,40 @@
+name: BAL PPIC V4.7 Guided Workflow UX QA
+on:
+  push:
+    branches: [feat/ppic-clear-workflow-v47, main]
+    paths: ['index.html','auth.js','tests/ppic-v47-ux.spec.cjs','.github/workflows/ppic-v47-ux-qa.yml']
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - name: JavaScript syntax and UI structure checks
+        run: |
+          node - <<'JS'
+          const fs=require('fs'),vm=require('vm'),assert=require('assert/strict');
+          const html=fs.readFileSync('index.html','utf8');
+          for(const x of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g))if(!/\bsrc=/.test(x[1]))new vm.Script(x[2]);
+          new vm.Script(fs.readFileSync('auth.js','utf8'));
+          const unique=['ownerLogin','ppicMain','ppicContext','ppicUploadForm','sdmPrint','preview','reports','installPanel'];
+          unique.forEach(id=>assert.equal((html.match(new RegExp('id="'+id+'"','g'))||[]).length,1,'duplicate/missing '+id));
+          assert.equal((html.match(/\bdata-view="/g)||[]).length,12);
+          assert.ok(html.includes('Upload menyimpan sumber'));
+          assert.ok(!html.includes('MUDRIKAH')&&!html.includes('ISRIYAH'),'private worker names must not appear in public site');
+          JS
+      - name: Install pinned browser test runtime
+        run: |
+          npm install --no-save @playwright/test@1.62.1
+          npx playwright install --with-deps chromium
+      - name: Serve static test site
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/ppic-v47.log 2>&1 &
+          for i in $(seq 1 20); do curl -fsS http://127.0.0.1:8765/ >/dev/null && exit 0; sleep 1; done
+          exit 1
+      - name: Guided workflow, mobile UI and existing report regressions
+        run: |
+          npx playwright test tests/ppic-v47-ux.spec.cjs tests/ppic-v46-sdm-three-reports.spec.cjs tests/ppic-v45-do-nominal.spec.cjs tests/ppic-v44-carton.spec.cjs --browser=chromium --workers=1 --reporter=list
