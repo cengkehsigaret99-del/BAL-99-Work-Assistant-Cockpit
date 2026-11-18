@@ -21,6 +21,11 @@ async function login(page){
  await page.locator('#ownerPassword').fill('synthetic-password');
  await page.locator('#loginButton').click();
  await expect(page.locator('#ppicMain')).toBeVisible();
+ // On compact screens the division menu is intentionally folded until the Owner opens it.
+ if(await page.locator('#ppicDivisionsList').isHidden()){
+  await page.locator('#ppicDivisionsToggle').click();
+  await expect(page.locator('#ppicDivisionsList')).toBeVisible();
+ }
  await page.locator('[data-view="excise"]').click();
  await expect(page.locator('#exCartonSummary tr')).toHaveCount(3);
  return errors;
