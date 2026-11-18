@@ -113,7 +113,7 @@
    const duration=Math.min(seconds*1000,MAX_SESSION_MS);
    expiresAt=Date.now()+duration;
    expiryTimer=setTimeout(expire,duration);
-   show(true);message("Owner terverifikasi. Memuat Bank Data dan laporan privat…");
+   show(true);window.ppicGoHome?.();message("Owner terverifikasi. Memuat Bank Data dan laporan privat…");
    const outcomes=await Promise.allSettled([loadDocs(accessToken,current),loadReports(accessToken,current),loadDaily(accessToken,current),loadCustomers(accessToken,current),loadMaterials(accessToken,current),loadFinished(accessToken,current),loadSDM(accessToken,current)]);
    if(current===attempt){
     const bad=outcomes.filter(result=>result.status==="rejected"&&result.reason?.name!=="AbortError");
