@@ -1,8 +1,8 @@
 name: BAL PPIC V4.7 Guided Workflow UX QA
 on:
   push:
-    branches: [feat/ppic-clear-workflow-v47, main]
-    paths: ['index.html','auth.js','tests/ppic-v47-ux.spec.cjs','.github/workflows/ppic-v47-ux-qa.yml']
+    branches: [feat/ppic-clear-workflow-v47, fix/ppic-v47-mobile-regression-pita, main]
+    paths: ['index.html','auth.js','tests/ppic-v47-ux.spec.cjs','tests/ppic-v44-carton.spec.cjs','.github/workflows/ppic-v47-ux-qa.yml']
   workflow_dispatch:
 permissions: {contents: read}
 jobs:
