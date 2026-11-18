@@ -1,8 +1,8 @@
 name: BAL PPIC V4.3 Pita Cost QA
 on:
   push:
-    branches: [feat/ppic-pita-cost-v43, main]
-    paths: ['index.html', 'auth.js', 'tests/ppic-v43-excise-cost.spec.cjs', '.github/workflows/ppic-v43-excise-cost-qa.yml']
+    branches: [feat/ppic-pita-cost-v43, feat/ppic-pita-kapasitas-karton-v44, main]
+    paths: ['index.html', 'auth.js', 'tests/ppic-v43-excise-cost.spec.cjs', 'tests/ppic-v44-carton.spec.cjs', '.github/workflows/ppic-v43-excise-cost-qa.yml']
   workflow_dispatch:
 permissions:
   contents: read
@@ -39,7 +39,7 @@ jobs:
           done
           exit 1
       - name: Verify costing, source status, stock dates, PDF and private cleanup
-        run: npx playwright test tests/ppic-v43-excise-cost.spec.cjs tests/ppic-v37-excise.spec.cjs --browser=chromium --workers=1 --reporter=list
+        run: npx playwright test tests/ppic-v43-excise-cost.spec.cjs tests/ppic-v44-carton.spec.cjs tests/ppic-v37-excise.spec.cjs --browser=chromium --workers=1 --reporter=list
       - name: Retain synthetic visual checks
         if: always()
         uses: actions/upload-artifact@v4
