@@ -1,7 +1,7 @@
 name: BAL PPIC V4.3 Pita Cost QA
 on:
   push:
-    branches: [feat/ppic-pita-cost-v43, feat/ppic-pita-kapasitas-karton-v44, main]
+    branches: [feat/ppic-pita-cost-v43, feat/ppic-pita-kapasitas-karton-v44, fix/ppic-v47-mobile-regression-pita, main]
     paths: ['index.html', 'auth.js', 'tests/ppic-v43-excise-cost.spec.cjs', 'tests/ppic-v44-carton.spec.cjs', '.github/workflows/ppic-v43-excise-cost-qa.yml']
   workflow_dispatch:
 permissions:
