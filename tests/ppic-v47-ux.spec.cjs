@@ -77,9 +77,12 @@ test('all division menus remain accessible through grouped nav and quick links',
  await expect(page.locator('#sdmThreeReports')).toBeVisible();
  await expect(page.locator('#ppicContextHelp')).toContainText('payroll final');
 });
-test('mobile nav scrolls horizontally and dashboard fits without cut-off cards',async({page})=>{
+test('mobile divisi menu expands in a two-column grid and dashboard fits without cut-off cards',async({page})=>{
  await page.setViewportSize({width:390,height:844});
  const errors=await ownerLogin(page);
+ await expect(page.locator('#ppicDivisionsList')).toBeHidden();
+ await page.locator('#ppicDivisionsToggle').click();
+ await expect(page.locator('#ppicDivisionsList')).toBeVisible();
  const width=await page.evaluate(()=>({
   page:document.documentElement.scrollWidth,
   viewport:window.innerWidth,
@@ -88,7 +91,7 @@ test('mobile nav scrolls horizontally and dashboard fits without cut-off cards',
   cards:[...document.querySelectorAll('.ppic-step-card,.ppic-shortcut')].map(x=>({width:x.getBoundingClientRect().width,screen:x.getBoundingClientRect().right}))
  }));
  expect(width.page).toBeLessThanOrEqual(width.viewport+2);
- expect(width.nav).toBeGreaterThan(width.navVisible);
+ expect(width.nav).toBeLessThanOrEqual(width.navVisible+2);
  expect(width.cards.every(x=>x.width<=width.viewport&&x.screen<=width.viewport+3)).toBeTruthy();
  await page.locator('[data-view="excise"]').click();
  await expect(page.locator('#excise')).toBeVisible();
