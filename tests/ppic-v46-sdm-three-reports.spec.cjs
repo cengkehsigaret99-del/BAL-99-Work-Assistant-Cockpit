@@ -28,6 +28,7 @@ async function enter(page,{sources=[docG,docV],snapshots=[sdmSnap()],onRebuild=(
  await page.locator('#ownerPassword').fill('fake-only');
  await page.locator('#loginButton').click();
  await expect(page.locator('#ppicMain')).toBeVisible();
+ if(await page.locator('#ppicDivisionsList').isHidden())await page.locator('#ppicDivisionsToggle').click();
  await page.locator('[data-view="sdm"]').click();
  return errs;
 }
