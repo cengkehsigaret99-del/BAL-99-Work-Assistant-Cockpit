@@ -23,6 +23,7 @@ async function enter(page,snaps=[makeSnap('V011',base),makeSnap('V010',base)]){
  await page.locator('#ownerPassword').fill('test-only');
  await page.locator('#loginButton').click();
  await expect(page.locator('#ppicMain')).toBeVisible();
+ if(await page.locator('#ppicDivisionsList').isHidden())await page.locator('#ppicDivisionsToggle').click();
  await page.locator('[data-view="customers"]').click();
  await expect(page.locator('#doDetails tr')).toHaveCount(snaps.at(0)?.rows?.length||0);
  return errs;
