@@ -183,6 +183,35 @@ table th{color:#b9d9ee}table tbody tr:hover{background:#8bc9ff0a}
 @media print{
  #ppicMain .ppic-walkthrough,#ppicMain .ppic-overview-metrics,#ppicMain .ppic-shortcuts,#ppicMain .ppic-understanding,#ppicMain .ppic-install-help,#ppicMain .ppic-page-context{display:none!important}
 }
+</style><style id="ppic-guided-nav-v47">
+#ppicMain .ppic-divisions-toggle{font-size:11px;min-height:38px;padding:7px 10px;text-align:left;margin-top:7px;background:#153650;border-color:#527d99}
+#ppicMain .ppic-nav-secondary[hidden]{display:none!important}
+#ppicMain .ppic-flow-status{display:grid;grid-template-columns:minmax(0,1fr) 14px minmax(0,1fr) 14px minmax(0,1fr);align-items:center;gap:8px;border:1px solid #355a79;background:#0b1e34;border-radius:15px;padding:9px;margin:0 0 13px}
+#ppicMain .ppic-flow-status button{display:flex;align-items:center;gap:9px;border:1px solid transparent;background:transparent;color:#d3e8f5;border-radius:10px;min-height:49px;padding:8px;text-align:left;cursor:pointer}
+#ppicMain .ppic-flow-status button>span{display:grid;place-items:center;flex:none;border:1px solid #5286a3;border-radius:50%;width:29px;height:29px;font-weight:800;color:#b7e4f5}
+#ppicMain .ppic-flow-status button strong{font-size:12px}
+#ppicMain .ppic-flow-status button small{font-size:10px;color:#9eb8cb}
+#ppicMain .ppic-flow-status button[aria-current="step"]{background:#153f55;border-color:#78cbe3}
+#ppicMain .ppic-flow-status button[aria-current="step"]>span{background:#77d8ed;color:#06253a}
+#ppicMain .ppic-flow-arrow{font-size:23px;color:#b2cad8;text-align:center}
+#ppicMain .ppic-flow-status button:focus-visible,#ppicMain .ppic-divisions-toggle:focus-visible{outline:3px solid #7edfff;outline-offset:2px}
+@media(max-width:650px){
+ #ppicMain .ppic-nav{gap:8px;margin:10px 0;padding:10px}
+ #ppicMain .ppic-nav-primary{grid-template-columns:repeat(2,minmax(0,1fr))}
+ #ppicMain .ppic-nav-primary .btn{min-height:46px;font-size:12px}
+ #ppicMain .ppic-nav-advanced{grid-template-columns:1fr}
+ #ppicMain .ppic-nav-advanced .ppic-nav-label{flex-direction:row;align-items:center;flex-wrap:wrap}
+ #ppicMain .ppic-nav-advanced .ppic-nav-label small{display:none}
+ #ppicMain .ppic-nav-advanced .ppic-divisions-toggle{margin:0 0 0 auto}
+ #ppicMain .ppic-nav-secondary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;overflow:visible}
+ #ppicMain .ppic-nav-secondary .btn{min-width:0;min-height:44px;white-space:normal}
+ #ppicMain .ppic-flow-status{gap:3px;padding:5px}
+ #ppicMain .ppic-flow-status button{padding:5px;gap:5px;flex-wrap:wrap;justify-content:center}
+ #ppicMain .ppic-flow-status button>span{width:23px;height:23px;font-size:11px}
+ #ppicMain .ppic-flow-status button strong{font-size:10px;text-align:center}
+ #ppicMain .ppic-flow-status button small{display:none}
+}
+@media print{#ppicMain .ppic-flow-status{display:none!important}}
 </style></head><body><section class="owner-login" id="ownerLogin"><div class="owner-card"><div class="bal-login-brand"><img src="bal-logo-user.webp" alt="Logo tiga cengkeh dan gelombang air Banyu Anyar Lestari"><span>PR. Banyu Anyar Lestari<br>Owner Control Tower</span></div><div class="eyebrow">PR. BANYU ANYAR LESTARI</div><h1>PPIC Control Tower</h1><p class="muted">Akses privat khusus Owner. Masuk menggunakan akun Supabase Auth yang terverifikasi.</p><form id="loginForm"><label for="ownerEmail">Email Owner</label><input id="ownerEmail" type="email" autocomplete="username" value="cengkehsigaret99@gmail.com" required><label for="ownerPassword">Kata sandi</label><input id="ownerPassword" type="password" autocomplete="current-password" required><button class="btn primary" id="loginButton" type="submit">Masuk sebagai Owner</button></form><p id="loginStatus" role="status" aria-live="polite"></p><p class="muted">Tidak ada pendaftaran akun baru. Jangan bagikan kata sandi atau kode OTP.</p></div></section><main id="ppicMain" hidden>
 <a class="ppic-skip-link no-print" href="#ppicContext">Lewati menu</a>
 <header class="ppic-app-header">
@@ -194,10 +223,17 @@ table th{color:#b9d9ee}table tbody tr:hover{background:#8bc9ff0a}
  <div class="ppic-nav-block" role="group" aria-label="Alur utama"><div class="ppic-nav-label"><span>ALUR UTAMA</span><small>Mulai dari sini</small></div><div class="ppic-nav-items ppic-nav-primary">
   <button class="btn" data-view="dashboard" aria-current="page">Beranda</button><button class="btn" data-view="upload">1 · Upload Excel</button><button class="btn" data-view="data">2 · Bank Data</button><button class="btn" data-view="reports">3 · Laporan &amp; Cetak</button>
  </div></div>
- <div class="ppic-nav-block" role="group" aria-label="Pantau divisi"><div class="ppic-nav-label"><span>PANTAU DIVISI</span><small>Geser untuk menu lain</small></div><div class="ppic-nav-items ppic-nav-secondary">
+ <div class="ppic-nav-block ppic-nav-advanced" role="group" aria-label="Pantau divisi"><div class="ppic-nav-label"><span>MENU DIVISI</span><small>Pantau hasil, saldo &amp; analitik</small><button type="button" class="btn ppic-divisions-toggle" id="ppicDivisionsToggle" aria-expanded="false" aria-controls="ppicDivisionsList">Lihat semua divisi <span aria-hidden="true">⌄</span></button></div><div class="ppic-nav-items ppic-nav-secondary" id="ppicDivisionsList" hidden>
   <button class="btn" data-view="sdm">SDM Giling &amp; Verpack</button><button class="btn" data-view="finished">Barang Jadi</button><button class="btn" data-view="customers">DO &amp; Customer</button><button class="btn" data-view="excise">Pita Cukai</button><button class="btn" data-view="materials">Bahan Baku</button><button class="btn" data-view="daily">Laporan Harian</button><button class="btn" data-view="analytics">Analitik Divisi</button><button class="btn" data-view="sources">Status Sumber</button>
  </div></div>
 </nav>
+<div class="ppic-flow-status no-print" aria-label="Tahapan penggunaan" id="ppicFlowStatus">
+<button type="button" data-go="upload" data-flow="upload"><span>1</span><strong>Upload Excel</strong><small>Arsip sumber</small></button>
+<span class="ppic-flow-arrow" aria-hidden="true">›</span>
+<button type="button" data-go="data" data-flow="data"><span>2</span><strong>Bank Data</strong><small>Verifikasi</small></button>
+<span class="ppic-flow-arrow" aria-hidden="true">›</span>
+<button type="button" data-go="reports" data-flow="reports"><span>3</span><strong>Laporan</strong><small>Preview PDF</small></button>
+</div>
 <div class="ppic-page-context no-print" id="ppicContext" tabindex="-1" aria-label="Petunjuk halaman">
  <div class="ppic-context-copy"><span id="ppicContextStep">BERANDA</span><strong id="ppicContextTitle">Ringkasan &amp; panduan</strong><p id="ppicContextHelp">Upload arsip, pastikan masuk ke Bank Data, lalu pilih laporan yang tersedia.</p></div><button class="btn ppic-context-next" id="ppicContextNext" type="button" data-go="upload">Mulai upload</button>
 </div>
@@ -305,10 +341,21 @@ const ppicRouteGuide={
  analytics:{stage:"ANALISIS",title:"Analitik Divisi",help:"Gunakan perbandingan antar divisi sesuai cakupan data dan status rekonsiliasi.",next:"sources",label:"Lihat sumber"},
  sources:{stage:"PENGENDALIAN",title:"Status Sumber",help:"Cek ketersediaan dan validasi sumber, termasuk batasan data dan cut-off.",next:"data",label:"Buka Bank Data"}
 };
+function ppicSetDivisionsOpen(open){
+ const list=$("ppicDivisionsList"),toggle=$("ppicDivisionsToggle");
+ list.hidden=!open;
+ toggle.setAttribute("aria-expanded",String(open));
+ toggle.firstChild.textContent=open?"Tutup menu divisi ":"Lihat semua divisi ";
+}
+$("ppicDivisionsToggle").addEventListener("click",()=>ppicSetDivisionsOpen($("ppicDivisionsList").hidden));
 function view(id){
  const route=ppicRouteGuide[id];if(!route)return;
  for(const name of Object.keys(ppicRouteGuide))$(name).classList.toggle("hide",name!==id);
  document.querySelectorAll("[data-view]").forEach(b=>b.setAttribute("aria-current",b.dataset.view===id?"page":"false"));
+ document.querySelectorAll("[data-flow]").forEach(b=>{
+  const active=b.dataset.flow===id;b.setAttribute("aria-current",active?"step":"false");
+ });
+ if(!["dashboard","upload","data","reports"].includes(id))ppicSetDivisionsOpen(true);
  $("ppicContextStep").textContent=route.stage;$("ppicContextTitle").textContent=route.title;
  $("ppicContextHelp").textContent=route.help;$("ppicContextNext").textContent=route.label;
  $("ppicContextNext").dataset.go=route.next;
