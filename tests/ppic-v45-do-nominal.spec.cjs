@@ -72,6 +72,7 @@ test('logout and missing period clear nominal from DOM and close PDF',async({pag
  await page.locator('#doPeriod').fill('2026-11');
  await page.locator('#doPeriod').dispatchEvent('change');
  await page.locator('#doPrint').click();
+ await page.locator('#closePreview').click();
  await page.locator('#logoutOwner').click();
  await expect(page.locator('#ppicMain')).toBeHidden();
  await expect(page.locator('#doDetails')).toBeEmpty();
