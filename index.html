@@ -348,6 +348,7 @@ function ppicSetDivisionsOpen(open){
  toggle.firstChild.textContent=open?"Tutup menu divisi ":"Lihat semua divisi ";
 }
 $("ppicDivisionsToggle").addEventListener("click",()=>ppicSetDivisionsOpen($("ppicDivisionsList").hidden));
+ppicSetDivisionsOpen(!window.matchMedia("(max-width:650px)").matches);
 function view(id){
  const route=ppicRouteGuide[id];if(!route)return;
  for(const name of Object.keys(ppicRouteGuide))$(name).classList.toggle("hide",name!==id);
