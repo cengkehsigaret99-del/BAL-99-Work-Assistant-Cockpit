@@ -21,7 +21,7 @@ test('customer DO report shows real field structure and missing prices',async({p
  await login(page);await expect(page.locator('#doDetails tr')).toHaveCount(3);
  await expect(page.locator('#doStatus')).toContainText('10.000 pack tanpa harga');
  await expect(page.locator('#doSummary tr')).toHaveCount(2);
- await expect(page.locator('#doCharts svg')).toHaveCount(1);
+ await expect(page.locator('#doCharts svg')).toHaveCount(2);
 });
 test('customer and SKU filters, PDF print, and no stale data after logout',async({page})=>{
  await login(page);await page.locator('#doCustomer').selectOption('KHOIRUL SOLEH');
