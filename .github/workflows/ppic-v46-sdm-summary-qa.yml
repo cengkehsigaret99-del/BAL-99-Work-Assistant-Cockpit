@@ -1,0 +1,38 @@
+name: BAL PPIC V4.6 SDM Summary QA
+on:
+  push:
+    branches: [feat/ppic-sdm-summary-first-v46, main]
+    paths: ['index.html','auth.js','tests/ppic-v46-sdm-summary.spec.cjs','.github/workflows/ppic-v46-sdm-summary-qa.yml']
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 17
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - name: Validate JavaScript and SDM summary structure
+        run: |
+          node - <<'JS'
+          const fs=require('fs'),vm=require('vm');
+          const html=fs.readFileSync('index.html','utf8');
+          for(const m of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g))if(!/\bsrc=/.test(m[1]))new vm.Script(m[2]);
+          new vm.Script(fs.readFileSync('auth.js','utf8'));
+          new vm.Script(fs.readFileSync('tests/ppic-v46-sdm-summary.spec.cjs','utf8'));
+          for(const id of ['sdmByBrand','sdmPeople','sdmRows','sdmPrint'])if(!html.includes('id="'+id+'"'))throw Error('SDM control missing: '+id);
+          if(!html.includes('summary-page')||!html.includes('employees-page'))throw Error('SDM printed page order missing');
+          if(html.includes('PEKERJA UJI GILING A'))throw Error('No private data should be embedded in HTML');
+          JS
+      - name: Install pinned browser test runtime
+        run: |
+          npm install --no-save @playwright/test@1.62.1
+          npx playwright install --with-deps chromium
+      - name: Serve public shell
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/ppic-v46.log 2>&1 &
+          for i in $(seq 1 20); do curl --silent --fail http://127.0.0.1:8765/ >/dev/null && exit 0; sleep 1; done
+          exit 1
+      - name: Verify summary page first, employee pages, brands, wages, logout
+        run: npx playwright test tests/ppic-v46-sdm-summary.spec.cjs tests/ppic-v40-combined.spec.cjs --browser=chromium --workers=1 --reporter=list
