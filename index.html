@@ -606,13 +606,15 @@ exRender();
 const sdmEl=id=>document.getElementById(id),sdmFmt=n=>new Intl.NumberFormat("id-ID",{maximumFractionDigits:2}).format(n);
 let sdmSnapshots=[],sdmData=null,sdmDecodeError="",sdmAutoAttempted=false;
 function sdmMaybeAutoBuild(){
+ // Process the two private SDM sources as soon as Owner login loads their catalog.
+ // Do not require the SDM tab to be opened: the tab is a report viewer, not a processing prerequisite.
  if(sdmAutoAttempted||sdmData||typeof window.ppicRebuildSDM!=="function")return;
  if(!privateDocs.some(d=>d.division==="SDM GILING"&&d.period==="2026-11")||
     !privateDocs.some(d=>d.division==="SDM VERPACK"&&d.period==="2026-11"))return;
- if(!document.querySelector('[data-view="sdm"][aria-current="page"]'))return;
  const button=sdmEl("sdmBuild");
  if(!button||button.disabled)return;
  sdmAutoAttempted=true;
+ sdmEl("sdmProcessState").textContent="Dua arsip SDM ditemukan. Memproses otomatis di Bank Data Privat...";
  button.click();
 }
 async function sdmDecode(s){
