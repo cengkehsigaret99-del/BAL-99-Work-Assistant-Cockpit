@@ -291,9 +291,53 @@ const catalog=[
 ["Simulasi Optimasi Produksi","Perbandingan skenario produksi","MPS, demand, WIP, HPP"]
 ];
 const groups=["Persediaan","Produksi","Produksi","Persediaan","Kontrol","Produksi","Keuangan","Keuangan","Keuangan","Produksi","Kontrol","Persediaan","Produksi"];const $=id=>document.getElementById(id);let chosen=0;
-function view(id){for(const name of ["dashboard","data","upload","reports","analytics","daily","customers","materials","finished","excise","sdm","sources"])$(name).classList.toggle("hide",name!==id);document.querySelectorAll("[data-view]").forEach(b=>b.setAttribute("aria-current",b.dataset.view===id?"page":"false"));if(id==="sdm")queueMicrotask(sdmMaybeAutoBuild)}
+const ppicRouteGuide={
+ dashboard:{stage:"BERANDA",title:"Ringkasan & panduan",help:"Mulai dari upload sumber, periksa Bank Data, lalu buka laporan. Semua hasil mengikuti versi dan cut-off.",next:"upload",label:"Mulai upload"},
+ upload:{stage:"LANGKAH 01 / 03",title:"Upload Excel",help:"Isi divisi, periode, cut-off, versi dan berkas. Upload menyimpan arsip privat, bukan posting saldo.",next:"data",label:"Periksa Bank Data"},
+ data:{stage:"LANGKAH 02 / 03",title:"Periksa Bank Data",help:"Cocokkan sumber dan cut-off. Sumber tersimpan belum tentu sudah menghasilkan laporan terbaru.",next:"reports",label:"Lihat laporan"},
+ reports:{stage:"LANGKAH 03 / 03",title:"Laporan & Cetak",help:"Pilih jenis laporan dan periode. Periksa nominal dan status sebelum membuka Preview PDF.",next:"dashboard",label:"Kembali ke Beranda"},
+ sdm:{stage:"PANTAU DIVISI",title:"SDM Giling & Verpack",help:"Pilih laporan Giling, Verpack, atau Gabungan. Upah tidak otomatis menjadi payroll final.",next:"data",label:"Periksa sumber SDM"},
+ finished:{stage:"PANTAU DIVISI",title:"Barang Jadi & Saldo",help:"Periksa mutasi per SKU dan tanggal. Nilai persediaan tidak sama dengan nilai penjualan.",next:"reports",label:"Lihat laporan"},
+ customers:{stage:"PANTAU DIVISI",title:"DO & Customer",help:"Gunakan harga kerja dan nomor surat jalan. Nominal DO tidak sama dengan piutang final.",next:"reports",label:"Lihat laporan"},
+ excise:{stage:"PANTAU DIVISI",title:"Pita Cukai & Kapasitas",help:"Lihat keping, karton teoritis, tarif dan HPP. Saldo buku bukan penerimaan fisik.",next:"reports",label:"Lihat laporan"},
+ materials:{stage:"PANTAU DIVISI",title:"Bahan Baku",help:"Saldo, pemakaian dan kebutuhan mengikuti berkas serta tanggal yang telah diverifikasi.",next:"reports",label:"Lihat laporan"},
+ daily:{stage:"PANTAU DIVISI",title:"Laporan Harian",help:"Pilih periode dan tanggal, lalu periksa status data sebelum mengambil angka.",next:"reports",label:"Cetak laporan"},
+ analytics:{stage:"ANALISIS",title:"Analitik Divisi",help:"Gunakan perbandingan antar divisi sesuai cakupan data dan status rekonsiliasi.",next:"sources",label:"Lihat sumber"},
+ sources:{stage:"PENGENDALIAN",title:"Status Sumber",help:"Cek ketersediaan dan validasi sumber, termasuk batasan data dan cut-off.",next:"data",label:"Buka Bank Data"}
+};
+function view(id){
+ const route=ppicRouteGuide[id];if(!route)return;
+ for(const name of Object.keys(ppicRouteGuide))$(name).classList.toggle("hide",name!==id);
+ document.querySelectorAll("[data-view]").forEach(b=>b.setAttribute("aria-current",b.dataset.view===id?"page":"false"));
+ $("ppicContextStep").textContent=route.stage;$("ppicContextTitle").textContent=route.title;
+ $("ppicContextHelp").textContent=route.help;$("ppicContextNext").textContent=route.label;
+ $("ppicContextNext").dataset.go=route.next;
+ document.title=route.title+" · BAL PPIC Control Tower";
+ if(id==="sdm")queueMicrotask(sdmMaybeAutoBuild);
+ if(window.scrollY>80)window.scrollTo({top:0,behavior:"instant"});
+}
+window.ppicGoHome=()=>view("dashboard");
 document.querySelectorAll("[data-view]").forEach(b=>b.addEventListener("click",()=>view(b.dataset.view)));
 document.querySelectorAll("[data-go]").forEach(b=>b.addEventListener("click",()=>view(b.dataset.go)));
+const uploadHelp=$("uploadDivisionHint");
+const uploadHelpContent={
+ "SDM GILING":"SDM GILING: Excel rincian pekerja Giling, absensi dan nominal upah. BUKAN laporan produksi GILING. Setelah upload, buka menu SDM untuk memproses dua file.",
+ "SDM VERPACK":"SDM VERPACK: Excel rincian hasil kerja, karyawan dan upah Verpack. BUKAN laporan produksi VERPACK. Setelah upload, buka menu SDM.",
+ "GILING":"GILING: arsip mutasi atau hasil produksi giling. Jika file berisi upah per pekerja, pilih SDM GILING.",
+ "VERPACK":"VERPACK: arsip hasil produksi/packing. Untuk Excel SDM per pekerja, pilih SDM VERPACK.",
+ "CUKAI":"CUKAI: dokumen transaksi pita atau pemakaian. Upload tidak otomatis menambah penerimaan atau mengurangi saldo.",
+ "DO":"DO: arsip pengeluaran atau Surat Jalan. Upload belum berarti harga, piutang dan pembayaran telah direkonsiliasi.",
+ "BARANG JADI":"BARANG JADI: file saldo atau mutasi hasil packing. Pastikan tanggal cut-off sesuai.",
+ "BAHAN BAKU":"BAHAN BAKU: file persediaan, pembelian atau pemakaian; simpan sesuai cut-off.",
+ "TSG":"TSG: Excel pembelian, pemakaian dan saldo TSG. Nominal wajib mengikuti bukti harga/invoice.",
+ "KAS BANK":"KAS BANK: Excel kas masuk dan keluar. Tidak otomatis mengesahkan pembayaran atau saldo kas."
+};
+function ppicUpdateUploadHint(){
+ const division=$("uploadDivision").value;
+ uploadHelp.textContent=uploadHelpContent[division]||"Pilih divisi sesuai isi Excel. File hasil produksi dan file SDM per pekerja memiliki pilihan berbeda.";
+}
+$("uploadDivision").addEventListener("change",ppicUpdateUploadHint);
+ppicUpdateUploadHint();
 for(const d of divisions){const opt=document.createElement("option");opt.value=d;opt.textContent=d;$("division").append(opt);const tr=document.createElement("tr");for(const t of [d,"Belum terhubung","Menunggu bank data privat"]){const td=document.createElement("td");td.textContent=t;tr.append(td)}$("divisions").append(tr)}
 let privateDocs=[];
 window.ppicSetDocs=(rows)=>{privateDocs=Array.isArray(rows)?rows:[];const select=$("division"),current=select.value;select.replaceChildren(new Option("Semua divisi",""));for(const name of [...new Set(privateDocs.map(r=>r.division).filter(Boolean))].sort())select.add(new Option(name,name));select.value=current;drawDocs();$("nSources").textContent=String(privateDocs.length);if(!privateDocs.length){sdmAutoAttempted=false;sdmAutoKey=""}sdmRender();queueMicrotask(sdmMaybeAutoBuild)};
