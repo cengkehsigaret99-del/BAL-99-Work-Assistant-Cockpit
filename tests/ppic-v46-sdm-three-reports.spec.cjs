@@ -19,7 +19,7 @@ async function enter(page,{sources=[docG,docV],snapshots=[sdmSnap()],onRebuild=(
   if(u.includes('/auth/v1/token'))result={access_token:'fake-in-test-only',expires_in:3600};
   else if(u.includes('/functions/v1/ppic-owner-check'))result={authorized:true,role:'owner'};
   else if(u.includes('/rest/v1/ppic_source_catalog'))result=['SDM GILING','SDM VERPACK'].map((division,i)=>({division,document_id:sources[i],period:'2026-11',version:'V009',ingested_at:'2026-11-18T11:00:00Z'}));
-  else if(u.includes('/rest/v1/ppic_sdm_weekly_owner_view'))result=snapshots;
+  else if(u.includes('/rest/v1/ppic_sdm_weekly_owner_view'))result=typeof snapshots==='function'?snapshots():snapshots;
   else if(u.includes('/functions/v1/ppic-sdm-rebuild'))result=await onRebuild();
   else if(u.includes('/auth/v1/logout'))result={};
   return route.fulfill({status:200,contentType:'application/json',body:JSON.stringify(result)});
@@ -63,7 +63,7 @@ test('newer SDM Giling upload is detected, old snapshot is rebuilt before PDF',a
  const freshG='SYNTHETIC_SDM_GILING_FRESH';
  const newCompact={...compact,meta:{...compact.meta,documentIds:[freshG,docV]},r:[[0,13,1,4200,168000,0],[1,13,1,500,85000,0],[1,14,2,100,21000,0]]};
  let rebuilt=0,actualSources=[freshG,docV],snapshotSet=[sdmSnap()];
- const errors=await enter(page,{sources:actualSources,snapshots:snapshotSet,onRebuild:()=>{rebuilt++;snapshotSet=[sdmSnap(newCompact,actualSources)];return {ok:true,version:'V011',rows:3,workers:2,cutoff:'2026-11-17'};}});
+ const errors=await enter(page,{sources:actualSources,snapshots:()=>snapshotSet,onRebuild:()=>{rebuilt++;snapshotSet=[sdmSnap(newCompact,actualSources)];return {ok:true,version:'V011',rows:3,workers:2,cutoff:'2026-11-17'};}});
  await expect.poll(()=>rebuilt).toBe(1);
  await expect(page.locator('#sdmGilingQty')).toHaveText('4.200 batang');
  await expect(page.locator('#sdmCombinedWage')).toHaveText('Upah gabungan: Rp 274.000');
