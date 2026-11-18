@@ -41,7 +41,7 @@ test('first print page shows per-brand wages and separate unit totals, next page
  const html=await page.locator('#previewFrame').getAttribute('srcdoc');
  expect(html.indexOf('summary-page')).toBeLessThan(html.indexOf('employees-page'));
  expect(html.indexOf('employees-page')).toBeLessThan(html.indexOf('daily-page'));
- expect(html).toContain('RINCIAN HASIL &amp; UPAH PER MEREK');
+ expect(html).toContain('RINCIAN HASIL & UPAH PER MEREK');
  expect(html).toContain('7.500');
  expect(html).toContain('300.000');
  expect(html).toContain('PEKERJA UJI GILING A');
