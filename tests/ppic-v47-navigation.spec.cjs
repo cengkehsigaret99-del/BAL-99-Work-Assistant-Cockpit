@@ -15,7 +15,8 @@ async function login(page){
  await expect(page.locator('#ppicMain')).toBeVisible();
  return errors;
 }
-test('simple initial navigation and deliberate division expansion',async({page})=>{
+test('simple mobile navigation and deliberate division expansion',async({page})=>{
+ await page.setViewportSize({width:390,height:844});
  const errors=await login(page);
  await expect(page.locator('#ppicDivisionsList')).toBeHidden();
  await expect(page.locator('#ppicDivisionsToggle')).toHaveAttribute('aria-expanded','false');
@@ -38,11 +39,10 @@ test('three-step workflow navigates without changing private data',async({page})
  await expect(page.locator('#reports')).toBeVisible();
  await page.locator('[data-view="dashboard"]').click();
  await expect(page.locator('#dashboard')).toBeVisible();
- await expect(page.locator('#ppicDivisionsList')).toBeHidden();
+ await expect(page.locator('#ppicDivisionsList')).toBeVisible();
 });
 test('divisional deep links reveal their menu and preserve report controls',async({page})=>{
  await login(page);
- await page.locator('#ppicDivisionsToggle').click();
  await page.locator('[data-view="sdm"]').click();
  await expect(page.locator('#sdm')).toBeVisible();
  await expect(page.locator('#ppicDivisionsList')).toBeVisible();
