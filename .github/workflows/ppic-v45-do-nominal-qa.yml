@@ -1,0 +1,36 @@
+name: BAL PPIC V4.5 DO Nominal QA
+on:
+  push:
+    branches: [feat/ppic-do-nominal-v45, main]
+    paths: ['index.html','auth.js','tests/ppic-v45-do-nominal.spec.cjs','.github/workflows/ppic-v45-do-nominal-qa.yml']
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 17
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - name: Check JavaScript syntax
+        run: |
+          node - <<'JS'
+          const fs=require('fs'),vm=require('vm');
+          const html=fs.readFileSync('index.html','utf8');
+          for(const m of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g))if(!/\bsrc=/.test(m[1]))new vm.Script(m[2]);
+          new vm.Script(fs.readFileSync('auth.js','utf8'));
+          new vm.Script(fs.readFileSync('tests/ppic-v45-do-nominal.spec.cjs','utf8'));
+          for(const id of ['doSummary','doSJSummary','doDetails','doPrint'])if(!html.includes('id="'+id+'"'))throw Error('DO control missing: '+id);
+          JS
+      - name: Browser test runtime
+        run: |
+          npm install --no-save @playwright/test@1.62.1
+          npx playwright install --with-deps chromium
+      - name: Serve public shell
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/ppic-v45.log 2>&1 &
+          for i in $(seq 1 20); do curl --silent --fail http://127.0.0.1:8765/ >/dev/null && exit 0; sleep 1; done
+          exit 1
+      - name: Verify DO V011 nominal, HJE, missing-price handling, PDF and logout
+        run: npx playwright test tests/ppic-v45-do-nominal.spec.cjs tests/ppic-v31-customer.spec.cjs --browser=chromium --workers=1 --reporter=list
