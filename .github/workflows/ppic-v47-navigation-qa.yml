@@ -2,7 +2,7 @@ name: BAL PPIC V4.7 Guided Navigation QA
 on:
   push:
     branches: [feat/ppic-guided-navigation-v47, main]
-    paths: ['index.html','auth.js','tests/ppic-v47-navigation.spec.cjs','.github/workflows/ppic-v47-navigation-qa.yml']
+    paths: ['index.html','auth.js','tests/ppic-v47-navigation.spec.cjs','tests/ppic-v46-sdm-three-reports.spec.cjs','.github/workflows/ppic-v47-navigation-qa.yml']
   workflow_dispatch:
 permissions: {contents: read}
 jobs:
