@@ -29,9 +29,9 @@ test('guided homepage shows 3-step workflow and clear source disclaimers',async(
  await expect(page.locator('.ppic-shortcut')).toHaveCount(6);
  await expect(page.locator('#ppicStartTitle')).toHaveText('Selesaikan laporan dalam 3 langkah');
  await expect(page.locator('#dashboard')).toContainText('Upload menyimpan sumber');
- await expect(page.locator('.ppic-nav-primary [data-view]')).toHaveCount(4);
+ await expect(page.locator('.ppic-nav-primary [data-view]')).toHaveCount(5);
  await expect(page.locator('.ppic-nav-secondary [data-view]')).toHaveCount(8);
- await expect(page.locator('[data-view]')).toHaveCount(12);
+ await expect(page.locator('[data-view]')).toHaveCount(13);
  expect(errors).toEqual([]);
 });
 test('steps navigate upload to Bank Data to reporting without losing context',async({page})=>{
