@@ -18,6 +18,7 @@ function fixtures(revision=1){
     ['FG-UJI-U','PRODUK UJI TANPA FAKTOR',null,null,'SINTETIS',17],
     ['FG-UJI-N','PRODUK UJI NEGATIF',800,1,'SINTETIS',-3],
     ['FG-UJI-Z','PRODUK UJI NOL',600,1,'SINTETIS',0],
+    ['FG-UJI-R','REFILL KUNING',600,1,'SINTETIS',0],
     ['FG-UJI-99','GCC 99',1000,1,'SINTETIS',0],
     ['FG-UJI-16','GCC 16',800,1,'SINTETIS',0]
   ],e:[[18,'MASUK','FG-UJI-P',null,null,revision===1?160:320],
@@ -26,7 +27,7 @@ function fixtures(revision=1){
     e:[['A-01',18,revision===1?12000:24000,6000]],cutoff:18,
     capacity_basis_by_code:{'A-01':'SIMULASI A-01: asumsi 12 pcs/pack, 1.000 pack/karton; BOM belum disahkan'},
     date_coverage:{'2026-11-18':{status:'PARTIAL',codes:['A-01'],note:'Sumber sintetis parsial.'}},requested_through:'2026-11-19'};
-  const excise=(division,opening,events)=>snapshot('V001','2026-11-17',{
+  const excise=(division,opening,events,version='V001')=>snapshot(version,'2026-11-17',{
     cols:['day','in_qty','out_qty'],entries:events,opening_qty:opening,opening_nominal:null,
     valid_through:'2026-11-17',unit:'keping',notes:['SINTETIS']
   },{division,unit:'keping',valuation_basis:'SINTETIS'});
@@ -43,8 +44,10 @@ function fixtures(revision=1){
       snapshot(revision===1?'V015':'V016','2026-11-18',zip(finished))],
     materials:[snapshot('V010','2026-11-16',zip({...materials,e:[],cutoff:16})),
       snapshot(revision===1?'V011':'V012','2026-11-18',zip(materials))],
-    daily:[excise('CUKAI 10.325',100,[[17,50,20]]),excise('CUKAI 13.775',200,[[17,0,25]]),
-      excise('CUKAI REFILL',9,[]),production('GILING',revision===1?1555:1666,'batang'),production('VERPACK',1600,'pack')],
+    daily:[excise('CUKAI 10.325',999,[],'V000'),excise('CUKAI 10.325',100,[[17,50,20],[19,9000,0]]),
+      excise('CUKAI 13.775',revision===1?200:1600,revision===1?[[17,0,25]]:[],revision===1?'V001':'V002'),
+      excise('CUKAI REFILL',9,[]),excise('CUKAI UJI NOL',0,[]),excise('CUKAI UJI NEGATIF',-4,[]),
+      production('GILING',revision===1?1555:1666,'batang'),production('VERPACK',1600,'pack')],
     sdm:[snapshot('V010','2026-11-17',zip(sdm),{source_document_ids:['SYNTHETIC-SDM-G','SYNTHETIC-SDM-V']})]
   };
 }
@@ -123,7 +126,12 @@ test('Info Harian is Owner-only and shows five sections with positive stock and 
   await expect(block(page,'finished')).not.toContainText('PRODUK UJI NOL');
   await expect(block(page,'finished').locator('p').first()).toHaveText(/Data 18 .*2026/);
   await expect(block(page,'excise').locator('tbody tr')).toHaveCount(3);
-  await expect(valueFor(page,'excise','HJE 10.325')).toHaveText('130 keping');
+  await expect(block(page,'excise').locator('thead th')).toHaveText(['Kelompok pita','Saldo (keping)','Kapasitas (karton)']);
+  await expect(block(page,'excise').locator('tbody tr').filter({hasText:'HJE 10.325'}).locator('td')).toHaveText(['130 keping','0,13 karton']);
+  await expect(block(page,'excise').locator('tbody tr').filter({hasText:'HJE 13.775'}).locator('td')).toHaveText(['175 keping','0,2188 karton']);
+  await expect(block(page,'excise').locator('tbody tr').filter({hasText:'Refill'}).locator('td')).toHaveText(['9 keping','Belum terverifikasi']);
+  await expect(block(page,'excise')).not.toContainText('UJI NOL');
+  await expect(block(page,'excise')).not.toContainText('UJI NEGATIF');
   await expect(block(page,'excise').locator('p').first()).toHaveText(/Data 17 .*2026/);
   await expect(block(page,'giling')).toContainText('1.555 batang');
   await expect(block(page,'giling')).not.toContainText('777 batang');
@@ -157,6 +165,15 @@ test('as-of changes use historical stock; an unavailable month renders empty sec
 test('download creates exactly one real JPEG with the full preview dimensions',async({page},testInfo)=>{
   const {state,errors}=await prepare(page);
   const preview=await page.locator('#infoPaper canvas').evaluate(c=>({width:c.width,height:c.height}));
+  await page.evaluate(()=>{
+    const fillText=CanvasRenderingContext2D.prototype.fillText;
+    window.__syntheticExportText=[];
+    CanvasRenderingContext2D.prototype.fillText=function(text){
+      window.__syntheticExportText.push(String(text));
+      return fillText.apply(this,arguments);
+    };
+    window.__syntheticRestoreText=()=>{CanvasRenderingContext2D.prototype.fillText=fillText;};
+  });
   const downloadPromise=page.waitForEvent('download');
   await page.locator('#infoDownload').click();
   const download=await downloadPromise;
@@ -172,6 +189,13 @@ test('download creates exactly one real JPEG with the full preview dimensions',a
   expect(dimensions.width).toBe(1080);
   expect(dimensions.height).toBeGreaterThan(600);
   expect(dimensions.height).toBeLessThanOrEqual(12000);
+  const exportText=await page.evaluate(()=>{
+    window.__syntheticRestoreText();return window.__syntheticExportText.join(' ');
+  });
+  expect(exportText).toContain('Kapasitas (karton)');
+  expect(exportText).toContain('0,13 karton');
+  expect(exportText).toContain('0,2188 karton');
+  expect(exportText).toContain('Belum terverifikasi');
   await expect(page.locator('#infoStatus')).toContainText('JPG siap:');
   await expect(page.locator('#infoDownload')).toBeEnabled();
   expect(state.downloads).toHaveLength(1);
@@ -185,6 +209,7 @@ test('refresh updates the JPG model from changed private sources without another
   await expect(valueFor(page,'finished','PRODUK UJI POSITIF')).toHaveText('1 karton + 240 pack');
   await expect(block(page,'giling')).toContainText('1.666 batang');
   await expect(block(page,'materials')).toContainText('≈ 3,5 karton');
+  await expect(block(page,'excise').locator('tbody tr').filter({hasText:'HJE 13.775'}).locator('td')).toHaveText(['1.600 keping','2 karton']);
   await expect(page.locator('#infoDownload')).toBeEnabled();
   await expect(page.locator('#ownerLogin')).toBeHidden();
   for(const key of ['ppic_finished_goods_owner_view','ppic_material_daily_owner_view','ppic_daily_owner_view','ppic_sdm_weekly_owner_view'])

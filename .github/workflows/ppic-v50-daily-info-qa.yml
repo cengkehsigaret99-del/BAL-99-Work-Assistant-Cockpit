@@ -1,7 +1,7 @@
-name: BAL PPIC V5.0 Daily Info QA
+name: BAL PPIC V5.1 Daily Info QA
 on:
   push:
-    branches: [main, feat/ppic-daily-info-v50]
+    branches: [main, feat/ppic-daily-info-v50, feat/ppic-pita-cartons-v51]
     paths: ['index.html','auth.js','sw.js','daily-info*.js','tests/ppic-v50-*','tests/ppic-v47-ux.spec.cjs','.github/workflows/ppic-v50-daily-info-qa.yml','.github/workflows/deploy-pages.yml']
   workflow_dispatch:
 permissions: {contents: read}

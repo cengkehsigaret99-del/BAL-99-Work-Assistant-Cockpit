@@ -86,19 +86,24 @@
   return qty;
  }
  function exciseSection(input,period){
-  const s=section('excise','Stok pita cukai',['Kelompok pita','Stok positif']);
+  const s=section('excise','Stok pita cukai',['Kelompok pita','Saldo (keping)','Kapasitas (karton)']);
   const labels={'CUKAI 10.325':'HJE 10.325 · isi 12','CUKAI 13.775':'HJE 13.775 · isi 16','CUKAI REFILL':'HJE 10.500 · Refill'};
+  const cartonFactors={'CUKAI 10.325':1000,'CUKAI 13.775':800};
   const divisions=[...new Set((input.daily||[]).filter(x=>x.period===period&&/^CUKAI(?:\s|$)/i.test(x.division||'')).map(x=>x.division))];
   const dates=[];let unavailable=0;
   for(const division of divisions){
    const snap=latestSnapshot(input.daily,period,x=>x.division===division),date=sourceDate(snap,input.asOf);
    if(!date){unavailable++;continue}dates.push(date);const qty=ledgerBalance(snap,date);
    if(qty===null){unavailable++;continue}if(qty<=0)continue;
-   s.rows.push({label:labels[division]||division,value:number(qty)+' keping',detail:'',numeric:{keping:qty},sourceDate:date});
+   const packPerCarton=cartonFactors[division]??null,cartonEquivalent=packPerCarton===null?null:qty/packPerCarton;
+   const fullCartons=packPerCarton===null?null:Math.floor(qty/packPerCarton),remainderPack=packPerCarton===null?null:qty%packPerCarton;
+   s.rows.push({label:labels[division]||division,value:number(qty)+' keping',detail:cartonEquivalent===null?'Belum terverifikasi':number(cartonEquivalent,4)+' karton',numeric:{keping:qty,packPerCarton,cartonEquivalent,fullCartons,remainderPack},sourceDate:date});
   }
-  if(dates.length){const unique=[...new Set(dates)];dated(s,unique.sort()[0]);if(unique.length>1){s.dateLabel='Tanggal sumber per kelompok';for(const r of s.rows)r.detail='Data '+dateLabel(r.sourceDate)}}
+  if(dates.length){const unique=[...new Set(dates)];dated(s,unique.sort()[0]);if(unique.length>1){s.dateLabel='Tanggal sumber per kelompok';for(const r of s.rows)r.label+='\nData '+dateLabel(r.sourceDate)}}
   s.emptyText=dates.length?'Tidak ada saldo pita positif yang dapat ditampilkan.':s.emptyText;
   s.notes.push('Saldo buku per HJE; alokasi per merek belum tersedia.');
+  s.notes.push('Kapasitas teoritis: 1 keping = 1 pack; isi 12 = 1.000 pack/karton, isi 16 = 800.');
+  if(s.rows.some(r=>r.numeric.packPerCarton===null))s.notes.push('Konversi karton Refill / kelompok lain belum terverifikasi.');
   if(unavailable)s.notes.push('Sebagian kelompok pita belum dapat dihitung.');
   return s;
  }

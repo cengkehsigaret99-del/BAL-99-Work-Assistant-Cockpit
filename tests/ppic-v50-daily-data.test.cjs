@@ -104,14 +104,55 @@ test('positive-only finished stock keeps unknown factors as packs and preserves 
 
 test('each positive excise HJE pool appears once regardless of finished-brand count',()=>{
   const older=pita('CUKAI 10.325',999,[],'V001');
-  const current=pita('CUKAI 10.325',100,[[17,50,20]],'V002');
-  const input=request({finished:[fg([['A','PRODUK UJI A',1000,1,'SINTETIS',1],['B','PRODUK UJI B',1000,1,'SINTETIS',2]])],
-    daily:[older,pita('CUKAI 13.775',200,[[17,0,25]]),current,pita('CUKAI REFILL',9),pita('CUKAI UJI NOL',0)]});
+  const current=pita('CUKAI 10.325',100,[[17,50,20],[19,9000,0]],'V002');
+  const input=request({finished:[fg([['A','PRODUK UJI A',1000,1,'SINTETIS',1],['B','PRODUK UJI B',1000,1,'SINTETIS',2],
+    ['R','REFILL KUNING',600,1,'SINTETIS',600]])],
+    daily:[older,pita('CUKAI 13.775',200,[[17,0,25]]),current,pita('CUKAI REFILL',9),
+      pita('CUKAI UJI NOL',0),pita('CUKAI UJI NEGATIF',-4)]});
   const s=section(build(input),'excise');
   assert.equal(s.rows.length,3);assert.equal(new Set(s.rows.map(r=>r.label)).size,3);
   assert.deepEqual(s.rows.map(r=>r.numeric.keping).sort((a,b)=>a-b),[9,130,175]);
+  assert.deepEqual(s.columns,['Kelompok pita','Saldo (keping)','Kapasitas (karton)']);
+  assert.equal(s.sourceDate,'2026-11-17');
+  const refill=s.rows.find(r=>/Refill/.test(r.label));
+  assert.deepEqual(refill.numeric,{keping:9,packPerCarton:null,cartonEquivalent:null,fullCartons:null,remainderPack:null});
+  assert.equal(refill.detail,'Belum terverifikasi','A finished-goods factor of 600 must not become a pita conversion');
   assert.ok(s.rows.every(r=>!/PRODUK UJI [AB]/.test(r.label)));
   assert.match(s.notes.join(' '),/per HJE.*alokasi per merek belum/i);
+});
+
+test('verified excise pools expose full and fractional carton capacity without rounding away remaining packs',()=>{
+  const cases=[
+    {division:'CUKAI 10.325',qty:2000,factor:1000,equivalent:2,full:2,remaining:0,text:'2 karton'},
+    {division:'CUKAI 10.325',qty:2035,factor:1000,equivalent:2.035,full:2,remaining:35,text:'2,035 karton'},
+    {division:'CUKAI 13.775',qty:1600,factor:800,equivalent:2,full:2,remaining:0,text:'2 karton'},
+    {division:'CUKAI 13.775',qty:1601,factor:800,equivalent:2.00125,full:2,remaining:1,text:'2,0013 karton'}
+  ];
+  for(const c of cases){
+    const input=request({daily:[pita(c.division,c.qty-10,[[17,15,5]])]});
+    const before=structuredClone(input),s=section(build(input),'excise'),row=s.rows[0];
+    assert.deepEqual(row.numeric,{keping:c.qty,packPerCarton:c.factor,cartonEquivalent:c.equivalent,
+      fullCartons:c.full,remainderPack:c.remaining});
+    assert.equal(row.detail,c.text);
+    assert.match(row.value,/keping$/,'The stock column retains its original unit');
+    assert.match(s.notes.join(' '),/1 keping.*1 pack/i);
+    assert.match(s.notes.join(' '),/teoritis/i);
+    assert.deepEqual(input,before);
+  }
+});
+
+test('different excise source dates retain each capacity and an honest per-pool date',()=>{
+  const early=pita('CUKAI 10.325',1500),late=pita('CUKAI 13.775',1600);
+  late.cutoff='2026-11-18';late.payload.valid_through='2026-11-18';
+  const s=section(build(request({daily:[early,late]})),'excise');
+  assert.equal(s.sourceDate,'2026-11-17');
+  assert.match(s.dateLabel,/per kelompok/i);
+  const first=s.rows.find(r=>r.numeric.packPerCarton===1000),second=s.rows.find(r=>r.numeric.packPerCarton===800);
+  assert.equal(first.sourceDate,'2026-11-17');assert.equal(second.sourceDate,'2026-11-18');
+  assert.equal(first.detail,'1,5 karton');assert.equal(second.detail,'2 karton');
+  const visible=[s.dateLabel,...s.notes,...s.rows.map(r=>r.label+' '+r.value+' '+r.detail)].join(' ');
+  assert.match(visible,/17 .*2026/);assert.match(visible,/18 .*2026/);
+  assert.doesNotMatch(visible,/19 .*2026/);
 });
 
 test('daily sticks come from GILING production ledger, never SDM payroll or an unrecorded day',()=>{

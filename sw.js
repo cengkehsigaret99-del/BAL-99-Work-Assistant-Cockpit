@@ -1,4 +1,4 @@
-const CACHE_NAME="bal-ppic-public-shell-v50";
+const CACHE_NAME="bal-ppic-public-shell-v51";
 const BASE=new URL("./",self.registration.scope);
 const SHELL=["./","./index.html","./auth.js","./daily-info-data.js","./daily-info.js","./daily-info-ui.js","./logo.png","./bal-logo-user.webp","./icon-192.png","./icon-512.png","./icon.svg","./manifest.webmanifest"];
 self.addEventListener("install",event=>{event.waitUntil(caches.open(CACHE_NAME).then(cache=>cache.addAll(SHELL)).then(()=>self.skipWaiting()))});
