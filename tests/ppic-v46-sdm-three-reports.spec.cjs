@@ -1,6 +1,6 @@
 const {test,expect}=require('@playwright/test');
 const zlib=require('zlib');
-const ROOT='http://127.0.0.1:8765/';
+const ROOT=process.env.PPIC_TEST_BASE_URL||'http://127.0.0.1:8765/';
 const API='https://jryfozndxpjymggevkgq.supabase.co';
 const docG='SYNTHETIC_SDM_GILING_A',docV='SYNTHETIC_SDM_VERPACK_B';
 const rows=[

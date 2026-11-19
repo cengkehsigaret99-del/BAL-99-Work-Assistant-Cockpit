@@ -1,0 +1,14 @@
+#sdmPayroll{border:1px solid #3b667a;border-radius:15px;padding:18px;margin:20px 0;background:linear-gradient(135deg,#122f43,#0b2032)}
+#sdmPayroll h3{margin:0 0 8px;color:#d9f7fc}
+#sdmPayroll .payroll-description{max-width:880px;color:#b4ccd9;font-size:13px}
+#sdmPayroll .payroll-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:15px 0}
+#sdmPayroll .payroll-metrics>div{border:1px solid #294c61;border-radius:10px;padding:12px;background:#0b2132;min-width:0}
+#sdmPayroll .payroll-metrics span{display:block;color:#a4c5d6;font-size:11px}
+#sdmPayroll .payroll-metrics strong{display:block;font-size:18px;color:#e2fafb;margin-top:5px;overflow-wrap:anywhere}
+#sdmPayroll .payroll-scope{color:#8be3e4;font-size:12px;margin:10px 0}
+#sdmPayroll .payroll-basis{color:#bcced8;font-size:12px;line-height:1.6}
+#sdmPayroll .actions{margin:12px 0 6px}
+#sdmPayroll .actions .btn{min-height:44px}
+#sdmPayroll [role=status]{font-size:12px;min-height:20px;overflow-wrap:anywhere}
+@media(max-width:620px){#sdmPayroll{padding:13px}#sdmPayroll .payroll-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}#sdmPayroll .payroll-metrics strong{font-size:16px}#sdmPayroll .actions{display:grid;grid-template-columns:1fr}#sdmPayroll .actions .btn{width:100%}}
+@media print{#sdmPayroll{display:none!important}}

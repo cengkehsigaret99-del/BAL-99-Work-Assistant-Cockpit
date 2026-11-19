@@ -1,4 +1,4 @@
-<!doctype html><html lang="id"><head><meta name="ppic-release" content="5.1"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#091522"><meta name="application-name" content="BAL PPIC"><meta name="mobile-web-app-capable" content="yes"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" type="image/png" sizes="192x192" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png"><title>BAL · PPIC Control Tower</title><style>
+<!doctype html><html lang="id"><head><meta name="ppic-release" content="5.2"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#091522"><meta name="application-name" content="BAL PPIC"><meta name="mobile-web-app-capable" content="yes"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" type="image/png" sizes="192x192" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png"><title>BAL · PPIC Control Tower</title><style>
 :root{color-scheme:dark;--bg:#08131f;--panel:#112337;--border:#2b4559;--fg:#edf7fb;--muted:#a8bdcc;--cyan:#71dce5}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 90% 0,#193b50,transparent 48%),var(--bg);color:var(--fg);font:14px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}main{max-width:1180px;margin:auto;padding:22px}header{display:flex;justify-content:space-between;gap:12px;align-items:center}.brand{font-size:23px;font-weight:800;letter-spacing:-.04em}.eyebrow{color:var(--cyan);font-size:11px;font-weight:750;letter-spacing:.13em;text-transform:uppercase}.muted{color:var(--muted)}h1{font-size:clamp(30px,5vw,46px);line-height:1.1;letter-spacing:-.045em;margin:28px 0 8px}h2{font-size:19px;margin:0 0 12px}.nav,.actions{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0}.btn,input,select{font:inherit;color:var(--fg);background:#0b1c2d;border:1px solid #38566b;border-radius:10px;padding:10px 13px}.btn{cursor:pointer}.btn[aria-current=page],.btn.primary{background:var(--cyan);color:#07242c;border-color:var(--cyan);font-weight:800}.btn:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--cyan);outline-offset:2px}.panel{background:linear-gradient(140deg,#14283b,#0d1b2b);border:1px solid var(--border);border-radius:17px;padding:20px;margin:15px 0}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.metric strong{display:block;font-size:25px;margin:7px 0}.pill{border:1px solid #4e7080;border-radius:50px;padding:5px 10px;font-size:11px}.filters{display:flex;gap:8px;flex-wrap:wrap}.filters input{flex:1;min-width:180px}.tablewrap{overflow:auto}table{border-collapse:collapse;width:100%;min-width:620px}th,td{text-align:left;border-bottom:1px solid #2c4658;padding:11px}th{color:var(--muted);font-size:11px;text-transform:uppercase}.reportlist{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.report{color:var(--fg);background:#0a1b2b;border:1px solid #355067;border-radius:11px;padding:12px;text-align:left;cursor:pointer}.report[aria-selected=true]{border-color:var(--cyan);background:#1b3a4b}.report small{display:block;color:var(--muted)}.split{display:grid;grid-template-columns:1fr 1.15fr;gap:14px}.empty{border:1px dashed #557086;border-radius:12px;padding:18px;color:var(--muted)}.paper{background:#fff;color:#172c3c;border-radius:8px;padding:22px}.paper h2{font-size:23px}.paper small{color:#566b79}.paper .eyebrow{color:#126578}.paperhead{display:flex;justify-content:space-between;gap:10px;border-bottom:2px solid #254b5f;padding-bottom:12px}.paper .empty{color:#52687a}.paper .pill{color:#385268}.footer{font-size:12px;color:var(--muted);margin:22px 0}.hide{display:none!important}@media(max-width:820px){main{padding:14px}.metrics{grid-template-columns:repeat(2,1fr)}.split{grid-template-columns:1fr}.reportlist{grid-template-columns:1fr}}@media print{@page{size:A4 portrait;margin:14mm}body{background:#fff;color:#172c3c}main{padding:0}.no-print,header,.nav,.footer,#dashboard,#data,#sources{display:none!important}#reports{display:block!important}.split{display:block}.split>.panel:first-child{display:none}.panel{background:#fff;border:0;padding:0}.paper{padding:0}.paperhead{break-inside:avoid}}
 </style><style id="bal-future-design">
 :root{--bg:#050b16;--panel:#0b1b2d;--border:#29465e;--fg:#f2fbff;--muted:#a7c0d3;--cyan:#72eaf0}
@@ -219,10 +219,10 @@ table th{color:#b9d9ee}table tbody tr:hover{background:#8bc9ff0a}
 #ppicMain #infoPaper{max-width:800px;margin:20px auto 0}
 #ppicMain #infoPaper canvas{display:block;width:100%;height:auto;border-radius:8px;background:#fff}
 @media(max-width:650px){#ppicMain .info-controls label{width:100%}#ppicMain .info-controls .btn{flex:1 1 140px}}
-</style></head><body><section class="owner-login" id="ownerLogin"><div class="owner-card"><div class="bal-login-brand"><img src="bal-logo-user.webp" alt="Logo tiga cengkeh dan gelombang air Banyu Anyar Lestari"><span>PR. Banyu Anyar Lestari<br>Owner Control Tower</span></div><div class="eyebrow">PR. BANYU ANYAR LESTARI</div><h1>PPIC Control Tower</h1><p class="muted">Akses privat khusus Owner. Masuk menggunakan akun Supabase Auth yang terverifikasi.</p><form id="loginForm"><label for="ownerEmail">Email Owner</label><input id="ownerEmail" type="email" autocomplete="username" value="cengkehsigaret99@gmail.com" required><label for="ownerPassword">Kata sandi</label><input id="ownerPassword" type="password" autocomplete="current-password" required><button class="btn primary" id="loginButton" type="submit">Masuk sebagai Owner</button></form><p id="loginStatus" role="status" aria-live="polite"></p><p class="muted">Tidak ada pendaftaran akun baru. Jangan bagikan kata sandi atau kode OTP.</p><p class="muted" id="ppicRelease">Versi web 5.1 · pembaruan 19 November 2026</p></div></section><main id="ppicMain" hidden>
+</style><link rel="stylesheet" href="payroll.css"></head><body><section class="owner-login" id="ownerLogin"><div class="owner-card"><div class="bal-login-brand"><img src="bal-logo-user.webp" alt="Logo tiga cengkeh dan gelombang air Banyu Anyar Lestari"><span>PR. Banyu Anyar Lestari<br>Owner Control Tower</span></div><div class="eyebrow">PR. BANYU ANYAR LESTARI</div><h1>PPIC Control Tower</h1><p class="muted">Akses privat khusus Owner. Masuk menggunakan akun Supabase Auth yang terverifikasi.</p><form id="loginForm"><label for="ownerEmail">Email Owner</label><input id="ownerEmail" type="email" autocomplete="username" value="cengkehsigaret99@gmail.com" required><label for="ownerPassword">Kata sandi</label><input id="ownerPassword" type="password" autocomplete="current-password" required><button class="btn primary" id="loginButton" type="submit">Masuk sebagai Owner</button></form><p id="loginStatus" role="status" aria-live="polite"></p><p class="muted">Tidak ada pendaftaran akun baru. Jangan bagikan kata sandi atau kode OTP.</p><p class="muted" id="ppicRelease">Versi web 5.2 · pembaruan 19 November 2026</p></div></section><main id="ppicMain" hidden>
 <a class="ppic-skip-link no-print" href="#ppicContext">Lewati menu</a>
 <header class="ppic-app-header">
- <div class="ppic-identity"><img class="bal-brand-mark" src="bal-logo-user.webp" alt="Logo Banyu Anyar Lestari"><div><div class="eyebrow">PR. BANYU ANYAR LESTARI</div><div class="ppic-brand-title">PPIC CONTROL TOWER</div><div class="ppic-brand-subtitle">Versi web 5.1 · Bank data privat · Laporan</div></div></div>
+ <div class="ppic-identity"><img class="bal-brand-mark" src="bal-logo-user.webp" alt="Logo Banyu Anyar Lestari"><div><div class="eyebrow">PR. BANYU ANYAR LESTARI</div><div class="ppic-brand-title">PPIC CONTROL TOWER</div><div class="ppic-brand-subtitle">Versi web 5.2 · Bank data privat · Laporan</div></div></div>
  <div class="ppic-header-actions"><span class="pill ppic-work-state">WORKING / OPEN RECON</span><button class="btn owner-logout" id="logoutOwner" hidden>Keluar</button></div>
 </header>
 <div class="ppic-introduction no-print"><span class="ppic-tagline">PUSAT KERJA BAL · NOVEMBER 2026</span><h1>Operasional lebih jelas.<br><span>Data sampai laporan.</span></h1><p>Ikuti tiga langkah utama. Buka menu divisi hanya saat ingin meninjau hasil atau menganalisis data.</p></div>
@@ -312,7 +312,8 @@ table th{color:#b9d9ee}table tbody tr:hover{background:#8bc9ff0a}
 <article class="sdm-report-card"><h4>02 · SDM VERPACK</h4><p>Hasil kemas</p><strong id="sdmVerpackQty">—</strong><p id="sdmVerpackWage">Upah: —</p><button class="btn primary" id="sdmPrintVerpack" type="button" disabled>Preview PDF Verpack</button></article>
 <article class="sdm-report-card"><h4>03 · GABUNGAN SDM</h4><p>Hasil dua divisi; satuan tetap terpisah</p><strong id="sdmCombinedQty">—</strong><p id="sdmCombinedWage">Upah gabungan: —</p><button class="btn primary" id="sdmPrintCombined" type="button" disabled>Preview PDF Gabungan</button></article>
 </div></section>
-<h3>Rekap per merek · jumlah produksi dan nominal upah</h3><div class="tablewrap"><table><thead><tr><th>Divisi</th><th>Merek</th><th>Hasil Giling (batang)</th><th>Hasil Verpack (pack)</th><th>Upah tercatat (Rp)</th><th>Pekerja ada hasil</th><th>Status</th></tr></thead><tbody id="sdmByBrand"></tbody></table></div><p class="muted">Total batang dan pack tidak digabung sebagai satu kuantitas. Nominal adalah upah dari file sumber, belum termasuk bonus dan potongan; absensi tidak disimpulkan dari hasil nol.</p><h3>Rekap per pekerja · periode terpilih</h3><div class="tablewrap"><table><thead><tr><th>Divisi</th><th>ID</th><th>Nama</th><th>Jumlah hari ada hasil</th><th>Hasil kerja</th><th>Satuan</th><th>Upah tercatat Rp</th><th>Status</th></tr></thead><tbody id="sdmPeople"></tbody></table></div><h3>Rincian hasil per tanggal, nama, dan merek</h3><div class="tablewrap"><table><thead><tr><th>Tanggal</th><th>Divisi</th><th>ID</th><th>Nama</th><th>Merek</th><th>Hasil</th><th>Satuan</th><th>Nominal Rp</th><th>Status sumber</th><th>Validasi</th></tr></thead><tbody id="sdmRows"></tbody></table></div><div class="actions"><button type="button" id="sdmBuild" class="btn primary">Proses Excel SDM tersimpan</button><button type="button" id="sdmPrint" class="btn" disabled>Preview PDF SDM Mingguan</button><button type="button" id="sdmSources" class="btn">Bank Data</button></div><p id="sdmProcessState" class="report-counter" role="status" aria-live="polite">Sumber Excel belum otomatis menjadi laporan. Gunakan tombol Proses untuk membaca dua arsip privat.</p><p class="muted">Total upah merupakan nominal yang tercatat dalam file sumber, bukan slip gaji final. Bonus, lembur, potongan dan kehadiran resmi memerlukan rekonsiliasi tersendiri.</p></section></section><section id="sources" class="hide"><section class="panel"><h2>Status koneksi sumber</h2><p>Data bank privat, otorisasi pengguna, dan sinkronisasi sumber operasional belum dikonfigurasi. Website publik ini tidak memiliki akses ke kas, payroll, piutang, atau dokumen internal.</p><div class="tablewrap"><table><thead><tr><th>Divisi</th><th>Status</th><th>Aksi</th></tr></thead><tbody id="divisions"></tbody></table></div></section></section><p class="footer">BAL PPIC WEB 5.1 · Website read-only · Tidak untuk closing sebelum rekonsiliasi sumber · GitHub Pages publik tidak digunakan untuk menyimpan data rahasia.</p><section class="preview-backdrop" id="previewModal" role="dialog" aria-modal="true" aria-label="Pratinjau laporan sebelum cetak" hidden><div class="preview-toolbar"><div><div class="eyebrow">BAL PPIC · REPORT PREVIEW</div><strong>Pratinjau A4 sebelum cetak</strong></div><div class="actions"><button class="btn primary" id="printPreview">Cetak / Simpan PDF</button><button class="btn" id="sharePreview">Kirim tautan WA</button><button class="btn" id="sharePdf">Bagikan file PDF</button><input id="pdfFile" type="file" accept="application/pdf,.pdf" aria-label="Pilih PDF yang sudah disimpan" hidden><button class="btn" id="closePreview">Tutup</button></div></div><iframe class="preview-frame" id="previewFrame" title="Pratinjau laporan A4"></iframe><div id="shareStatus" class="muted" aria-live="polite"></div></section></main><script>
+<section id="sdmPayroll" aria-labelledby="sdmPayrollTitle"><h3 id="sdmPayrollTitle">Slip Gaji &amp; Rekap Tarik Tunai</h3><p class="payroll-description">Pilih divisi, rentang maksimal 7 hari, dan nama / ID pada filter di atas. Perhitungan upah mencakup semua merek dari pekerja terpilih.</p><p id="payrollScope" class="payroll-scope"></p><div class="payroll-metrics"><div><span>Upah bruto tercatat</span><strong id="payrollGross">—</strong></div><div><span>Calon tunai berdasarkan bruto</span><strong id="payrollCashGross">—</strong></div><div><span>Calon penerima per divisi</span><strong id="payrollRecipients">—</strong></div><div><span>Nominal HOLD</span><strong id="payrollHeld">—</strong></div></div><p id="payrollBasis" class="payroll-basis"></p><div class="actions"><button id="payrollSlips" class="btn primary" type="button" disabled>Preview Slip Gaji</button><button id="payrollCash" class="btn" type="button" disabled>Preview Rekap Tarik Tunai</button></div><p id="payrollState" role="status" aria-live="polite"></p></section>
+<h3>Rekap per merek · jumlah produksi dan nominal upah</h3><div class="tablewrap"><table><thead><tr><th>Divisi</th><th>Merek</th><th>Hasil Giling (batang)</th><th>Hasil Verpack (pack)</th><th>Upah tercatat (Rp)</th><th>Pekerja ada hasil</th><th>Status</th></tr></thead><tbody id="sdmByBrand"></tbody></table></div><p class="muted">Total batang dan pack tidak digabung sebagai satu kuantitas. Nominal adalah upah dari file sumber, belum termasuk bonus dan potongan; absensi tidak disimpulkan dari hasil nol.</p><h3>Rekap per pekerja · periode terpilih</h3><div class="tablewrap"><table><thead><tr><th>Divisi</th><th>ID</th><th>Nama</th><th>Jumlah hari ada hasil</th><th>Hasil kerja</th><th>Satuan</th><th>Upah tercatat Rp</th><th>Status</th></tr></thead><tbody id="sdmPeople"></tbody></table></div><h3>Rincian hasil per tanggal, nama, dan merek</h3><div class="tablewrap"><table><thead><tr><th>Tanggal</th><th>Divisi</th><th>ID</th><th>Nama</th><th>Merek</th><th>Hasil</th><th>Satuan</th><th>Nominal Rp</th><th>Status sumber</th><th>Validasi</th></tr></thead><tbody id="sdmRows"></tbody></table></div><div class="actions"><button type="button" id="sdmBuild" class="btn primary">Proses Excel SDM tersimpan</button><button type="button" id="sdmPrint" class="btn" disabled>Preview PDF SDM Mingguan</button><button type="button" id="sdmSources" class="btn">Bank Data</button></div><p id="sdmProcessState" class="report-counter" role="status" aria-live="polite">Sumber Excel belum otomatis menjadi laporan. Gunakan tombol Proses untuk membaca dua arsip privat.</p><p class="muted">Total upah merupakan nominal yang tercatat dalam file sumber, bukan slip gaji final. Bonus, lembur, potongan dan kehadiran resmi memerlukan rekonsiliasi tersendiri.</p></section></section><section id="sources" class="hide"><section class="panel"><h2>Status koneksi sumber</h2><p>Data bank privat, otorisasi pengguna, dan sinkronisasi sumber operasional belum dikonfigurasi. Website publik ini tidak memiliki akses ke kas, payroll, piutang, atau dokumen internal.</p><div class="tablewrap"><table><thead><tr><th>Divisi</th><th>Status</th><th>Aksi</th></tr></thead><tbody id="divisions"></tbody></table></div></section></section><p class="footer">BAL PPIC WEB 5.2 · Website read-only · Tidak untuk closing sebelum rekonsiliasi sumber · GitHub Pages publik tidak digunakan untuk menyimpan data rahasia.</p><section class="preview-backdrop" id="previewModal" role="dialog" aria-modal="true" aria-label="Pratinjau laporan sebelum cetak" hidden><div class="preview-toolbar"><div><div class="eyebrow">BAL PPIC · REPORT PREVIEW</div><strong>Pratinjau A4 sebelum cetak</strong></div><div class="actions"><button class="btn primary" id="printPreview">Cetak / Simpan PDF</button><button class="btn" id="sharePreview">Kirim tautan WA</button><button class="btn" id="sharePdf">Bagikan file PDF</button><input id="pdfFile" type="file" accept="application/pdf,.pdf" aria-label="Pilih PDF yang sudah disimpan" hidden><button class="btn" id="closePreview">Tutup</button></div></div><iframe class="preview-frame" id="previewFrame" title="Pratinjau laporan A4"></iframe><div id="shareStatus" class="muted" aria-live="polite"></div></section></main><script>
 "use strict";
 
 const BAL_BRAND_LOGO_URL="https://cengkehsigaret99-del.github.io/BAL-99-Work-Assistant-Cockpit/bal-logo-user.webp";
@@ -1156,42 +1157,48 @@ exEl("exPrint").addEventListener("click",()=>{
 exRender();
 
 
-const sdmEl=id=>document.getElementById(id),sdmFmt=n=>new Intl.NumberFormat("id-ID",{maximumFractionDigits:2}).format(n);
-let sdmSnapshots=[],sdmData=null,sdmDecodeError="",sdmAutoAttempted=false,sdmAutoKey="",sdmGeneration=0;
+const sdmEl=id=>document.getElementById(id),sdmFmt=n=>n==null?"—":new Intl.NumberFormat("id-ID",{maximumFractionDigits:2}).format(n);
+let sdmSnapshots=[],sdmData=null,sdmDecodeError="",sdmAutoAttempted=false,sdmAutoKey="",sdmGeneration=0,sdmSnapshotReady=false;
 function sdmHasLegacyNames(){
  return !!sdmData?.w?.some(w=>typeof w?.[2]==="string"&&w[2].includes("[object Object]"));
 }
 function sdmCleanName(raw,id){
- if(typeof raw==="string"&&raw.trim()&&raw.trim()!=="[object Object]")return raw.trim();
+ if(typeof raw==="string"&&raw.trim()&&raw.trim()!=="0"&&raw.trim()!=="[object Object]")return raw.trim();
  if(raw&&typeof raw==="object"){
   const possible=[raw.name,raw.nama,raw["#text"],raw.text,raw.label].find(v=>typeof v==="string"&&v.trim()&&v.trim()!=="[object Object]");
   if(possible)return possible.trim();
  }
- return "NAMA PERLU REPROSES ("+id+")";
+ return "NAMA BELUM TERSEDIA";
 }
 function sdmLatestSourceIds(){
  const ids=[];
- for(const division of ["SDM GILING","SDM VERPACK"]){
+ for(const division of ["SDM GILING","GILING","SDM VERPACK","VERPACK"]){
   const matches=privateDocs.filter(d=>d.period==="2026-11"&&d.division===division&&d.document_id);
   matches.sort((a,b)=>String(b.ingested_at||"").localeCompare(String(a.ingested_at||"")));
   if(matches.length)ids.push(String(matches[0].document_id));
  }
- return ids.length===2?ids:[];
+ return ids;
 }
 function sdmSourceDrift(){
  const ids=sdmLatestSourceIds();
  if(!ids.length||!sdmData)return false;
- const snapshot=sdmSnapshots.find(s=>s.period==="2026-11");
- const recorded=sdmData.meta?.documentIds||snapshot?.source_document_ids||[];
- if(!Array.isArray(recorded)||!recorded.length)return false;
- return ids.some(id=>!recorded.includes(id));
+ const snapshot=sdmSnapshots.filter(s=>s.period==="2026-11").sort(ppicLatest)[0];
+ const meta=sdmData.meta||{},recorded=new Set([
+  ...(Array.isArray(meta.documentIds)?meta.documentIds:[]),
+  ...(Array.isArray(snapshot?.source_document_ids)?snapshot.source_document_ids:[]),
+  ...(Array.isArray(meta.consideredSourceIds)?meta.consideredSourceIds:[]),
+  ...(Array.isArray(meta.consideredSources)?meta.consideredSources.map(s=>s.documentId):[])
+ ].filter(Boolean));
+ if(!recorded.size)return false;
+ return ids.some(id=>!recorded.has(id));
 }
 function sdmMaybeAutoBuild(){
  // Repair a known Excel preserved-space parsing defect automatically on Owner login.
  // Keep both files private and preserve old SDM snapshot versions.
- if(typeof window.ppicRebuildSDM!=="function")return;
+ if(typeof window.ppicRebuildSDM!=="function"||!sdmSnapshotReady)return;
  const ids=sdmLatestSourceIds();
- if(ids.length!==2||sdmData&&!sdmHasLegacyNames()&&!sdmSourceDrift())return;
+ const available=privateDocs.filter(d=>d.period==="2026-11").map(d=>d.division);
+ if(!available.some(d=>d==="SDM GILING"||d==="GILING")||!available.some(d=>d==="SDM VERPACK"||d==="VERPACK")||sdmData&&!sdmHasLegacyNames()&&!sdmSourceDrift())return;
  const key=ids.join("|");
  if(sdmAutoAttempted&&sdmAutoKey===key)return;
  const button=sdmEl("sdmBuild");
@@ -1208,13 +1215,13 @@ async function sdmDecode(s){
  return JSON.parse(await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream("deflate"))).text());
 }
 window.ppicSetSDM=async snaps=>{
- const generation=++sdmGeneration;sdmSnapshots=Array.isArray(snaps)?snaps:[];sdmData=null;sdmDecodeError="";
+ const generation=++sdmGeneration;sdmSnapshots=Array.isArray(snaps)?snaps:[];sdmData=null;sdmDecodeError="";sdmSnapshotReady=false;
  ppicTrackSources("SDM",sdmSnapshots);sdmFill();sdmRender();
  const snapshot=sdmSnapshots.filter(s=>s.period==="2026-11").sort(ppicLatest)[0];
- if(!snapshot){queueMicrotask(sdmMaybeAutoBuild);return}
+ if(!snapshot){sdmSnapshotReady=true;queueMicrotask(sdmMaybeAutoBuild);return}
  try{const decoded=await sdmDecode(snapshot);if(generation!==sdmGeneration)return;sdmData=decoded}
  catch(e){if(generation!==sdmGeneration)return;sdmDecodeError="Sumber SDM tidak dapat dibaca: "+(e?.message||String(e))}
- sdmFill();sdmRender();
+ sdmSnapshotReady=true;sdmFill();sdmRender();
  if(!sdmData||sdmHasLegacyNames()||sdmSourceDrift())queueMicrotask(sdmMaybeAutoBuild);
 };
 function sdmFill(){
@@ -1225,7 +1232,13 @@ function sdmFill(){
 function sdmRecords(overrideDivision=null,fullDivision=false){
  if(!sdmData)return [];
  const div=overrideDivision||sdmEl("sdmDiv").value,start=sdmEl("sdmStart").value,end=sdmEl("sdmEnd").value,brand=fullDivision?"":sdmEl("sdmBrand").value,term=fullDivision?"":sdmEl("sdmSearch").value.trim().toLowerCase(),status=fullDivision?"":sdmEl("sdmStatus").value;
- return sdmData.r.map(r=>{const worker=sdmData.w[r[0]],day="2026-11-"+String(r[1]).padStart(2,"0");return {div:worker[0],date:day,id:worker[1],name:sdmCleanName(worker[2],worker[1]),brand:sdmData.b[r[2]],qty:r[3],wage:r[4],sourceStatus:sdmData.s[r[5]]}})
+ const period=sdmData.meta?.period||"2026-11";
+ const rows=sdmData.r.map(r=>{const worker=sdmData.w[r[0]],day=typeof r[1]==="string"&&/^\d{4}-\d{2}-\d{2}$/.test(r[1])?r[1]:period+"-"+String(r[1]).padStart(2,"0");return {div:worker[0],date:day,id:worker[1],personKey:worker[0]+"|"+r[0],name:sdmCleanName(worker[2],worker[1]),brand:sdmData.b[r[2]],qty:r[3],wage:r[4],sourceStatus:sdmData.s[r[5]]}});
+ for(const [i,h] of (sdmData.meta?.payroll?.holds||[]).entries()){
+  if(h.includedInRecords===true||!/^\d{4}-\d{2}-\d{2}$/.test(h.date||""))continue;
+  rows.push({div:h.div,date:h.date,id:h.id||"",personKey:h.div+"|HOLD:"+i,name:h.name||"NAMA BELUM TERSEDIA",brand:h.brand||"MEREK BELUM TERIDENTIFIKASI",qty:h.qty??null,wage:h.wage??null,sourceStatus:"HOLD · "+(h.reason||"Identitas perlu diverifikasi"),hold:true});
+ }
+ return rows
  .filter(r=>(div==="GABUNGAN"||r.div===div)&&r.date>=start&&r.date<=end&&(!brand||r.brand===brand)&&(!term||(r.id+" "+r.name).toLowerCase().includes(term))&&(!status||(status==="hasil"&&r.qty>0)||(status==="kosong"&&r.qty===0&&r.wage===0)||(status==="upah"&&r.qty===0&&r.wage>0)));
 }
 function sdmRenderThreeReports(){
@@ -1258,14 +1271,16 @@ function sdmAggregateBrands(records){
   if(!byDiv.has(r.div))byDiv.set(r.div,{div:r.div,qty:0,wage:0,active:new Set()});
   for(const item of [byBrand.get(key),byDiv.get(r.div)]){
    item.qty+=Number(r.qty)||0;item.wage+=Number(r.wage)||0;
-   if(r.qty>0)item.active.add(r.id);
+   if(r.qty>0)item.active.add(r.personKey||r.id);
   }
  }
  const rows=[...byBrand.values()].sort((a,b)=>a.div.localeCompare(b.div)||a.brand.localeCompare(b.brand));
  const totals=[...byDiv.values()].sort((a,b)=>a.div.localeCompare(b.div));
  return {rows,totals,totalWage:totals.reduce((s,x)=>s+x.wage,0)};
 }
+window.ppicPayrollContext=()=>({data:sdmData,period:sdmSnapshots.filter(s=>s.period==="2026-11").sort(ppicLatest)[0]?.period||"",stale:sdmSourceDrift(),authorized:!sdmEl("ppicMain")?.hidden});
 function sdmRender(){
+ if(typeof window.ppicRefreshPayroll==="function")window.ppicRefreshPayroll();
  const people=sdmEl("sdmPeople"),details=sdmEl("sdmRows"),metrics=sdmEl("sdmMetrics"),brandsTable=sdmEl("sdmByBrand");
  for(const e of [people,details,metrics,brandsTable])e.replaceChildren();
  sdmRenderThreeReports();
@@ -1291,11 +1306,12 @@ function sdmRender(){
  if(brandTotals.totals.length>1)add(brandsTable,["TOTAL NOMINAL GABUNGAN","Batang/pack tidak dijumlah", "—","—",sdmFmt(brandTotals.totalWage),"—","UPAH DUA DIVISI"],true);
  const grouped=new Map();
  for(const r of records){
-  const key=r.div+"|"+r.id;let g=grouped.get(key);if(!g){g={div:r.div,id:r.id,name:r.name,qty:0,wage:0,days:new Set(),issues:0};grouped.set(key,g)}
+ const key=r.personKey||r.div+"|"+r.id;let g=grouped.get(key);if(!g){g={div:r.div,id:r.id,name:r.name,qty:0,wage:0,days:new Set(),issues:0,hold:false};grouped.set(key,g)}
+  if(r.hold)g.hold=true;
   g.qty+=r.qty;g.wage+=r.wage;if(r.qty>0)g.days.add(r.date);if(r.qty===0&&r.wage>0)g.issues++;
  }
- for(const g of [...grouped.values()].sort((a,b)=>a.name.localeCompare(b.name)))add(people,[g.div,g.id,g.name,g.days.size,sdmFmt(g.qty),g.div==="GILING"?"batang":"pack",sdmFmt(g.wage),g.issues?"PERIKSA UPAH TANPA HASIL":"OPEN RECON"]);
- for(const r of records.sort((a,b)=>a.date.localeCompare(b.date)||a.name.localeCompare(b.name)))add(details,[r.date,r.div,r.id,r.name,r.brand,sdmFmt(r.qty),r.div==="GILING"?"batang":"pack",sdmFmt(r.wage),r.sourceStatus,r.qty===0&&r.wage>0?"PERIKSA":r.qty===0?"BELUM VERIFIKASI ABSENSI":"HASIL TERCATAT"]);
+ for(const g of [...grouped.values()].sort((a,b)=>a.name.localeCompare(b.name)))add(people,[g.div,g.id||"BELUM ADA ID",g.name,g.days.size,sdmFmt(g.qty),g.div==="GILING"?"batang":"pack",sdmFmt(g.wage),g.hold?"HOLD / DI LUAR CALON TUNAI":g.issues?"PERIKSA UPAH TANPA HASIL":"OPEN RECON"]);
+ for(const r of records.sort((a,b)=>a.date.localeCompare(b.date)||a.name.localeCompare(b.name)))add(details,[r.date,r.div,r.id||"BELUM ADA ID",r.name,r.brand,sdmFmt(r.qty),r.div==="GILING"?"batang":"pack",sdmFmt(r.wage),r.sourceStatus,r.hold?"HOLD":r.qty==null||r.wage==null?"RINCIAN BELUM LENGKAP":r.qty===0&&r.wage>0?"PERIKSA":r.qty===0?"BELUM VERIFIKASI ABSENSI":"HASIL TERCATAT"]);
  for(const [label,value] of [["Pekerja",grouped.size],["Hasil Giling",sdmFmt(records.filter(r=>r.div==="GILING").reduce((a,r)=>a+r.qty,0))+" batang"],["Hasil Verpack",sdmFmt(records.filter(r=>r.div==="VERPACK").reduce((a,r)=>a+r.qty,0))+" pack"],["Upah tercatat","Rp "+sdmFmt(records.reduce((a,r)=>a+r.wage,0))],["Baris rincian",records.length]]){
   const box=document.createElement("article");box.className="panel metric";const a=document.createElement("div");a.className="muted";a.textContent=label;const b=document.createElement("strong");b.textContent=String(value);box.append(a,b);metrics.append(box)
  }
@@ -1443,7 +1459,7 @@ $("pdfFile").addEventListener("change",async()=>{
  $("pdfFile").value="";
 });
 $("csv").addEventListener("click",()=>{const rows=[["No","Laporan","Ruang Lingkup","Sumber"],...catalog.map((r,i)=>[i+1,...r])];const s="\uFEFF"+rows.map(r=>r.map(x=>'"'+String(x).replaceAll('"','""')+'"').join(",")).join("\r\n");const u=URL.createObjectURL(new Blob([s],{type:"text/csv;charset=utf-8"}));const a=document.createElement("a");a.href=u;a.download="BAL_PPIC_KATALOG_LAPORAN.csv";a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)});
-</script><script src="daily-info-data.js"></script><script src="daily-info.js"></script><script src="daily-info-ui.js"></script><script src="auth.js" defer></script><script>
+</script><script src="daily-info-data.js"></script><script src="daily-info.js"></script><script src="daily-info-ui.js"></script><script src="payroll.js"></script><script src="payroll-ui.js"></script><script src="auth.js" defer></script><script>
 (()=>{
  const form=document.getElementById("ppicUploadForm"),status=document.getElementById("uploadStatus"),button=document.getElementById("uploadSubmit"),fileInput=document.getElementById("uploadFile"),hint=document.getElementById("uploadMetaHint");
  const field=id=>document.getElementById(id),today=ppicToday();field("uploadPeriod").value=today.slice(0,7);field("uploadCutoff").value="";field("uploadVersion").value="";
