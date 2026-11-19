@@ -22,7 +22,8 @@ jobs:
           new vm.Script(fs.readFileSync('auth.js','utf8'));
           const unique=['ownerLogin','ppicMain','ppicContext','ppicUploadForm','sdmPrint','preview','reports','installPanel'];
           unique.forEach(id=>assert.equal((html.match(new RegExp('id="'+id+'"','g'))||[]).length,1,'duplicate/missing '+id));
-          assert.equal((html.match(/\bdata-view="/g)||[]).length,12);
+          const routes=[...html.matchAll(/\bdata-view="([^"]+)"/g)].map(match=>match[1]);
+          assert.deepEqual(routes,['dashboard','info','upload','data','reports','sdm','finished','customers','excise','materials','daily','analytics','sources']);
           assert.ok(html.includes('Upload menyimpan sumber'));
           assert.ok(!html.includes('MUDRIKAH')&&!html.includes('ISRIYAH'),'private worker names must not appear in public site');
           JS
