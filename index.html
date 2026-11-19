@@ -1163,6 +1163,7 @@ function sdmHasLegacyNames(){
  return !!sdmData?.w?.some(w=>typeof w?.[2]==="string"&&w[2].includes("[object Object]"));
 }
 function sdmCleanName(raw,id){
+ if(typeof raw==="string"&&raw.trim()==="[object Object]")return "NAMA PERLU REPROSES ("+String(id||"ID BELUM TERSEDIA")+")";
  if(typeof raw==="string"&&raw.trim()&&raw.trim()!=="0"&&raw.trim()!=="[object Object]")return raw.trim();
  if(raw&&typeof raw==="object"){
   const possible=[raw.name,raw.nama,raw["#text"],raw.text,raw.label].find(v=>typeof v==="string"&&v.trim()&&v.trim()!=="[object Object]");
