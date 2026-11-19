@@ -84,6 +84,7 @@
   const rows=await response.json();if(current===attempt&&accessToken===token)await window.ppicSetFinished(rows);
  }
  async function loadSDM(token,current){
+  window.ppicBeginSDMLoad?.();
   if(sdmRequest)sdmRequest.abort();sdmRequest=new AbortController();
   const response=await fetch(ROOT+"/rest/v1/ppic_sdm_weekly_owner_view?select=period,version,cutoff,status,payload,source_document_ids,created_at&order=created_at.desc&limit=12",{headers:{"apikey":KEY,"Authorization":"Bearer "+token},cache:"no-store",signal:sdmRequest.signal});
   if(!response.ok)throw Error("Detail SDM belum terbaca ("+response.status+").");

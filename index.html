@@ -1214,11 +1214,12 @@ async function sdmDecode(s){
  const binary=atob(s.payload.data),bytes=Uint8Array.from(binary,c=>c.charCodeAt(0));
  return JSON.parse(await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream("deflate"))).text());
 }
+window.ppicBeginSDMLoad=()=>{sdmSnapshotReady=false};
 window.ppicSetSDM=async snaps=>{
  const generation=++sdmGeneration;sdmSnapshots=Array.isArray(snaps)?snaps:[];sdmData=null;sdmDecodeError="";sdmSnapshotReady=false;
  ppicTrackSources("SDM",sdmSnapshots);sdmFill();sdmRender();
  const snapshot=sdmSnapshots.filter(s=>s.period==="2026-11").sort(ppicLatest)[0];
- if(!snapshot){sdmSnapshotReady=true;queueMicrotask(sdmMaybeAutoBuild);return}
+ if(!snapshot){sdmSnapshotReady=!sdmEl("ppicMain")?.hidden;if(sdmSnapshotReady)queueMicrotask(sdmMaybeAutoBuild);return}
  try{const decoded=await sdmDecode(snapshot);if(generation!==sdmGeneration)return;sdmData=decoded}
  catch(e){if(generation!==sdmGeneration)return;sdmDecodeError="Sumber SDM tidak dapat dibaca: "+(e?.message||String(e))}
  sdmSnapshotReady=true;sdmFill();sdmRender();

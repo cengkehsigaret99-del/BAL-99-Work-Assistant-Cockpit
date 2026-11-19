@@ -31,7 +31,7 @@ test('payroll print follows division/name scope, keeps existing reports, and cle
  await page.locator('#closePreview').click();await page.locator('#sdmSearch').fill('');await page.locator('#sdmDiv').selectOption('VERPACK');
  await expect(page.locator('#payrollGross')).toHaveText('Rp 65.100');await expect(page.locator('#payrollCashGross')).toHaveText('Rp 2.100');await expect(page.locator('#payrollRecipients')).toHaveText('2');
  await page.locator('#payrollCash').click();html=await page.locator('#previewFrame').getAttribute('srcdoc');expect(html).toContain('HOLD');expect(html).toContain('52.500');expect(html).toContain('Sisa yang belum terwakili pecahan: Rp 100');expect(html).toContain('KEBUTUHAN PECAHAN TUNAI');
- await page.locator('#logoutOwner').click();await expect(page.locator('#ppicMain')).toBeHidden();await expect(page.locator('#previewModal')).toBeHidden();await expect(page.locator('#payrollSlips')).toBeDisabled();await expect(page.locator('#payrollGross')).toHaveText('—');expect(await page.locator('#previewFrame').getAttribute('srcdoc')).toBeFalsy();expect(errors).toEqual([]);
+ await page.locator('#closePreview').click();await page.locator('#logoutOwner').click();await expect(page.locator('#ppicMain')).toBeHidden();await expect(page.locator('#previewModal')).toBeHidden();await expect(page.locator('#payrollSlips')).toBeDisabled();await expect(page.locator('#payrollGross')).toHaveText('—');expect(await page.locator('#previewFrame').getAttribute('srcdoc')).toBeFalsy();expect(errors).toEqual([]);
 });
 test('mobile controls and slip preview fit viewport; print uses intact 4-card sheets',async({page})=>{
  await page.setViewportSize({width:390,height:844});await enter(page);
