@@ -35,7 +35,7 @@ test('latest V012 determines sales value; no HJE nominal is shown',async({page})
  await expect(page.locator('#doMetrics')).toContainText('Rp 99.400');
  await expect(page.locator('#doMetrics')).not.toContainText('Nilai HJE');
  await expect(page.locator('#doSummary tr')).toHaveCount(1);
- await expect(page.locator('#doSummary thead')).not.toContainText('Nilai HJE');
+ await expect(page.locator('#doSummary').locator('xpath=..').locator('thead')).not.toContainText('Nilai HJE');
  await expect(page.locator('#doDetails')).toContainText('9.100');
  await expect(page.locator('#doDetails')).toContainText('36.400');
  await expect(page.locator('#doHje')).toHaveValue('');
