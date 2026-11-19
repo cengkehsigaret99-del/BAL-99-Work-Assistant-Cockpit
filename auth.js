@@ -47,10 +47,16 @@
   await loadSDM(token,current);
   return data;
  };
- window.ppicRefreshPrivateDocs=async()=>{
+ window.ppicRefreshPrivateData=async()=>{
   if(!accessToken||Date.now()>=expiresAt)throw Error("Sesi Owner berakhir.");
-  return loadDocs(accessToken,attempt);
+  const token=accessToken,current=attempt;
+  const outcomes=await Promise.allSettled([loadDocs(token,current),loadReports(token,current),loadDaily(token,current),loadCustomers(token,current),loadMaterials(token,current),loadFinished(token,current),loadSDM(token,current)]);
+  if(current!==attempt||accessToken!==token)throw Error("Sesi berubah. Login kembali untuk membaca laporan terbaru.");
+  const failed=outcomes.filter(result=>result.status==="rejected"&&result.reason?.name!=="AbortError");
+  if(failed.length)throw Error("Sebagian data belum diperbarui: "+failed.map(result=>result.reason?.message||"akses gagal").join("; "));
+  return {ok:true,modules:outcomes.length};
  };
+ window.ppicRefreshPrivateDocs=window.ppicRefreshPrivateData;
  async function loadDaily(token,current){
   if(dailyRequest)dailyRequest.abort();dailyRequest=new AbortController();
   const response=await fetch(ROOT+"/rest/v1/ppic_daily_owner_view?select=period,division,cutoff,version,status,unit,valuation_basis,payload,source_document_ids,created_at&order=created_at.desc&limit=100",{
@@ -132,3 +138,4 @@
  // Fail closed on reload; do not persist credentials or tokens in browser storage.
  show(false);
 })();
+

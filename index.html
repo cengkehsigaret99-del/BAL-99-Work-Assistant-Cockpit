@@ -1,4 +1,4 @@
-<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#091522"><meta name="application-name" content="BAL PPIC"><meta name="mobile-web-app-capable" content="yes"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" type="image/png" sizes="192x192" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png"><title>BAL · PPIC Control Tower</title><style>
+<!doctype html><html lang="id"><head><meta name="ppic-release" content="4.9"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#091522"><meta name="application-name" content="BAL PPIC"><meta name="mobile-web-app-capable" content="yes"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" type="image/png" sizes="192x192" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png"><title>BAL · PPIC Control Tower</title><style>
 :root{color-scheme:dark;--bg:#08131f;--panel:#112337;--border:#2b4559;--fg:#edf7fb;--muted:#a8bdcc;--cyan:#71dce5}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 90% 0,#193b50,transparent 48%),var(--bg);color:var(--fg);font:14px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}main{max-width:1180px;margin:auto;padding:22px}header{display:flex;justify-content:space-between;gap:12px;align-items:center}.brand{font-size:23px;font-weight:800;letter-spacing:-.04em}.eyebrow{color:var(--cyan);font-size:11px;font-weight:750;letter-spacing:.13em;text-transform:uppercase}.muted{color:var(--muted)}h1{font-size:clamp(30px,5vw,46px);line-height:1.1;letter-spacing:-.045em;margin:28px 0 8px}h2{font-size:19px;margin:0 0 12px}.nav,.actions{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0}.btn,input,select{font:inherit;color:var(--fg);background:#0b1c2d;border:1px solid #38566b;border-radius:10px;padding:10px 13px}.btn{cursor:pointer}.btn[aria-current=page],.btn.primary{background:var(--cyan);color:#07242c;border-color:var(--cyan);font-weight:800}.btn:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--cyan);outline-offset:2px}.panel{background:linear-gradient(140deg,#14283b,#0d1b2b);border:1px solid var(--border);border-radius:17px;padding:20px;margin:15px 0}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.metric strong{display:block;font-size:25px;margin:7px 0}.pill{border:1px solid #4e7080;border-radius:50px;padding:5px 10px;font-size:11px}.filters{display:flex;gap:8px;flex-wrap:wrap}.filters input{flex:1;min-width:180px}.tablewrap{overflow:auto}table{border-collapse:collapse;width:100%;min-width:620px}th,td{text-align:left;border-bottom:1px solid #2c4658;padding:11px}th{color:var(--muted);font-size:11px;text-transform:uppercase}.reportlist{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.report{color:var(--fg);background:#0a1b2b;border:1px solid #355067;border-radius:11px;padding:12px;text-align:left;cursor:pointer}.report[aria-selected=true]{border-color:var(--cyan);background:#1b3a4b}.report small{display:block;color:var(--muted)}.split{display:grid;grid-template-columns:1fr 1.15fr;gap:14px}.empty{border:1px dashed #557086;border-radius:12px;padding:18px;color:var(--muted)}.paper{background:#fff;color:#172c3c;border-radius:8px;padding:22px}.paper h2{font-size:23px}.paper small{color:#566b79}.paper .eyebrow{color:#126578}.paperhead{display:flex;justify-content:space-between;gap:10px;border-bottom:2px solid #254b5f;padding-bottom:12px}.paper .empty{color:#52687a}.paper .pill{color:#385268}.footer{font-size:12px;color:var(--muted);margin:22px 0}.hide{display:none!important}@media(max-width:820px){main{padding:14px}.metrics{grid-template-columns:repeat(2,1fr)}.split{grid-template-columns:1fr}.reportlist{grid-template-columns:1fr}}@media print{@page{size:A4 portrait;margin:14mm}body{background:#fff;color:#172c3c}main{padding:0}.no-print,header,.nav,.footer,#dashboard,#data,#sources{display:none!important}#reports{display:block!important}.split{display:block}.split>.panel:first-child{display:none}.panel{background:#fff;border:0;padding:0}.paper{padding:0}.paperhead{break-inside:avoid}}
 </style><style id="bal-future-design">
 :root{--bg:#050b16;--panel:#0b1b2d;--border:#29465e;--fg:#f2fbff;--muted:#a7c0d3;--cyan:#72eaf0}
@@ -212,10 +212,10 @@ table th{color:#b9d9ee}table tbody tr:hover{background:#8bc9ff0a}
  #ppicMain .ppic-flow-status button small{display:none}
 }
 @media print{#ppicMain .ppic-flow-status{display:none!important}}
-</style></head><body><section class="owner-login" id="ownerLogin"><div class="owner-card"><div class="bal-login-brand"><img src="bal-logo-user.webp" alt="Logo tiga cengkeh dan gelombang air Banyu Anyar Lestari"><span>PR. Banyu Anyar Lestari<br>Owner Control Tower</span></div><div class="eyebrow">PR. BANYU ANYAR LESTARI</div><h1>PPIC Control Tower</h1><p class="muted">Akses privat khusus Owner. Masuk menggunakan akun Supabase Auth yang terverifikasi.</p><form id="loginForm"><label for="ownerEmail">Email Owner</label><input id="ownerEmail" type="email" autocomplete="username" value="cengkehsigaret99@gmail.com" required><label for="ownerPassword">Kata sandi</label><input id="ownerPassword" type="password" autocomplete="current-password" required><button class="btn primary" id="loginButton" type="submit">Masuk sebagai Owner</button></form><p id="loginStatus" role="status" aria-live="polite"></p><p class="muted">Tidak ada pendaftaran akun baru. Jangan bagikan kata sandi atau kode OTP.</p></div></section><main id="ppicMain" hidden>
+</style></head><body><section class="owner-login" id="ownerLogin"><div class="owner-card"><div class="bal-login-brand"><img src="bal-logo-user.webp" alt="Logo tiga cengkeh dan gelombang air Banyu Anyar Lestari"><span>PR. Banyu Anyar Lestari<br>Owner Control Tower</span></div><div class="eyebrow">PR. BANYU ANYAR LESTARI</div><h1>PPIC Control Tower</h1><p class="muted">Akses privat khusus Owner. Masuk menggunakan akun Supabase Auth yang terverifikasi.</p><form id="loginForm"><label for="ownerEmail">Email Owner</label><input id="ownerEmail" type="email" autocomplete="username" value="cengkehsigaret99@gmail.com" required><label for="ownerPassword">Kata sandi</label><input id="ownerPassword" type="password" autocomplete="current-password" required><button class="btn primary" id="loginButton" type="submit">Masuk sebagai Owner</button></form><p id="loginStatus" role="status" aria-live="polite"></p><p class="muted">Tidak ada pendaftaran akun baru. Jangan bagikan kata sandi atau kode OTP.</p><p class="muted" id="ppicRelease">Versi web 4.9 · pembaruan 19 November 2026</p></div></section><main id="ppicMain" hidden>
 <a class="ppic-skip-link no-print" href="#ppicContext">Lewati menu</a>
 <header class="ppic-app-header">
- <div class="ppic-identity"><img class="bal-brand-mark" src="bal-logo-user.webp" alt="Logo Banyu Anyar Lestari"><div><div class="eyebrow">PR. BANYU ANYAR LESTARI</div><div class="ppic-brand-title">PPIC CONTROL TOWER</div><div class="ppic-brand-subtitle">Kendali operasional · Bank data privat · Laporan</div></div></div>
+ <div class="ppic-identity"><img class="bal-brand-mark" src="bal-logo-user.webp" alt="Logo Banyu Anyar Lestari"><div><div class="eyebrow">PR. BANYU ANYAR LESTARI</div><div class="ppic-brand-title">PPIC CONTROL TOWER</div><div class="ppic-brand-subtitle">Versi web 4.9 · Bank data privat · Laporan</div></div></div>
  <div class="ppic-header-actions"><span class="pill ppic-work-state">WORKING / OPEN RECON</span><button class="btn owner-logout" id="logoutOwner" hidden>Keluar</button></div>
 </header>
 <div class="ppic-introduction no-print"><span class="ppic-tagline">PUSAT KERJA BAL · NOVEMBER 2026</span><h1>Operasional lebih jelas.<br><span>Data sampai laporan.</span></h1><p>Ikuti tiga langkah utama. Buka menu divisi hanya saat ingin meninjau hasil atau menganalisis data.</p></div>
@@ -262,8 +262,8 @@ table th{color:#b9d9ee}table tbody tr:hover{background:#8bc9ff0a}
 <section class="ppic-understanding" aria-label="Aturan sumber laporan"><h2>Sebelum menggunakan angka laporan</h2><p>Perhatikan <strong>versi, cut-off, dan status WORKING / OPEN RECON</strong>. Nilai historis dan estimasi tidak otomatis dianggap final. PPIC ini bukan Web SKT dan tidak mem-posting transaksi operasional.</p><div class="actions"><button type="button" class="btn" data-go="sources">Lihat Status Sumber</button><button type="button" class="btn" data-go="analytics">Analitik Lintas Divisi</button></div></section>
 <details class="ppic-install-help no-print"><summary>Pasang Web PPIC sebagai aplikasi di HP</summary><div class="install-row no-print" id="installPanel"><img src="icon-192.png" alt="Ikon BAL PPIC"><p><strong>Pasang BAL PPIC di layar utama</strong><small>Akses cepat seperti aplikasi Android, tanpa menyimpan laporan privat offline.</small></p><button type="button" class="btn primary" id="installPpic">Pasang aplikasi</button><small id="installHelp" role="status"></small></div></details>
 </section>
-<section id="upload" class="hide"><section class="panel"><div class="eyebrow">LANGKAH 01 DARI 03 · OWNER ONLY</div><h2>Upload Excel ke Bank Data Privat</h2><p class="muted">Tentukan divisi, periode, cut-off, dan versi. Unggah file sumber yang benar. <strong>Upload menyimpan arsip, bukan posting transaksi atau pembaruan otomatis 13 laporan.</strong></p><form id="ppicUploadForm"><div class="report-filters"><label>Divisi<select id="uploadDivision" required><option value="">Pilih divisi</option><option>BAHAN BAKU</option><option>GILING</option><option>VERPACK</option><option value="SDM GILING">SDM GILING</option><option value="SDM VERPACK">SDM VERPACK</option><option>BARANG JADI</option><option>CUKAI</option><option>DO</option><option>KAS BANK</option><option>TSG</option></select></label><label>Periode<input id="uploadPeriod" type="month" value="2026-11" required></label><label>Cut-off data<input id="uploadCutoff" type="date" value="2026-11-17" required></label><label>Versi dokumen<input id="uploadVersion" type="text" value="V009" pattern="V[0-9]{3,}" required maxlength="12"></label></div><p id="uploadDivisionHint" class="ppic-field-help" role="note">Pilih divisi untuk melihat fungsi upload. SDM dan data produksi merupakan dua sumber berbeda.</p><p><label for="uploadFile">File Excel (.xlsx), maksimum 10 MB</label><input id="uploadFile" type="file" accept=".xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" required></p><div class="actions"><button type="submit" class="btn primary" id="uploadSubmit">Upload ke Bank Data Privat</button><button type="button" class="btn" id="uploadRefresh">Muat ulang daftar Bank Data</button></div><p id="uploadStatus" role="status" aria-live="polite">Pilih file dan metadata, kemudian upload setelah login Owner.</p></form><div class="ppic-followup"><h3>Setelah upload, lanjut ke mana?</h3><p>Periksa file di Bank Data. Jika Anda mengunggah <strong>SDM Giling</strong> dan <strong>SDM Verpack</strong>, buka menu SDM untuk memprosesnya. Laporan divisi lain harus memiliki snapshot laporan bersumber sebelum bisa dicetak.</p><div class="actions"><button class="btn primary" type="button" data-go="data">2 · Periksa Bank Data</button><button class="btn" type="button" data-go="sdm">Buka SDM Giling &amp; Verpack</button><button class="btn" type="button" data-go="reports">3 · Cek Laporan</button></div></div><p class="muted">Status arsip upload: <strong>OPEN RECON / CONFIDENTIAL</strong>. File identik tidak diduplikasi dan tidak dipublikasikan melalui GitHub Pages.</p></section></section>
-<section id="data" class="hide"><section class="panel"><div class="eyebrow">LANGKAH 02 DARI 03 · PEMERIKSAAN ARSIP</div><h2>Bank Data Privat</h2><p class="muted">Temukan file yang Anda unggah. Periksa <strong>divisi, periode, tanggal cut-off dan status</strong>. File yang tercatat di sini belum tentu sudah menjadi laporan terbaru.</p><div class="filters"><input id="search" aria-label="Cari dokumen" placeholder="Cari nama, divisi, periode…"><select id="division" aria-label="Divisi"><option value="">Semua divisi</option></select><select id="state" aria-label="Status"><option value="">Semua status</option><option>WORKING</option><option>OPEN RECON</option><option>LOCKED</option></select></div><p class="muted" id="doccount"></p><div class="tablewrap"><table><thead><tr><th>Divisi</th><th>Dokumen</th><th>Periode</th><th>Cut-off</th><th>Status</th></tr></thead><tbody id="docs"></tbody></table></div><p class="empty" id="docempty">Belum ada dokumen privat terdaftar atau tidak ada hasil yang cocok. Data internal BAL tidak diterbitkan sebagai file GitHub Pages.</p><div class="ppic-followup"><h3>Dokumennya sudah tercatat?</h3><p>Buka laporan yang ingin diperiksa dan pastikan versi serta cut-off laporan sudah sesuai. Khusus SDM, tersedia tombol untuk memproses kedua arsip Excel tersimpan.</p><div class="actions"><button type="button" class="btn primary" data-go="reports">3 · Laporan &amp; Cetak</button><button type="button" class="btn" data-go="sdm">Proses SDM</button><button type="button" class="btn" data-go="upload">Kembali Upload</button></div></div></section></section>
+<section id="upload" class="hide"><section class="panel"><div class="eyebrow">LANGKAH 01 DARI 03 · OWNER ONLY</div><h2>Upload Excel ke Bank Data Privat</h2><p class="muted">Tentukan divisi, periode, cut-off, dan versi. Unggah file sumber yang benar. <strong>Upload menyimpan arsip, bukan posting transaksi atau pembaruan otomatis 13 laporan.</strong></p><form id="ppicUploadForm"><div class="report-filters"><label>Divisi<select id="uploadDivision" required><option value="">Pilih divisi</option><option>BAHAN BAKU</option><option>GILING</option><option>VERPACK</option><option value="SDM GILING">SDM GILING</option><option value="SDM VERPACK">SDM VERPACK</option><option>BARANG JADI</option><option>CUKAI</option><option>DO</option><option>KAS BANK</option><option>TSG</option></select></label><label>Periode<input id="uploadPeriod" type="month" value="2026-11" required></label><label>Cut-off data<input id="uploadCutoff" type="date" required></label><label>Versi dokumen<input id="uploadVersion" type="text" placeholder="Contoh: V001" pattern="V[0-9]{3,}" required maxlength="12"></label></div><p id="uploadMetaHint" class="ppic-field-help" role="note"></p><p id="uploadDivisionHint" class="ppic-field-help" role="note">Pilih divisi untuk melihat fungsi upload. SDM dan data produksi merupakan dua sumber berbeda.</p><p><label for="uploadFile">File Excel (.xlsx), maksimum 10 MB</label><input id="uploadFile" type="file" accept=".xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" required></p><div class="actions"><button type="submit" class="btn primary" id="uploadSubmit">Upload ke Bank Data Privat</button><button type="button" class="btn" id="uploadRefresh">Muat ulang daftar Bank Data</button></div><p id="uploadStatus" role="status" aria-live="polite">Pilih file dan metadata, kemudian upload setelah login Owner.</p></form><div class="ppic-followup"><h3>Setelah upload, lanjut ke mana?</h3><p>Periksa file di Bank Data. Jika Anda mengunggah <strong>SDM Giling</strong> dan <strong>SDM Verpack</strong>, buka menu SDM untuk memprosesnya. Laporan divisi lain harus memiliki snapshot laporan bersumber sebelum bisa dicetak.</p><div class="actions"><button class="btn primary" type="button" data-go="data">2 · Periksa Bank Data</button><button class="btn" type="button" data-go="sdm">Buka SDM Giling &amp; Verpack</button><button class="btn" type="button" data-go="reports">3 · Cek Laporan</button></div></div><p class="muted">Status arsip upload: <strong>OPEN RECON / CONFIDENTIAL</strong>. File identik tidak diduplikasi dan tidak dipublikasikan melalui GitHub Pages.</p></section></section>
+<section id="data" class="hide"><section class="panel"><div class="eyebrow">LANGKAH 02 DARI 03 · PEMERIKSAAN ARSIP</div><h2>Bank Data Privat</h2><p class="muted">Temukan file yang Anda unggah. Periksa <strong>divisi, periode, tanggal cut-off dan status</strong>. File yang tercatat di sini belum tentu sudah menjadi laporan terbaru.</p><div class="filters"><input id="search" aria-label="Cari dokumen" placeholder="Cari nama, divisi, periode…"><select id="division" aria-label="Divisi"><option value="">Semua divisi</option></select><select id="state" aria-label="Status"><option value="">Semua status</option><option>WORKING</option><option>OPEN RECON</option><option>LOCKED</option></select></div><p class="muted" id="doccount"></p><div class="tablewrap"><table><thead><tr><th>Divisi</th><th>Dokumen</th><th>Periode</th><th>Versi arsip</th><th>Cut-off arsip</th><th>Status rekonsiliasi</th><th>Penggunaan dalam laporan</th></tr></thead><tbody id="docs"></tbody></table></div><p class="empty" id="docempty">Belum ada dokumen privat terdaftar atau tidak ada hasil yang cocok. Data internal BAL tidak diterbitkan sebagai file GitHub Pages.</p><div class="ppic-followup"><h3>Dokumennya sudah tercatat?</h3><p>Buka laporan yang ingin diperiksa dan pastikan versi serta cut-off laporan sudah sesuai. Khusus SDM, tersedia tombol untuk memproses kedua arsip Excel tersimpan.</p><div class="actions"><button type="button" class="btn primary" data-go="reports">3 · Laporan &amp; Cetak</button><button type="button" class="btn" data-go="sdm">Proses SDM</button><button type="button" class="btn" data-go="upload">Kembali Upload</button></div></div></section></section>
 <section id="reports" class="hide"><div class="ppic-report-instructions no-print"><span class="eyebrow">LANGKAH 03 DARI 03 · LAPORAN BERDASARKAN SUMBER</span><h2>Pilih laporan, periksa nilainya, kemudian cetak</h2><p>Cari jenis laporan dan periode. Jika statusnya <strong>BELUM ADA DATA</strong>, tombol cetak tidak bisa digunakan. Preview PDF hanya menampilkan snapshot yang benar-benar tersedia.</p></div><div class="split"><section class="panel no-print"><h2>Pilih jenis laporan</h2><div class="report-filters"><label>Cari laporan<input id="reportSearch" type="search" placeholder="WIP, HPP, cukai…"></label><label>Kelompok<select id="reportGroup"><option value="">Semua</option><option>Produksi</option><option>Persediaan</option><option>Keuangan</option><option>Kontrol</option></select></label><label>Periode<input id="reportPeriod" type="month" value="2026-11"></label></div><p class="report-counter" id="reportCount"></p><p class="report-counter" id="reportCoverage" aria-live="polite">Memeriksa laporan tersedia…</p><div class="reportlist" id="catalog"></div></section><section class="panel"><div class="paper"><div class="paperhead"><div><div class="eyebrow">PR. BANYU ANYAR LESTARI</div><strong>PPIC CONTROL TOWER</strong><div><small>Operational Explorer / Pusat Cetak</small></div></div><small>WORKING / OPEN RECON</small></div><p id="number"></p><h2 id="reporttitle"></h2><p id="description"></p><p><strong>Dokumen sumber yang diperlukan:</strong> <span id="needed"></span></p><p><strong>Periode dipilih:</strong> <span id="selectedPeriod">2026-11</span></p><p><strong>Cut-off:</strong> <span id="reportCutoff">Belum tersedia</span></p><p><strong>Status data:</strong> <span id="reportValidity">Belum ada snapshot</span></p><div id="reportData" class="report-data"></div><p id="missingReportData" class="empty">Belum tersedia data bersumber untuk periode ini. Cetak PDF dinonaktifkan agar tidak menghasilkan laporan kosong.</p><p><small>Angka bersumber ditampilkan sesuai versi, cut-off dan status. WORKING / OPEN RECON bukan closing final.</small></p></div><div class="actions no-print"><button class="btn primary" id="preview">Preview PDF / Cetak</button><button class="btn" id="reportMaterialPDF">PDF Bahan Baku Rinci (64 Bahan)</button><button class="btn" id="reportFinishedPDF">Saldo Barang Jadi per Tanggal</button><button class="btn" id="wa">Kirim via WhatsApp</button><button class="btn" id="csv">Ekspor katalog CSV</button></div></section></div></section>
 <section id="analytics" class="hide">
  <section class="panel"><div class="eyebrow">BAL PPIC · OWNER ANALYTICS</div><h2>Laporan Per Divisi, Integrasi & Surat Jalan</h2>
@@ -286,7 +286,7 @@ table th{color:#b9d9ee}table tbody tr:hover{background:#8bc9ff0a}
 <div class="tablewrap"><table id="dailyTable"><thead><tr><th>Tanggal</th><th>Saldo awal qty</th><th>Masuk qty</th><th>Keluar qty</th><th>Saldo akhir qty</th><th>Saldo awal Rp</th><th>Masuk Rp</th><th>Keluar Rp</th><th>Saldo akhir Rp</th><th>Status</th></tr></thead><tbody id="dailyRows"></tbody></table></div>
 <div id="dailyNotes" class="muted"></div>
 <div class="actions"><button class="btn primary" id="dailyPrint" disabled>Preview PDF Harian</button><button class="btn" id="dailyOpenSources">Bank Data</button></div>
-</section></section><section id="customers" class="hide"><section class="panel"><div class="eyebrow">BAL PPIC · DO & PIUTANG</div><h2>Resume Per Customer & Detail Surat Jalan</h2><p class="muted">Laporan mengikuti snapshot DO terbaru. Harga jual per pack bersumber dari jurnal, histori, dan konfirmasi Owner. Nominal yang ditampilkan adalah nilai DO kerja, bukan piutang yang telah dibayar. Preview PDF hanya menampilkan nilai DO; kategori HJE tetap dapat dipakai untuk memfilter transaksi.</p><div class="report-filters" style="display:flex;flex-wrap:wrap;gap:10px"><label>Periode<input id="doPeriod" type="month" value="2026-11"></label><label>Customer<select id="doCustomer"><option value="">Semua customer</option></select></label><label>Merek<select id="doBrand"><option value="">Semua merek</option></select></label><label>HJE<select id="doHje"><option value="">Semua HJE</option></select></label><label>SKU<select id="doSku"><option value="">Semua SKU</option></select></label><label>No. SJ<input id="doSj" type="search" placeholder="Contoh: 320"></label></div><p id="doStatus" class="report-counter" role="status"></p><div id="doMetrics" class="metrics"></div><h3>Resume per customer</h3><div class="tablewrap"><table><thead><tr><th>Customer</th><th>Jumlah SJ</th><th>Reguler pack</th><th>Sampel pack</th><th>Total pack</th><th>Nilai DO (Rp)</th><th>Pack tanpa harga</th></tr></thead><tbody id="doSummary"></tbody></table></div><div class="analytics-charts" id="doCharts"></div><h3>Rekap per Surat Jalan — Nilai DO</h3><div class="tablewrap"><table><thead><tr><th>SJ</th><th>Tanggal</th><th>Customer jurnal</th><th>Reguler</th><th>Sampel</th><th>Total pack</th><th>Nilai DO (Rp)</th><th>Pack tanpa harga</th></tr></thead><tbody id="doSJSummary"></tbody></table></div><h3>Detail per SJ / SKU</h3><div class="tablewrap"><table><thead><tr><th>SJ</th><th>Tanggal</th><th>Customer jurnal</th><th>Tujuan</th><th>Area</th><th>SKU</th><th>Merek</th><th>HJE</th><th>Jenis</th><th>Pack</th><th>Harga kerja</th><th>Nilai DO (Rp)</th><th>Basis harga</th></tr></thead><tbody id="doDetails"></tbody></table></div><div class="actions"><button class="btn primary" id="doPrint" disabled>Preview PDF Customer / SJ</button><button class="btn" id="doReset">Reset filter</button></div></section></section><section id="materials" class="hide"><section class="panel"><div class="eyebrow">BAL PPIC · LAPORAN PER NAMA BAHAN</div><h2>Bahan Baku — Mutasi Harian, Nominal & Kapasitas</h2><p class="muted">Template PDF baru: satu bahan per halaman, KPI kuantitas/nominal, grafik saldo, tabel tanggal 1–30, serta kapasitas karton. Data dari sumber V10, cut-off gudang 16 November 2026. OPEN RECON.</p><div class="report-filters" style="display:flex;flex-wrap:wrap;gap:12px"><label>Periode<input id="matPeriod" type="month" value="2026-11"></label><label>Bahan<select id="matSelect"><option value="">Semua bahan (64)</option></select></label><label>Cetak<select id="matPrintScope"><option value="selected">Bahan terpilih</option><option value="all">Seluruh 64 bahan</option></select></label></div><p id="matStatus" role="status" class="report-counter"></p><div id="matSummary" class="metrics"></div><div class="analytics-charts" id="matChart"></div><div class="tablewrap"><table><thead><tr><th>Tanggal</th><th>Awal Qty</th><th>Masuk Qty</th><th>Pakai Qty</th><th>Akhir Qty</th><th>Awal Rp</th><th>Masuk Rp</th><th>Pakai Rp</th><th>Akhir Rp</th><th>Status</th></tr></thead><tbody id="matRows"></tbody></table></div><p id="matCapacity" class="muted"></p><div class="actions"><button class="btn primary" id="matPrint" disabled>Preview PDF Per Bahan (A4 Landscape)</button><button class="btn" id="matSource">Bank Data</button></div></section></section><section id="finished" class="hide"><section class="panel"><div class="eyebrow">BAL PPIC · BARANG JADI</div><h2>Saldo Barang Jadi per Tanggal dan Merek</h2><p class="muted">Buku Barang Jadi V012, cut-off 17 November 2026. Pilih tanggal untuk melihat saldo akhir hari tersebut. Nominal merupakan biaya normalisasi Oktober/proksi, bukan HPP November. Saldo negatif tetap ditampilkan.</p><div class="report-filters" style="display:flex;flex-wrap:wrap;gap:12px"><label>Tanggal saldo<input id="fgDate" type="date" value="2026-11-17" min="2026-11-01" max="2026-11-30"></label><label>SKU / Merek<select id="fgSku"><option value="">Semua merek</option></select></label><label>Mode cetak<select id="fgPrintMode"><option value="date">Saldo tanggal terpilih</option><option value="month">Mutasi harian 1–30</option></select></label></div><p id="fgStatus" class="report-counter" role="status"></p><div class="metrics" id="fgMetrics"></div><div class="analytics-charts" id="fgCharts"></div><h3>Saldo akhir per SKU pada tanggal terpilih</h3><div class="tablewrap"><table><thead><tr><th>SKU</th><th>Merek</th><th>Awal pack</th><th>Masuk pack</th><th>Keluar pack</th><th>Saldo pack</th><th>Isi pack/karton</th><th>Saldo karton ekuivalen</th><th>Karton penuh</th><th>Sisa pack</th><th>Saldo Rp (proksi)</th><th>Status</th></tr></thead><tbody id="fgBalances"></tbody></table></div><h3>Rincian mutasi pada tanggal terpilih</h3><div class="tablewrap"><table><thead><tr><th>Tanggal</th><th>Masuk/Keluar</th><th>SKU</th><th>Merek</th><th>Nomor SJ</th><th>Customer</th><th>Pack</th><th>Karton ekuivalen</th></tr></thead><tbody id="fgTransactions"></tbody></table></div><h3>Perjalanan saldo harian</h3><div class="tablewrap"><table><thead><tr><th>Tanggal</th><th>Awal pack</th><th>Masuk pack</th><th>Keluar pack</th><th>Akhir pack</th><th>Awal karton</th><th>Masuk karton</th><th>Keluar karton</th><th>Akhir karton</th><th>Awal Rp</th><th>Masuk Rp</th><th>Keluar Rp</th><th>Akhir Rp</th><th>Status</th></tr></thead><tbody id="fgDaily"></tbody></table></div><div class="actions"><button class="btn primary" id="fgPrint" disabled>Preview PDF Barang Jadi</button><button class="btn" id="fgSources">Bank Data</button></div></section></section><section id="excise" class="hide"><section class="panel"><div class="eyebrow">BAL PPIC · PITA CUKAI</div><h2>HPP Pita, Saldo per HJE &amp; Kapasitas Hari</h2><p class="muted">Biaya fiskal bruto per keping mengacu pada dokumen CK-1/SPPR. Saldo buku dan nilai cukainya mengikuti kartu pita pada tanggal terpilih.</p><div class="report-filters" style="display:flex;gap:12px;flex-wrap:wrap"><label>Periode<input id="exPeriod" type="month" value="2026-11"></label><label>HJE<select id="exHje"><option value="CUKAI 10.325">10.325</option><option value="CUKAI 13.775">13.775</option><option value="CUKAI REFILL">10.500 REFILL</option></select></label><label>Tanggal saldo<input id="exDate" type="date" value="2026-11-17" min="2026-11-01" max="2026-11-30"></label></div>
+</section></section><section id="customers" class="hide"><section class="panel"><div class="eyebrow">BAL PPIC · DO & PIUTANG</div><h2>Resume Per Customer & Detail Surat Jalan</h2><p class="muted">Laporan mengikuti snapshot DO terbaru. Harga jual per pack bersumber dari jurnal, histori, dan konfirmasi Owner. Nominal yang ditampilkan adalah nilai DO kerja, bukan piutang yang telah dibayar. Preview PDF hanya menampilkan nilai DO; kategori HJE tetap dapat dipakai untuk memfilter transaksi.</p><div class="report-filters" style="display:flex;flex-wrap:wrap;gap:10px"><label>Periode<input id="doPeriod" type="month" value="2026-11"></label><label>Customer<select id="doCustomer"><option value="">Semua customer</option></select></label><label>Merek<select id="doBrand"><option value="">Semua merek</option></select></label><label>HJE<select id="doHje"><option value="">Semua HJE</option></select></label><label>SKU<select id="doSku"><option value="">Semua SKU</option></select></label><label>No. SJ<input id="doSj" type="search" placeholder="Contoh: 320"></label></div><p id="doStatus" class="report-counter" role="status"></p><p id="doSourceState" class="muted"></p><div id="doMetrics" class="metrics"></div><h3>Resume per customer</h3><div class="tablewrap"><table><thead><tr><th>Customer</th><th>Jumlah SJ</th><th>Reguler pack</th><th>Sampel pack</th><th>Total pack</th><th>Nilai DO (Rp)</th><th>Pack tanpa harga</th></tr></thead><tbody id="doSummary"></tbody></table></div><div class="analytics-charts" id="doCharts"></div><h3>Rekap per Surat Jalan — Nilai DO</h3><div class="tablewrap"><table><thead><tr><th>SJ</th><th>Tanggal</th><th>Customer jurnal</th><th>Reguler</th><th>Sampel</th><th>Total pack</th><th>Nilai DO (Rp)</th><th>Pack tanpa harga</th></tr></thead><tbody id="doSJSummary"></tbody></table></div><h3>Detail per SJ / SKU</h3><div class="tablewrap"><table><thead><tr><th>SJ</th><th>Tanggal</th><th>Customer jurnal</th><th>Tujuan</th><th>Area</th><th>SKU</th><th>Merek</th><th>HJE</th><th>Jenis</th><th>Pack</th><th>Harga kerja</th><th>Nilai DO (Rp)</th><th>Basis harga</th></tr></thead><tbody id="doDetails"></tbody></table></div><div class="actions"><button class="btn primary" id="doPrint" disabled>Preview PDF Customer / SJ</button><button class="btn" id="doReset">Reset filter</button></div></section></section><section id="materials" class="hide"><section class="panel"><div class="eyebrow">BAL PPIC · LAPORAN PER NAMA BAHAN</div><h2>Bahan Baku — Mutasi Harian, Nominal & Kapasitas</h2><p class="muted">Satu bahan per halaman dengan mutasi dan nilai acuan parsial. Versi, batas tanggal dan status kelengkapan mengikuti sumber aktif. Opname dipisahkan dari pengeluaran rutin; PO belum menjadi stok masuk.</p><div class="report-filters" style="display:flex;flex-wrap:wrap;gap:12px"><label>Periode<input id="matPeriod" type="month" value="2026-11"></label><label>Bahan<select id="matSelect"><option value="">Pilih bahan</option></select></label><label>Cetak<select id="matPrintScope"><option value="selected">Bahan terpilih</option><option value="all">Seluruh bahan</option></select></label></div><p id="matStatus" role="status" class="report-counter"></p><p id="matSourceState" class="muted"></p><div id="matSummary" class="metrics"></div><div class="analytics-charts" id="matChart"></div><div class="tablewrap"><table><thead><tr><th>Tanggal</th><th>Awal Qty</th><th>Masuk Qty</th><th>Keluar rutin Qty</th><th>Opname Qty</th><th>Akhir Qty</th><th>Awal Rp</th><th>Masuk Rp</th><th>Keluar rutin Rp</th><th>Opname Rp</th><th>Akhir Rp</th><th>Status</th></tr></thead><tbody id="matRows"></tbody></table></div><p id="matCapacity" class="muted"></p><div class="actions"><button class="btn primary" id="matPrint" disabled>Preview PDF Per Bahan (A4 Landscape)</button><button class="btn" id="matSource">Bank Data</button></div></section></section><section id="finished" class="hide"><section class="panel"><div class="eyebrow">BAL PPIC · BARANG JADI</div><h2>Saldo Barang Jadi per Tanggal dan Merek</h2><p class="muted">Pilih periode, tanggal dan SKU untuk melihat saldo buku. Versi dan cut-off mengikuti sumber aktif. Nilai persediaan memakai biaya historis/proksi sesuai sumber, terpisah dari harga jual DO. Saldo negatif dan biaya atau konversi yang belum tersedia tetap ditandai.</p><div class="report-filters" style="display:flex;flex-wrap:wrap;gap:12px"><label>Periode<input id="fgPeriod" type="month"></label><label>Tanggal saldo<input id="fgDate" type="date"></label><label>SKU / Merek<select id="fgSku"><option value="">Semua merek</option></select></label><label>Mode cetak<select id="fgPrintMode"><option value="date">Saldo tanggal terpilih</option><option value="month">Mutasi harian bulan terpilih</option></select></label></div><p id="fgStatus" class="report-counter" role="status"></p><p id="fgSourceState" class="muted"></p><div class="metrics" id="fgMetrics"></div><div class="analytics-charts" id="fgCharts"></div><h3>Saldo akhir per SKU pada tanggal terpilih</h3><div class="tablewrap"><table><thead><tr><th>SKU</th><th>Merek</th><th>Awal pack</th><th>Masuk pack</th><th>Keluar pack</th><th>Saldo pack</th><th>Isi pack/karton</th><th>Saldo karton ekuivalen</th><th>Karton penuh</th><th>Sisa pack</th><th>Saldo Rp (proksi)</th><th>Status</th></tr></thead><tbody id="fgBalances"></tbody></table></div><h3>Rincian mutasi pada tanggal terpilih</h3><div class="tablewrap"><table><thead><tr><th>Tanggal</th><th>Masuk/Keluar</th><th>SKU</th><th>Merek</th><th>Nomor SJ</th><th>Customer</th><th>Pack</th><th>Karton ekuivalen</th></tr></thead><tbody id="fgTransactions"></tbody></table></div><h3>Perjalanan saldo harian</h3><div class="tablewrap"><table><thead><tr><th>Tanggal</th><th>Awal pack</th><th>Masuk pack</th><th>Keluar pack</th><th>Akhir pack</th><th>Awal karton</th><th>Masuk karton</th><th>Keluar karton</th><th>Akhir karton</th><th>Awal Rp</th><th>Masuk Rp</th><th>Keluar Rp</th><th>Akhir Rp</th><th>Status</th></tr></thead><tbody id="fgDaily"></tbody></table></div><div class="actions"><button class="btn primary" id="fgPrint" disabled>Preview PDF Barang Jadi</button><button class="btn" id="fgSources">Bank Data</button></div></section></section><section id="excise" class="hide"><section class="panel"><div class="eyebrow">BAL PPIC · PITA CUKAI</div><h2>HPP Pita, Saldo per HJE &amp; Kapasitas Hari</h2><p class="muted">Biaya fiskal bruto per keping mengacu pada dokumen CK-1/SPPR. Saldo buku dan nilai cukainya mengikuti kartu pita pada tanggal terpilih.</p><div class="report-filters" style="display:flex;gap:12px;flex-wrap:wrap"><label>Periode<input id="exPeriod" type="month" value="2026-11"></label><label>HJE<select id="exHje"><option value="CUKAI 10.325">10.325</option><option value="CUKAI 13.775">13.775</option><option value="CUKAI REFILL">10.500 REFILL</option></select></label><label>Tanggal saldo<input id="exDate" type="date" value="2026-11-17" min="2026-11-01" max="2026-11-30"></label></div>
 <section id="exCostPanel" aria-labelledby="exCostTitle"><h3 id="exCostTitle">HPP / Biaya Pita per Keping</h3><p id="exCostState" class="report-counter" role="status"></p><div id="exCostContent" hidden><p id="exCostNotice" class="muted"></p><div class="metrics" id="exCostMetrics"></div><h4>Komponen biaya per keping</h4><div class="tablewrap"><table><thead><tr><th>HJE / isi</th><th>SKU pada dokumen</th><th>Cukai Rp/keping</th><th>PPN HT Rp/keping</th><th>Pajak rokok Rp/keping</th><th>Total bruto Rp/keping</th></tr></thead><tbody id="exCostRows"></tbody></table></div><h4>Konversi biaya dan jumlah pesanan</h4><div class="tablewrap"><table><thead><tr><th>HJE / isi</th><th>Keping</th><th>Rim</th><th>Pack/karton</th><th>Biaya Rp/rim</th><th>Biaya Rp/karton</th><th>Total bruto pesanan Rp</th></tr></thead><tbody id="exCostConversions"></tbody></table></div><p id="exCostUnits" class="muted"></p><p id="exCostBasis" class="muted"></p><h4>Rekonsiliasi dengan dokumen</h4><div class="tablewrap"><table><thead><tr><th>Komponen</th><th>Dokumen</th><th>Perhitungan</th><th>Selisih</th></tr></thead><tbody id="exCostReconciliation"></tbody></table></div><p id="exCostTotals" class="cost-total"></p><h4>Status bukti</h4><div class="tablewrap"><table><thead><tr><th>Tahap</th><th>Status</th><th>Keterangan</th></tr></thead><tbody id="exCostEvidence"></tbody></table></div><h4>Sumber perhitungan</h4><ul id="exCostSources"></ul><ul id="exCostExclusions" class="muted"></ul></div></section>
 <hr class="ex-divider"><h3>Saldo Buku &amp; Kapasitas Produksi</h3><p id="exStatus" role="status" class="report-counter"></p><div class="metrics" id="exMetrics"></div><section id="exCartonCapacity" aria-labelledby="exCartonTitle"><h3 id="exCartonTitle">Kapasitas Karton dari Saldo Pita</h3><p id="exCartonState" class="report-counter" role="status"></p><div id="exCartonMetrics" class="metrics"></div><div class="tablewrap"><table><thead><tr><th>HJE / Jenis</th><th>Saldo keping</th><th>Pack/karton</th><th>Karton ekuivalen</th><th>Karton penuh</th><th>Sisa pack</th><th>Status</th></tr></thead><tbody id="exCartonSummary"></tbody></table></div><p id="exCartonNote" class="muted"></p><h4>Kapasitas harian dari saldo akhir — HJE terpilih</h4><div class="tablewrap"><table><thead><tr><th>Tanggal</th><th>Saldo akhir keping</th><th>Pack/karton</th><th>Karton ekuivalen</th><th>Karton penuh</th><th>Sisa pack</th><th>Status</th></tr></thead><tbody id="exCartonDaily"></tbody></table></div></section><h4>Ringkasan semua HJE pada tanggal terpilih</h4><div class="tablewrap"><table><thead><tr><th>HJE</th><th>Saldo keping</th><th>Tarif cukai/keping</th><th>Nilai saldo cukai Rp</th><th>Rata-rata pemakaian/hari aktif</th><th>Estimasi sisa hari produksi</th><th>Status</th></tr></thead><tbody id="exSummary"></tbody></table></div><div class="analytics-charts" id="exCharts"></div><h4 id="exDailyTitle">Mutasi harian HJE terpilih</h4><div class="tablewrap"><table><thead><tr><th>Tanggal</th><th>Awal keping</th><th>Masuk keping</th><th>Pemakaian keping</th><th>Akhir keping</th><th>Awal cukai Rp</th><th>Masuk cukai Rp</th><th>Pemakaian cukai Rp</th><th>Akhir cukai Rp</th><th>Status</th></tr></thead><tbody id="exDaily"></tbody></table></div><p class="muted">Nominal saldo dan mutasi = tarif cukai × keping; belum termasuk PPN HT dan pajak rokok. Biaya dokumen di atas tidak digunakan untuk menilai ulang seluruh saldo. Penerimaan fisik mengikuti bukti yang tersedia. Tarif Refill yang belum terverifikasi ditampilkan kosong.</p><div class="actions"><button class="btn primary" id="exPrint" disabled>Preview PDF Pita Cukai &amp; HPP</button><button class="btn" id="exBank">Bank Data</button></div></section></section><section id="sdm" class="hide"><section class="panel"><div class="eyebrow">BAL PPIC · SDM & BORONGAN</div><h2>Hasil Kerja Per Orang · Jumat–Kamis</h2><p class="muted">Laporan privat hasil kerja per pekerja, merek, tanggal, upah dan status sumber. Filter fleksibel tanggal-ke-tanggal; periode payroll standar Jumat–Kamis. Absensi tidak boleh disimpulkan dari hasil nol tanpa bukti kehadiran.</p><div class="report-filters" style="display:flex;flex-wrap:wrap;gap:12px"><label>Divisi<select id="sdmDiv"><option value="GILING">Giling</option><option value="VERPACK">Verpack</option><option value="GABUNGAN">Gabungan Giling + Verpack</option></select></label><label>Dari tanggal<input id="sdmStart" type="date" value="2026-11-13"></label><label>Sampai tanggal<input id="sdmEnd" type="date" value="2026-11-19"></label><label>Merek<select id="sdmBrand"><option value="">Semua merek</option></select></label><label>Nama / ID<input id="sdmSearch" type="search" placeholder="Cari pekerja"></label><label>Status<select id="sdmStatus"><option value="">Semua status</option><option value="hasil">Ada hasil</option><option value="kosong">Tidak ada hasil tercatat</option><option value="upah">Upah tanpa hasil</option></select></label></div><p id="sdmNotice" class="report-counter" role="status"></p><div id="sdmMetrics" class="metrics"></div>
 <section id="sdmThreeReports" aria-labelledby="sdmThreeReportsTitle">
@@ -387,9 +387,91 @@ function ppicUpdateUploadHint(){
 $("uploadDivision").addEventListener("change",ppicUpdateUploadHint);
 ppicUpdateUploadHint();
 for(const d of divisions){const opt=document.createElement("option");opt.value=d;opt.textContent=d;$("division").append(opt);const tr=document.createElement("tr");for(const t of [d,"Belum terhubung","Menunggu bank data privat"]){const td=document.createElement("td");td.textContent=t;tr.append(td)}$("divisions").append(tr)}
+// Shared reporting dates and source provenance. All data comes from owner-only snapshots.
+const ppicFinite=n=>typeof n==="number"&&Number.isFinite(n);
+const ppicLatest=(a,b)=>Number(String(b.version||"").replace(/^V/i,""))-Number(String(a.version||"").replace(/^V/i,""))||String(b.created_at||"").localeCompare(String(a.created_at||""));
+function ppicToday(){
+ const p=Object.fromEntries(new Intl.DateTimeFormat("en-CA",{timeZone:"Asia/Jakarta",year:"numeric",month:"2-digit",day:"2-digit"}).formatToParts(new Date()).map(x=>[x.type,x.value]));
+ return p.year+"-"+p.month+"-"+p.day;
+}
+function ppicValidDate(value,period){
+ if(typeof value!=="string"||!/^\d{4}-\d{2}-\d{2}$/.test(value)||period&&value.slice(0,7)!==period)return false;
+ const d=new Date(value+"T00:00:00Z");return Number.isFinite(d.getTime())&&d.toISOString().slice(0,10)===value;
+}
+function ppicDateLabel(value){
+ return ppicValidDate(value)?new Intl.DateTimeFormat("id-ID",{timeZone:"UTC",day:"numeric",month:"long",year:"numeric"}).format(new Date(value+"T00:00:00Z")):String(value||"—");
+}
+function ppicRegistryDate(value){
+ if(ppicValidDate(value))return value;
+ const d=new Date(value);if(!Number.isFinite(d.getTime()))return "—";
+ const p=Object.fromEntries(new Intl.DateTimeFormat("en-CA",{timeZone:"Asia/Jakarta",year:"numeric",month:"2-digit",day:"2-digit"}).formatToParts(d).map(x=>[x.type,x.value]));
+ return p.year+"-"+p.month+"-"+p.day;
+}
+function ppicMeta(snapshot,data={}){
+ const period=/^\d{4}-(0[1-9]|1[0-2])$/.test(snapshot?.period||"")?snapshot.period:"";
+ const [year,month]=period.split("-").map(Number),days=period?new Date(Date.UTC(year,month,0)).getUTCDate():0;
+ const legacy=Number.isInteger(data.cutoff)?period+"-"+String(data.cutoff).padStart(2,"0"):data.valid_through;
+ const cutoff=ppicValidDate(snapshot?.cutoff,period)?snapshot.cutoff:ppicValidDate(legacy,period)?legacy:"";
+ return {period,days,cutoff,day:cutoff?Number(cutoff.slice(8)):0,version:snapshot?.version||"—",status:snapshot?.status||"OPEN RECON"};
+}
+function ppicWaiting(snapshot,data={}){
+ const m=ppicMeta(snapshot,data);if(!m.cutoff||m.day>=m.days)return "";
+ const next=m.period+"-"+String(m.day+1).padStart(2,"0");
+ const requested=ppicValidDate(data.requested_through,m.period)?data.requested_through:ppicToday();
+ return requested.slice(0,7)===m.period&&requested>m.cutoff?ppicDateLabel(next)+(requested>next?" s.d. "+ppicDateLabel(requested):"")+" menunggu data; belum dianggap nol transaksi.":"Tanggal setelah "+ppicDateLabel(m.cutoff)+" belum memiliki data.";
+}
+function ppicCoverage(data,date){
+ const c=data?.date_coverage?.[date];return c&&typeof c==="object"?c:null;
+}
+const ppicSourceSets=new Map();
+function ppicSourceIds(snapshot){
+ const list=[snapshot?.source_document_id,...(Array.isArray(snapshot?.source_document_ids)?snapshot.source_document_ids:[]),...(Array.isArray(snapshot?.source_refs)?snapshot.source_refs.map(x=>typeof x==="string"?x:x?.document_id||x?.source_document_id):[])];
+ return [...new Set(list.filter(x=>typeof x==="string"&&x))];
+}
+function ppicTrackSources(kind,rows){
+ const all=Array.isArray(rows)?rows:[],latest=new Map();
+ for(const r of all.slice().sort(ppicLatest)){const key=(r.period||"")+"|"+(r.report_key||r.division||"");if(!latest.has(key))latest.set(key,r)}
+ ppicSourceSets.set(kind,{all,active:[...latest.values()]});drawDocs();ppicUpdateSourceStates();
+}
+function ppicSourceUse(id){
+ const active=[],history=[];
+ for(const [kind,set]of ppicSourceSets)for(const r of set.all){
+  if(!ppicSourceIds(r).includes(id))continue;
+  const label=kind+(r.report_key?" "+r.report_key:"")+" "+r.version+" · "+(r.cutoff||"—");
+  (set.active.includes(r)?active:history).push(label);
+ }
+ return active.length?"TERPAKAI · "+[...new Set(active)].join("; "):history.length?"SUMBER VERSI SEBELUMNYA":"ARSIP · BELUM TERKAIT LAPORAN AKTIF";
+}
+function ppicUpdateSourceStates(){
+ for(const [kind,id]of [["DO","doSourceState"],["BAHAN BAKU","matSourceState"],["BARANG JADI","fgSourceState"]]){
+  const el=document.getElementById(id);if(!el)continue;
+  const rows=ppicSourceSets.get(kind)?.active||[];
+  el.textContent=rows.length?"Sumber laporan aktif: "+rows.map(r=>r.version+" · "+r.cutoff+" · "+(ppicSourceIds(r).join(", ")||"referensi pada laporan")).join("; ")+". Arsip baru tidak otomatis mengganti laporan.":"Belum ada sumber yang diaktifkan menjadi laporan divisi ini.";
+ }
+}
+function ppicInferUpload(name){
+ const normalized=String(name||"").toUpperCase().replace(/%20/g,"_");
+ const result={},year=normalized.match(/(?:^|\D)(20\d{2})(?:\D|$)/)?.[1];
+ const version=normalized.match(/(?:^|[_ .-])V(\d{1,9})(?=[_ .-]|$)/)?.[1];if(version)result.version="V"+version.padStart(3,"0");
+ const months={JAN:1,FEB:2,MAR:3,APR:4,MEI:5,MAY:5,JUN:6,JUL:7,AGU:8,AUG:8,SEP:9,OKT:10,OCT:10,NOV:11,DES:12,DEC:12};
+ const iso=normalized.match(/CUT[-_ ]?OFF[_ -]*(20\d{2})[-_](\d{2})[-_](\d{2})/);
+ const short=normalized.match(/CUT[-_ ]?OFF[_ -]*(\d{1,2})[_ -]*(JAN|FEB|MAR|APR|MEI|MAY|JUN|JUL|AGU|AUG|SEP|OKT|OCT|NOV|DES|DEC)/);
+ const date=iso?iso[1]+"-"+iso[2]+"-"+iso[3]:short&&year?year+"-"+String(months[short[2]]).padStart(2,"0")+"-"+short[1].padStart(2,"0"):"";
+ if(ppicValidDate(date)){result.cutoff=date;result.period=date.slice(0,7)}
+ if(/BARANG[_ -]*JADI/.test(normalized))result.division="BARANG JADI";
+ else if(/BAHAN[_ -]*BAKU/.test(normalized))result.division="BAHAN BAKU";
+ else if(/(?:^|[_ .-])DO(?:[_ .-]|$)/.test(normalized))result.division="DO";
+ return result;
+}
+
 let privateDocs=[];
-window.ppicSetDocs=(rows)=>{privateDocs=Array.isArray(rows)?rows:[];const select=$("division"),current=select.value;select.replaceChildren(new Option("Semua divisi",""));for(const name of [...new Set(privateDocs.map(r=>r.division).filter(Boolean))].sort())select.add(new Option(name,name));select.value=current;drawDocs();$("nSources").textContent=String(privateDocs.length);if(!privateDocs.length){sdmAutoAttempted=false;sdmAutoKey=""}sdmRender();queueMicrotask(sdmMaybeAutoBuild)};
-function drawDocs(){const q=$("search").value.trim().toLocaleLowerCase("id-ID"),div=$("division").value,state=$("state").value;const found=privateDocs.filter(r=>(!q||[r.document_id,r.division,r.period,r.version].join(" ").toLocaleLowerCase("id-ID").includes(q))&&(!div||r.division===div)&&(!state||r.reconciliation_status===state));$("docs").replaceChildren();for(const r of found){const tr=document.createElement("tr");for(const field of ["division","document_id","period","cutoff","reconciliation_status"]){const td=document.createElement("td");td.textContent=String(r[field]??"—");tr.append(td)}$("docs").append(tr)}$("doccount").textContent=found.length+" dari "+privateDocs.length+" dokumen";$("docempty").hidden=found.length>0}
+window.ppicSetDocs=(rows)=>{privateDocs=Array.isArray(rows)?rows:[];const select=$("division"),current=select.value;select.replaceChildren(new Option("Semua divisi",""));for(const name of [...new Set(privateDocs.map(r=>r.division).filter(Boolean))].sort())select.add(new Option(name,name));select.value=current;drawDocs();ppicUpdateSourceStates();$("nSources").textContent=String(privateDocs.length);if(!privateDocs.length){sdmAutoAttempted=false;sdmAutoKey=""}sdmRender();queueMicrotask(sdmMaybeAutoBuild)};
+function drawDocs(){
+ const q=$("search").value.trim().toLocaleLowerCase("id-ID"),div=$("division").value,state=$("state").value;
+ const found=privateDocs.filter(r=>(!q||[r.document_id,r.division,r.period,r.version].join(" ").toLocaleLowerCase("id-ID").includes(q))&&(!div||r.division===div)&&(!state||r.reconciliation_status===state));$("docs").replaceChildren();
+ for(const r of found){const tr=document.createElement("tr");for(const value of [r.division,r.document_id,r.period,r.version,ppicRegistryDate(r.cutoff),r.reconciliation_status,ppicSourceUse(r.document_id)]){const td=document.createElement("td");td.textContent=String(value??"—");tr.append(td)}$("docs").append(tr)}
+ $("doccount").textContent=found.length+" dari "+privateDocs.length+" dokumen · arsip dan sumber laporan aktif dibedakan";$("docempty").hidden=found.length>0;
+}
 for(const id of ["search","division","state"])$(id).addEventListener(id==="search"?"input":"change",drawDocs);drawDocs();
 let privateReports=[];
 function selectedSnapshotFor(index){
@@ -439,7 +521,7 @@ function updateReportCoverage(){
 }
 window.ppicSetReports=(rows)=>{
  privateReports=Array.isArray(rows)?rows.filter(r=>r&&typeof r.report_key==="string"&&r.payload&&typeof r.payload==="object"):[];
- drawCatalog();renderAnalytics();exRender();
+ ppicTrackSources("LAPORAN",privateReports);drawCatalog();renderAnalytics();exRender();
 };
 
 const analyticsMapping={
@@ -559,7 +641,7 @@ function dailyRowsFor(snapshot){
   if(qty!==null)qty=qty+(qin??0)-(qout??0);
   if(money!==null&&((inNom!==null||outNom!==null)||!records.has(d)))money=money+(inNom??0)-(outNom??0);
   else if(money!==null&&records.has(d)&&tariff===null&&cashIn===null&&cashOut===null)money=null;
-  rows.push({date,status:"OPEN RECON",qty0,qin:qin??(columns.includes("in_qty")?0:null),qout:qout??(columns.includes("out_qty")?0:null),qty1:qty,money0,min:inNom,mout:outNom,money1:money});
+  rows.push({date,status:ppicCoverage(p,date)?.status==="PARTIAL"?"PARSIAL / OPEN RECON":"OPEN RECON",qty0,qin:qin??(columns.includes("in_qty")?0:null),qout:qout??(columns.includes("out_qty")?0:null),qty1:qty,money0,min:inNom,mout:outNom,money1:money});
  }
  return rows;
 }
@@ -597,7 +679,7 @@ function dailyRender(){
   const paragraph=document.createElement("p");paragraph.textContent=String(msg);notes.append(paragraph)
  }
 }
-window.ppicSetDaily=(rows)=>{dailySnapshots=Array.isArray(rows)?rows:[];dailyRender();exRender()};
+window.ppicSetDaily=(rows)=>{dailySnapshots=Array.isArray(rows)?rows:[];ppicTrackSources("HARIAN",dailySnapshots);dailyRender();exRender()};
 document.getElementById("dailyPeriod").addEventListener("change",dailyRender);
 document.getElementById("dailyDivision").addEventListener("change",dailyRender);
 document.getElementById("dailyOpenSources").addEventListener("click",()=>view("data"));
@@ -616,7 +698,8 @@ dailyRender();
 let doCustomerSnapshots=[];
 const do$=id=>document.getElementById(id);
 const doFmt=n=>n===null||n===undefined?"—":new Intl.NumberFormat("id-ID",{maximumFractionDigits:2}).format(n);
-const doSnapshot=()=>doCustomerSnapshots.filter(x=>x.period===do$("doPeriod").value).sort((a,b)=>String(b.version).localeCompare(String(a.version)))[0]||null;
+const doSnapshot=()=>doCustomerSnapshots.filter(x=>x.period===do$("doPeriod").value).sort(ppicLatest)[0]||null;
+const doIsSample=x=>["SAMPEL","SAMPLE"].includes(String(x.kind||"").toUpperCase());
 function doOptionList(id,values){
  const select=do$(id),old=select.value;
  select.replaceChildren(new Option(id==="doCustomer"?"Semua customer":id==="doBrand"?"Semua merek":id==="doHje"?"Semua HJE":"Semua SKU",""));
@@ -649,11 +732,11 @@ function doAggregate(rows){
  for(const x of rows){
   if(!groups.has(x.customer))groups.set(x.customer,{customer:x.customer,sj:new Set(),regular:0,sample:0,total:0,nominal:0,hje:0,missing:0,complete:true});
   const g=groups.get(x.customer);g.sj.add(x.sj);g.total+=x.pack;
-  if(x.kind==="SAMPEL")g.sample+=x.pack;else g.regular+=x.pack;
+  if(doIsSample(x))g.sample+=x.pack;else g.regular+=x.pack;
   if(x.nominal!==null&&x.nominal!==undefined)g.nominal+=Number(x.nominal);
-  else if(x.kind!=="SAMPEL")g.complete=false;
+  else if(!doIsSample(x))g.complete=false;
   const h=doHjeAmount(x);if(h!==null)g.hje+=h;
-  if(x.price===null&&x.kind!=="SAMPEL")g.missing+=x.pack;
+  if(!ppicFinite(x.price)&&!doIsSample(x))g.missing+=x.pack;
  }
  return [...groups.values()].sort((a,b)=>b.total-a.total);
 }
@@ -663,10 +746,10 @@ function doAggregateSJ(rows){
   const key=String(x.sj);
   if(!groups.has(key))groups.set(key,{sj:x.sj,date:x.date,customer:x.customer,regular:0,sample:0,total:0,nominal:0,hje:0,missing:0});
   const g=groups.get(key);g.total+=x.pack;
-  if(x.kind==="SAMPEL")g.sample+=x.pack;else g.regular+=x.pack;
+  if(doIsSample(x))g.sample+=x.pack;else g.regular+=x.pack;
   if(x.nominal!==null&&x.nominal!==undefined)g.nominal+=Number(x.nominal);
   const h=doHjeAmount(x);if(h!==null)g.hje+=h;
-  if(x.price===null&&x.kind!=="SAMPEL")g.missing+=x.pack;
+  if(!ppicFinite(x.price)&&!doIsSample(x))g.missing+=x.pack;
  }
  return [...groups.values()].sort((a,b)=>Number(a.sj)-Number(b.sj));
 }
@@ -682,13 +765,13 @@ function doRender(){
  if(!snap){do$("doStatus").textContent="Belum tersedia data DO untuk periode ini. Tidak ada nominal yang direka.";return}
  const missing=groups.reduce((sum,g)=>sum+g.missing,0);
  const nominal=groups.reduce((sum,g)=>sum+g.nominal,0);
- const confirmed=rows.filter(x=>x.basis==="KONFIRMASI USER V11").length;
- do$("doStatus").textContent=[snap.version,"cut-off "+snap.cutoff,snap.status,rows.length+" baris",bySJ.length+" SJ",groups.length+" customer",doFmt(missing)+" pack tanpa harga kerja",confirmed+" baris konfirmasi harga V11"].join(" · ");
- const nominalLabel=missing?"Nominal DO kerja parsial":"Nominal DO harga kerja";
+ const confirmed=rows.filter(x=>String(x.basis||"").startsWith("KONFIRMASI USER")).length;
+ do$("doStatus").textContent=[snap.version,"cut-off "+snap.cutoff,snap.status,rows.length+" baris",bySJ.length+" SJ",groups.length+" customer",doFmt(missing)+" pack tanpa harga kerja",confirmed+" baris konfirmasi harga"].join(" · ")+". "+ppicWaiting(snap);
+ const nominalLabel=missing?"Nominal DO kerja parsial":"Nominal DO harga kerja",hasNominal=rows.some(x=>ppicFinite(x.nominal));
  for(const [title,value] of [
   ["Customer",groups.length],["Surat Jalan",bySJ.length],
   ["Total pack",doFmt(rows.reduce((a,x)=>a+x.pack,0))],
-  [nominalLabel,"Rp "+doFmt(nominal)],
+  [nominalLabel,hasNominal?"Rp "+doFmt(nominal):"BELUM ADA HARGA / NILAI"],
   ["Reguler tanpa harga",doFmt(missing)+" pack"]]){
   const box=document.createElement("article");box.className="panel metric";
   const small=document.createElement("div");small.className="muted";small.textContent=title;
@@ -703,182 +786,199 @@ function doRender(){
  if(groups.length){
   const take=groups.slice(0,8);
   charts.append(drawAnalyticsGraph("Pengiriman per customer (pack)",take.map(g=>g.customer),take.map(g=>g.total),"DO "+snap.version+" · "+snap.cutoff+" · "+snap.status));
-  charts.append(drawAnalyticsGraph("Nominal DO kerja per customer (Rp)",take.map(g=>g.customer),take.map(g=>g.nominal),"Harga jual kerja "+snap.version+" · bukan piutang"));
+  const valued=take.filter(g=>g.regular===0||g.missing<g.regular);if(valued.length)charts.append(drawAnalyticsGraph("Nominal DO kerja per customer (Rp)",valued.map(g=>g.customer),valued.map(g=>g.nominal),"Harga jual kerja "+snap.version+" · nilai parsial bila harga belum lengkap · bukan piutang"));
  }
 }
-window.ppicSetDoCustomers=rows=>{doCustomerSnapshots=Array.isArray(rows)?rows:[];doRebuildFilters();doRender()};
+window.ppicSetDoCustomers=rows=>{doCustomerSnapshots=Array.isArray(rows)?rows:[];ppicTrackSources("DO",doCustomerSnapshots);doRebuildFilters();doRender()};
 do$("doPeriod").addEventListener("change",()=>{doRebuildFilters();doRender()});
 for(const id of ["doCustomer","doBrand","doHje","doSku","doSj"])do$(id).addEventListener("input",doRender);
 do$("doReset").addEventListener("click",()=>{for(const id of ["doCustomer","doBrand","doHje","doSku","doSj"])do$(id).value="";doRender()});
 do$("doPrint").addEventListener("click",()=>{
- const snap=doSnapshot(),rows=doFiltered();if(!snap||!rows.length)return;
+ const snap=doSnapshot(),rows=doFiltered();if(!snap||!rows.length||do$("ppicMain").hidden)return;
  const esc=x=>String(x??"").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;");
  const table=(head,data)=>'<table><thead><tr>'+head.map(x=>'<th>'+esc(x)+'</th>').join("")+'</tr></thead><tbody>'+data.map(row=>'<tr>'+row.map(v=>'<td>'+esc(v===null||v===undefined?"—":typeof v==="number"?doFmt(v):v)+'</td>').join("")+'</tr>').join("")+'</tbody></table>';
  const groups=doAggregate(rows),sjGroups=doAggregateSJ(rows),missing=groups.reduce((a,g)=>a+g.missing,0);
- const nominal=groups.reduce((a,g)=>a+g.nominal,0),sample=rows.filter(x=>x.kind==="SAMPEL").reduce((a,x)=>a+x.pack,0);
+ const nominal=groups.reduce((a,g)=>a+g.nominal,0),sample=rows.filter(x=>doIsSample(x)).reduce((a,x)=>a+x.pack,0);
  const summary=table(["Customer","SJ","Reguler (pack)","Sampel (pack)","Total (pack)","Nilai DO (Rp)","Pack tanpa harga"],groups.map(g=>[g.customer,g.sj.size,g.regular,g.sample,g.total,doSummaryNominal(g),g.missing]));
  const sj=table(["SJ","Tanggal","Customer","Reguler (pack)","Sampel (pack)","Total (pack)","Nilai DO (Rp)","Pack tanpa harga"],sjGroups.map(g=>[g.sj,g.date,g.customer,g.regular,g.sample,g.total,doSummaryNominal(g),g.missing]));
  const detail=table(["SJ","Tanggal","Customer","Tujuan","Area","SKU","Merek","Jenis","Pack","Harga jual (Rp/pack)","Nilai DO (Rp)","Dasar harga"],rows.slice().sort((a,b)=>a.date.localeCompare(b.date)||a.sj-b.sj).map(x=>[x.sj,x.date,x.customer,x.destination,x.area,x.sku,x.brand,x.kind,x.pack,x.price,x.nominal,x.basis]));
- const html='<!doctype html><html lang="id"><head><meta charset="utf-8"><title>BAL PPIC DO '+esc(snap.version)+'</title><style>@page{size:A4 landscape;margin:9mm}body{font:9px/1.45 Arial;color:#173145}h1{font-size:17px}h2{font-size:12px;margin:15px 0 6px}table{border-collapse:collapse;width:100%;margin-bottom:14px;table-layout:auto}th,td{border:1px solid #b5cbd6;padding:4px;overflow-wrap:anywhere}th{background:#dceef3}tr{break-inside:avoid}thead{display:table-header-group}.kpi{border:1px solid #aac9d8;padding:10px;background:#eff7fb;line-height:1.7}.warning{border-left:3px solid #bd934c;padding:8px;background:#fff8ea}</style></head><body><h1>PR. BANYU ANYAR LESTARI · DO & CUSTOMER — NILAI DO</h1><p>Periode '+esc(snap.period)+' · cut-off '+esc(snap.cutoff)+' · '+esc(snap.version)+' · '+esc(snap.status)+' · harga kerja dari jurnal, histori, dan konfirmasi Owner.</p><p class="kpi"><strong>TOTAL NILAI DO: Rp '+esc(doFmt(nominal))+'</strong> · Total pack: '+esc(doFmt(rows.reduce((a,x)=>a+x.pack,0)))+' · Reguler tanpa harga kerja: '+esc(doFmt(missing))+' pack · '+esc(doFmt(sjGroups.length))+' SJ / '+esc(doFmt(rows.length))+' baris.</p><p class="warning">Nominal merupakan nilai DO berdasarkan harga jual per pack, bukan kas masuk atau piutang final. '+esc(doFmt(sample))+' pack sampel memiliki nominal penjualan kerja Rp0 sesuai sumber. Seluruh harga masih perlu dicocokkan dengan invoice sebelum closing.</p><h2>1. Resume Nilai DO per Customer</h2>'+summary+'<h2>2. Rekap Nilai DO per Surat Jalan</h2>'+sj+'<h2>3. Rincian per SKU, Merek, Harga dan Nilai DO</h2>'+detail+'<p>Dasar harga tercantum per baris. Transaksi tanpa harga tetap ditandai belum ada harga, bukan dianggap nominal nol. Validasi SJ322 dan alokasi SJ328 masih OPEN RECON.</p></body></html>';
+ const html='<!doctype html><html lang="id"><head><meta charset="utf-8"><title>BAL PPIC DO '+esc(snap.version)+'</title><style>@page{size:A4 landscape;margin:9mm}body{font:9px/1.45 Arial;color:#173145}h1{font-size:17px}h2{font-size:12px;margin:15px 0 6px}table{border-collapse:collapse;width:100%;margin-bottom:14px;table-layout:auto}th,td{border:1px solid #b5cbd6;padding:4px;overflow-wrap:anywhere}th{background:#dceef3}tr{break-inside:avoid}thead{display:table-header-group}.kpi{border:1px solid #aac9d8;padding:10px;background:#eff7fb;line-height:1.7}.warning{border-left:3px solid #bd934c;padding:8px;background:#fff8ea}</style></head><body><h1>PR. BANYU ANYAR LESTARI · DO & CUSTOMER — NILAI DO</h1><p>Periode '+esc(snap.period)+' · cut-off '+esc(snap.cutoff)+' · '+esc(snap.version)+' · '+esc(snap.status)+' · harga kerja dari jurnal, histori, dan konfirmasi Owner.</p><p>'+esc(ppicWaiting(snap))+'</p><p class="kpi"><strong>TOTAL NILAI DO: Rp '+esc(doFmt(nominal))+'</strong> · Total pack: '+esc(doFmt(rows.reduce((a,x)=>a+x.pack,0)))+' · Reguler tanpa harga kerja: '+esc(doFmt(missing))+' pack · '+esc(doFmt(sjGroups.length))+' SJ / '+esc(doFmt(rows.length))+' baris.</p><p class="warning">Nominal merupakan nilai DO berdasarkan harga jual per pack, bukan kas masuk atau piutang final. '+esc(doFmt(sample))+' pack sampel memiliki nominal penjualan kerja Rp0 sesuai sumber. Seluruh harga masih perlu dicocokkan dengan invoice sebelum closing.</p><h2>1. Resume Nilai DO per Customer</h2>'+summary+'<h2>2. Rekap Nilai DO per Surat Jalan</h2>'+sj+'<h2>3. Rincian per SKU, Merek, Harga dan Nilai DO</h2>'+detail+'<p>Dasar harga tercantum per baris. Transaksi tanpa harga tetap ditandai belum ada harga, bukan dianggap nominal nol. Validasi SJ322 dan alokasi SJ328 masih OPEN RECON.</p></body></html>';
  do$("previewFrame").srcdoc=balBrandPrint(html);do$("previewModal").hidden=false;do$("closePreview").focus();
 });
 doRender();
 
 
-let matSnapshots=[];
+let matSnapshots=[],matData=null,matGeneration=0;
 const matEl=id=>document.getElementById(id);
-const matFmt=x=>x===null||x===undefined?"—":new Intl.NumberFormat("id-ID",{maximumFractionDigits:2}).format(x);
-const matSnap=()=>matSnapshots.filter(x=>x.period===matEl("matPeriod").value).sort((a,b)=>String(b.version).localeCompare(String(a.version)))[0]||null;
+const matFmt=x=>!ppicFinite(x)?"—":new Intl.NumberFormat("id-ID",{maximumFractionDigits:2}).format(x);
+const matSnap=()=>matSnapshots.filter(x=>x.period===matEl("matPeriod").value).sort(ppicLatest)[0]||null;
 async function matDecode(snap){
- if(!snap||!snap.payload||snap.payload.codec!=="zlib-base64")return null;
- const binary=atob(snap.payload.data),bytes=Uint8Array.from(binary,c=>c.charCodeAt(0));
- const stream=new Blob([bytes]).stream().pipeThrough(new DecompressionStream("deflate"));
- return JSON.parse(await new Response(stream).text());
+ if(!snap?.payload||snap.payload.codec!=="zlib-base64")return null;
+ const bytes=Uint8Array.from(atob(snap.payload.data),c=>c.charCodeAt(0));
+ return JSON.parse(await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream("deflate"))).text());
 }
-let matData=null;
+async function matReload(){
+ const generation=++matGeneration,snap=matSnap();matData=null;matFill();matRender();
+ if(!snap)return;
+ try{const decoded=await matDecode(snap);if(generation!==matGeneration)return;matData=decoded;matFill();matRender()}
+ catch(e){if(generation===matGeneration)matEl("matStatus").textContent="Data bahan baku tidak dapat dibaca: "+e.message}
+}
 window.ppicSetMaterials=async rows=>{
- matSnapshots=Array.isArray(rows)?rows:[];
- matData=null;const snap=matSnap();
- try{matData=await matDecode(snap)}catch(e){matEl("matStatus").textContent="Data bahan baku tidak dapat didekode: "+e.message}
- matFill();matRender();
+ matSnapshots=Array.isArray(rows)?rows:[];ppicTrackSources("BAHAN BAKU",matSnapshots);await matReload();
 };
 function matFill(){
- const select=matEl("matSelect"),current=select.value;select.replaceChildren(new Option("Semua bahan (64)",""));
+ const select=matEl("matSelect"),current=select.value;select.replaceChildren(new Option("Pilih bahan",""));
  for(const m of matData?.m||[])select.add(new Option(m[0]+" · "+m[1],m[0]));
- select.value=(matData?.m||[]).some(m=>m[0]===current)?current:"";
+ select.value=(matData?.m||[]).some(m=>m[0]===current)?current:matData?.m?.[0]?.[0]||"";
+ const all=matEl("matPrintScope").querySelector('option[value="all"]');if(all)all.textContent="Seluruh "+(matData?.m?.length||0)+" bahan";
 }
 function matLedger(m){
- const [code,name,unit,opening,price]=m,events=new Map();
- for(const e of matData.e||[])if(e[0]===code){const prev=events.get(e[1])||[0,0];events.set(e[1],[prev[0]+e[2],prev[1]+e[3]])}
- let qty=Number(opening),rows=[];
- for(let d=1;d<=30;d++){
-  if(d>16){rows.push({d,values:[null,null,null,null,null,null,null,null],status:"BELUM ADA DATA"});continue}
-  const [qin,qout]=events.get(d)||[0,0],before=qty;qty+=qin-qout;
-  rows.push({d,values:[before,qin,qout,qty,price===null?null:before*price,price===null?null:qin*price,price===null?null:qout*price,price===null?null:qty*price],status:qin||qout?"OPEN RECON":"TIDAK ADA MUTASI"});
+ const meta=ppicMeta(matSnap(),matData||{}),[code,name,unit,opening,price]=m,events=new Map(),adjustments=new Map();
+ for(const e of matData?.e||[])if(e[0]===code){const p=events.get(Number(e[1]))||[0,0];events.set(Number(e[1]),[p[0]+Number(e[2]||0),p[1]+Number(e[3]||0)])}
+ for(const a of matData?.stock_adjustments||[])if(a.code===code)adjustments.set(Number(a.day),(adjustments.get(Number(a.day))||0)+Number(a.out_qty||0)-Number(a.in_qty||0));
+ let qty=ppicFinite(opening)?opening:null;const rows=[],money=q=>ppicFinite(price)&&ppicFinite(q)?q*price:null;
+ for(let d=1;d<=meta.days;d++){
+  const date=meta.period+"-"+String(d).padStart(2,"0");
+  if(!meta.cutoff||date>meta.cutoff){rows.push({d,date,values:Array(8).fill(null),routine:null,stocktake:null,routineNom:null,stocktakeNom:null,status:"BELUM ADA DATA"});continue}
+  const [qin,qout]=events.get(d)||[0,0],stocktake=adjustments.get(d)||0,routine=qout-stocktake,before=qty;
+  if(qty!==null)qty+=qin-qout;
+  const coverage=ppicCoverage(matData,date),partial=coverage?.status==="PARTIAL",observed=!partial||!Array.isArray(coverage.codes)||coverage.codes.includes(code)||events.has(d);
+  const status=partial?(observed?"PARSIAL · MUTASI TERCATAT":"SALDO BUKU TERAKHIR · HARI BELUM LENGKAP"):qin||qout?"OPEN RECON":"TIDAK ADA MUTASI DI BUKU";
+  rows.push({d,date,values:[before,observed?qin:null,observed?qout:null,qty,money(before),observed?money(qin):null,observed?money(qout):null,money(qty)],routine:observed?routine:null,stocktake:observed?stocktake:null,routineNom:observed?money(routine):null,stocktakeNom:observed?money(stocktake):null,status});
  }
  return rows;
 }
 function matMetrics(m){
- const rows=matLedger(m).filter(r=>r.d<=16),end=rows.at(-1).values[3];
- const income=rows.reduce((s,r)=>s+r.values[1],0),use=rows.reduce((s,r)=>s+r.values[2],0);
- return {end,income,use,price:m[4],unit:m[2],opening:m[3]};
+ const meta=ppicMeta(matSnap(),matData||{}),rows=matLedger(m).filter(r=>r.date<=meta.cutoff),sum=fn=>rows.reduce((s,r)=>s+(fn(r)||0),0);
+ return {end:rows.at(-1)?.values[3]??null,income:sum(r=>r.values[1]),use:sum(r=>r.routine),stocktake:sum(r=>r.stocktake),totalOut:sum(r=>r.values[2]),price:m[4],unit:m[2],opening:m[3]};
 }
+function matCapacityText(m,k){
+ if(m[0]!=="A-01")return "Kapasitas karton belum dihitung: koefisien BOM bahan ke SKU belum terverifikasi.";
+ if(!ppicFinite(k.end)||k.end<0)return "Kapasitas simulasi A-01 belum dihitung: saldo buku tidak tersedia atau negatif.";
+ return "SIMULASI A-01: "+matFmt(Math.floor(k.end/12))+" pack / "+matFmt(k.end/12000)+" karton ekuivalen ("+matFmt(Math.floor(k.end/12000))+" karton penuh + "+matFmt(Math.floor(k.end/12)%1000)+" pack). Asumsi 12 pcs/pack dan 1.000 pack/karton; BOM belum disahkan, bukan kapasitas final pabrik.";
+}
+const matHeads=["Tanggal","Awal Qty","Masuk Qty","Keluar rutin Qty","Opname Qty","Akhir Qty","Awal Rp","Masuk Rp","Keluar rutin Rp","Opname Rp","Akhir Rp","Status"];
+const matRowValues=r=>[r.date,r.values[0],r.values[1],r.routine,r.stocktake,r.values[3],r.values[4],r.values[5],r.routineNom,r.stocktakeNom,r.values[7],r.status];
 function matRender(){
  const summary=matEl("matSummary"),table=matEl("matRows"),chart=matEl("matChart");summary.replaceChildren();table.replaceChildren();chart.replaceChildren();
- const m=(matData?.m||[]).find(m=>m[0]===matEl("matSelect").value)||matData?.m?.[0];
- matEl("matPrint").disabled=!m;
+ const m=(matData?.m||[]).find(x=>x[0]===matEl("matSelect").value),snap=matSnap();matEl("matPrint").disabled=!m;
  if(!m){matEl("matStatus").textContent="Data per nama bahan belum tersedia untuk periode ini.";matEl("matCapacity").textContent="";return}
- const k=matMetrics(m),rows=matLedger(m);
- matEl("matStatus").textContent=m[0]+" · "+m[1]+" · "+m[2]+" · harga kerja Rp"+matFmt(k.price)+"/unit · V010 · cut-off 16 Nov 2026 · OPEN RECON";
- for(const [label,val] of [["Saldo awal",k.opening],["Pembelian",k.income],["Pemakaian",k.use],["Saldo akhir",k.end]]){
-  const card=document.createElement("article");card.className="panel metric";const l=document.createElement("div");l.className="muted";l.textContent=label;const v=document.createElement("strong");v.textContent=matFmt(val)+" "+m[2];const n=document.createElement("small");n.textContent="Rp "+matFmt(k.price===null?null:val*k.price)+" (harga kerja)";card.append(l,v,n);summary.append(card)
+ const k=matMetrics(m),rows=matLedger(m),meta=ppicMeta(snap,matData),coverage=ppicCoverage(matData,meta.cutoff),priceText=ppicFinite(k.price)?"harga acuan Rp "+matFmt(k.price)+"/"+m[2]:"HARGA BELUM TERSEDIA";
+ const count=(matData.m||[]).filter(x=>ppicFinite(x[4])).length;
+ matEl("matStatus").textContent=m[0]+" · "+m[1]+" · "+m[2]+" · "+priceText+" · "+meta.version+" · data sampai "+ppicDateLabel(meta.cutoff)+" · "+meta.status+". Harga tersedia "+count+"/"+matData.m.length+" bahan; nominal acuan parsial. "+(coverage?.note||"")+" "+ppicWaiting(snap,matData);
+ for(const [label,val]of [["Saldo awal buku",k.opening],["Penerimaan",k.income],["Keluar rutin",k.use],["Penyesuaian opname",k.stocktake],["Saldo akhir buku",k.end]]){
+  const card=document.createElement("article");card.className="panel metric";
+  const l=document.createElement("div");l.className="muted";l.textContent=label;const v=document.createElement("strong");v.textContent=matFmt(val)+" "+m[2];
+  const n=document.createElement("small");n.textContent=ppicFinite(k.price)&&ppicFinite(val)?"Rp "+matFmt(val*k.price)+" (harga acuan)":"Nominal belum dapat dinilai: harga kosong.";card.append(l,v,n);summary.append(card);
  }
- const add=(values)=>{const tr=document.createElement("tr");for(const v of values){const td=document.createElement("td");td.textContent=typeof v==="number"?matFmt(v):v===null?"—":String(v);tr.append(td)}table.append(tr)};
- for(const row of rows)add([String(row.d).padStart(2,"0")+"/11/2026",...row.values,row.status]);
- const g=dailyChartSvg(rows.map(r=>({date:"2026-11-"+String(r.d).padStart(2,"0"),status:r.status==="BELUM ADA DATA"?"BELUM ADA DATA":"OPEN RECON",qty1:r.values[3]})),"qty1","Saldo akhir harian · "+m[1]);if(g)chart.append(g);
- matEl("matCapacity").textContent=m[0]==="A-01"?"Kapasitas simulasi A-01: "+matFmt(Math.floor(k.end/12))+" pack / "+matFmt(Math.floor(k.end/12000))+" karton (12 pcs/pack, 1.000 pack/karton; bukan kapasitas final pabrik).":"Kapasitas karton belum dapat dihitung: koefisien BOM bahan→SKU belum terverifikasi. Jangan menganggap saldo sebagai kapasitas produksi.";
+ for(const row of rows){const tr=document.createElement("tr");if(row.status==="BELUM ADA DATA")tr.className="pending";for(const v of matRowValues(row)){const td=document.createElement("td");td.textContent=typeof v==="number"?matFmt(v):v===null?"—":String(v);tr.append(td)}table.append(tr)}
+ const g=dailyChartSvg(rows.map(r=>({date:r.date,status:r.status,qty1:r.values[3]})),"qty1","Saldo buku harian · "+m[1]);if(g)chart.append(g);
+ matEl("matCapacity").textContent=matCapacityText(m,k)+" Penerimaan dihitung satu kali; PO dan pembayaran tidak menambah stok. Kuantitas berbeda satuan tidak dijumlahkan.";
 }
-matEl("matPeriod").addEventListener("change",async()=>{matData=await matDecode(matSnap());matFill();matRender()});
-matEl("matSelect").addEventListener("change",matRender);
-matEl("matSource").addEventListener("click",()=>view("data"));
-matEl("reportMaterialPDF").addEventListener("click",()=>view("materials"));
+matEl("matPeriod").addEventListener("change",matReload);matEl("matSelect").addEventListener("change",matRender);
+matEl("matSource").addEventListener("click",()=>view("data"));matEl("reportMaterialPDF").addEventListener("click",()=>view("materials"));
 matEl("matPrint").addEventListener("click",()=>{
- if(!matData)return;
- const esc=x=>String(x??"").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;");
- const selected=matEl("matPrintScope").value==="all"?matData.m:matData.m.filter(m=>m[0]===(matEl("matSelect").value||matData.m[0][0]));
+ if(!matData||matEl("ppicMain").hidden)return;
+ const snap=matSnap(),meta=ppicMeta(snap,matData),esc=x=>String(x??"").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;");
+ const selected=matEl("matPrintScope").value==="all"?matData.m:matData.m.filter(m=>m[0]===matEl("matSelect").value);
  const pages=selected.map((m,i)=>{
-  const k=matMetrics(m),rows=matLedger(m),head=["Tgl","Awal qty","Masuk qty","Pakai qty","Akhir qty","Awal Rp","Masuk Rp","Pakai Rp","Akhir Rp","Status"];
-  const body=rows.map(r=>'<tr>'+[String(r.d).padStart(2,"0"),...r.values,r.status].map(x=>'<td>'+esc(typeof x==="number"?matFmt(x):x===null?"—":x)+'</td>').join("")+'</tr>').join("");
-  const vals=rows.filter(r=>r.d<=16).map(r=>r.values[3]),min=Math.min(...vals),max=Math.max(...vals),span=Math.max(1,max-min);
-  const pts=vals.map((v,j)=>(15+j*43)+","+(75-(v-min)/span*54)).join(" ");
-  const graph='<svg viewBox="0 0 690 92" style="width:100%;height:58px;background:#eff7f9"><polyline points="'+pts+'" stroke="#0097a8" fill="none" stroke-width="2.5"/><text x="10" y="89" font-size="10" fill="#17465d">Saldo akhir 1–16 November · min '+matFmt(min)+' · maks '+matFmt(max)+'</text></svg>';
-  const capacity=m[0]==="A-01"?"KAPASITAS SIMULASI: "+matFmt(Math.floor(k.end/12))+" pack / "+matFmt(Math.floor(k.end/12000))+" karton (asumsi 12 pcs/pack; BOM belum disahkan)":"KAPASITAS KARTON BELUM DAPAT DIHITUNG — koefisien BOM bahan ke SKU belum terverifikasi.";
-  return '<section class="page"><h1>'+esc(m[0])+' — '+esc(m[1])+'</h1><p>Satuan: '+esc(m[2])+' · Harga kerja Rp'+matFmt(k.price)+'/unit · OPEN RECON · cut-off 16 November 2026</p><table class="kpi"><tr><th>SALDO AWAL</th><th>PEMBELIAN / MASUK</th><th>PEMAKAIAN</th><th>SALDO AKHIR</th></tr><tr>'+[k.opening,k.income,k.use,k.end].map(v=>'<td><strong>'+matFmt(v)+' '+esc(m[2])+'</strong><div>Rp '+matFmt(k.price===null?null:v*k.price)+'</div></td>').join("")+'</tr></table>'+graph+'<table class="ledger"><thead><tr>'+head.map(x=>'<th>'+x+'</th>').join("")+'</tr></thead><tbody>'+body+'</tbody></table><p class="capacity">'+esc(capacity)+'</p><footer>BAL PPIC · NOVEMBER 2026 · WORKING / OPEN RECON · '+(i+1)+' / '+selected.length+'</footer></section>';
+  const k=matMetrics(m),rows=matLedger(m),body=rows.map(r=>'<tr>'+matRowValues(r).map(x=>'<td>'+esc(typeof x==="number"?matFmt(x):x===null?"—":x)+'</td>').join("")+'</tr>').join("");
+  const actual=rows.filter(r=>r.date<=meta.cutoff&&ppicFinite(r.values[3])),values=actual.map(r=>r.values[3]),min=values.length?Math.min(...values):0,max=values.length?Math.max(...values):0,span=Math.max(1,max-min);
+  const points=values.map((v,j)=>(15+j*660/Math.max(1,values.length-1))+","+(75-(v-min)/span*54)).join(" ");
+  const graph=values.length?'<svg viewBox="0 0 690 92" style="width:100%;height:52px;background:#eff7f9"><polyline points="'+points+'" stroke="#0097a8" fill="none" stroke-width="2.5"/><text x="10" y="89" font-size="10">Saldo buku '+esc(meta.period+'-01 s.d. '+meta.cutoff)+'</text></svg>':"";
+  const price=ppicFinite(k.price)?"Rp "+matFmt(k.price)+"/"+m[2]:"BELUM ADA HARGA";
+  const cover=ppicCoverage(matData,meta.cutoff);
+  return '<section class="page"><h1>'+esc(m[0]+" — "+m[1])+'</h1><p>'+esc(meta.version+" · "+meta.status+" · data sampai "+ppicDateLabel(meta.cutoff))+" · Harga acuan "+esc(price)+'</p><p>'+esc((cover?.note||"")+" "+ppicWaiting(snap,matData))+'</p><table class="kpi"><tr>'+["AWAL BUKU","MASUK","KELUAR RUTIN","OPNAME","AKHIR BUKU"].map(h=>'<th>'+h+'</th>').join("")+'</tr><tr>'+[k.opening,k.income,k.use,k.stocktake,k.end].map(v=>'<td><strong>'+matFmt(v)+' '+esc(m[2])+'</strong><div>'+(ppicFinite(k.price)&&ppicFinite(v)?"Rp "+matFmt(v*k.price):"Belum dinilai")+'</div></td>').join("")+'</tr></table>'+graph+'<table class="ledger"><thead><tr>'+matHeads.map(h=>'<th>'+esc(h)+'</th>').join("")+'</tr></thead><tbody>'+body+'</tbody></table><p class="capacity">'+esc(matCapacityText(m,k))+'</p><p>Nominal adalah nilai acuan parsial. Harga kosong tidak dianggap nol. Opname dipisahkan dari keluar rutin. Saldo buku belum menjadi opname penutupan.</p><footer>BAL PPIC · '+esc(meta.period+" · "+meta.version)+' · '+(i+1)+' / '+selected.length+'</footer></section>';
  }).join("");
- const html='<!doctype html><html lang="id"><head><meta charset="utf-8"><title>BAL PPIC · Bahan Baku Per Bahan</title><style>@page{size:A4 landscape;margin:10mm}body{font:8px/1.3 Arial;color:#17465d}.page{break-after:page;page-break-after:always}.page:last-child{break-after:auto}h1{font-size:17px;margin:0 0 5px}p{margin:4px 0 8px}.kpi,.ledger{border-collapse:collapse;width:100%;table-layout:fixed}.kpi{margin:7px 0}.kpi th{background:#17465d;color:white;font-size:9px}.kpi td{background:#eff7f9;text-align:center;font-size:10px}.kpi td strong{font-size:12px}.ledger{font-size:7px}.ledger th{background:#17465d;color:white}.ledger th,.ledger td{border:1px solid #d5e3e9;padding:2px 3px;overflow-wrap:anywhere}.ledger tr:nth-child(even){background:#eff7f9}thead{display:table-header-group}tr{break-inside:avoid}.capacity{font-size:9px;font-weight:bold;margin-top:8px}footer{font-size:8px;border-top:1px solid #0097a8;padding-top:5px;margin-top:8px}</style></head><body>'+pages+'</body></html>';
+ const html='<!doctype html><html lang="id"><head><meta charset="utf-8"><title>BAL PPIC · Bahan Baku</title><style>@page{size:A4 landscape;margin:9mm}body{font:8px/1.3 Arial;color:#17465d}.page{break-after:page}.page:last-child{break-after:auto}h1{font-size:16px;margin:0 0 4px}p{margin:4px 0}.kpi,.ledger{border-collapse:collapse;width:100%;table-layout:fixed}.kpi{margin:5px 0}.kpi th,.ledger th{background:#17465d;color:white}.kpi td{background:#eff7f9;text-align:center}.ledger{font-size:7px}.ledger th,.ledger td{border:1px solid #d5e3e9;padding:2px;overflow-wrap:anywhere}.ledger tr:nth-child(even){background:#eff7f9}thead{display:table-header-group}tr{break-inside:avoid}.capacity{font-weight:bold}footer{border-top:1px solid #0097a8;margin-top:5px}</style></head><body>'+pages+'</body></html>';
  matEl("previewFrame").srcdoc=balBrandPrint(html);matEl("previewModal").hidden=false;matEl("closePreview").focus();
 });
 matRender();
 
 
-let fgSnapshots=[],fgData=null;
-const fgEl=id=>document.getElementById(id),fgFmt=x=>x===null||x===undefined?"—":new Intl.NumberFormat("id-ID",{maximumFractionDigits:2}).format(x);
+let fgSnapshots=[],fgData=null,fgGeneration=0,fgDateTouched=false;
+const fgEl=id=>document.getElementById(id),fgFmt=x=>!ppicFinite(x)?"—":new Intl.NumberFormat("id-ID",{maximumFractionDigits:2}).format(x);
+const fgCartonFmt=x=>!ppicFinite(x)?"—":new Intl.NumberFormat("id-ID",{maximumFractionDigits:4}).format(x);
+const fgSnap=()=>fgSnapshots.filter(x=>x.period===fgEl("fgPeriod").value).sort(ppicLatest)[0]||null;
 const fgDateDay=()=>Number(fgEl("fgDate").value.slice(-2));
-const fgCartons=(pack,packPerCarton)=>Number.isFinite(packPerCarton)&&packPerCarton>0?Math.round(pack/packPerCarton*100)/100:null;
+const fgCartons=(pack,factor)=>ppicFinite(pack)&&ppicFinite(factor)&&factor>0?pack/factor:null;
 async function fgDecode(snapshot){
  if(!snapshot?.payload||snapshot.payload.codec!=="zlib-base64")return null;
- const binary=atob(snapshot.payload.data),bytes=Uint8Array.from(binary,c=>c.charCodeAt(0));
- const stream=new Blob([bytes]).stream().pipeThrough(new DecompressionStream("deflate"));
- return JSON.parse(await new Response(stream).text());
+ const bytes=Uint8Array.from(atob(snapshot.payload.data),c=>c.charCodeAt(0));
+ return JSON.parse(await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream("deflate"))).text());
+}
+function fgFill(){
+ const select=fgEl("fgSku"),current=select.value;select.replaceChildren(new Option("Semua merek",""));
+ for(const m of fgData?.m||[])select.add(new Option(m[0]+" · "+m[1],m[0]));
+ select.value=(fgData?.m||[]).some(m=>m[0]===current)?current:"";
+ const meta=ppicMeta(fgSnap(),fgData||{}),input=fgEl("fgDate");input.min=meta.period?meta.period+"-01":"";input.max=meta.period?meta.period+"-"+String(meta.days).padStart(2,"0"):"";
+ if(meta.cutoff&&(!fgDateTouched||!ppicValidDate(input.value,meta.period)))input.value=meta.cutoff;
+}
+async function fgReload(){
+ const generation=++fgGeneration,snapshot=fgSnap();fgData=null;fgFill();fgRender();if(!snapshot)return;
+ try{const decoded=await fgDecode(snapshot);if(generation!==fgGeneration)return;fgData=decoded;fgFill();fgRender()}
+ catch(e){if(generation===fgGeneration)fgEl("fgStatus").textContent="Sumber Barang Jadi belum dapat dibaca: "+e.message}
 }
 window.ppicSetFinished=async rows=>{
- fgSnapshots=Array.isArray(rows)?rows:[];fgData=null;
- try{fgData=await fgDecode(fgSnapshots.find(x=>x.period==="2026-11"))}catch(e){fgEl("fgStatus").textContent="Sumber Barang Jadi belum dapat dibaca: "+e.message}
- const select=fgEl("fgSku");select.replaceChildren(new Option("Semua merek",""));
- for(const m of fgData?.m||[])select.add(new Option(m[0]+" · "+m[1],m[0]));
- fgRender();
+ fgSnapshots=Array.isArray(rows)?rows:[];if(!fgEl("fgPeriod").value&&fgSnapshots.length)fgEl("fgPeriod").value=fgSnapshots.slice().sort(ppicLatest)[0].period;
+ ppicTrackSources("BARANG JADI",fgSnapshots);await fgReload();
 };
 function fgLedgers(){
- if(!fgData)return [];
- const map=new Map();
- for(const m of fgData.m)map.set(m[0],{m,qty:Number(m[5]),days:[]});
- for(let day=1;day<=30;day++){
-  for(const o of map.values()){
-   if(day>fgData.cutoff){o.days.push({day,valid:false});continue}
-   const events=fgData.e.filter(x=>x[0]===day&&x[2]===o.m[0]),income=events.filter(x=>x[1]==="MASUK").reduce((a,x)=>a+x[5],0),out=events.filter(x=>x[1]==="KELUAR").reduce((a,x)=>a+x[5],0);
-   const opening=o.qty;o.qty+=income-out;
-   o.days.push({day,valid:true,opening,income,out,closing:o.qty});
-  }
+ if(!fgData)return [];const meta=ppicMeta(fgSnap(),fgData),map=new Map();
+ for(const m of fgData.m)map.set(m[0],{m,qty:ppicFinite(m[5])?m[5]:null,days:[]});
+ for(let day=1;day<=meta.days;day++)for(const o of map.values()){
+  const date=meta.period+"-"+String(day).padStart(2,"0");if(!meta.cutoff||date>meta.cutoff){o.days.push({day,date,valid:false});continue}
+  const events=fgData.e.filter(x=>Number(x[0])===day&&x[2]===o.m[0]),income=events.filter(x=>x[1]==="MASUK").reduce((a,x)=>a+Number(x[5]),0),out=events.filter(x=>x[1]==="KELUAR").reduce((a,x)=>a+Number(x[5]),0),opening=o.qty;
+  if(o.qty!==null)o.qty+=income-out;o.days.push({day,date,valid:true,opening,income,out,closing:o.qty});
  }
  return [...map.values()];
 }
 function fgSelected(ledger){return ledger.filter(o=>!fgEl("fgSku").value||o.m[0]===fgEl("fgSku").value)}
+function fgTotal(ledger,day,key,mode="pack"){
+ let total=0;for(const o of ledger){const row=o.days[day-1],qty=row?.[key];if(!row?.valid||!ppicFinite(qty))return null;
+  if(mode==="pack"){total+=qty;continue}const factor=o.m[mode==="carton"?2:3];
+  if(!ppicFinite(factor)||mode==="carton"&&factor<=0){if(qty!==0)return null;continue}
+  total+=mode==="carton"?qty/factor:qty*factor;
+ }return total;
+}
 function fgRender(){
- const body=fgEl("fgBalances"),txn=fgEl("fgTransactions"),daily=fgEl("fgDaily"),metrics=fgEl("fgMetrics"),charts=fgEl("fgCharts");
- for(const x of [body,txn,daily,metrics,charts])x.replaceChildren();
- fgEl("fgPrint").disabled=!fgData;
- if(!fgData){fgEl("fgStatus").textContent="Snapshot Barang Jadi belum tersedia.";return}
- const day=fgDateDay(),valid=day<=fgData.cutoff,ledger=fgSelected(fgLedgers());
- fgEl("fgStatus").textContent="V012 · 2026-11-"+String(day).padStart(2,"0")+" · "+(valid?"OPEN RECON":"BELUM ADA DATA SETELAH CUT-OFF 17 NOV")+" · Sumber: Buku Rijal";
- const add=(target,values)=>{const tr=document.createElement("tr");for(const x of values){const td=document.createElement("td");td.textContent=typeof x==="number"?fgFmt(x):x===null?"—":String(x);tr.append(td)}target.append(tr)};
- let total=0,totalRp=0,hasUnknown=false;
+ const body=fgEl("fgBalances"),txn=fgEl("fgTransactions"),daily=fgEl("fgDaily"),metrics=fgEl("fgMetrics"),charts=fgEl("fgCharts");for(const x of [body,txn,daily,metrics,charts])x.replaceChildren();
+ const snap=fgSnap(),meta=ppicMeta(snap,fgData||{}),date=fgEl("fgDate").value,dateValid=ppicValidDate(date,meta.period);fgEl("fgPrint").disabled=!fgData||!dateValid;
+ if(!fgData){fgEl("fgStatus").textContent="Snapshot Barang Jadi belum tersedia untuk periode ini.";return}
+ if(!dateValid){fgEl("fgStatus").textContent="Pilih tanggal saldo yang valid dalam periode laporan.";return}
+ const day=fgDateDay(),valid=date<=meta.cutoff,ledger=fgSelected(fgLedgers());
+ fgEl("fgStatus").textContent=meta.version+" · data sampai "+ppicDateLabel(meta.cutoff)+" · saldo dipilih "+ppicDateLabel(date)+" · "+(valid?meta.status:"BELUM ADA DATA")+" · "+fgData.m.length+" SKU. "+(fgData.valuation||"Biaya historis/proksi sesuai sumber; bukan harga jual.")+" "+ppicWaiting(snap,fgData);
+ const add=(target,values)=>{const tr=document.createElement("tr");for(const x of values){const td=document.createElement("td");td.textContent=typeof x==="number"?fgFmt(x):x===null||x===undefined?"—":String(x);tr.append(td)}target.append(tr)};
  if(valid)for(const o of ledger){
-  const d=o.days[day-1],m=o.m,price=m[3],cart=m[2],full=cart?Math.trunc(d.closing/cart):null,rest=cart?d.closing-full*cart:null;
-  total+=d.closing;if(price===null&&d.closing!==0)hasUnknown=true;else if(price!==null)totalRp+=d.closing*price;
-  add(body,[m[0],m[1],d.opening,d.income,d.out,d.closing,cart,fgCartons(d.closing,cart),full,rest,price===null?(d.closing===0?0:null):d.closing*price,d.closing<0?"SALDO NEGATIF / REKONSILIASI":"OPEN RECON"]);
+  const d=o.days[day-1],m=o.m,price=m[3],cart=m[2],canSplit=ppicFinite(d.closing)&&d.closing>=0&&ppicFinite(cart)&&cart>0,full=canSplit?Math.floor(d.closing/cart):null,rest=canSplit?d.closing-full*cart:null;
+  const value=ppicFinite(price)&&ppicFinite(d.closing)?d.closing*price:d.closing===0?0:null;
+  const notes=[d.closing<0?"SALDO NEGATIF / REKONSILIASI":meta.status,!ppicFinite(cart)||cart<=0?"KONVERSI BELUM ADA":"",!ppicFinite(price)?"BIAYA BELUM ADA":""].filter(Boolean).join(" · ");
+  add(body,[m[0],m[1],d.opening,d.income,d.out,d.closing,cart,fgCartonFmt(fgCartons(d.closing,cart)),full,rest,value,notes]);
  }
  const chosen=fgEl("fgSku").value;
- if(valid)for(const e of fgData.e.filter(e=>e[0]===day&&(!chosen||e[2]===chosen))){
-  const m=fgData.m.find(m=>m[0]===e[2]);add(txn,["2026-11-"+String(day).padStart(2,"0"),e[1],e[2],m?.[1]||"—",e[3]??null,e[4]??null,e[5],fgCartons(e[5],m?.[2])])
- }
- for(let i=1;i<=30;i++){
-  if(i>fgData.cutoff){add(daily,["2026-11-"+String(i).padStart(2,"0"),null,null,null,null,null,null,null,null,null,null,null,null,"BELUM ADA DATA"]);continue}
-  const all=ledger.map(o=>({m:o.m,d:o.days[i-1]})),sum=key=>all.reduce((a,o)=>a+o.d[key],0);
-  const cartons=key=>all.some(o=>!Number.isFinite(o.m[2])&&o.d[key]!==0)?null:Math.round(all.reduce((a,o)=>a+(o.m[2]?o.d[key]/o.m[2]:0),0)*100)/100;
-  const nominal=key=>all.some(o=>o.m[3]===null&&o.d[key]!==0)?null:all.reduce((a,o)=>a+o.d[key]*(o.m[3]??0),0);
-  add(daily,["2026-11-"+String(i).padStart(2,"0"),sum("opening"),sum("income"),sum("out"),sum("closing"),cartons("opening"),cartons("income"),cartons("out"),cartons("closing"),nominal("opening"),nominal("income"),nominal("out"),nominal("closing"),"OPEN RECON"]);
+ if(valid)for(const e of fgData.e.filter(e=>Number(e[0])===day&&(!chosen||e[2]===chosen))){const m=fgData.m.find(m=>m[0]===e[2]);add(txn,[date,e[1],e[2],m?.[1]||"—",e[3]??null,e[4]??null,e[5],fgCartonFmt(fgCartons(e[5],m?.[2]))])}
+ for(let i=1;i<=meta.days;i++){
+  const at=meta.period+"-"+String(i).padStart(2,"0");if(!meta.cutoff||at>meta.cutoff){add(daily,[at,...Array(12).fill(null),"BELUM ADA DATA"]);continue}
+  add(daily,[at,...["opening","income","out","closing"].map(k=>fgTotal(ledger,i,k)),...["opening","income","out","closing"].map(k=>fgCartonFmt(fgTotal(ledger,i,k,"carton"))),...["opening","income","out","closing"].map(k=>fgTotal(ledger,i,k,"money")),meta.status]);
  }
  if(valid){
-  for(const [label,value] of [["Saldo akhir",fgFmt(total)+" pack"],["Saldo ekuivalen karton",fgFmt(ledger.reduce((a,o)=>a+(fgCartons(o.days[day-1].closing,o.m[2])??0),0))+" karton (campuran)"],["Nominal proksi",hasUnknown?"Belum lengkap":"Rp "+fgFmt(totalRp)],["SKU ditampilkan",ledger.length],["Saldo negatif",ledger.filter(o=>o.days[day-1].closing<0).length]]){
-   const card=document.createElement("article");card.className="panel metric";const a=document.createElement("div");a.className="muted";a.textContent=label;const b=document.createElement("strong");b.textContent=String(value);card.append(a,b);metrics.append(card)
+  const total=fgTotal(ledger,day,"closing"),cartons=fgTotal(ledger,day,"closing","carton"),nominal=fgTotal(ledger,day,"closing","money"),negative=ledger.filter(o=>o.days[day-1].closing<0);
+  for(const [label,value]of [["Saldo akhir buku",fgFmt(total)+" pack"],["Karton ekuivalen buku",cartons===null?"Belum lengkap":fgCartonFmt(cartons)+" karton campuran"],["Nilai historis/proksi",nominal===null?"Belum lengkap: ada biaya kosong":"Rp "+fgFmt(nominal)],["SKU ditampilkan",ledger.length],["Saldo negatif",negative.length+" SKU / "+fgFmt(negative.reduce((s,o)=>s-o.days[day-1].closing,0))+" pack"]]){
+   const card=document.createElement("article");card.className="panel metric";const l=document.createElement("div");l.className="muted";l.textContent=label;const v=document.createElement("strong");v.textContent=String(value);card.append(l,v);metrics.append(card);
   }
  }
- const values=ledger.map(o=>o.days.filter(d=>d.valid).map(d=>d.closing)),dates=Array.from({length:fgData.cutoff},(_,i)=>({date:"2026-11-"+String(i+1).padStart(2,"0"),status:"OPEN RECON",qty1:values.reduce((a,x)=>a+x[i],0)}));
- const graph=dailyChartSvg(dates,"qty1","Saldo akhir harian · "+(chosen||"Semua SKU"));if(graph)charts.append(graph);
+ const dates=Array.from({length:meta.day},(_,i)=>({date:meta.period+"-"+String(i+1).padStart(2,"0"),status:meta.status,qty1:fgTotal(ledger,i+1,"closing")}));const graph=dailyChartSvg(dates,"qty1","Saldo buku harian · "+(chosen||"Semua SKU"));if(graph)charts.append(graph);
 }
-fgEl("fgDate").addEventListener("change",fgRender);
-fgEl("fgSku").addEventListener("change",fgRender);
-fgEl("fgSources").addEventListener("click",()=>view("data"));
-fgEl("reportFinishedPDF").addEventListener("click",()=>view("finished"));
+fgEl("fgDate").addEventListener("change",()=>{fgDateTouched=true;fgRender()});fgEl("fgPeriod").addEventListener("change",()=>{fgDateTouched=false;fgReload()});fgEl("fgSku").addEventListener("change",fgRender);
+fgEl("fgSources").addEventListener("click",()=>view("data"));fgEl("reportFinishedPDF").addEventListener("click",()=>view("finished"));
 fgEl("fgPrint").addEventListener("click",()=>{
- if(!fgData)return;
+ const snap=fgSnap(),meta=ppicMeta(snap,fgData||{}),day=fgEl("fgDate").value;if(!fgData||fgEl("ppicMain").hidden||!ppicValidDate(day,meta.period))return;
  const esc=x=>String(x??"").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;");
- const cols=(selector)=>[...document.querySelector(selector).closest("table").querySelectorAll("thead th")].map(x=>x.textContent);
- const body=(selector)=>[...document.querySelector(selector).querySelectorAll("tr")].map(tr=>[...tr.cells].map(c=>c.textContent));
+ const cols=selector=>[...document.querySelector(selector).closest("table").querySelectorAll("thead th")].map(x=>x.textContent),body=selector=>[...document.querySelector(selector).querySelectorAll("tr")].map(tr=>[...tr.cells].map(c=>c.textContent));
  const tbl=(head,rows)=>'<table><thead><tr>'+head.map(x=>'<th>'+esc(x)+'</th>').join("")+'</tr></thead><tbody>'+rows.map(r=>'<tr>'+r.map(x=>'<td>'+esc(x)+'</td>').join("")+'</tr>').join("")+'</tbody></table>';
- const day=fgEl("fgDate").value,monthly=fgEl("fgPrintMode").value==="month";
- const cartonNote="Karton ekuivalen = pack / isi pack per karton per SKU. Isi 12 = 1.000 pack/karton; isi 16 = 800 pack/karton. Total campuran hanya ekuivalen, bukan karton fisik yang dapat digabungkan. Saldo negatif tetap terlihat.";
- const html='<!doctype html><html lang="id"><head><meta charset="utf-8"><title>BAL PPIC Barang Jadi</title><style>@page{size:A4 landscape;margin:9mm}body{font:8px/1.4 Arial;color:#173c50}h1{font-size:17px}h2{font-size:11px}table{border-collapse:collapse;width:100%;margin-bottom:12px}th,td{border:1px solid #c5d8e2;padding:4px;overflow-wrap:anywhere}th{background:#17465d;color:white}thead{display:table-header-group}tr{break-inside:avoid}p{margin:5px 0}</style></head><body><h1>PR. BANYU ANYAR LESTARI · BARANG JADI</h1><p>Saldo per '+esc(day)+' · '+(monthly?"Laporan harian November":"Snapshot saldo tanggal")+' · V012 · OPEN RECON · biaya normalisasi Oktober/proksi, bukan HPP aktual November</p><h2>Saldo per SKU</h2>'+tbl(cols("#fgBalances"),body("#fgBalances"))+'<h2>Mutasi / Surat Jalan tanggal terpilih</h2>'+tbl(cols("#fgTransactions"),body("#fgTransactions"))+(monthly?'<h2>Saldo harian 1–30 November</h2>'+tbl(cols("#fgDaily"),body("#fgDaily")):"")+'<p>'+esc(cartonNote)+'</p><p>Saldo negatif ditampilkan apa adanya; setelah cut-off 17 November belum ada data. Nominal tidak boleh diperlakukan sebagai harga jual.</p></body></html>';
+ const monthly=fgEl("fgPrintMode").value==="month",notice=day>meta.cutoff?"Tanggal saldo terpilih BELUM ADA DATA. Saldo akhir tidak diisi dengan saldo tanggal sebelumnya.":"Saldo buku sesuai tanggal terpilih; belum merupakan opname fisik penutupan.";
+ const cartonNote="Karton ekuivalen = pack / isi pack per karton per SKU, memakai faktor sumber. Isi 12 = 1.000 dan isi 16 = 800 pack/karton; jenis lain mengikuti faktor terverifikasi. Total campuran hanya ekuivalen. Saldo negatif tetap terlihat; karton penuh dan sisa pack tidak dihitung untuk saldo negatif. Faktor kosong tidak dianggap nol.";
+ const html='<!doctype html><html lang="id"><head><meta charset="utf-8"><title>BAL PPIC Barang Jadi '+esc(meta.version)+'</title><style>@page{size:A4 landscape;margin:9mm}body{font:8px/1.4 Arial;color:#173c50}h1{font-size:17px}h2{font-size:11px}table{border-collapse:collapse;width:100%;margin-bottom:12px}th,td{border:1px solid #c5d8e2;padding:4px;overflow-wrap:anywhere}th{background:#17465d;color:white}thead{display:table-header-group}tr{break-inside:avoid}p{margin:5px 0}</style></head><body><h1>PR. BANYU ANYAR LESTARI · BARANG JADI</h1><p>'+esc(meta.version+" · "+meta.status+" · data sampai "+ppicDateLabel(meta.cutoff)+" · saldo dipilih "+ppicDateLabel(day))+'</p><p>'+esc(fgData.valuation||"Nilai historis/proksi sesuai sumber, bukan harga jual atau HPP aktual.")+'</p><p>'+esc(notice+" "+ppicWaiting(snap,fgData))+'</p><h2>Saldo per SKU</h2>'+tbl(cols("#fgBalances"),body("#fgBalances"))+'<h2>Mutasi / Surat Jalan tanggal terpilih</h2>'+tbl(cols("#fgTransactions"),body("#fgTransactions"))+(monthly?'<h2>Saldo harian '+esc(meta.period)+'</h2>'+tbl(cols("#fgDaily"),body("#fgDaily")):"")+'<p>'+esc(cartonNote)+'</p><p>Biaya yang belum tersedia tetap kosong. Nilai persediaan terpisah dari nominal penjualan DO.</p></body></html>';
  fgEl("previewFrame").srcdoc=balBrandPrint(html);fgEl("previewModal").hidden=false;fgEl("closePreview").focus();
 });
 fgRender();
@@ -1041,7 +1141,7 @@ exRender();
 
 
 const sdmEl=id=>document.getElementById(id),sdmFmt=n=>new Intl.NumberFormat("id-ID",{maximumFractionDigits:2}).format(n);
-let sdmSnapshots=[],sdmData=null,sdmDecodeError="",sdmAutoAttempted=false,sdmAutoKey="";
+let sdmSnapshots=[],sdmData=null,sdmDecodeError="",sdmAutoAttempted=false,sdmAutoKey="",sdmGeneration=0;
 function sdmHasLegacyNames(){
  return !!sdmData?.w?.some(w=>typeof w?.[2]==="string"&&w[2].includes("[object Object]"));
 }
@@ -1092,9 +1192,12 @@ async function sdmDecode(s){
  return JSON.parse(await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream("deflate"))).text());
 }
 window.ppicSetSDM=async snaps=>{
- sdmSnapshots=Array.isArray(snaps)?snaps:[];sdmData=null;sdmDecodeError="";
- try{sdmData=await sdmDecode(sdmSnapshots.find(s=>s.period==="2026-11"))}
- catch(e){sdmDecodeError="Sumber SDM tidak dapat dibaca: "+(e?.message||String(e))}
+ const generation=++sdmGeneration;sdmSnapshots=Array.isArray(snaps)?snaps:[];sdmData=null;sdmDecodeError="";
+ ppicTrackSources("SDM",sdmSnapshots);sdmFill();sdmRender();
+ const snapshot=sdmSnapshots.filter(s=>s.period==="2026-11").sort(ppicLatest)[0];
+ if(!snapshot){queueMicrotask(sdmMaybeAutoBuild);return}
+ try{const decoded=await sdmDecode(snapshot);if(generation!==sdmGeneration)return;sdmData=decoded}
+ catch(e){if(generation!==sdmGeneration)return;sdmDecodeError="Sumber SDM tidak dapat dibaca: "+(e?.message||String(e))}
  sdmFill();sdmRender();
  if(!sdmData||sdmHasLegacyNames()||sdmSourceDrift())queueMicrotask(sdmMaybeAutoBuild);
 };
@@ -1326,29 +1429,44 @@ $("pdfFile").addEventListener("change",async()=>{
 $("csv").addEventListener("click",()=>{const rows=[["No","Laporan","Ruang Lingkup","Sumber"],...catalog.map((r,i)=>[i+1,...r])];const s="\uFEFF"+rows.map(r=>r.map(x=>'"'+String(x).replaceAll('"','""')+'"').join(",")).join("\r\n");const u=URL.createObjectURL(new Blob([s],{type:"text/csv;charset=utf-8"}));const a=document.createElement("a");a.href=u;a.download="BAL_PPIC_KATALOG_LAPORAN.csv";a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)});
 </script><script src="auth.js" defer></script><script>
 (()=>{
- const form=document.getElementById("ppicUploadForm"),status=document.getElementById("uploadStatus"),button=document.getElementById("uploadSubmit");
- const fileInput=document.getElementById("uploadFile");
- form.addEventListener("submit",async(event)=>{
-  event.preventDefault();const file=fileInput.files?.[0];
-  if(!file){status.textContent="Pilih file Excel terlebih dahulu.";return}
-  if(!/\.xlsx$/i.test(file.name)||file.size>10*1024*1024||file.size<100){status.textContent="File harus .xlsx dan maksimum 10 MB.";return}
-  const division=document.getElementById("uploadDivision").value,period=document.getElementById("uploadPeriod").value,cutoff=document.getElementById("uploadCutoff").value,version=document.getElementById("uploadVersion").value.toUpperCase();
-  if(!division||!period||!cutoff.startsWith(period)||!/^V[0-9]{3,}$/.test(version)){status.textContent="Periksa divisi, periode, tanggal cut-off dan versi V001.";return}
-  if(typeof window.ppicUploadPrivate!=="function"){status.textContent="Silakan login ulang sebagai Owner.";return}
-  button.disabled=true;status.textContent="Mengunggah file ke penyimpanan privat…";
-  try{
-   const result=await window.ppicUploadPrivate({file,division,period,cutoff,version});
-   status.textContent="Berhasil disimpan privat: "+result.document_id+". Status OPEN RECON. Data belum diposting ke laporan.";
-   fileInput.value="";
-  }catch(error){status.textContent="Upload belum berhasil: "+String(error.message||error)}
-  finally{button.disabled=false}
+ const form=document.getElementById("ppicUploadForm"),status=document.getElementById("uploadStatus"),button=document.getElementById("uploadSubmit"),fileInput=document.getElementById("uploadFile"),hint=document.getElementById("uploadMetaHint");
+ const field=id=>document.getElementById(id),today=ppicToday();field("uploadPeriod").value=today.slice(0,7);field("uploadCutoff").value="";field("uploadVersion").value="";
+ hint.textContent="Tanggal hari ini "+ppicDateLabel(today)+". Isi cut-off berdasarkan data di file; tanggal upload tidak menjadi cut-off otomatis.";
+ let inferred={};
+ fileInput.addEventListener("change",()=>{
+  const file=fileInput.files?.[0];inferred={};if(!file)return;
+  inferred=ppicInferUpload(file.name);
+  for(const [key,id]of [["division","uploadDivision"],["period","uploadPeriod"],["cutoff","uploadCutoff"],["version","uploadVersion"]]){
+   if(inferred[key])field(id).value=inferred[key];else if(key==="cutoff"||key==="version")field(id).value="";
+  }
+  ppicUpdateUploadHint();
+  hint.textContent=Object.keys(inferred).length?"Saran metadata dari nama file: "+Object.entries(inferred).map(([k,v])=>k+" "+v).join(" · ")+". Cocokkan dengan petunjuk di dalam Excel; nama file tidak memverifikasi isi transaksi.":"Nama file belum memuat metadata lengkap. Isi divisi, periode, cut-off data dan versi sesuai isi Excel.";
+  status.textContent="File dipilih: "+file.name+". Periksa metadata sebelum upload.";
  });
- document.getElementById("uploadRefresh").addEventListener("click",async()=>{
-  status.textContent="Memuat daftar dokumen…";
-  try{await window.ppicRefreshPrivateDocs();status.textContent="Daftar Bank Data diperbarui."}
-  catch(error){status.textContent="Tidak dapat memuat daftar: "+String(error.message||error)}
+ field("uploadVersion").addEventListener("change",()=>{const v=field("uploadVersion").value.trim().toUpperCase();field("uploadVersion").value=/^V\d{1,9}$/.test(v)?"V"+v.slice(1).padStart(3,"0"):v});
+ form.addEventListener("submit",async event=>{
+  event.preventDefault();const file=fileInput.files?.[0];if(!file){status.textContent="Pilih file Excel terlebih dahulu.";return}
+  if(!/\.xlsx$/i.test(file.name)||file.size>10*1024*1024||file.size<100){status.textContent="File harus .xlsx dan maksimum 10 MB.";return}
+  const division=field("uploadDivision").value,period=field("uploadPeriod").value,cutoff=field("uploadCutoff").value,version=field("uploadVersion").value.trim().toUpperCase();
+  if(!division||!/^\d{4}-(0[1-9]|1[0-2])$/.test(period)||!ppicValidDate(cutoff,period)||!/^V[0-9]{3,}$/.test(version)){status.textContent="Isi divisi, periode, cut-off data yang valid dan versi seperti V001. Cut-off mengikuti isi file.";return}
+  const actual={division,period,cutoff,version},mismatch=Object.keys(inferred).filter(k=>inferred[k]!==actual[k]);
+  if(mismatch.length){status.textContent="Metadata form berbeda dari nama file ("+mismatch.join(", ")+"). Cocokkan file, tanggal data dan versinya sebelum upload.";return}
+  if(typeof window.ppicUploadPrivate!=="function"){status.textContent="Silakan login ulang sebagai Owner.";return}
+  button.disabled=true;status.textContent="Memeriksa file dan mengunggah ke penyimpanan privat…";
+  try{
+   const bytes=new Uint8Array(await file.slice(0,4).arrayBuffer());if(bytes[0]!==0x50||bytes[1]!==0x4b||bytes[2]!==0x03||bytes[3]!==0x04)throw Error("File tidak memiliki format XLSX yang valid.");
+   const result=await window.ppicUploadPrivate({file,division,period,cutoff,version});
+   status.textContent="Berhasil disimpan privat: "+result.document_id+" · "+version+" · data sampai "+ppicDateLabel(cutoff)+". Status OPEN RECON. Arsip belum otomatis menjadi laporan aktif.";
+   fileInput.value="";inferred={};
+  }catch(error){status.textContent="Upload belum berhasil: "+String(error.message||error)}finally{button.disabled=false}
+ });
+ field("uploadRefresh").addEventListener("click",async()=>{
+  status.textContent="Memuat Bank Data dan laporan aktif…";
+  try{const refresh=window.ppicRefreshPrivateData||window.ppicRefreshPrivateDocs;if(typeof refresh!=="function")throw Error("Login Owner diperlukan.");await refresh();status.textContent="Bank Data dan laporan aktif telah dimuat ulang. Arsip yang belum diproses tetap berstatus arsip."}
+  catch(error){status.textContent="Tidak dapat memuat ulang: "+String(error.message||error)}
  });
 })();
+
 </script><script>
 (()=>{
  const panel=document.getElementById("installPanel"),button=document.getElementById("installPpic"),help=document.getElementById("installHelp");
@@ -1368,3 +1486,4 @@ $("csv").addEventListener("click",()=>{const rows=[["No","Laporan","Ruang Lingku
  if("serviceWorker" in navigator&&location.protocol==="https:")window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{help.textContent="Instalasi otomatis belum tersedia; gunakan menu Chrome ⋮."}));
 })();
 </script></body></html>
+
