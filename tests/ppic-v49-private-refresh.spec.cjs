@@ -57,3 +57,24 @@ test('partial refresh failure stays visible and logout prevents further private 
  expect(loggedOut).toContain('Sesi Owner berakhir');
  expect(JSON.stringify(state.hits)).toBe(before);
 });
+
+test('DO PDF keeps unknown nominal distinct from an explicit zero-price sample',async({page})=>{
+ await setup(page);
+ const snapshot={period:'2026-11',version:'V014',cutoff:'2026-11-18',status:'OPEN RECON',rows:[
+  {sj:990,date:'2026-11-18',customer:'CUSTOMER UJI',destination:'TUJUAN UJI',area:'AREA UJI',sku:'UJI-KOSONG',brand:'MEREK UJI',kind:'REGULER',pack:3,price:null,nominal:null,basis:'BELUM TERSEDIA'}
+ ]};
+ await page.evaluate(s=>window.ppicSetDoCustomers([s]),snapshot);
+ if(await page.locator('#ppicDivisionsList').isHidden())await page.locator('#ppicDivisionsToggle').click();
+ await page.locator('[data-view="customers"]').click();
+ await page.locator('#doPrint').click();
+ let html=await page.locator('#previewFrame').getAttribute('srcdoc');
+ expect(html).toContain('TOTAL NILAI DO: BELUM ADA HARGA / NILAI');
+ expect(html).not.toContain('TOTAL NILAI DO: Rp 0');
+ await page.locator('#closePreview').click();
+ snapshot.rows[0]={...snapshot.rows[0],kind:'SAMPLE',price:0,nominal:0,basis:'SAMPEL'};
+ await page.evaluate(s=>window.ppicSetDoCustomers([s]),snapshot);
+ await page.locator('#doPrint').click();
+ html=await page.locator('#previewFrame').getAttribute('srcdoc');
+ expect(html).toContain('TOTAL NILAI DO: Rp 0');
+ expect(html).toContain('3 pack sampel');
+});
