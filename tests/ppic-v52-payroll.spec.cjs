@@ -47,8 +47,12 @@ test('invalid date range disables payroll output without changing data',async({p
 });
 test('synthetic PDF and screenshot evidence retain complete slip cards and page footers',async({page},testInfo)=>{
  const dense=JSON.parse(JSON.stringify(compact));
+ dense.s=['NORMAL · VERPACK','NOL TERCATAT · ABSENSI BELUM VERIFIKASI','FOTO METOK · VERPACK'];
+ dense.r=dense.r.map(r=>r[3]===0?[...r.slice(0,5),1]:r);
  for(let i=7;i<65;i++){dense.w.push(['VERPACK','UJI'+i,i%3===0?'PEKERJA UJI NAMA PANJANG UNTUK PEMBUNGKUSAN BARIS '+i:'PEKERJA UJI '+i]);dense.r.push([i,13,1,5,1050,0]);}
+ dense.r.push([7,17,0,300,51000,0],[7,17,1,600,126000,0],[8,18,0,220,37400,2]);
  const model=payroll.buildModel(dense,{period:'2026-11',division:'GABUNGAN',start:'2026-11-13',end:'2026-11-19'});
+ const results=[];
  for(const kind of ['slips','cash']){
   const html=payroll.renderDocument(model,{kind,logoUrl:ROOT+'bal-logo-user.webp'});
   await page.setContent(html,{waitUntil:'networkidle'});await page.emulateMedia({media:'print'});
@@ -59,7 +63,10 @@ test('synthetic PDF and screenshot evidence retain complete slip cards and page 
   const detail=kind==='slips'?page.locator('.sheet').filter({has:page.locator('.slip.large')}).first():page.locator('.sheet.landscape').filter({has:page.locator('.denoms')}).first();
   const detailPath=testInfo.outputPath('synthetic-'+kind+'-detail.png');await detail.screenshot({path:detailPath});await testInfo.attach('synthetic-'+kind+'-detail-png',{path:detailPath,contentType:'image/png'});
   fs.writeFileSync(testInfo.outputPath('synthetic-'+kind+'-metrics.json'),JSON.stringify(metrics,null,2));
-  expect(metrics.filter(m=>m.height>m.maxHeight+2||m.content>m.height+2||m.children.some(c=>c.scroll>c.height+2)).slice(0,4)).toEqual([]);
-  expect((pdf.toString('latin1').match(/\/Type\s*\/Page\b/g)||[]).length).toBe(metrics.length);
+  results.push({kind,metrics,pdfPages:(pdf.toString('latin1').match(/\/Type\s*\/Page\b/g)||[]).length});
+ }
+ for(const result of results){
+  expect(result.metrics.filter(m=>m.height>m.maxHeight+2||m.content>m.height+2||m.children.some(c=>c.scroll>c.height+2)).slice(0,4),result.kind+' must fit physical A4 without clipped children').toEqual([]);
+  expect(result.pdfPages,result.kind+' actual PDF pages match printed page count').toBe(result.metrics.length);
  }
 });

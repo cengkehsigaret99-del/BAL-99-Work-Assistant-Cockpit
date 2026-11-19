@@ -56,6 +56,7 @@ test('invalid dates disable output model',()=>{
 test('unknown wage for positive production is held and stays unavailable, without holding an absent calendar day',()=>{
  const d=base();d.w=[['GILING','G990001','PEKERJA UJI']];d.r=[[0,13,0,1000,null,0]];
  const m=payroll.buildModel(d,opts);assert.equal(m.totalGross,null);assert.equal(m.staff[0].gross,null);assert.equal(m.candidates.length,0);assert.equal(m.holds.length,1);
+ assert.equal(m.staff[0].brands[0].wage,null);assert.equal(m.brandSummary[0].wage,null);
  assert.match(m.holds[0].holdReason,/belum lengkap/);
  const known=base();const k=payroll.buildModel(known,{...opts,division:'GILING'});assert.equal(k.holds.length,0);assert.equal(k.staff[0].daily.find(r=>r.date==='2026-11-15').wage,null);
  d.r=[[0,13,0,null,null,0]];assert.equal(payroll.buildModel(d,opts).staff.length,0);
@@ -70,4 +71,18 @@ test('hold retains known brand and rate on control slip without invented ID',()=
  const d=base();d.meta.payroll.holds=[{div:'VERPACK',id:null,name:'IDENTITAS UJI',date:'2026-11-18',brand:'GCC 16',qty:300,wage:63000,reason:'ID belum tersedia'}];
  const m=payroll.buildModel(d,{...opts,search:'IDENTITAS UJI'});assert.equal(m.staff[0].brands[0].brand,'GCC 16');assert.equal(m.staff[0].brands[0].rate,210);assert.equal(m.cashGross,0);
  const html=payroll.renderDocument(m,{kind:'slips',logoUrl:'logo.png'});assert.match(html,/GCC 16/);assert.doesNotMatch(html,/Belum teralokasi/);
+});
+test('Verpack slip preserves dated brand quantities, known zeros and source status',()=>{
+ const d=base();d.w=[['VERPACK','P990001','PENGEMAS UJI']];d.s=['ADMIN NORMAL','FOTO METOK'];d.r=[[0,17,0,300,51000,0],[0,17,1,600,126000,0],[0,18,1,100,21000,1]];
+ const m=payroll.buildModel(d,{...opts,division:'VERPACK'}),w=m.staff[0];
+ assert.equal(w.daily.find(d=>d.date==='2026-11-17').brandQty['GCC 99'],300);assert.equal(w.daily.find(d=>d.date==='2026-11-17').brandQty['GCC 16'],600);
+ const html=payroll.renderDocument(m,{kind:'slips',logoUrl:'logo.png'});
+ assert.match(html,/<th>GCC 99 \(pack\)<\/th>/);assert.match(html,/<th>GCC 16 \(pack\)<\/th>/);assert.match(html,/<td>300<\/td><td>600<\/td><td>900<\/td><td>177\.000<\/td><td>ADMIN NORMAL/);
+ assert.match(html,/<td>18 Nov<\/td><td>0<\/td><td>100<\/td><td>100<\/td><td>21\.000<\/td><td>FOTO METOK/);
+ assert.match(html,/<td>19 Nov<\/td><td>—<\/td><td>—<\/td><td>—<\/td><td>—<\/td><td>Belum tersedia/);
+});
+test('cash brand summary includes HOLD inside gross and keeps divisions and rate units separate',()=>{
+ const d=base();d.meta.payroll.holds=[{div:'VERPACK',id:null,name:'IDENTITAS UJI',date:'2026-11-18',brand:'GCC 16',qty:300,wage:63000,reason:'ID belum tersedia'}];
+ const m=payroll.buildModel(d,opts),v=m.brandSummary.find(b=>b.div==='VERPACK'&&b.brand==='GCC 16');assert.equal(v.qty,305);assert.equal(v.wage,64050);assert.equal(v.held,63000);assert.equal(v.rate,210);
+ const html=payroll.renderDocument(m,{kind:'cash',logoUrl:'logo.png'});assert.match(html,/HASIL DAN UPAH PER MEREK/);assert.match(html,/Bagian HOLD \(Rp\)/);assert.match(html,/<td>batang<\/td>/);assert.match(html,/<td>pack<\/td>/);
 });
