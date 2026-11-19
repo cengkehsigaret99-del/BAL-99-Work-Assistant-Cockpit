@@ -68,9 +68,9 @@ test('bonus OFF is limited to verified period and undated pending does not migra
  const tooLong=payroll.buildModel(d,{...opts,start:'2026-11-01',end:'2026-11-19'});assert.equal(tooLong.valid,false);assert.match(tooLong.invalidReason,/maksimal 7 hari/);
 });
 test('hold retains known brand and rate on control slip without invented ID',()=>{
- const d=base();d.meta.payroll.holds=[{div:'VERPACK',id:null,name:'IDENTITAS UJI',date:'2026-11-18',brand:'GCC 16',qty:300,wage:63000,reason:'ID belum tersedia'}];
+ const d=base();d.meta.payroll.holds=[{div:'VERPACK',id:null,name:'IDENTITAS UJI',date:'2026-11-18',brand:'GCC 16',qty:300,wage:63000,reason:'ID belum tersedia',source:{sheet:'INPUT DATA',row:17,note:'Foto sumber uji'}}];
  const m=payroll.buildModel(d,{...opts,search:'IDENTITAS UJI'});assert.equal(m.staff[0].brands[0].brand,'GCC 16');assert.equal(m.staff[0].brands[0].rate,210);assert.equal(m.cashGross,0);
- const html=payroll.renderDocument(m,{kind:'slips',logoUrl:'logo.png'});assert.match(html,/GCC 16/);assert.doesNotMatch(html,/Belum teralokasi/);
+ const html=payroll.renderDocument(m,{kind:'slips',logoUrl:'logo.png'});assert.match(html,/GCC 16/);assert.doesNotMatch(html,/Belum teralokasi/);assert.match(html,/Sumber: INPUT DATA · baris 17 · Foto sumber uji/);
 });
 test('Verpack slip preserves dated brand quantities, known zeros and source status',()=>{
  const d=base();d.w=[['VERPACK','P990001','PENGEMAS UJI']];d.s=['ADMIN NORMAL','FOTO METOK'];d.r=[[0,17,0,300,51000,0],[0,17,1,600,126000,0],[0,18,1,100,21000,1]];
@@ -85,4 +85,11 @@ test('cash brand summary includes HOLD inside gross and keeps divisions and rate
  const d=base();d.meta.payroll.holds=[{div:'VERPACK',id:null,name:'IDENTITAS UJI',date:'2026-11-18',brand:'GCC 16',qty:300,wage:63000,reason:'ID belum tersedia'}];
  const m=payroll.buildModel(d,opts),v=m.brandSummary.find(b=>b.div==='VERPACK'&&b.brand==='GCC 16');assert.equal(v.qty,305);assert.equal(v.wage,64050);assert.equal(v.held,63000);assert.equal(v.rate,210);
  const html=payroll.renderDocument(m,{kind:'cash',logoUrl:'logo.png'});assert.match(html,/HASIL DAN UPAH PER MEREK/);assert.match(html,/Bagian HOLD \(Rp\)/);assert.match(html,/<td>batang<\/td>/);assert.match(html,/<td>pack<\/td>/);
+});
+test('unallocated HOLD does not turn unknown brand quantities into zero or disappear from brand reconciliation',()=>{
+ const d=base();d.r.push([2,17,0,200,34000,0]);d.meta.payroll.holds=[{div:'VERPACK',id:null,name:'HOLD UJI TANPA MEREK',date:'2026-11-18',qty:300,wage:63000,reason:'Merek dan identitas perlu verifikasi'}];
+ const m=payroll.buildModel(d,opts),h=m.staff.find(w=>w.external),b=m.brandSummary.find(b=>b.brand==='BELUM TERALOKASI');
+ assert.equal(h.daily.find(d=>d.date==='2026-11-18').brandAllocationKnown,false);assert.equal(b.qty,300);assert.equal(b.wage,63000);assert.equal(b.held,63000);assert.equal(b.rate,null);
+ assert.equal(m.brandSummary.reduce((n,b)=>n+b.wage,0),m.totalGross);
+ const html=payroll.renderDocument(m,{kind:'slips',logoUrl:'logo.png'});assert.match(html,/<td>18 Nov<\/td><td>—<\/td><td>—<\/td><td>300<\/td><td>300<\/td><td>63\.000<\/td><td>HOLD identitas/);
 });

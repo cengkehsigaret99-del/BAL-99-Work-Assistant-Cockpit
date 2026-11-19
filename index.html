@@ -1430,15 +1430,16 @@ $("closePreview").addEventListener("click",closePreview);
 document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!previewModal.hidden)closePreview()});
 $("printPreview").addEventListener("click",()=>{if($("ppicMain").hidden||previewModal.hidden||!previewFrame.srcdoc)return;if(previewFrame.contentWindow)previewFrame.contentWindow.print()});
 function shareWhatsApp(){
- const report=catalog[chosen][0];
- const msg="BAL PPIC Control Tower — "+report+"\\n"+location.href.split("#")[0]+"\\nCatatan: rincian aktual belum tersedia; tautan ini membuka katalog laporan.";
+ const inPreview=!$("ppicMain").hidden&&!previewModal.hidden&&!!previewFrame.srcdoc;
+ const report=inPreview?(previewFrame.contentDocument?.title||"Pratinjau laporan"):catalog[chosen][0];
+ const msg="BAL PPIC Control Tower — "+report+"\n"+location.href.split("#")[0]+"\nTautan membuka Web PPIC. Laporan privat memerlukan login Owner; file PDF dilampirkan terpisah.";
  const url="https://wa.me/?text="+encodeURIComponent(msg);
  window.open(url,"_blank","noopener,noreferrer");
  $("shareStatus").textContent="WhatsApp dibuka untuk berbagi tautan katalog. File PDF belum dilampirkan.";
 }
 $("wa").addEventListener("click",shareWhatsApp);
 $("sharePreview").addEventListener("click",shareWhatsApp);
-$("sharePdf").addEventListener("click",()=>{if(!selectedSnapshot())return;
+$("sharePdf").addEventListener("click",()=>{if($("ppicMain").hidden||previewModal.hidden||!previewFrame.srcdoc)return;
  $("shareStatus").textContent="Simpan PDF melalui tombol Cetak / Simpan PDF, lalu pilih file tersebut untuk dibagikan.";
  $("pdfFile").click();
 });
@@ -1452,7 +1453,7 @@ $("pdfFile").addEventListener("change",async()=>{
  $("pdfFile").value="";return;
  }
  try{
-   await navigator.share({files:[file],title:"BAL PPIC — "+catalog[chosen][0],text:"Dokumen laporan BAL PPIC. Pastikan penerima berwenang."});
+   await navigator.share({files:[file],title:previewFrame.contentDocument?.title||"BAL PPIC — "+catalog[chosen][0],text:"Dokumen laporan BAL PPIC. Pastikan penerima berwenang."});
    $("shareStatus").textContent="Dialog berbagi telah ditutup. Periksa WhatsApp untuk memastikan file terkirim.";
  }catch(e){
    $("shareStatus").textContent=e&&e.name==="AbortError"?"Berbagi dibatalkan.":"Berbagi gagal. Lampirkan PDF melalui WhatsApp secara manual.";

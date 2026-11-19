@@ -45,6 +45,13 @@ test('mobile controls and slip preview fit viewport; print uses intact 4-card sh
 test('invalid date range disables payroll output without changing data',async({page})=>{
  await enter(page);await page.locator('#sdmStart').fill('2026-11-20');await expect(page.locator('#payrollSlips')).toBeDisabled();await expect(page.locator('#payrollCash')).toBeDisabled();await expect(page.locator('#payrollState')).toContainText('Periksa rentang');
 });
+test('saved payroll PDF can be selected for sharing without a catalog report',async({page})=>{
+ await enter(page);await expect(page.locator('#payrollSlips')).toBeEnabled();await page.locator('#payrollSlips').click();
+ const [chooser]=await Promise.all([page.waitForEvent('filechooser'),page.locator('#sharePdf').click()]);
+ expect(chooser.isMultiple()).toBe(false);
+ await expect(page.locator('#shareStatus')).toContainText('Simpan PDF melalui tombol Cetak / Simpan PDF');
+ await page.locator('#closePreview').click();
+});
 test('synthetic PDF and screenshot evidence retain complete slip cards and page footers',async({page},testInfo)=>{
  const dense=JSON.parse(JSON.stringify(compact));
  dense.s=['NORMAL · VERPACK','NOL TERCATAT · ABSENSI BELUM VERIFIKASI','FOTO METOK · VERPACK'];
