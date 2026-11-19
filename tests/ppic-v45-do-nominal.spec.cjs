@@ -28,16 +28,16 @@ async function enter(page,snaps=[makeSnap('V011',base),makeSnap('V010',base)]){
  await expect(page.locator('#doDetails tr')).toHaveCount(snaps.at(0)?.rows?.length||0);
  return errs;
 }
-test('latest priced V011 shows distinct DO nominal and HJE values',async({page})=>{
+test('latest priced V011 shows DO nominal without HJE money comparison',async({page})=>{
  const errs=await enter(page);
  await expect(page.locator('#doStatus')).toContainText('V011');
  await expect(page.locator('#doStatus')).toContainText('0 pack tanpa harga kerja');
  await expect(page.locator('#doMetrics')).toContainText('Rp 275.000');
- await expect(page.locator('#doMetrics')).toContainText('Rp 472.375');
+ await expect(page.locator('#doMetrics')).not.toContainText('Rp 472.375');
  await expect(page.locator('#doSummary tr')).toHaveCount(2);
  await expect(page.locator('#doSJSummary tr')).toHaveCount(2);
  await expect(page.locator('#doSummary tr').first().locator('td').nth(5)).toHaveText('233.000');
- await expect(page.locator('#doDetails tr').first().locator('td').nth(12)).toHaveText('103.250');
+ await expect(page.locator('#doDetails tr').first().locator('td').nth(12)).toHaveText('KONFIRMASI USER V11');
  await expect(page.locator('#doCharts svg')).toHaveCount(2);
  expect(errs).toEqual([]);
 });
@@ -45,7 +45,8 @@ test('PDF includes nominal per customer and SJ; filters and sample Rp0 are retai
  await enter(page);
  await page.locator('#doPrint').click();
  const src=await page.locator('#previewFrame').getAttribute('srcdoc');
- for(const x of ['Nominal DO harga kerja: Rp 275.000','Nilai HJE pembanding: Rp 472.375','Rekap per Surat Jalan','Nominal DO (Rp)','Harga kerja','KONFIRMASI USER V11','SAMPEL'])expect(src).toContain(x);
+ for(const x of ['TOTAL NILAI DO: Rp 275.000','Rekap Nilai DO per Surat Jalan','Nilai DO (Rp)','Harga jual','KONFIRMASI USER V11','SAMPEL'])expect(src).toContain(x);
+ expect(src).not.toContain('Nilai HJE');expect(src).not.toContain('472.375');
  await page.locator('#closePreview').click();
  await page.locator('#doCustomer').selectOption('PELANGGAN UJI B');
  await expect(page.locator('#doSummary tr')).toHaveCount(1);
@@ -61,7 +62,7 @@ test('old incomplete price snapshots remain partial and do not create imaginary 
  await expect(page.locator('#doMetrics')).toContainText('Nominal DO kerja parsial');
  await expect(page.locator('#doMetrics')).toContainText('Rp 210.000');
  await expect(page.locator('#doDetails tr').first().locator('td').nth(11)).toHaveText('—');
- await expect(page.locator('#doDetails tr').first().locator('td').nth(12)).toHaveText('103.250');
+ await expect(page.locator('#doDetails tr').first().locator('td').nth(12)).toHaveText('BELUM ADA HARGA');
 });
 test('logout and missing period clear nominal from DOM and close PDF',async({page})=>{
  await enter(page);
