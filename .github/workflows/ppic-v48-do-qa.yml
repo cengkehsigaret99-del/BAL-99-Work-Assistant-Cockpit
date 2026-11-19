@@ -1,0 +1,37 @@
+name: BAL PPIC V4.8 DO Harga & PDF Nilai DO QA
+on:
+  push:
+    branches: [feat/ppic-do-cb77-price-only-v48, main]
+    paths: ['index.html','auth.js','tests/ppic-v48-do-value-only.spec.cjs','tests/ppic-v45-do-nominal.spec.cjs','.github/workflows/ppic-v48-do-qa.yml']
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - name: Validate JavaScript and static structure
+        run: |
+          node - <<'JS'
+          const fs=require('fs'),vm=require('vm');
+          const html=fs.readFileSync('index.html','utf8');
+          for(const m of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g))if(!/\bsrc=/.test(m[1]))new vm.Script(m[2]);
+          new vm.Script(fs.readFileSync('auth.js','utf8'));
+          for(const f of ['tests/ppic-v48-do-value-only.spec.cjs','tests/ppic-v45-do-nominal.spec.cjs','tests/ppic-v31-customer.spec.cjs'])new vm.Script(fs.readFileSync(f,'utf8'));
+          if(!html.includes('id="doPrint"'))throw Error('DO print button missing');
+          if(!html.includes('id="doSJSummary"'))throw Error('DO SJ summary missing');
+          JS
+      - name: Install synthetic browser QA
+        run: |
+          npm install --no-save @playwright/test@1.62.1
+          npx playwright install --with-deps chromium
+      - name: Start test web
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/ppic-v48.log 2>&1 &
+          for i in $(seq 1 20); do curl -fsS http://127.0.0.1:8765/ >/dev/null && exit 0; sleep 1; done
+          exit 1
+      - name: Validate DO snapshot, no HJE money in PDF, filters and logout
+        run: npx playwright test tests/ppic-v48-do-value-only.spec.cjs tests/ppic-v45-do-nominal.spec.cjs tests/ppic-v31-customer.spec.cjs --browser=chromium --workers=1 --reporter=list
