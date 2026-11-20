@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {buildModel} from '../ppic-stage2-ui.js';
+import stage2 from '../ppic-stage2-ui.js';
+const {buildModel}=stage2;
 const period='2026-11';
 const base=()=>({ok:true,period,ready:true,latest:{
  id:'11111111-1111-4111-8111-111111111111',status:'BLOCKED',created_at:'2026-11-21T01:05:00Z',
