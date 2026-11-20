@@ -219,7 +219,7 @@ table th{color:#b9d9ee}table tbody tr:hover{background:#8bc9ff0a}
 #ppicMain #infoPaper{max-width:800px;margin:20px auto 0}
 #ppicMain #infoPaper canvas{display:block;width:100%;height:auto;border-radius:8px;background:#fff}
 @media(max-width:650px){#ppicMain .info-controls label{width:100%}#ppicMain .info-controls .btn{flex:1 1 140px}}
-</style><link rel="stylesheet" href="payroll.css"><link rel="stylesheet" href="sync.css"><link rel="stylesheet" href="robot.css"><link rel="stylesheet" href="ppic-qa.css"></head><body><section class="owner-login" id="ownerLogin"><div class="owner-card"><div class="bal-login-brand"><img src="bal-logo-user.webp" alt="Logo tiga cengkeh dan gelombang air Banyu Anyar Lestari"><span>PR. Banyu Anyar Lestari<br>Owner Control Tower</span></div><div class="eyebrow">PR. BANYU ANYAR LESTARI</div><h1>PPIC Control Tower</h1><p class="muted">Akses privat khusus Owner. Masuk menggunakan akun Supabase Auth yang terverifikasi.</p><form id="loginForm"><label for="ownerEmail">Email Owner</label><input id="ownerEmail" type="email" autocomplete="username" value="cengkehsigaret99@gmail.com" required><label for="ownerPassword">Kata sandi</label><input id="ownerPassword" type="password" autocomplete="current-password" required><button class="btn primary" id="loginButton" type="submit">Masuk sebagai Owner</button></form><p id="loginStatus" role="status" aria-live="polite"></p><p class="muted">Tidak ada pendaftaran akun baru. Jangan bagikan kata sandi atau kode OTP.</p><p class="muted" id="ppicRelease">Versi web 6.0 · pembaruan 21 November 2026</p></div></section><main id="ppicMain" data-current-view="dashboard" hidden>
+</style><link rel="stylesheet" href="payroll.css"><link rel="stylesheet" href="sync.css"><link rel="stylesheet" href="robot.css"><link rel="stylesheet" href="ppic-qa.css"><link rel="stylesheet" href="ppic-stage2.css"></head><body><section class="owner-login" id="ownerLogin"><div class="owner-card"><div class="bal-login-brand"><img src="bal-logo-user.webp" alt="Logo tiga cengkeh dan gelombang air Banyu Anyar Lestari"><span>PR. Banyu Anyar Lestari<br>Owner Control Tower</span></div><div class="eyebrow">PR. BANYU ANYAR LESTARI</div><h1>PPIC Control Tower</h1><p class="muted">Akses privat khusus Owner. Masuk menggunakan akun Supabase Auth yang terverifikasi.</p><form id="loginForm"><label for="ownerEmail">Email Owner</label><input id="ownerEmail" type="email" autocomplete="username" value="cengkehsigaret99@gmail.com" required><label for="ownerPassword">Kata sandi</label><input id="ownerPassword" type="password" autocomplete="current-password" required><button class="btn primary" id="loginButton" type="submit">Masuk sebagai Owner</button></form><p id="loginStatus" role="status" aria-live="polite"></p><p class="muted">Tidak ada pendaftaran akun baru. Jangan bagikan kata sandi atau kode OTP.</p><p class="muted" id="ppicRelease">Versi web 6.0 · pembaruan 21 November 2026</p></div></section><main id="ppicMain" data-current-view="dashboard" hidden>
 <a class="ppic-skip-link no-print" href="#ppicContext">Lewati menu</a>
 <header class="ppic-app-header">
  <div class="ppic-identity"><img class="bal-brand-mark" src="bal-logo-user.webp" alt="Logo Banyu Anyar Lestari"><div><div class="eyebrow">PR. BANYU ANYAR LESTARI</div><div class="ppic-brand-title">PPIC CONTROL TOWER</div><div class="ppic-brand-subtitle">Versi web 6.0 · Robot Manajer · Data privat</div></div></div>
@@ -264,6 +264,20 @@ table th{color:#b9d9ee}table tbody tr:hover{background:#8bc9ff0a}
   </form>
   <details class="robot-details" open><summary>Jawaban dan histori pertanyaan</summary><div id="ppicAskHistory" class="ppic-qa-history"></div></details>
   <p class="ppic-qa-muted">Perintah dari web tidak langsung memposting stok, melakukan pembayaran, mengesahkan payroll, atau mengubah closing. Sinkron data mengikuti validasi sumber dan jejak audit. Pencarian lintas ChatGPT terbatas pada sumber yang dapat diakses melalui tugas terhubung, bukan seluruh isi akun.</p>
+ </section>
+
+ <section class="ppic-stage2" id="ppicStage2Panel" aria-labelledby="ppicStage2Title">
+  <div class="ppic-s2-head">
+   <div><div class="eyebrow">TAHAP 2 · SUMBER TERVALIDASI</div><h3 id="ppicStage2Title">Rekonsiliasi Otomatis</h3><p>Perbandingan buku dan kesenjangan laporan, tanpa perubahan transaksi.</p></div>
+   <div class="robot-tools"><span class="ppic-s2-badge" id="ppicStage2Badge">Belum diperiksa</span><button type="button" class="btn" id="ppicStage2Refresh" disabled>Periksa lagi</button></div>
+  </div>
+  <p id="ppicStage2Time" class="ppic-s2-muted">Belum ada snapshot yang dimuat.</p>
+  <p id="ppicStage2Message" class="ppic-s2-message" role="status" aria-live="polite">Login sebagai Owner untuk membaca rekonsiliasi privat.</p>
+  <div id="ppicStage2Metrics" class="ppic-s2-metrics"></div>
+  <details class="ppic-s2-panel" open><summary>Hasil pemeriksaan antardivisi</summary><div id="ppicStage2Checks" class="ppic-s2-grid"></div></details>
+  <details class="ppic-s2-panel"><summary>Masalah &amp; data yang perlu direkonsiliasi</summary><div id="ppicStage2Warnings" class="ppic-s2-grid"></div></details>
+  <details class="ppic-s2-panel"><summary>Versi dan cut-off sumber dibanding laporan aktif</summary><div id="ppicStage2Coverage"></div></details>
+  <p class="ppic-s2-footer">Hasil ini merupakan snapshot analitik terpisah dan tidak menggantikan laporan kerja/stock opname/closing. “Cocok” hanya menunjukkan kesesuaian rumus buku yang diperiksa, bukan stok fisik siap kirim. Pembaruan snapshot mengikuti siklus robot setelah bukti sumber berubah; tombol Periksa lagi hanya membaca hasil tersimpan.</p>
  </section>
  <div id="robotBriefContent" hidden>
   <section class="robot-brief-intro"><h3 id="robotHeadline"></h3><p id="robotSummary"></p><p class="robot-freshness" id="robotFreshness"></p></section>
@@ -1515,7 +1529,7 @@ $("pdfFile").addEventListener("change",async()=>{
 });
 $("csv").addEventListener("click",()=>{const rows=[["No","Laporan","Ruang Lingkup","Sumber"],...catalog.map((r,i)=>[i+1,...r])];const s="\uFEFF"+rows.map(r=>r.map(x=>'"'+String(x).replaceAll('"','""')+'"').join(",")).join("\r\n");const u=URL.createObjectURL(new Blob([s],{type:"text/csv;charset=utf-8"}));const a=document.createElement("a");a.href=u;a.download="BAL_PPIC_KATALOG_LAPORAN.csv";a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)});
 </script><script src="daily-info-data.js"></script><script src="daily-info.js"></script><script src="daily-info-ui.js"></script><script src="payroll.js"></script><script src="payroll-ui.js"></script><script src="sync-ui.js"></script>
-<script src="robot-ui.js"></script><script src="ppic-qa-ui.js"></script><script src="auth.js" defer></script><script>
+<script src="robot-ui.js"></script><script src="ppic-qa-ui.js"></script><script src="ppic-stage2-ui.js"></script><script src="auth.js" defer></script><script>
 (()=>{
  const form=document.getElementById("ppicUploadForm"),status=document.getElementById("uploadStatus"),button=document.getElementById("uploadSubmit"),fileInput=document.getElementById("uploadFile"),hint=document.getElementById("uploadMetaHint");
  const field=id=>document.getElementById(id),today=ppicToday();field("uploadPeriod").value=today.slice(0,7);field("uploadCutoff").value="";field("uploadVersion").value="";
