@@ -16,7 +16,7 @@ const card={id:'supply_check',rank:1,priority:'P1',kind:'OWNER_DECISION',title:'
 const fixture=()=>({ok:true,ready:true,period,latest:{
  id:snapshot,schema_version:'ppic-stage3-decision-v1',evidence_hash:'a'.repeat(64),evidence_current:true,briefing_id:briefing,
  analysis_as_of:'2026-11-20',created_at:'2026-11-21T02:50:00Z',source_count:10,data_blockers:1,status:'WAITING_DATA',
- decisions:[card],focus_ids:['supply_check'],risk_register:[{code:'BJ_NEGATIVE_BOOK',severity:'HIGH',division:'BARANG JADI',message:'Buku perlu diperiksa'}],
+ decisions:[structuredClone(card)],focus_ids:['supply_check'],risk_register:[{code:'BJ_NEGATIVE_BOOK',severity:'HIGH',division:'BARANG JADI',message:'Buku perlu diperiksa'}],
  coverage:[{division:'BARANG JADI',source_cutoff:'2026-11-18',report_cutoff:'2026-11-18',report_status:'OPEN RECON'}],
  raw_token:'SHOULD_NOT_LEAK',source_manifest:[{private_locator:'hidden'}]
 }});
