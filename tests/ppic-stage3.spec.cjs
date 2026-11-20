@@ -76,8 +76,8 @@ test('Old evidence is visibly stale and no operational execution button is rende
  const audit=await login(page,{fresh:false});
  await expect(page.locator('#ppicStage3Badge')).toHaveText('Sumber berubah');
  await expect(page.locator('#ppicStage3Message')).toContainText('hanya untuk histori');
- await expect(page.locator('#ppicStage3Panel button')).not.toContainText('Bayar');
- await expect(page.locator('#ppicStage3Panel button')).not.toContainText('Posting');
+ await expect(page.locator('#ppicStage3Panel')).not.toContainText('Bayar');
+ await expect(page.locator('#ppicStage3Panel')).not.toContainText('Posting');
  expect(audit.submits).toBe(0);
  expect(audit.errors).toEqual([]);
 });
