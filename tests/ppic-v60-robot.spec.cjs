@@ -20,6 +20,7 @@ async function enter(page,{handler=async p=>({status:200,body:status(p.period)})
  await page.goto(ROOT);await expect(page.locator('#ppicMain')).toBeHidden();await page.locator('#ownerPassword').fill('SYNTHETIC_PASSWORD');await page.locator('#loginButton').click();await expect(page.locator('#ppicMain')).toBeVisible();
  return {errors,requests};
 }
+// Owner may ask GPT; the Robot panel must still exclude operational posting forms and approval buttons.
 test('Owner opens manager first with top3 proposals, confidence and inspectable provenance',async({page})=>{
  const state=await enter(page);
  await expect(page.locator('#dashboard')).toBeVisible();await expect(page.locator('[data-view="dashboard"]')).toHaveText('Robot Manajer');await expect(page.locator('#robotTopDecisions>.robot-decision')).toHaveCount(3);await expect(page.locator('#robotOtherDecisions')).toBeHidden();
@@ -27,7 +28,7 @@ test('Owner opens manager first with top3 proposals, confidence and inspectable 
  await page.locator('#robotTopDecisions .robot-evidence summary').first().click();await expect(page.locator('#robotTopDecisions .robot-evidence-source').first()).toContainText('DATA_UJI · B7');await expect(page.locator('#robotTopDecisions .robot-evidence-source').first()).toContainText('12 karton');
  await expect(page.locator('#robotCoverage')).toContainText('19 Nov 2026');await expect(page.locator('#robotCoverage')).toContainText('18 Nov 2026');
  await page.locator('#robotMoreDecisions>summary').click();await expect(page.locator('#robotOtherDecisions>.robot-decision')).toHaveCount(2);await expect(page.locator('#robotOtherDecisions')).toBeVisible();
- await expect(page.locator('#robotPanel form')).toHaveCount(0);await expect(page.locator('#robotPanel button').filter({hasText:/setujui|bayar|transfer|closing|kirim/i})).toHaveCount(0);expect(state.errors).toEqual([]);
+ await expect(page.locator('#robotPanel form#ppicAskForm')).toHaveCount(1);await expect(page.locator('#robotPanel form:not(#ppicAskForm)')).toHaveCount(0);await expect(page.locator('#robotPanel button:not(#ppicAskSend)').filter({hasText:/setujui|bayar|transfer|closing|kirim/i})).toHaveCount(0);expect(state.errors).toEqual([]);
 });
 test('source markup stays plain text and evidence source link only navigates to Bank Data',async({page})=>{
  const p=status();p.latest_brief.payload.decisions[0].title='<img src=x onerror=alert(1)>';p.evidence_sources[0].facts[0].note='<script>window.syntheticInjected=true</script>';
