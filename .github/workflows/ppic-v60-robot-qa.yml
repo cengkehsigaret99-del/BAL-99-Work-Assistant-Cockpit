@@ -42,7 +42,7 @@ jobs:
           for i in $(seq 1 20); do curl -fsS http://127.0.0.1:8765/ >/dev/null && exit 0; sleep 1; done
           exit 1
       - name: Check manager, mobile layout, source provenance, private sessions, and existing reports
-        run: npx playwright test tests/ppic-v60-robot.spec.cjs tests/ppic-v53-sync.spec.cjs tests/ppic-v52-source-context.spec.cjs tests/ppic-v47-ux.spec.cjs tests/ppic-v46-sdm-three-reports.spec.cjs tests/ppic-v49-current-sources.spec.cjs tests/ppic-v49-private-refresh.spec.cjs tests/ppic-v50-daily-info.spec.cjs --browser=chromium --workers=1 --reporter=list
+        run: npx playwright test tests/ppic-v60-robot.spec.cjs tests/ppic-v53-sync.spec.cjs tests/ppic-v52-source-context.spec.cjs tests/ppic-v47-navigation.spec.cjs tests/ppic-v47-ux.spec.cjs tests/ppic-v46-sdm-three-reports.spec.cjs tests/ppic-v49-current-sources.spec.cjs tests/ppic-v49-private-refresh.spec.cjs tests/ppic-v50-daily-info.spec.cjs --browser=chromium --workers=1 --reporter=list
       - name: Keep synthetic UI review evidence
         if: always()
         uses: actions/upload-artifact@v4

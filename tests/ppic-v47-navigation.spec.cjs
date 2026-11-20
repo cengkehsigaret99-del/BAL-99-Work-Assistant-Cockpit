@@ -6,6 +6,8 @@ async function login(page){
   const u=route.request().url();let body=[];
   if(u.includes('/auth/v1/token'))body={access_token:'synthetic-test',expires_in:3600};
   else if(u.includes('/functions/v1/ppic-owner-check'))body={authorized:true,role:'owner'};
+  else if(u.includes('/functions/v1/ppic-robot-status'))body={ok:true,period:'2026-11',config:{enabled:false},health:{state:'DISABLED'},latest_brief:null,coverage:[],evidence_sources:[],runs:[]};
+  else if(u.includes('/functions/v1/ppic-auto-import-status'))body={ok:true,config:{enabled:false},jobs:[]};
   else if(u.includes('/auth/v1/logout'))body={};
   return route.fulfill({status:200,contentType:'application/json',body:JSON.stringify(body)});
  });
@@ -30,8 +32,12 @@ test('simple mobile navigation and deliberate division expansion',async({page})=
 });
 test('three-step workflow navigates without changing private data',async({page})=>{
  await login(page);
- await page.locator('[data-flow="upload"]').click();
+ await expect(page.locator('#robotPanel')).toBeVisible();
+ await expect(page.locator('#ppicFlowStatus')).toBeHidden();
+ await page.locator('#robotReportGuide>summary').click();
+ await page.locator('.ppic-step-card [data-go="upload"]').click();
  await expect(page.locator('#upload')).toBeVisible();
+ await expect(page.locator('#ppicFlowStatus')).toBeVisible();
  await expect(page.locator('[data-flow="upload"]')).toHaveAttribute('aria-current','step');
  await page.locator('[data-flow="data"]').click();
  await expect(page.locator('#data')).toBeVisible();
@@ -57,6 +63,8 @@ test('mobile menu stays inside screen and remains usable',async({page})=>{
  await page.setViewportSize({width:390,height:844});
  await login(page);
  await page.locator('#ppicDivisionsToggle').click();
+ await page.locator('[data-view="upload"]').click();
+ await expect(page.locator('#ppicFlowStatus')).toBeVisible();
  const bounds=await page.evaluate(()=>{
   const el=document.querySelector('#ppicMain .ppic-nav');
   const bar=document.querySelector('#ppicFlowStatus');
