@@ -7,6 +7,9 @@ on:
       - 'auth.js'
       - 'ppic-qa-ui.js'
       - 'ppic-qa.css'
+      - 'sw.js'
+      - 'tools/ppic_health_check.py'
+      - '.github/workflows/deploy-pages.yml'
       - 'supabase/functions/ppic-owner-assistant/**'
       - 'tests/ppic-owner-assistant.test.mjs'
       - '.github/workflows/ppic-owner-assistant-qa.yml'
@@ -23,7 +26,7 @@ jobs:
       - uses: actions/setup-node@v4
         with: {node-version: '22'}
       - name: Validate gateway auth, queue, and optional live GPT
-        run: node --test tests/ppic-owner-assistant.test.mjs tests/ppic-v60-robot-status.test.mjs
+        run: node --test tests/ppic-owner-assistant.test.mjs tests/ppic-v60-robot-status.test.mjs tests/ppic-v60-robot.test.cjs
       - name: Validate UI scripts and private page wiring
         run: |
           node --check auth.js
@@ -40,3 +43,14 @@ jobs:
           for(const marker of ['ppicAssistantTransport','ppicAssistantSessionReady','ppicAssistantClear'])if(!auth.includes(marker))throw Error('Missing integration '+marker);
           if(/sk-proj-|sk-[A-Za-z0-9]{25,}/.test(JSON.stringify([script,html,auth])))throw Error('Potential secret in public bundle');
           JS
+      - name: Verify health-check asset allowlist and deployment packaging contract
+        run: |
+          python3 -m unittest discover -s tests -p ppic_health_check_test.py
+          python3 - <<'PY'
+          from pathlib import Path
+          src=Path('.github/workflows/deploy-pages.yml').read_text()
+          sw=Path('sw.js').read_text()
+          check=Path('tools/ppic_health_check.py').read_text()
+          for asset in ['ppic-qa-ui.js','ppic-qa.css']:
+              assert asset in src and asset in sw and asset in check
+          PY
