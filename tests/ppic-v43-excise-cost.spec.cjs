@@ -30,6 +30,7 @@ async function setup(page,{reports=[fixtureReport()],daily=fixtureDaily()}={}){
     const url=route.request().url();let data=[];
     if(url.includes('/auth/v1/token'))data={access_token:'fixture-token',expires_in:3600};
     else if(url.includes('/functions/v1/ppic-owner-check'))data={authorized:true,role:'owner'};
+    else if(url.includes('/functions/v1/ppic-robot-status'))data={ok:true,period:'2026-11',config:{enabled:false},health:{state:'DISABLED'},latest_brief:null,coverage:[],evidence_sources:[],runs:[]};
     else if(url.includes('/rest/v1/ppic_reports_owner_view'))data=reports;
     else if(url.includes('/rest/v1/ppic_daily_owner_view'))data=daily;
     else if(url.includes('/auth/v1/logout'))data={};
@@ -165,3 +166,4 @@ test('desktop and mobile layouts keep controls and tables within the excise pane
   for(const table of geometry.wrappers)expect(table.width).toBeLessThanOrEqual(geometry.width);
   await page.locator('#excise').screenshot({path:testInfo.outputPath('pita-mobile-synthetic.png')});
 });
+

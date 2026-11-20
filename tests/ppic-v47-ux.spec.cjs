@@ -9,6 +9,7 @@ async function ownerLogin(page) {
   let response=[];
   if(url.includes('/auth/v1/token'))response={access_token:'synthetic-token',expires_in:3600};
   else if(url.includes('/functions/v1/ppic-owner-check'))response={authorized:true,role:'owner'};
+  else if(url.includes('/functions/v1/ppic-robot-status'))response={ok:true,period:'2026-11',config:{enabled:false},health:{state:'DISABLED'},latest_brief:null,coverage:[],evidence_sources:[],runs:[]};
   else if(url.includes('/auth/v1/logout'))response={};
   else if(url.includes('/rest/v1/ppic_source_catalog'))response=[];
   else if(url.includes('/rest/v1/ppic_reports_owner_view'))response=[];
@@ -23,7 +24,7 @@ async function ownerLogin(page) {
  await expect(page.locator('[data-view="dashboard"]')).toHaveAttribute('aria-current','page');
  return errors;
 }
-test('guided homepage shows 3-step workflow and clear source disclaimers',async({page})=>{
+test('manager homepage retains the collapsed 3-step guide and clear source disclaimers',async({page})=>{
  const errors=await ownerLogin(page);
  await expect(page.locator('.ppic-step-card')).toHaveCount(3);
  await expect(page.locator('.ppic-shortcut')).toHaveCount(6);
@@ -36,6 +37,7 @@ test('guided homepage shows 3-step workflow and clear source disclaimers',async(
 });
 test('steps navigate upload to Bank Data to reporting without losing context',async({page})=>{
  await ownerLogin(page);
+ await page.locator('#robotReportGuide>summary').click();
  await page.locator('.ppic-step-card [data-go="upload"]').click();
  await expect(page.locator('#upload')).toBeVisible();
  await expect(page.locator('#ppicContextTitle')).toHaveText('Upload Excel');
@@ -73,6 +75,7 @@ test('all division menus remain accessible through grouped nav and quick links',
   await expect(page.locator('[data-view="'+id+'"]')).toHaveAttribute('aria-current','page');
   await expect(page.locator('#ppicContextTitle')).not.toBeEmpty();
  }
+ await page.locator('#robotReportGuide>summary').click();
  await page.locator('.ppic-shortcut[data-go="sdm"]').click();
  await expect(page.locator('#sdmThreeReports')).toBeVisible();
  await expect(page.locator('#ppicContextHelp')).toContainText('payroll final');

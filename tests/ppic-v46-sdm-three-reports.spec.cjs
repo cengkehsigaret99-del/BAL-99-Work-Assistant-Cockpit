@@ -18,6 +18,7 @@ async function enter(page,{sources=[docG,docV],snapshots=[sdmSnap()],onRebuild=(
   let result=[];
   if(u.includes('/auth/v1/token'))result={access_token:'fake-in-test-only',expires_in:3600};
   else if(u.includes('/functions/v1/ppic-owner-check'))result={authorized:true,role:'owner'};
+  else if(u.includes('/ppic-robot-status'))result={ok:true,period:'2026-11',config:{enabled:false},health:{state:'DISABLED'},latest_brief:null,coverage:[],evidence_sources:[],runs:[]};
   else if(u.includes('/functions/v1/ppic-auto-import-status'))result={ok:true,config:{enabled:false,cadence:'HOURLY',timezone:'Asia/Jakarta',automation_id:null},jobs:[]};
   else if(u.includes('/rest/v1/ppic_source_catalog'))result=['SDM GILING','SDM VERPACK'].map((division,i)=>({division,document_id:sources[i],period:'2026-11',version:'V009',ingested_at:'2026-11-18T11:00:00Z'}));
   else if(u.includes('/rest/v1/ppic_sdm_weekly_owner_view'))result=typeof snapshots==='function'?snapshots():snapshots;

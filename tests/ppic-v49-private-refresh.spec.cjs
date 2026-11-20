@@ -10,6 +10,7 @@ async function setup(page){
   const url=route.request().url();let body=[];
   if(url.includes('/auth/v1/token'))body={access_token:'synthetic-owner-token',expires_in:3600};
   else if(url.includes('/functions/v1/ppic-owner-check'))body={authorized:true,role:'owner'};
+  else if(url.includes('/functions/v1/ppic-robot-status'))body={ok:true,period:'2026-11',config:{enabled:false},health:{state:'DISABLED'},latest_brief:null,coverage:[],evidence_sources:[],runs:[]};
   else if(url.includes('/functions/v1/ppic-auto-import-status'))body={ok:true,config:{enabled:false,cadence:'HOURLY',timezone:'Asia/Jakarta',automation_id:null},jobs:[]};
   else if(url.includes('/auth/v1/logout'))body={};
   else{
@@ -35,7 +36,7 @@ test('refresh reloads every private dataset and displays current source without 
  expect(Object.values(state.hits)).toEqual(views.map(()=>1));
  state.revision=2;
  const result=await page.evaluate(()=>window.ppicRefreshPrivateDocs());
- expect(result).toEqual({ok:true,modules:8});
+ expect(result).toEqual({ok:true,modules:9});
  expect(Object.values(state.hits)).toEqual(views.map(()=>2));
  if(await page.locator('#ppicDivisionsList').isHidden())await page.locator('#ppicDivisionsToggle').click();
  await page.locator('[data-view="customers"]').click();

@@ -20,6 +20,7 @@ async function enter(page,{statusResponse=async()=>({status:200,body:receipt()})
   const u=route.request().url();let body=[],status=200;
   if(u.includes('/auth/v1/token'))body={access_token:'synthetic-token-only',expires_in:3600};
   else if(u.includes('/ppic-owner-check'))body={authorized:true,role:'owner'};
+  else if(u.includes('/ppic-robot-status'))body={ok:true,period:'2026-11',config:{enabled:false},health:{state:'DISABLED'},latest_brief:null,coverage:[],evidence_sources:[],runs:[]};
   else if(u.includes('/ppic-auto-import-status')){statusCalls++;const r=await statusResponse(statusCalls,route.request().postDataJSON());status=r.status;body=r.body;}
   else if(u.includes('/ppic_source_catalog'))body=docs;
   else if(u.includes('/ppic_sdm_weekly_owner_view'))body=[snap];

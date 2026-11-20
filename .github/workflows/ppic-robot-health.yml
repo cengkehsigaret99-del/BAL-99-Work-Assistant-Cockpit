@@ -1,0 +1,32 @@
+name: BAL PPIC Robot Public Health
+on:
+  schedule:
+    - cron: '15 * * * *'
+  workflow_run:
+    workflows: ['Deploy BAL PPIC read-only site to GitHub Pages']
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ppic-public-health
+  cancel-in-progress: false
+jobs:
+  public-shell:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+      - name: Verify published login shell and exact public assets
+        run: python3 tools/ppic_health_check.py --repo . --output ppic-public-health.json
+      - name: Keep public health receipt
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ppic-public-health
+          path: ppic-public-health.json
+          retention-days: 7

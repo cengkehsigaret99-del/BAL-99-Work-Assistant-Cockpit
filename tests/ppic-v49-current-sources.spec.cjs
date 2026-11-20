@@ -68,6 +68,7 @@ async function setup(page){
     const url=route.request().url();let body=[];
     if(url.includes('/auth/v1/token'))body={access_token:'synthetic-owner-token',expires_in:3600};
     else if(url.includes('/functions/v1/ppic-owner-check'))body={authorized:true,role:'owner'};
+    else if(url.includes('/functions/v1/ppic-robot-status'))body={ok:true,period:'2026-11',config:{enabled:false},health:{state:'DISABLED'},latest_brief:null,coverage:[],evidence_sources:[],runs:[]};
     else if(url.includes('/functions/v1/ppic-auto-import-status'))body={ok:true,config:{enabled:false,cadence:'HOURLY',timezone:'Asia/Jakarta',automation_id:null},jobs:[]};
     else if(url.includes('/auth/v1/logout'))body={};
     else if(url.includes('/rest/v1/ppic_source_catalog'))body=data.documents;

@@ -1,0 +1,52 @@
+name: BAL PPIC V6.0 Robot Manajer QA
+on:
+  push:
+    branches: [main, 'feat/ppic-robot-*']
+    paths: ['index.html','auth.js','robot-ui.js','robot.css','sw.js','sync-ui.js','sync.css','supabase/functions/ppic-robot-status/**','supabase/functions/ppic-robot/**','supabase/migrations/*_ppic_robot*.sql','tests/**','tools/ppic_robot*','tools/ppic_health_check.py','.github/workflows/ppic-robot-health.yml','.github/workflows/ppic-v60-robot-qa.yml','.github/workflows/deploy-pages.yml']
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  synthetic-qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - name: Test private manager lifecycle, evidence, dates, and import compatibility
+        run: |
+          node --test tests/ppic-v60-robot.test.cjs tests/ppic-v60-robot-auth.test.cjs tests/ppic-v53-sync.test.cjs tests/ppic-v53-sync-auth.test.cjs
+          node --test tests/ppic-v60-robot-status.test.mjs
+          python3 tests/ppic_robot_extract_test.py -v
+          python3 -m unittest discover -s tests -p ppic_health_check_test.py
+          python3 -m unittest discover -s tests -p ppic_auto_manifest_test.py
+          node - <<'JS'
+          const fs=require('node:fs'),vm=require('node:vm');
+          const html=fs.readFileSync('index.html','utf8');
+          for(const m of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g))if(!/\bsrc=/.test(m[1]))new vm.Script(m[2]);
+          for(const path of ['auth.js','robot-ui.js','sync-ui.js','sw.js'])new vm.Script(fs.readFileSync(path,'utf8'),{filename:path});
+          for(const marker of ['ppic-release" content="6.0"','id="robotPanel"','id="infoDownload"','id="robotReportGuide"'])if(!html.includes(marker))throw Error('Missing control '+marker);
+          if(/innerHTML|insertAdjacentHTML|eval\(/.test(fs.readFileSync('robot-ui.js','utf8')))throw Error('Manager must render private text safely');
+          JS
+      - name: Keep import validation and private queue tests passing
+        run: |
+          npm install --no-save --ignore-scripts --prefix /tmp/ppic-auto-test-deps jszip@3.10.1 fast-xml-parser@5.2.5
+          PPIC_AUTO_NODE_MODULES=/tmp/ppic-auto-test-deps/node_modules node --test tests/ppic-v53-auto-import.test.mjs
+      - name: Install browser QA
+        run: |
+          npm install --no-save @playwright/test@1.62.1
+          npx playwright install --with-deps chromium
+      - name: Start synthetic test server
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/ppic-robot-qa.log 2>&1 &
+          for i in $(seq 1 20); do curl -fsS http://127.0.0.1:8765/ >/dev/null && exit 0; sleep 1; done
+          exit 1
+      - name: Check manager, mobile layout, source provenance, private sessions, and existing reports
+        run: npx playwright test tests/ppic-v60-robot.spec.cjs tests/ppic-v53-sync.spec.cjs tests/ppic-v52-source-context.spec.cjs tests/ppic-v47-ux.spec.cjs tests/ppic-v46-sdm-three-reports.spec.cjs tests/ppic-v49-current-sources.spec.cjs tests/ppic-v49-private-refresh.spec.cjs tests/ppic-v50-daily-info.spec.cjs --browser=chromium --workers=1 --reporter=list
+      - name: Keep synthetic UI review evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: robot-v60-synthetic-ui-review
+          path: test-results/
+          retention-days: 3

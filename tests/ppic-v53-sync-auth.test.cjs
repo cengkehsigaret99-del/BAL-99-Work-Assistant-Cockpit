@@ -7,13 +7,14 @@ const flush=()=>new Promise(resolve=>setImmediate(resolve));
 const deferred=()=>{let resolve;const promise=new Promise(r=>{resolve=r});return {promise,resolve};};
 function environment(handler=async()=>({status:200,body:{ok:true,config:{enabled:false},jobs:[]}})){
  const elements=new Map(),calls=[],receipts=[],errors=[],clear=[];
- const el=id=>{if(!elements.has(id))elements.set(id,{id,hidden:id==='ppicMain',disabled:false,value:id==='ownerEmail'?'cengkehsigaret99@gmail.com':id==='autoImportPeriod'?'2026-11':'fake-test-only',textContent:'',handlers:{},addEventListener(name,fn){this.handlers[name]=fn;}});return elements.get(id);};
+ const el=id=>{if(!elements.has(id))elements.set(id,{id,hidden:id==='ppicMain',disabled:false,value:id==='ownerEmail'?'cengkehsigaret99@gmail.com':['autoImportPeriod','robotPeriod'].includes(id)?'2026-11':'fake-test-only',textContent:'',handlers:{},addEventListener(name,fn){this.handlers[name]=fn;}});return elements.get(id);};
  const window={addEventListener(){},ppicSetDocs(){},ppicSetReports(){},ppicSetDaily(){},ppicSetDoCustomers(){},ppicSetMaterials(){},ppicSetFinished(){},ppicSetSDM(){},ppicSetAutoImportStatus(data,period){receipts.push({data,period});},ppicAutoImportSessionReady(){},ppicClearAutoImportStatus(){clear.push(true);},ppicAutoImportStatusError(message,options){errors.push({message,options});}};
  let timer=0;
  const fetch=async(url,init={})=>{calls.push({url,init});let result={status:200,body:[]};
   if(url.includes('/auth/v1/token'))result.body={access_token:'PRIVATE_SYNTHETIC_TOKEN',expires_in:3600};
   else if(url.includes('/ppic-owner-check'))result.body={authorized:true,role:'owner'};
   else if(url.includes('/ppic-auto-import-status'))result=await handler(JSON.parse(init.body),init);
+  else if(url.includes('/ppic-robot-status'))result.body={ok:true,period:JSON.parse(init.body).period,config:{enabled:false},health:{state:'DISABLED'},latest_brief:null};
   return {ok:result.status>=200&&result.status<300,status:result.status,json:async()=>result.body};
  };
  const context={window,document:{getElementById:el,addEventListener(){},hidden:false},fetch,AbortController,setTimeout(){return ++timer;},clearTimeout(){},Promise,Date,Error,Object,Number,String,console};
