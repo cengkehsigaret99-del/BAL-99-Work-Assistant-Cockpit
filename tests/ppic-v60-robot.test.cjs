@@ -66,7 +66,7 @@ test('failed refresh retains previous brief with visible failure rather than cla
 });
 test('logout and changed period clear private DOM and reject late old data',()=>{
  const e=environment();e.win.ppicSetRobotStatus(status(),'2026-11');e.win.ppicClearRobotStatus();
- for(const id of ['robotTopDecisions','robotOtherDecisions','robotCompleted','robotPending','robotWatchlist','robotHealth','robotRuns'])assert.equal(e.el(id).children.length,0);
+ for(const id of ['robotTopDecisions','robotOtherDecisions','robotCompleted','robotPending','robotWatchlist','robotHealth','robotRuns','robotDiscoveryChannels'])assert.equal(e.el(id).children.length,0);
  e.win.ppicSetRobotStatus(status(),'2026-11');assert.equal(e.el('robotTopDecisions').children.length,0);
  e.win.ppicRobotSessionReady();e.el('robotPeriod').value='2026-12';e.el('robotPeriod').handlers.change();e.win.ppicSetRobotStatus(status(),'2026-11');assert.equal(e.el('robotTopDecisions').children.length,0);
  e.win.ppicSetRobotStatus(status('2026-12'),'2026-12');assert.equal(e.el('robotTopDecisions').children.length,3);
@@ -96,4 +96,64 @@ test('configuration alone does not prove a web check and cycle success is labell
  assert.match(e.el('robotRuns').textContent,/Pemeliharaan sistem/);assert.doesNotMatch(e.el('robotRuns').textContent,/Pemeriksaan web/);
  p.runs[0].details={check_name:'SYNTHETIC_WEB_CHECK'};e.win.ppicSetRobotStatus(p,'2026-11');assert.match(e.el('robotHealth').textContent,/Pemeriksaan web terakhir: .*WIB · Berhasil/);
  p.runs[0].details={check_name:'x'.repeat(1000)};assert.equal(model(p).runs[0].details.check_name.length,240);
+});
+
+const CHANNELS=['DISCOVERY_CHATGPT_CONTEXT','DISCOVERY_LIBRARY','DISCOVERY_DRIVE_REGISTER'];
+function scan(channel,result='SEARCHED',options={}){
+ return {id:'44444444-4444-4444-8444-444444444444',kind:'CHECK',status:'SUCCESS',message:'Catatan pencarian sintetis.',created_at:'2026-11-20T02:55:00Z',...options,details:{check_name:channel,period:'2026-11',result,source_count:2,...options.details}};
+}
+test('discovery without matching receipts stays unknown regardless of healthy schedule',()=>{
+ const p=status(),m=model(p);assert.equal(m.discovery.label,'Belum ada catatan');
+ assert.ok(m.discovery.channels.every(c=>c.state==='MISSING'&&c.source_count===null));
+ p.runs=[scan(CHANNELS[0],'SEARCHED',{kind:'MAINTENANCE'}),scan(CHANNELS[1],'SEARCHED',{details:{period:'2026-12'}}),scan(CHANNELS[2],'SEARCHED',{details:{period:'2026-11-invalid'}})];
+ assert.ok(model(p).discovery.channels.every(c=>c.state==='MISSING'));
+ assert.equal(model(p).brief.created_at,p.latest_brief.created_at);
+});
+test('discovery selects the latest result per channel with bounded candidate counts',()=>{
+ const p=status();p.runs=[scan(CHANNELS[0],'UNAVAILABLE',{status:'BLOCKED',created_at:'2026-11-20T01:00:00Z'}),scan(CHANNELS[0]),scan(CHANNELS[1],'CANDIDATES_PENDING'),scan(CHANNELS[2],'NO_NEW_SOURCE',{status:'NO_CHANGE',details:{source_count:0}})];
+ const d=model(p).discovery;assert.equal(d.label,'Menunggu verifikasi sumber');assert.equal(d.tone,'gold');
+ assert.deepEqual(d.channels.map(c=>c.state),['CHECKED','PENDING','CHECKED']);assert.equal(d.channels[0].result,'SEARCHED');assert.equal(d.channels[2].source_count,0);
+ p.runs=CHANNELS.map(c=>scan(c));assert.equal(model(p).discovery.label,'3 jalur diperiksa');assert.equal(model(p).discovery.tone,'good');
+ for(const count of [-1,Infinity,NaN,'4',null,1000000000]){p.runs=[scan(CHANNELS[0],'SEARCHED',{details:{source_count:count}})];assert.equal(model(p).discovery.channels[0].source_count,null);}
+ p.runs=Array.from({length:20},()=>({...status().runs[0]}));p.runs.push(scan(CHANNELS[0]));assert.equal(model(p).discovery.channels[0].state,'MISSING');
+});
+test('discovery preserves partial, unavailable and failed paths without success inference',()=>{
+ const p=status();p.runs=[scan(CHANNELS[0],'PARTIAL',{status:'WAITING'}),scan(CHANNELS[1],'UNAVAILABLE',{status:'BLOCKED'}),scan(CHANNELS[2],'SEARCHED',{status:'FAILED'})];
+ const d=model(p).discovery;assert.deepEqual(d.channels.map(c=>c.state),['PARTIAL','UNAVAILABLE','FAILED']);assert.equal(d.label,'Cakupan belum lengkap');assert.equal(d.tone,'gold');
+ assert.equal(d.channels[0].source_count,2);assert.equal(d.channels[1].source_count,null);assert.equal(d.channels[2].source_count,null);
+ for(const status of ['FAILED','BLOCKED','RUNNING','WAITING','UNRECOGNIZED']){p.runs=[scan(CHANNELS[0],'SEARCHED',{status})];assert.notEqual(model(p).discovery.channels[0].state,'CHECKED');}
+ for(const result of ['ALL_GPT_INDEXED','__proto__','constructor','']){p.runs=[scan(CHANNELS[0],result)];assert.equal(model(p).discovery.channels[0].state,'UNVERIFIED');}
+});
+test('scheduled partial search and pending verification remain explicit without a green completion state',()=>{
+ const p=status();p.runs=[scan(CHANNELS[0],'PARTIAL',{status:'WAITING'}),scan(CHANNELS[1],'CANDIDATES_PENDING',{status:'WAITING'}),scan(CHANNELS[2],'UNAVAILABLE',{status:'BLOCKED'})];
+ const d=model(p).discovery;assert.deepEqual(d.channels.map(c=>c.state),['PARTIAL','PENDING','UNAVAILABLE']);assert.equal(d.channels[1].source_count,2);assert.equal(d.tone,'gold');
+ for(const status of ['WAITING','SUCCESS','NO_CHANGE']){p.runs=[scan(CHANNELS[0],'CANDIDATES_PENDING',{status})];assert.equal(model(p).discovery.channels[0].state,'PENDING');assert.notEqual(model(p).discovery.tone,'good');}
+ for(const status of ['FAILED','BLOCKED']){p.runs=[scan(CHANNELS[0],'CANDIDATES_PENDING',{status})];assert.equal(model(p).discovery.channels[0].state,'FAILED');assert.equal(model(p).discovery.channels[0].source_count,null);}
+});
+test('discovery freshness uses each actual receipt instead of schedule or analysis time',()=>{
+ const p=status();p.config.last_check_at=new Date(NOW).toISOString();p.runs=[scan(CHANNELS[0],'SEARCHED',{created_at:new Date(NOW-150*60*1000-1).toISOString()})];
+ let d=model(p).discovery;assert.equal(d.channels[0].stale,true);assert.equal(d.label,'Perlu pencarian baru');assert.notEqual(d.tone,'good');
+ p.runs[0].created_at=new Date(NOW-150*60*1000).toISOString();assert.equal(model(p).discovery.channels[0].stale,false);
+ for(const created_at of ['invalid',new Date(NOW+5*60*1000+1).toISOString()]){p.runs[0].created_at=created_at;d=model(p).discovery;assert.equal(d.channels[0].state,'UNVERIFIED');assert.equal(d.channels[0].source_count,null);}
+});
+test('discovery renders hostile source text as text and identifies candidates separately',()=>{
+ const e=environment(),p=status(),hostile='<img src=x onerror=alert(1)><script>throw 1</script>';
+ p.runs=[scan(CHANNELS[0],'CANDIDATES_PENDING',{message:hostile,created_at:new Date().toISOString()}),scan(CHANNELS[1],'PARTIAL',{created_at:new Date().toISOString()})];
+ e.win.ppicSetRobotStatus(p,'2026-11');const box=e.el('robotDiscoveryChannels');assert.equal(box.children.length,3);
+ assert.ok(box.textContent.includes(hostile));assert.match(box.textContent,/Kandidat dari hasil pencarian: 2/);assert.match(box.textContent,/Kandidat perlu diverifikasi/);assert.doesNotMatch(box.textContent,/2 file diimpor|seluruh akun telah dibaca/);
+ const tags=[];function walk(n){tags.push(n.tagName);for(const c of n.children||[])walk(c);}walk(box);
+ assert.ok(!tags.some(t=>['IMG','SCRIPT','A','IFRAME'].includes(t)));
+});
+test('discovery clears on logout and changed period, and marks failed refresh explicitly',()=>{
+ const e=environment(),p=status();p.runs=[scan(CHANNELS[0],'SEARCHED',{created_at:new Date().toISOString()})];e.win.ppicSetRobotStatus(p,'2026-11');
+ e.win.ppicRobotStatusError('SYNTHETIC_FAILURE',{period:'2026-11'});assert.equal(e.el('robotDiscoveryChannels').children.length,3);assert.equal(e.el('robotDiscoveryBadge').textContent,'Hasil lama · koneksi gagal');
+ e.el('robotDiscoveryPanel').open=true;e.win.ppicClearRobotStatus();assert.equal(e.el('robotDiscoveryChannels').children.length,0);assert.equal(e.el('robotDiscoveryPanel').open,false);assert.equal(e.el('robotDiscoveryBadge').textContent,'Belum diperiksa');
+ e.win.ppicRobotSessionReady();e.win.ppicSetRobotStatus(p,'2026-11');e.el('robotPeriod').value='2026-12';e.el('robotPeriod').handlers.change();assert.equal(e.el('robotDiscoveryChannels').children.length,0);
+ e.win.ppicSetRobotStatus(p,'2026-11');assert.equal(e.el('robotDiscoveryChannels').children.length,0);
+});
+test('existing private status projection preserves discovery receipts without API changes',async()=>{
+ const {projectRobotStatus}=await import('../supabase/functions/ppic-robot-status/validation.mjs');
+ const p=status();p.runs=[scan(CHANNELS[0],'SEARCHED',{message:'Catatan https://example.invalid/private?token=secret'}),scan(CHANNELS[1],'PARTIAL'),scan(CHANNELS[2],'UNAVAILABLE',{status:'BLOCKED'})];
+ const projected=projectRobotStatus(p,'2026-11'),d=model(projected).discovery;
+ assert.deepEqual(d.channels.map(c=>c.state),['CHECKED','PARTIAL','UNAVAILABLE']);assert.doesNotMatch(d.channels[0].message,/example\.invalid|token=secret/);
 });

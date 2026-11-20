@@ -11,6 +11,10 @@
  const KIND={OWNER_DECISION:'Pertimbangan Owner',ADMIN_FOLLOWUP:'Tindak lanjut divisi',DATA_BLOCKER:'Data perlu dilengkapi'};
  const RUN_KIND={CHECK:'Pemeriksaan data',ANALYSIS:'Analisis GPT',MAINTENANCE:'Pemeliharaan sistem'};
  const RUN_STATUS={RUNNING:'Sedang berjalan',SUCCESS:'Berhasil',NO_CHANGE:'Tidak ada perubahan',WAITING:'Menunggu',FAILED:'Gagal',BLOCKED:'Tertahan'};
+ const DISCOVERY_CHANNELS=[['DISCOVERY_CHATGPT_CONTEXT','Percakapan GPT'],['DISCOVERY_LIBRARY','File di GPT'],['DISCOVERY_DRIVE_REGISTER','Register Control Tower']];
+ const DISCOVERY_STATUS={CHECKED:'Sudah diperiksa',PENDING:'Menunggu verifikasi sumber',PARTIAL:'Diperiksa sebagian',UNAVAILABLE:'Akses belum tersedia',MISSING:'Belum ada catatan',FAILED:'Pencarian belum berhasil',WAITING:'Pencarian belum selesai',UNVERIFIED:'Hasil belum dapat diverifikasi'};
+ const DISCOVERY_RESULT={SEARCHED:'Pencarian sesuai cakupan selesai.',CANDIDATES_PENDING:'Kandidat perlu diverifikasi sebelum digunakan.',NO_NEW_SOURCE:'Tidak ada sumber baru pada hasil yang diperiksa.'};
+ const DISCOVERY_MAX_AGE=150*60*1000;
  const text=(value,max=1200)=>typeof value==='string'?value.slice(0,max):'';
  const list=(value,max=100)=>Array.isArray(value)?value.slice(0,max):[];
  const obj=value=>value&&typeof value==='object'&&!Array.isArray(value)?value:{};
@@ -22,6 +26,23 @@
  function instant(value){
   if(typeof value!=='string'||!/^\d{4}-\d{2}-\d{2}T/.test(value))return null;
   const stamp=Date.parse(value);return Number.isFinite(stamp)?stamp:null;
+ }
+ function discoveryModel(runs,period,now){
+  const channels=DISCOVERY_CHANNELS.map(([id,label])=>{
+   const row=runs.find(r=>r.kind==='CHECK'&&r.details.check_name===id&&r.details.period===period);
+   if(!row)return {id,label,state:'MISSING',stale:false,source_count:null,created_at:'',message:'Belum ada catatan pencarian untuk jalur ini dalam aktivitas yang ditampilkan.',result:''};
+   const stamp=instant(row.created_at),result=row.details.result;
+   let state='UNVERIFIED';
+   if(stamp!==null&&stamp<=now+5*60*1000){
+    if(row.status==='FAILED'||row.status==='BLOCKED')state=result==='UNAVAILABLE'?'UNAVAILABLE':'FAILED';
+    else if(result==='CANDIDATES_PENDING'&&['WAITING','SUCCESS','NO_CHANGE'].includes(row.status))state='PENDING';
+    else if(row.status==='RUNNING'||row.status==='WAITING')state=result==='PARTIAL'?'PARTIAL':result==='UNAVAILABLE'?'UNAVAILABLE':'WAITING';
+    else if(row.status==='SUCCESS'||row.status==='NO_CHANGE')state=result==='PARTIAL'?'PARTIAL':result==='UNAVAILABLE'?'UNAVAILABLE':Object.hasOwn(DISCOVERY_RESULT,result)?'CHECKED':'UNVERIFIED';
+   }
+   return {id,label,state,result,stale:stamp!==null&&now-stamp>DISCOVERY_MAX_AGE,source_count:['CHECKED','PENDING','PARTIAL'].includes(state)?row.details.source_count:null,created_at:row.created_at,message:row.message};
+  });
+  const missing=channels.every(c=>c.state==='MISSING'),stale=channels.some(c=>c.stale),complete=channels.every(c=>c.state==='CHECKED'),pending=channels.some(c=>c.state==='PENDING')&&channels.every(c=>['CHECKED','PENDING'].includes(c.state));
+  return {channels,label:missing?'Belum ada catatan':stale?'Perlu pencarian baru':complete?'3 jalur diperiksa':pending?'Menunggu verifikasi sumber':'Cakupan belum lengkap',tone:complete&&!stale?'good':missing?'neutral':'gold'};
  }
  function formatDate(value){const v=dateOnly(value);return v?new Intl.DateTimeFormat('id-ID',{day:'numeric',month:'short',year:'numeric',timeZone:'UTC'}).format(new Date(v+'T00:00:00Z')):'Belum ada tanggal';}
  function formatTime(value){const v=instant(value);return v!==null?new Intl.DateTimeFormat('id-ID',{day:'numeric',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit',timeZone:'Asia/Jakarta'}).format(new Date(v))+' WIB':'Belum tercatat';}
@@ -58,10 +79,11 @@
   const oldAnalysis=created!==null&&now-created>26*60*60*1000;
   const futureAnalysis=created!==null&&created-now>5*60*1000;
   const state=HEALTH[health.state]?health.state:'WAITING';
+  const runs=list(data.runs,20).map(x=>{const r=obj(x),d=obj(r.details);return {kind:text(r.kind,100),status:text(r.status,100),message:text(r.message,1600),details:{check_name:text(d.check_name,240).trim(),period:periodValid(d.period)?d.period:'',result:text(d.result,240),source_count:Number.isSafeInteger(d.source_count)&&d.source_count>=0&&d.source_count<=999999999?d.source_count:null},created_at:text(r.created_at,80)};}).sort((a,b)=>(instant(b.created_at)||0)-(instant(a.created_at)||0));
   return {period,config:{enabled:config.enabled===true,linked:!!text(config.automation_id,200),cadence:text(config.cadence,80),timezone:text(config.timezone,80),last_check_at:text(config.last_check_at,80),last_success_at:text(config.last_success_at,80),last_message:text(config.last_message,1600),last_error:text(config.last_error,1600)},health:{state,message:text(health.message,1600),source_changed:sourceChanged,has_unextracted:health.has_unextracted_sources===true},brief,sources,
    freshness:!brief?'EMPTY':sourceChanged?'SOURCE_CHANGED':futureAnalysis||created===null?'UNKNOWN':oldAnalysis?'OLD':'CURRENT',
    coverage:list(data.coverage,30).map(x=>{const c=obj(x);return {division:text(c.division,100),source_document_id:text(c.source_document_id,240),source_version:text(c.source_version,40),source_cutoff:dateOnly(c.source_cutoff),reconciliation_status:text(c.reconciliation_status,100),has_facts:c.has_facts===true,selection_status:SELECTED[c.selection_status]?c.selection_status:'NO_SOURCE',report_cutoff:dateOnly(c.report_cutoff),report_version:text(c.report_version,40),report_status:text(c.report_status,100)};}),
-   runs:list(data.runs,20).map(x=>{const r=obj(x);return {kind:text(r.kind,100),status:text(r.status,100),message:text(r.message,1600),details:{check_name:text(obj(r.details).check_name,240).trim()},created_at:text(r.created_at,80)};}).sort((a,b)=>(instant(b.created_at)||0)-(instant(a.created_at)||0))};
+   runs,discovery:discoveryModel(runs,period,now)};
  }
  function mount(win){
   const doc=win.document,$=id=>doc.getElementById(id);
@@ -162,21 +184,36 @@
    if(!m.runs.length)runs.append(muted('Belum ada aktivitas tercatat.'));
    for(const row of m.runs.slice(0,6)){const card=make('article',undefined,'robot-run');card.append(make('strong',(RUN_KIND[row.kind]||row.kind)+' · '+(RUN_STATUS[row.status]||row.status)),muted(formatTime(row.created_at)),make('p',row.message));runs.append(card);}
   }
+  function renderDiscovery(m){
+   set('robotDiscoveryBadge',m.discovery.label);$('robotDiscoveryBadge').dataset.tone=m.discovery.tone;
+   const container=$('robotDiscoveryChannels');container.replaceChildren();
+   for(const row of m.discovery.channels){
+    const card=make('article',undefined,'robot-coverage-card');card.dataset.channel=row.id;
+    card.append(make('h4',row.label),badge(DISCOVERY_STATUS[row.state],row.state==='CHECKED'&&!row.stale?'good':row.state==='MISSING'?'neutral':'gold'));
+    if(row.created_at)card.append(labeled('Pencarian tercatat:',formatTime(row.created_at)));
+    if(row.stale)card.append(muted('Hasil lebih dari 150 menit lalu. Perlu pencarian baru.'));
+    if(row.state==='CHECKED'||row.state==='PENDING')card.append(muted(DISCOVERY_RESULT[row.result]));
+    if(row.source_count!==null)card.append(labeled('Kandidat dari hasil pencarian:',new Intl.NumberFormat('id-ID').format(row.source_count)));
+    if(row.message)card.append(muted(row.message));
+    container.append(card);
+   }
+  }
   function stopTimer(){if(timer!==null)win.clearTimeout(timer);timer=null;}
   function schedule(){stopTimer();if(active)timer=win.setTimeout(()=>{if(doc.hidden)schedule();else refresh();},60000);}
   function setBusy(value){loading=value;$('robotRefresh').disabled=!active||loading;$('robotPanel').setAttribute('aria-busy',String(value));}
   function clearPrivate(){
    model=null;$('robotBriefContent').hidden=true;$('robotEmpty').hidden=false;
-   for(const id of ['robotHeadline','robotSummary','robotFreshness','robotDecisionCount','robotTopDecisions','robotOtherDecisions','robotCompleted','robotPending','robotWatchlist','robotLimitations','robotHealth','robotRuns'])$(id).replaceChildren();
+   for(const id of ['robotHeadline','robotSummary','robotFreshness','robotDecisionCount','robotTopDecisions','robotOtherDecisions','robotCompleted','robotPending','robotWatchlist','robotLimitations','robotHealth','robotRuns','robotDiscoveryChannels'])$(id).replaceChildren();
    $('robotCoverage').replaceChildren(muted('Belum diperiksa.'));$('robotMoreDecisions').hidden=true;
-   for(const id of ['robotMoreDecisions','robotWatchlistDetails','robotLimitsDetails','robotHealthPanel'])$(id).open=false;
+   for(const id of ['robotMoreDecisions','robotWatchlistDetails','robotLimitsDetails','robotHealthPanel','robotDiscoveryPanel'])$(id).open=false;
+   set('robotDiscoveryBadge','Belum diperiksa');$('robotDiscoveryBadge').dataset.tone='neutral';
    set('robotOperatingStatus','Menunggu data');$('robotOperatingStatus').dataset.tone='neutral';set('robotAnalysisTime','Analisis GPT belum dimuat.');set('robotHealthBadge','Belum diperiksa');$('robotHealthBadge').dataset.tone='neutral';
    set('robotEmptyText','Status analisis akan tampil setelah koneksi privat diperiksa.');
   }
   function onLoading(period){if(!active||period!==selected())return;setBusy(true);set('robotStatus','Memeriksa analisis dan status pekerjaan…');$('robotStatus').dataset.tone='neutral';}
   function onData(data,period){
    if(!active||period!==selected())return;
-   const next=buildModel(data,period);model=next;renderBrief(next);renderCoverage(next);renderHealth(next);
+   const next=buildModel(data,period);model=next;renderBrief(next);renderCoverage(next);renderHealth(next);renderDiscovery(next);
    sdmConflicts.set(period,next.coverage.filter(row=>['SDM GILING','SDM VERPACK'].includes(row.division)&&row.report_status.includes('METADATA_CONFLICT')));renderSDMWarning();
    set('robotStatus',next.brief?'Ringkasan tersimpan sudah dimuat. Muat ulang tidak menjalankan analisis baru.':'Status diperiksa. Analisis periode ini belum tersedia.');$('robotStatus').dataset.tone='neutral';setBusy(false);schedule();
   }
@@ -184,6 +221,7 @@
    if(!active||options.period&&options.period!==selected())return;
    set('robotStatus',(options.unconfigured?'Layanan Robot Manajer belum tersedia. ': 'Status terbaru gagal diperiksa. ')+text(message,1000)+(model?.brief?' Ringkasan sebelumnya tetap ditampilkan; perhatikan waktu analisis.':' Laporan divisi tetap dapat dibuka.'));
    $('robotStatus').dataset.tone='alert';set('robotHealthBadge',options.unconfigured?'Belum tersedia':'Pemeriksaan gagal');$('robotHealthBadge').dataset.tone='alert';
+   set('robotDiscoveryBadge',model?'Hasil lama · koneksi gagal':'Belum tersedia');$('robotDiscoveryBadge').dataset.tone='alert';
    if(!model)set('robotEmptyText','Analisis belum dapat dibaca. Anda tetap dapat membuka Bank Data dan laporan divisi.');setBusy(false);schedule();
   }
   async function refresh(){
