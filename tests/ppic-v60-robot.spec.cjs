@@ -20,6 +20,7 @@ async function enter(page,{handler=async p=>({status:200,body:status(p.period)})
  await page.goto(ROOT);await expect(page.locator('#ppicMain')).toBeHidden();await page.locator('#ownerPassword').fill('SYNTHETIC_PASSWORD');await page.locator('#loginButton').click();await expect(page.locator('#ppicMain')).toBeVisible();
  return {errors,requests};
 }
+// Owner may ask GPT; the Robot panel must still exclude operational posting forms and approval buttons.
 test('Owner opens manager first with top3 proposals, confidence and inspectable provenance',async({page})=>{
  const state=await enter(page);
  await expect(page.locator('#dashboard')).toBeVisible();await expect(page.locator('[data-view="dashboard"]')).toHaveText('Robot Manajer');await expect(page.locator('#robotTopDecisions>.robot-decision')).toHaveCount(3);await expect(page.locator('#robotOtherDecisions')).toBeHidden();
