@@ -62,7 +62,7 @@ export function projectStage3(body,period) {
  if(r.ready===false&&r.latest===null)return {ok:true,period,ready:false,latest:null};
  if(r.ready!==true)invalid();
  const s=object(r.latest);
- if(s.schema_version!=='ppic-stage3-decision-v1'||!UUID.test(s.id||'')||!UUID.test(s.briefing_id||'')
+ if(typeof s.evidence_current!=='boolean'||s.schema_version!=='ppic-stage3-decision-v1'||!UUID.test(s.id||'')||!UUID.test(s.briefing_id||'')
   ||!SHA.test(s.evidence_hash||'')||!STATES.has(s.status)
   ||!Number.isInteger(s.source_count)||s.source_count<1||s.source_count>10
   ||!Number.isInteger(s.data_blockers)||s.data_blockers<0||s.data_blockers>10)invalid();
@@ -72,7 +72,7 @@ export function projectStage3(body,period) {
  if(!focus.length||new Set(focus).size!==focus.length||focus.some(id=>!cards.some(c=>c.id===id)))invalid();
  const seen=new Set();for(const c of cards){if(seen.has(c.id))invalid();seen.add(c.id);}
  return {ok:true,period,ready:true,latest:{
-  id:s.id,evidence_hash:s.evidence_hash,briefing_id:s.briefing_id,analysis_as_of:dateOnly(s.analysis_as_of),
+  id:s.id,evidence_hash:s.evidence_hash,evidence_current:s.evidence_current,briefing_id:s.briefing_id,analysis_as_of:dateOnly(s.analysis_as_of),
   created_at:timestamp(s.created_at),source_count:s.source_count,data_blockers:s.data_blockers,status:s.status,
   decisions:cards,focus_ids:focus,risk_register:array(s.risk_register,25).map(risk),coverage:array(s.coverage,15).map(coverage)
  }};
