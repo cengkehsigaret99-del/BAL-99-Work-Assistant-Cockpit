@@ -40,6 +40,23 @@
   if(!response.ok||data.ok!==true)throw Error(data.error||"Asisten PPIC belum dapat dihubungi ("+response.status+").");
   return data;
  };
+ let planController=null,planSequence=0;
+ window.ppicLoadPlanStatus=async(period=robotPeriod())=>{
+  if(!accessToken||Date.now()>=expiresAt)throw Error("Sesi Owner berakhir. Login kembali.");
+  if(!/^\d{4}-(0[1-9]|1[0-2])$/.test(period))throw Error("Periode rencana PPIC tidak valid.");
+  if(planController)planController.abort();
+  planController=new AbortController();
+  const token=accessToken,current=attempt,seq=++planSequence;
+  const response=await fetch(ROOT+"/functions/v1/ppic-plan-status",{
+   method:"POST",headers:{"apikey":KEY,"Authorization":"Bearer "+token,"Content-Type":"application/json"},
+   body:JSON.stringify({period}),cache:"no-store",signal:planController.signal
+  });
+  const data=await response.json().catch(()=>({}));
+  if(current!==attempt||token!==accessToken||seq!==planSequence||period!==robotPeriod())
+   throw Object.assign(Error("Sesi Owner atau periode berubah."),{name:"AbortError"});
+  if(!response.ok||data.ok!==true)throw Error(data.error||"Rencana PPIC belum dapat dibaca ("+response.status+").");
+  return data;
+ };
  let stage3Controller=null,stage3Sequence=0;
  window.ppicLoadStage3Status=async(period=robotPeriod())=>{
   if(!accessToken||Date.now()>=expiresAt)throw Error("Sesi Owner berakhir. Login kembali.");
@@ -181,7 +198,7 @@
  const MAX_SESSION_MS=30*60*1000;
  function clearExpiry(){if(expiryTimer!==null){clearTimeout(expiryTimer);expiryTimer=null}expiresAt=0}
  function expire(){attempt++;show(false);message("Sesi berakhir. Silakan login kembali.")}
- const show=(authorized)=>{login.hidden=authorized;main.hidden=!authorized;logout.hidden=!authorized;if(authorized){window.ppicAutoImportSessionReady?.();window.ppicRobotSessionReady?.();window.ppicAssistantSessionReady?.();window.ppicStage2SessionReady?.();window.ppicStage3SessionReady?.()}else{window.ppicStage3Clear?.();if(stage3Controller)stage3Controller.abort();stage3Sequence++;window.ppicStage2Clear?.();if(stage2Controller)stage2Controller.abort();stage2Sequence++;window.ppicAssistantClear?.();window.ppicClearRobotStatus?.();if(robotRequest)robotRequest.abort();robotSequence++;window.ppicClearAutoImportStatus?.();if(autoImportRequest)autoImportRequest.abort();autoImportSequence++;if(window.ppicClearDailyInfo)window.ppicClearDailyInfo();if(docsRequest)docsRequest.abort();if(reportsRequest)reportsRequest.abort();if(dailyRequest)dailyRequest.abort();if(customerRequest)customerRequest.abort();if(materialRequest)materialRequest.abort();if(finishedRequest)finishedRequest.abort();if(sdmRequest)sdmRequest.abort();accessToken="";clearExpiry();if($("search"))$("search").value="";window.ppicSetDocs([]);window.ppicSetReports([]);window.ppicSetDaily([]);window.ppicSetDoCustomers([]);window.ppicSetMaterials([]);window.ppicSetFinished([]);window.ppicSetSDM([]);const modal=$("previewModal");if(modal)modal.hidden=true;const frame=$("previewFrame");if(frame)frame.srcdoc="";$("ownerPassword").value=""}};
+ const show=(authorized)=>{login.hidden=authorized;main.hidden=!authorized;logout.hidden=!authorized;if(authorized){window.ppicAutoImportSessionReady?.();window.ppicRobotSessionReady?.();window.ppicAssistantSessionReady?.();window.ppicStage2SessionReady?.();window.ppicStage3SessionReady?.();window.ppicPlanSessionReady?.()}else{window.ppicPlanClear?.();if(planController)planController.abort();planSequence++;window.ppicStage3Clear?.();if(stage3Controller)stage3Controller.abort();stage3Sequence++;window.ppicStage2Clear?.();if(stage2Controller)stage2Controller.abort();stage2Sequence++;window.ppicAssistantClear?.();window.ppicClearRobotStatus?.();if(robotRequest)robotRequest.abort();robotSequence++;window.ppicClearAutoImportStatus?.();if(autoImportRequest)autoImportRequest.abort();autoImportSequence++;if(window.ppicClearDailyInfo)window.ppicClearDailyInfo();if(docsRequest)docsRequest.abort();if(reportsRequest)reportsRequest.abort();if(dailyRequest)dailyRequest.abort();if(customerRequest)customerRequest.abort();if(materialRequest)materialRequest.abort();if(finishedRequest)finishedRequest.abort();if(sdmRequest)sdmRequest.abort();accessToken="";clearExpiry();if($("search"))$("search").value="";window.ppicSetDocs([]);window.ppicSetReports([]);window.ppicSetDaily([]);window.ppicSetDoCustomers([]);window.ppicSetMaterials([]);window.ppicSetFinished([]);window.ppicSetSDM([]);const modal=$("previewModal");if(modal)modal.hidden=true;const frame=$("previewFrame");if(frame)frame.srcdoc="";$("ownerPassword").value=""}};
  const message=(value)=>{status.textContent=value};
  async function verify(token){
   const response=await fetch(ROOT+"/functions/v1/ppic-owner-check",{method:"GET",headers:{"apikey":KEY,"Authorization":"Bearer "+token},cache:"no-store"});
