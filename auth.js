@@ -28,6 +28,18 @@
   if(!accessToken||Date.now()>=expiresAt)throw Error("Sesi Owner berakhir. Login kembali.");
   return loadRobotStatus(accessToken,attempt,period);
  };
+ window.ppicAssistantTransport=async payload=>{
+  if(!accessToken||Date.now()>=expiresAt)throw Error("Sesi Owner berakhir. Login kembali.");
+  const current=attempt,token=accessToken;
+  const response=await fetch(ROOT+"/functions/v1/ppic-owner-assistant",{
+   method:"POST",headers:{"apikey":KEY,"Authorization":"Bearer "+token,"Content-Type":"application/json"},
+   body:JSON.stringify(payload),cache:"no-store"
+  });
+  const data=await response.json().catch(()=>({}));
+  if(current!==attempt||token!==accessToken)throw Object.assign(Error("Sesi Owner berubah."),{name:"AbortError"});
+  if(!response.ok||data.ok!==true)throw Error(data.error||"Asisten PPIC belum dapat dihubungi ("+response.status+").");
+  return data;
+ };
  const autoImportPeriod=()=>$("autoImportPeriod")?.value||"2026-11";
  async function loadAutoImportStatus(token,current,period=autoImportPeriod()){
   if(!/^\d{4}-(0[1-9]|1[0-2])$/.test(period))throw Error("Periode sinkron tidak valid.");
@@ -135,7 +147,7 @@
  const MAX_SESSION_MS=30*60*1000;
  function clearExpiry(){if(expiryTimer!==null){clearTimeout(expiryTimer);expiryTimer=null}expiresAt=0}
  function expire(){attempt++;show(false);message("Sesi berakhir. Silakan login kembali.")}
- const show=(authorized)=>{login.hidden=authorized;main.hidden=!authorized;logout.hidden=!authorized;if(authorized){window.ppicAutoImportSessionReady?.();window.ppicRobotSessionReady?.()}else{window.ppicClearRobotStatus?.();if(robotRequest)robotRequest.abort();robotSequence++;window.ppicClearAutoImportStatus?.();if(autoImportRequest)autoImportRequest.abort();autoImportSequence++;if(window.ppicClearDailyInfo)window.ppicClearDailyInfo();if(docsRequest)docsRequest.abort();if(reportsRequest)reportsRequest.abort();if(dailyRequest)dailyRequest.abort();if(customerRequest)customerRequest.abort();if(materialRequest)materialRequest.abort();if(finishedRequest)finishedRequest.abort();if(sdmRequest)sdmRequest.abort();accessToken="";clearExpiry();if($("search"))$("search").value="";window.ppicSetDocs([]);window.ppicSetReports([]);window.ppicSetDaily([]);window.ppicSetDoCustomers([]);window.ppicSetMaterials([]);window.ppicSetFinished([]);window.ppicSetSDM([]);const modal=$("previewModal");if(modal)modal.hidden=true;const frame=$("previewFrame");if(frame)frame.srcdoc="";$("ownerPassword").value=""}};
+ const show=(authorized)=>{login.hidden=authorized;main.hidden=!authorized;logout.hidden=!authorized;if(authorized){window.ppicAutoImportSessionReady?.();window.ppicRobotSessionReady?.();window.ppicAssistantSessionReady?.()}else{window.ppicAssistantClear?.();window.ppicClearRobotStatus?.();if(robotRequest)robotRequest.abort();robotSequence++;window.ppicClearAutoImportStatus?.();if(autoImportRequest)autoImportRequest.abort();autoImportSequence++;if(window.ppicClearDailyInfo)window.ppicClearDailyInfo();if(docsRequest)docsRequest.abort();if(reportsRequest)reportsRequest.abort();if(dailyRequest)dailyRequest.abort();if(customerRequest)customerRequest.abort();if(materialRequest)materialRequest.abort();if(finishedRequest)finishedRequest.abort();if(sdmRequest)sdmRequest.abort();accessToken="";clearExpiry();if($("search"))$("search").value="";window.ppicSetDocs([]);window.ppicSetReports([]);window.ppicSetDaily([]);window.ppicSetDoCustomers([]);window.ppicSetMaterials([]);window.ppicSetFinished([]);window.ppicSetSDM([]);const modal=$("previewModal");if(modal)modal.hidden=true;const frame=$("previewFrame");if(frame)frame.srcdoc="";$("ownerPassword").value=""}};
  const message=(value)=>{status.textContent=value};
  async function verify(token){
   const response=await fetch(ROOT+"/functions/v1/ppic-owner-check",{method:"GET",headers:{"apikey":KEY,"Authorization":"Bearer "+token},cache:"no-store"});
