@@ -27,7 +27,7 @@ jobs:
           mkdir -p dist
           cp index.html dist/index.html
           cp auth.js dist/auth.js
-          cp sync-ui.js sync.css robot-ui.js robot.css dist/
+          cp sync-ui.js sync.css robot-ui.js robot.css ppic-qa-ui.js ppic-qa.css dist/
           cp daily-info-data.js daily-info.js daily-info-ui.js dist/
           cp payroll.js payroll-ui.js payroll.css dist/
           cp logo.png dist/logo.png
@@ -46,7 +46,7 @@ jobs:
           python3 - <<'PY'
           from pathlib import Path
           dist=Path("dist")
-          allowed={"index.html","auth.js","sync-ui.js","sync.css","robot-ui.js","robot.css","daily-info-data.js","daily-info.js","daily-info-ui.js","payroll.js","payroll-ui.js","payroll.css","logo.png","bal-logo-user.webp","manifest.webmanifest","sw.js","icon.svg","icon-192.png","icon-512.png","robots.txt",".nojekyll"}
+          allowed={"index.html","auth.js","sync-ui.js","sync.css","robot-ui.js","robot.css","ppic-qa-ui.js","ppic-qa.css","daily-info-data.js","daily-info.js","daily-info-ui.js","payroll.js","payroll-ui.js","payroll.css","logo.png","bal-logo-user.webp","manifest.webmanifest","sw.js","icon.svg","icon-192.png","icon-512.png","robots.txt",".nojekyll"}
           actual={p.name for p in dist.iterdir()}
           assert actual==allowed,(actual,allowed)
           s=(dist/"index.html").read_text()
@@ -74,7 +74,7 @@ jobs:
             .filter(m=>!/\bsrc=/.test(m[1])).map(m=>m[2]);
           if(!inline.length)throw Error('No inline scripts to check');
           inline.forEach((content,i)=>new vm.Script(content,{filename:'index-inline-'+i+'.js'}));
-          for(const file of ['auth.js','sync-ui.js','robot-ui.js','daily-info-data.js','daily-info.js','daily-info-ui.js','payroll.js','payroll-ui.js'])new vm.Script(fs.readFileSync(file,'utf8'),{filename:file});
+          for(const file of ['auth.js','sync-ui.js','robot-ui.js','ppic-qa-ui.js','daily-info-data.js','daily-info.js','daily-info-ui.js','payroll.js','payroll-ui.js'])new vm.Script(fs.readFileSync(file,'utf8'),{filename:file});
           for(const key of ['id="sdmBuild"','id="sdmDiv"','id="sdmStart"','id="sdmEnd"','id="sdmRows"','id="sdmPeople"','SDM GILING','SDM VERPACK']){
             if(!html.includes(key))throw Error('SDM control missing: '+key);
           }
