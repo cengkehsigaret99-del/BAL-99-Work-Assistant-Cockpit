@@ -1,0 +1,63 @@
+name: BAL PPIC Stage 3 Decision Center QA
+on:
+  push:
+    branches: [main, feat/ppic-stage3-decision-center]
+    paths:
+      - index.html
+      - auth.js
+      - ppic-stage3-ui.js
+      - ppic-stage3.css
+      - sw.js
+      - tools/ppic_health_check.py
+      - .github/workflows/deploy-pages.yml
+      - supabase/functions/ppic-stage3-status/**
+      - supabase/migrations/*_ppic_stage3*.sql
+      - tests/ppic-stage3-status.test.mjs
+      - tests/ppic-stage3.spec.cjs
+      - .github/workflows/ppic-stage3-qa.yml
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  decision-qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - name: Test read-only decision gateway and existing reconciliation
+        run: |
+          node --test tests/ppic-stage3-status.test.mjs tests/ppic-stage2-status.test.mjs tests/ppic-v60-robot-status.test.mjs
+          node --check auth.js
+          node --check ppic-stage3-ui.js
+          node --check supabase/functions/ppic-stage3-status/validation.mjs
+          python3 -m unittest discover -s tests -p ppic_health_check_test.py
+      - name: Verify public bundle and private UI semantics
+        run: |
+          node - <<'JS'
+          const fs=require('node:fs'),vm=require('node:vm');
+          const html=fs.readFileSync('index.html','utf8'),auth=fs.readFileSync('auth.js','utf8');
+          for(const m of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g))if(!/\bsrc=/.test(m[1]))new vm.Script(m[2]);
+          for(const id of ['ppicStage3Panel','ppicStage3Focus','ppicStage3Message','ppicStage3Badge','ppicStage3More','ppicStage3RiskList','ppicAskText'])if(!html.includes('id="'+id+'"'))throw Error('Missing '+id);
+          for(const path of ['ppic-stage3-ui.js','ppic-stage3.css'])if(!html.includes(path))throw Error('Missing asset '+path);
+          for(const marker of ['ppicLoadStage3Status','ppicStage3SessionReady','ppicStage3Clear'])if(!auth.includes(marker))throw Error('Missing Owner auth lifecycle '+marker);
+          const js=fs.readFileSync('ppic-stage3-ui.js','utf8'),combined=JSON.stringify([html,auth,js]);
+          if(/innerHTML|insertAdjacentHTML|eval\(/.test(js))throw Error('Private HTML injection risk');
+          if(/sk-proj-|sk-[A-Za-z0-9]{25,}/.test(combined))throw Error('Unexpected model secret');
+          const deploy=fs.readFileSync('.github/workflows/deploy-pages.yml','utf8'),sw=fs.readFileSync('sw.js','utf8'),
+              health=fs.readFileSync('tools/ppic_health_check.py','utf8');
+          for(const f of ['ppic-stage3-ui.js','ppic-stage3.css'])if(!deploy.includes(f)||!sw.includes(f)||!health.includes(f))throw Error('Missing '+f+' in deployment, SW or health allowlist');
+          JS
+      - name: Install browser test dependencies
+        run: |
+          npm install --no-save @playwright/test@1.62.1
+          npx playwright install --with-deps chromium
+      - name: Start local synthetic website
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/ppic-stage3.log 2>&1 &
+          for i in $(seq 1 20); do curl -fsS http://127.0.0.1:8765/ >/dev/null && exit 0; sleep 1; done
+          exit 1
+      - name: Run synthetic Owner browser acceptance tests
+        run: npx playwright test tests/ppic-stage3.spec.cjs --browser=chromium --workers=1 --reporter=list
