@@ -1,6 +1,6 @@
-const CACHE_NAME="bal-ppic-public-shell-v60-discovery1";
+const CACHE_NAME="bal-ppic-public-shell-v61-assistant1";
 const BASE=new URL("./",self.registration.scope);
-const SHELL=["./","./index.html","./auth.js","./sync-ui.js","./sync.css","./robot-ui.js","./robot.css","./daily-info-data.js","./daily-info.js","./daily-info-ui.js","./payroll.js","./payroll-ui.js","./payroll.css","./logo.png","./bal-logo-user.webp","./icon-192.png","./icon-512.png","./icon.svg","./manifest.webmanifest"];
+const SHELL=["./","./index.html","./auth.js","./sync-ui.js","./sync.css","./robot-ui.js","./robot.css","./ppic-qa-ui.js","./ppic-qa.css","./daily-info-data.js","./daily-info.js","./daily-info-ui.js","./payroll.js","./payroll-ui.js","./payroll.css","./logo.png","./bal-logo-user.webp","./icon-192.png","./icon-512.png","./icon.svg","./manifest.webmanifest"];
 self.addEventListener("install",event=>{event.waitUntil(caches.open(CACHE_NAME).then(cache=>cache.addAll(SHELL)).then(()=>self.skipWaiting()))});
 self.addEventListener("activate",event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith("bal-ppic-public-shell-")&&key!==CACHE_NAME).map(key=>caches.delete(key)))).then(()=>self.clients.claim()))});
 self.addEventListener("fetch",event=>{
