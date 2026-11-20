@@ -1,0 +1,25 @@
+#ppicMain .ppic-qa{margin:17px 0 24px;padding:20px;border:1px solid rgba(110,224,205,.45);border-radius:17px;background:linear-gradient(130deg,rgba(27,89,88,.45),rgba(10,25,41,.96));box-shadow:0 14px 35px #0002}
+#ppicMain .ppic-qa h3{font-size:19px;margin:0 0 6px;color:#b3fff0}
+#ppicMain .ppic-qa p{line-height:1.55}
+#ppicMain .ppic-qa-muted{color:#b5d1d0;font-size:12px;overflow-wrap:anywhere}
+#ppicMain .ppic-qa-form{display:grid;gap:10px;margin:13px 0}
+#ppicMain .ppic-qa-controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+#ppicMain .ppic-qa label{font-size:12px;color:#c4e9e4}
+#ppicMain .ppic-qa select,#ppicMain .ppic-qa textarea{background:#071f29;border:1px solid #4a8e91;border-radius:11px;padding:10px 12px;color:#efffff;font:inherit;max-width:100%}
+#ppicMain .ppic-qa textarea{width:100%;min-height:94px;resize:vertical;line-height:1.55}
+#ppicMain .ppic-qa select{min-width:180px}
+#ppicMain .ppic-qa button.primary{background:#9fe8d7;border-color:#9fe8d7;color:#07352f;min-height:42px}
+#ppicMain .ppic-qa button:disabled{opacity:.55;cursor:not-allowed}
+#ppicMain .ppic-qa-status{font-size:12px;padding:10px 12px;background:#10343b;border-radius:9px;margin:0}
+#ppicMain .ppic-qa-status[data-tone=alert]{background:#423124;color:#ffe4bb}
+#ppicMain .ppic-qa-status[data-tone=good]{background:#15433b;color:#d4ffef}
+#ppicMain .ppic-qa-history{display:grid;gap:9px;max-height:430px;overflow:auto;margin-top:12px}
+#ppicMain .ppic-qa-entry{background:rgba(9,29,42,.8);border:1px solid rgba(107,188,174,.28);border-radius:11px;padding:12px}
+#ppicMain .ppic-qa-entry-top{display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+#ppicMain .ppic-qa-entry-top strong{font-size:13px;color:#e9fff8}
+#ppicMain .ppic-qa-pill{background:#24545b;color:#dffbf2;border-radius:30px;padding:3px 9px;font-size:11px}
+#ppicMain .ppic-qa-question{font-size:13px;margin:8px 0;color:#edf9fb;white-space:pre-wrap;overflow-wrap:anywhere}
+#ppicMain .ppic-qa-answer{font-size:13px;line-height:1.65;white-space:pre-wrap;overflow-wrap:anywhere;color:#d7f9ee;border-left:3px solid #98e4d3;padding:8px 12px;background:#173f42}
+#ppicMain .ppic-qa-evidence summary{cursor:pointer;font-size:12px;color:#9be9d8;margin:9px 0}
+#ppicMain .ppic-qa-meta{display:block;margin-top:8px;color:#9fbdbb;font-size:11px}
+@media(max-width:620px){#ppicMain .ppic-qa{padding:13px;margin:12px 0}#ppicMain .ppic-qa-controls{display:grid}#ppicMain .ppic-qa select,#ppicMain .ppic-qa-controls button{width:100%}}

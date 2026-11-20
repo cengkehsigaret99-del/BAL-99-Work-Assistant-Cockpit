@@ -1,0 +1,56 @@
+name: BAL PPIC Owner GPT Console QA
+on:
+  push:
+    branches: [main, feat/ppic-owner-gpt-console]
+    paths:
+      - 'index.html'
+      - 'auth.js'
+      - 'ppic-qa-ui.js'
+      - 'ppic-qa.css'
+      - 'sw.js'
+      - 'tools/ppic_health_check.py'
+      - '.github/workflows/deploy-pages.yml'
+      - 'supabase/functions/ppic-owner-assistant/**'
+      - 'tests/ppic-owner-assistant.test.mjs'
+      - '.github/workflows/ppic-owner-assistant-qa.yml'
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  secure-console:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - name: Validate gateway auth, queue, and optional live GPT
+        run: node --test tests/ppic-owner-assistant.test.mjs tests/ppic-v60-robot-status.test.mjs tests/ppic-v60-robot.test.cjs
+      - name: Validate UI scripts and private page wiring
+        run: |
+          node --check auth.js
+          node --check ppic-qa-ui.js
+          node --check supabase/functions/ppic-owner-assistant/validation.mjs
+          node - <<'JS'
+          const fs=require('node:fs'),vm=require('node:vm'),html=fs.readFileSync('index.html','utf8');
+          for(const m of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g))if(!/\bsrc=/.test(m[1]))new vm.Script(m[2]);
+          for(const id of ['ppicAskForm','ppicAskConsole','ppicAskIntent','ppicAskText','ppicAskSend','ppicAskHistory','ppicAskMode','robotPanel'])if(!html.includes('id="'+id+'"'))throw Error('Missing '+id);
+          for(const path of ['ppic-qa-ui.js','ppic-qa.css'])if(!html.includes(path))throw Error('Missing asset '+path);
+          const script=fs.readFileSync('ppic-qa-ui.js','utf8');
+          if(/innerHTML|insertAdjacentHTML|eval\(/.test(script))throw Error('Unsafe private text renderer');
+          const auth=fs.readFileSync('auth.js','utf8');
+          for(const marker of ['ppicAssistantTransport','ppicAssistantSessionReady','ppicAssistantClear'])if(!auth.includes(marker))throw Error('Missing integration '+marker);
+          if(/sk-proj-|sk-[A-Za-z0-9]{25,}/.test(JSON.stringify([script,html,auth])))throw Error('Potential secret in public bundle');
+          JS
+      - name: Verify health-check asset allowlist and deployment packaging contract
+        run: |
+          python3 -m unittest discover -s tests -p ppic_health_check_test.py
+          python3 - <<'PY'
+          from pathlib import Path
+          src=Path('.github/workflows/deploy-pages.yml').read_text()
+          sw=Path('sw.js').read_text()
+          check=Path('tools/ppic_health_check.py').read_text()
+          for asset in ['ppic-qa-ui.js','ppic-qa.css']:
+              assert asset in src and asset in sw and asset in check
+          PY

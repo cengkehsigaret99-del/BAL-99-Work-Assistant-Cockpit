@@ -15,7 +15,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 
 BASE_URL = 'https://cengkehsigaret99-del.github.io/BAL-99-Work-Assistant-Cockpit/'
-ASSETS = ('index.html', 'auth.js', 'robot-ui.js', 'robot.css', 'sync-ui.js', 'sync.css', 'sw.js')
+ASSETS = ('index.html', 'auth.js', 'robot-ui.js', 'robot.css', 'ppic-qa-ui.js', 'ppic-qa.css', 'sync-ui.js', 'sync.css', 'sw.js')
 MAX_ASSET_BYTES = 2 * 1024 * 1024
 
 
