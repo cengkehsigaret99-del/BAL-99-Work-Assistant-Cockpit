@@ -5,7 +5,27 @@
  const EMAIL="cengkehsigaret99@gmail.com";
  const $=id=>document.getElementById(id);
  const login=$("ownerLogin"),main=$("ppicMain"),status=$("loginStatus"),form=$("loginForm"),logout=$("logoutOwner");
- let accessToken="",expiresAt=0,expiryTimer=null,attempt=0,docsRequest=null,reportsRequest=null,dailyRequest=null,customerRequest=null,materialRequest=null,finishedRequest=null,sdmRequest=null;
+ let accessToken="",expiresAt=0,expiryTimer=null,attempt=0,docsRequest=null,reportsRequest=null,dailyRequest=null,customerRequest=null,materialRequest=null,finishedRequest=null,sdmRequest=null,autoImportRequest=null,autoImportSequence=0;
+ const autoImportPeriod=()=>$("autoImportPeriod")?.value||"2026-11";
+ async function loadAutoImportStatus(token,current,period=autoImportPeriod()){
+  if(!/^\d{4}-(0[1-9]|1[0-2])$/.test(period))throw Error("Periode sinkron tidak valid.");
+  if(autoImportRequest)autoImportRequest.abort();autoImportRequest=new AbortController();const sequence=++autoImportSequence;
+  window.ppicAutoImportStatusLoading?.(period);
+  try{
+  const response=await fetch(ROOT+"/functions/v1/ppic-auto-import-status",{method:"POST",headers:{"apikey":KEY,"Authorization":"Bearer "+token,"Content-Type":"application/json"},body:JSON.stringify({period}),cache:"no-store",signal:autoImportRequest.signal});
+  const data=await response.json().catch(()=>({}));
+  if(current!==attempt||accessToken!==token||sequence!==autoImportSequence||period!==autoImportPeriod())throw Object.assign(Error("Sesi atau periode sinkron berubah."),{name:"AbortError"});
+  if(!response.ok||data.ok!==true)throw Object.assign(Error(data.error||data.message||"Status sinkron belum dapat dibaca ("+response.status+")."),{status:response.status});
+  window.ppicSetAutoImportStatus?.(data,period);return data;
+  }catch(error){
+   if(current===attempt&&accessToken===token&&sequence===autoImportSequence&&period===autoImportPeriod()&&error?.name!=="AbortError")window.ppicAutoImportStatusError?.(error.message||"Status sinkron belum dapat dibaca.",{period,allowLegacy:error.status===404});
+   throw error;
+  }
+ }
+ window.ppicLoadAutoImportStatus=async(period=autoImportPeriod())=>{
+  if(!accessToken||Date.now()>=expiresAt)throw Error("Sesi Owner berakhir. Login kembali.");
+  return loadAutoImportStatus(accessToken,attempt,period);
+ };
  async function loadDocs(token,current){
   if(docsRequest)docsRequest.abort();docsRequest=new AbortController();
   const response=await fetch(ROOT+"/rest/v1/ppic_source_catalog?select=document_id,division,period,cutoff,version,reconciliation_status,access_class,ingested_at&order=ingested_at.desc&limit=200",{headers:{"apikey":KEY,"Authorization":"Bearer "+token},cache:"no-store",signal:docsRequest.signal});
@@ -50,7 +70,7 @@
  window.ppicRefreshPrivateData=async()=>{
   if(!accessToken||Date.now()>=expiresAt)throw Error("Sesi Owner berakhir.");
   const token=accessToken,current=attempt;
-  const outcomes=await Promise.allSettled([loadDocs(token,current),loadReports(token,current),loadDaily(token,current),loadCustomers(token,current),loadMaterials(token,current),loadFinished(token,current),loadSDM(token,current)]);
+  const outcomes=await Promise.allSettled([loadDocs(token,current),loadReports(token,current),loadDaily(token,current),loadCustomers(token,current),loadMaterials(token,current),loadFinished(token,current),loadSDM(token,current),loadAutoImportStatus(token,current)]);
   if(current!==attempt||accessToken!==token)throw Error("Sesi berubah. Login kembali untuk membaca laporan terbaru.");
   const failed=outcomes.filter(result=>result.status==="rejected"&&result.reason?.name!=="AbortError");
   if(failed.length)throw Error("Sebagian data belum diperbarui: "+failed.map(result=>result.reason?.message||"akses gagal").join("; "));
@@ -93,7 +113,7 @@
  const MAX_SESSION_MS=30*60*1000;
  function clearExpiry(){if(expiryTimer!==null){clearTimeout(expiryTimer);expiryTimer=null}expiresAt=0}
  function expire(){attempt++;show(false);message("Sesi berakhir. Silakan login kembali.")}
- const show=(authorized)=>{login.hidden=authorized;main.hidden=!authorized;logout.hidden=!authorized;if(!authorized){if(window.ppicClearDailyInfo)window.ppicClearDailyInfo();if(docsRequest)docsRequest.abort();if(reportsRequest)reportsRequest.abort();if(dailyRequest)dailyRequest.abort();if(customerRequest)customerRequest.abort();if(materialRequest)materialRequest.abort();if(finishedRequest)finishedRequest.abort();if(sdmRequest)sdmRequest.abort();accessToken="";clearExpiry();window.ppicSetDocs([]);window.ppicSetReports([]);window.ppicSetDaily([]);window.ppicSetDoCustomers([]);window.ppicSetMaterials([]);window.ppicSetFinished([]);window.ppicSetSDM([]);const modal=$("previewModal");if(modal)modal.hidden=true;const frame=$("previewFrame");if(frame)frame.srcdoc="";$("ownerPassword").value=""}};
+ const show=(authorized)=>{login.hidden=authorized;main.hidden=!authorized;logout.hidden=!authorized;if(authorized){window.ppicAutoImportSessionReady?.()}else{window.ppicClearAutoImportStatus?.();if(autoImportRequest)autoImportRequest.abort();autoImportSequence++;if(window.ppicClearDailyInfo)window.ppicClearDailyInfo();if(docsRequest)docsRequest.abort();if(reportsRequest)reportsRequest.abort();if(dailyRequest)dailyRequest.abort();if(customerRequest)customerRequest.abort();if(materialRequest)materialRequest.abort();if(finishedRequest)finishedRequest.abort();if(sdmRequest)sdmRequest.abort();accessToken="";clearExpiry();window.ppicSetDocs([]);window.ppicSetReports([]);window.ppicSetDaily([]);window.ppicSetDoCustomers([]);window.ppicSetMaterials([]);window.ppicSetFinished([]);window.ppicSetSDM([]);const modal=$("previewModal");if(modal)modal.hidden=true;const frame=$("previewFrame");if(frame)frame.srcdoc="";$("ownerPassword").value=""}};
  const message=(value)=>{status.textContent=value};
  async function verify(token){
   const response=await fetch(ROOT+"/functions/v1/ppic-owner-check",{method:"GET",headers:{"apikey":KEY,"Authorization":"Bearer "+token},cache:"no-store"});
@@ -121,7 +141,7 @@
    expiresAt=Date.now()+duration;
    expiryTimer=setTimeout(expire,duration);
    show(true);window.ppicGoHome?.();message("Owner terverifikasi. Memuat Bank Data dan laporan privat…");
-   const outcomes=await Promise.allSettled([loadDocs(accessToken,current),loadReports(accessToken,current),loadDaily(accessToken,current),loadCustomers(accessToken,current),loadMaterials(accessToken,current),loadFinished(accessToken,current),loadSDM(accessToken,current)]);
+   const outcomes=await Promise.allSettled([loadDocs(accessToken,current),loadReports(accessToken,current),loadDaily(accessToken,current),loadCustomers(accessToken,current),loadMaterials(accessToken,current),loadFinished(accessToken,current),loadSDM(accessToken,current),loadAutoImportStatus(accessToken,current)]);
    if(current===attempt){
     const bad=outcomes.filter(result=>result.status==="rejected"&&result.reason?.name!=="AbortError");
     if(bad.length)message("Login berhasil, tetapi sebagian data belum terbaca: "+bad.map(x=>x.reason?.message||"akses gagal").join("; "));

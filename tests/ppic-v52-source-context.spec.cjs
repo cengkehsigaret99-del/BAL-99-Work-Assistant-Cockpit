@@ -16,6 +16,7 @@ async function login(page,{fresh=false}={}){
   const url=route.request().url();let body=[];
   if(url.includes('/auth/v1/token'))body={access_token:'fake-source-test-only',expires_in:3600};
   else if(url.includes('/functions/v1/ppic-owner-check'))body={authorized:true,role:'owner'};
+  else if(url.includes('/functions/v1/ppic-auto-import-status'))body={ok:true,config:{enabled:false,cadence:'HOURLY',timezone:'Asia/Jakarta',automation_id:null},jobs:[]};
   else if(url.includes('/rest/v1/ppic_source_catalog'))body=sources;
   else if(url.includes('/rest/v1/ppic_sdm_weekly_owner_view')){await new Promise(resolve=>setTimeout(resolve,100));body=[snap];}
   else if(url.includes('/functions/v1/ppic-sdm-rebuild')){builds++;snap=fixture(sources.map(s=>s.document_id));snap.version='V012';body={ok:true,rows:2,workers:2,cutoff:'2026-11-19',version:'V012'};}

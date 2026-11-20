@@ -1,0 +1,47 @@
+name: BAL PPIC V5.3 Automatic Import QA
+on:
+  push:
+    branches: [main, 'feat/ppic-auto-*']
+    paths: ['index.html','auth.js','sw.js','sync-ui.js','sync.css','supabase/functions/ppic-auto-import/**','supabase/functions/ppic-auto-import-status/**','supabase/functions/ppic-owner-upload/index.ts','supabase/functions/ppic-sdm-rebuild/index.ts','supabase/migrations/*_ppic_automatic_source_import.sql','supabase/migrations/*_ppic_pg_net_extension_schema.sql','tests/ppic-auto-import-security.sql','tests/ppic-v53-*','tests/ppic-v46-sdm-three-reports.spec.cjs','tests/ppic-v49-*','tests/ppic-v50-daily-info.spec.cjs','tests/ppic-v52-source-context.spec.cjs','tests/ppic_auto_manifest_test.py','tools/ppic_auto_manifest.py','.github/workflows/ppic-v53-auto-import-qa.yml']
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - name: Check status model, session isolation, and syntax
+        run: |
+          node --test tests/ppic-v53-sync.test.cjs tests/ppic-v53-sync-auth.test.cjs
+          python3 -m unittest discover -s tests -p ppic_auto_manifest_test.py
+          node - <<'JS'
+          const fs=require('node:fs'),vm=require('node:vm');
+          const html=fs.readFileSync('index.html','utf8');
+          for(const m of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g))if(!/\bsrc=/.test(m[1]))new vm.Script(m[2]);
+          for(const path of ['auth.js','sync-ui.js','sw.js'])new vm.Script(fs.readFileSync(path,'utf8'),{filename:path});
+          JS
+      - name: Test import validation, private queue worker, and status authorization
+        run: |
+          npm install --no-save --ignore-scripts --prefix /tmp/ppic-auto-test-deps jszip@3.10.1 fast-xml-parser@5.2.5
+          PPIC_AUTO_NODE_MODULES=/tmp/ppic-auto-test-deps/node_modules node --test tests/ppic-v53-auto-import.test.mjs
+      - name: Install browser QA
+        run: |
+          npm install --no-save @playwright/test@1.62.1
+          npx playwright install --with-deps chromium
+      - name: Start synthetic test server
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/ppic-sync-qa.log 2>&1 &
+          for i in $(seq 1 20); do curl -fsS http://127.0.0.1:8765/ >/dev/null && exit 0; sleep 1; done
+          exit 1
+      - name: Test receipts, private sessions, source selection, and phone layout
+        run: npx playwright test tests/ppic-v53-sync.spec.cjs tests/ppic-v52-source-context.spec.cjs tests/ppic-v46-sdm-three-reports.spec.cjs tests/ppic-v49-current-sources.spec.cjs tests/ppic-v49-private-refresh.spec.cjs tests/ppic-v50-daily-info.spec.cjs --browser=chromium --workers=1 --reporter=list
+      - name: Keep synthetic UI review evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sync-v53-synthetic-ui-review
+          path: test-results/
+          retention-days: 3

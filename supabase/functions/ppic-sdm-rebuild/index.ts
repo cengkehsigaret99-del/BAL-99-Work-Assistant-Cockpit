@@ -10,7 +10,7 @@ const SECRET=Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")||"";
 const OWNER="f43fd842-89b5-4f27-a49d-120f0d6742c1";
 const ORIGIN="https://cengkehsigaret99-del.github.io";
 const BUCKET="ppic-private-sources";
-const parser=new XMLParser({ignoreAttributes:false,attributeNamePrefix:"@_",parseTagValue:false,trimValues:false});
+const parser=new XMLParser({ignoreAttributes:false,attributeNamePrefix:"@_",parseTagValue:false,trimValues:false,removeNSPrefix:true});
 const arr=(v:any):any[]=>v===undefined||v===null?[]:Array.isArray(v)?v:[v];
 const text=(v:any):string=>typeof v==="string"?v:(v&&typeof v==="object"?String(v["#text"]||""):"");
 const num=(v:any):number=>{const n=Number(v);return Number.isFinite(n)?n:0};
@@ -37,7 +37,7 @@ class CompactXlsx {
   const rel=await doc.xml("xl/_rels/workbook.xml.rels");
   const links=new Map(arr(rel.Relationships?.Relationship).map((e:any)=>[e["@_Id"],e["@_Target"]]));
   for(const item of arr(wb.workbook?.sheets?.sheet)){
-   const target=links.get(item["@_r:id"]);
+   const target=links.get(item["@_id"]??item["@_r:id"]);
    if(!target)continue;
    const file=String(target).startsWith("/")?String(target).slice(1):
      String(target).startsWith("xl/")?String(target):"xl/"+String(target);

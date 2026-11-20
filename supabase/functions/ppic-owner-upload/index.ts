@@ -35,7 +35,7 @@ Deno.serve(async(req:Request)=>{
    if(!entry)return json({error:'Struktur workbook XLSX tidak ditemukan.'},422);
    const xml=await entry.async('string');
    if(xml.length>1024*1024)return json({error:'Daftar sheet workbook terlalu besar.'},422);
-   const parsed=new XMLParser({ignoreAttributes:false,attributeNamePrefix:'@_',parseTagValue:false}).parse(xml);
+   const parsed=new XMLParser({ignoreAttributes:false,attributeNamePrefix:'@_',parseTagValue:false,removeNSPrefix:true}).parse(xml);
    const sheets=parsed?.workbook?.sheets?.sheet,names=(Array.isArray(sheets)?sheets:sheets?[sheets]:[]).map((x:any)=>String(x['@_name']||''));
    const message=validateSdmSheetNames(names,division);
    if(message)return json({error:message,code:'SDM_DETAIL_SHEETS_REQUIRED'},422);
