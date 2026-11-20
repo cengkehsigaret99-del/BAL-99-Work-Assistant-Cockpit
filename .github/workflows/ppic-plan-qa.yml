@@ -1,0 +1,63 @@
+name: BAL PPIC Evidence-Gated Planning QA
+on:
+  push:
+    branches: [main, feat/ppic-stage3b-evidence-plan]
+    paths:
+      - index.html
+      - auth.js
+      - ppic-plan-ui.js
+      - ppic-plan.css
+      - sw.js
+      - tools/ppic_health_check.py
+      - .github/workflows/deploy-pages.yml
+      - supabase/functions/ppic-plan-status/**
+      - supabase/migrations/*_ppic_evidence_planning.sql
+      - tests/ppic-plan-status.test.mjs
+      - tests/ppic-plan.spec.cjs
+      - .github/workflows/ppic-plan-qa.yml
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  plan-qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - name: Validate private plan auth and regression tests
+        run: |
+          node --test tests/ppic-plan-status.test.mjs tests/ppic-stage3-status.test.mjs tests/ppic-stage2-status.test.mjs
+          node --check auth.js
+          node --check ppic-plan-ui.js
+          node --check supabase/functions/ppic-plan-status/validation.mjs
+          python3 -m unittest discover -s tests -p ppic_health_check_test.py
+      - name: Check public allowlist, UI lifecycle and no transaction or secret in frontend
+        run: |
+          node - <<'JS'
+          const fs=require('node:fs'),vm=require('node:vm');
+          const html=fs.readFileSync('index.html','utf8'),auth=fs.readFileSync('auth.js','utf8');
+          for(const m of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g))if(!/\bsrc=/.test(m[1]))new vm.Script(m[2]);
+          for(const id of ['ppicPlanPanel','ppicPlanBadge','ppicPlanRefresh','ppicPlanStatus','ppicPlanMetrics','ppicPlanGates','ppicPlanActions','ppicPlanSKU','ppicPlanAsk','ppicPlanFacts','ppicPlanSktNotice'])
+            if(!html.includes('id="'+id+'"'))throw Error('Missing '+id);
+          for(const asset of ['ppic-plan-ui.js','ppic-plan.css'])if(!html.includes(asset))throw Error('Missing '+asset);
+          for(const marker of ['ppicLoadPlanStatus','ppicPlanSessionReady','ppicPlanClear'])if(!auth.includes(marker))throw Error('Owner session wiring missing '+marker);
+          const js=fs.readFileSync('ppic-plan-ui.js','utf8'),code=JSON.stringify([html,auth,js]);
+          if(/innerHTML|insertAdjacentHTML|eval\(/.test(js))throw Error('Unsafe private renderer');
+          if(/sk-proj-|sk-[A-Za-z0-9]{25,}/.test(code))throw Error('Possible raw model secret in browser');
+          const deploy=fs.readFileSync('.github/workflows/deploy-pages.yml','utf8'),sw=fs.readFileSync('sw.js','utf8'),health=fs.readFileSync('tools/ppic_health_check.py','utf8');
+          for(const asset of ['ppic-plan-ui.js','ppic-plan.css'])if(!deploy.includes(asset)||!sw.includes(asset)||!health.includes(asset))throw Error('Missing asset in public gates '+asset);
+          JS
+      - name: Install browser test support
+        run: |
+          npm install --no-save @playwright/test@1.62.1
+          npx playwright install --with-deps chromium
+      - name: Start synthetic private-shell server
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/ppic-plan-browser.log 2>&1 &
+          for i in $(seq 1 20); do curl -fsS http://127.0.0.1:8765/ >/dev/null && exit 0; sleep 1; done
+          exit 1
+      - name: Run Owner and mobile synthetic UAT
+        run: npx playwright test tests/ppic-plan.spec.cjs --browser=chromium --workers=1 --reporter=list
