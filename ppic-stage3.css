@@ -1,0 +1,43 @@
+#ppicMain .ppic-stage3{margin:16px 0 22px;padding:22px;border:1px solid rgba(128,221,192,.55);border-radius:19px;background:linear-gradient(145deg,rgba(20,92,89,.57),rgba(9,24,42,.96));color:#e9fbf9;box-shadow:0 16px 44px #0003}
+#ppicMain .ppic-s3-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+#ppicMain .ppic-s3-heading h3{font-size:21px;color:#affce8;margin:2px 0 5px}
+#ppicMain .ppic-s3-heading p{color:#b8d8d2;font-size:12px;margin:0}
+#ppicMain .ppic-s3-badge{background:#235d54;border:1px solid #74cdb2;border-radius:30px;color:#edfff7;font-size:11px;padding:6px 10px}
+#ppicMain .ppic-s3-badge[data-tone=alert]{background:#5b3428;border-color:#db9974;color:#ffe7c8}
+#ppicMain .ppic-s3-badge[data-tone=gold]{background:#4b3d25;border-color:#d6b66e;color:#fff1cd}
+#ppicMain .ppic-s3-meta-info{font-size:11px;color:#b3d0ce;margin:9px 0;line-height:1.7}
+#ppicMain .ppic-s3-notice{background:#123843;border-radius:11px;padding:11px 13px;color:#e0f5f0;font-size:12px;line-height:1.6}
+#ppicMain .ppic-s3-notice[data-tone=alert]{background:#503022;color:#ffe0be}
+#ppicMain .ppic-s3-notice[data-tone=gold]{background:#4b3b28;color:#ffe6b7}
+#ppicMain .ppic-s3-focus{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:14px 0}
+#ppicMain .ppic-s3-card{background:linear-gradient(135deg,#10353c,#0c2434);border:1px solid #477e77;border-radius:14px;padding:15px;overflow-wrap:anywhere}
+#ppicMain .ppic-s3-card[data-priority=P1]{border-top:3px solid #f1c18b}
+#ppicMain .ppic-s3-card-head,#ppicMain .ppic-s3-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+#ppicMain .ppic-s3-priority{font-size:11px;font-weight:850;color:#0b3033;background:#aff2d8;border-radius:6px;padding:3px 7px}
+#ppicMain .ppic-s3-kind{font-size:11px;color:#b0d3d0}
+#ppicMain .ppic-s3-card h4{font-size:15px;color:#f5fffb;line-height:1.45;margin:10px 0}
+#ppicMain .ppic-s3-recommendation{font-size:13px;line-height:1.7;color:#def4ed}
+#ppicMain .ppic-s3-explain p{font-size:12px;line-height:1.65;color:#beddd7;margin:6px 0}
+#ppicMain .ppic-s3-explain strong{color:#f0fff9}
+#ppicMain .ppic-s3-meta{margin:10px 0;font-size:11px;color:#b7d5d0}
+#ppicMain .ppic-s3-gate{font-size:11px;color:#ffe7bc;background:#423624;padding:4px 7px;border-radius:9px;border:1px solid #8d7243}
+#ppicMain .ppic-s3-risk-row{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}
+#ppicMain .ppic-s3-risk{font-size:10px;border:1px solid #a67e59;border-radius:15px;padding:4px 6px;color:#f8d9a8}
+#ppicMain .ppic-s3-evidence{border-top:1px solid #31585b;padding-top:9px;font-size:12px}
+#ppicMain .ppic-s3-evidence summary{cursor:pointer;color:#a4f5e0}
+#ppicMain .ppic-s3-evidence-row{display:grid;gap:5px;margin:8px 0;padding:7px;background:#0a2834;border-radius:9px}
+#ppicMain .ppic-s3-evidence-row strong{font-size:11px;color:#d9f7f0;overflow-wrap:anywhere}
+#ppicMain .ppic-s3-muted{color:#b0cdca;font-size:11px;line-height:1.65;overflow-wrap:anywhere}
+#ppicMain .ppic-s3-source-link{cursor:pointer;text-align:left;color:#aaf6e3;text-decoration:underline;border:0;background:transparent;padding:3px 0;width:fit-content;font:inherit}
+#ppicMain .ppic-s3-actions{margin-top:10px}
+#ppicMain .ppic-s3-actions button{font-size:12px;min-height:38px}
+#ppicMain .ppic-s3-details{margin:11px 0;padding:10px;border:1px solid #376963;border-radius:12px}
+#ppicMain .ppic-s3-details>summary{font-size:13px;font-weight:650;color:#c3f9e9;cursor:pointer;padding:4px}
+#ppicMain .ppic-s3-others{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding-top:12px}
+#ppicMain .ppic-s3-risks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:10px}
+#ppicMain .ppic-s3-issue{padding:10px;border-radius:10px;background:#102e39;border:1px solid #385e5a;border-left:3px solid #e4b279}
+#ppicMain .ppic-s3-issue strong{font-size:12px;color:#f8e2c5}
+#ppicMain .ppic-s3-issue p{margin:5px 0}
+#ppicMain .ppic-s3-boundary{font-size:11px;line-height:1.7;color:#a6c4bf;border-top:1px solid #38605c;padding-top:10px}
+@media(max-width:950px){#ppicMain .ppic-s3-focus{grid-template-columns:1fr 1fr}}
+@media(max-width:650px){#ppicMain .ppic-stage3{padding:14px;border-radius:15px}#ppicMain .ppic-s3-focus,#ppicMain .ppic-s3-others,#ppicMain .ppic-s3-risks{grid-template-columns:1fr}}
