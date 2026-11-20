@@ -1,0 +1,64 @@
+name: BAL PPIC Stage2 Reconciliation QA
+on:
+  push:
+    branches: [main, feat/ppic-stage2-auto-reconciliation]
+    paths:
+      - 'index.html'
+      - 'auth.js'
+      - 'ppic-stage2-ui.js'
+      - 'ppic-stage2.css'
+      - 'sw.js'
+      - 'supabase/functions/ppic-stage2-status/**'
+      - 'supabase/migrations/*_ppic_stage2_*.sql'
+      - 'tests/ppic-stage2*'
+      - 'tools/ppic_health_check.py'
+      - '.github/workflows/deploy-pages.yml'
+      - '.github/workflows/ppic-stage2-qa.yml'
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  secure-reconciliation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - name: Test security, source projection and Stage2 UI models
+        run: |
+          node --test tests/ppic-stage2-status.test.mjs tests/ppic-stage2-ui.test.mjs
+          node --test tests/ppic-v60-robot-status.test.mjs
+      - name: Check syntax, safe DOM rendering, and public packaging
+        run: |
+          node --check auth.js
+          node --check ppic-stage2-ui.js
+          node --check supabase/functions/ppic-stage2-status/validation.mjs
+          node - <<'JS'
+          const fs=require('node:fs'),vm=require('node:vm'),s=fs.readFileSync('index.html','utf8');
+          for(const match of s.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g))if(!/\bsrc=/.test(match[1]))new vm.Script(match[2]);
+          for(const id of ['ppicStage2Panel','ppicStage2Badge','ppicStage2Refresh','ppicStage2Metrics','ppicStage2Checks','ppicStage2Warnings','ppicStage2Coverage','ppicStage2Message'])if(!s.includes('id="'+id+'"'))throw Error('Stage2 element missing '+id);
+          const files=['ppic-stage2-ui.js','ppic-stage2.css'];
+          const src=fs.readFileSync('.github/workflows/deploy-pages.yml','utf8');
+          const sw=fs.readFileSync('sw.js','utf8');
+          const check=fs.readFileSync('tools/ppic_health_check.py','utf8');
+          for(const file of files)if(!s.includes(file)||!src.includes(file)||!sw.includes(file)||!check.includes(file))throw Error('Missing published asset '+file);
+          const ui=fs.readFileSync('ppic-stage2-ui.js','utf8');
+          if(/innerHTML|insertAdjacentHTML|eval\(/.test(ui))throw Error('Unsafe private rendering');
+          const auth=fs.readFileSync('auth.js','utf8');
+          for(const f of ['ppicLoadStage2Status','ppicStage2SessionReady','ppicStage2Clear'])if(!auth.includes(f))throw Error('Missing login hook');
+          if(/sk-proj-|sk-[A-Za-z0-9]{25,}/.test(ui+s))throw Error('Possible secret in static bundle');
+          JS
+          python3 -m unittest discover -s tests -p ppic_health_check_test.py
+      - name: Install browser UAT
+        run: |
+          npm install --no-save @playwright/test@1.62.1
+          npx playwright install --with-deps chromium
+      - name: Start local synthetic shell
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/ppic-stage2-browser.log 2>&1 &
+          for i in $(seq 1 20); do curl -fsS http://127.0.0.1:8765/ >/dev/null && exit 0; sleep 1; done
+          exit 1
+      - name: Verify Owner, blockers, and mobile presentation
+        run: npx playwright test tests/ppic-stage2.spec.cjs --browser=chromium --workers=1 --reporter=list
