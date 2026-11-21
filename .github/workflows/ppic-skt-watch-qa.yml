@@ -1,0 +1,62 @@
+name: BAL PPIC SKT Source Freshness QA
+on:
+  push:
+    branches: [main, feat/ppic-stage3c-skt-freshness]
+    paths:
+      - index.html
+      - auth.js
+      - ppic-skt-watch-ui.js
+      - ppic-skt-watch.css
+      - sw.js
+      - tools/ppic_health_check.py
+      - .github/workflows/deploy-pages.yml
+      - supabase/functions/ppic-skt-watch-status/**
+      - supabase/migrations/*_ppic_skt_division_watch.sql
+      - tests/ppic-skt-watch-status.test.mjs
+      - tests/ppic-skt-watch.spec.cjs
+      - .github/workflows/ppic-skt-watch-qa.yml
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  freshness-qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - name: Secure endpoint and existing plan regression
+        run: |
+          node --test tests/ppic-skt-watch-status.test.mjs tests/ppic-plan-status.test.mjs tests/ppic-stage3-status.test.mjs
+          node --check auth.js
+          node --check ppic-skt-watch-ui.js
+          node --check supabase/functions/ppic-skt-watch-status/validation.mjs
+          python3 -m unittest discover -s tests -p ppic_health_check_test.py
+      - name: Verify sanitized UI, private session callbacks and complete public bundle
+        run: |
+          node - <<'JS'
+          const fs=require('node:fs'),vm=require('node:vm');
+          const html=fs.readFileSync('index.html','utf8'),auth=fs.readFileSync('auth.js','utf8');
+          for(const m of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g))if(!/\bsrc=/.test(m[1]))new vm.Script(m[2]);
+          for(const id of ['ppicSKTWatchPanel','ppicSKTWatchRows','ppicSKTWatchBadge','ppicSKTWatchMetrics','ppicSKTWatchStatus','ppicSKTWatchRefresh','ppicSKTWatchAsk','ppicSKTWatchTime'])
+            if(!html.includes('id="'+id+'"'))throw Error('Missing '+id);
+          for(const marker of ['ppicLoadSKTWatch','ppicSKTWatchSessionReady','ppicSKTWatchClear'])if(!auth.includes(marker))throw Error('Owner session wiring missing '+marker);
+          const js=fs.readFileSync('ppic-skt-watch-ui.js','utf8'),code=JSON.stringify([html,auth,js]);
+          if(/innerHTML|insertAdjacentHTML|eval\(/.test(js))throw Error('Unsafe private renderer');
+          if(/sk-proj-|sk-[A-Za-z0-9]{25,}/.test(code))throw Error('Unexpected model key in client code');
+          const deploy=fs.readFileSync('.github/workflows/deploy-pages.yml','utf8'),sw=fs.readFileSync('sw.js','utf8'),health=fs.readFileSync('tools/ppic_health_check.py','utf8');
+          for(const asset of ['ppic-skt-watch-ui.js','ppic-skt-watch.css'])if(!deploy.includes(asset)||!sw.includes(asset)||!health.includes(asset))throw Error('Missing asset '+asset);
+          JS
+      - name: Install synthetic browser dependencies
+        run: |
+          npm install --no-save @playwright/test@1.62.1
+          npx playwright install --with-deps chromium
+      - name: Start synthetic PPIC website
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/ppic-skt-watch.log 2>&1 &
+          for i in $(seq 1 20); do curl -fsS http://127.0.0.1:8765/ >/dev/null && exit 0; sleep 1; done
+          exit 1
+      - name: Test draft handling, Owner sessions, and mobile comparison layout
+        run: npx playwright test tests/ppic-skt-watch.spec.cjs --browser=chromium --workers=1 --reporter=list
