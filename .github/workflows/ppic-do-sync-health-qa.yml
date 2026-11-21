@@ -1,0 +1,64 @@
+name: BAL PPIC DO Auto Sync Health QA
+on:
+  push:
+    branches: [main, feat/ppic-do-sync-health-v1]
+    paths:
+      - index.html
+      - auth.js
+      - ppic-do-auto-ui.js
+      - ppic-do-auto.css
+      - sw.js
+      - tools/ppic_health_check.py
+      - .github/workflows/deploy-pages.yml
+      - supabase/functions/ppic-do-sync-health/**
+      - supabase/migrations/*_ppic_do_sync_health.sql
+      - tests/ppic-do-sync-health.test.mjs
+      - tests/ppic-do-sync-health.spec.cjs
+      - .github/workflows/ppic-do-sync-health-qa.yml
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  do-health-qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - name: Test DO health endpoint and existing status gateways
+        run: |
+          node --test tests/ppic-do-sync-health.test.mjs tests/ppic-plan-status.test.mjs tests/ppic-stage3-status.test.mjs tests/ppic-stage2-status.test.mjs
+          node --check auth.js
+          node --check ppic-do-auto-ui.js
+          node --check supabase/functions/ppic-do-sync-health/validation.mjs
+          python3 -m unittest discover -s tests -p ppic_health_check_test.py
+      - name: Verify public bundle remains sanitized and login is required
+        run: |
+          node - <<'JS'
+          const fs=require('node:fs'),vm=require('node:vm');
+          const html=fs.readFileSync('index.html','utf8'),auth=fs.readFileSync('auth.js','utf8');
+          for(const m of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g))if(!/\bsrc=/.test(m[1]))new vm.Script(m[2]);
+          for(const id of ['ppicDOAutoPanel','ppicDOAutoRefresh','ppicDOAutoBadge','ppicDOAutoTime','ppicDOAutoStatus','ppicDOAutoChecks','ppicDOAutoMetrics','ppicDOAutoPending'])
+            if(!html.includes('id="'+id+'"'))throw Error('Missing DO health UI '+id);
+          for(const marker of ['ppicLoadDOAutoStatus','ppicDOAutoSessionReady','ppicDOAutoClear'])if(!auth.includes(marker))throw Error('Missing private session '+marker);
+          const js=fs.readFileSync('ppic-do-auto-ui.js','utf8'),combined=JSON.stringify([html,auth,js]);
+          if(/innerHTML|insertAdjacentHTML|eval\(/.test(js))throw Error('Unsafe private DO renderer');
+          if(/sk-proj-|sk-[A-Za-z0-9]{25,}/.test(combined))throw Error('Unexpected API secret');
+          const deploy=fs.readFileSync('.github/workflows/deploy-pages.yml','utf8'),
+            sw=fs.readFileSync('sw.js','utf8'),health=fs.readFileSync('tools/ppic_health_check.py','utf8');
+          for(const file of ['ppic-do-auto-ui.js','ppic-do-auto.css'])if(!deploy.includes(file)||!sw.includes(file)||!health.includes(file))
+            throw Error('Missing allowed public asset '+file);
+          JS
+      - name: Install browser test support
+        run: |
+          npm install --no-save @playwright/test@1.62.1
+          npx playwright install --with-deps chromium
+      - name: Serve synthetic PPIC website
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/ppic-do-sync.log 2>&1 &
+          for i in $(seq 1 20); do curl -fsS http://127.0.0.1:8765/ >/dev/null && exit 0; sleep 1; done
+          exit 1
+      - name: Test Owner login, health and mobile display
+        run: npx playwright test tests/ppic-do-sync-health.spec.cjs --browser=chromium --workers=1 --reporter=list
