@@ -1,0 +1,26 @@
+#ppicMain .ppic-skt-watch{margin:16px 0 25px;padding:19px;border:1px solid #68cfb8;border-radius:17px;background:linear-gradient(132deg,rgba(22,96,88,.47),rgba(8,27,45,.95));color:#e9f6f4}
+#ppicMain .ppic-skt-watch h3{font-size:19px;color:#b9fce6;margin:2px 0 6px}
+#ppicMain .ppic-skt-watch .ppic-skt-header{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+#ppicMain .ppic-skt-header p{font-size:12px;color:#b5d9d2;margin:0}
+#ppicMain .ppic-skt-badge{font-size:11px;border-radius:99px;padding:5px 9px;border:1px solid #5fbaa7;background:#17564d;color:#e8fff5}
+#ppicMain .ppic-skt-watch-note{font-size:12px;color:#d5f4e8;background:#153d42;padding:11px;border-radius:10px;line-height:1.7;margin:12px 0}
+#ppicMain .ppic-skt-watch-note[data-tone=alert]{background:#4c3724;color:#ffdbb6}
+#ppicMain .ppic-skt-muted{font-size:11px;color:#b2cdc6;line-height:1.6;margin:5px 0;overflow-wrap:anywhere}
+#ppicMain .ppic-skt-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:12px 0}
+#ppicMain .ppic-skt-metric{background:#113840;border:1px solid #3a7f73;border-radius:10px;padding:11px}
+#ppicMain .ppic-skt-metric span{display:block;color:#abd7c8;font-size:11px}
+#ppicMain .ppic-skt-metric strong{display:block;color:#f2fff7;font-size:20px;margin-top:4px}
+#ppicMain .ppic-skt-watch details{border:1px solid #32685e;border-radius:12px;padding:11px;margin:11px 0;background:rgba(10,39,48,.6)}
+#ppicMain .ppic-skt-watch summary{font-size:13px;font-weight:650;cursor:pointer;color:#c1f9e9}
+#ppicMain .ppic-skt-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px}
+#ppicMain .ppic-skt-card{background:#0e303c;border:1px solid #3b786f;border-radius:12px;padding:12px;overflow-wrap:anywhere}
+#ppicMain .ppic-skt-card[data-outcome=DRAFT]{border-left:3px solid #efa76e}
+#ppicMain .ppic-skt-card[data-outcome=PENDING]{border-left:3px solid #e2d08a}
+#ppicMain .ppic-skt-card[data-outcome=APPROVED]{border-left:3px solid #8be0b6}
+#ppicMain .ppic-skt-card-title{display:flex;justify-content:space-between;align-items:center;gap:7px;flex-wrap:wrap}
+#ppicMain .ppic-skt-card-title strong{font-size:13px;color:#f0fff8}
+#ppicMain .ppic-skt-chip{font-size:10px;border-radius:99px;padding:4px 8px;background:#24514a;border:1px solid #4e9683;color:#e2fcef}
+#ppicMain .ppic-skt-explain{font-size:12px;color:#d3ebe6;line-height:1.65;margin:8px 0}
+#ppicMain .ppic-skt-boundary{font-size:11px;line-height:1.7;color:#a5c6be;border-top:1px solid #3b7769;padding-top:10px}
+@media(max-width:720px){#ppicMain .ppic-skt-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){#ppicMain .ppic-skt-watch{padding:13px}#ppicMain .ppic-skt-grid{grid-template-columns:1fr}}
