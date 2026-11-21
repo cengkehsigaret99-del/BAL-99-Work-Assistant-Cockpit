@@ -54,7 +54,7 @@ test('Owner sees new TSG draft without incorrectly treating it as final or facto
  const tsg=page.locator('#ppicSKTWatchRows .ppic-skt-card').filter({hasText:'TSG'}).first();
  await expect(tsg).toContainText('Draf — belum lengkap');
  await expect(tsg).toContainText('21 Nov 2026');
- await expect(tsg).toContainText('bukan');
+ await expect(tsg).toContainText('tidak boleh mengganti saldo');
  const giling=page.locator('#ppicSKTWatchRows .ppic-skt-card').filter({hasText:'Giling'}).first();
  await expect(giling).toContainText('Sudah disetujui');
  await expect(giling).toContainText('laporan aktif 17 Nov 2026');
