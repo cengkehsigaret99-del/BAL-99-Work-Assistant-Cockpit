@@ -197,9 +197,9 @@ begin
  select (x->>'date')::date d,(x->>'pack')::bigint pack,(x->>'nominal')::bigint nominal
  from jsonb_array_elements(p_rows) x
  ), agg as (
- select extract(day from d)::int day,sum(pack) pack,sum(nominal) nominal from l group by d
+ select extract(day from d)::int day_no,sum(pack) pack,sum(nominal) nominal from l group by d
  )
- select coalesce(jsonb_agg(jsonb_build_array(day,pack,nominal,0) order by day),'[]'::jsonb)
+ select coalesce(jsonb_agg(jsonb_build_array(day_no,pack,nominal,0) order by day_no),'[]'::jsonb)
  into v_daily_entries from agg;
 
  v_payload:=jsonb_build_object(
