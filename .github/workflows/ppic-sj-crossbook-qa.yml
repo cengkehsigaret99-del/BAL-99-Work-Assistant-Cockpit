@@ -1,0 +1,65 @@
+name: BAL PPIC SJ334 Cross-Book Reconciliation QA
+on:
+  push:
+    branches: [main, feat/ppic-sj334-crossbook-recon]
+    paths:
+      - index.html
+      - auth.js
+      - ppic-sj-recon-ui.js
+      - ppic-sj-recon.css
+      - sw.js
+      - tools/ppic_health_check.py
+      - .github/workflows/deploy-pages.yml
+      - supabase/functions/ppic-sj-recon-status/**
+      - supabase/migrations/*_ppic_sj334_crossbook_reconciliation.sql
+      - tests/ppic-sj-crossbook-status.test.mjs
+      - tests/ppic-sj-crossbook.spec.cjs
+      - .github/workflows/ppic-sj-crossbook-qa.yml
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  crossbook-qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - name: Private Owner-gated gateway and regression
+        run: |
+          node --test tests/ppic-sj-crossbook-status.test.mjs tests/ppic-do-sync-health.test.mjs tests/ppic-stage3-status.test.mjs
+          node --check auth.js
+          node --check ppic-sj-recon-ui.js
+          node --check supabase/functions/ppic-sj-recon-status/validation.mjs
+          python3 -m unittest discover -s tests -p ppic_health_check_test.py
+      - name: Verify public allowlist and secure Owner lifecycle
+        run: |
+          node - <<'JS'
+          const fs=require('node:fs'),vm=require('node:vm');
+          const html=fs.readFileSync('index.html','utf8'),auth=fs.readFileSync('auth.js','utf8');
+          for(const m of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g))if(!/\bsrc=/.test(m[1]))new vm.Script(m[2]);
+          for(const id of ['ppicCrossBookPanel','ppicCrossBookMetrics','ppicCrossBookBadge','ppicCrossBookNotice','ppicCrossBookTime','ppicCrossBookChecks','ppicCrossBookRisks','ppicCrossBookRefresh','ppicCrossBookSource'])
+            if(!html.includes('id="'+id+'"'))throw Error('Crossbook UI missing '+id);
+          for(const marker of ['ppicLoadCrossBookStatus','ppicCrossBookSessionReady','ppicCrossBookClear'])
+            if(!auth.includes(marker))throw Error('Crossbook Owner session missing '+marker);
+          const js=fs.readFileSync('ppic-sj-recon-ui.js','utf8'),data=JSON.stringify([html,auth,js]);
+          if(/innerHTML|insertAdjacentHTML|eval\(/.test(js))throw Error('Unsafe private renderer');
+          if(/sk-proj-|sk-[A-Za-z0-9]{25,}/.test(data))throw Error('Raw API secret in public assets');
+          const deploy=fs.readFileSync('.github/workflows/deploy-pages.yml','utf8'),
+            sw=fs.readFileSync('sw.js','utf8'),health=fs.readFileSync('tools/ppic_health_check.py','utf8');
+          for(const asset of ['ppic-sj-recon-ui.js','ppic-sj-recon.css'])
+            if(!deploy.includes(asset)||!sw.includes(asset)||!health.includes(asset))throw Error('Missing sanitized public asset '+asset);
+          JS
+      - name: Install browser test dependencies
+        run: |
+          npm install --no-save @playwright/test@1.62.1
+          npx playwright install --with-deps chromium
+      - name: Start static PPIC Owner shell
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/ppic-sj-crossbook.log 2>&1 &
+          for i in $(seq 1 20); do curl -fsS http://127.0.0.1:8765/ >/dev/null && exit 0; sleep 1; done
+          exit 1
+      - name: Synthetic Owner login, result, mobile and logout
+        run: npx playwright test tests/ppic-sj-crossbook.spec.cjs --browser=chromium --workers=1 --reporter=list
