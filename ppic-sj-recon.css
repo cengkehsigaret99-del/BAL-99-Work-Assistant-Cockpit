@@ -1,0 +1,24 @@
+#ppicMain .ppic-crossbook{margin:18px 0 22px;padding:18px;border:1px solid #65ccb9;border-radius:17px;background:linear-gradient(135deg,rgba(22,105,89,.44),rgba(7,30,44,.96));color:#e5fff8}
+#ppicMain .ppic-cross-head{display:flex;justify-content:space-between;align-items:flex-start;gap:13px;flex-wrap:wrap}
+#ppicMain .ppic-cross-head h3{font-size:19px;color:#bcffe6;margin:3px 0 5px}
+#ppicMain .ppic-cross-head p,#ppicMain .ppic-cross-foot{color:#b5d5ce;font-size:11px;line-height:1.7}
+#ppicMain .ppic-cross-badge{background:#503a23;border:1px solid #d0a773;color:#ffebc8;border-radius:25px;font-size:11px;padding:5px 9px}
+#ppicMain .ppic-cross-note{font-size:12px;line-height:1.65;padding:11px;border-radius:9px;background:#163d41;color:#d7f9ec;margin:10px 0}
+#ppicMain .ppic-cross-note[data-tone=warning]{background:#4b3923;color:#ffdeb5}
+#ppicMain .ppic-cross-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:14px 0}
+#ppicMain .ppic-cross-metric{padding:11px;border:1px solid #408978;border-radius:11px;background:#13333c;overflow-wrap:anywhere}
+#ppicMain .ppic-cross-metric small{display:block;color:#a6d7c8;font-size:11px}
+#ppicMain .ppic-cross-metric strong{display:block;margin-top:5px;color:#eefff9;font-size:16px}
+#ppicMain .ppic-crossbook details{margin:10px 0;padding:10px;border:1px solid #41776e;border-radius:11px;background:rgba(9,43,46,.56)}
+#ppicMain .ppic-crossbook summary{color:#b5f3db;cursor:pointer;font-size:13px;font-weight:700}
+#ppicMain .ppic-cross-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:10px}
+#ppicMain .ppic-cross-check,#ppicMain .ppic-cross-risk{padding:10px;background:#0e303b;border:1px solid #34695f;border-radius:9px;font-size:12px;line-height:1.6;overflow-wrap:anywhere}
+#ppicMain .ppic-cross-check strong{color:#eafff4;display:block;font-size:12px}
+#ppicMain .ppic-cross-check-state{color:#f9d7a3;font-size:11px}
+#ppicMain .ppic-cross-risk{border-left:3px solid #e5b477}
+#ppicMain .ppic-cross-risk strong{color:#ffe3b8}
+#ppicMain .ppic-cross-risk p{margin:6px 0;color:#d2ebe3}
+#ppicMain .ppic-cross-risk small{color:#a7d2c8}
+#ppicMain .ppic-cross-source{padding:10px;border-radius:8px;border:1px dashed #d1a668;color:#fbe5c4;font-size:11px;line-height:1.7}
+@media(max-width:700px){#ppicMain .ppic-cross-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:500px){#ppicMain .ppic-crossbook{padding:12px}#ppicMain .ppic-cross-grid{grid-template-columns:1fr}}
