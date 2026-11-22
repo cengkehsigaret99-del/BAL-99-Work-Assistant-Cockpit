@@ -73,6 +73,6 @@ test('Narrow mobile preserves all amounts without extra transactions',async({pag
  await page.setViewportSize({width:375,height:812});
  const s=await login(page);
  await expect(page.locator('#ppicCrossBookMetrics .ppic-cross-metric')).toHaveCount(6);
- await expect(page.locator('#ppicCrossBookNotice')).toContainText('tidak mengurangi stok');
+ await expect(page.locator('#ppicCrossBookNotice')).toContainText('Jangan kurangi stok');
  expect(s.errors).toEqual([]);
 });
