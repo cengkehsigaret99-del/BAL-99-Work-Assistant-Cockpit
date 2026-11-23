@@ -1,0 +1,59 @@
+name: BAL PPIC Charcoal Gray Theme QA
+on:
+  push:
+    branches: [main, feat/ppic-charcoal-dark-20261124]
+    paths:
+      - index.html
+      - ppic-charcoal-theme.css
+      - sw.js
+      - manifest.webmanifest
+      - tools/ppic_health_check.py
+      - .github/workflows/deploy-pages.yml
+      - tests/ppic-charcoal-theme.spec.cjs
+      - .github/workflows/ppic-charcoal-theme-qa.yml
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  charcoal-theme-qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - name: Test repository shell, privacy gates and theme PWA configuration
+        run: |
+          node --check auth.js
+          node --check sw.js
+          python3 -m unittest discover -s tests -p ppic_health_check_test.py
+          node - <<'JS'
+          const fs=require('node:fs'), vm=require('node:vm');
+          const html=fs.readFileSync('index.html','utf8');
+          const css=fs.readFileSync('ppic-charcoal-theme.css','utf8');
+          const sw=fs.readFileSync('sw.js','utf8');
+          const manifest=JSON.parse(fs.readFileSync('manifest.webmanifest','utf8'));
+          for(const x of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g))
+            if(!/\bsrc=/.test(x[1]))new vm.Script(x[2]);
+          if(!html.includes('<link rel="stylesheet" href="ppic-charcoal-theme.css"></head>'))throw Error('Charcoal CSS not loaded last');
+          if(!html.includes('content="#151719"'))throw Error('PWA chrome not charcoal');
+          if(manifest.theme_color!=='#151719'||manifest.background_color!=='#151719')throw Error('Wrong installed app colors');
+          if(!sw.includes('bal-ppic-public-shell-v69-charcoal-gray')||!sw.includes('ppic-charcoal-theme.css'))throw Error('Service worker not versioned');
+          for(const token of ['--bg:#151719','--panel:#25282c','.owner-card','.robot-panel','.ppic-daily-intel','@media print'])
+            if(!css.includes(token))throw Error('Missing global charcoal rule: '+token);
+          if(!html.includes('id="ppicMain"')||!html.includes('id="ownerLogin"'))throw Error('Owner page identity changed');
+          if(css.includes('url(http')||css.includes('@import')||css.includes('javascript:'))throw Error('Remote/theme code prohibited');
+          console.log('PASS: graphite palette, owner shell, offline/PWA and white printing configured');
+          JS
+      - name: Install headless browser tooling
+        run: |
+          npm install --no-save @playwright/test@1.62.1
+          npx playwright install --with-deps chromium
+      - name: Start static BAL PPIC site
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/ppic-charcoal-browser.log 2>&1 &
+          for i in $(seq 1 20); do curl -fsS http://127.0.0.1:8765/ >/dev/null && exit 0; sleep 1; done
+          exit 1
+      - name: Check desktop Owner, Android layout and print rendering
+        run: npx playwright test tests/ppic-charcoal-theme.spec.cjs --browser=chromium --workers=1 --reporter=list
