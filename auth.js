@@ -40,6 +40,23 @@
   if(!response.ok||data.ok!==true)throw Error(data.error||"Asisten PPIC belum dapat dihubungi ("+response.status+").");
   return data;
  };
+ let dailyIntelController=null,dailyIntelSequence=0;
+ window.ppicLoadDailyIntel=async(period=robotPeriod())=>{
+  if(!accessToken||Date.now()>=expiresAt)throw Error("Sesi Owner sudah berakhir. Login kembali.");
+  if(!/^\d{4}-(0[1-9]|1[0-2])$/.test(period))throw Error("Periode operasional tidak valid.");
+  if(dailyIntelController)dailyIntelController.abort();
+  dailyIntelController=new AbortController();
+  const token=accessToken,current=attempt,seq=++dailyIntelSequence;
+  const response=await fetch(ROOT+"/functions/v1/ppic-daily-intelligence",{
+   method:"POST",headers:{"apikey":KEY,"Authorization":"Bearer "+token,"Content-Type":"application/json"},
+   body:JSON.stringify({period}),cache:"no-store",signal:dailyIntelController.signal
+  });
+  const data=await response.json().catch(()=>({}));
+  if(current!==attempt||token!==accessToken||seq!==dailyIntelSequence||period!==robotPeriod())
+   throw Object.assign(Error("Sesi Owner atau periode berubah."),{name:"AbortError"});
+  if(!response.ok||data.ok!==true)throw Error(data.error||"Status operasional belum tersedia ("+response.status+").");
+  return data;
+ };
  let crossBookController=null,crossBookSequence=0;
  window.ppicLoadCrossBookStatus=async(period=robotPeriod())=>{
   if(!accessToken||Date.now()>=expiresAt)throw Error("Sesi Owner telah berakhir. Login kembali.");
@@ -249,7 +266,7 @@
  const MAX_SESSION_MS=30*60*1000;
  function clearExpiry(){if(expiryTimer!==null){clearTimeout(expiryTimer);expiryTimer=null}expiresAt=0}
  function expire(){attempt++;show(false);message("Sesi berakhir. Silakan login kembali.")}
- const show=(authorized)=>{login.hidden=authorized;main.hidden=!authorized;logout.hidden=!authorized;if(authorized){window.ppicAutoImportSessionReady?.();window.ppicRobotSessionReady?.();window.ppicAssistantSessionReady?.();window.ppicStage2SessionReady?.();window.ppicStage3SessionReady?.();window.ppicPlanSessionReady?.();window.ppicSKTWatchSessionReady?.();window.ppicDOAutoSessionReady?.();window.ppicCrossBookSessionReady?.()}else{window.ppicCrossBookClear?.();if(crossBookController)crossBookController.abort();crossBookSequence++;window.ppicDOAutoClear?.();if(doHealthController)doHealthController.abort();doHealthSequence++;window.ppicSKTWatchClear?.();if(sktWatchController)sktWatchController.abort();sktWatchSequence++;window.ppicPlanClear?.();if(planController)planController.abort();planSequence++;window.ppicStage3Clear?.();if(stage3Controller)stage3Controller.abort();stage3Sequence++;window.ppicStage2Clear?.();if(stage2Controller)stage2Controller.abort();stage2Sequence++;window.ppicAssistantClear?.();window.ppicClearRobotStatus?.();if(robotRequest)robotRequest.abort();robotSequence++;window.ppicClearAutoImportStatus?.();if(autoImportRequest)autoImportRequest.abort();autoImportSequence++;if(window.ppicClearDailyInfo)window.ppicClearDailyInfo();if(docsRequest)docsRequest.abort();if(reportsRequest)reportsRequest.abort();if(dailyRequest)dailyRequest.abort();if(customerRequest)customerRequest.abort();if(materialRequest)materialRequest.abort();if(finishedRequest)finishedRequest.abort();if(sdmRequest)sdmRequest.abort();accessToken="";clearExpiry();if($("search"))$("search").value="";window.ppicSetDocs([]);window.ppicSetReports([]);window.ppicSetDaily([]);window.ppicSetDoCustomers([]);window.ppicSetMaterials([]);window.ppicSetFinished([]);window.ppicSetSDM([]);const modal=$("previewModal");if(modal)modal.hidden=true;const frame=$("previewFrame");if(frame)frame.srcdoc="";$("ownerPassword").value=""}};
+ const show=(authorized)=>{login.hidden=authorized;main.hidden=!authorized;logout.hidden=!authorized;if(authorized){window.ppicAutoImportSessionReady?.();window.ppicRobotSessionReady?.();window.ppicAssistantSessionReady?.();window.ppicStage2SessionReady?.();window.ppicStage3SessionReady?.();window.ppicPlanSessionReady?.();window.ppicSKTWatchSessionReady?.();window.ppicDOAutoSessionReady?.();window.ppicCrossBookSessionReady?.();window.ppicDailyIntelSessionReady?.()}else{window.ppicDailyIntelClear?.();if(dailyIntelController)dailyIntelController.abort();dailyIntelSequence++;window.ppicCrossBookClear?.();if(crossBookController)crossBookController.abort();crossBookSequence++;window.ppicDOAutoClear?.();if(doHealthController)doHealthController.abort();doHealthSequence++;window.ppicSKTWatchClear?.();if(sktWatchController)sktWatchController.abort();sktWatchSequence++;window.ppicPlanClear?.();if(planController)planController.abort();planSequence++;window.ppicStage3Clear?.();if(stage3Controller)stage3Controller.abort();stage3Sequence++;window.ppicStage2Clear?.();if(stage2Controller)stage2Controller.abort();stage2Sequence++;window.ppicAssistantClear?.();window.ppicClearRobotStatus?.();if(robotRequest)robotRequest.abort();robotSequence++;window.ppicClearAutoImportStatus?.();if(autoImportRequest)autoImportRequest.abort();autoImportSequence++;if(window.ppicClearDailyInfo)window.ppicClearDailyInfo();if(docsRequest)docsRequest.abort();if(reportsRequest)reportsRequest.abort();if(dailyRequest)dailyRequest.abort();if(customerRequest)customerRequest.abort();if(materialRequest)materialRequest.abort();if(finishedRequest)finishedRequest.abort();if(sdmRequest)sdmRequest.abort();accessToken="";clearExpiry();if($("search"))$("search").value="";window.ppicSetDocs([]);window.ppicSetReports([]);window.ppicSetDaily([]);window.ppicSetDoCustomers([]);window.ppicSetMaterials([]);window.ppicSetFinished([]);window.ppicSetSDM([]);const modal=$("previewModal");if(modal)modal.hidden=true;const frame=$("previewFrame");if(frame)frame.srcdoc="";$("ownerPassword").value=""}};
  const message=(value)=>{status.textContent=value};
  async function verify(token){
   const response=await fetch(ROOT+"/functions/v1/ppic-owner-check",{method:"GET",headers:{"apikey":KEY,"Authorization":"Bearer "+token},cache:"no-store"});
