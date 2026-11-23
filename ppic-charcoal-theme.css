@@ -324,3 +324,79 @@ th{color:#c0c6cb}
   .preview-backdrop,.owner-login,
   #ppicMain .ppic-daily-intel,#ppicMain .ppic-crossbook{display:none!important}
 }
+
+/* Guided navigation, divisional actions, period guidance and reporting panels.
+   These selectors are intentionally as specific as the V4.7 navigation rules. */
+#ppicMain .ppic-nav,
+#ppicMain .ppic-page-context,
+#ppicMain .ppic-walkthrough,
+#ppicMain .ppic-step-card,
+#ppicMain .ppic-understanding,
+#ppicMain .ppic-followup,
+#ppicMain .ppic-field-help,
+#ppicMain .ppic-report-instructions,
+#ppicMain .ppic-divisions-toggle,
+#ppicMain .ppic-flow-status{
+  background:linear-gradient(145deg,#30353a,#24282c);
+  border-color:#535b63;
+  color:#e7ecee;
+}
+#ppicMain .ppic-nav-items .btn{
+  background:#292e33;
+  color:#e5ebee;
+  border-color:#505961;
+}
+#ppicMain .ppic-nav-items .btn:hover{
+  background:#383e44;
+  border-color:#959ea6;
+  color:#fff;
+}
+#ppicMain .ppic-nav-items .btn[aria-current=page]{
+  background:linear-gradient(115deg,#e4e8eb,#c8d0d6);
+  color:#181b1d;
+  border-color:#dbe1e5;
+  box-shadow:0 5px 17px rgba(205,214,220,.18);
+}
+#ppicMain .ppic-flow-status button[aria-current="step"]{
+  background:#4b5259;
+  border-color:#bdc6cc;
+  color:#f4f6f7;
+}
+#ppicMain .ppic-flow-status button[aria-current="step"]>span{
+  background:#d8dfe3;
+  color:#181b1e;
+}
+#ppicMain .ppic-shortcut:hover,
+#ppicMain .ppic-shortcut:focus-visible{
+  background:#3b4147;
+  border-color:#aeb8bf;
+}
+#ppicMain .ppic-skip-link{
+  color:#15191d;
+  background:#dbe2e6;
+  border-color:#e6ebee;
+}
+#ppicMain .ppic-walkthrough h3,
+#ppicMain .ppic-page-context h2,
+#ppicMain .ppic-report-instructions h3{color:#eef2f4}
+#ppicMain .ppic-field-help,
+#ppicMain .ppic-understanding,
+#ppicMain .ppic-followup{color:#bec8ce}
+#ppicMain .sdm-report-card,
+#ppicMain #exCartonCapacity,
+#ppicMain .ppic-report-card{
+  background:linear-gradient(143deg,#33383c,#252a2e);
+  border-color:#566068;
+  color:#e8eef0;
+}
+#ppicMain .ppic-work-state{
+  border-color:#716759;
+  color:#e5cfad;
+}
+/* Avoid global background overrides on the printable sheet/canvas. */
+@media print{
+  #ppicMain .ppic-nav,#ppicMain .ppic-page-context,
+  #ppicMain .ppic-walkthrough,#ppicMain .ppic-flow-status{
+    display:none!important;
+  }
+}
