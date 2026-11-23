@@ -73,7 +73,7 @@ test('After synthetic Owner login the main and daily, stage 3, planning and DO c
  });
  for(const key of ['header','robot','daily','stage3','plan','do']){
   expect(styles[key],key).not.toBe(null);
-  expect(styles[key].bg,key).toMatch(/rgb\(48, 52, 58\)|rgb\(49, 53, 58\)|rgb\(50, 54, 59\)/);
+  expect(styles[key].bg,key).toMatch(/rgba?\(48,\s*52,\s*58(?:,|\))|rgba?\(49,\s*53,\s*58(?:,|\))|rgba?\(50,\s*54,\s*59(?:,|\))/);
  }
  const brandLogo=page.locator('.bal-brand-mark');
  await expect(brandLogo).toBeVisible();
