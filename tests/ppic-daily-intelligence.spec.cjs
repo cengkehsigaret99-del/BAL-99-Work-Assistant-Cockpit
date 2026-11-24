@@ -2,9 +2,9 @@ const {test,expect}=require('@playwright/test');
 const {status}=require('./fixtures/robot-synthetic.cjs');
 const ROOT=process.env.PPIC_TEST_BASE_URL||'http://127.0.0.1:8765/';
 const API='https://jryfozndxpjymggevkgq.supabase.co';
-const summary=()=>({ok:true,ready:true,period:'2026-11',latest:{
+const summary=(asOf='2026-11-23')=>({ok:true,ready:true,period:'2026-11',latest:{
  schema_version:'ppic-daily-intelligence-v1',
- id:'11111111-1111-4111-8111-111111111111',as_of:'2026-11-23',
+ id:'11111111-1111-4111-8111-111111111111',as_of:asOf,
  created_at:'2026-11-23T15:10:00Z',state:'WORKING_OPEN_RECON',write_scope:'READ_ONLY_WORKING_REFERENCES',
  source_fingerprint:'a'.repeat(64),skt_revision_current:true,ppic_evidence_current:true,posting_done:false,
  source_rows:[
@@ -34,7 +34,7 @@ const summary=()=>({ok:true,ready:true,period:'2026-11',latest:{
  next_actions:[{priority:'P1',owner:'Admin Cukai',action:'Periksa pita sebelum pemakaian ulang.'},
  {priority:'P1',owner:'Admin Kas',action:'Verifikasi rekening koran PMS.'}]
 }});
-async function start(page){
+async function start(page,{asOf='2026-11-23'}={}){
  const errors=[],stats={posted:0};
  page.on('pageerror',e=>errors.push(e.message));
  await page.route(API+'/**',async route=>{
@@ -42,7 +42,7 @@ async function start(page){
   if(url.includes('/auth/v1/token'))result={access_token:'SYNTHETIC_OWNER',expires_in:3600};
   else if(url.includes('/ppic-owner-check'))result={authorized:true,role:'owner'};
   else if(url.includes('/ppic-robot-status'))result=status('2026-11');
-  else if(url.includes('/ppic-daily-intelligence'))result=summary();
+  else if(url.includes('/ppic-daily-intelligence'))result=summary(asOf);
   else if(url.includes('/ppic-auto-import-status'))result={ok:true,period:'2026-11',config:{enabled:false},jobs:[]};
   else if(url.includes('/ppic-stage2-status')||url.includes('/ppic-stage3-status')||
      url.includes('/ppic-skt-watch-status')||url.includes('/ppic-plan-status')||
@@ -70,6 +70,7 @@ test('Owner sees distinct candidate and active data, and risk gates without post
  const session=await start(page);
  await expect(page.locator('#ppicDailyIntelBadge')).toHaveText('Data terbaru · WORKING');
  await expect(page.locator('#ppicDailyIntelTime')).toContainText('23 Nov 2026');
+ await expect(page.locator('#ppicDailyIntelTitle')).toContainText('23 Nov 2026');
  await expect(page.locator('#ppicDailyIntelKpis')).toContainText('481.125');
  await expect(page.locator('#ppicDailyIntelKpis')).toContainText('650.145');
  await expect(page.locator('#ppicDailyIntelKpis')).toContainText('4.185.199.078');
@@ -83,6 +84,7 @@ test('Owner sees distinct candidate and active data, and risk gates without post
  await expect(page.locator('#ppicDailyIntelActions .ppic-daily-action')).toHaveCount(2);
  await page.locator('#ppicDailyIntelAsk').click();
  await expect(page.locator('#ppicAskIntent')).toHaveValue('ANALYZE');
+ await expect(page.locator('#ppicAskText')).toHaveValue(/23 Nov 2026/);
  expect(session.stats.posted).toBe(0);
  await page.locator('#logoutOwner').click();
  await expect(page.locator('#ppicMain')).toBeHidden();
@@ -91,7 +93,10 @@ test('Owner sees distinct candidate and active data, and risk gates without post
 });
 test('Mobile screen retains all live working values and no side effect',async({page})=>{
  await page.setViewportSize({width:375,height:812});
- const session=await start(page);
+ const session=await start(page,{asOf:'2026-11-24'});
+ await expect(page.locator('#ppicDailyIntelTitle')).toContainText('24 Nov 2026');
+ await page.locator('#ppicDailyIntelAsk').click();
+ await expect(page.locator('#ppicAskText')).toHaveValue(/24 Nov 2026/);
  await expect(page.locator('#ppicDailyIntelSources .ppic-daily-source')).toHaveCount(4);
  await expect(page.locator('#ppicDailyIntelKpis')).toContainText('481.125');
  await expect(page.locator('#ppicDailyIntelNotice')).toContainText('OPEN RECON');
