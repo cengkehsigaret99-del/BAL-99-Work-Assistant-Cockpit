@@ -5,6 +5,8 @@ on:
     paths:
       - index.html
       - ppic-charcoal-theme.css
+      - ppic-readable-ui.css
+      - ppic-reading-ui.js
       - sw.js
       - manifest.webmanifest
       - tools/ppic_health_check.py
@@ -27,6 +29,7 @@ jobs:
         run: |
           node --check auth.js
           node --check sw.js
+          node --check ppic-reading-ui.js
           python3 -m unittest discover -s tests -p ppic_health_check_test.py
           node - <<'JS'
           const fs=require('node:fs'), vm=require('node:vm');
@@ -36,10 +39,17 @@ jobs:
           const manifest=JSON.parse(fs.readFileSync('manifest.webmanifest','utf8'));
           for(const x of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g))
             if(!/\bsrc=/.test(x[1]))new vm.Script(x[2]);
-          if(!html.includes('<link rel="stylesheet" href="ppic-charcoal-theme.css"></head>'))throw Error('Charcoal CSS not loaded last');
+          const styles=[...html.matchAll(/<link rel="stylesheet" href="([^"]+)">/g)].map(m=>m[1]);
+          const charcoalIndex=styles.indexOf('ppic-charcoal-theme.css');
+          const readableIndex=styles.indexOf('ppic-readable-ui.css');
+          if(charcoalIndex<0||readableIndex<=charcoalIndex||styles.at(-1)!=='ppic-readable-ui.css')
+            throw Error('Charcoal and readability CSS layers not in expected order');
           if(!html.includes('content="#151719"'))throw Error('PWA chrome not charcoal');
           if(manifest.theme_color!=='#151719'||manifest.background_color!=='#151719')throw Error('Wrong installed app colors');
-          if(!sw.includes('bal-ppic-public-shell-v69-charcoal-gray')||!sw.includes('ppic-charcoal-theme.css'))throw Error('Service worker not versioned');
+          const cacheName=sw.match(/CACHE_NAME="([^"]+)"/)?.[1]||'';
+          if(!/^bal-ppic-public-shell-v[0-9]+-[a-z0-9-]+$/.test(cacheName)
+            ||!sw.includes('ppic-charcoal-theme.css')||!sw.includes('ppic-readable-ui.css')
+            ||!sw.includes('ppic-reading-ui.js'))throw Error('PWA version or graphite shell assets missing');
           for(const token of ['--bg:#151719','--panel:#25282c','.owner-card','.robot-panel','.ppic-daily-intel','@media print'])
             if(!css.includes(token))throw Error('Missing global charcoal rule: '+token);
           if(!html.includes('id="ppicMain"')||!html.includes('id="ownerLogin"'))throw Error('Owner page identity changed');
