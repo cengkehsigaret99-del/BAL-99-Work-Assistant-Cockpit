@@ -550,6 +550,17 @@
     border-radius:9px;
     color:#eef1f3;
   }
+  .ppic-visually-hidden{
+    position:absolute!important;
+    width:1px!important;
+    height:1px!important;
+    padding:0!important;
+    margin:-1px!important;
+    overflow:hidden!important;
+    clip:rect(0,0,0,0)!important;
+    white-space:nowrap!important;
+    border:0!important;
+  }
   #ppicMain .ppic-reading-controls .ppic-reading-choice[aria-pressed="true"]{
     background:#e2e6e9;
     border-color:#f5f7f9;
