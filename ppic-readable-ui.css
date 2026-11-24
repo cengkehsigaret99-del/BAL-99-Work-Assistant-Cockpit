@@ -1,0 +1,678 @@
+/*
+  BAL PPIC · Readability V71 · Charcoal Graphite
+  Visual presentation only. Owner authentication, ledger, Supabase and sources untouched.
+  Load after ppic-charcoal-theme.css. Persistent optional typography mode is private to this device.
+*/
+:root{
+  --ppic-reading-base:17px;
+  --ppic-reading-sm:14px;
+  --ppic-reading-xs:13px;
+  --ppic-reading-control:16px;
+  --ppic-reading-h1:clamp(34px,3.5vw,44px);
+  --ppic-reading-h2:28px;
+  --ppic-reading-h3:23px;
+  --ppic-reading-h4:19px;
+  --ppic-reading-value:clamp(26px,2.8vw,34px);
+  --ppic-reading-secondary-value:21px;
+  --ppic-reading-line:1.6;
+  --ppic-reading-border:#68717a;
+  --ppic-reading-border-soft:#555f68;
+  --ppic-reading-text:#f4f5f6;
+  --ppic-reading-subtle:#c5cdd3;
+  --ppic-reading-divider:rgba(201,211,219,.19);
+}
+:root[data-ppic-reading="normal"]{
+  --ppic-reading-base:15.5px;
+  --ppic-reading-sm:13px;
+  --ppic-reading-xs:12px;
+  --ppic-reading-control:15px;
+  --ppic-reading-h1:clamp(31px,3.1vw,40px);
+  --ppic-reading-h2:25px;
+  --ppic-reading-h3:21px;
+  --ppic-reading-h4:18px;
+  --ppic-reading-value:clamp(24px,2.5vw,31px);
+  --ppic-reading-secondary-value:19px;
+}
+:root[data-ppic-reading="xlarge"]{
+  --ppic-reading-base:19px;
+  --ppic-reading-sm:16px;
+  --ppic-reading-xs:14px;
+  --ppic-reading-control:18px;
+  --ppic-reading-h1:clamp(36px,4vw,49px);
+  --ppic-reading-h2:32px;
+  --ppic-reading-h3:27px;
+  --ppic-reading-h4:22px;
+  --ppic-reading-value:clamp(30px,3.15vw,39px);
+  --ppic-reading-secondary-value:24px;
+}
+@media screen{
+  html{
+    scroll-behavior:smooth;
+    -webkit-text-size-adjust:100%;
+    text-size-adjust:100%;
+    font-kerning:normal;
+  }
+  html,body{
+    font-size:var(--ppic-reading-base);
+    line-height:var(--ppic-reading-line);
+  }
+  body{
+    color:var(--ppic-reading-text);
+    font-feature-settings:"tnum" 1;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    overflow-wrap:break-word;
+  }
+  #ppicMain{
+    max-width:1440px;
+    margin-inline:auto;
+    padding:clamp(16px,2.2vw,32px);
+    min-width:0;
+  }
+  #ppicMain *{min-width:0}
+  #ppicMain h1,.owner-card h1{
+    font-size:var(--ppic-reading-h1);
+    font-weight:850;
+    line-height:1.16;
+    letter-spacing:-.035em;
+  }
+  #ppicMain h2{
+    font-size:var(--ppic-reading-h2);
+    font-weight:800;
+    line-height:1.25;
+    letter-spacing:-.02em;
+  }
+  #ppicMain h3{
+    font-size:var(--ppic-reading-h3);
+    font-weight:780;
+    line-height:1.3;
+    letter-spacing:-.015em;
+  }
+  #ppicMain h4{
+    font-size:var(--ppic-reading-h4);
+    font-weight:760;
+    line-height:1.35;
+  }
+  #ppicMain p,#ppicMain li,
+  #ppicMain .ppic-report-instructions,
+  #ppicMain .robot-recommendation,
+  #ppicMain .ppic-s3-recommendation{
+    line-height:var(--ppic-reading-line);
+  }
+  #ppicMain strong,#ppicMain b{
+    font-weight:750;
+  }
+  #ppicMain .eyebrow,
+  #ppicMain .ppic-tagline,
+  #ppicMain .ppic-nav-label>span,
+  .owner-card .eyebrow{
+    font-size:var(--ppic-reading-sm);
+    font-weight:800;
+    line-height:1.45;
+    letter-spacing:.075em;
+    color:#dfe5e9;
+  }
+  #ppicMain small,#ppicMain .muted,#ppicMain .ppic-brand-subtitle,
+  #ppicMain .ppic-nav-label small{
+    font-size:var(--ppic-reading-sm);
+    line-height:1.55;
+    color:var(--ppic-reading-subtle);
+  }
+  #ppicMain .ppic-brand-title{
+    font-size:clamp(21px,2.1vw,29px);
+    font-weight:850;
+    letter-spacing:-.03em;
+    line-height:1.17;
+  }
+  #ppicMain .bal-brand-mark{
+    width:clamp(62px,6vw,82px);
+    height:clamp(62px,6vw,82px);
+    object-fit:contain;
+  }
+  #ppicMain .ppic-app-header{
+    padding:clamp(15px,1.8vw,24px);
+    gap:14px;
+    border-radius:20px;
+  }
+  #ppicMain .ppic-header-actions{gap:10px;flex-wrap:wrap;align-items:center}
+  #ppicMain .ppic-introduction{
+    margin:clamp(22px,3vw,42px) 0 clamp(18px,2.5vw,30px);
+  }
+  #ppicMain .ppic-introduction h1{
+    max-width:1050px;
+    font-size:clamp(36px,4vw,52px);
+    line-height:1.17;
+  }
+  #ppicMain .ppic-introduction>p{
+    font-size:var(--ppic-reading-base);
+    max-width:930px;
+    line-height:1.62;
+    color:#d7dfe3;
+  }
+  #ppicMain .panel,#ppicMain .robot-panel,
+  #ppicMain .ppic-stage2,#ppicMain .ppic-stage3,#ppicMain .ppic-plan,
+  #ppicMain .ppic-skt-watch,#ppicMain .ppic-do-auto,
+  #ppicMain .ppic-crossbook,#ppicMain .ppic-daily-intel{
+    padding:clamp(17px,2.2vw,29px);
+    border-radius:19px;
+    border-color:var(--ppic-reading-border);
+    margin-block:16px 24px;
+  }
+  #ppicMain .robot-brief-intro,
+  #ppicMain .robot-section,
+  #ppicMain .ppic-s2-panel,
+  #ppicMain .ppic-s3-details,
+  #ppicMain .ppic-plan details,
+  #ppicMain .ppic-do-auto details,
+  #ppicMain .ppic-crossbook details,
+  #ppicMain .ppic-daily-intel details{
+    padding:clamp(14px,1.7vw,22px);
+    border-radius:15px;
+    border-color:var(--ppic-reading-border-soft);
+  }
+  #ppicMain .robot-heading,
+  #ppicMain .robot-section-heading,
+  #ppicMain .ppic-s2-head,
+  #ppicMain .ppic-s3-heading,
+  #ppicMain .ppic-plan-head,
+  #ppicMain .ppic-daily-head{
+    gap:18px;
+    margin-bottom:17px;
+    align-items:flex-start;
+  }
+  #ppicMain .robot-heading h1{
+    font-size:var(--ppic-reading-h1);
+  }
+  #ppicMain .robot-heading>div>p,
+  #ppicMain .ppic-s2-head p,
+  #ppicMain .ppic-s3-heading p,
+  #ppicMain .ppic-daily-head p,
+  #ppicMain .ppic-plan-head p{
+    font-size:var(--ppic-reading-base);
+    line-height:1.62;
+    color:#d6dce0;
+  }
+  #ppicMain .ppic-page-context{
+    padding:clamp(18px,2vw,26px);
+    border-radius:16px;
+    border-color:#818a92;
+  }
+  #ppicMain .ppic-context-copy strong{
+    display:block;
+    font-size:var(--ppic-reading-h4);
+    line-height:1.36;
+  }
+  #ppicMain .ppic-context-copy p{
+    font-size:var(--ppic-reading-sm);
+  }
+  /* Accessible touch surfaces: no reduction in text or tap target on mobile. */
+  #ppicMain .btn,#ppicMain button:not([role="switch"]),
+  .owner-card button,
+  #ppicMain input:not([type="checkbox"]):not([type="radio"]),
+  #ppicMain select,#ppicMain textarea,
+  .owner-card input{
+    font-size:var(--ppic-reading-control);
+    line-height:1.35;
+    min-height:50px;
+  }
+  #ppicMain .btn,#ppicMain button,
+  .owner-card button{
+    font-weight:730;
+    border-radius:12px;
+    padding:12px 16px;
+  }
+  #ppicMain .ppic-nav-items .btn{
+    padding:14px 18px;
+    min-height:54px;
+    border:1px solid #737e87;
+    font-weight:750;
+    line-height:1.32;
+  }
+  #ppicMain .ppic-nav .ppic-nav-label{
+    gap:9px;
+  }
+  #ppicMain .ppic-nav{
+    padding:13px;
+    border-radius:17px;
+    margin-block:20px;
+    border-color:#626c75;
+  }
+  #ppicMain .ppic-nav-items{
+    gap:9px;
+  }
+  #ppicMain .ppic-flow-status{
+    gap:10px;
+    padding:13px;
+    border-color:#67727b;
+    border-radius:16px;
+  }
+  #ppicMain .ppic-flow-status button{
+    min-height:65px;
+    padding:14px;
+    border-radius:12px;
+  }
+  #ppicMain .ppic-flow-status button strong{
+    font-size:var(--ppic-reading-control);
+  }
+  #ppicMain .ppic-flow-status button small{
+    font-size:var(--ppic-reading-xs);
+  }
+  #ppicMain .ppic-shortcut,
+  #ppicMain .ppic-shortcut-grid button{
+    padding:clamp(17px,2vw,23px);
+    min-height:86px;
+    border-radius:15px;
+    border-width:1px;
+    border-color:#747d85;
+  }
+  #ppicMain .ppic-shortcut strong,
+  #ppicMain .ppic-shortcut-grid button strong{
+    font-size:var(--ppic-reading-h4);
+  }
+  /* KPIs: weights and number alignment matter more than decorative color. */
+  #ppicMain .metrics,
+  #ppicMain .ppic-daily-kpis,
+  #ppicMain .ppic-s2-metrics,
+  #ppicMain .ppic-plan-metrics,
+  #ppicMain .ppic-cross-metrics,
+  #ppicMain .ppic-do-auto-metrics,
+  #ppicMain .ppic-skt-metrics,
+  #ppicMain .payroll-metrics{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(min(100%,205px),1fr));
+    gap:13px;
+  }
+  #ppicMain .metric,
+  #ppicMain .ppic-daily-kpi,
+  #ppicMain .ppic-s2-metric,
+  #ppicMain .ppic-plan-metric,
+  #ppicMain .ppic-cross-metric,
+  #ppicMain .ppic-do-auto-metric,
+  #ppicMain .ppic-skt-metric,
+  #ppicMain #sdmPayroll .payroll-metrics>div{
+    padding:clamp(16px,1.75vw,23px);
+    border:1px solid #717a83;
+    border-radius:15px;
+    background:linear-gradient(140deg,#393e43,#292d32);
+    min-width:0;
+  }
+  #ppicMain .metric strong,
+  #ppicMain .ppic-daily-kpi strong,
+  #ppicMain .ppic-s2-metric strong,
+  #ppicMain .ppic-plan-metric strong,
+  #ppicMain .ppic-cross-metric strong,
+  #ppicMain .ppic-do-auto-metric strong,
+  #ppicMain .ppic-skt-metric strong,
+  #ppicMain #sdmPayroll .payroll-metrics strong{
+    display:block;
+    font-size:var(--ppic-reading-value);
+    font-weight:850;
+    letter-spacing:-.028em;
+    color:#fcfcfd;
+    font-variant-numeric:tabular-nums;
+    line-height:1.22;
+    margin-block:10px 4px;
+    overflow-wrap:anywhere;
+  }
+  #ppicMain .metric>span,
+  #ppicMain .ppic-daily-kpi>span,
+  #ppicMain .ppic-s2-metric>span,
+  #ppicMain .ppic-plan-metric>span,
+  #ppicMain .ppic-cross-metric>small,
+  #ppicMain .ppic-do-auto-metric>span,
+  #ppicMain .ppic-skt-metric>span,
+  #ppicMain #sdmPayroll .payroll-metrics span{
+    font-size:var(--ppic-reading-sm);
+    font-weight:700;
+    color:#d1d8dd;
+    line-height:1.5;
+    display:block;
+  }
+  #ppicMain .ppic-daily-quality,
+  #ppicMain .ppic-daily-provenance{
+    font-size:var(--ppic-reading-xs);
+    color:#bac5cc;
+    line-height:1.55;
+  }
+  #ppicMain .ppic-daily-grid,
+  #ppicMain .ppic-s2-grid,
+  #ppicMain .ppic-plan-grid,
+  #ppicMain .ppic-cross-grid,
+  #ppicMain .ppic-do-auto-grid,
+  #ppicMain .robot-two-columns{
+    gap:15px;
+    grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));
+  }
+  #ppicMain .ppic-daily-source,
+  #ppicMain .ppic-daily-risk,
+  #ppicMain .ppic-daily-action,
+  #ppicMain .robot-decision,
+  #ppicMain .ppic-s3-card,
+  #ppicMain .ppic-s3-issue,
+  #ppicMain .ppic-plan-action,
+  #ppicMain .ppic-plan-gate,
+  #ppicMain .ppic-s2-check,
+  #ppicMain .ppic-s2-warning,
+  #ppicMain .ppic-cross-check,
+  #ppicMain .ppic-cross-risk{
+    padding:clamp(16px,1.7vw,23px);
+    border-radius:14px;
+    border-color:#68737d;
+    line-height:1.58;
+  }
+  #ppicMain .ppic-daily-source-head strong,
+  #ppicMain .ppic-daily-risk strong,
+  #ppicMain .ppic-daily-action strong,
+  #ppicMain .ppic-s3-card h4,
+  #ppicMain .ppic-plan-action strong,
+  #ppicMain .robot-decision h4,
+  #ppicMain .robot-list-item h4{
+    font-size:var(--ppic-reading-h4);
+    font-weight:800;
+    line-height:1.36;
+    color:#f1f3f5;
+  }
+  #ppicMain .ppic-daily-source-metric{
+    gap:9px;
+    padding-block:12px;
+    border-bottom-color:var(--ppic-reading-divider);
+  }
+  #ppicMain .ppic-daily-source-metric>span{
+    font-size:var(--ppic-reading-sm);
+    color:#d2dbe0;
+    font-weight:650;
+    line-height:1.45;
+  }
+  #ppicMain .ppic-daily-source-metric>strong,
+  #ppicMain .robot-fact-value,
+  #ppicMain .ppic-plan-sku-value,
+  #ppicMain .ppic-s2-value{
+    font-size:var(--ppic-reading-secondary-value);
+    font-weight:820;
+    letter-spacing:-.02em;
+    font-variant-numeric:tabular-nums;
+    overflow-wrap:anywhere;
+    color:#f4f6f8;
+  }
+  #ppicMain .ppic-daily-explain,
+  #ppicMain .ppic-daily-risk p,
+  #ppicMain .ppic-daily-action p,
+  #ppicMain .ppic-cross-risk p,
+  #ppicMain .robot-decision p,
+  #ppicMain .ppic-s3-card p,
+  #ppicMain .ppic-plan-gate p,
+  #ppicMain .ppic-s2-warning p{
+    font-size:var(--ppic-reading-base);
+    line-height:1.62;
+    color:#dfe4e8;
+  }
+  #ppicMain .robot-badge,
+  #ppicMain .ppic-daily-badge,
+  #ppicMain .ppic-s2-badge,
+  #ppicMain .ppic-s3-badge,
+  #ppicMain .ppic-plan-badge,
+  #ppicMain .ppic-do-auto-badge,
+  #ppicMain .ppic-cross-badge,
+  #ppicMain .ppic-work-state,
+  #ppicMain .pill{
+    font-size:var(--ppic-reading-sm);
+    font-weight:750;
+    padding:8px 13px;
+    line-height:1.35;
+    border-radius:50px;
+  }
+  #ppicMain .ppic-daily-note,
+  #ppicMain .ppic-s3-notice,
+  #ppicMain .ppic-s2-message,
+  #ppicMain .ppic-plan-notice,
+  #ppicMain .ppic-cross-note,
+  #ppicMain .ppic-do-auto-note,
+  #ppicMain .ppic-qa-status,
+  #ppicMain .robot-notice{
+    font-size:var(--ppic-reading-base);
+    padding:15px 18px;
+    line-height:1.65;
+    border-left:3px solid #9aa6af;
+    border-radius:12px;
+  }
+  #ppicMain summary,
+  #ppicMain .ppic-stage2 summary,
+  #ppicMain .ppic-stage3 summary,
+  #ppicMain .ppic-daily-intel summary,
+  #ppicMain .ppic-plan summary,
+  #ppicMain .robot-details>summary{
+    font-size:var(--ppic-reading-control);
+    line-height:1.45;
+    font-weight:800;
+    padding-block:8px;
+    cursor:pointer;
+  }
+  /* Table reports remain scrollable inside their own frame rather than shrinking text. */
+  #ppicMain .tablewrap,
+  #ppicMain .robot-tablewrap,
+  #ppicMain .sync-tablewrap{
+    max-width:100%;
+    overflow-x:auto;
+    overscroll-behavior-inline:contain;
+    -webkit-overflow-scrolling:touch;
+    border-radius:14px;
+    border:1px solid #5d6770;
+  }
+  #ppicMain table{
+    font-size:var(--ppic-reading-control);
+    line-height:1.5;
+    border-collapse:separate;
+    border-spacing:0;
+  }
+  #ppicMain th,
+  #ppicMain td{
+    padding:15px 16px;
+    border-bottom-color:#545e66;
+    vertical-align:middle;
+    color:#e8edef;
+    font-variant-numeric:tabular-nums;
+  }
+  #ppicMain th{
+    font-size:var(--ppic-reading-sm);
+    line-height:1.4;
+    text-transform:none;
+    font-weight:800;
+    color:#eff2f4;
+    background:#393f45;
+  }
+  #ppicMain tbody tr:nth-child(even){background:rgba(255,255,255,.025)}
+  #ppicMain tbody tr:hover{background:rgba(223,229,235,.075)}
+  #ppicMain .report,
+  #ppicMain .reportlist .report{
+    padding:17px 19px;
+    border-radius:13px;
+    font-size:var(--ppic-reading-control);
+    line-height:1.5;
+    border-color:#626d77;
+    min-height:75px;
+    font-weight:700;
+  }
+  #ppicMain .report small{
+    font-size:var(--ppic-reading-sm);
+    font-weight:550;
+  }
+  #ppicMain .report[aria-selected=true]{
+    border-width:2px;
+    border-color:#e4e8eb;
+    background:#3e454a;
+  }
+  .owner-card{
+    width:min(100%,480px);
+    padding:clamp(22px,3.3vw,38px);
+    border-width:1px;
+    border-color:#7c868e;
+  }
+  .owner-card h1{font-size:clamp(32px,3vw,40px)}
+  .owner-card p,.owner-card label{font-size:var(--ppic-reading-base);line-height:1.6}
+  .owner-card input,.owner-card button{
+    width:100%;
+    min-height:52px;
+    padding:13px 16px;
+    font-size:var(--ppic-reading-control);
+    font-weight:680;
+    border-radius:12px;
+  }
+  .owner-card input:focus-visible,.owner-card button:focus-visible{
+    outline:3px solid #e2e8ed;
+    outline-offset:3px;
+  }
+  /* Readability preference: user device only; no API writes or account changes. */
+  #ppicMain .ppic-reading-controls{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    border:1px solid #707a83;
+    border-radius:13px;
+    padding:6px;
+    background:#282d32;
+    flex-wrap:nowrap;
+  }
+  #ppicMain .ppic-reading-label{
+    padding-inline:7px 3px;
+    font-size:var(--ppic-reading-sm);
+    font-weight:730;
+    color:#d4dbe0;
+    white-space:nowrap;
+  }
+  #ppicMain .ppic-reading-controls .ppic-reading-choice{
+    min-width:46px;
+    min-height:47px;
+    padding:9px 11px;
+    line-height:1.25;
+    font-size:var(--ppic-reading-control);
+    border:1px solid transparent;
+    background:#373e44;
+    border-radius:9px;
+    color:#eef1f3;
+  }
+  #ppicMain .ppic-reading-controls .ppic-reading-choice[aria-pressed="true"]{
+    background:#e2e6e9;
+    border-color:#f5f7f9;
+    color:#202428;
+    font-weight:860;
+    box-shadow:0 0 0 1px rgba(238,243,246,.16);
+  }
+  #ppicMain :is(.ppic-reading-choice,.btn,button,summary,input,select,textarea):focus-visible{
+    outline:3px solid #e3e9ee;
+    outline-offset:3px;
+  }
+  @media(max-width:950px){
+    #ppicMain .ppic-app-header{
+      align-items:flex-start;
+      flex-wrap:wrap;
+    }
+    #ppicMain .ppic-header-actions{
+      flex-basis:100%;
+      justify-content:space-between;
+    }
+  }
+  @media(max-width:650px){
+    #ppicMain{padding:12px}
+    #ppicMain .ppic-app-header{padding:15px;border-radius:16px}
+    #ppicMain .ppic-brand-title{font-size:23px}
+    #ppicMain .ppic-introduction h1{font-size:clamp(33px,8vw,42px)}
+    #ppicMain .ppic-introduction{margin-block:24px}
+    #ppicMain .ppic-nav{padding:10px}
+    #ppicMain .ppic-nav-primary,
+    #ppicMain .ppic-nav-secondary{
+      display:flex;
+      flex-wrap:nowrap;
+      overflow-x:auto;
+      max-width:100%;
+      -webkit-overflow-scrolling:touch;
+      scroll-snap-type:x proximity;
+      padding-block:5px;
+    }
+    #ppicMain .ppic-nav-primary .btn,
+    #ppicMain .ppic-nav-secondary .btn{
+      flex:0 0 auto;
+      min-width:142px;
+      scroll-snap-align:start;
+    }
+    #ppicMain .ppic-flow-status{
+      display:flex;
+      flex-direction:column;
+      align-items:stretch;
+      padding:11px;
+    }
+    #ppicMain .ppic-flow-status button{
+      width:100%;
+    }
+    #ppicMain .ppic-flow-arrow{
+      display:none;
+    }
+    #ppicMain .metrics,
+    #ppicMain .ppic-daily-kpis,
+    #ppicMain .ppic-s2-metrics,
+    #ppicMain .ppic-plan-metrics,
+    #ppicMain .ppic-cross-metrics,
+    #ppicMain .ppic-do-auto-metrics,
+    #ppicMain .ppic-skt-metrics,
+    #ppicMain .payroll-metrics{
+      grid-template-columns:1fr;
+      gap:12px;
+    }
+    #ppicMain .ppic-app-header .ppic-header-actions{
+      align-items:stretch;
+      justify-content:space-between;
+    }
+    #ppicMain .ppic-work-state{align-self:center}
+    #ppicMain .ppic-reading-controls{
+      width:100%;
+      justify-content:space-between;
+    }
+    #ppicMain .ppic-reading-controls .ppic-reading-choice{flex:1}
+    #ppicMain .panel,#ppicMain .robot-panel,
+    #ppicMain .ppic-stage2,#ppicMain .ppic-stage3,#ppicMain .ppic-plan,
+    #ppicMain .ppic-skt-watch,#ppicMain .ppic-do-auto,
+    #ppicMain .ppic-crossbook,#ppicMain .ppic-daily-intel{
+      padding:17px;
+      margin-block:15px;
+      border-radius:16px;
+    }
+    #ppicMain .ppic-daily-grid,
+    #ppicMain .ppic-s2-grid,
+    #ppicMain .ppic-plan-grid,
+    #ppicMain .ppic-cross-grid,
+    #ppicMain .ppic-do-auto-grid,
+    #ppicMain .robot-two-columns{
+      grid-template-columns:1fr;
+    }
+    #ppicMain .robot-heading,
+    #ppicMain .ppic-s2-head,
+    #ppicMain .ppic-s3-heading,
+    #ppicMain .ppic-daily-head{
+      flex-wrap:wrap;
+    }
+    #ppicMain .tablewrap table{min-width:660px}
+    #ppicMain .ppic-page-context{
+      padding:16px;
+    }
+    #ppicMain .reportlist{grid-template-columns:1fr}
+  }
+  @media(max-width:385px){
+    #ppicMain .ppic-app-header .ppic-header-actions{gap:12px}
+    #ppicMain .ppic-brand-title{font-size:21px}
+    #ppicMain .ppic-reading-label{font-size:13px}
+    #ppicMain .ppic-reading-controls .ppic-reading-choice{min-width:44px;padding:9px 7px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    #ppicMain *,#ppicMain *::before,#ppicMain *::after{transition-duration:0s!important;animation-duration:0s!important}
+  }
+}
+/* No change to the data-bearing report, print sheet, or branded PDF preview. */
+@media print{
+  #ppicMain .ppic-reading-controls{display:none!important}
+  .owner-card{display:none!important}
+  body{font-size:12px!important}
+  #ppicMain table{font-size:11px!important}
+  #ppicMain .paper{background:white!important;color:#172c3c!important}
+  #ppicMain .paper th,#ppicMain .paper td{color:#1c2730!important}
+  #ppicMain .paper h2{color:#172c3c!important}
+}
