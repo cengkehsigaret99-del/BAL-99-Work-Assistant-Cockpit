@@ -12,6 +12,7 @@ on:
       - .github/workflows/deploy-pages.yml
       - tests/ppic-readable-ui.test.mjs
       - tests/ppic-readable-ui.spec.cjs
+      - tests/ppic-charcoal-theme.spec.cjs
       - .github/workflows/ppic-readable-ui-qa.yml
   pull_request:
     branches: [main]
