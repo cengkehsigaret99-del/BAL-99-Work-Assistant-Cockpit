@@ -501,6 +501,30 @@
     border-color:#e4e8eb;
     background:#3e454a;
   }
+  /* Report preview stays ink-on-paper even when dark dashboard grows. */
+  #ppicMain .paper,
+  #ppicMain .paper table{
+    background:#fff;
+    color:#24333e;
+  }
+  #ppicMain .paper h1,#ppicMain .paper h2,#ppicMain .paper h3,
+  #ppicMain .paper strong,#ppicMain .paper p,#ppicMain .paper small{
+    color:#24333e;
+  }
+  #ppicMain .paper th{
+    background:#e8edf0;
+    color:#273a47;
+    border-bottom-color:#c7d0d6;
+  }
+  #ppicMain .paper td{
+    background:transparent;
+    color:#273741;
+    border-bottom-color:#d8dfe3;
+  }
+  #ppicMain .paper tbody tr:nth-child(even){
+    background:#f3f5f7;
+  }
+  #ppicMain .paper .eyebrow{color:#315769}
   .owner-card{
     width:min(100%,480px);
     padding:clamp(22px,3.3vw,38px);
