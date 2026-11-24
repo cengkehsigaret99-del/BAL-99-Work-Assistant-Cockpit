@@ -99,7 +99,7 @@ test('Mobile screen retains all live working values and no side effect',async({p
  await expect(page.locator('#ppicAskText')).toHaveValue(/24 Nov 2026/);
  await expect(page.locator('#ppicDailyIntelSources .ppic-daily-source')).toHaveCount(4);
  await expect(page.locator('#ppicDailyIntelKpis')).toContainText('481.125');
- await expect(page.locator('#ppicDailyIntelNotice')).toContainText('OPEN RECON');
+ await expect(page.locator('#ppicDailyIntelPanel')).toContainText('OPEN RECON');
  expect(session.stats.posted).toBe(0);
  expect(session.errors).toEqual([]);
 });
