@@ -1,0 +1,74 @@
+name: BAL PPIC Readable Charcoal V71 QA
+on:
+  push:
+    branches: [main, feat/ppic-readable-charcoal-v71]
+    paths:
+      - index.html
+      - ppic-charcoal-theme.css
+      - ppic-readable-ui.css
+      - ppic-reading-ui.js
+      - sw.js
+      - tools/ppic_health_check.py
+      - .github/workflows/deploy-pages.yml
+      - tests/ppic-readable-ui.test.mjs
+      - tests/ppic-readable-ui.spec.cjs
+      - .github/workflows/ppic-readable-ui-qa.yml
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  readable-ui-qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - name: Readability controls and existing PPIC privacy regressions
+        run: |
+          node --test tests/ppic-readable-ui.test.mjs tests/ppic-daily-intelligence.test.mjs tests/ppic-do-sync-health.test.mjs
+          node --check ppic-reading-ui.js
+          node --check auth.js
+          python3 -m unittest discover -s tests -p ppic_health_check_test.py
+      - name: Verify sanitized static Pages assets and typography
+        run: |
+          node - <<'JS'
+          const fs=require('node:fs'),vm=require('node:vm');
+          const html=fs.readFileSync('index.html','utf8');
+          const css=fs.readFileSync('ppic-readable-ui.css','utf8');
+          const js=fs.readFileSync('ppic-reading-ui.js','utf8');
+          const charcoal=fs.readFileSync('ppic-charcoal-theme.css','utf8');
+          const deploy=fs.readFileSync('.github/workflows/deploy-pages.yml','utf8');
+          const sw=fs.readFileSync('sw.js','utf8');
+          for(const m of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g))
+            if(!/\bsrc=/.test(m[1]))new vm.Script(m[2]);
+          for(const id of ['ppicReadingControls','ppicReadingStatus'])
+            if(!html.includes('id="'+id+'"'))throw Error('Missing text size control: '+id);
+          for(const state of ['normal','large','xlarge']){
+            if(!html.includes('data-reading-choice="'+state+'"'))throw Error('Missing font option '+state);
+            if(!css.includes('data-ppic-reading="'+state+'"')&&state!=='large')throw Error('Missing typography mode '+state);
+          }
+          if(!html.includes('data-ppic-reading="large"'))throw Error('Default readable mode missing');
+          if(html.indexOf('ppic-readable-ui.css')<html.indexOf('ppic-charcoal-theme.css'))throw Error('Accessibility styles should be last');
+          if(!css.includes('@media print')||!css.includes('.paper'))throw Error('Print report protection missing');
+          if(!css.includes('tabular-nums')||!css.includes('font-size:var(--ppic-reading-value)'))throw Error('Large KPI numbers missing');
+          if(/innerHTML|insertAdjacentHTML|eval\(/.test(js))throw Error('Unsafe font preference script');
+          if(/sk-proj-|sk-[A-Za-z0-9]{25,}/.test(JSON.stringify([html,css,js])))throw Error('Possible secret in public assets');
+          for(const filename of ['ppic-readable-ui.css','ppic-reading-ui.js'])
+            if(!deploy.includes(filename)||!sw.includes(filename))throw Error('Missing public asset '+filename);
+          if(!sw.includes('bal-ppic-public-shell-v71-readable-charcoal'))throw Error('Stale cache key');
+          if(!charcoal.includes('--charcoal-bg:#151719'))throw Error('Charcoal theme unexpectedly changed');
+          JS
+      - name: Install Chromium browser for mobile and desktop UAT
+        run: |
+          npm install --no-save @playwright/test@1.62.1
+          npx playwright install --with-deps chromium
+      - name: Serve static PPIC shell locally
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/ppic-readable-v71.log 2>&1 &
+          for i in $(seq 1 20); do curl -fsS http://127.0.0.1:8765/ >/dev/null && exit 0; sleep 1; done
+          exit 1
+      - name: UAT on desktop, Android-sized viewport and print
+        run: |
+          npx playwright test tests/ppic-readable-ui.spec.cjs tests/ppic-charcoal-theme.spec.cjs --browser=chromium --workers=1 --reporter=list
