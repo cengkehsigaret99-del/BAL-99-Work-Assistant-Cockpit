@@ -38,7 +38,7 @@
   const doc=win.document,$=id=>doc.getElementById(id),panel=$("ppicDailyIntelPanel");
   if(!panel)return;
   const el=(tag,content,cls)=>{const node=doc.createElement(tag);if(content!==undefined)node.textContent=content;if(cls)node.className=cls;return node;};
-  let enabled=false,reading=false,rev=0,timer=null;
+  let enabled=false,reading=false,rev=0,timer=null,lastSnapshotDate=null;
   const period=()=>$("robotPeriod")?.value||"2026-11";
   const info=(str,state="neutral")=>{const node=$("ppicDailyIntelNotice");node.textContent=str;node.dataset.tone=state;};
   const stop=()=>{if(timer!==null)win.clearTimeout(timer);timer=null;};
@@ -47,7 +47,9 @@
    for(const id of ["ppicDailyIntelKpis","ppicDailyIntelSources","ppicDailyIntelRisks","ppicDailyIntelActions"])$(id).replaceChildren();
    $("ppicDailyIntelBadge").textContent="Belum diperiksa";$("ppicDailyIntelBadge").dataset.tone="neutral";
    $("ppicDailyIntelTime").textContent="Belum ada sumber yang ditampilkan.";
-   $("ppicDailyIntelRefresh").disabled=true;info("Login sebagai Owner untuk membaca analitik 23 November.");
+   lastSnapshotDate=null;
+   $("ppicDailyIntelTitle").textContent="Inteligensi Operasional — Update Terbaru";
+   $("ppicDailyIntelRefresh").disabled=true;info("Login sebagai Owner untuk membaca analitik operasional terbaru.");
   }
   function metric(item){
    const n=el("div",undefined,"ppic-daily-kpi");
@@ -55,6 +57,8 @@
    n.append(el("small",QUAL[item.quality]||"Acuan","ppic-daily-quality"));return n;
   }
   function render(m){
+   lastSnapshotDate=m.as_of;
+   $("ppicDailyIntelTitle").textContent="Inteligensi Operasional — "+day(m.as_of);
    const badge=$("ppicDailyIntelBadge");badge.textContent=m.evidence_current?"Data terbaru · WORKING":"Ada pembaruan sumber";badge.dataset.tone=m.evidence_current?"working":"alert";
    $("ppicDailyIntelTime").textContent="Cut-off analitik "+day(m.as_of)+" · disimpan "+time(m.created_at)+" · "+m.source_rows.length+" kelompok sumber.";
    if(!m.evidence_current)info("Revisi sumber PPIC atau SKT berubah setelah snapshot ini. Tetap baca sebagai historis sampai pemeriksaan baru tersedia.","alert");
@@ -101,7 +105,7 @@
     const response=await win.ppicLoadDailyIntel(p);
     if(!enabled||curr!==rev||p!==period())return;
     const m=buildModel(response,p);
-    if(!m.ready){info("Belum ada snapshot hari ini yang tersimpan. Tidak berarti produksi nol.");return;}
+    if(!m.ready){reset();$("ppicDailyIntelRefresh").disabled=false;info("Belum ada snapshot untuk periode ini. Tidak berarti produksi nol.");return;}
     render(m);
    }catch(e){if(enabled&&curr===rev)info("Status operasional belum dapat dibaca: "+safe(e?.message,180),"alert");}
    finally{reading=false;$("ppicDailyIntelRefresh").disabled=!enabled;schedule();}
@@ -109,13 +113,13 @@
   $("ppicDailyIntelRefresh").addEventListener("click",refresh);
   $("ppicDailyIntelAsk").addEventListener("click",()=>{
    const input=$("ppicAskText"),intent=$("ppicAskIntent");
-   if(!enabled||!input||input.disabled||!intent)return;
+   if(!enabled||!input||input.disabled||!intent||!lastSnapshotDate)return;
    intent.value="ANALYZE";
-   input.value="Berdasarkan snapshot lintas divisi BAL tanggal 23 November 2026 di Web PPIC, ringkas perubahan kerja terbaru DO, Barang Jadi, Cukai, Bahan Baku, Kas, PMS, Giling, Verpack, TSG, SDM, serta SKT. Pisahkan data aktif, kandidat OPEN RECON, dan sumber DIAJUKAN. Tentukan prioritas P1 tanpa mengubah ledger, stok, CK-1, kas atau piutang.";
+   input.value="Berdasarkan snapshot lintas divisi BAL tanggal "+day(lastSnapshotDate)+" di Web PPIC, ringkas perubahan kerja terbaru DO, Barang Jadi, Cukai, Bahan Baku, Kas, PMS, Giling, Verpack, TSG, SDM, serta SKT. Pisahkan data aktif, kandidat OPEN RECON, dan sumber DIAJUKAN. Tentukan prioritas P1 tanpa mengubah ledger, stok, CK-1, kas atau piutang.";
    input.focus();input.scrollIntoView({behavior:"smooth",block:"center"});
    info("Pertanyaan siap ditinjau. Tekan Kirim ke GPT setelah Anda memeriksanya.");
   });
-  $("robotPeriod")?.addEventListener("change",()=>{rev++;if(enabled)refresh();});
+  $("robotPeriod")?.addEventListener("change",()=>{rev++;reset();if(enabled)refresh();});
   doc.addEventListener("visibilitychange",()=>{if(!doc.hidden&&enabled&&!reading)refresh();});
   win.ppicDailyIntelSessionReady=()=>{enabled=true;$("ppicDailyIntelRefresh").disabled=false;refresh();};
   win.ppicDailyIntelClear=()=>{enabled=false;rev++;stop();reading=false;reset();};
