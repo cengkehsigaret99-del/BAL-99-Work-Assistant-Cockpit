@@ -51,7 +51,7 @@ test('Charcoal login, PWA meta, navigation and private robot panels on desktop',
  expect(before.body).toBe('rgb(21, 23, 25)');
  expect(before.login).toContain('rgb(49, 53, 58)');
  expect(before.button).toBe('rgb(214, 220, 224)');
- expect(before.loginBorder).toBe('rgb(98, 104, 112)');
+ expect(before.loginBorder).toBe('rgb(124, 134, 142)'); // Higher-contrast charcoal login border V71
  expect(errors).toEqual([]);
 });
 test('After synthetic Owner login the main and daily, stage 3, planning and DO cards are graphite',async({page})=>{
