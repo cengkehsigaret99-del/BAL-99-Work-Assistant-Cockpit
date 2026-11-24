@@ -1,7 +1,7 @@
 name: BAL PPIC Daily Intelligence QA
 on:
   push:
-    branches: [main, feat/ppic-daily-23nov]
+    branches: [main, feat/ppic-daily-23nov, feat/ppic-daily-24nov-snapshot]
     paths:
       - index.html
       - auth.js
