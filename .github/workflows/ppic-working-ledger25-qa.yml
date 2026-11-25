@@ -1,0 +1,51 @@
+name: BAL PPIC 25 November Ledger Readback QA
+on:
+  push:
+    branches: [main, feat/ppic-working-ledgers-25nov]
+    paths:
+      - index.html
+      - sw.js
+      - supabase/migrations/*_ppic_*_25nov*.sql
+      - tests/ppic-working-ledger25.test.mjs
+      - .github/workflows/ppic-working-ledger25-qa.yml
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  verify-ledger-view:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - name: Source validators, latest JSON codec and historical security tests
+        run: |
+          node --test tests/ppic-working-ledger25.test.mjs tests/ppic-readable-ui.test.mjs tests/ppic-do-sync-health.test.mjs tests/ppic-daily-intelligence.test.mjs
+          node --check auth.js
+          node --check sw.js
+          python3 -m unittest discover -s tests -p ppic_health_check_test.py
+      - name: All inline and public module JS remain valid and sanitized
+        run: |
+          node - <<'JS'
+          const fs=require('node:fs'),vm=require('node:vm');
+          const html=fs.readFileSync('index.html','utf8');
+          for(const s of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g))
+            if(!/\bsrc=/.test(s[1]))new vm.Script(s[2]);
+          for(const file of ['auth.js','ppic-daily-intel-ui.js','ppic-reading-ui.js'])
+            new vm.Script(fs.readFileSync(file,'utf8'),{filename:file});
+          if(/sk-proj-|sk-[A-Za-z0-9]{25,}/.test(html))throw Error('API secret in public HTML');
+          const tests=['fgDecode','matDecode','codec==="json-v1"','ppicSetFinished','ppicSetMaterials','ppicSetCustomers'];
+          for(const t of tests)if(!html.includes(t)&&t!=='ppicSetCustomers')throw Error('Missing module '+t);
+          const sw=fs.readFileSync('sw.js','utf8');
+          if(!sw.includes('v72-ledger-25nov')||!sw.includes('ppic-readable-ui.css'))
+            throw Error('PWA cache or accessibility theme stale');
+          JS
+      - name: Install and run synthetic Owner desktop/mobile UAT
+        run: |
+          npm install --no-save @playwright/test@1.62.1
+          npx playwright install --with-deps chromium
+          python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/bal-ledger25.log 2>&1 &
+          for i in $(seq 1 20); do curl -fsS http://127.0.0.1:8765/ >/dev/null && break; sleep 1; done
+          npx playwright test tests/ppic-charcoal-theme.spec.cjs tests/ppic-readable-ui.spec.cjs --browser=chromium --workers=1 --reporter=list
