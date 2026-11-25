@@ -1,8 +1,31 @@
-const {test,expect}=require('@playwright/test');const API='https://jryfozndxpjymggevkgq.supabase.co';
-const snap=(division,opening,tariff,entries)=>({period:'2026-11',division,version:'V001',status:'OPEN RECON',payload:{opening_qty:opening,opening_nominal:tariff===null?null:opening*tariff,tariff,valid_through:'2026-11-17',cols:['day','in_qty','out_qty'],entries}});
-async function login(page){
- await page.route(API+'/**',route=>{const u=route.request().url();if(u.includes('/auth/v1/token'))return route.fulfill({status:200,contentType:'application/json',body:'{"access_token":"fake","expires_in":3600}'});if(u.includes('/functions/v1/ppic-owner-check'))return route.fulfill({status:200,contentType:'application/json',body:'{"authorized":true,"role":"owner"}'});if(u.includes('/rest/v1/ppic_daily_owner_view'))return route.fulfill({status:200,contentType:'application/json',body:JSON.stringify([snap('CUKAI 10.325',231100,1464,[[2,180000,30000],[3,0,40000]]),snap('CUKAI 13.775',251200,1952,[[2,180000,21600],[3,0,20000]]),snap('CUKAI REFILL',41155,null,[[3,0,100]] )])});if(u.includes('/rest/v1/'))return route.fulfill({status:200,contentType:'application/json',body:'[]'});return route.fulfill({status:404,body:'{}'});});
- await page.goto('http://127.0.0.1:8765/');await page.locator('#ownerPassword').fill('fake');await page.locator('#loginButton').click();await expect(page.locator('#ppicMain')).toBeVisible();await page.locator('[data-view="excise"]').click();
-}
-test('HJE capacity and tariff nominal reflect source; refill unknown',async({page})=>{await login(page);await expect(page.locator('#exSummary tr')).toHaveCount(3);await expect(page.locator('#exMetrics')).toContainText('Rp 1.464');await expect(page.locator('#exDaily tr')).toHaveCount(30);await page.locator('#exHje').selectOption('CUKAI REFILL');await expect(page.locator('#exMetrics')).toContainText('Belum terverifikasi');await expect(page.locator('#exDaily tr').nth(2).locator('td').nth(8)).toHaveText('—');await page.locator('#exDate').fill('2026-11-18');await expect(page.locator('#exSummary')).toContainText('BELUM ADA DATA');});
-test('PDF prints all HJE, full 30 dates, clear nominal caveats',async({page})=>{await login(page);await page.locator('#exPrint').click();const html=await page.locator('#previewFrame').getAttribute('srcdoc');expect(html).toContain('CUKAI 10.325');expect(html).toContain('CUKAI 13.775');expect(html).toContain('CUKAI REFILL');expect(html).toContain('2026-11-30');expect(html).toContain('bukan HJE atau HPP');});
+const {test,expect}=require('@playwright/test');
+const {loginCukai}=require('./fixtures/cukai-browser.cjs');
+
+// The old report is retained for historical reference, but must never override
+// the authoritative Cukai screen or manufacture a tariff or a carton factor.
+test('legacy HJE controls are hidden; canonical source keeps unknown refill values',async({page})=>{
+ const {state,errors}=await loginCukai(page);
+ await expect(page.locator('#exHje')).toBeHidden();
+ await expect(page.locator('#exPrint')).toBeHidden();
+ await expect(page.locator('#cukaiSourcePanel')).toBeVisible();
+ expect(state.hits).toBeGreaterThan(0);
+ await expect(page.locator('#cukaiSourceMetrics')).toContainText('1.460 keping');
+ await expect(page.locator('#cukaiSourcePanel')).not.toContainText('88.888');
+ await page.locator('#cukaiSourcePool').selectOption('UJI-REFILL');
+ const row=page.locator('#cukaiSourceTables tbody tr');
+ await expect(row).toHaveCount(1);
+ await expect(row.locator('td').nth(5)).toHaveText('70');
+ for(const i of [6,7,8,9])await expect(row.locator('td').nth(i)).toHaveText('Belum tersedia');
+ expect(errors).toEqual([]);
+});
+
+test('canonical PDF identifies the source and never substitutes legacy values',async({page})=>{
+ const {state,errors}=await loginCukai(page);
+ await expect(page.locator('#exPrint')).toBeHidden();
+ await page.locator('#cukaiSourcePrint').click();
+ const html=await page.locator('#previewFrame').getAttribute('srcdoc');
+ for(const value of ['Sumber: Robot Cukai','Pita Uji A / UJI-A','Pita Uji B, jenis berbeda / UJI-B','Refill Uji / UJI-REFILL','Belum tersedia',state.source.source_snapshot_id,state.source.payload_hash])expect(html).toContain(value);
+ expect(html).not.toContain('LEGACY MUST NOT REPLACE CANONICAL');
+ expect(html).not.toContain('88.888');
+ expect(errors).toEqual([]);
+});
