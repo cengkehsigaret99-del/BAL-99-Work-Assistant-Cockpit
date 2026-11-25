@@ -69,8 +69,8 @@ begin
  where sc.incoming<>coalesce(r.q,0) or sc.outgoing<>coalesce(d.q,0);
  if v_mismatch<>0 then raise exception 'BJ_25_EVENT_TO_SKU_MISMATCH';end if;
  -- Cross-division verification: full multiset of date/SJ/SKU/pack exactly equals newly published DO V016.
- with bj as(select x->>'date' day,x->>'sj' sj,x->>'sku' sku,(x->>'pack')::bigint pack from jsonb_array_elements(p_source->'dispatches')x),
- d as(select x->>'date' day,x->>'sj' sj,x->>'sku' sku,(x->>'pack')::bigint pack
+ with bj as(select x->>'date' transaction_date,x->>'sj' sj,x->>'sku' sku,(x->>'pack')::bigint pack from jsonb_array_elements(p_source->'dispatches')x),
+ d as(select x->>'date' transaction_date,x->>'sj' sj,x->>'sku' sku,(x->>'pack')::bigint pack
       from ppic_private.do_customer_snapshots s,lateral jsonb_array_elements(s.rows)x
       where s.period='2026-11' and s.version='V016'),
  mm as((select * from bj except all select * from d) union all (select * from d except all select * from bj))
