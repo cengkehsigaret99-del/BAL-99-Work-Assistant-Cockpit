@@ -2,7 +2,7 @@ name: BAL PPIC V5.1 Daily Info QA
 on:
   push:
     branches: [main, feat/ppic-daily-info-v50, feat/ppic-pita-cartons-v51]
-    paths: ['index.html','auth.js','sw.js','daily-info*.js','tests/ppic-v50-*','tests/ppic-v47-ux.spec.cjs','.github/workflows/ppic-v50-daily-info-qa.yml','.github/workflows/deploy-pages.yml']
+    paths: ['index.html','auth.js','sw.js','cukai-sync.js','daily-info*.js','tests/fixtures/cukai*.cjs','tests/ppic-v50-*','tests/ppic-v43-excise-cost.spec.cjs','tests/ppic-v47-ux.spec.cjs','.github/workflows/ppic-v50-daily-info-qa.yml','.github/workflows/deploy-pages.yml']
   workflow_dispatch:
 permissions: {contents: read}
 jobs:
