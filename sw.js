@@ -1,4 +1,4 @@
-const CACHE_NAME="bal-ppic-public-shell-v71-readable-charcoal";
+const CACHE_NAME="bal-ppic-public-shell-v72-ledger-25nov";
 const BASE=new URL("./",self.registration.scope);
 const SHELL=["./","./index.html","./auth.js","./sync-ui.js","./sync.css","./robot-ui.js","./robot.css","./ppic-qa-ui.js","./ppic-qa.css","./ppic-stage2-ui.js","./ppic-stage2.css","./ppic-stage3-ui.js","./ppic-stage3.css","./ppic-plan-ui.js","./ppic-plan.css","./ppic-skt-watch-ui.js","./ppic-skt-watch.css","./ppic-do-auto-ui.js","./ppic-do-auto.css","./ppic-sj-recon-ui.js","./ppic-sj-recon.css","./ppic-daily-intel-ui.js","./ppic-daily-intel.css","./ppic-charcoal-theme.css","./ppic-readable-ui.css","./ppic-reading-ui.js","./daily-info-data.js","./daily-info.js","./daily-info-ui.js","./payroll.js","./payroll-ui.js","./payroll.css","./logo.png","./bal-logo-user.webp","./icon-192.png","./icon-512.png","./icon.svg","./manifest.webmanifest"];
 self.addEventListener("install",event=>{event.waitUntil(caches.open(CACHE_NAME).then(cache=>cache.addAll(SHELL)).then(()=>self.skipWaiting()))});
