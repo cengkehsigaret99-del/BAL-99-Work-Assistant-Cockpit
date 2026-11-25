@@ -39,7 +39,7 @@ jobs:
           const tests=['fgDecode','matDecode','codec==="json-v1"','ppicSetFinished','ppicSetMaterials','ppicSetCustomers'];
           for(const t of tests)if(!html.includes(t)&&t!=='ppicSetCustomers')throw Error('Missing module '+t);
           const sw=fs.readFileSync('sw.js','utf8');
-          if(!sw.includes('v72-ledger-25nov')||!sw.includes('ppic-readable-ui.css'))
+          if(!/bal-ppic-public-shell-v(7[2-9]|[8-9][0-9])-[a-z0-9-]+/.test(sw)||!sw.includes('ppic-readable-ui.css'))
             throw Error('PWA cache or accessibility theme stale');
           JS
       - name: Install and run synthetic Owner desktop/mobile UAT
