@@ -975,7 +975,14 @@ const matEl=id=>document.getElementById(id);
 const matFmt=x=>!ppicFinite(x)?"—":new Intl.NumberFormat("id-ID",{maximumFractionDigits:2}).format(x);
 const matSnap=()=>matSnapshots.filter(x=>x.period===matEl("matPeriod").value).sort(ppicLatest)[0]||null;
 async function matDecode(snap){
- if(!snap?.payload||snap.payload.codec!=="zlib-base64")return null;
+ if(!snap?.payload)return null;
+ if(snap.payload.codec==="json-v1"){
+  const d=snap.payload.data;
+  if(!d||!Array.isArray(d.m)||!Array.isArray(d.e)||d.m.length>300||d.e.length>20000)
+   throw Error("Payload Bahan Baku bukan struktur ledger valid");
+  return d;
+ }
+ if(snap.payload.codec!=="zlib-base64")return null;
  const bytes=Uint8Array.from(atob(snap.payload.data),c=>c.charCodeAt(0));
  return JSON.parse(await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream("deflate"))).text());
 }
@@ -1065,7 +1072,14 @@ const fgSnap=()=>fgSnapshots.filter(x=>x.period===fgEl("fgPeriod").value).sort(p
 const fgDateDay=()=>Number(fgEl("fgDate").value.slice(-2));
 const fgCartons=(pack,factor)=>ppicFinite(pack)&&ppicFinite(factor)&&factor>0?pack/factor:null;
 async function fgDecode(snapshot){
- if(!snapshot?.payload||snapshot.payload.codec!=="zlib-base64")return null;
+ if(!snapshot?.payload)return null;
+ if(snapshot.payload.codec==="json-v1"){
+  const v=snapshot.payload.data;
+  if(!v||!Array.isArray(v.m)||!Array.isArray(v.e)||v.m.length>300||v.e.length>20000)
+   throw Error("Payload Barang Jadi bukan struktur ledger valid");
+  return v;
+ }
+ if(snapshot.payload.codec!=="zlib-base64")return null;
  const bytes=Uint8Array.from(atob(snapshot.payload.data),c=>c.charCodeAt(0));
  return JSON.parse(await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream("deflate"))).text());
 }
