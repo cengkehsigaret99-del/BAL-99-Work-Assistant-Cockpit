@@ -80,6 +80,10 @@
  }
  function ledgerBalance(snapshot,date){
   const p=snapshot.payload||{},cols=p.cols||[],ii=cols.indexOf('in_qty'),oi=cols.indexOf('out_qty'),di=cols.indexOf('day');
+  if(Object.prototype.hasOwnProperty.call(p,'book_closing')&&!(p.entries||[]).length){
+   if(date!==p.valid_through||![p.opening_qty,p.book_period_receipts,p.book_period_usage,p.book_closing].every(finite))return null;
+   return p.opening_qty+p.book_period_receipts-p.book_period_usage===p.book_closing?p.book_closing:null;
+  }
   if(!finite(p.opening_qty)||ii<0||oi<0||di<0)return null;
   let qty=p.opening_qty;const day=Number(date.slice(-2));
   for(const r of p.entries||[])if(Number(r[di])>=1&&Number(r[di])<=day){if(!finite(r[ii])||!finite(r[oi]))return null;qty+=r[ii]-r[oi]}
@@ -97,7 +101,7 @@
    if(qty===null){unavailable++;continue}if(qty<=0)continue;
    const packPerCarton=cartonFactors[division]??null,cartonEquivalent=packPerCarton===null?null:qty/packPerCarton;
    const fullCartons=packPerCarton===null?null:Math.floor(qty/packPerCarton),remainderPack=packPerCarton===null?null:qty%packPerCarton;
-   s.rows.push({label:labels[division]||division,value:number(qty)+' keping',detail:cartonEquivalent===null?'Belum terverifikasi':number(cartonEquivalent,4)+' karton',numeric:{keping:qty,packPerCarton,cartonEquivalent,fullCartons,remainderPack},sourceDate:date});
+   s.rows.push({label:snap.payload?.canonical_source?(snap.payload.source_label||division)+' · '+(snap.payload.source_hje_id||division):labels[division]||division,value:number(qty)+' keping',detail:cartonEquivalent===null?'Belum terverifikasi':number(cartonEquivalent,4)+' karton',numeric:{keping:qty,packPerCarton,cartonEquivalent,fullCartons,remainderPack},sourceDate:date});
   }
   if(dates.length){const unique=[...new Set(dates)];dated(s,unique.sort()[0]);if(unique.length>1){s.dateLabel='Tanggal sumber per kelompok';for(const r of s.rows)r.label+='\nData '+dateLabel(r.sourceDate)}}
   s.emptyText=dates.length?'Tidak ada saldo pita positif yang dapat ditampilkan.':s.emptyText;

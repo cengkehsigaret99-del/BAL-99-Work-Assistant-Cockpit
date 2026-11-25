@@ -787,6 +787,14 @@ function dailyNumber(v){return v===null||v===undefined?"—":new Intl.NumberForm
 function dailyRowsFor(snapshot){
  const p=snapshot.payload,columns=p.cols||[],records=new Map((p.entries||[]).map(r=>[Number(r[0]),r]));
  const [year,month]=snapshot.period.split("-").map(Number),length=new Date(year,month,0).getDate();
+ // A period control total is not evidence of zero daily movement.
+ if(Object.prototype.hasOwnProperty.call(p,"book_closing")&&records.size===0){
+  const n=x=>typeof x==="number"&&Number.isSafeInteger(x),valid=n(p.opening_qty)&&n(p.book_period_receipts)&&n(p.book_period_usage)&&n(p.book_closing)&&p.opening_qty+p.book_period_receipts-p.book_period_usage===p.book_closing;
+  return Array.from({length},(_,i)=>{
+   const date=snapshot.period+"-"+String(i+1).padStart(2,"0"),atCutoff=valid&&date===p.valid_through;
+   return {date,status:atCutoff?"SALDO BUKU / MUTASI HARIAN BELUM TERSEDIA":"BELUM ADA DATA",qty0:null,qin:null,qout:null,qty1:atCutoff?p.book_closing:null,money0:null,min:null,mout:null,money1:null};
+  });
+ }
  let qty=p.opening_qty??null,money=p.opening_nominal??null;
  const rows=[];
  for(let d=1;d<=length;d++){
@@ -1629,7 +1637,7 @@ $("pdfFile").addEventListener("change",async()=>{
 });
 $("csv").addEventListener("click",()=>{const rows=[["No","Laporan","Ruang Lingkup","Sumber"],...catalog.map((r,i)=>[i+1,...r])];const s="\uFEFF"+rows.map(r=>r.map(x=>'"'+String(x).replaceAll('"','""')+'"').join(",")).join("\r\n");const u=URL.createObjectURL(new Blob([s],{type:"text/csv;charset=utf-8"}));const a=document.createElement("a");a.href=u;a.download="BAL_PPIC_KATALOG_LAPORAN.csv";a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)});
 </script><script src="daily-info-data.js"></script><script src="daily-info.js"></script><script src="daily-info-ui.js"></script><script src="payroll.js"></script><script src="payroll-ui.js"></script><script src="sync-ui.js"></script>
-<script src="robot-ui.js"></script><script src="ppic-qa-ui.js"></script><script src="ppic-stage2-ui.js"></script><script src="ppic-stage3-ui.js"></script><script src="ppic-plan-ui.js"></script><script src="ppic-skt-watch-ui.js"></script><script src="ppic-do-auto-ui.js"></script><script src="ppic-sj-recon-ui.js"></script><script src="ppic-daily-intel-ui.js"></script><script src="ppic-reading-ui.js"></script><script src="auth.js" defer></script><script>
+<script src="robot-ui.js"></script><script src="ppic-qa-ui.js"></script><script src="ppic-stage2-ui.js"></script><script src="ppic-stage3-ui.js"></script><script src="ppic-plan-ui.js"></script><script src="ppic-skt-watch-ui.js"></script><script src="ppic-do-auto-ui.js"></script><script src="ppic-sj-recon-ui.js"></script><script src="ppic-daily-intel-ui.js"></script><script src="ppic-reading-ui.js"></script><script src="cukai-sync.js"></script><script src="auth.js" defer></script><script>
 (()=>{
  const form=document.getElementById("ppicUploadForm"),status=document.getElementById("uploadStatus"),button=document.getElementById("uploadSubmit"),fileInput=document.getElementById("uploadFile"),hint=document.getElementById("uploadMetaHint");
  const field=id=>document.getElementById(id),today=ppicToday();field("uploadPeriod").value=today.slice(0,7);field("uploadCutoff").value="";field("uploadVersion").value="";

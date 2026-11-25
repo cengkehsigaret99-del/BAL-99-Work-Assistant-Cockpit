@@ -27,6 +27,7 @@ jobs:
           mkdir -p dist
           cp index.html dist/index.html
           cp auth.js dist/auth.js
+          cp cukai-sync.js dist/cukai-sync.js
           cp sync-ui.js sync.css robot-ui.js robot.css ppic-qa-ui.js ppic-qa.css ppic-stage2-ui.js ppic-stage2.css ppic-stage3-ui.js ppic-stage3.css ppic-plan-ui.js ppic-plan.css ppic-skt-watch-ui.js ppic-skt-watch.css ppic-do-auto-ui.js ppic-do-auto.css ppic-sj-recon-ui.js ppic-sj-recon.css ppic-daily-intel-ui.js ppic-daily-intel.css ppic-charcoal-theme.css ppic-readable-ui.css ppic-reading-ui.js dist/
           cp daily-info-data.js daily-info.js daily-info-ui.js dist/
           cp payroll.js payroll-ui.js payroll.css dist/
@@ -46,7 +47,7 @@ jobs:
           python3 - <<'PY'
           from pathlib import Path
           dist=Path("dist")
-          allowed={"index.html","auth.js","sync-ui.js","sync.css","robot-ui.js","robot.css","ppic-qa-ui.js","ppic-qa.css","ppic-stage2-ui.js","ppic-stage2.css","ppic-stage3-ui.js","ppic-stage3.css","ppic-plan-ui.js","ppic-plan.css","ppic-skt-watch-ui.js","ppic-skt-watch.css","ppic-do-auto-ui.js","ppic-do-auto.css","ppic-sj-recon-ui.js","ppic-sj-recon.css","ppic-daily-intel-ui.js","ppic-daily-intel.css","ppic-charcoal-theme.css","ppic-readable-ui.css","ppic-reading-ui.js","daily-info-data.js","daily-info.js","daily-info-ui.js","payroll.js","payroll-ui.js","payroll.css","logo.png","bal-logo-user.webp","manifest.webmanifest","sw.js","icon.svg","icon-192.png","icon-512.png","robots.txt",".nojekyll"}
+          allowed={"index.html","auth.js","cukai-sync.js","sync-ui.js","sync.css","robot-ui.js","robot.css","ppic-qa-ui.js","ppic-qa.css","ppic-stage2-ui.js","ppic-stage2.css","ppic-stage3-ui.js","ppic-stage3.css","ppic-plan-ui.js","ppic-plan.css","ppic-skt-watch-ui.js","ppic-skt-watch.css","ppic-do-auto-ui.js","ppic-do-auto.css","ppic-sj-recon-ui.js","ppic-sj-recon.css","ppic-daily-intel-ui.js","ppic-daily-intel.css","ppic-charcoal-theme.css","ppic-readable-ui.css","ppic-reading-ui.js","daily-info-data.js","daily-info.js","daily-info-ui.js","payroll.js","payroll-ui.js","payroll.css","logo.png","bal-logo-user.webp","manifest.webmanifest","sw.js","icon.svg","icon-192.png","icon-512.png","robots.txt",".nojekyll"}
           actual={p.name for p in dist.iterdir()}
           assert actual==allowed,(actual,allowed)
           s=(dist/"index.html").read_text()
@@ -79,7 +80,7 @@ jobs:
             .filter(m=>!/\bsrc=/.test(m[1])).map(m=>m[2]);
           if(!inline.length)throw Error('No inline scripts to check');
           inline.forEach((content,i)=>new vm.Script(content,{filename:'index-inline-'+i+'.js'}));
-          for(const file of ['auth.js','sync-ui.js','robot-ui.js','ppic-qa-ui.js','ppic-stage2-ui.js','ppic-stage3-ui.js','ppic-plan-ui.js','ppic-skt-watch-ui.js','ppic-do-auto-ui.js','ppic-sj-recon-ui.js','ppic-daily-intel-ui.js','ppic-reading-ui.js','daily-info-data.js','daily-info.js','daily-info-ui.js','payroll.js','payroll-ui.js'])new vm.Script(fs.readFileSync(file,'utf8'),{filename:file});
+          for(const file of ['auth.js','cukai-sync.js','sync-ui.js','robot-ui.js','ppic-qa-ui.js','ppic-stage2-ui.js','ppic-stage3-ui.js','ppic-plan-ui.js','ppic-skt-watch-ui.js','ppic-do-auto-ui.js','ppic-sj-recon-ui.js','ppic-daily-intel-ui.js','ppic-reading-ui.js','daily-info-data.js','daily-info.js','daily-info-ui.js','payroll.js','payroll-ui.js'])new vm.Script(fs.readFileSync(file,'utf8'),{filename:file});
           for(const key of ['id="sdmBuild"','id="sdmDiv"','id="sdmStart"','id="sdmEnd"','id="sdmRows"','id="sdmPeople"','SDM GILING','SDM VERPACK']){
             if(!html.includes(key))throw Error('SDM control missing: '+key);
           }
