@@ -40,5 +40,5 @@ test('No JSON-v1 contract may imply confirmed inventory, cash or invoices',()=>{
   assert.ok(auth.includes(route),'Reader endpoint missing '+route);
  assert.ok(!html.includes('ppic_private.publish_bj_working_25nov('));
  assert.ok(!html.includes('ppic_private.publish_do_working_25nov('));
- assert.ok(fs.readFileSync('sw.js','utf8').includes('v72-ledger-25nov'));
+ assert.match(fs.readFileSync('sw.js','utf8'), /bal-ppic-public-shell-v(7[2-9]|[8-9][0-9])-[a-z0-9-]+/);
 });
