@@ -42,17 +42,21 @@
   }
   function display(v){
    const badge=$("ppicCrossBookBadge");
-   badge.textContent="BUKU COCOK · KAS TERBUKA";badge.dataset.tone="warning";
+   const historical=v.do_active_evidence_matches===false;
+   badge.textContent=historical?"ARSIP 21 NOV · BUKAN SALDO TERBARU":"BUKU COCOK · KAS TERBUKA";
+   badge.dataset.tone="warning";
    $("ppicCrossBookTime").textContent="SJ"+format(v.sj_no)+" · DO & BJ "+date(v.cutoff)+" · pemeriksaan "+moment(v.created_at);
    const s=v.summary,c=v.cash_context;
-   notice("Seluruh baris buku cocok; alokasi pembayaran dan bukti terima pelanggan SJ334 belum disahkan. Jangan kurangi stok atau mencatat kas sekali lagi.","warning");
+   notice(historical
+     ?"Audit SJ334 tanggal 21 November adalah ARSIP: pengiriman Tri Sukma Aji dipindah ke SJ338; SJ334 terbaru adalah milik Khoirul Soleh. Lihat DO dan Barang Jadi 25 November untuk saldo kini. Bukti bayar/invoice/POD historis masih OPEN RECON."
+     :"Seluruh baris buku cocok; alokasi pembayaran dan bukti terima pelanggan SJ334 belum disahkan. Jangan kurangi stok atau mencatat kas sekali lagi.","warning");
    const metrics=$("ppicCrossBookMetrics");metrics.replaceChildren();
    for(const [label,value]of [
     ["Baris DO ↔ BJ",format(s.do_bj_lines_matched)+" / "+format(s.do_bj_total_lines_checked)],
     ["Selisih pack",format(s.do_bj_qty_difference_pack)],
-    ["SJ334",format(s.pack)+" pack · "+format(s.cartons)+" karton"],
+    [historical?"SJ334 lama → SJ338":"SJ334",format(s.pack)+" pack · "+format(s.cartons)+" karton"],
     ["Nilai DO kerja","Rp"+format(s.working_nominal_rp)],
-    ["Saldo buku Barang Jadi",format(s.bj_book_closing_pack)+" pack"],
+    [historical?"Saldo BJ historis 21 Nov":"Saldo buku Barang Jadi",format(s.bj_book_closing_pack)+" pack"],
     ["Kas V16: alokasi SJ334",c.sj334_explicit_allocation_rp===null?"Belum ada bukti":"Rp"+format(c.sj334_explicit_allocation_rp)]
    ]){
     const m=node("div",undefined,"ppic-cross-metric");m.append(node("small",label),node("strong",value));metrics.append(m);
@@ -76,7 +80,9 @@
    const cutoffLabel=v.bj_book_is_current_in_ppic?
      "Buku Barang Jadi aktif PPIC sudah sama dengan file yang diperiksa.":
      "Workbook Barang Jadi 21 November sudah diaudit, tetapi sumber aktif Web PPIC masih "+oldCutoff+". Jangan salah tafsir sebagai stok sudah diposting.";
-   $("ppicCrossBookSource").textContent=cutoffLabel;
+   $("ppicCrossBookSource").textContent=historical
+     ?"Audit lama tetap tersedia untuk jejak bukti. Sumber BJ aktif sekarang "+oldCutoff+"; saldo 25 November di modul Barang Jadi, bukan di kartu audit 21 November."
+     :cutoffLabel;
   }
   async function refresh(){
    if(!enabled||pending||typeof win.ppicLoadCrossBookStatus!=="function")return;
