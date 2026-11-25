@@ -3,7 +3,7 @@ create or replace function ppic_private.publish_supporting_balances_25nov(p_divi
 returns jsonb language plpgsql security invoker
 set search_path=pg_catalog,ppic_private as $fn$
 declare
- v_data jsonb;v_meta jsonb;v_hash text;v_doc text;v_ref jsonb;v_facts jsonb;
+ v_data jsonb;v_meta jsonb;v_hash text;v_doc text;v_ref jsonb;v_facts jsonb;v_report_payload jsonb;
  v_reportid uuid;v_receiptid uuid;v_report text;v_title text;v_version text;v_file text;v_library text;
  v_rows jsonb;v_notes jsonb;v_cutoff date:='2026-11-25';
 begin
